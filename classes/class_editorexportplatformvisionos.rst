@@ -802,7 +802,7 @@ Environment for Apple Push Notification service. See `aps-environment <https://d
 
 :ref:`String<class_String>` **icons/icon_1024x1024** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_1024x1024>`
 
-Base application icon used to generate other icons. If left empty, it will fallback to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`. See `App icons <https://developer.apple.com/design/human-interface-guidelines/foundations/app-icons>`__.
+Base application icon used to generate other icons. If left empty, it will fallback to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -814,7 +814,7 @@ Base application icon used to generate other icons. If left empty, it will fallb
 
 :ref:`String<class_String>` **icons/icon_1024x1024_dark** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_1024x1024_dark>`
 
-Base application icon used to generate other icons, dark version. See `App icons <https://developer.apple.com/design/human-interface-guidelines/foundations/app-icons>`__.
+Base application icon used to generate other icons, dark version. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -826,7 +826,7 @@ Base application icon used to generate other icons, dark version. See `App icons
 
 :ref:`String<class_String>` **icons/icon_1024x1024_tinted** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_1024x1024_tinted>`
 
-Base application icon used to generate other icons, tinted version. See `App icons <https://developer.apple.com/design/human-interface-guidelines/foundations/app-icons>`__.
+Base application icon used to generate other icons, tinted version. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
 
 .. rst-class:: classref-item-separator
 
