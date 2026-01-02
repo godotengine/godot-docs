@@ -239,7 +239,7 @@ GDExtension plugin.
             return;
         }
 
-        GDREGISTER_RUNTIME_CLASS(GDExample);
+        GDREGISTER_CLASS(GDExample);
     }
 
     void uninitialize_example_module(ModuleInitializationLevel p_level) {
@@ -265,8 +265,11 @@ The ``initialize_example_module`` and ``uninitialize_example_module`` functions 
 called respectively when Godot loads our plugin and when it unloads it. All
 we're doing here is parse through the functions in our bindings module to
 initialize them, but you might have to set up more things depending on your
-needs. We call the ``GDREGISTER_RUNTIME_CLASS`` macro for each of our classes
-in our library. This will make them run only in game, like the default for GDScript.
+needs. We call the ``GDREGISTER_CLASS`` macro for each of our classes in our library.
+
+.. note::
+
+    You can find information about ``GDREGISTER_CLASS`` (and alternatives) at :ref:`doc_object_class`.
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
