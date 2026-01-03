@@ -865,7 +865,7 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 .. rst-class:: classref-annotation
 
-**@rpc**\ (\ mode\: :ref:`String<class_String>` = "authority", sync\: :ref:`String<class_String>` = "call_remote", transfer_mode\: :ref:`String<class_String>` = "unreliable", transfer_channel\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_@GDScript_annotation_@rpc>`
+**@rpc**\ (\ mode\: :ref:`String<class_String>` = "authority", sync\: :ref:`String<class_String>` = "call_remote", transfer_mode\: :ref:`String<class_String>` = "reliable", transfer_channel\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_@GDScript_annotation_@rpc>`
 
 Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
 
@@ -887,7 +887,7 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but value
     @rpc("any_peer", "unreliable_ordered")
     func fn_update_pos(): pass
 
-    @rpc("authority", "call_remote", "unreliable", 0) # Equivalent to @rpc
+    @rpc("authority", "call_remote", "reliable", 0) # Equivalent to @rpc
     func fn_default(): pass
 
 \ **Note:** Methods annotated with :ref:`@rpc<class_@GDScript_annotation_@rpc>` cannot receive objects which define required parameters in :ref:`Object._init()<class_Object_private_method__init>`. See :ref:`Object._init()<class_Object_private_method__init>` for more details.

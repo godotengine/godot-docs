@@ -19,13 +19,13 @@ Render scene buffer implementation for the RenderingDevice based renderers.
 Description
 -----------
 
-This object manages all 3D rendering buffers for the rendering device based renderers. An instance of this object is created for every viewport that has 3D rendering enabled.
+This object manages all 3D rendering buffers for the rendering device based renderers. An instance of this object is created for every viewport that has 3D rendering enabled. See also :ref:`RenderSceneBuffers<class_RenderSceneBuffers>`.
 
 All buffers are organized in **contexts**. The default context is called **render_buffers** and can contain amongst others the color buffer, depth buffer, velocity buffers, VRS density map and MSAA variants of these buffers.
 
 Buffers are only guaranteed to exist during rendering of the viewport.
 
-\ **Note:** This is an internal rendering server object, do not instantiate this from script.
+\ **Note:** This is an internal rendering server object. Do not instantiate this class from a script.
 
 .. rst-class:: classref-reftable-group
 

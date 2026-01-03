@@ -344,7 +344,9 @@ The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the clo
 
 Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
-If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
+If ``from_id`` point is disabled, returns an empty array (even if ``from_id == to_id``).
+
+If ``from_id`` point is not disabled, there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
 
 \ **Note:** When ``allow_partial_path`` is ``true`` and ``to_id`` is disabled the search may take an unusually long time to finish.
 
@@ -475,7 +477,9 @@ Returns an array of all point IDs.
 
 Returns an array with the points that are in the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
-If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
+If ``from_id`` point is disabled, returns an empty array (even if ``from_id == to_id``).
+
+If ``from_id`` point is not disabled, there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
 
 \ **Note:** This method is not thread-safe; it can only be used from a single :ref:`Thread<class_Thread>` at a given time. Consider using :ref:`Mutex<class_Mutex>` to ensure exclusive access to one thread to avoid race conditions.
 

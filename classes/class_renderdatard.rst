@@ -14,16 +14,14 @@ RenderDataRD
 
 Render data implementation for the RenderingDevice based renderers.
 
-\ **Note:** This is an internal rendering server object, do not instantiate this from script.
-
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This object manages all render data for the rendering device based renderers.
+This object manages all render data for the :ref:`RenderingDevice<class_RenderingDevice>`-based renderers. See also :ref:`RenderData<class_RenderData>`, :ref:`RenderSceneData<class_RenderSceneData>`, and :ref:`RenderSceneDataRD<class_RenderSceneDataRD>`.
 
-\ **Note:** This is an internal rendering server object only exposed for GDExtension plugins.
+\ **Note:** This is an internal rendering server object. Do not instantiate this class from a script.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

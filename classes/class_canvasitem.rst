@@ -1226,21 +1226,11 @@ Draws ``text`` using the specified ``font`` at the ``pos`` in local space (botto
 
  .. code-tab:: gdscript
 
-    # If using this method in a script that redraws constantly, move the
-    # `default_font` declaration to a member variable assigned in `_ready()`
-    # so the Control is only created once.
-    var default_font = ThemeDB.fallback_font
-    var default_font_size = ThemeDB.fallback_font_size
-    draw_string(default_font, Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, default_font_size)
+    draw_string(ThemeDB.fallback_font, Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, ThemeDB.fallback_font_size)
 
  .. code-tab:: csharp
 
-    // If using this method in a script that redraws constantly, move the
-    // `default_font` declaration to a member variable assigned in `_Ready()`
-    // so the Control is only created once.
-    Font defaultFont = ThemeDB.FallbackFont;
-    int defaultFontSize = ThemeDB.FallbackFontSize;
-    DrawString(defaultFont, new Vector2(64, 64), "Hello world", HORIZONTAL_ALIGNMENT_LEFT, -1, defaultFontSize);
+    DrawString(ThemeDB.FallbackFont, new Vector2(64, 64), "Hello world", HorizontalAlignment.Left, -1, ThemeDB.FallbackFontSize);
 
 
 
