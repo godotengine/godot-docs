@@ -19,7 +19,7 @@ Uniform set cache manager for Rendering Device based renderers.
 Description
 -----------
 
-Uniform set cache manager for Rendering Device based renderers. Provides a way to create a uniform set and reuse it in subsequent calls for as long as the uniform set exists. Uniform set will automatically be cleaned up when dependent objects are freed.
+Uniform set cache manager for :ref:`RenderingDevice<class_RenderingDevice>`-based renderers. Provides a way to create a uniform set and reuse it in subsequent calls for as long as the uniform set exists. Uniform set will automatically be cleaned up when dependent objects are freed.
 
 .. rst-class:: classref-reftable-group
 

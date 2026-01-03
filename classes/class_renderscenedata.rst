@@ -21,9 +21,9 @@ Abstract render data object, holds scene data related to rendering a single fram
 Description
 -----------
 
-Abstract scene data object, exists for the duration of rendering a single viewport.
+Abstract scene data object, exists for the duration of rendering a single viewport. See also :ref:`RenderSceneDataRD<class_RenderSceneDataRD>`, :ref:`RenderData<class_RenderData>`, and :ref:`RenderDataRD<class_RenderDataRD>`.
 
-\ **Note:** This is an internal rendering server object, do not instantiate this from script.
+\ **Note:** This is an internal rendering server object. Do not instantiate this class from a script.
 
 .. rst-class:: classref-reftable-group
 

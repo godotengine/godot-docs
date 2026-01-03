@@ -21,9 +21,9 @@ Abstract scene buffers object, created for each viewport for which 3D rendering 
 Description
 -----------
 
-Abstract scene buffers object, created for each viewport for which 3D rendering is done. It manages any additional buffers used during rendering and will discard buffers when the viewport is resized.
+Abstract scene buffers object, created for each viewport for which 3D rendering is done. It manages any additional buffers used during rendering and will discard buffers when the viewport is resized. See also :ref:`RenderSceneBuffersRD<class_RenderSceneBuffersRD>`.
 
-\ **Note:** This is an internal rendering server object, do not instantiate this from script.
+\ **Note:** This is an internal rendering server object. Do not instantiate this class from a script.
 
 .. rst-class:: classref-reftable-group
 
