@@ -7,7 +7,8 @@ In 2024, we introduced the `Godot XR editor <https://godotengine.org/article/god
 a version of the Godot editor **designed to run natively on XR devices**, enabling the creation,
 development and export of 2D, 3D, and **XR** apps and games directly on device.
 
-The app can be downloaded from the `Meta Horizon Store <https://www.meta.com/experiences/godot-game-engine/7713660705416473/>`__,
+The app can be downloaded from the `Google Play Store <https://play.google.com/store/apps/details?id=org.godotengine.editor.v4>`__,
+`Meta Horizon Store <https://www.meta.com/experiences/godot-game-engine/7713660705416473/>`__,
 or from the `Godot download page <https://godotengine.org/download/preview/>`__.
 
 .. note::
@@ -17,9 +18,10 @@ or from the `Godot download page <https://godotengine.org/download/preview/>`__.
 XR devices support
 ------------------
 
-For now, the Godot XR editor is only available for the following `Meta Quest <https://www.meta.com/quest/>`__
-devices running **Meta Horizon OS v69 or higher**:
+For now, the Godot XR editor is only available for Android XR devices, and the
+following `Meta Quest <https://www.meta.com/quest/>`__ devices running **Meta Horizon OS v69 or higher**:
 
+ - Meta Quest 2
  - Meta Quest 3
  - Meta Quest 3s
  - Meta Quest Pro
@@ -36,7 +38,7 @@ Runtime Permissions
   Without this permission, the editor is still functional, but has limited access to the device's files and directories.
 - `REQUEST_INSTALL_PACKAGES <https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES>`__: Enables the editor to install exported project APKs.
 - `RECORD_AUDIO <https://developer.android.com/reference/android/Manifest.permission#RECORD_AUDIO>`__: Requested when the `audio/driver/enable_input <https://docs.godotengine.org/en/stable/classes/class_projectsettings.html#class-projectsettings-property-audio-driver-enable-input>`__ project setting is enabled.
-- `USE_SCENE <https://developers.meta.com/horizon/documentation/native/native-spatial-data-perm/>`__: Required to enable and access the scene APIs when running an XR project.
+- `USE_SCENE (META ONLY) <https://developers.meta.com/horizon/documentation/native/native-spatial-data-perm/>`__: Required to enable and access the scene APIs when running an XR project.
 
 Tips & Tricks
 -------------
@@ -50,7 +52,7 @@ Tips & Tricks
 - When interacting with tracked controllers or tracked hands, you can increase the size of the scrollbar using the
   `interface/touchscreen/increase_scrollbar_touch_area <https://docs.godotengine.org/en/stable/classes/class_editorsettings.html#class-editorsettings-property-interface-touchscreen-increase-scrollbar-touch-area>`__ editor setting.
 
-**Multi-tasking**
+**Multi-tasking on Quest**
 
 - `Theater View <https://www.meta.com/blog/quest/meta-quest-v67-update-new-window-layout-creator-content-horizon-feed/>`__ can be used to fullscreen the *Editor window*.
 - Enable `Seamless Multitasking <https://www.uploadvr.com/seamless-multitasking-experimental-quest/>`__, available in the Quest *Experimental Settings*,
@@ -80,11 +82,6 @@ Limitations & known issues
 
 Here are the known limitations and issues of the XR editor:
 
-- No Meta Quest 2 support due to the limited amount of memory on the device. 
-  However advanced users can grab the XR editor APK from the `download page <https://godotengine.org/download/preview/>`__
-  and sideload it onto their device if they desire to do so.
-- No gradle build support.
-- No support for Android plugins as they require gradle build support. GDExtension plugins are supported.
 - No C#/Mono support.
 - No support for external script editors.
 - While available, the *Vulkan Forward+* renderer is not recommended due to severe performance issues.
