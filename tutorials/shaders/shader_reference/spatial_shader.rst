@@ -360,7 +360,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +========================================+==================================================================================================+
 | in vec2 **VIEWPORT_SIZE**              | Size of viewport (in pixels).                                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec4 **FRAGCOORD**                  | Coordinate of pixel center in screen space. ``xy`` specifies position in window. Origin is lower |
+| in vec4 **FRAGCOORD**                  | Coordinate of pixel center in screen space. ``xy`` specifies position in window. Origin is upper |
 |                                        | left. ``z`` specifies fragment depth. It is also used as the output value for the fragment depth |
 |                                        | unless ``DEPTH`` is written to.                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
