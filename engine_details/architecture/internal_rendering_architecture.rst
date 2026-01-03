@@ -648,8 +648,7 @@ indirect lighting.
 When both SSAO and SSIL are enabled, parts of SSAO and SSIL are shared to reduce
 the performance impact.
 
-SSAO and SSIL are performed at half resolution by default to improve performance.
-SSR is always performed at half resolution to improve performance.
+SSAO, SSIL, and SSR are performed at half resolution by default to improve performance.
 
 **Screen-space effects C++ code:**
 
