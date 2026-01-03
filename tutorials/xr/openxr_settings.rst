@@ -236,6 +236,18 @@ Debug Message Types
 
 This allows you to choose which debug messages are logged.
 
+Frame Synthesis
+~~~~~~~~~~~~~~~
+
+When enabled, provided it's supported by the XR runtime, lower resolution motion
+vector and depth buffers are rendered and provided to the XR runtime. The XR
+runtime can now inject reprojection frames and compensate for lower framerates.
+
+It currently has the following limitations:
+
+- Does NOT work in the Forward+ renderer.
+- Only works with stereo rendering.
+
 Hand Tracking
 ~~~~~~~~~~~~~
 
@@ -277,6 +289,13 @@ the user is holding a controller.
 
 If only a hand interaction profile is supplied any runtime should use hand
 interaction even if a controller is being held.
+
+Spatial Entities
+~~~~~~~~~~~~~~~~
+
+This extension and its settings are used to obtain and interact with
+information about the user's real world environment. You can find more detailed
+information on how it works on the :ref:`spatial entities page <doc_openxr_spatial_entities>`.
 
 Eye Gaze Interaction
 ~~~~~~~~~~~~~~~~~~~~
