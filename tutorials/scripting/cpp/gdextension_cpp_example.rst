@@ -268,6 +268,16 @@ initialize them, but you might have to set up more things depending on your
 needs. We call the ``GDREGISTER_RUNTIME_CLASS`` macro for each of our classes
 in our library. This will make them run only in game, like the default for GDScript.
 
+.. note::
+    ``GDREGISTER_RUNTIME_CLASS`` will register a script only for runtime, 
+    so it will only run in game, like the default for GDScript.
+    If you need your class in the Editor, for example to be called from an ``@tool`` script, use
+    ``GDREGISTER_CLASS``
+
+    There is also ``GDREGISTER_VIRTUAL_CLASS``, ``GDREGISTER_ABSTRACT_CLASS``, and ``GDREGISTER_INTERNAL_CLASS``
+    for handling more complicated C++ class types. These are defined and managed in
+    the Godot CPP `ClassDB Bindings <https://github.com/godotengine/godot-cpp/blob/b724219737883e311f4cc4da1b49a0960dd00d38/include/godot_cpp/core/class_db.hpp>`
+
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
 This object registers the initialization and termination functions of the GDExtension.
