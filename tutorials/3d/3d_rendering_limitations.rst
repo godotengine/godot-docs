@@ -119,6 +119,10 @@ other transparent materials, while Sorting Offset will move the object
 forward or backward for the purpose of sorting. Even then, these may not
 always be sufficient.
 
+Transparent objects are not rendered to the normal-roughness buffer, as they are
+drawn after opaque geometry. As a result, features that rely on the normal-roughness
+buffer will not affect transparent materials.
+
 Some rendering engines feature *order-independent transparency* techniques to
 alleviate this, but this is costly on the GPU. Godot currently doesn't provide
 this feature. There are still several ways to avoid this problem:
