@@ -547,20 +547,27 @@ Using mold for faster development
 For even faster linking compared to LLD, you can use `mold <https://github.com/rui314/mold>`__.
 mold can be used with either GCC or Clang.
 
-As of January 2023, mold is not readily available in Linux distribution
-repositories, so you will have to install its binaries manually.
+.. tabs::
+    .. tab:: Debian/Ubuntu
 
-- Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
-- Extract the ``.tar.gz`` file, then move the extracted folder to a location such as ``.local/share/mold``.
-- Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
-  For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
+        ::
 
-::
+            sudo apt-get update
+            sudo apt-get install -y mold
 
-    PATH="$HOME/.local/share/mold/bin:$PATH"
+    .. tab:: Fedora
 
-- Open a new terminal (or run ``source "$HOME/.bash_profile"``),
-  then use the following SCons command when compiling Godot:
+        ::
+
+            sudo dnf install -y mold
+
+    .. tab:: Arch Linux
+
+        ::
+
+            pacman -Sy --noconfirm --needed mold
+
+Once mold is installed, use the following SCons command when compiling Godot:
 
   ::
 
