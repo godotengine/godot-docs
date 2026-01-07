@@ -16,7 +16,7 @@ and how you can get started with them in Godot.
 
     Unless you specifically advertise your game as requiring specific controllers,
     remember that there is no guarantee that players will have a controller with
-    given features.
+    any given features.
 
     As a result, we suggest using these features to enhance the gameplay experience
     for players whose controllers support them, without detracting from those who
