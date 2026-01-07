@@ -5610,7 +5610,7 @@ Page size used by remote filesystem (in bytes).
 
 :ref:`String<class_String>` **network/ssl/certificates** = ``""``
 
-The CA certificates bundle to use for SSL connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/3.6/thirdparty/certs/ca-certificates.crt>`__. If left empty, the default certificate bundle will be used.
+The CA certificates bundle to use for SSL connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__. If left empty, the default certificate bundle will be used.
 
 If in doubt, leave this setting empty.
 
@@ -7735,21 +7735,21 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\
+- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
 
-\ **Example:**\
+\ **Example:**\ 
 
 ::
 
     ProjectSettings.set("category/property_name", 0)
-
+    
     var property_info = {
         "name": "category/property_name",
         "type": TYPE_INT,
         "hint": PROPERTY_HINT_ENUM,
         "hint_string": "one,two,three"
     }
-
+    
     ProjectSettings.add_property_info(property_info)
 
 .. rst-class:: classref-item-separator
@@ -7788,7 +7788,7 @@ Returns the order of a configuration value (influences when saved to the config 
 
 Returns the value of a setting.
 
-\ **Example:**\
+\ **Example:**\ 
 
 ::
 
@@ -7948,7 +7948,7 @@ void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class
 
 Sets the value of a setting.
 
-\ **Example:**\
+\ **Example:**\ 
 
 ::
 

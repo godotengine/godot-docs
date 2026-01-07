@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Custom drawing in 2D <../tutorials/2d/custom_drawing_in_2d>`
 
-- `All 2D Demos <https://github.com/godotengine/godot-demo-projects/tree/3.5/2d>`__
+- `All 2D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/2d>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -36,7 +36,7 @@ Tutorials
 
 - `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
 
-- `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/3.5/3d>`__
+- `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
 
 .. rst-class:: classref-reftable-group
 

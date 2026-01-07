@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
-- `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/3.5/audio/mic_record>`__
+- `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`__
 
 .. rst-class:: classref-reftable-group
 
