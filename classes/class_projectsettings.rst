@@ -1269,6 +1269,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/use_edge_connections<class_ProjectSettings_property_navigation/2d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/warnings/navmesh_cell_size_mismatch<class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch>`                                                                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/warnings/navmesh_edge_merge_errors<class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors>`                                                                   | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_cell_height<class_ProjectSettings_property_navigation/3d/default_cell_height>`                                                                                                 | ``0.25``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/default_cell_size<class_ProjectSettings_property_navigation/3d/default_cell_size>`                                                                                                     | ``0.25``                                                                                         |
@@ -1282,6 +1286,10 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`navigation/3d/merge_rasterizer_cell_scale<class_ProjectSettings_property_navigation/3d/merge_rasterizer_cell_scale>`                                                                                 | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/use_edge_connections<class_ProjectSettings_property_navigation/3d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/warnings/navmesh_cell_size_mismatch<class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch>`                                                                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/warnings/navmesh_edge_merge_errors<class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors>`                                                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/avoidance/thread_model/avoidance_use_high_priority_threads<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_high_priority_threads>`                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -9712,6 +9720,30 @@ If enabled 2D navigation regions will use edge connections to connect with other
 
 ----
 
+.. _class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/2d/warnings/navmesh_cell_size_mismatch** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/warnings/navmesh_cell_size_mismatch>`
+
+If ``true``, the navigation system will print warnings when a navigation mesh with a small cell size is used on a navigation map with a larger size as this commonly causes rasterization errors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/2d/warnings/navmesh_edge_merge_errors** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/warnings/navmesh_edge_merge_errors>`
+
+If ``true``, the navigation system will print warnings about navigation mesh edge merge errors occurring in navigation regions or maps.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_navigation/3d/default_cell_height:
 
 .. rst-class:: classref-property
@@ -9791,6 +9823,30 @@ Default merge rasterizer cell scale for 3D navigation maps. See :ref:`Navigation
 :ref:`bool<class_bool>` **navigation/3d/use_edge_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/use_edge_connections>`
 
 If enabled 3D navigation regions will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin. This setting only affects World3D default navigation maps.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/3d/warnings/navmesh_cell_size_mismatch** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/warnings/navmesh_cell_size_mismatch>`
+
+If ``true``, the navigation system will print warnings when a navigation mesh with a small cell size (or in 3D height) is used on a navigation map with a larger size as this commonly causes rasterization errors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/3d/warnings/navmesh_edge_merge_errors** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/warnings/navmesh_edge_merge_errors>`
+
+If ``true``, the navigation system will print warnings about navigation mesh edge merge errors occurring in navigation regions or maps.
 
 .. rst-class:: classref-item-separator
 
@@ -12186,7 +12242,7 @@ Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv>`
 
-The subdivision amount of the first quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the first quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12198,7 +12254,7 @@ The subdivision amount of the first quadrant on the shadow atlas. See the `docum
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv>`
 
-The subdivision amount of the second quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the second quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12210,7 +12266,7 @@ The subdivision amount of the second quadrant on the shadow atlas. See the `docu
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv>`
 
-The subdivision amount of the third quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the third quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12222,7 +12278,7 @@ The subdivision amount of the third quadrant on the shadow atlas. See the `docum
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv>`
 
-The subdivision amount of the fourth quadrant on the shadow atlas. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The subdivision amount of the fourth quadrant on the shadow atlas. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -12234,7 +12290,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas. See the `docu
 
 :ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size>`
 
-The size of the shadow atlas used for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` nodes. See the `documentation <../tutorials/tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
+The size of the shadow atlas used for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` nodes. See the `documentation <../tutorials/3d/lights_and_shadows.html#shadow-atlas>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
