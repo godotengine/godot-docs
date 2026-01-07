@@ -146,7 +146,7 @@ as the glTF import process, but with an extra step at the beginning.
     If this is problematic, consider using glTF scenes exported from Blender
     instead.
 
-To add collision to the object in godot add the suffix ``-col`` to the end of
+To add collision to the object in Godot, add the suffix ``-col`` to the end of
 the object name in blender.
 
 .. figure:: img/importing_3d_scenes_blender_object_name.webp
