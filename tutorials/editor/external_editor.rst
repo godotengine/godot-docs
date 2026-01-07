@@ -56,7 +56,7 @@ Some example **Exec Flags** for various editors include:
 +---------------------+-----------------------------------------------------+
 | Sublime Text        | ``{project} {file}:{line}:{col}``                   |
 +---------------------+-----------------------------------------------------+
-| Visual Studio*      | ``/edit "file"``                                    |
+| Visual Studio*      | ``/edit "{file}"``                                  |
 +---------------------+-----------------------------------------------------+
 
 \*: Arguments are not automatically detected, so you must fill them in manually.

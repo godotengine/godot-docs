@@ -122,7 +122,7 @@ the depth value for ``z``.
   use Vulkan NDCs with a Z-range of ``[0.0, 1.0]``. In contrast, the Compatibility
   renderer uses OpenGL NDCs with a Z-range of ``[-1.0, 1.0]``. For the Compatibility
   renderer, replace the NDC calculation with this instead:
-  
+
   .. code-block:: glsl
 
     vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
@@ -154,7 +154,7 @@ the distance to the point.
 Because the camera is facing the negative ``z`` direction, the position will have a negative ``z`` value.
 In order to get a usable depth value, we have to negate ``view.z``.
 
-The world position can be constructed from the depth buffer using the following code, using the 
+The world position can be constructed from the depth buffer using the following code, using the
 ``INV_VIEW_MATRIX`` to transform the position from view space into world space.
 
 .. code-block:: glsl
@@ -168,8 +168,8 @@ The world position can be constructed from the depth buffer using the following 
 Example shader
 --------------
 
-Once we add a line to output to ``ALBEDO``, we have a complete shader that looks something like this. 
-This shader lets you visualize the linear depth or world space coordinates, depending on which 
+Once we add a line to output to ``ALBEDO``, we have a complete shader that looks something like this.
+This shader lets you visualize the linear depth or world space coordinates, depending on which
 line is commented out.
 
 .. code-block:: glsl
@@ -223,8 +223,8 @@ Now, attach a script to the MeshInstance3D and use the following code:
     # Create a single triangle out of vertices:
     var verts = PackedVector3Array()
     verts.append(Vector3(-1.0, -1.0, 0.0))
-    verts.append(Vector3(-1.0, 3.0, 0.0))
     verts.append(Vector3(3.0, -1.0, 0.0))
+    verts.append(Vector3(-1.0, 3.0, 0.0))
 
     # Create an array of arrays.
     # This could contain normals, colors, UVs, etc.

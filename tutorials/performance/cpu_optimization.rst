@@ -101,7 +101,7 @@ the following:
     update_enemies()
 
     var time_end = Time.get_ticks_usec()
-    print("update_enemies() took %d microseconds" % time_end - time_start)
+    print("update_enemies() took %d microseconds" % (time_end - time_start))
 
  .. code-tab:: csharp
 

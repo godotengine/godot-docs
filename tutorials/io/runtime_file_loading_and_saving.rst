@@ -226,8 +226,7 @@ Since Godot 4.3, FBX scenes can also be loaded (but not saved) at runtime using 
 :ref:`class_fbxdocument` and :ref:`class_fbxstate` classes. The code to do so
 is the same as glTF, but you will need to replace all instances of
 ``GLTFDocument`` and ``GLTFState`` with ``FBXDocument`` and ``FBXState`` in the
-code samples below. There are `known issues <https://github.com/godotengine/godot/issues/96043>`__
-with runtime FBX loading, so using glTF instead is preferred for now.
+code samples below.
 
 Example of loading a glTF scene and appending its root node to the scene:
 

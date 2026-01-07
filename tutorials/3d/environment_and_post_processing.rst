@@ -673,7 +673,7 @@ There are 2 ways to use glow in 2D:
   and Mobile rendering methods. This has a performance cost, but it allows for a
   greater dynamic range. This also allows you to control which objects glow
   using their individual **Modulate** or **Self Modulate** properties (use the
-  RAW mode in the color picker). Enabling HDR can also reduce banding in the 2D
+  Intensity slider in the color picker). Enabling HDR can also reduce banding in the 2D
   rendering output.
 
   - To enable HDR in 2D, open the Project Settings, enable
@@ -696,7 +696,7 @@ There are 2 ways to use glow in 2D:
 
    Example of using glow in a 2D scene. HDR 2D is enabled, while coins and the
    bullet have their **Modulate** property increased to overbright values using the
-   RAW mode in the color picker.
+   Intensity slider in the color picker.
 
 .. warning::
 
