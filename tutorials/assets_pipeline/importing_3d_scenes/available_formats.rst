@@ -174,7 +174,7 @@ the object name in blender.
 .. seealso::
 
   See :ref:`doc_importing_3d_scenes_node_type_customization` for a more 
-  comprehensive overview on node type customization 
+  comprehensive overview on node type customization.
 
 Exporting DAE files from Blender
 --------------------------------
