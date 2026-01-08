@@ -124,8 +124,7 @@ advanced Project Settings.
 
 .. figure:: img/importing_3d_scenes_advanced_import_settings_checkbox.webp
    :align: center
-   :alt: Checkbox to enable blend files in Godot
-
+   :alt: Enabling/disabling .blend file import in the Project Settings
 
 The ``.blend`` import process converts to glTF first, so it still uses
 Godot's glTF import code. Therefore, the ``.blend`` import process is the same
@@ -147,7 +146,7 @@ as the glTF import process, but with an extra step at the beginning.
     instead.
 
 To add collision to the object in Godot, add the suffix ``-col`` to the end of
-the object name in blender.
+the object name in Blender.
 
 .. figure:: img/importing_3d_scenes_blender_object_name.webp
    :align: center
@@ -159,8 +158,8 @@ the object name in blender.
   :widths: auto
   :header-rows: 1
 
-  * - Collision Suffix
-    - Collision Type
+  * - Collision suffix
+    - Collision type
   
   * - ``-col``
     - :ref:`ConcavePolygonShape3D <class_ConcavePolygonShape3D>`
