@@ -268,8 +268,8 @@ follow the same size and alignment requirements as C function pointers.
 They have the following members:
 
 - ``return_value``: An object which has a ``type`` (which may include modifiers) and ``description``.
-  It will always be given, and use ``void`` as the ``type`` if the function returns no value.
-- ``arguments``: An array of function arguments which each has a ``type`` (which may include modifiers),
+  If the function has no return value, this will be omitted.
+- ``arguments`` (required): An array of function arguments which each has a ``type`` (which may include modifiers),
   ``name``, and ``description``.
 
 
@@ -281,9 +281,6 @@ Example
     {
         "name": "GDExtensionPtrConstructor",
         "kind": "function",
-        "return_value": {
-            "type": "void"
-        },
         "arguments": [
             {
                 "name": "p_base",
@@ -306,7 +303,7 @@ passed to all GDExtensions when they are loaded.
 Interface functions have some of the same keys as types, including ``name`` (required),
 ``deprecated``, and ``description``.
 
-And they also have ``return_value`` (required) and ``arguments`` (required) that have the same format
+And they also have ``return_value`` and ``arguments`` (required) that have the same format
 as the equivalent keys on function types (as described in the previous section).
 
 There are only a handful of unique keys:
@@ -327,9 +324,6 @@ Example
 
     {
         "name": "get_godot_version",
-        "return_value": {
-            "type": "void"
-        },
         "arguments": [
             {
                 "name": "r_godot_version",
