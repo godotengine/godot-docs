@@ -107,11 +107,12 @@ Add an ``_unhandled_input`` function to check for camera movement and then rotat
 
 
     func _unhandled_input(event: InputEvent) -> void:
+        # Mouselook implemented using `screen_relative` for resolution-independent sensitivity.
         if event is InputEventMouseMotion:
-            _camera_pivot.rotation.x -= event.relative.y * mouse_sensitivity
+            _camera_pivot.rotation.x -= event.screen_relative.y * mouse_sensitivity
             # Prevent the camera from rotating too far up or down.
             _camera_pivot.rotation.x = clampf(_camera_pivot.rotation.x, -tilt_limit, tilt_limit)
-            _camera_pivot.rotation.y += -event.relative.x * mouse_sensitivity
+            _camera_pivot.rotation.y += -event.screen_relative.x * mouse_sensitivity
 
 By rotating the pivot point, the spring arm will also be rotated and it will change where the camera is positioned.
 Run the game and notice that mouse movement now rotates the camera around the character. If the camera moves into a wall, it collides with it.
