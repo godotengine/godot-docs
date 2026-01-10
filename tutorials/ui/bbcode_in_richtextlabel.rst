@@ -1209,7 +1209,7 @@ Matrix
         var dirty_time = char_fx.env.get("dirty", 1.0)
         var text_span = char_fx.env.get("span", 50)
 
-        var value = char_fx.glyph_index
+        var value = get_text_server().font_get_char_from_glyph_index(char_fx.font, 1, char_fx.glyph_index)
 
         var matrix_time = fmod(char_fx.elapsed_time + (char_fx.range.x / float(text_span)), \
                                clear_time + dirty_time)
