@@ -26,7 +26,7 @@ debugger broke on.
 
     You can create a breakpoint by clicking the gutter in the left of the script
     editor (on the left of the line numbers). When hovering this gutter, you
-    will see a transparent red dot appearing, which turns into an opaque red dot
+    will see a translucent red dot appearing, which turns into an opaque red dot
     after the breakpoint is placed by clicking. Click the red dot again to
     remove the breakpoint. Breakpoints created this way persist across editor
     restarts, even if the script wasn't saved when exiting the editor.
