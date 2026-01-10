@@ -418,6 +418,8 @@ Override this virtual method to implement a custom skeleton modifier. You should
 
 \ ``delta`` is passed from parent :ref:`Skeleton3D<class_Skeleton3D>`. See also :ref:`Skeleton3D.advance()<class_Skeleton3D_method_advance>`.
 
+\ **Note:** This method may be called outside :ref:`Node._process()<class_Node_private_method__process>` and :ref:`Node._physics_process()<class_Node_private_method__physics_process>` with ``delta`` is ``0.0``, since the modification should be processed immediately after initialization of the :ref:`Skeleton3D<class_Skeleton3D>`.
+
 .. rst-class:: classref-item-separator
 
 ----

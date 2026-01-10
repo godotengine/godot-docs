@@ -225,6 +225,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`relationship_line_color<class_Tree_theme_color_relationship_line_color>`           | ``Color(0.27, 0.27, 0.27, 1)``      |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`scroll_hint_color<class_Tree_theme_color_scroll_hint_color>`                       | ``Color(0, 0, 0, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`title_button_color<class_Tree_theme_color_title_button_color>`                     | ``Color(0.875, 0.875, 0.875, 1)``   |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                               |
@@ -1623,6 +1625,18 @@ The :ref:`Color<class_Color>` of the relationship lines between the selected :re
 :ref:`Color<class_Color>` **relationship_line_color** = ``Color(0.27, 0.27, 0.27, 1)`` :ref:`🔗<class_Tree_theme_color_relationship_line_color>`
 
 The default :ref:`Color<class_Color>` of the relationship lines.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_color_scroll_hint_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **scroll_hint_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Tree_theme_color_scroll_hint_color>`
+
+:ref:`Color<class_Color>` used to modulate the :ref:`scroll_hint<class_Tree_theme_icon_scroll_hint>` texture.
 
 .. rst-class:: classref-item-separator
 
