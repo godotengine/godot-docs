@@ -67,4 +67,14 @@ Alternatively, it's possible to ask the viewport for the mouse position:
 
     GetViewport().GetMousePosition();
 
-.. note:: When the mouse mode is set to ``Input.MOUSE_MODE_CAPTURED``, the ``event.position`` value from ``InputEventMouseMotion`` is the center of the screen. Use ``event.relative`` instead of ``event.position`` and ``event.velocity`` to process mouse movement and position changes.
+.. note::
+
+    When the mouse mode is set to ``Input.MOUSE_MODE_CAPTURED``, the ``event.position``
+    value from ``InputEventMouseMotion`` is the center of the screen.
+    Use ``event.relative`` instead of ``event.position`` and ``event.velocity``
+    to process mouse movement and position changes.
+
+    When implementing features such as mouselook, it's recommended to use
+    ``event.screen_relative`` and ``event.screen_velocity`` instead of ``event.relative``
+    and ``event.velocity`` so that mouse movement behaves the same across
+    :ref:`multiple resolutions <doc_multiple_resolutions>`.

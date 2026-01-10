@@ -350,8 +350,8 @@ Example of looking around, FPS style:
     func _input(event):
         if event is InputEventMouseMotion and event.button_mask & 1:
             # modify accumulated mouse rotation
-            rot_x -= event.relative.x * LOOKAROUND_SPEED
-            rot_y -= event.relative.y * LOOKAROUND_SPEED
+            rot_x -= event.screen_relative.x * LOOKAROUND_SPEED
+            rot_y -= event.screen_relative.y * LOOKAROUND_SPEED
             transform.basis = Basis() # reset rotation
             rotate_object_local(Vector3(0, 1, 0), rot_x) # first rotate in Y
             rotate_object_local(Vector3(1, 0, 0), rot_y) # then rotate in X
@@ -367,8 +367,8 @@ Example of looking around, FPS style:
         if (@event is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
-            _rotationX -= mouseMotion.Relative.X * LookAroundSpeed;
-            _rotationY -= mouseMotion.Relative.Y * LookAroundSpeed;
+            _rotationX -= mouseMotion.ScreenRelative.X * LookAroundSpeed;
+            _rotationY -= mouseMotion.ScreenRelative.Y * LookAroundSpeed;
 
             // reset rotation
             Transform3D transform = Transform;
