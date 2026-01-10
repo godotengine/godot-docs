@@ -1992,6 +1992,9 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 - :ref:`bool<class_bool>` **is_using_hdr_2d**\ (\ )
 
 If ``true``, 2D rendering will use a high dynamic range (HDR) ``RGBA16`` format framebuffer. Additionally, 2D rendering will be performed on linear values and will be converted using the appropriate transfer function immediately before blitting to the screen (if the Viewport is attached to the screen).
+In this context, "attached to the screen" means a Viewport that is directly shown in the game window (for example, the root Viewport), not a Viewport used only in the background.
+
+
 
 Practically speaking, this means that the end result of the Viewport will not be clamped to the ``0-1`` range and can be used in 3D rendering without color encoding adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
