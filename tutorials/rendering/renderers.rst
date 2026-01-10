@@ -331,7 +331,7 @@ See :ref:`doc_shading_reference` for more information.
 | Depth texture           | ✔️ Supported.            | ✔️ Supported.            | ✔️ Supported.            |
 |                         |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
-| Normal/Roughness texture| ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Normal/Roughness buffer | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Compute shaders         | ❌ Not supported.        | ⚠️ Supported, but comes  | ✔️ Supported.            |
 |                         |                          | with a performance       |                          |
