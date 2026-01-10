@@ -447,3 +447,15 @@ with the parent particle's velocity at the time the sub-emitter is created.
 
 See the :ref:`Sub-emitters <doc_3d_particles_subemitters>` section in this manual for a detailed explanation of how
 to add a sub-emitter to a particle system.
+
+Customizing the process material
+--------------------------------
+
+If you need to change or implement new behaviors in shader code, you can do so by converting
+the current ParticleProcessMaterial to a :ref:`class_ShaderMaterial`. Existing properties
+are preserved by the conversion process. Features that are enabled will also affect
+what's present in the converted shader code.
+
+To do so, right-click on the material in the FileSystem dock and choose
+**Convert to ShaderMaterial**. You can also do so by right-clicking on any
+property holding a reference to the material in the inspector.
