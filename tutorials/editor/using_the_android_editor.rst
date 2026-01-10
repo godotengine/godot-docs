@@ -68,8 +68,6 @@ Limitations & known issues
 
 Here are the known limitations and issues of the Android editor:
 
-- No gradle build support.
-- No support for Android plugins as they require gradle build support. GDExtensions plugins are supported.
 - No C#/Mono support.
 - No support for external script editors.
 - While available, the Forward+ renderer is not recommended due to severe performance issues.
