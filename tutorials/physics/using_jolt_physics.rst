@@ -9,13 +9,14 @@ Introduction
 The Jolt physics engine was added as an alternative to the existing Godot Physics
 physics engine in 4.4. Jolt is developed by Jorrit Rouwe with a focus on games and
 VR applications. Previously it was available as an extension but is now built into
-Godot.
+Godot. By default, new projects will use it as the physics engine.
 
 The existing extension is now considered in maintenance mode. That means bug fixes
 will be merged, and it will be kept compatible with new versions of Godot until
-the built-in module has feature parity with the extension. The extension can be
-found `here on GitHub <https://github.com/godot-jolt/godot-jolt>`_ and in Godot's asset
-library.
+the built-in module has feature parity with the extension. The only thing missing at
+this point is related joints, which you can read about on this page. The extension
+can be found `here on GitHub <https://github.com/godot-jolt/godot-jolt>`_ and in
+Godot's asset library.
 
 To change the 3D physics engine to be Jolt Physics, set
 :ref:`Project Settings > Physics > 3D > Physics Engine<class_ProjectSettings_property_physics/3D/Physics_Engine>`
