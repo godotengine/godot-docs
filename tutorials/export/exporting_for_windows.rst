@@ -26,6 +26,8 @@ settings, and convert it to an ICO file for the exported project. If you want to
 manually create an ICO file for greater control over how the icon looks at different
 resolutions then see the :ref:`doc_changing_application_icon_for_windows` page.
 
+.. _doc_exporting_for_windows_code_signing:
+
 Code signing
 ------------
 

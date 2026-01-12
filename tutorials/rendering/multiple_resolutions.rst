@@ -481,15 +481,17 @@ Mobile game in portrait mode
     here. For instance, you can set the base window width to ``960`` and the
     base window height to ``1280``.
 
+.. _doc_multiple_resolutions_non_game_application:
+
 Non-game application
 ~~~~~~~~~~~~~~~~~~~~
 
 - Set the base window width and height to the smallest window size that you intend to target.
   This is not required, but this ensures that you design your UI with small window sizes in mind.
 - Keep the stretch mode to its default value, ``disabled``.
-- Keep the stretch aspect to its default value, ``ignore``
+- Keep the stretch aspect to its default value, ``keep``
   (its value won't be used since the stretch mode is ``disabled``).
-- You can define a minimum window size by calling ``get_window().set_min_size()`` in a
+- You can define a minimum window size by setting ``get_window().min_size`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
 - Add a setting in the application's settings to change the root viewport's

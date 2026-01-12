@@ -471,13 +471,7 @@ Is it possible to use Godot to create non-game applications?
 Yes! Godot features an extensive built-in UI system, and its small distribution
 size can make it a suitable alternative to frameworks like Electron or Qt.
 
-When creating a non-game application, make sure to enable
-:ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
-in the Project Settings to decrease CPU and GPU usage.
-
-Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
-`Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
-open source applications made with Godot.
+See :ref:`doc_creating_applications` for more information.
 
 .. _doc_faq_use_godot_as_library:
 
