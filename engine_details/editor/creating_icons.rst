@@ -50,7 +50,7 @@ Otherwise, your icon may become difficult to read on a light background.
 
 .. note::
 
-	To simplify designing process, you can use tools from this
+	To simplify the design process, you can use tools from this
 	`unofficial project <https://github.com/OS-of-S/Inkscape-Tools-for-Godot-Editor-Designing>`__,
 	that provides Godot palettes, which can be imported into Inkscape,
 	and an Inkscape extension to check its look for different themes.
