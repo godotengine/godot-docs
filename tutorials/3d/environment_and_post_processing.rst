@@ -158,6 +158,8 @@ There are several background modes available:
 - **Keep** does not draw any sky, keeping what was present on previous frames
   instead. This improves performance in purely indoor scenes, but creates a
   "hall of mirrors" visual glitch if the sky is visible at any time.
+  - **Camera Feed** displays a :ref:`class_CameraFeed` from a physical camera as the
+  background, useful for AR games on mobile devices.
 
 Sky materials
 ~~~~~~~~~~~~~
@@ -268,58 +270,6 @@ Reflected light can be set to one of 3 modes:
   mode other than **Sky**. If the background mode is already **Sky**, this mode
   behaves identically to **Background**.
 
-Fog
-~~~
-
-.. note::
-
-    This section refers to non-volumetric fog only.
-    It is possible to use both non-volumetric fog and :ref:`doc_volumetric_fog`
-    at the same time.
-
-Fog, as in real life, makes distant objects fade away into a uniform color.
-There are two kinds of fog in Godot:
-
-- **Depth Fog:** This one is applied based on the distance from the camera.
-- **Height Fog:** This one is applied to any objects below (or above) a certain
-  height, regardless of the distance from the camera.
-
-.. image:: img/environment_fog_depth_height.webp
-
-Both of these fog types can have their curve tweaked, making their transition more or less sharp.
-
-Two properties can be tweaked to make the fog effect more interesting:
-
-The first is **Sun Scatter**, which makes use of the DirectionalLight3D's color
-and energy in the current scene. When looking towards the directional light
-(usually a sun), the fog will be tinted according to the light's color to
-simulate the sunlight passing through the fog.
-
-The second is **Aerial Perspective**, which tints the fog color according to the
-sky color to better blend the sky with the background. Higher values will result
-in more tinting, with ``1.0`` fully replacing the regular fog color with aerial
-perspective. This can be used in large open world levels to provide a better
-sense of depth, or to avoid color discontinuities between the sky and fog colors.
-
-If both **Sun Scatter** and **Aerial Perspective** are greater than ``0.0``, sun
-scattering is applied on top of aerial perspective.
-
-.. note::
-
-    Fog can cause banding to appear on the viewport, especially at
-    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
-    for guidance on reducing banding.
-
-Volumetric Fog
-~~~~~~~~~~~~~~
-
-Volumetric fog provides a realistic fog effect to the scene, with fog color
-being affected by the lights that traverse the fog.
-
-.. seealso::
-
-  See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
-
 Tonemap
 ~~~~~~~
 
@@ -348,8 +298,7 @@ The tone mapping options are:
   - **AgX:** Uses a film-like tonemapping curve and desaturates bright values
     for a more realistic appearance. Better than other tonemappers at
     maintaining the hue of colors as they become brighter. The slowest
-    tonemapping option. **White** is fixed at a value of ``16.29``,
-    which makes AgX unsuitable for use with the Mobile rendering method.
+    tonemapping option.
 
 - **Exposure:** Adjusts the brightness of values before they are provided to
   the tonemapper. Higher **Exposure** values result in a brighter image.
@@ -362,7 +311,13 @@ The tone mapping options are:
   For photorealistic lighting, recommended values are between ``6.0`` and
   ``8.0``. Higher values result in less blown out highlights, but may make the
   scene appear lower contrast. **White** is not available when using
-  **Linear** or **AgX**.
+  **Linear**. If you're using AGX, the mobile renderer, and HDR 2D is disabled,
+  then the value set here will be ignored, and a value of ``2.0`` will be used
+  instead.
+
+- **AGX Contrast:** Only available when using AGX. Increasing this makes dark values
+  darker, and bright values brighter. It creates better results than the contrast
+  option in the adjustment section at no additional performance cost.
 
 Mid- and post-processing effects
 --------------------------------
@@ -752,6 +707,58 @@ To use glow as a blurring solution:
 
    Example of using glow to blur the 2D rendering in the menu's background
 
+Fog
+~~~
+
+.. note::
+
+    This section refers to non-volumetric fog only.
+    It is possible to use both non-volumetric fog and :ref:`doc_volumetric_fog`
+    at the same time.
+
+Fog, as in real life, makes distant objects fade away into a uniform color.
+There are two kinds of fog in Godot:
+
+- **Depth Fog:** This one is applied based on the distance from the camera.
+- **Height Fog:** This one is applied to any objects below (or above) a certain
+  height, regardless of the distance from the camera.
+
+.. image:: img/environment_fog_depth_height.webp
+
+Both of these fog types can have their curves tweaked, making their transition more or less sharp.
+
+Two properties can be tweaked to make the fog effect more interesting:
+
+The first is **Sun Scatter**, which makes use of the DirectionalLight3D's color
+and energy in the current scene. When looking toward the directional light
+(usually a sun), the fog will be tinted according to the light's color to
+simulate the sunlight passing through the fog.
+
+The second is **Aerial Perspective**, which tints the fog color according to the
+sky color to better blend the sky with the background. Higher values will result
+in more tinting, with ``1.0`` fully replacing the regular fog color with aerial
+perspective. This can be used in large open world levels to provide a better
+sense of depth, or to avoid color discontinuities between the sky and fog colors.
+
+If both **Sun Scatter** and **Aerial Perspective** are greater than ``0.0``, sun
+scattering is applied on top of aerial perspective.
+
+.. note::
+
+    Fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
+
+Volumetric Fog
+~~~~~~~~~~~~~~
+
+Volumetric fog provides a realistic fog effect to the scene, with fog color
+being affected by the lights that traverse the fog.
+
+.. seealso::
+
+  See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
+
 Adjustments
 ~~~~~~~~~~~
 
@@ -834,6 +841,11 @@ For example, modifying the LUT template in an image editor to give it a
 Camera attribute options
 ------------------------
 
+Godot has two kinds of camera attributes, physical and practical. When using
+CameraAttributesPhysical instead of CameraAttributesPractical, depth of field is
+automatically computed from the camera attributes' focus distance, focal length, and
+aperture. In addition, Frutsum options are available.
+
 Depth of Field / Far Blur
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -864,12 +876,6 @@ given object, or create a so-called
 `"tilt shift" effect <https://en.wikipedia.org/wiki/Miniature_faking>`__.
 
 .. image:: img/environment_mixed_blur.webp
-
-.. note::
-
-    When using CameraAttributesPhysical instead of CameraAttributesPractical,
-    depth of field is automatically computed from the camera attributes' focus
-    distance, focal length, and aperture.
 
 Exposure
 ~~~~~~~~
