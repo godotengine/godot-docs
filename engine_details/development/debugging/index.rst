@@ -1,7 +1,7 @@
 :allow_comments: False
 
-Debugging and profiling
-=======================
+Debugging
+=========
 
 This section contains pages that provide guidance if you're looking at the
 engine code trying to find an underlying issue or an optimization possibility.
@@ -10,7 +10,6 @@ engine code trying to find an underlying issue or an optimization possibility.
    :maxdepth: 1
    :name: toc-devel-cpp-debug-profiling
 
-   using_cpp_profilers
    using_sanitizers
    macos_debug
    vulkan/index

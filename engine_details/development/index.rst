@@ -16,4 +16,5 @@ If you plan to contribute to the engine, please make sure to also read the
    configuring_an_ide/index
    compiling/index
    debugging/index
+   profiling/index
    handling_compatibility_breakages
