@@ -163,10 +163,10 @@ clicked. For that, we'll need a script that extends from
         @tool
 
         # Icons are optional.
-        # Alternativelly, you may use the UID of the icon or the absolute path.
+        # Alternatively, you may use the UID of the icon or the absolute path.
         @icon("icon.png")
 
-        # Automatically register the node in the Add Child dialog
+        # Automatically register the node in the Create New Node dialog
         # and make it available for use with other scripts.
         class_name MyButton
         extends Button
@@ -187,10 +187,10 @@ clicked. For that, we'll need a script that extends from
         [Tool]
 
         // Icons are optional.
-        // Alternativelly, you may use the UID of the icon or the absolute path.
+        // Alternatively, you may use the UID of the icon or the absolute path.
         [Icon("icon.png")]
 
-        // Automatically register the node in the Add Child dialog
+        // Automatically register the node in the Create New Node dialog
         // and make it available for use with other scripts.
         [GlobalClass]
         public partial class MyButton : Button
