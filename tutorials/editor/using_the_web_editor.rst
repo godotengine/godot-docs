@@ -18,29 +18,19 @@ Browser support
 ---------------
 
 The Web editor requires support for WebAssembly's SharedArrayBuffer. This
-is in turn required to support threading in the browser. The following desktop
-browsers support WebAssembly threading and can therefore run the web editor:
+is in turn required to support threading in the browser.
 
-- Chrome 68 or later
-- Firefox 79 or later
-- Edge 79 or later
+See :ref:`doc_system_requirements` for a list of supported web browsers.
+Mobile browsers are supported, but won't provide an ideal experience
+due to performance and input limitations.
 
-.. UPDATE: Not supported yet. When Opera, Safari, or mobile browsers are
-.. supported, update or remove these paragraphs.
-
-Opera and Safari are not supported yet. Safari may work in the future once
-proper threading support is added.
-
-**Mobile browsers are currently not supported.**
-
-The web editor only supports the Compatibility rendering method, as there is no
+The web editor only supports the Compatibility renderer, as there is no
 stable way to run Vulkan applications on the web yet.
 
 .. note::
 
-    If you use Linux, due to
-    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
-    it's recommended to use a Chromium-based browser instead of Firefox.
+    Chromium-based browsers generally deliver the best performance in WebGL
+    applications, so using one of those is recommended.
 
 .. _doc_using_the_web_editor_limitations:
 

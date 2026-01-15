@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_customizing_html5_shell:
 
 Custom HTML page for Web export
@@ -89,7 +87,7 @@ The following optional placeholders will enable some extra features in your cust
   based on the splash project settings.
   The following settings from **Project Settings > Application > Boot Splash** are provided,
   represented by the class names shown below depending on the setting's boolean value:
-  
+
   - :ref:`Show Image <class_ProjectSettings_property_application/boot_splash/show_image>`:
     ``show-image--true``, ``show-image--false``
   - :ref:`Stretch Mode <class_ProjectSettings_property_application/boot_splash/stretch_mode>`:
