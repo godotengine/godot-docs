@@ -21,10 +21,7 @@ on desktop or mobile, as well as on the web.
 You can also create console games with it, although you either need strong
 programming skills or a developer to port the game for you.
 
-.. note:: The Godot team can't provide an open source console export due to the
-          licensing terms imposed by console manufacturers. Regardless of the
-          engine you use, though, releasing games on consoles is always a lot of
-          work. You can read more on that here: :ref:`doc_consoles`.
+.. note:: For information about console support, see the `Godot website <https://godotengine.org/consoles/>`_.
 
 What can the engine do?
 -----------------------

@@ -62,10 +62,7 @@ being the default. Official macOS builds support Apple Silicon natively as well 
 Some users also report building and using Godot successfully on ARM-based
 systems with Linux, like the Raspberry Pi.
 
-The Godot team can't provide an open source console export due to the licensing
-terms imposed by console manufacturers. Regardless of the engine you use,
-though, releasing games on consoles is always a lot of work. You can read more
-about :ref:`doc_consoles`.
+For information about console support, see the `Godot website <https://godotengine.org/consoles/>`__.
 
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>`
 and :ref:`compiling Godot yourself <toc-devel-compiling>`.
@@ -624,4 +621,4 @@ See `How to contribute <https://contributing.godotengine.org/en/latest/organizat
 Who is working on Godot? How can I contact you?
 -----------------------------------------------
 
-See the corresponding page on the `Godot website <https://godotengine.org/contact>`_.
+See the corresponding page on the `Godot website <https://godotengine.org/contact>`__.

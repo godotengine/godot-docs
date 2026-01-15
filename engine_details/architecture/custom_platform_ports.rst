@@ -14,8 +14,9 @@ it does not use the :ref:`class_DisplayServer` abstraction that is new in Godot 
 
 Some reasons to create custom platform ports might be:
 
-- You want to :ref:`port your game to consoles <doc_consoles>`, but wish to
-  write the platform layer yourself. This is a long and arduous process, as it
+- You want to port your game to consoles
+  (see also the `Godot website on console support <https://godotengine.org/consoles/>`_),
+  but wish to write the platform layer yourself. This is a long and arduous process, as it
   requires signing NDAs with console manufacturers, but it allows you to have
   full control over the console porting process.
 - You want to port Godot to an exotic platform that isn't currently supported.

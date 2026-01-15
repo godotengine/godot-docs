@@ -20,4 +20,3 @@ are some platform-specific considerations, which are covered in this section.
    android/index
    ios/index
    web/index
-   consoles
