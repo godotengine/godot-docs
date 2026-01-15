@@ -153,11 +153,11 @@ on the corresponding tab above the viewport.
 Select one of the instanced Ball nodes and, in the :ui:`Inspector`, set its
 :inspector:`Gravity Scale` value to ``10``.
 
-.. image:: img/instancing_property_gravity_scale.png
+.. image:: img/instancing_property_gravity_scale.webp
 
 A grey "revert" button appears next to the adjusted property.
 
-.. image:: img/instancing_property_revert_icon.png
+.. image:: img/instancing_property_revert_icon.webp
 
 This icon indicates you are overriding a value from the source packed scene.
 Even if you modify the property in the original scene, the value override will
