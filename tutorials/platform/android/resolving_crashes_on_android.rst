@@ -98,6 +98,16 @@ You can also symbolicate the crash logs manually using the `ndk-stack <https://d
 
 1. Extract the native debug symbols zip you downloaded earlier (or generated with your custom build).
 2. Save your crash log to a text file (for example, ``crash.txt``).
+
+.. important::
+
+    ``ndk-stack`` looks for an initial line of asterisks when parsing the crash log.
+    Make sure your ``crash.txt`` starts with the following line:
+
+    ::
+
+        *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+
 3. Run ndk-stack with the path to the symbol directory that matches the crash's CPU architecture (for example, ``arm64-v8a``):
 
 ::
