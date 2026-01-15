@@ -3860,6 +3860,8 @@ Sets a custom mouse cursor image for the given ``shape``. This means the user's 
 
 \ ``cursor`` can be either a :ref:`Texture2D<class_Texture2D>` or an :ref:`Image<class_Image>`, and it should not be larger than 256×256 to display correctly. Optionally, ``hotspot`` can be set to offset the image's position relative to the click point. By default, ``hotspot`` is set to the top-left corner of the image. See also :ref:`cursor_set_shape()<class_DisplayServer_method_cursor_set_shape>`.
 
+\ **Note:** On Web, calling this method every frame can cause the cursor to flicker.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -21,12 +21,14 @@ Description
 
 A regular expression (or regex) is a compact language that can be used to recognize strings that follow a specific pattern, such as URLs, email addresses, complete sentences, etc. For example, a regex of ``ab[0-9]`` would find any string that is ``ab`` followed by any number from ``0`` to ``9``. For a more in-depth look, you can easily find various tutorials and detailed explanations on the Internet.
 
-To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile()<class_RegEx_method_compile>` before it can be used.
+To begin, the RegEx object needs to be compiled with the search pattern using :ref:`compile()<class_RegEx_method_compile>` before it can be used. Alternatively, the static method :ref:`create_from_string()<class_RegEx_method_create_from_string>` can be used to create and compile a RegEx object in a single method call.
 
 ::
 
     var regex = RegEx.new()
     regex.compile("\\w-(\\d+)")
+    # Shorthand to create and compile a regex (used in the examples below):
+    var regex2 = RegEx.create_from_string("\\w-(\\d+)")
 
 The search pattern must be escaped first for GDScript before it is escaped for the expression. For example, ``compile("\\d+")`` would be read by RegEx as ``\d+``. Similarly, ``compile("\"(?:\\\\.|[^\"])*\"")`` would be read as ``"(?:\\.|[^"])*"``. In GDScript, you can also use raw string literals (r-strings). For example, ``compile(r'"(?:\\.|[^"])*"')`` would be read the same.
 
@@ -34,8 +36,7 @@ Using :ref:`search()<class_RegEx_method_search>`, you can find the pattern withi
 
 ::
 
-    var regex = RegEx.new()
-    regex.compile("\\w-(\\d+)")
+    var regex = RegEx.create_from_string("\\w-(\\d+)")
     var result = regex.search("abc n-0123")
     if result:
         print(result.get_string()) # Prints "n-0123"
@@ -46,8 +47,7 @@ This version of RegEx also supports named capturing groups, and the names can be
 
 ::
 
-    var regex = RegEx.new()
-    regex.compile("d(?<digit>[0-9]+)|x(?<digit>[0-9a-f]+)")
+    var regex = RegEx.create_from_string("d(?<digit>[0-9]+)|x(?<digit>[0-9a-f]+)")
     var result = regex.search("the number is x2f")
     if result:
         print(result.get_string("digit")) # Prints "2f"
@@ -64,8 +64,7 @@ If you need to process multiple results, :ref:`search_all()<class_RegEx_method_s
 
 ::
 
-    var regex = RegEx.new()
-    regex.compile("\\S+") # Negated whitespace character class.
+    var regex = RegEx.create_from_string("\\S+") # Negated whitespace character class.
     var results = []
     for result in regex.search_all("One  Two \n\tThree"):
         results.push_back(result.get_string())

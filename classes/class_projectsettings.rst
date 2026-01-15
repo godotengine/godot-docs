@@ -5730,7 +5730,7 @@ Font glyph subpixel positioning mode for the default project font. See :ref:`Fon
 
 The default scale factor for :ref:`Control<class_Control>`\ s, when not overridden by a :ref:`Theme<class_Theme>`.
 
-\ **Note:** This property is only read when the project starts. To change the default scale at runtime, set :ref:`ThemeDB.fallback_base_scale<class_ThemeDB_property_fallback_base_scale>` instead.
+\ **Note:** This property is only read when the project starts. To change the default theme scale at runtime, set :ref:`ThemeDB.fallback_base_scale<class_ThemeDB_property_fallback_base_scale>` instead. However, to adjust the scale of all 2D elements at runtime, it's preferable to use :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>` on the root :ref:`Window<class_Window>` node instead (as this also affects overridden :ref:`Theme<class_Theme>`\ s). See :doc:`Multiple resolutions <../tutorials/rendering/multiple_resolutions>` in the documentation for details.
 
 .. rst-class:: classref-item-separator
 
