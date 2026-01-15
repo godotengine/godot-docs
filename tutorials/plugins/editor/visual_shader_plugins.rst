@@ -39,10 +39,14 @@ all you need to initialize your plugin.
 
 
     func _get_name():
+        # This must be a valid identifier and should follow PascalCase naming conventions.
+        # The name must start with a letter, and spaces in the name are *not* allowed.
         return "PerlinNoise3D"
 
 
     func _get_category():
+        # This must be a valid identifier and should follow PascalCase naming conventions.
+        # The category must start with a letter, and spaces in the category are *not* allowed.
         return "MyShaderNodes"
 
 
