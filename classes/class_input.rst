@@ -147,7 +147,7 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`set_gyroscope<class_Input_method_set_gyroscope>`\ (\ value\: :ref:`Vector3<class_Vector3>`\ )                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                                 | :ref:`set_joy_light<class_Input_method_set_joy_light>`\ (\ device\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                     |
+   | |void|                                                                  | :ref:`set_joy_light<class_Input_method_set_joy_light>`\ (\ device\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`set_magnetometer<class_Input_method_set_magnetometer>`\ (\ value\: :ref:`Vector3<class_Vector3>`\ )                                                                                                                                                                                                           |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1137,9 +1137,9 @@ Sets the value of the rotation rate of the gyroscope sensor. Can be used for deb
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **set_joy_light**\ (\ device\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Input_method_set_joy_light>`
+|void| **set_joy_light**\ (\ device\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Input_method_set_joy_light>`
 
-Sets the joypad's LED light, if available, to the specified color. Returns ``true`` if the operation was successful. See also :ref:`has_joy_light()<class_Input_method_has_joy_light>`.
+Sets the joypad's LED light, if available, to the specified color. See also :ref:`has_joy_light()<class_Input_method_has_joy_light>`.
 
 \ **Note:** There is no way to get the color of the light from a joypad. If you need to know the assigned color, store it separately.
 

@@ -231,6 +231,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`button_margin<class_Tree_theme_constant_button_margin>`                            | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`check_h_separation<class_Tree_theme_constant_check_h_separation>`                  | ``4``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`children_hl_line_width<class_Tree_theme_constant_children_hl_line_width>`          | ``1``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`dragging_unfold_wait_msec<class_Tree_theme_constant_dragging_unfold_wait_msec>`    | ``500``                             |
@@ -240,6 +242,8 @@ Theme Properties
    | :ref:`int<class_int>`             | :ref:`draw_relationship_lines<class_Tree_theme_constant_draw_relationship_lines>`        | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_Tree_theme_constant_h_separation>`                              | ``4``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`icon_h_separation<class_Tree_theme_constant_icon_h_separation>`                    | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`icon_max_width<class_Tree_theme_constant_icon_max_width>`                          | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1666,6 +1670,18 @@ The horizontal space between each button in a cell.
 
 ----
 
+.. _class_Tree_theme_constant_check_h_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **check_h_separation** = ``4`` :ref:`🔗<class_Tree_theme_constant_check_h_separation>`
+
+The horizontal space between the checkbox and the text in a :ref:`TreeItem.CELL_MODE_CHECK<class_TreeItem_constant_CELL_MODE_CHECK>` mode cell.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_theme_constant_children_hl_line_width:
 
 .. rst-class:: classref-themeproperty
@@ -1721,6 +1737,18 @@ Draws the relationship lines if not zero, this acts as a boolean. Relationship l
 :ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_Tree_theme_constant_h_separation>`
 
 The horizontal space between item cells. This is also used as the margin at the start of an item when folding is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_icon_h_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_h_separation** = ``4`` :ref:`🔗<class_Tree_theme_constant_icon_h_separation>`
+
+The horizontal space between the icon and the text in item's cells.
 
 .. rst-class:: classref-item-separator
 
