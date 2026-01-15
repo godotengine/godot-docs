@@ -3,6 +3,11 @@
 3D Particle trails
 ------------------
 
+.. note::
+
+     Particle trails are only supported in the Forward+ and Mobile renderers,
+     not Compatibility.
+
 .. figure:: img/particle_trails.webp
    :alt: Particle trails
 

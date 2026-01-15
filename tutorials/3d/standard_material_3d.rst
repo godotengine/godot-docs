@@ -765,6 +765,9 @@ When drawing points, specify the point size in pixels.
 Use Particle Trails
 ~~~~~~~~~~~~~~~~~~~
 
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
+
 If true, enables parts of the shader required for GPUParticles3D trails to function.
 This also requires using a mesh with appropriate skinning, such as RibbonTrailMesh
 or TubeTrailMesh. Enabling this feature outside of materials used in GPUParticles3D
