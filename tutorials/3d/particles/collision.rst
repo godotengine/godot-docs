@@ -123,6 +123,11 @@ around the player while not wasting performance on regions that are out of sight
 SDF collision
 ~~~~~~~~~~~~~
 
+.. note::
+
+     Particle SDF collision is only supported in the Forward+ and Mobile renderers,
+     not Compatibility.
+
 .. figure:: img/particle_collision_sdf_entry.webp
    :alt: Particle collision SDF
    :align: right
