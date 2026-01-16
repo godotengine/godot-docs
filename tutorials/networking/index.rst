@@ -1,5 +1,4 @@
 :allow_comments: False
-:article_outdated: True
 
 Networking
 ==========

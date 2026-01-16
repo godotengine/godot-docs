@@ -1,7 +1,5 @@
 :allow_comments: False
 
-:article_outdated: True
-
 Audio
 =====
 
