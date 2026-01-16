@@ -20,6 +20,10 @@ Platforms
 
     See :ref:`doc_system_requirements` for hardware and software version requirements.
 
+.. note::
+
+    For information about console support, see the `Godot website <https://godotengine.org/consoles/>`_.
+
 **Can run both the editor and exported projects:**
 
 - Windows (x86 and ARM, 64-bit and 32-bit).
@@ -46,7 +50,6 @@ Platforms
 **Runs exported projects:**
 
 - iOS.
-- :ref:`Consoles <doc_consoles>`.
 
 Godot aims to be as platform-independent as possible and can be
 :ref:`ported to new platforms <doc_custom_platform_ports>` with relative ease.

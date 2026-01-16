@@ -23,7 +23,7 @@ source,destination
 /development/compiling/index.html,/engine_details/development/compiling/index.html
 /development/compiling/introduction_to_the_buildsystem.html,/engine_details/development/compiling/introduction_to_the_buildsystem.html
 /development/compiling/optimizing_for_size.html,/engine_details/development/compiling/optimizing_for_size.html
-/development/consoles/consoles.html,/tutorials/platform/consoles.html
+/development/consoles/consoles.html,https://godotengine.org/consoles/
 /development/cpp/binding_to_external_libraries.html,/engine_details/architecture/binding_to_external_libraries.html
 /development/cpp/common_engine_methods_and_macros.html,/engine_details/architecture/common_engine_methods_and_macros.html
 /development/cpp/configuring_an_ide/android_studio.html,/engine_details/development/configuring_an_ide/android_studio.html
@@ -401,6 +401,7 @@ source,destination
 /tutorials/viewports/using_viewport_as_texture.html,/tutorials/shaders/using_viewport_as_texture.html
 /tutorials/viewports/viewports.html,/tutorials/rendering/viewports.html
 /tutorials/export/exporting_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
+/tutorials/platform/consoles.html,https://godotengine.org/consoles/
 /tutorials/xr/openxr_passthrough.html,/tutorials/xr/ar_passthrough.html
 /contributing/development/compiling/compiling_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
 /contributing/_contributing.html,https://contributing.godotengine.org
