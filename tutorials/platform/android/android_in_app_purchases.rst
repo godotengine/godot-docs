@@ -8,7 +8,7 @@ The new plugin uses the `Google Play Billing library <https://developer.android.
 instead of the now deprecated AIDL IAP implementation.
 
 If you learn better by looking at an example, you can find the demo project
-`here <https://github.com/godotengine/godot-demo-projects/tree/master/mobile/android_iap>`__.
+`here <https://github.com/godotengine/godot-demo-projects/tree/3.5/mobile/android_iap>`__.
 
 
 Migrating from Godot 3.2.1 and lower (GodotPaymentsV3)

@@ -8,7 +8,7 @@ iOS.
 
 A simple demo is included in the official demo projects and will be used as
 support for this tutorial:
-`<https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`_.
+`<https://github.com/godotengine/godot-demo-projects/tree/3.5/audio/mic_record>`_.
 
 You will need to enable audio input in the project settings, or you'll just get empty audio files.
 
