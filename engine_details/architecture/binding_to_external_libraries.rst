@@ -114,7 +114,7 @@ this module:
     env_tts.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
 
 You'll need to install the external library on your machine to get the .a library files. See the library's official
-documentation for specific instructions on how to do this for your operation system. We've included the
+documentation for specific instructions on how to do this for your operating system. We've included the
 installation commands for Linux below, for reference.
 
 .. code-block:: shell
