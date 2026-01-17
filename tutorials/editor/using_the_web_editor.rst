@@ -29,8 +29,8 @@ stable way to run Vulkan applications on the web yet.
 
 .. note::
 
-    Chromium-based browsers generally deliver the best performance in WebGL
-    applications, so using one of those is recommended.
+    If you run into performance issues on Firefox, try using a Chromium-based
+    browser as these are known to perform better in WebGL applications.
 
 .. _doc_using_the_web_editor_limitations:
 
