@@ -38,7 +38,7 @@ Page not found
 
     const currentPathSegments = window.location.pathname.split('/').filter(segment => segment !== '');
     // Use the base path (e.g. "/en/latest") when available.
-    const currentBasePath = (currentPathSegments.length >= 2) ? ("/" + currentPathSegments.slice(0, 2).join("/")) : "/";
+    const currentBasePath = (currentPathSegments.length >= 2) ? ("/" + currentPathSegments.slice(0, 2).join("/")) : "";
 
     fetch(currentBasePath + "/_static/redirects.csv")
       .then(response => response.text())
@@ -54,7 +54,7 @@ Page not found
               if (to.startsWith('https://')) {
                 window.location.replace(to);
               } else {
-                const newUrl = window.location.href.replace(window.location.pathname, to);
+                const newUrl = window.location.href.replace(window.location.pathname, currentBasePath + to);
                 window.location.replace(newUrl);
               }
             }
