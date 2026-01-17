@@ -1112,21 +1112,22 @@ method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
 When using per-instance uniforms, there are some restrictions you should be aware of:
 
-- **Per-instance uniforms do not support textures or arrays**, only regular scalar and vector types.
+- **Per-instance uniforms do not support textures or arrays**, only regular scalar and
+  vector types. As a workaround, you can pass a texture array as a regular uniform,
+  then pass the index of the texture to be drawn using a per-instance uniform.
 
 .. note::
 
-    Due to GLSL limitations, you cannot directly index a texture array
-    using a per-instance uniform. Sampler arrays can only be indexed by
-    compile-time constant expressions.
+    In GLSL versions before 4.0 (i.e. GLSL 3.3 and lower), you cannot directly index
+    a texture array using a per-instance uniform, as sampler arrays can only be indexed by
+    compile-time constant expressions. This affects shaders compiled with the Compatibility
+    renderer.
 
-    As a workaround, pass a texture array as a regular uniform and the
-    desired texture index as a per-instance uniform. Then use a ``switch``
-    statement to select the texture:
+    If you are affected, use the ``switch`` statement to select the texture:
 
    .. code-block:: glsl
 
-      uniform sampler2D texture_array[4];
+      uniform sampler2D texture_array[2];
       instance uniform int texture_index;
 
       void fragment() {
@@ -1137,12 +1138,6 @@ When using per-instance uniforms, there are some restrictions you should be awar
                   break;
               case 1:
                   color = texture(texture_array[1], UV);
-                  break;
-              case 2:
-                  color = texture(texture_array[2], UV);
-                  break;
-              case 3:
-                  color = texture(texture_array[3], UV);
                   break;
           }
 
