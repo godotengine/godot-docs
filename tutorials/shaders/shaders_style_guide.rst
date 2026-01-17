@@ -393,8 +393,8 @@ so you need to save this file as ``.clang-format`` in your project's root folder
     AlignAfterOpenBracket: DontAlign
     AlignOperands: DontAlign
     AlignTrailingComments:
-    Kind: Never
-    OverEmptyLines: 0
+      Kind: Never
+      OverEmptyLines: 0
     AllowAllParametersOfDeclarationOnNextLine: false
     AllowShortFunctionsOnASingleLine: Inline
     BreakConstructorInitializers: AfterColon
@@ -406,8 +406,8 @@ so you need to save this file as ``.clang-format`` in your project's root folder
     KeepEmptyLinesAtTheStartOfBlocks: false
     RemoveSemicolon: true
     SpacesInLineCommentPrefix:
-    Minimum: 0 # We want a minimum of 1 for comments, but allow 0 for disabled code.
-    Maximum: -1
+      Minimum: 0 # We want a minimum of 1 for comments, but allow 0 for disabled code.
+      Maximum: -1
     TabWidth: 4
     UseTab: Always
 
