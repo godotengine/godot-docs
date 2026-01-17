@@ -151,63 +151,63 @@ sometimes it can be cumbersome, especially if you're using it in many
 projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.
 
-.. warning::
-
-  Nodes added via an EditorPlugin's :ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>`
-  function are "custom type" nodes. While they work
-  with any scripting language, they have fewer features than
-  :ref:`the Script Class system <doc_gdscript_basics_class_name>`. If you
-  are using GDScript or GDExtension, we recommend using Script Classes instead.
-
-  Custom types are still the recommended approach for C#, as it does not support
-  Script Classes.
-
-To create a new node type, you can use the function
-:ref:`add_custom_type() <class_EditorPlugin_method_add_custom_type>` from the
-:ref:`class_EditorPlugin` class. This function can add new types to the editor
-(nodes or resources). However, before you can create the type, you need a script
-that will act as the logic for the type. While that script doesn't have to use
-the ``@tool`` annotation, it can be added so the script runs in the editor.
-
 For this tutorial, we'll create a button that prints a message when
 clicked. For that, we'll need a script that extends from
 :ref:`class_Button`. It could also extend
 :ref:`class_BaseButton` if you prefer:
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+    .. code-tab:: gdscript GDScript
 
-    @tool
-    extends Button
+        # Optional, add to execute in the editor.
+        @tool
+
+        # Icons are optional.
+        # Alternatively, you may use the UID of the icon or the absolute path.
+        @icon("icon.png")
+
+        # Automatically register the node in the Create New Node dialog
+        # and make it available for use with other scripts.
+        class_name MyButton
+        extends Button
 
 
-    func _enter_tree():
-        pressed.connect(clicked)
+        func _enter_tree():
+            pressed.connect(clicked)
 
 
-    func clicked():
-        print("You clicked me!")
+        func clicked():
+            print("You clicked me!")
 
- .. code-tab:: csharp
+    .. code-tab:: csharp
 
-    using Godot;
+        using Godot;
 
-    [Tool]
-    public partial class MyButton : Button
-    {
-        public override void _EnterTree()
+        // Optional, add to execute in the editor.
+        [Tool]
+
+        // Icons are optional.
+        // Alternatively, you may use the UID of the icon or the absolute path.
+        [Icon("icon.png")]
+
+        // Automatically register the node in the Create New Node dialog
+        // and make it available for use with other scripts.
+        [GlobalClass]
+        public partial class MyButton : Button
         {
-            Pressed += Clicked;
-        }
+            public override void _EnterTree()
+            {
+                Pressed += Clicked;
+            }
 
-        public void Clicked()
-        {
-            GD.Print("You clicked me!");
+            public void Clicked()
+            {
+                GD.Print("You clicked me!");
+            }
         }
-    }
 
 That's it for our basic button. You can save this as ``my_button.gd`` inside the
-plugin folder. You'll also need a 16×16 icon to show in the scene tree. If you
+plugin folder. You may have a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
 `addons/my_custom_node` folder as `icon.png`, or use the default Godot logo
 (`preload("res://icon.svg")`).
@@ -222,59 +222,6 @@ don't have one, you can grab the default one from the engine and save it in your
 
 .. image:: img/making_plugins-custom_node_icon.png
 
-Now, we need to add it as a custom type so it shows on the **Create New Node**
-dialog. For that, change the ``custom_node.gd`` script to the following:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    @tool
-    extends EditorPlugin
-
-
-    func _enter_tree():
-        # Initialization of the plugin goes here.
-        # Add the new type with a name, a parent type, a script and an icon.
-        #
-        # NOTE: If `my_button.gd` uses `class_name MyButton`, do not call `add_custom_type()`
-        # and leave this function empty instead with `pass`.
-        # Script Classes and custom types will conflict if the same name is used for both.
-        add_custom_type("MyButton", "Button", preload("my_button.gd"), preload("icon.png"))
-
-
-    func _exit_tree():
-        # Clean-up of the plugin goes here.
-        # Always remember to remove it from the engine when deactivated.
-        #
-        # NOTE: This should not be called if Script Classes are used instead.
-        # In this case, leave this function empty with `pass`.
-        remove_custom_type("MyButton")
-
- .. code-tab:: csharp
-
-    #if TOOLS
-    using Godot;
-
-    [Tool]
-    public partial class CustomNode : EditorPlugin
-    {
-        public override void _EnterTree()
-        {
-            // Initialization of the plugin goes here.
-            // Add the new type with a name, a parent type, a script and an icon.
-            var script = GD.Load<Script>("res://addons/MyCustomNode/MyButton.cs");
-            var texture = GD.Load<Texture2D>("res://addons/MyCustomNode/Icon.png");
-            AddCustomType("MyButton", "Button", script, texture);
-        }
-
-        public override void _ExitTree()
-        {
-            // Clean-up of the plugin goes here.
-            // Always remember to remove it from the engine when deactivated.
-            RemoveCustomType("MyButton");
-        }
-    }
-    #endif
 
 With that done, the plugin should already be available in the plugin list in the
 **Project Settings**, so activate it as explained in `Checking the results`_.
