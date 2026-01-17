@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_exporting_projects:
 
 Exporting projects
