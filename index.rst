@@ -132,6 +132,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :name: sec-engine-details
 
    engine_details/architecture/index
+   engine_details/engine_api/index
    engine_details/development/index
    engine_details/editor/index
    engine_details/class_reference/index
