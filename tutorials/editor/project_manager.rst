@@ -16,7 +16,8 @@ corner:
 In Project Manager Settings, you can change the interface **language** from the language
 dropdown menu, which is the system default language by default.
 
-You can also change the **theme** of the editor, the **display scale** for different interface 
+You can also change the **theme** and **color preset** of the editor,
+the **display scale** for different interface 
 element sizes, and the availability of online functionality using **network mode**.
 If network mode is online, Godot will also check and inform you about new versions of Godot.
 
@@ -39,7 +40,7 @@ To create a new project:
    with the project name, following the directory naming convention set in the
    settings. An empty folder will show a green tick on the right.
 3. Select one of the renderers (this can also be changed later).
-4. Click the **Create & Edit** button to create the project folder and open it in the editor.
+4. Click the :ui:`Create` button to create the project folder and open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_04.webp
 
