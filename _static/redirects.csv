@@ -443,7 +443,7 @@ source,destination
 /contributing/development/core_and_modules/inheritance_class_tree.html,/engine_details/architecture/inheritance_class_tree.html
 /contributing/development/core_and_modules/internal_rendering_architecture.html,/engine_details/architecture/internal_rendering_architecture.html
 /contributing/development/core_and_modules/object_class.html,/engine_details/architecture/object_class.html
-/contributing/development/core_and_modules/scripting_development.html,/engine_details/architecture/scripting_development.html
+/contributing/development/core_and_modules/scripting_development.html,https://contributing.godotengine.org/en/latest/engine/guidelines/gdscript_language_guidelines.html
 /contributing/development/core_and_modules/unit_testing.html,/engine_details/architecture/unit_testing.html
 /contributing/development/core_and_modules/variant_class.html,/engine_details/architecture/variant_class.html
 /contributing/documentation/class_reference_primer.html,engine_details/class_reference/index.html
@@ -486,3 +486,4 @@ source,destination
 /engine_details/development/debugging/using_cpp_profilers.html,/engine_details/development/profiling/index.html
 /engine_details/development/debugging/profiling/sampling_profilers.html,/engine_details/development/profiling/index.html
 /engine_details/development/debugging/profiling/tracing_profilers.html,/engine_details/development/profiling/index.html
+/engine_details/architecture/scripting_development.html,https://contributing.godotengine.org/en/latest/engine/guidelines/gdscript_language_guidelines.html
