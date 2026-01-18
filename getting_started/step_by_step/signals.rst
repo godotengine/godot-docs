@@ -70,7 +70,7 @@ a :ref:`Node2D <class_Node2D>` as our root.
 In the FileSystem dock, click and drag the ``sprite_2d.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
-.. image:: img/signals_03_dragging_scene.png
+.. image:: img/signals_03_dragging_scene.webp
 
 We want to add another node as a sibling of the Sprite2D. To do so, right-click
 on Node2D and select :button:`Add Child Node`.
@@ -99,7 +99,7 @@ in the :ui:`Inspector`. Enter ``Toggle motion``.
 
 Your scene tree and viewport should look like this.
 
-.. image:: img/signals_09_scene_setup.png
+.. image:: img/signals_09_scene_setup.webp
 
 Save your newly created scene as ``node_2d.tscn``, if you haven't already.
 You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
@@ -114,8 +114,8 @@ want to call a new function that will toggle its motion on and off. We need to
 have a script attached to the Sprite2D node, which we do from the previous
 lesson.
 
-You can connect signals in the :ui:`Node` dock. Select the Button node and, on the
-right side of the editor, click on the tab named :ui:`Node` next to the
+You can connect signals in the :ui:`Signals` dock. Select the Button node and, on the
+right side of the editor, click on the tab named :ui:`Signals` next to the
 :ui:`Inspector`.
 
 .. image:: img/signals_10_node_dock.webp
@@ -139,7 +139,7 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
    modes. The simple one only allows you to connect to nodes that have a
    script attached to them and creates a new callback function on them.
 
-   .. image:: img/signals_advanced_connection_window.png
+   .. image:: img/signals_advanced_connection_window.webp
 
    The advanced view lets you connect to any node and any built-in
    function, add arguments to the callback, and set options. You can
@@ -467,7 +467,7 @@ reaches 0.
 .. note:: As signals represent events that just occurred, we generally use an
           action verb in the past tense in their names.
 
-Your signals work the same way as built-in ones: they appear in the :ui:`Node` tab and
+Your signals work the same way as built-in ones: they appear in the :ui:`Signals` tab and
 you can connect to them like any other.
 
 .. image:: img/signals_17_custom_signal.webp
