@@ -157,3 +157,7 @@ At this point, your project should look like this.
 
 That's our starting point. In the next part, we will work on the player scene
 and base movement.
+
+.. note::
+
+    Before you move on to the next section, it's recommended to get familiar with navigating the 3D workspace. Be sure to review the `Navigating the 3D environment <https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html#navigating-the-3d-environment>`_ section to familiarize yourself with the controls.
