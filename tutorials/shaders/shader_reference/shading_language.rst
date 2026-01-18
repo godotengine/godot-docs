@@ -124,8 +124,9 @@ using ``//`` for single-line comments and ``/* */`` for multi-line comments:
 Additionally, you can use documentation comments that are displayed in the
 inspector when hovering a shader parameter. Documentation comments are currently
 only supported when placed immediately above a ``uniform`` declaration. These
-documentation comments only support the **multiline** comment syntax and must use
-**two** leading asterisks (``/**``) instead of just one (``/*``):
+documentation comments only support the **multiline** comment syntax
+(even if used on a single line) and must use **two** leading asterisks
+(``/**``) instead of just one (``/*``):
 
 .. code-block:: glsl
 
@@ -136,6 +137,9 @@ documentation comments only support the **multiline** comment syntax and must us
      * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
      */
     uniform int something = 1;
+
+    /** This is a single-line documentation comment. */
+    uniform float something_else = 1.0;
 
 The asterisks on the follow-up lines are not required, but are recommended as
 per the :ref:`doc_shaders_style_guide`. These asterisks are automatically
