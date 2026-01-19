@@ -279,10 +279,8 @@ from the previous game may still be on the screen. It would be better if they
 all disappeared at the start of a new game. We just need a way to tell *all* the
 mobs to remove themselves. We can do this with the "group" feature.
 
-In the ``Mob`` scene, select the root node and click the "Node" tab next to the
-Inspector (the same place where you find the node's signals). Next to "Signals",
-click "Groups" to open the group overview
-and the "+" button to open the "Create New Group" dialog.
+In the ``Mob`` scene, select the root node and click the :ui:`Groups` tab next to the
+:ui:`Signals` tab and the "+" button to open the "Create New Group" dialog.
 
 .. image:: img/group_tab.webp
 

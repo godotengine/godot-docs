@@ -101,7 +101,7 @@ to it by clicking on **Array[InputEvent] (size 0)**.
 
 .. image:: img/start_button_shortcut.webp
 
-Create a new :ref:`InputEventAction <class_InputEventAction>` and name it ``start_game``.
+Create a new :ref:`InputEventAction <class_InputEventAction>` and select the ``start_game`` action.
 
 .. image:: img/start_button_shortcut2.webp
 
