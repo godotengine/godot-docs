@@ -37,18 +37,18 @@ Start with an image that contains large amounts of transparency on the edges, li
 
 .. image:: img/mesh2d1.png
 
-Put it in a ``Sprite2D`` and select "Convert to 2D Mesh" from the menu:
+Put it in a ``Sprite2D`` and select "Convert to MeshInstance2D" from the menu:
 
-.. image:: img/mesh2d2.png
+.. image:: img/mesh2d2.webp
 
 A dialog will appear, showing a preview of how the 2D mesh will be created:
 
-.. image:: img/mesh2d3.png
+.. image:: img/mesh2d3.webp
 
 The default values are good enough for many cases, but you can change growth and simplification according to your needs:
 
-.. image:: img/mesh2d4.png
+.. image:: img/mesh2d4.webp
 
 Finally, push the :button:`Convert 2D Mesh` button and your Sprite2D will be replaced:
 
-.. image:: img/mesh2d5.png
+.. image:: img/mesh2d5.webp
