@@ -96,6 +96,9 @@ supported_languages = {
     "uk": "Документація до Godot Engine %s українською мовою",
     "zh_Hans": "Godot Engine %s 简体中文文档",
     "zh_Hant": "Godot Engine %s 正體中文 (台灣) 文件",
+    # Keeping those as RTD doesn't support Hans/Hant names yet.
+    "zh_CN": "Godot Engine %s 简体中文文档",
+    "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
 # RTD normalized their language codes to ll-cc (e.g. pt-br),
