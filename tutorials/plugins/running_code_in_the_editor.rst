@@ -133,10 +133,17 @@ rotation. Be careful to avoid making unwanted modifications. Consider setting up
 :ref:`version control <doc_version_control_systems>` to avoid losing work in
 case you make a mistake.
 
-Using the debugger and breakpoints on tool scripts is not currently supported.
-Breakpoints placed in the script editor or using the ``breakpoint`` keyword are
-ignored. You can use print statements to display the contents of variables
-instead.
+Debugging
+---------
+
+While the debugger and breakpoints cannot be used directly with tool scripts, it is possible
+to launch a new instance of the editor and debug from there. To do this, navigate to
+**Debug > Customize Run Instances...** and specify `--editor` in **Main Run Args**.
+
+See :ref:`doc_overview_of_debugging_tools` for more information.
+
+Additionally, you can use print statements to display the contents of variables instead.
+
 
 Try ``@tool`` out
 -----------------
