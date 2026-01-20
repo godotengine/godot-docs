@@ -86,7 +86,7 @@ Choose **Compatibility** if:
 Keep in mind every game is unique, and this is only a starting point. For example,
 you might choose to use the Compatibility renderer even though you have the latest
 GPU, so you can support the widest range of hardware. Or you might want to use the
-Forward+ renderer for a 2D game, so you can advanced features like compute shaders.
+Forward+ renderer for a 2D game, so you can use advanced features like compute shaders.
 
 Switching between renderers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
