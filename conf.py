@@ -19,6 +19,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx_copybutton",
     "sphinxcontrib.video",
+    "gdscript",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
@@ -43,9 +44,6 @@ ogp_site_name = "Godot Engine documentation"
 ogp_social_cards = {
     "enable": False
 }
-
-if not os.getenv("SPHINX_NO_GDSCRIPT"):
-    extensions.append("gdscript")
 
 if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
     extensions.append("godot_descriptions")
@@ -121,16 +119,6 @@ is_i18n = tags.has("i18n")  # noqa: F821
 print("Build language: {}, i18n tag: {}".format(language, is_i18n))
 
 exclude_patterns = [".*", "**/.*", "_build", "_tools"]
-
-# fmt: off
-# These imports should *not* be moved to the start of the file,
-# they depend on the sys.path.append call registering "_extensions".
-# GDScript syntax highlighting
-from gdscript import GDScriptLexer
-from sphinx.highlighting import lexers
-
-lexers["gdscript"] = GDScriptLexer()
-# fmt: on
 
 smartquotes = False
 
