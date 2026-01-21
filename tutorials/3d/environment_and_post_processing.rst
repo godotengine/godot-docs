@@ -358,7 +358,7 @@ off-screen objects).
 
 A few user-controlled parameters are available to better tweak the technique:
 
-- **Max Steps:** Determines the length of the reflection. The bigger this
+- **Max Steps:** Determines the maximum length of the reflection. The bigger this
   number, the more costly it is to compute.
 - **Fade In:** Allows adjusting the fade-in curve, which is useful to make the
   contact area softer.
@@ -370,10 +370,18 @@ A few user-controlled parameters are available to better tweak the technique:
   screen-space reflections exhibit fewer "breakups", at the cost of some objects
   creating physically incorrect reflections.
 
-Keep in mind that screen-space-reflections only work for reflecting opaque
-geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
-This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
-uniforms.
+Additionally, you can adjust the quality of SSR in the project settings
+by toggling **Rendering > Environment > Screen Space Reflection > Half Size**.
+By default, screen-space reflections are rendered at half resolution for
+performance reasons. Disabling this setting will make the effect render at
+full resolution, which improves quality at the cost of incrased GPU utilization.
+
+.. note::
+
+    Keep in mind that screen-space-reflections only work for reflecting opaque
+    geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
+    This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
+    uniforms.
 
 Screen-Space Ambient Occlusion (SSAO)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -450,6 +458,29 @@ parameters:
   materials that have an AO texture defined. Values higher than ``0.0`` will
   make the SSAO effect visible in areas darkened by AO textures.
 
+Additionally, you can adjust the quality of SSAO in the project settings'
+**Rendering > Environment > SSAO** section:
+
+- **Quality:** Sets the quality of the screen-space ambient occlusion effect.
+  Higher values take more samples and so will result in better quality, at the
+  cost of performance. Setting to Ultra will use the **Adaptive Target** setting
+  (see below).
+- **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
+  half size and then upscaled before being added to the scene. This is
+  significantly faster but may miss small details. If ``false``, screen-space
+  ambient occlusion will be rendered at full size.
+- **Adaptive Target:** Quality target to use when **Quality** is set to
+  **Ultra**. A value of ``0.0`` provides a quality and speed similar to Medium
+  while a value of ``1.0`` provides much higher quality than any of the other
+  settings at the cost of performance.
+- **Blur Passes:** Number of blur passes to use when computing screen-space
+  ambient occlusion. A higher number will result in a smoother look, but will be
+  slower to compute and will have less high-frequency detail.
+- **Fadeout From:** Distance at which the screen-space ambient occlusion effect
+  starts to fade out. Use this hide ambient occlusion from far away.
+- **Fadeout To:** Distance at which the screen-space ambient occlusion is fully
+  faded out. Use this hide ambient occlusion from far away.
+
 .. note::
 
     Since Godot 4.6, a simplified version of SSAO is available in the Compatibility
@@ -504,6 +535,31 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
   object is illuminated. However, normal rejection can be disabled if light
   leaking is desirable, such as when the scene mostly contains emissive objects
   that emit light from faces that cannot be seen from the camera.
+
+Additionally, you can adjust the quality of SSIL in the project settings'
+**Rendering > Environment > SSIL** section:
+
+- **Quality:** Sets the quality of the screen-space ambient occlusion effect.
+  Higher values take more samples and so will result in better quality, at the
+  cost of performance. Setting to Ultra will use the **Adaptive Target** setting
+  (see below).
+- **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
+  half size and then upscaled before being added to the scene. This is
+  significantly faster but may miss small details. If ``false``, screen-space
+  ambient occlusion will be rendered at full size.
+- **Adaptive Target:** Quality target to use when **Quality** is set to
+  **Ultra**. A value of ``0.0`` provides a quality and speed similar to Medium
+  while a value of ``1.0`` provides much higher quality than any of the other
+  settings at the cost of performance. When using the adaptive target, the
+  performance cost scales with the complexity of the scene.
+- **Blur Passes:** Number of blur passes to use when computing screen-space
+  indirect lighting. A higher number will result in a smoother look, but will be
+  slower to compute and will have less high-frequency detail.
+- **Fadeout From:** Distance at which the screen-space indirect lighting effect
+  starts to fade out. Use this to hide screen-space indirect lighting from far
+  away.
+- **Fadeout To:** Distance at which the screen-space indirect lighting is fully
+  faded out. Use this to hide screen-space indirect lighting from far away.
 
 .. image:: img/environment_ssil.webp
 
