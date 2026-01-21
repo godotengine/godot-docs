@@ -236,8 +236,8 @@ tree structures.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    extends Object
     class_name TreeNode
+    extends Object
 
     var _parent: TreeNode = null
     var _children := []
