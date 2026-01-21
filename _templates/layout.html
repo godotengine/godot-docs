@@ -35,22 +35,18 @@
     {% endif %}
 
     {% if godot_show_article_status and not godot_is_latest %}
-    <div class="admonition tip article-status">
-      {% if meta and meta.get('article_outdated') == 'True' %}
-      <p class="first admonition-title">Work in progress</p>
+    <div class="admonition attention article-status">
+      <p class="first admonition-title">Outdated documentation</p>
       <p>
-        The content of this page was not yet updated for Godot
-        <code class="docutils literal notranslate">{{ godot_version }}</code>
-        and may be <strong>outdated</strong>. If you know how to improve this page or you can confirm
-        that it's up to date, feel free to <a href="https://github.com/godotengine/godot-docs">open a pull request</a>.
+        This documentation page refers to Godot
+        <code class="docutils literal notranslate">{{ godot_version }}</code>,
+        and may be <strong>outdated</strong> or incorrect.<br>
+        Additionally, this engine version is
+        <a href="https://docs.godotengine.org/en/latest/about/release_policy.html#release-support-timeline">no longer supported</a>.
       </p>
-      {% else %}
-      <p class="first admonition-title">Up to date</p>
       <p>
-        This page is <strong>up to date</strong> for Godot <code class="docutils literal notranslate">{{ godot_version }}</code>.
-        If you still find outdated information, please <a href="https://github.com/godotengine/godot-docs">open an issue</a>.
+        <a href="https://docs.godotengine.org/en/stable/{{ pagename }}.html">Check this page in the stable branch</a> for the latest additions and corrections.
       </p>
-      {% endif %}
     </div>
     {% endif %}
   </div>
