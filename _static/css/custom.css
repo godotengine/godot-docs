@@ -12,6 +12,7 @@
     font-display: swap;
     src: url("fonts/JetBrainsMono-Regular.woff2");
 }
+
 @font-face {
     font-family: "JetBrains Mono";
     font-weight: 600;
@@ -19,19 +20,37 @@
     font-display: swap;
     src: url("fonts/JetBrainsMono-Medium.woff2");
 }
+
 @font-face {
-    font-family: "JetBrains Mono";
-    font-weight: 700;
+    font-family: "Inter";
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url("fonts/JetBrainsMono-Bold.woff2");
+    src: url("fonts/Inter-Regular.woff2");
 }
+
 @font-face {
-    font-family: "Montserrat";
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+    src: url("fonts/Inter-Italic.woff2");
+}
+
+@font-face {
+    font-family: "Inter";
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url("fonts/Montserrat-Bold.woff2");
+    src: url("fonts/Inter-Bold.woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+    src: url("fonts/Inter-BoldItalic.woff2");
 }
 
  /* Default (light) theme colors */
@@ -100,9 +119,9 @@
     --search-highlighted-color: rgb(255 205 0 / 25%);
     --search-context-color: #6c6e72;
 
-    --highlight-background-color: #ffffff;
-    --highlight-background-emph-color: #dbe6c3;
-    --highlight-default-color: #404040;
+    --highlight-background-color: #f0f0f0;
+    --highlight-background-emph-color: #dfdfdf;
+    --highlight-default-color: #3c3c3c;
     --highlight-comment-color: rgba(20, 20, 20, 0.5);
     --highlight-doc-comment-color: rgba(38, 38, 102, 0.7);
     --highlight-region-comment-color: rgba(173, 117, 196, 20);
@@ -169,8 +188,8 @@
     --btn-neutral-hover-background-color: #e5ebeb;
     --footer-color: #808080;
 
-    --system-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --header-font-family: "Montserrat", var(--system-font-family);
+    /* Use the same fonts as Godot's modern editor theme, with a system font fallback in case the web fonts fail to load. */
+    --sans-serif-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
@@ -221,8 +240,8 @@
 
         --tabs-background-color: #434649;
         --tabs-selected-color: #a2a9ae;
-        --code-tabs-background-color: #353c4c;
-        --code-tabs-selected-color: #5a657e;
+        --code-tabs-background-color: #3c3c3c;
+        --code-tabs-selected-color: #6a6a6a;
 
         --classref-primary-color: #e8e8e8;
         --classref-secondary-color: #929598;
@@ -242,10 +261,10 @@
         --search-context-color: #aaa;
 
         /* Colors taken from the Godot script editor with the Adaptive theme */
-        --highlight-background-color: #202531;
-        --highlight-background-emph-color: #2d3444;
+        --highlight-background-color: #1d1d1d;
+        --highlight-background-emph-color: #2d2d2d;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
-        --highlight-comment-color: rgba(204, 206, 211, 0.5);
+        --highlight-comment-color: rgba(255, 255, 255, 0.5);
         --highlight-doc-comment-color: rgba(153, 179, 204, 0.8);
         --highlight-region-comment-color: rgba(173, 117, 196, 20);
         --highlight-keyword-color: #ff7085;
@@ -319,12 +338,6 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea,
-.btn,
-.rst-versions {
-    /* Use a system font stack for better performance (no Web fonts required) */
-    font-family: var(--system-font-family);
-}
-
 h1,
 h2,
 h3,
@@ -332,9 +345,12 @@ h4,
 h5,
 h6,
 legend,
-.rst-content .toctree-wrapper p.caption {
-    /* Use the same font as the godotengine.org website. */
-    font-family: var(--header-font-family);
+.btn,
+.rst-versions,
+.rst-content .toctree-wrapper p.caption,
+.sphinx-tabs-tab {
+    font-family: var(--sans-serif-font-family);
+    font-feature-settings: "calt" 0, "ss04" 1, "tnum" 1;
 }
 
 /* See <https://github.com/godotengine/godot-docs/pull/5876> for context. */
@@ -527,7 +543,7 @@ hr,
 
 /* Add more visual separation for the title of a search result island. */
 #search-results .search li > a:first-child {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 140%;
 }
 
@@ -547,7 +563,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function dt,
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method dt,
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).attribute dt {
-    font-weight: 600;
+    font-weight: 700;
     padding: 0 8px;
     margin-bottom: 1px;
     width: 100%;
@@ -880,7 +896,7 @@ html.writer-html5 .rst-content .wy-table-responsive > table td > p {
 html.writer-html5 .rst-content .wy-table-responsive > table th > p {
     line-height: 1.425rem;
     font-size: .95rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 html.writer-html5 .rst-content .wy-table-responsive > table td > p tt.literal,
@@ -990,6 +1006,8 @@ code,
 .highlight .cm /* Comment.Multiline */,
 .highlight .cs /* Comment.Special */ {
     color: var(--highlight-comment-color);
+    /* Match the Godot editor style (no italic). */
+    font-style: normal;
 }
 
 .highlight .bp /* Name.Builtin.Pseudo */,
@@ -1160,7 +1178,7 @@ code,
     background-color: var(--admonition-note-title-background-color);
     border-radius: 4px 4px 0 0;
     color: var(--admonition-note-title-color);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 105%;
     line-height: 120%;
     padding: 6px 16px;
@@ -1264,7 +1282,7 @@ kbd.compound > .kbd,
     font-family: var(--monospace-font-family);
     font-variant-ligatures: none;
     font-size: 110%;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 18px;
 }
 
@@ -1612,7 +1630,7 @@ p + .classref-constant {
     background-color: var(--navbar-current-background-color-hover);
     border-bottom: 2px solid var(--navbar-current-background-color);
     color: var(--navbar-current-color);
-    font-weight: 600;
+    font-weight: 700;
 
     /* Make long words always display on a single line, keep wrapping for multiple words */
     /* This fixes the class reference titles' display with very long class names */
@@ -1676,7 +1694,7 @@ p + .classref-constant {
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a,
 .wy-menu-vertical li.toctree-l2.current li.toctree-l4.current > a {
     color: var(--navbar-current-color);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 /* Banner panel in sidebar */
@@ -1777,7 +1795,7 @@ p + .classref-constant {
     background-color: var(--search-highlighted-color);
     border-radius: 2px;
     color: var(--body-color);
-    font-weight: 600;
+    font-weight: 700;
     padding: 0 3px;
 }
 
