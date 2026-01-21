@@ -160,7 +160,7 @@ The main reasons for creating a custom scripting language for Godot were:
 5. Garbage collector results in stalls or unnecessarily large memory
    usage (Lua, Python, JavaScript, ActionScript, etc.).
 6. Difficulty integrating with the code editor for providing code
-   completion, live editing, etc. (all of them).
+   completion, live editing, etc (all of them).
 
 GDScript was designed to curtail the issues above, and more.
 
