@@ -73,7 +73,9 @@ access and integrity.
 
 2. **Hide the existing scene.** By changing the visibility or collision
    detection of the nodes, you can hide the entire node sub-tree from the
-   player's perspective.
+   player's perspective. Use
+   :ref:`CanvasItem.hide() <class_CanvasItem_method_hide>` to hide a scene and
+   :ref:`CanvasItem.show() <class_CanvasItem_method_show>` to show it again.
 
     - Memory still exists.
 
@@ -101,7 +103,8 @@ access and integrity.
 3. **Remove the existing scene from the tree.** Assign a variable
    to the existing scene's root node. Then use
    :ref:`Node.remove_child(Node) <class_Node_method_remove_child>` to detach the entire
-   scene from the tree.
+   scene from the tree. To attach it later, use
+   :ref:`Node.add_child(Node) <class_Node_method_add_child>`.
 
     - Memory still exists (similar pros/cons as hiding it from view).
 
