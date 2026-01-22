@@ -10,7 +10,7 @@ on:
 
 env:
   # TODO: Add a way to handle multiple potential cherrypick targets.
-  TARGET_BRANCH: '4.3'
+  TARGET_BRANCH: '4.6'
   USERNAME: 'Godot Organization'
   EMAIL: 'noreply@godotengine.org'
 
