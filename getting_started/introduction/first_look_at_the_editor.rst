@@ -187,7 +187,7 @@ Double-click on an item to open the corresponding page in the script main screen
 
 Alternatively,
 
-* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name,
+* Clicking while pressing :kbd:`Ctrl` (:kbd:`Cmd` on macOS) on a class name, function name,
   or built-in variable in the script editor.
 * Right-clicking on nodes and choosing **Open Documentation** or choosing **Lookup Symbol**
   for elements in script editor will directly open their documentation.
