@@ -374,11 +374,11 @@ Additionally, you can adjust the quality of SSR in the project settings
 by toggling **Rendering > Environment > Screen Space Reflection > Half Size**.
 By default, screen-space reflections are rendered at half resolution for
 performance reasons. Disabling this setting will make the effect render at
-full resolution, which improves quality at the cost of incrased GPU utilization.
+full resolution, which improves quality at the cost of increased GPU utilization.
 
 .. note::
 
-    Keep in mind that screen-space-reflections only work for reflecting opaque
+    Keep in mind that screen-space reflections only work for reflecting opaque
     geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
     This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
     uniforms.
@@ -462,8 +462,8 @@ Additionally, you can adjust the quality of SSAO in the project settings'
 **Rendering > Environment > SSAO** section:
 
 - **Quality:** Sets the quality of the screen-space ambient occlusion effect.
-  Higher values take more samples and so will result in better quality, at the
-  cost of performance. Setting to Ultra will use the **Adaptive Target** setting
+  Higher values take more samples and so will result in better quality at the
+  cost of performance. Setting this to Ultra will use the **Adaptive Target** setting
   (see below).
 - **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
   half size and then upscaled before being added to the scene. This is
