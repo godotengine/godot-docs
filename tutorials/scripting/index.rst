@@ -23,7 +23,6 @@ The sections below each focus on a given programming language.
    c_sharp/index
    cpp/index
    other_languages
-   gdextension/index
 
 .. _doc_scripting_core_features:
 

@@ -493,3 +493,8 @@ source,destination
 /engine_details/architecture/custom_resource_format_loaders.html,/engine_details/module_api/custom_resource_format_loaders.html
 /engine_details/architecture/custom_audiostreams.html,/engine_details/module_api/custom_audiostreams.html
 /engine_details/architecture/custom_platform_ports.html,/engine_details/module_api/custom_platform_ports.html
+/tutorials/scripting/gdextension/gdextension_c_example.html,/engine_details/engine_api/gdextension/gdextension_c_example.html
+/tutorials/scripting/gdextension/gdextension_file.html,/engine_details/engine_api/gdextension/gdextension_file.html
+/tutorials/scripting/gdextension/gdextension_interface_json_file.html,/engine_details/engine_api/gdextension/gdextension_interface_json_file.html
+/tutorials/scripting/gdextension/index.html,/engine_details/engine_api/gdextension/index.html
+/tutorials/scripting/gdextension/what_is_gdextension.html,/engine_details/engine_api/gdextension/what_is_gdextension.html
