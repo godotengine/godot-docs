@@ -121,10 +121,10 @@ Selecting a compiler
 SCons will automatically find and use an existing Visual Studio installation.
 If you do not have Visual Studio installed, it will attempt to use
 MinGW instead. If you already have Visual Studio installed and want to
-use MinGW-w64, pass ``use_mingw=yes`` to the SCons command line. Note that MSVC
+use MinGW-w64, pass ``mingw=yes`` to the SCons command line. Note that MSVC
 builds cannot be performed from the MSYS2 or MinGW shells. Use either
 ``cmd.exe`` or PowerShell instead. If you are using MinGW-LLVM, pass both
-``use_mingw=yes`` and ``use_llvm=yes`` to the SCons command line.
+``mingw=yes`` and ``llvm=yes`` to the SCons command line.
 
 .. tip::
 
@@ -223,10 +223,10 @@ optional PIX and Agility SDK components).
               ./update_mesa.sh
               scons
 
-          If you are building with MinGW-w64, add ``use_mingw=yes`` to the ``scons``
+          If you are building with MinGW-w64, add ``mingw=yes`` to the ``scons``
           command, you can also specify the build architecture using ``arch={architecture}``.
-          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-          ``use_llvm=yes`` to the ``scons`` command.
+          If you are building with MinGW-LLVM, add both ``mingw=yes`` and
+          ``llvm=yes`` to the ``scons`` command.
 
           If you are building with MinGW and the binaries are not located in
           the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
@@ -364,10 +364,10 @@ To compile Godot with statically linked ANGLE:
               ./update_angle.sh
               scons
 
-          If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
+          If you are buildng with MinGW, add ``mingw=yes`` to the command,
           you can also specify the build architecture using ``arch={architecture}``.
-          If you are building with MinGW-LLVM, add both ``use_mingw=yes`` and
-          ``use_llvm=yes`` to the ``scons`` command.
+          If you are building with MinGW-LLVM, add both ``mingw=yes`` and
+          ``llvm=yes`` to the ``scons`` command.
 
           If you are building with MinGW and the binaries are not located in
           the ``PATH``, add ``mingw_prefix="/path/to/mingw"`` to the ``scons``
@@ -475,7 +475,7 @@ differ based on your system):
     ${MINGW_PREFIX}/bin/x86_64-w64-mingw32-gcc --version
     # x86_64-w64-mingw32-gcc (GCC) 13.2.0
 
-.. note:: If you are building with MinGW-LLVM, add ``use_llvm=yes`` to the ``scons`` command.
+.. note:: If you are building with MinGW-LLVM, add ``llvm=yes`` to the ``scons`` command.
 .. note:: When cross-compiling for Windows using MinGW-w64, keep in mind only
           ``x86_64`` and ``x86_32`` architectures are supported. MinGW-LLVM supports
           ``arm64`` as well. Be sure to specify the right ``arch=`` option when
