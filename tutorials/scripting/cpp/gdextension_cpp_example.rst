@@ -308,7 +308,7 @@ build files in a subsequent tutorial.
     refer to the ``SConstruct`` file in the Godot 4.x documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
-structure alongside ``godot-cpp``, ``src`` and ``project``, then run:
+structure alongside ``godot-cpp``, ``src``, and ``project``, then run:
 
 .. code-block:: bash
 
