@@ -101,7 +101,7 @@ To begin reading the relevant documentation, select the tile that matches your p
             I know how to use Godot,<br>
             <strong>I want to learn more advanced Godot topics.</strong>
         </a>
-        <a class="grid-item contribute-to-godot" href="contributing/how_to_contribute.html">
+        <a class="grid-item contribute-to-godot" href="https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html">
             I know how to use Godot,<br>
             <strong>I want to contribute to Godot.</strong>
         </a>
