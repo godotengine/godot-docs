@@ -104,15 +104,15 @@ Now it's time to build an actual plugin. We'll start by creating an empty Godot
 project in which we'll place a few files.
 
 Open Godot and create a new project. For this example, we will place it in a
-folder called ``demo`` inside our GDExtension's folder structure.
+folder called ``project`` inside our GDExtension's folder structure.
 
-In our demo project, we'll create a scene containing a Node called "Main" and
+In our project, we'll create a scene containing a Node called "Main" and
 we'll save it as ``main.tscn``. We'll come back to that later.
 
 Back in the top-level GDExtension module folder, we're also going to create a
 subfolder called ``src`` in which we'll place our source files.
 
-You should now have ``demo``, ``godot-cpp``, and ``src``
+You should now have ``project``, ``godot-cpp``, and ``src``
 directories in your GDExtension module.
 
 Your folder structure should now look like this:
@@ -121,7 +121,7 @@ Your folder structure should now look like this:
 
     gdextension_cpp_example/
     |
-    +--demo/                  # game example/demo to test the extension
+    +--project/                  # game example/demo to test the extension
     |
     +--godot-cpp/             # C++ bindings
     |
@@ -308,13 +308,13 @@ build files in a subsequent tutorial.
     refer to the ``SConstruct`` file in the Godot 4.x documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
-structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
+structure alongside ``godot-cpp``, ``src``, and ``project``, then run:
 
 .. code-block:: bash
 
     scons platform=<platform>
 
-You should now be able to find the module in ``demo/bin/<platform>``.
+You should now be able to find the module in ``project/bin/<platform>``.
 
 .. note::
 
@@ -326,7 +326,7 @@ Using the GDExtension module
 ----------------------------
 
 Before we jump back into Godot, we need to create one more file in
-``demo/bin/``.
+``project/bin/``.
 
 This file lets Godot know what dynamic libraries should be
 loaded for each platform and the entry function for the module. It is called ``gdexample.gdextension``.
@@ -374,7 +374,7 @@ Here is another overview to check the correct file structure:
 
     gdextension_cpp_example/
     |
-    +--demo/                  # game example/demo to test the extension
+    +--project/                  # game example/demo to test the extension
     |   |
     |   +--main.tscn
     |   |

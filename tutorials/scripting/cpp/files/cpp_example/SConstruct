@@ -24,7 +24,7 @@ lib_filename = "{}gdexample{}{}".format(env.subst('$SHLIBPREFIX'), env["suffix"]
 
 # Creates a SCons target for the path with our sources.
 library = env.SharedLibrary(
-    "demo/bin/{}".format(lib_filename),
+    "project/bin/{}".format(lib_filename),
     source=sources,
 )
 
