@@ -16,6 +16,14 @@ For that, :ref:`Containers <class_container>` are more useful.
 
 Container layout
 ----------------
+Controls inside Containers
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+A Control node can be laid out either manually or by a Container, depending on its context.
+When a Control node is not inside a Container, its position and size are controlled using anchors, offsets, and layout presets.
+When a Control node is a direct child of a Container, the Container automatically manages its layout. 
+In this case, manual positioning options such as anchors and presets no longer affect the Control, as the Container enforces its own layout rules.
+This behavior is expected. Containers are designed to ensure consistent and predictable layout of their children. To influence layout inside Containers,
+ use size flags, minimum size, and the rules specific to the Container type being used.
 
 Containers provide a huge amount of layout power (as an example, the Godot editor user interface is entirely done using them):
 
