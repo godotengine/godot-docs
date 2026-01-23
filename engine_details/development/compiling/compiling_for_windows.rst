@@ -268,24 +268,30 @@ Optionally, you can compile with the following for additional features:
             gendef ./bin/ARM64/WinPixEventRuntime.dll
             dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/ARM64/libWinPixEventRuntime.a
 
-When building Godot, you will need to tell SCons to use Direct3D 12 and where to
-look for the additional libraries:
+When building Godot, you will need to tell SCons where to look for the additional libraries:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...>
+    C:\godot> scons platform=windows mesa_libs=<...>
 
 Or, with all options enabled:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
+    C:\godot> scons platform=windows mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
 
-.. note:: For the Agility SDK's DLLs you have to explicitly choose the kind of
-          workflow. Single-arch is the default (DLLs copied to ``bin/``). If you
-          pass ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for
-          multi-arch. DLLs will be copied to the appropriate ``bin/<arch>/``
-          subdirectories and at runtime the right one will be loaded.
+.. note::
+
+    PIX support is disabled by default, even if you have it installed.
+    To enable it, pass ``use_pix=yes`` to SCons.
+
+.. note::
+
+    For the Agility SDK's DLLs, you have to explicitly choose the kind of
+    workflow. Single-arch is the default (DLLs copied to ``bin/``). If you pass
+    ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for multi-arch.
+    DLLs will be copied to the appropriate ``bin/<arch>/`` subdirectories
+    and at runtime, the right one will be loaded.
 
 Compiling with AccessKit support
 --------------------------------
