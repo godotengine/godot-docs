@@ -19,6 +19,7 @@ Container layout
 
 Controls inside Containers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 A Control node can be laid out either manually or by a Container, depending on its context.
 When a Control node is not inside a Container, its position and size are controlled using anchors, offsets, and layout presets.
 When a Control node is a direct child of a Container, the Container automatically manages its layout. 
