@@ -196,7 +196,7 @@ The name under ``program`` depends on your build configuration,
 e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
 ``target=editor`` and ``dev_build=yes``.
 
-Configuring Intellisense
+Configuring IntelliSense
 ------------------------
 
 For the C/C++ extension:
@@ -251,10 +251,28 @@ To fix include errors you may be having, you need to configure some settings in 
 
   - This argument can be added to your build task in ``tasks.json`` since it will need to be run whenever files are added or moved.
 
+Linting class reference XML files
+---------------------------------
+
+To get linting on class reference XML files, install the
+`vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__.
+
+Displaying documentation on hover
+---------------------------------
+
+By installing the
+`Godot Hover Docs extension <https://marketplace.visualstudio.com/items?itemName=RedMser.godot-hover-docs>`__,
+you can make class reference documentation appear when hovering symbols in C++
+source or header files. The information is sourced from local XML files, so it works offline.
+
+.. note::
+
+    This is only effective for symbols that are documented in the class reference XML,
+    i.e. those that are exposed to the scripting API. Internal engine symbols will not
+    show documentation on hover, unless they have a comment right above their declaration.
+
+Troubleshooting
+---------------
+
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
-
-.. tip::
-
-    To get linting on class reference XML files, install the
-    `vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__.
