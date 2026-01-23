@@ -16,6 +16,7 @@ For that, :ref:`Containers <class_container>` are more useful.
 
 Container layout
 ----------------
+
 Controls inside Containers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 A Control node can be laid out either manually or by a Container, depending on its context.
