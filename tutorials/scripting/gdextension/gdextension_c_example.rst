@@ -39,7 +39,7 @@ To organize our files, we're gonna split into mainly two folders:
 
     gdextension_c_example/
     |
-    +--demo/                  # game example/demo to test the extension
+    +--project/                  # game example/demo to test the extension
     |
     +--src/                   # source code of the extension we are building
 
@@ -96,7 +96,7 @@ to the root folder.
     env = Environment()
 
     # Set the target path and name.
-    target_path = "demo/bin/"
+    target_path = "project/bin/"
     target_name = "libgdexample"
 
     # Set the compiler and flags.
@@ -638,7 +638,7 @@ A demo project
 
 Now that we can create and free our custom object, we should be able to try it
 out in an actual project. For this, you need to open Godot and create a new
-project on the ``demo`` folder. The project manager may warn you the folder
+project in the ``project`` folder. The project manager may warn you the folder
 isn't empty if you have compiled the extension before, you can safely ignore
 this warning this time.
 
@@ -647,7 +647,7 @@ that, open a terminal or command prompt, navigate to the root folder of the
 extension and run ``scons``. It should compile quickly since the extension is
 very simple.
 
-Then, create a file called ``gdexample.gdextension`` inside the ``demo`` folder.
+Then, create a file called ``gdexample.gdextension`` inside the ``project`` folder.
 This is a Godot resource that describes the extension, allowing the engine to
 properly load it. Put the following content in this file:
 
@@ -1308,7 +1308,7 @@ infrastructure to make this work. You can see that implementing the binding
 functions inline here would take some space and also be quite repetitive. This
 also makes it easier to add another method in the future.
 
-If you compile the code and reopen the demo project, nothing will be different
+If you compile the code and reopen the Godot project, nothing will be different
 at first, since we only added two new methods. To ensure those are registered
 properly, you can search for ``GDExample`` in the editor help and verify they
 are present in the documentation page.
@@ -1618,7 +1618,7 @@ those, replacing the ``NULL`` value used previously:
     }
 
 This is enough to bind the virtual method. If you build the extension and run
-the demo project again, the ``_process()`` function will be called. You just won't
+the Godot project again, the ``_process()`` function will be called. You just won't
 be able to tell since the function itself does nothing visible. We will solve
 this now by making the custom node move following a pattern.
 
@@ -2114,7 +2114,7 @@ This updates the time passed for the signal emission and, if it is over one
 second it calls the ``emit_signal()`` function on the current instance, passing
 the name of the signal and the new position as arguments.
 
-Now we're done with our C GDExtension. Build it once more and reopen the demo
+Now we're done with our C GDExtension. Build it once more and reopen the Godot
 project in the editor.
 
 In the documentation page for ``GDExample`` you can see the new signal we bound:
