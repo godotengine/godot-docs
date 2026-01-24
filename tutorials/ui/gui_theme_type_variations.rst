@@ -82,14 +82,14 @@ The same workflow can also be performed from code.
 
     func _ready():
         var theme := Theme.new()
-        theme.add_type_variation("MyButton", "Button")
-        theme.set_color("font_color", "MyButton", Color.RED)
+        theme.add_type_variation("GrayButton", "Button")
+        theme.set_color("font_color", "GrayButton", Color.GRAY)
 
         self.theme = theme
 
         var button := Button.new()
         button.text = "Type Variation Button"
-        button.theme_type_variation = "MyButton"
+        button.theme_type_variation = "GrayButton"
         add_child(button)
 
 This example creates a ``Theme`` in code, defines a type variation based on
