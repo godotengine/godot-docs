@@ -73,3 +73,27 @@ any other case you have to input the name of the variation manually. Click on
 the pencil icon to the right. Then type in the name of the type variation and click the
 check mark icon or press enter. If a type variation with that name exists it
 will now be used by the node.
+
+The same workflow can also be performed from code.
+
+.. code-block:: gdscript
+
+    extends Control
+
+    func _ready():
+        var theme := Theme.new()
+        theme.add_type_variation("MyButton", "Button")
+        theme.set_color("font_color", "MyButton", Color.RED)
+
+        self.theme = theme
+
+        var button := Button.new()
+        button.text = "Type Variation Button"
+        button.theme_type_variation = "MyButton"
+        add_child(button)
+
+This example creates a ``Theme`` in code, defines a type variation based on
+``Button``, and assigns it to a newly created button using
+``theme_type_variation``. This mirrors the same workflow available in the
+Inspector.
+
