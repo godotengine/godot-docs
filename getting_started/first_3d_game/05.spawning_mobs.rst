@@ -200,7 +200,7 @@ Time*. By default, they restart automatically, emitting the signal in a cycle.
 We can connect to this signal from the *Main* node to spawn monsters every
 ``0.5`` seconds.
 
-With the *MobTimer* still selected, head to the *Node* dock on the right, and
+With the *MobTimer* still selected, head to the *Signals* dock on the right, and
 double-click the ``timeout`` signal.
 
 |image23|

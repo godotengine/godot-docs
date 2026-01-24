@@ -178,9 +178,8 @@ We need to detect collisions with a monster and to differentiate them from
 collisions with the floor. To do so, we can use Godot's :ref:`group
 <doc_groups>` tagging feature.
 
-Open the scene ``mob.tscn`` again and select the *Mob* node. Go to the *Node*
-dock on the right to see a list of signals. The *Node* dock has two tabs:
-*Signals*, which you've already used, and *Groups*, which allows you to assign
+Open the scene ``mob.tscn`` again and select the *Mob* node. Go to the *Groups*
+dock on the right to see a list of groups, which allows you to assign
 tags to nodes. Click on the *+* button to open the *Create new Group* dialog.
 
 |image7|

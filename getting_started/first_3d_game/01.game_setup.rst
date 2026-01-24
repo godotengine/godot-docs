@@ -118,7 +118,7 @@ Start by setting snapping with your preferred method. Then move the ``Ground`` n
 .. note::
 
     If you can't see the 3D object manipulator like on the image above, ensure
-    the *Select Mode* is active in the toolbar above the view.
+    the *Transform Mode* is active in the toolbar above the view.
 
 .. image:: img/01.game_setup/14.select_mode_icon.webp
 

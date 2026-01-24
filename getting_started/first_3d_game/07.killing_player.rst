@@ -48,7 +48,7 @@ the mask to the "enemies" layer.
 |image3|
 
 When areas detect a collision, they emit signals. We're going to connect
-one to the ``Player`` node. Select ``MobDetector`` and go to *Inspector*'s *Node* tab, double-click the
+one to the ``Player`` node. Select ``MobDetector`` and go to the Signals dock, double-click the
 ``body_entered`` signal and connect it to the ``Player``
 
 |image4|
@@ -107,7 +107,7 @@ We can use the ``Player``\ 's ``hit`` signal to end the game. All we need
 to do is connect it to the ``Main`` node and stop the ``MobTimer`` in
 reaction.
 
-Open ``main.tscn``, select the ``Player`` node, and in the *Node* dock,
+Open ``main.tscn``, select the ``Player`` node, and in the *Signals* dock,
 connect its ``hit`` signal to the ``Main`` node.
 
 |image5|
