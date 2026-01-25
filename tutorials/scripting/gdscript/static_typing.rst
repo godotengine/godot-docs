@@ -132,7 +132,7 @@ as a type in a constant:
     const Rifle = preload("res://player/weapons/rifle.gd")
     var my_rifle: Rifle
 
-The second method is to use the ``class_name`` keyword when you create.
+The second method is to use the ``class_name`` keyword when you create the script.
 For the example above, your ``rifle.gd`` would look like this:
 
 ::
