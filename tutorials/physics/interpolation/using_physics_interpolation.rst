@@ -84,7 +84,7 @@ As a rough guide:
 .. csv-table::
     :header: "Low tick rates (10-30)", "Medium tick rates (30-60)", "High tick rates (60+)"
     :widths: 20, 20, 20
-    
+
     "Better CPU performance","Good physics behavior in complex scenes","Good with fast physics"
     "Add some delay to input","Good for first person games","Good for racing games"
     "Simple physics behaviour"
@@ -154,3 +154,15 @@ The other great advantage to testing at a low tick rate is you can often notice
 other game systems that are synchronized to the physics tick and creating glitches
 which you may want to work around. Typical examples include setting animation blend
 values, which you may decide to set in ``_process()`` and interpolate manually.
+
+.. note::
+
+    In 2D, the position of visible collision shapes shown by the
+    :menu:`Debug > Visible Collision Shapes`
+    option **will** take physics interpolation into account.
+
+    By contrast, in 3D, the position of visible collision shapes **will not**
+    take physics interpolation into account. This means the visible collision
+    shapes can appear to move less smoothly and appear slightly in front of the
+    object's visual representation when the object is moving. This is not a bug,
+    but a consequence of how physics interpolation is implemented in 3D.
