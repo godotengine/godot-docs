@@ -222,7 +222,7 @@ with the help of a :ref:`class_Timer` node.
 Window focus
 ~~~~~~~~~~~~
 
-Unlike keyboard input, controller inputs by default can be seen by **all** windows on the
+Unlike keyboard input, controller inputs can by default be seen by **all** windows on the
 operating system, including unfocused windows.
 
 While this is useful for
@@ -230,7 +230,8 @@ While this is useful for
 it can also have adverse effects. Players may accidentally send controller inputs
 to the running project while interacting with another window.
 
-If you wish to ignore controller input events when the project isn't focused, set :ref:`ProjectSettings.input_devices/config/ignore_joypad_on_unfocused_application<class_ProjectSettings_property_input_devices/config/ignore_joypad_on_unfocused_application>` to ``true``.
+If you wish to ignore controller input events when the project isn't focused,
+set :ref:`ProjectSettings.input_devices/config/ignore_joypad_on_unfocused_application<class_ProjectSettings_property_input_devices/config/ignore_joypad_on_unfocused_application>` to ``true``.
 
 Power saving prevention
 ~~~~~~~~~~~~~~~~~~~~~~~
