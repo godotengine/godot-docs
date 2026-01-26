@@ -89,7 +89,7 @@ The same workflow can also be performed from code.
 
         var button := Button.new()
         button.text = "Type Variation Button"
-        button.theme_type_variation = "GrayButton"
+        button.theme_type_variation = &"GrayButton"
         add_child(button)
 
 This example creates a ``Theme`` in code, defines a type variation based on
