@@ -85,7 +85,7 @@ The same workflow can also be performed from code.
         new_theme.add_type_variation(&"GrayButton", &"Button")
         new_theme.set_color(&"font_color", &"GrayButton", Color.GRAY)
 
-        self.theme = theme
+        theme = new_theme
 
         var button := Button.new()
         button.text = "Type Variation Button"
