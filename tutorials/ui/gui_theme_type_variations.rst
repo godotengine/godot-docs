@@ -81,7 +81,7 @@ The same workflow can also be performed from code.
     extends Control
 
     func _ready():
-        var theme := Theme.new()
+        var new_theme := Theme.new()
         theme.add_type_variation("GrayButton", "Button")
         theme.set_color("font_color", "GrayButton", Color.GRAY)
 
