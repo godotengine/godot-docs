@@ -82,8 +82,8 @@ The same workflow can also be performed from code.
 
     func _ready():
         var new_theme := Theme.new()
-        theme.add_type_variation("GrayButton", "Button")
-        theme.set_color("font_color", "GrayButton", Color.GRAY)
+        new_theme.add_type_variation(&"GrayButton", &"Button")
+        new_theme.set_color(&"font_color", &"GrayButton", Color.GRAY)
 
         self.theme = theme
 
