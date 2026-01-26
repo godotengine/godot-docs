@@ -222,7 +222,7 @@ with the help of a :ref:`class_Timer` node.
 Window focus
 ~~~~~~~~~~~~
 
-Unlike keyboard input, controller inputs can be seen by **all** windows on the
+Unlike keyboard input, controller inputs by default can be seen by **all** windows on the
 operating system, including unfocused windows.
 
 While this is useful for
@@ -230,43 +230,7 @@ While this is useful for
 it can also have adverse effects. Players may accidentally send controller inputs
 to the running project while interacting with another window.
 
-If you wish to ignore events when the project window isn't focused, you will
-need to create an :ref:`autoload <doc_singletons_autoload>` called ``Focus``
-with the following script and use it to check all your inputs:
-
-::
-
-    # Focus.gd
-    extends Node
-
-    var focused := true
-
-    func _notification(what: int) -> void:
-        match what:
-            NOTIFICATION_APPLICATION_FOCUS_OUT:
-                focused = false
-            NOTIFICATION_APPLICATION_FOCUS_IN:
-                focused = true
-
-
-    func input_is_action_pressed(action: StringName) -> bool:
-        if focused:
-            return Input.is_action_pressed(action)
-
-        return false
-
-
-    func event_is_action_pressed(event: InputEvent, action: StringName) -> bool:
-        if focused:
-            return event.is_action_pressed(action)
-
-        return false
-
-Then, instead of using ``Input.is_action_pressed(action)``, use
-``Focus.input_is_action_pressed(action)`` where ``action`` is the name of
-the input action. Also, instead of using ``event.is_action_pressed(action)``,
-use ``Focus.event_is_action_pressed(event, action)`` where ``event`` is an
-InputEvent reference and ``action`` is the name of the input action.
+If you wish to ignore controller input events when the project isn't focused, set :ref:`ProjectSettings.input_devices/config/ignore_joypad_on_unfocused_application<class_ProjectSettings_property_input_devices/config/ignore_joypad_on_unfocused_application>` to ``true``.
 
 Power saving prevention
 ~~~~~~~~~~~~~~~~~~~~~~~
