@@ -172,7 +172,7 @@ Rerun the game and notice how this ball now falls much faster than the others.
     of the ball. This is because :inspector:`PhysicsMaterial` is a *resource*, and needs
     to be made unique before you can edit it in a scene that is linking to its
     original scene. To make a resource unique for one instance, right-click on
-    the :inspector:`Physics Material` property in the :ui:`Inspector` and click :button:`Make Unique`
+    the :inspector:`Physics Material` property in the :ui:`Inspector` and click :button:`New Physics Material`
     in the context menu.
 
     Resources are another essential building block of Godot games we will cover
