@@ -18,6 +18,13 @@ rule, a scene's root node should reflect the object's desired functionality -
 what the object *is*. In the upper-left corner, in the "Scene" tab, click the
 "Other Node" button and add an :ref:`Area2D <class_Area2D>` node to the scene.
 
+**Note**: Godot also provides the :ref:`CharacterBody2D <class_CharacterBody2D>` node, 
+specifically designed for 2D characters, which includes built-in support for some 
+of the processes explained in this tutorial. In many real projects, CharacterBody2D 
+would be a better choice for a players and enemies. However, this tutorial focus on 
+core concepts that apply to a wider range of nodes and use cases.
+
+
 .. image:: img/add_node.webp
 
 When you add the ``Area2D`` node, Godot will display the following **warning icon**
