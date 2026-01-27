@@ -108,9 +108,9 @@ To begin reading the relevant documentation, select the tile that matches your p
     </div>
     <br>
 
-You can also use the table of contents in the sidebar to access easily access
-any section of the documentation for your topic of interest. You can also use
-the search function in the top-left corner.
+You can also use the table of contents in the sidebar to easily access
+any section of the documentation for your topic of interest. You can 
+also use the search function in the top-left corner.
 
 Get involved
 ------------
