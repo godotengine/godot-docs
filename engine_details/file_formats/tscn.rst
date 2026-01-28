@@ -248,7 +248,7 @@ Godot 4, so that animations can be imported separately from 3D meshes, which is
 a common workflow in 3D animation software. See the `original pull request
 <https://github.com/godotengine/godot/pull/59980>`__ for details.
 
-If the library name is empty, then it acts acts the unique source of animations
+If the library name is empty, then it acts as the unique source of animations
 for this AnimationPlayer. This allows using ``<animation_name>`` directly to
 play animations from script. If you name the library, then you must play it as
 ``<library_name>/<animation_name>``. This ensures backwards compatibility and
