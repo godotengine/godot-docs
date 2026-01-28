@@ -77,8 +77,8 @@ for a GitHub based CI workflow.
 Using a custom API file
 -----------------------
 
-Every branch of godot-cpp comes with an API file (``extension_api.json``) appropriate for
-the respective Godot version (e.g. the ``4.3`` branch comes with the API file compatible
+Every branch of godot-cpp comes with an API file (:ref:`extension_api.json <doc_gdextension_api_file>`)
+appropriate for the respective Godot version (e.g. the ``4.3`` branch comes with the API file compatible
 with Godot version ``4.3`` and later).
 
 However, you may want to use a custom ``extension_api.json``, for example:

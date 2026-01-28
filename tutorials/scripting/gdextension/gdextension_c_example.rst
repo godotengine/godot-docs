@@ -64,7 +64,7 @@ To get this JSON file, just call the Godot executable:
 
     godot --dump-extension-api
 
-The resulting ``extension_api.json`` file will be created in the current
+The resulting :ref:`extension_api.json <doc_gdextension_api_file>` file will be created in the current
 folder. You can copy this file to the example folder to have it handy.
 
 .. note::
