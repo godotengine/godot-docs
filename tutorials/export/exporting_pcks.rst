@@ -68,8 +68,8 @@ Generating PCK files
 --------------------
 
 In order to pack all resources of a project into a PCK file, open the project
-and go to **Project > Export** and click on **Export PCK/ZIP**. Also, make sure
-to have an export preset selected while doing so.
+and go to :menu:`Project > Export`, select and export preset, and click on
+:button:`Export PCK/ZIP`.
 
 .. image:: img/export_pck.webp
 
@@ -78,27 +78,24 @@ with ``--export-pack``. The output file must with a ``.pck`` or ``.zip``
 file extension. The export process will build that type of file for the
 chosen platform.
 
-.. note::
+This exported pck file, with everything included, is a necessary base for creating
+patch PCK files, which only include new or updated resources.
 
-    If one wishes to support mods for their game, they will need their users to
-    create similarly exported files. Assuming the original game expects a
-    certain structure for the PCK's resources and/or a certain interface for
-    its scripts, then either...
+Generating patch PCK files
+--------------------------
 
-    1. The developer must publicize documentation of these expected structures/
-       interfaces, expect modders to install Godot Engine, and then also expect
-       those modders to conform to the documentation's defined API when building
-       mod content for the game (so that it will work). Users would then use
-       Godot's built in exporting tools to create a PCK file, as detailed
-       above.
-    2. The developer uses Godot to build a GUI tool for adding their exact API
-       content to a project. This Godot tool must either run on a tools-enabled
-       build of the engine or have access to one (distributed alongside or
-       perhaps in the original game's files). The tool can then use the Godot
-       executable to export a PCK file from the command line with
-       :ref:`OS.execute() <class_OS_method_execute>`. The game itself shouldn't
-       use a tool-build of the engine (for security), so it's best to keep
-       the modding tool and game separate.
+To generate a patch PCK file, within the export menu, and with your desired preset
+selected, click on the :Button:`Patching` tab. At the bottom is the :ui:`Base Packs`
+section. Click on the :Button:`Add Pack` button, then navigate to the PCK file you
+exported that contained everything in your project.
+
+Now, when you go to export a PCK file of your project again, if you have the
+:Button:`Export as Patch` button selected. Only files resources that have changed
+will be exported in the PCK file.
+
+You can also add any patches you export to your base packs for future use. For
+example, adding patch.pck will ensure that patch2.pck will not include any resources
+from that first patch.
 
 Opening PCK or ZIP files at runtime
 -----------------------------------
@@ -167,11 +164,25 @@ call :ref:`ProjectSettings.load_resource_pack() <class_ProjectSettings_method_lo
 in the autoload script's ``_init()`` function, rather than ``_enter_tree()``
 or ``_ready()``.
 
-Summary
--------
+Modding considerations
+----------------------
 
-This tutorial explains how to add mods, patches, or DLC to a game.
-The most important thing is to identify how one plans to distribute future
-content for their game and develop a workflow that is customized for that
-purpose. Godot should make that process smooth regardless of which route a
-developer pursues.
+If one wishes to support mods for their game, they will need their users to
+create similarly exported files. Assuming the original game expects a
+certain structure for the PCK's resources, and/or a certain interface for
+its scripts, then one of two things has to be done.
+
+1. The developer must publicize documentation of these expected structures/
+    interfaces, expect modders to install Godot Engine, and then also expect
+    those modders to conform to the documentation's defined API when building
+    mod content for the game (so that it will work). Users would then use
+    Godot's built in exporting tools to create a PCK file, as detailed
+    above.
+2. The developer uses Godot to build a GUI tool for adding their exact API
+    content to a project. This Godot tool must either run on a tools-enabled
+    build of the engine or have access to one (distributed alongside or
+    perhaps in the original game's files). The tool can then use the Godot
+    executable to export a PCK file from the command line with
+    :ref:`OS.execute() <class_OS_method_execute>`. The game itself shouldn't
+    use a tool-build of the engine (for security), so it's best to keep
+    the modding tool and game separate.
