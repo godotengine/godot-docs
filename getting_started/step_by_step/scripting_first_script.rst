@@ -126,7 +126,7 @@ our node's ``texture``.
 .. note::
 
     By default, the :ui:`Inspector` displays a node's properties in "Title Case", with
-    capitalized words separated by a space. In GDScript code these properties
+    capitalized words separated by a space. In GDScript code, these properties
     are in "snake_case", which is lowercase with each word separated by an underscore.
 
     You can hover over any property's name in the :ui:`Inspector` to see a description and
