@@ -55,7 +55,7 @@ To begin reading the relevant documentation, select the tile that matches your p
         }
 
         .grid-item:visited {
-            color: unset;
+            color: hsla(0, 0%, 100%, 0.9);
         }
 
         .grid-item:hover,
