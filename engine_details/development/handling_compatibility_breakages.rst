@@ -123,8 +123,9 @@ then run it with the ``--dump-extension-api`` flag:
     scons
     godot --dump-extension-api
     
-This will create a file named ``extension_api.json`` in your current directory. Switch to your feature branch, recompile Godot,
-and then run it with the ``--validate-extension-api`` flag followed by the path to the ``extension_api.json`` file you just generated:
+This will create a file named :ref:`extension_api.json <doc_gdextension_api_file>` in your current directory.
+Switch to your feature branch, recompile Godot, and then run it with the ``--validate-extension-api`` flag followed by
+the path to the ``extension_api.json`` file you just generated:
 
 .. code-block:: shell
 

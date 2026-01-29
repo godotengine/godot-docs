@@ -17,10 +17,10 @@ using this API in whatever form makes the most sense for that language.
 
 .. note::
 
-    This is not to be confused with the ``extension_api.json``, which is also used by
-    GDExtension language bindings, and contains information about the classes and
-    methods that are exposed by Godot. The ``gdextension_interface.json`` is more
-    low-level, and is used to interact with those higher-level classes and methods.
+    This is not to be confused with the :ref:`extension_api.json <doc_gdextension_api_file`,
+    which is also used by GDExtension language bindings, and contains information about the
+    classes and methods that are exposed by Godot. The ``gdextension_interface.json`` is
+    more low-level, and is used to interact with those higher-level classes and methods.
 
 For languages that can be extended via C, or provide tools for interacting with C code,
 it's also possible to use the Godot executable to dump a generated C header file:
