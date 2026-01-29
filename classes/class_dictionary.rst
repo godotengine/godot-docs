@@ -59,7 +59,7 @@ Creating a dictionary:
 
 
 
-You can access a dictionary's value by referencing its corresponding key. In the above example, ``points_dict["White"]`` will return ``50``. You can also write ``points_dict.White``, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable).
+You can access a dictionary's value by referencing its corresponding key. In the above example, ``points_dict["White"]`` will return ``50``. You can also write ``points_dict.White``, which is equivalent. However, you'll have to use the bracket syntax if the key you're accessing the dictionary with isn't a fixed string (such as a number or variable). Referencing a dictionary method as :ref:`Callable<class_Callable>` requires special handling, since this syntax prioritizes key lookup over built in methods. For example, ``some_signal.connect(points_dict.erase)`` will lookup the ``"erase"`` key, rather than the :ref:`erase<class_Dictionary_method_erase>` method.
 
 
 .. tabs::
