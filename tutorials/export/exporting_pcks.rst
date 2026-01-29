@@ -64,12 +64,37 @@ See :ref:`doc_exporting_projects_pck_versus_zip` for a comparison of the two for
     The downside of this approach is that it's less transparent to the game logic,
     as it will not benefit from the same resource management as PCK/ZIP files.
 
+Security Concerns
+-----------------
+
+It is important to note that loading PCK files for patches, mods, or extra content
+like expansions, will require you to code a system to automatically load files based
+on their location, and possibly name. This is a security vulnerability in three
+scenarios. One, a user downloads a mod with malicious code. Two, a malicious program
+already exists on an end users PC and has replaced the PCK file with a malicious
+copy. Three, you are distributing patch PCK files through a game launcher and the
+system has become compromised.
+
+Take this into consideration when determining how to use PCK files in a project.
+For situations where you have a patching system via a launcher, consider using
+asymmetric cryptography. In the main PCK you could store the public key, and sign
+patch or expansion PCK files with the private key. See the :ref:`class_Crypto` class
+for more information.
+
+Piracy Concerns
+---------------
+
+If you want to use PCK files to distribute extra paid content, such as expansions,
+keep in mind that Godot provides no way out of the box to prevent someone from
+copying the PCK file, and putting it on another persons computer. Any kind of DRM
+system is your responsibility to implement if that's what you want.
+
 Generating PCK files
 --------------------
 
 In order to pack all resources of a project into a PCK file, open the project
-and go to **Project > Export** and click on **Export PCK/ZIP**. Also, make sure
-to have an export preset selected while doing so.
+and go to :menu:`Project > Export`, select and export preset, and click on
+:button:`Export PCK/ZIP`.
 
 .. image:: img/export_pck.webp
 
@@ -78,27 +103,51 @@ with ``--export-pack``. The output file must with a ``.pck`` or ``.zip``
 file extension. The export process will build that type of file for the
 chosen platform.
 
-.. note::
+Patch PCK files
+---------------
 
-    If one wishes to support mods for their game, they will need their users to
-    create similarly exported files. Assuming the original game expects a
-    certain structure for the PCK's resources and/or a certain interface for
-    its scripts, then either...
+Generating Patch PCK files
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    1. The developer must publicize documentation of these expected structures/
-       interfaces, expect modders to install Godot Engine, and then also expect
-       those modders to conform to the documentation's defined API when building
-       mod content for the game (so that it will work). Users would then use
-       Godot's built in exporting tools to create a PCK file, as detailed
-       above.
-    2. The developer uses Godot to build a GUI tool for adding their exact API
-       content to a project. This Godot tool must either run on a tools-enabled
-       build of the engine or have access to one (distributed alongside or
-       perhaps in the original game's files). The tool can then use the Godot
-       executable to export a PCK file from the command line with
-       :ref:`OS.execute() <class_OS_method_execute>`. The game itself shouldn't
-       use a tool-build of the engine (for security), so it's best to keep
-       the modding tool and game separate.
+To create a PCK file that only contains resources not present in the original
+release of a project, you would create a patch PCK file. This could be used for
+patches, mods or expansions. For this to work you'll first need to have a PCK file
+created of your project at the point of its initial release.
+
+To generate a patch PCK file, within the export menu, and with your desired preset
+selected, click on the :Button:`Patching` tab. At the bottom is the :ui:`Base Packs`
+section. Click on the :Button:`Add Pack` button, then navigate to the PCK file you
+exported that contains everything in your project for its initial release.
+
+Now, when you go to export a PCK file of your project again, if you have the
+:Button:`Export as Patch` button selected. Only files resources that have changed
+will be exported in the PCK file.
+
+You can also add any patches you export to your base packs for future use. For
+example, adding ``patch.pck`` will ensure that ``patch2.pck`` will not include any
+resources from that first patch.
+
+Delta Encoding
+~~~~~~~~~~~~~~
+
+Patch PCK files can be made smaller through the use of delta encoding. This makes it
+so that only parts of a file that have been changed are updated. This does have a
+drawback of longer load times for the patch PCK files. There are two settings for
+Delta encoding in addition to the filters:
+
+- **Delta Encoding Compression Level:** Controls how much compression is applied to
+  the files. We do not recommend any more than the default of 19. Beyond that more
+  memory is needed for export and import for significantly fewer gains. any positive
+  number values will have the same decompression speed, however export will take
+  longer the higher the number is. Negative number values enable fast mode, which
+  means larger files, but the decompression speed is faster.
+
+- **Delta Encoding Minimum Size Reduction:** Controls how much size has to be saved
+  at minimum for compression to be used on an individual file. For example, at a
+  level of 10%, if the file size can only be reduced by 5%, then the file won't use
+  delta encoding.
+
+The default compression level, 19, is the highest recommended level
 
 Opening PCK or ZIP files at runtime
 -----------------------------------
@@ -153,7 +202,7 @@ The PCK or ZIP file contains a ``mod_scene.tscn`` test scene in its root.
     ``Assembly.LoadFile("mod.dll")``
 
 Troubleshooting
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 If you are loading a resource pack and are not noticing any changes, it may be
 due to the pack being loaded too late. This is particularly the case with menu
@@ -167,11 +216,25 @@ call :ref:`ProjectSettings.load_resource_pack() <class_ProjectSettings_method_lo
 in the autoload script's ``_init()`` function, rather than ``_enter_tree()``
 or ``_ready()``.
 
-Summary
--------
+Modding considerations
+----------------------
 
-This tutorial explains how to add mods, patches, or DLC to a game.
-The most important thing is to identify how one plans to distribute future
-content for their game and develop a workflow that is customized for that
-purpose. Godot should make that process smooth regardless of which route a
-developer pursues.
+If one wishes to support mods for their game, they will need their users to
+create similarly exported files. Assuming the original game expects a
+certain structure for the PCK's resources, and/or a certain interface for
+its scripts, then one of two things has to be done.
+
+1. The developer must publicize documentation of these expected structures/
+    interfaces, expect modders to install Godot Engine, and then also expect
+    those modders to conform to the documentation's defined API when building
+    mod content for the game (so that it will work). Users would then use
+    Godot's built in exporting tools to create a PCK file, as detailed
+    above.
+2. The developer uses Godot to build a GUI tool for adding their exact API
+    content to a project. This Godot tool must either run on a tools-enabled
+    build of the engine or have access to one (distributed alongside or
+    perhaps in the original game's files). The tool can then use the Godot
+    executable to export a PCK file from the command line with
+    :ref:`OS.execute() <class_OS_method_execute>`. The game itself shouldn't
+    use a tool-build of the engine (for security), so it's best to keep
+    the modding tool and game separate.
