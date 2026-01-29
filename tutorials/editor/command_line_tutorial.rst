@@ -29,12 +29,14 @@ Command line reference
 
 .. |release| image:: img/template_release.svg
 .. |debug| image:: img/template_debug.svg
+.. |extended| image:: img/template_extended.svg
 .. |editor| image:: img/editor.svg
 
 **Legend**
 
 - |release| Available in editor builds, debug export templates and release export templates.
 - |debug| Available in editor builds and debug export templates only.
+- |extended| Only available in editor builds, and export templates compiled with ``disable_path_overrides=false``.
 - |editor| Only available in editor builds.
 
 Note that unknown command line arguments have no effect whatsoever. The engine
@@ -84,15 +86,13 @@ given build type.
 | ``-l``, ``--language <locale>``          | |release| Use a specific locale. ``<locale>`` follows the format ``language_Script_COUNTRY_VARIANT`` where language is a 2 or 3-letter language code in      |
 |                                          | lowercase and the rest is optional. See :ref:`doc_locales` for more details.                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--path <directory>``                   | |release| Path to a project (``<directory>`` must contain a 'project.godot' file).                                                                           |
+| ``--path <directory>``                   | |extended| Path to a project (``<directory>`` must contain a "project.godot" file).                                                                          |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--scene <path>``                       | |release| Path or UID of a scene in the project that should be started.                                                                                      |
+| ``--scene <path>``                       | |extended| Path or UID of a scene in the project that should be started.                                                                                     |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-u``, ``--upwards``                    | |release| Scan folders upwards for 'project.godot' file.                                                                                                     |
+| ``--main-pack <file>``                   | |extended| Path to a pack (.pck) file to load.                                                                                                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--main-pack <file>``                   | |release| Path to a pack (.pck) file to load.                                                                                                                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--render-thread <mode>``               | |release| Render thread mode ('unsafe', 'safe', 'separate'). See :ref:`Thread Model <class_ProjectSettings_property_rendering/driver/threads/thread_model>`  |
+| ``--render-thread <mode>``               | |release| Render thread mode ("unsafe", "safe", "separate"). See :ref:`Thread Model <class_ProjectSettings_property_rendering/driver/threads/thread_model>`  |
 |                                          | for more details.                                                                                                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--remote-fs <address>``                | |release| Remote filesystem (``<host/IP>[:<port>]`` address).                                                                                                |
@@ -103,8 +103,8 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--display-driver <driver>``            | |release| Display driver (and rendering driver). Use ``--help`` first to display the list of available drivers.                                              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--audio-output-latency`` <ms>          | |release| Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may   |
-|                                          | result in audio cracking if the CPU can't keep up                                                                                                            |
+| ``--audio-output-latency <ms>``          | |release| Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may   |
+|                                          | result in audio cracking if the CPU can't keep up.                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--rendering-method <renderer>``        | |release| Renderer name. Requires driver support.                                                                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,8 +118,8 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--headless``                           | |release| Enable headless mode (``--display-driver headless --audio-driver Dummy``). Useful for servers and with ``--script``.                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--log-file``                           | |release| Write output/error log to the specified path instead of the default location defined by the project. <file> path should be absolute or relative to |
-|                                          | the project directory.                                                                                                                                       |
+| ``--log-file``                           | |release| Write output/error log to the specified path instead of the default location defined by the project. ``<file>`` path should be absolute or         |
+|                                          | relative to the project directory.                                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--write-movie <file>``                 | |release| Run the engine in a way that a movie is written (usually with .avi or .png extension).                                                             |
 |                                          | ``--fixed-fps`` is forced when enabled, but can be used to change movie FPS.                                                                                 |
@@ -148,12 +148,12 @@ given build type.
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--single-window``                | |release| Use a single window (no separate subwindows).                    |
 +------------------------------------+----------------------------------------------------------------------------+
-| ``--xr-mode <mode>``               | |release| Select XR mode ('default', 'off', 'on').                         |
+| ``--xr-mode <mode>``               | |release| Select XR mode ("default", "off", "on").                         |
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--wid <window_id>``              | |release| Request parented to window.                                      |
 +------------------------------------+----------------------------------------------------------------------------+
-| ``--accessibility <mode>``         | |release| Select accessibility mode ['auto' (when screen reader is running,|
-|                                    | default), 'always', 'disabled'].                                           |
+| ``--accessibility <mode>``         | |release| Select accessibility mode ['auto" (when screen reader is running,|
+|                                    | default), "always", "disabled'].                                           |
 +------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
@@ -206,7 +206,7 @@ given build type.
 |                                | results in unlimited framerate.                                                                                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--frame-delay <ms>``         | |release| Simulate high CPU load (delay each frame by <ms> milliseconds). Do not use as a FPS limiter; use      |
-|                                | --max-fps instead.                                                                                              |
+|                                | ``--max-fps`` instead.                                                                                          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--time-scale <scale>``       | |release| Force time scale (higher values are faster, 1.0 is normal speed).                                     |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -219,7 +219,7 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--fixed-fps <fps>``          | |release| Force a fixed number of frames per second. This setting disables real-time synchronization.           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--delta-smoothing <enable>`` | |release| Enable or disable frame delta smoothing ('enable', 'disable').                                        |
+| ``--delta-smoothing <enable>`` | |release| Enable or disable frame delta smoothing ("enable", "disable").                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--print-fps``                | |release| Print the frames per second to the stdout.                                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -231,17 +231,17 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Command                                                          | Description                                                                                                                                             |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``)     |
-|                                                                  | or an absolute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                          |
+| ``-s``, ``--script <script>``                                    | |extended| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://my_script.gd``)   |
+|                                                                  | or an absolute filesystem path (for example, on Windows: ``C:/tmp/my_script.gd``).                                                                      |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--main-loop <main_loop_name>``                                 | |release| Run a MainLoop specified by its global class name.                                                                                            |
+| ``--main-loop <main_loop_name>``                                 | |extended| Run a MainLoop specified by its global class name.                                                                                           |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--check-only``                                                 | |release| Only parse for errors and quit (use with ``--script``).                                                                                       |
+| ``--check-only``                                                 | |extended| Only parse for errors and quit (use with ``--script``).                                                                                      |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--import``                                                     | |editor| Starts the editor, waits for any resources to be imported, and then quits. Implies ``--editor`` and ``--quit``.                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-release <preset> <path>``                             | |editor| Export the project in release mode using the given preset and output path. The preset name should match one defined in 'export_presets.cfg'.   |
-|                                                                  | ``<path>`` should be absolute or relative to the project directory, and include the filename for the binary (e.g. 'builds/game.exe'). The target        |
+| ``--export-release <preset> <path>``                             | |editor| Export the project in release mode using the given preset and output path. The preset name should match one defined in "export_presets.cfg".   |
+|                                                                  | ``<path>`` should be absolute or relative to the project directory, and include the filename for the binary (e.g. "builds/game.exe"). The target        |
 |                                                                  | directory must exist.                                                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--export-debug <preset> <path>``                               | |editor| Like ``--export-release``, but use debug template. Implies ``--import``.                                                                       |
@@ -249,11 +249,11 @@ given build type.
 | ``--export-pack <preset> <path>``                                | |editor| Like ``--export-release``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK   |
 |                                                                  | or ZIP format. Implies ``--import``.                                                                                                                    |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--export-patch <preset> <path>``                               | |editor| Export pack with changed files only. See --export-pack description for other considerations.                                                   |
+| ``--export-patch <preset> <path>``                               | |editor| Export pack with changed files only. See ``--export-pack`` description for other considerations.                                               |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--patches <paths>``                                            | |editor| List of patches to use with --export-patch. The list is comma-separated.                                                                       |
+| ``--patches <paths>``                                            | |editor| List of patches to use with ``--export-patch``. The list is comma-separated.                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--install-android-build-template``                             | |editor| Install the Android build template. Used in conjunction with --export-release or --export-debug.                                               |
+| ``--install-android-build-template``                             | |editor| Install the Android build template. Used in conjunction with ``--export-release`` or ``--export-debug``.                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--convert-3to4 [<max_file_kb>] [<max_line_size>]``             | |editor| Convert project from Godot 3.x to Godot 4.x.                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,14 +263,22 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--no-docbase``                                                 | |editor| Disallow dumping the base types (used with ``--doctool``).                                                                                     |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--gdscript-docs <path>``                                       | |editor| Rather than dumping the engine API, generate API reference from the inline documentation in the GDScript files found in <path>                 |
+| ``--gdextension-docs``                                           | |editor| Rather than dumping the engine API, generate API reference from all the GDExtensions loaded in the current project (used with                  |
+|                                                                  | ``--doctool``).                                                                                                                                         |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--gdscript-docs <path>``                                       | |editor| Rather than dumping the engine API, generate API reference from the inline documentation in the GDScript files found in ``<path>``             |
 |                                                                  | (used with ``--doctool``).                                                                                                                              |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--build-solutions``                                            | |editor| Build the scripting solutions (e.g. for C# projects). Implies ``--editor`` and requires a valid project to edit.                               |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--dump-gdextension-interface``                                 | |editor| Generate GDExtension header file 'gdnative_interface.h' in the current folder. This file is the base file required to implement a GDExtension. |
+| ``--dump-gdextension-interface``                                 | |editor| Generate GDExtension header file "gdextension_interface.h" in the current folder. This file is the base file required to implement             |
+|                                                                  | a GDExtension.                                                                                                                                          |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--dump-extension-api``                                         | |editor| Generate JSON dump of the Godot API for GDExtension bindings named 'extension_api.json' in the current folder.                                 |
+| ``--dump-gdextension-interface-json``                            | |editor| Generate a JSON dump of the GDExtension interface named "gdextension_interface.json" in the current folder.                                    |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--dump-extension-api``                                         | |editor| Generate JSON dump of the Godot API for GDExtension bindings named "extension_api.json" in the current folder.                                 |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--dump-extension-api-with-docs``                               | |editor| Generate JSON dump of the Godot API like the previous option, but including documentation.                                                     |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--validate-extension-api <path>``                              | |editor| Validate an extension API file dumped (with the option above) from a previous version of the engine to ensure API compatibility.               |
 |                                                                  | If incompatibilities or errors are detected, the return code will be non-zero.                                                                          |
@@ -279,7 +287,7 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--benchmark-file <path>``                                      | |editor| Benchmark the run time and save it to a given file in JSON format. The path should be absolute.                                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-|``--test [--help]``                                               | |editor| Run unit tests. Use --test --help for more information.                                                                                        |
+|``--test [--help]``                                               | |editor| Run :ref:`unit tests <doc_unit_testing>` (requires compiling the engine with ``tests=yes``). Use ``--test --help`` for more information.       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
