@@ -190,6 +190,8 @@ Global built-ins are available everywhere, including custom functions.
 |                             | In the Forward+ or Mobile renderers, it's ``0.0``.                                                  |
 |                             | In the Compatibility renderer, it's ``-1.0``.                                                       |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in bool **IS_MULTIVIEW**    | ``true`` when output is stereoscopic (XR), ``false`` when output is monoscopic.                     |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Vertex built-ins
 ----------------
