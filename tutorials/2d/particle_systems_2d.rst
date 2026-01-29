@@ -247,16 +247,16 @@ You can control the emit duration with the ``Generation Time (sec)`` option. The
 Local Coords
 ~~~~~~~~~~~~
 
-By default this option is on, and it means that the space that particles
-are emitted to is relative to the node. If the node is moved, all
-particles are moved with it:
-
-.. image:: img/paranim20.gif
-
-If disabled, particles will emit to global space, meaning that if the
-node is moved, already emitted particles are not affected:
+By default, this option is off. It means that the space that particles are
+emitted to is global, and **not** relative to the node. If the node is moved,
+existing particles are not moved with it:
 
 .. image:: img/paranim21.gif
+
+If enabled, particles will emit to local space, meaning that if the
+node is moved, already emitted particles are also affected:
+
+.. image:: img/paranim20.gif
 
 Draw Order
 ~~~~~~~~~~
