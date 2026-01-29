@@ -537,14 +537,21 @@ EditorScripts, with a ``_run()`` method already inserted:
 This ``_run()`` method is executed when you use **File > Run** or the keyboard
 shortcut :kbd:`Ctrl + Shift + X` while the EditorScript is the currently open
 script in the script editor. This keyboard shortcut is only effective when
-currently focused on the script editor.
+currently focused on the script editor. If using an external script editor, then
+you must use one of the approaches described below to run the EditorScript.
+
+There are two other ways to run an EditorScript:
+
+- If the script has a ``class_name`` set at the top, it will appear in the command palette.
+  Press :kbd:`Ctrl + Shift + P` (:kbd:`Cmd + Shift + P` on macOS) to bring up
+  the command palette, then enter the class name. The script will appear under
+  the Editor Scripts category. The class name is automatically capitalized,
+  which means a class such as ``AddFoliage`` will appear
+  as :menu:`Add Foliage`.
+- Right-click the script in the FileSystem dock and choose the :menu:`Run` option.
+  This option only appears on scripts that inherit from EditorScript.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
-
-.. note::
-
-    EditorScripts can only be run from the Godot script editor. If you are using
-    an external editor, open the script inside the Godot script editor to run it.
 
 .. danger::
 
