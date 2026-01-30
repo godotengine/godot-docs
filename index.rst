@@ -48,14 +48,14 @@ To begin reading the relevant documentation, select the tile that matches your p
         }
 
         .grid-item {
-            color: hsla(0, 0%, 100%, 0.9);
             padding: 1rem;
             border-radius: 0.375rem;
             text-align: center;
         }
 
+        .grid-item,
         .grid-item:visited {
-            color: unset;
+            color: hsla(0, 0%, 100%, 0.9);
         }
 
         .grid-item:hover,
@@ -109,7 +109,7 @@ To begin reading the relevant documentation, select the tile that matches your p
     <br>
 
 You can also use the table of contents in the sidebar to easily access
-any section of the documentation for your topic of interest. You can 
+any section of the documentation for your topic of interest. You can
 also use the search function in the top-left corner.
 
 Get involved
