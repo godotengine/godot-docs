@@ -69,7 +69,7 @@ Finally, click the :button:`Import` button.
 .. image:: img/instancing_import_and_edit_button.webp
 
 A window notifying you that the project was last opened in an older Godot version
-may appear, that's not an issue. Click :button:`Ok` to open the project.
+may appear. That's not an issue. Click :button:`OK` to open the project.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
