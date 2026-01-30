@@ -10,5 +10,5 @@ Quick start guide
   move nodes).
 - Be sure to call :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`
   on nodes *after* you first position or teleport them, to prevent "streaking".
-- Temporarily try setting :ref:`Project Settings > Physics > Common > Physics Tick per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+- Temporarily try setting :ref:`Project Settings > Physics > Common > Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
   to 10 to see the difference with and without interpolation.

@@ -191,6 +191,14 @@ Rendering
     Soft Light blend mode now always behaves as it did previously with ``use_hdr_2d``, regardless of
     the Viewport's ``use_hdr_2d`` setting (`GH-109971`_).
 
+Navigation
+~~~~~~~~~~
+
+.. note::
+
+    ``AStar2D.get_point_path``, ``AStar3D.get_point_path``, ``AStarGrid2D.get_id_path`` and ``AStarGrid2D.get_point_path`` will now return an
+    empty path when ``from_id`` is a disabled/solid point (`GH-113988`_).
+
 Changed defaults
 ----------------
 
@@ -283,5 +291,6 @@ Property ``compress``                                                           
 .. _GH-112379: https://github.com/godotengine/godot/pull/112379
 .. _GH-113213: https://github.com/godotengine/godot/pull/113213
 .. _GH-113459: https://github.com/godotengine/godot/pull/113459
+.. _GH-113988: https://github.com/godotengine/godot/pull/113988
 .. _GH-114043: https://github.com/godotengine/godot/pull/114043
 .. _GH-114053: https://github.com/godotengine/godot/pull/114053

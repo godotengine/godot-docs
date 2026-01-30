@@ -431,8 +431,8 @@ improve quality. This can be helpful when
 - Character bodies.
 - Vehicle bodies (intended for arcade physics, not simulation).
 - Joints.
-- Soft bodies.
-- Ragdolls.
+- :ref:`Soft bodies <doc_soft_body>`.
+- :ref:`Ragdolls <doc_ragdoll_system>`.
 - Areas to detect bodies entering or leaving it.
 
 **Collision detection:**
@@ -449,7 +449,7 @@ Shaders
 - Text-based shaders using a :ref:`shader language inspired by GLSL <doc_shading_language>`.
 - Visual shader editor.
 
-   - Support for visual shader plugins.
+   - Support for :ref:`visual shader plugins <doc_visual_shader_plugins>`.
 
 Scripting
 ---------
@@ -521,6 +521,7 @@ Audio
 - Listener2D and Listener3D nodes to listen from a position different than the camera.
 - Support for :ref:`procedural audio generation <class_AudioStreamGenerator>`.
 - Audio input to record microphones.
+- :ref:`Text to speech <doc_text_to_speech>` using platform-provided TTS engines.
 - MIDI input.
 
    - No support for MIDI output yet.
@@ -611,6 +612,12 @@ Internationalization
 --------------------
 
 - Full support for Unicode including emoji.
+- Support for loading system fonts on Windows, macOS, and Linux.
+
+  - By default, system fonts are used as a fallback to display unsupported
+    characters. This allows proper display of multilingual text without
+    having to bundle large font files with a project.
+
 - Store localization strings using :ref:`CSV <doc_internationalizing_games>`
   or :ref:`gettext <doc_localization_using_gettext>`.
 
@@ -618,7 +625,7 @@ Internationalization
 
 - Use localized strings in your project automatically in GUI elements or by
   using the ``tr()`` function.
-- Support for pluralization and translation contexts when using gettext translations.
+- Support for pluralization and translation contexts.
 - Support for :ref:`bidirectional typesetting <doc_internationalizing_games_bidi>`,
   text shaping and OpenType localized forms.
 - Automatic UI mirroring for right-to-left locales.
@@ -630,6 +637,8 @@ Windowing and OS integration
 - Spawn multiple independent windows within a single process.
 - Move, resize, minimize, and maximize windows spawned by the project.
 - Change the window title and icon.
+- Create transparent windows to use as overlays, with polygon-based
+  mouse passthrough support.
 - Request attention (will cause the title bar to blink on most platforms).
 - Fullscreen mode.
 
@@ -637,16 +646,27 @@ Windowing and OS integration
      but can optionally use exclusive fullscreen to reduce input lag.
 
 - Borderless windows (fullscreen or non-fullscreen).
-- Ability to keep a window always on top.
+- Keep a window always on top.
+- Make a window ignore focus (useful for overlays).
+- Declare a window as a popup (hidden from task switcher)
+  or exclusive (prevents interacting with other windows from the same process).
+- Native file dialog support on Windows, macOS, Linux, and Android.
+- Tray icon support on Windows and macOS.
 - Global menu integration on macOS.
+- Client-side decorations on macOS.
 - Execute commands in a blocking or non-blocking manner (including running
   multiple instances of the same project).
 - Open file paths and URLs using default or custom protocol handlers (if registered on the system).
 - Parse custom command line arguments.
+- Support for screen readers on Windows, macOS, and Linux.
 - Any Godot binary (editor or exported project) can be
   :ref:`used as a headless server <doc_exporting_for_dedicated_servers>`
   by starting it with the ``--headless`` command line argument.
   This allows running the engine without a GPU or display server.
+
+.. seealso::
+
+    See :ref:`doc_creating_applications` for details on using these features.
 
 Mobile
 ------

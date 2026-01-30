@@ -23,6 +23,13 @@ Description
 
 Base class of :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`\ s that has some joint lists and applies inverse kinematics. This class has some structs, enums, and helper methods which are useful to solve inverse kinematics.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Inverse Kinematics Returns to Godot 4.6 - IKModifier3D <https://godotengine.org/article/inverse-kinematics-returns-to-godot-4-6/#ikmodifier3d-and-7-child-classes>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties

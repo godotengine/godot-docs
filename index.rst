@@ -101,16 +101,16 @@ To begin reading the relevant documentation, select the tile that matches your p
             I know how to use Godot,<br>
             <strong>I want to learn more advanced Godot topics.</strong>
         </a>
-        <a class="grid-item contribute-to-godot" href="contributing/how_to_contribute.html">
+        <a class="grid-item contribute-to-godot" href="https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html">
             I know how to use Godot,<br>
             <strong>I want to contribute to Godot.</strong>
         </a>
     </div>
     <br>
 
-You can also use the table of contents in the sidebar to access easily access
-any section of the documentation for your topic of interest. You can also use
-the search function in the top-left corner.
+You can also use the table of contents in the sidebar to easily access
+any section of the documentation for your topic of interest. You can 
+also use the search function in the top-left corner.
 
 Get involved
 ------------

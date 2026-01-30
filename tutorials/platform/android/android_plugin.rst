@@ -384,13 +384,13 @@ This may involve creating dummy plugins for the host OS just so the API is publi
 editor. You can use the `godot-cpp-template <https://github.com/godotengine/godot-cpp-template>`__
 github template for reference on how to do so.
 
+Supported data types
+~~~~~~~~~~~~~~~~~~~~
+
+All data types are supported. Common types are mapped to their Godot equivalents
+(for example, ``String[]`` is mapped to ``PackedStringArray()``), but for other types, you can use `JavaClassWrapper <https://docs.godotengine.org/en/stable/tutorials/platform/android/javaclasswrapper_and_androidruntimeplugin.html#javaclasswrapper-godot-singleton>`_ to access it.
+
 Godot crashes upon load
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. UPDATE: Not supported yet. When more complex datatypes are supported,
-.. update this section.
-
-Check ``adb logcat`` for possible problems, then:
-
-- Check that the methods exposed by the plugin used the following Java types: ``void``, ``boolean``, ``int``, ``float``, ``java.lang.String``, ``org.godotengine.godot.Dictionary``, ``int[]``, ``byte[]``, ``float[]``, ``java.lang.String[]``.
-- More complex datatypes are not supported for now.
+Check `adb logcat <https://developer.android.com/tools/logcat>`_ for possible problems.

@@ -39,6 +39,9 @@ on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 if not on_rtd:
     notfound_urls_prefix = ''
 
+if on_rtd:
+    extensions.append("override_jobs")
+
 # Specify the site name for the Open Graph extension.
 ogp_site_name = "Godot Engine documentation"
 ogp_social_cards = {

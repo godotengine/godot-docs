@@ -5,15 +5,15 @@
 User interface (UI)
 ===================
 
-In this section of the tutorial we explain the basics of creating a graphical
+In this section of the tutorial, we explain the basics of creating a graphical
 user interface (GUI) in Godot.
 
 UI building blocks
 ------------------
 
-Like everything else in Godot the user interface is built using nodes, specifically
+Like everything else in Godot, the user interface is built using nodes, specifically
 :ref:`Control <class_Control>` nodes. There are many different types of controls
-which are useful for creating specific types of GUIs. For simplicity we can
+which are useful for creating specific types of GUIs. For simplicity, we can
 separate them into two groups: content and layout.
 
 Typical content controls include:
@@ -67,3 +67,14 @@ The following articles cover specific details of using particular control nodes.
    :name: toc-control-nodes-tutorials
 
    bbcode_in_richtextlabel
+
+Creating applications
+---------------------
+
+Godot can also be used to create applications (rather than games).
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-applications
+
+   creating_applications

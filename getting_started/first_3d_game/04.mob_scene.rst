@@ -222,7 +222,7 @@ editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Opt + 2` on macOS).
 |image8|
 
 Select the :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node and on the right side of the interface,
-navigate to the *Node* dock. Double-click the ``screen_exited()`` signal.
+navigate to the *Signals* dock. Double-click the ``screen_exited()`` signal.
 
 |image9|
 

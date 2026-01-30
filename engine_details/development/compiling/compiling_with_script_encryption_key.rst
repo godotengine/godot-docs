@@ -61,8 +61,17 @@ Step by step
 
        $env:SCRIPT_AES256_ENCRYPTION_KEY="your_generated_key"
 
+   Note that the commands suggested above do **not** persist the variables
+   across terminal sessions.
+
 3. Compile Godot export templates and set them as custom export templates
-   in the export preset options.
+   in the export preset options. If the environment variable is set correctly,
+   the following message is printed at the beginning of compilation:
+
+   ::
+
+      *** IMPORTANT: Compiling Godot with custom `SCRIPT_AES256_ENCRYPTION_KEY` set as environment variable.
+      *** Make sure to use templates compiled with this key when exporting a project with encryption.
 
 4. Set the encryption key in the **Encryption** tab of the export preset:
 

@@ -117,11 +117,13 @@ Resource options
 ~~~~~~~~~~~~~~~~
 
 When exporting, Godot makes a list of all the files to export and then
-creates the package. There are 3 different modes for exporting:
+creates the package. There are 5 different modes for exporting:
 
 -  Export all resources in the project
 -  Export selected scenes (and dependencies)
 -  Export selected resources (and dependencies)
+-  Export all resources in the project except resources checked below
+-  Export as dedicated server
 
 .. image:: img/export_resources.webp
 

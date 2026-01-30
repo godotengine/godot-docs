@@ -1,4 +1,5 @@
 :orphan:
+:allow_comments: False
 
 .. Silence warning about the document not being included in any toctree.
    This page is linked from the top-level `index.rst` file in raw HTML,
