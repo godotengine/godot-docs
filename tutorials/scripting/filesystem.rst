@@ -96,7 +96,7 @@ the project) will break existing references to these assets. These references wi
 have to be re-defined to point at the new asset location.
 
 To avoid this, do all your move, delete and rename operations from within Godot, on
-the FileSystem dock.When you delete files in Godot, it will prompt you with a confirmation dialog 
+the FileSystem dock. When you delete files in Godot, it will prompt you with a confirmation dialog 
 listing all selected files and any scenes that depend on those files.
 Never move assets from outside Godot, or dependencies will have
 to be fixed manually (Godot detects this and helps you fix them anyway, but why
