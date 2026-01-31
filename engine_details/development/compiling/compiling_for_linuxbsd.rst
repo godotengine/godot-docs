@@ -532,8 +532,8 @@ then use the following SCons command:
 After the build is completed, a new binary with a ``.llvm`` suffix will be
 created in the ``bin/`` folder.
 
-It's still recommended to use GCC for production builds as they can be compiled using
-link-time optimization, making the resulting binaries smaller and faster.
+It's still recommended to use GCC for production builds as it's the compiler used
+for official builds and is more rigorously tested.
 
 If this error occurs:
 
