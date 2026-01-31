@@ -283,6 +283,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size>`                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/3d_gizmos/gizmo_settings/show_collision_shapes_only_when_selected<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/show_collision_shapes_only_when_selected>`                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                                               |
@@ -2422,6 +2424,18 @@ Size of probe gizmos displayed when editing :ref:`LightmapGI<class_LightmapGI>` 
 :ref:`float<class_float>` **editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/path3d_tilt_disk_size>`
 
 Size of the disk gizmo displayed when editing :ref:`Path3D<class_Path3D>`'s tilt handles.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/show_collision_shapes_only_when_selected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d_gizmos/gizmo_settings/show_collision_shapes_only_when_selected** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_settings/show_collision_shapes_only_when_selected>`
+
+If ``true``, collision shapes in the 3D editor are visible only when selected. If ``false``, collision shapes are always visible.
 
 .. rst-class:: classref-item-separator
 
@@ -4842,9 +4856,11 @@ Specifies how the engine should check for updates.
 
 - **Disable Update Checks** will block the engine from checking updates (see also :ref:`network/connection/network_mode<class_EditorSettings_property_network/connection/network_mode>`).
 
-- **Check Newest Preview** (default for preview versions) will check for the newest available development snapshot.
+- **Auto** (default) will check for newest stable or unstable version, depending on which version are you currently using. Switch to another option if you want to lock in.
 
-- **Check Newest Stable** (default for stable versions) will check for the newest available stable version.
+- **Check Newest Preview** will check for the newest available development snapshot.
+
+- **Check Newest Stable** will check for the newest available stable version.
 
 - **Check Newest Patch** will check for the latest available stable version, but only within the same minor version. E.g. if your version is ``4.3.stable``, you will be notified about ``4.3.1.stable``, but not ``4.4.stable``.
 

@@ -74,6 +74,8 @@ Methods
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                 | :ref:`get_autowrap_mode<class_TreeItem_method_get_autowrap_mode>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                     |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] | :ref:`get_autowrap_trim_flags<class_TreeItem_method_get_autowrap_trim_flags>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                         |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`get_button<class_TreeItem_method_get_button>`\ (\ column\: :ref:`int<class_int>`, button_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                             |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_button_by_id<class_TreeItem_method_get_button_by_id>`\ (\ column\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                           |
@@ -197,6 +199,8 @@ Methods
    | |void|                                                            | :ref:`set_auto_translate_mode<class_TreeItem_method_set_auto_translate_mode>`\ (\ column\: :ref:`int<class_int>`, mode\: :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`\ )                                                                                                                                   |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_autowrap_mode<class_TreeItem_method_set_autowrap_mode>`\ (\ column\: :ref:`int<class_int>`, autowrap_mode\: :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ )                                                                                                                                          |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`set_autowrap_trim_flags<class_TreeItem_method_set_autowrap_trim_flags>`\ (\ column\: :ref:`int<class_int>`, flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\]\ )                                                                                                                      |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_button<class_TreeItem_method_set_button>`\ (\ column\: :ref:`int<class_int>`, button_index\: :ref:`int<class_int>`, button\: :ref:`Texture2D<class_Texture2D>`\ )                                                                                                                                         |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -551,6 +555,18 @@ Returns the column's auto translate mode.
 :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_get_autowrap_mode>`
 
 Returns the text autowrap mode in the given ``column``. By default it is :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_get_autowrap_trim_flags:
+
+.. rst-class:: classref-method
+
+|bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] **get_autowrap_trim_flags**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TreeItem_method_get_autowrap_trim_flags>`
+
+Returns the autowrap trim flags for the given ``column``. By default, both :ref:`TextServer.BREAK_TRIM_START_EDGE_SPACES<class_TextServer_constant_BREAK_TRIM_START_EDGE_SPACES>` and :ref:`TextServer.BREAK_TRIM_END_EDGE_SPACES<class_TextServer_constant_BREAK_TRIM_END_EDGE_SPACES>` are enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1315,6 +1331,18 @@ All columns use :ref:`Node.AUTO_TRANSLATE_MODE_INHERIT<class_Node_constant_AUTO_
 |void| **set_autowrap_mode**\ (\ column\: :ref:`int<class_int>`, autowrap_mode\: :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`\ ) :ref:`🔗<class_TreeItem_method_set_autowrap_mode>`
 
 Sets the autowrap mode in the given ``column``. If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the cell's bounding rectangle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_set_autowrap_trim_flags:
+
+.. rst-class:: classref-method
+
+|void| **set_autowrap_trim_flags**\ (\ column\: :ref:`int<class_int>`, flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\]\ ) :ref:`🔗<class_TreeItem_method_set_autowrap_trim_flags>`
+
+Sets the autowrap trim flags for the given ``column``. These flags control whether leading and trailing spaces are trimmed on wrapped lines. Set to ``0`` to disable all trimming.
 
 .. rst-class:: classref-item-separator
 

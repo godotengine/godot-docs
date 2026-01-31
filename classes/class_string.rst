@@ -475,7 +475,7 @@ Returns a copy of the string with escaped characters replaced by their meanings.
 
 :ref:`String<class_String>` **capitalize**\ (\ ) |const| :ref:`🔗<class_String_method_capitalize>`
 
-Changes the appearance of the string: replaces underscores (``_``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
+Returns a copy of the string with changed appearance. Replaces underscores (``_``) and hyphens (``-``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
 
 
 .. tabs::
@@ -485,12 +485,14 @@ Changes the appearance of the string: replaces underscores (``_``) with spaces, 
     "move_local_x".capitalize()   # Returns "Move Local X"
     "sceneFile_path".capitalize() # Returns "Scene File Path"
     "2D, FPS, PNG".capitalize()   # Returns "2d, Fps, Png"
+    "example-name".capitalize()   # Returns "Example Name"
 
  .. code-tab:: csharp
 
     "move_local_x".Capitalize();   // Returns "Move Local X"
     "sceneFile_path".Capitalize(); // Returns "Scene File Path"
     "2D, FPS, PNG".Capitalize();   // Returns "2d, Fps, Png"
+    "example-name".Capitalize();   // Returns "Example Name"
 
 
 

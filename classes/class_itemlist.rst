@@ -92,6 +92,8 @@ Methods
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                 | :ref:`add_item<class_ItemList_method_add_item>`\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>` = null, selectable\: :ref:`bool<class_bool>` = true\ )  |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`center_on_current<class_ItemList_method_center_on_current>`\ (\ center_verically\: :ref:`bool<class_bool>` = true, center_horizontally\: :ref:`bool<class_bool>` = true\ )         |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`clear<class_ItemList_method_clear>`\ (\ )                                                                                                                                          |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`deselect<class_ItemList_method_deselect>`\ (\ idx\: :ref:`int<class_int>`\ )                                                                                                       |
@@ -783,6 +785,20 @@ If ``selectable`` is ``true``, the list item will be selectable.
 
 ----
 
+.. _class_ItemList_method_center_on_current:
+
+.. rst-class:: classref-method
+
+|void| **center_on_current**\ (\ center_verically\: :ref:`bool<class_bool>` = true, center_horizontally\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ItemList_method_center_on_current>`
+
+Ensures the currently selected item (the first selected item if multiple selection is enabled) is visible, adjusting the scroll position as necessary to place the item at the center of the list if possible. See also :ref:`ensure_current_is_visible()<class_ItemList_method_ensure_current_is_visible>`.
+
+Fails and prints an error if both arguments are ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_method_clear:
 
 .. rst-class:: classref-method
@@ -825,7 +841,7 @@ Ensures there are no items selected.
 
 |void| **ensure_current_is_visible**\ (\ ) :ref:`🔗<class_ItemList_method_ensure_current_is_visible>`
 
-Ensure current selection is visible, adjusting the scroll position as necessary.
+Ensures the currently selected item (the first selected item if multiple selection is enabled) is visible, adjusting the scroll position as necessary. See also :ref:`center_on_current()<class_ItemList_method_center_on_current>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1147,7 +1163,7 @@ Removes the item specified by ``idx`` index from the list.
 
 |void| **select**\ (\ idx\: :ref:`int<class_int>`, single\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ItemList_method_select>`
 
-Select the item at the specified index.
+Selects the item at the specified index.
 
 \ **Note:** This method does not trigger the item selection signal.
 

@@ -119,6 +119,14 @@ Mode used for drawing skies. Only works with shaders attached to :ref:`Sky<class
 
 Mode used for setting the color and density of volumetric fog effect.
 
+.. _class_Shader_constant_MODE_TEXTURE_BLIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_Shader_Mode>` **MODE_TEXTURE_BLIT** = ``5``
+
+Mode used for drawing to DrawableTexture resources via blit calls.
+
 .. rst-class:: classref-section-separator
 
 ----

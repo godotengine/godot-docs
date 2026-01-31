@@ -945,6 +945,14 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`texture_create_from_native_handle<class_RenderingServer_method_texture_create_from_native_handle>`\ (\ type\: :ref:`TextureType<enum_RenderingServer_TextureType>`, format\: :ref:`Format<enum_Image_Format>`, native_handle\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>` = 1, layered_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` = 0\ )                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`texture_drawable_blit_rect<class_RenderingServer_method_texture_drawable_blit_rect>`\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], rect\: :ref:`Rect2i<class_Rect2i>`, material\: :ref:`RID<class_RID>`, modulate\: :ref:`Color<class_Color>`, source_textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], to_mipmap\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`texture_drawable_create<class_RenderingServer_method_texture_drawable_create>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, format\: :ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), with_mipmaps\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                     |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`texture_drawable_generate_mipmaps<class_RenderingServer_method_texture_drawable_generate_mipmaps>`\ (\ texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`texture_drawable_get_default_material<class_RenderingServer_method_texture_drawable_get_default_material>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Format<enum_Image_Format>`                                                 | :ref:`texture_get_format<class_RenderingServer_method_texture_get_format>`\ (\ texture\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`texture_get_native_handle<class_RenderingServer_method_texture_get_native_handle>`\ (\ texture\: :ref:`RID<class_RID>`, srgb\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -1278,6 +1286,50 @@ Back face of a :ref:`Cubemap<class_Cubemap>`.
 
 ----
 
+.. _enum_RenderingServer_TextureDrawableFormat:
+
+.. rst-class:: classref-enumeration
+
+enum **TextureDrawableFormat**: :ref:`🔗<enum_RenderingServer_TextureDrawableFormat>`
+
+.. _class_RenderingServer_constant_TEXTURE_DRAWABLE_FORMAT_RGBA8:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>` **TEXTURE_DRAWABLE_FORMAT_RGBA8** = ``0``
+
+OpenGL texture format RGBA with four components, each with a bitdepth of 8.
+
+.. _class_RenderingServer_constant_TEXTURE_DRAWABLE_FORMAT_RGBA8_SRGB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>` **TEXTURE_DRAWABLE_FORMAT_RGBA8_SRGB** = ``1``
+
+OpenGL texture format RGBA with four components, each with a bitdepth of 8.
+
+When drawn to, an sRGB to linear color space conversion is performed.
+
+.. _class_RenderingServer_constant_TEXTURE_DRAWABLE_FORMAT_RGBAH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>` **TEXTURE_DRAWABLE_FORMAT_RGBAH** = ``2``
+
+OpenGL texture format GL_RGBA16F where there are four components, each a 16-bit "half-precision" floating-point value.
+
+.. _class_RenderingServer_constant_TEXTURE_DRAWABLE_FORMAT_RGBAF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>` **TEXTURE_DRAWABLE_FORMAT_RGBAF** = ``3``
+
+OpenGL texture format GL_RGBA32F where there are four components, each a 32-bit floating-point value.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_RenderingServer_ShaderMode:
 
 .. rst-class:: classref-enumeration
@@ -1324,11 +1376,19 @@ Shader is a 3D sky shader.
 
 Shader is a 3D fog shader.
 
+.. _class_RenderingServer_constant_SHADER_TEXTURE_BLIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_TEXTURE_BLIT** = ``5``
+
+Shader is a texture_blit shader.
+
 .. _class_RenderingServer_constant_SHADER_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_MAX** = ``5``
+:ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_MAX** = ``6``
 
 Represents the size of the :ref:`ShaderMode<enum_RenderingServer_ShaderMode>` enum.
 
@@ -2660,11 +2720,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_DISABLED** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Do not align particle transforms relative to the camera or velocity.
 
 .. _class_RenderingServer_constant_PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD:
 
@@ -2672,11 +2728,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Align each particle's Z axis to face the camera.
 
 .. _class_RenderingServer_constant_PARTICLES_TRANSFORM_ALIGN_Y_TO_VELOCITY:
 
@@ -2684,11 +2736,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_Y_TO_VELOCITY** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Align each particle's Y axis to the velocity vector.
 
 .. _class_RenderingServer_constant_PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY:
 
@@ -2696,11 +2744,7 @@ enum **ParticlesTransformAlign**: :ref:`🔗<enum_RenderingServer_ParticlesTrans
 
 :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Align each particle's Z axis to face the camera and Y axis to the velocity vector.
 
 .. rst-class:: classref-item-separator
 
@@ -2760,11 +2804,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_SPHERE_ATTRACT** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Sphere attractor type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesAttractorSphere3D<class_GPUParticlesAttractorSphere3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_BOX_ATTRACT:
 
@@ -2772,11 +2812,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_BOX_ATTRACT** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Box attractor type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_VECTOR_FIELD_ATTRACT:
 
@@ -2784,11 +2820,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_VECTOR_FIELD_ATTRACT** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Vector field attractor type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesAttractorVectorField3D<class_GPUParticlesAttractorVectorField3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_SPHERE_COLLIDE:
 
@@ -2796,11 +2828,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_SPHERE_COLLIDE** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Sphere collision type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesCollisionSphere3D<class_GPUParticlesCollisionSphere3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_BOX_COLLIDE:
 
@@ -2808,11 +2836,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_BOX_COLLIDE** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Box collision type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesCollisionBox3D<class_GPUParticlesCollisionBox3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_SDF_COLLIDE:
 
@@ -2820,11 +2844,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_SDF_COLLIDE** = ``5``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Signed distance field collision type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesCollisionSDF3D<class_GPUParticlesCollisionSDF3D>`).
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_TYPE_HEIGHTFIELD_COLLIDE:
 
@@ -2832,11 +2852,7 @@ enum **ParticlesCollisionType**: :ref:`🔗<enum_RenderingServer_ParticlesCollis
 
 :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` **PARTICLES_COLLISION_TYPE_HEIGHTFIELD_COLLIDE** = ``6``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Heightfield collision type for :ref:`GPUParticles3D<class_GPUParticles3D>` (see :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2854,11 +2870,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_256** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+256×256 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_512:
 
@@ -2866,11 +2878,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_512** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+512×512 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_1024:
 
@@ -2878,11 +2886,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_1024** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+1024×1024 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_2048:
 
@@ -2890,11 +2894,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_2048** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+2048×2048 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_4096:
 
@@ -2902,11 +2902,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_4096** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+4096×4096 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_8192:
 
@@ -2914,11 +2910,7 @@ enum **ParticlesCollisionHeightfieldResolution**: :ref:`🔗<enum_RenderingServe
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_8192** = ``5``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+8192×8192 heightfield resolution for :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`.
 
 .. _class_RenderingServer_constant_PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_MAX:
 
@@ -6109,11 +6101,7 @@ The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingS
 
 **PARTICLES_EMIT_FLAG_POSITION** = ``1`` :ref:`🔗<class_RenderingServer_constant_PARTICLES_EMIT_FLAG_POSITION>`
 
-.. container:: contribute
-
-	There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Particle starts at the specified position.
 
 .. _class_RenderingServer_constant_PARTICLES_EMIT_FLAG_ROTATION_SCALE:
 
@@ -6121,11 +6109,7 @@ The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingS
 
 **PARTICLES_EMIT_FLAG_ROTATION_SCALE** = ``2`` :ref:`🔗<class_RenderingServer_constant_PARTICLES_EMIT_FLAG_ROTATION_SCALE>`
 
-.. container:: contribute
-
-	There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Particle starts with specified rotation and scale.
 
 .. _class_RenderingServer_constant_PARTICLES_EMIT_FLAG_VELOCITY:
 
@@ -6133,11 +6117,7 @@ The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingS
 
 **PARTICLES_EMIT_FLAG_VELOCITY** = ``4`` :ref:`🔗<class_RenderingServer_constant_PARTICLES_EMIT_FLAG_VELOCITY>`
 
-.. container:: contribute
-
-	There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Particle starts with the specified velocity vector, which defines the emission direction and speed.
 
 .. _class_RenderingServer_constant_PARTICLES_EMIT_FLAG_COLOR:
 
@@ -6145,11 +6125,7 @@ The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingS
 
 **PARTICLES_EMIT_FLAG_COLOR** = ``8`` :ref:`🔗<class_RenderingServer_constant_PARTICLES_EMIT_FLAG_COLOR>`
 
-.. container:: contribute
-
-	There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Particle starts with specified color.
 
 .. _class_RenderingServer_constant_PARTICLES_EMIT_FLAG_CUSTOM:
 
@@ -6157,11 +6133,7 @@ The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingS
 
 **PARTICLES_EMIT_FLAG_CUSTOM** = ``16`` :ref:`🔗<class_RenderingServer_constant_PARTICLES_EMIT_FLAG_CUSTOM>`
 
-.. container:: contribute
-
-	There is currently no description for this constant. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+Particle starts with specified ``CUSTOM`` data.
 
 .. rst-class:: classref-section-separator
 
@@ -7168,9 +7140,7 @@ This is useful when moving an occluder to a new location, to give an instantaneo
 
 |void| **canvas_light_occluder_set_as_sdf_collision**\ (\ occluder\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_light_occluder_set_as_sdf_collision>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Enables or disables using the light occluder as a signed distance field for 2D particle collision.
 
 .. rst-class:: classref-item-separator
 
@@ -7552,9 +7522,11 @@ Sets the shape of the occluder polygon.
 
 |void| **canvas_set_disable_scale**\ (\ disable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_set_disable_scale>`
 
-.. container:: contribute
+If ``disable`` is ``true``, makes 2D rendering ignore the canvas scale defined for each canvas layer. This affects :ref:`CanvasLayer<class_CanvasLayer>`\ s with the :ref:`CanvasLayer.follow_viewport_enabled<class_CanvasLayer_property_follow_viewport_enabled>` property set to ``true``.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+In the editor, this is set to ``true`` by default, and set to ``false`` when **View > Preview Canvas Scale** is enabled at the top of the 2D editor viewport.
+
+\ **Note:** Setting this to ``true`` does not impact the behavior of :ref:`CanvasLayer.scale<class_CanvasLayer_property_scale>`, :ref:`Node2D.scale<class_Node2D_property_scale>`, or :ref:`Control.scale<class_Control_property_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9418,9 +9390,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **lightmap_get_probe_capture_bsp_tree**\ (\ lightmap\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_lightmap_get_probe_capture_bsp_tree>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the BSP tree data used for accelerating probe lookups. The BSP data is structured as a series of six signed 32-bit values per BSP node in this order: ``float plane_x``, ``float plane_y``, ``float plane_z``, ``float plane_distance``, ``int32_t over``, ``int32_t under``. An empty leaf is denoted by the value ``-2147483648`` (the minimum 32-bit signed integer). See also :ref:`lightmap_set_probe_capture_data()<class_RenderingServer_method_lightmap_set_probe_capture_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9432,9 +9402,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **lightmap_get_probe_capture_points**\ (\ lightmap\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_lightmap_get_probe_capture_points>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the *local space* positions of each lightmap probe capture point. Keep in mind the lightmap instance may have a non-zero transform, which will affect the position of the probe capture points. See also :ref:`lightmap_set_probe_capture_data()<class_RenderingServer_method_lightmap_set_probe_capture_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9446,9 +9414,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedColorArray<class_PackedColorArray>` **lightmap_get_probe_capture_sh**\ (\ lightmap\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_lightmap_get_probe_capture_sh>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the L0, L1, and L2 `spherical harmonics <https://en.wikipedia.org/wiki/Spherical_harmonics>`__ data for each lightmap probe capture point. This is specified as 9 :ref:`Color<class_Color>` values per probe, which means the size of the returned data is always 9 times the number of probe points. See also :ref:`lightmap_set_probe_capture_data()<class_RenderingServer_method_lightmap_set_probe_capture_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9460,9 +9426,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **lightmap_get_probe_capture_tetrahedra**\ (\ lightmap\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_lightmap_get_probe_capture_tetrahedra>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the tetrahedralization data used for interpolating between lightmap probe capture points. Each tetrahedron is specified as a series of 4 numbers, each being an index into the probe capture points array returned by :ref:`lightmap_get_probe_capture_points()<class_RenderingServer_method_lightmap_get_probe_capture_points>`. See also :ref:`lightmap_set_probe_capture_data()<class_RenderingServer_method_lightmap_set_probe_capture_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9486,9 +9450,7 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 |void| **lightmap_set_probe_bounds**\ (\ lightmap\: :ref:`RID<class_RID>`, bounds\: :ref:`AABB<class_AABB>`\ ) :ref:`🔗<class_RenderingServer_method_lightmap_set_probe_bounds>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the bounds that this lightmap instance should visually affect, both in terms of static lightmap baking and probe-based global illumination.
 
 .. rst-class:: classref-item-separator
 
@@ -9500,9 +9462,7 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 |void| **lightmap_set_probe_capture_data**\ (\ lightmap\: :ref:`RID<class_RID>`, points\: :ref:`PackedVector3Array<class_PackedVector3Array>`, point_sh\: :ref:`PackedColorArray<class_PackedColorArray>`, tetrahedra\: :ref:`PackedInt32Array<class_PackedInt32Array>`, bsp_tree\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_RenderingServer_method_lightmap_set_probe_capture_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the probe capture data for the given lightmap instance. See :ref:`lightmap_get_probe_capture_points()<class_RenderingServer_method_lightmap_get_probe_capture_points>`, :ref:`lightmap_get_probe_capture_sh()<class_RenderingServer_method_lightmap_get_probe_capture_sh>`, :ref:`lightmap_get_probe_capture_tetrahedra()<class_RenderingServer_method_lightmap_get_probe_capture_tetrahedra>`, and :ref:`lightmap_get_probe_capture_bsp_tree()<class_RenderingServer_method_lightmap_get_probe_capture_bsp_tree>` for the expected data formats.
 
 .. rst-class:: classref-item-separator
 
@@ -9514,9 +9474,7 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 |void| **lightmap_set_probe_capture_update_speed**\ (\ speed\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_lightmap_set_probe_capture_update_speed>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+The framerate-independent update speed when representing dynamic object lighting from :ref:`LightmapProbe<class_LightmapProbe>`\ s. Higher values make dynamic object lighting update faster. Higher values can prevent fast-moving objects from having "outdated" indirect lighting displayed on them, at the cost of possible flickering when an object moves from a bright area to a shaded area. See also :ref:`ProjectSettings.rendering/lightmapping/probe_capture/update_speed<class_ProjectSettings_property_rendering/lightmapping/probe_capture/update_speed>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9528,9 +9486,7 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 |void| **lightmap_set_probe_interior**\ (\ lightmap\: :ref:`RID<class_RID>`, interior\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_lightmap_set_probe_interior>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets whether the lightmap instance should be considered as interior (when ``interior`` is ``true``). If the lightmap is marked as interior, environment lighting is ignored when baking lightmaps.
 
 .. rst-class:: classref-item-separator
 
@@ -9670,9 +9626,37 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 
 |void| **mesh_add_surface**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_add_surface>`
 
-.. container:: contribute
+Creates a new surface on the given ``mesh``. Equivalent to :ref:`mesh_add_surface_from_arrays()<class_RenderingServer_method_mesh_add_surface_from_arrays>`, but takes a single :ref:`Dictionary<class_Dictionary>` argument instead of separate arguments. The dictionary must follow this structure:
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+::
+
+    {
+        # Required:
+        "primitive": RenderingServer.PrimitiveType,
+        "format": RenderingServer.ArrayFormat,
+        "vertex_data": PackedByteArray,
+        "vertex_count": int,
+        "aabb": AABB,
+
+        # Optional:
+        "attribute_data": PackedByteArray,
+        "skin_data": PackedByteArray,
+        "index_data": PackedByteArray,
+        "index_count": int, # Required if `index_data` is specified.
+        "uv_scale": Vector4,
+        "lods": [
+            # Both values are required for each LOD level.
+            {
+                "edge_length": float,
+                "index_data": PackedByteArray,
+            },
+        ],
+        "bone_aabbs": Array[AABB],
+        "blend_shape_data": PackedByteArray,
+        "material": Material,
+    }
+
+See also :ref:`mesh_get_surface()<class_RenderingServer_method_mesh_get_surface>`, which returns data in the same structure defined above.
 
 .. rst-class:: classref-item-separator
 
@@ -9684,9 +9668,21 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 
 |void| **mesh_add_surface_from_arrays**\ (\ mesh\: :ref:`RID<class_RID>`, primitive\: :ref:`PrimitiveType<enum_RenderingServer_PrimitiveType>`, arrays\: :ref:`Array<class_Array>`, blend_shapes\: :ref:`Array<class_Array>` = [], lods\: :ref:`Dictionary<class_Dictionary>` = {}, compress_format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\] = 0\ ) :ref:`🔗<class_RenderingServer_method_mesh_add_surface_from_arrays>`
 
-.. container:: contribute
+Creates a new surface on the given ``mesh``. :ref:`mesh_get_surface_count()<class_RenderingServer_method_mesh_get_surface_count>` will become the surface index for this new surface.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Surfaces are created to be rendered using a ``primitive``, which may be any of the values defined in :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`.
+
+The ``arrays`` argument is an array of arrays. Each of the :ref:`Mesh.ARRAY_MAX<class_Mesh_constant_ARRAY_MAX>` elements contains an array with some of the mesh data for this surface as described by the corresponding member of :ref:`ArrayType<enum_Mesh_ArrayType>` or ``null`` if it is not used by the surface. For example, ``arrays[0]`` is the array of vertices. That first vertex sub-array is always required; the others are optional. Adding an index array puts this surface into "index mode" where the vertex and other arrays become the sources of data and the index array defines the vertex order. All sub-arrays must have the same length as the vertex array (or be an exact multiple of the vertex array's length, when multiple elements of a sub-array correspond to a single vertex) or be empty, except for :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` if it is used.
+
+The ``blend_shapes`` argument is an array of vertex data for each blend shape. Each element is an array of the same structure as ``arrays``, but :ref:`Mesh.ARRAY_VERTEX<class_Mesh_constant_ARRAY_VERTEX>`, :ref:`Mesh.ARRAY_NORMAL<class_Mesh_constant_ARRAY_NORMAL>`, and :ref:`Mesh.ARRAY_TANGENT<class_Mesh_constant_ARRAY_TANGENT>` are set if and only if they are set in ``arrays`` and all other entries are ``null``.
+
+The ``lods`` argument is a dictionary with :ref:`float<class_float>` keys and :ref:`PackedInt32Array<class_PackedInt32Array>` values. Each entry in the dictionary represents an LOD level of the surface, where the value is the :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` array to use for the LOD level and the key is roughly proportional to the distance at which the LOD stats being used. I.e., increasing the key of an LOD also increases the distance that the objects has to be from the camera before the LOD is used.
+
+The ``compress_format`` argument is the bitwise OR of, as required: One value of :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` left shifted by ``ARRAY_FORMAT_CUSTOMn_SHIFT`` for each custom channel in use, :ref:`ARRAY_FLAG_USE_DYNAMIC_UPDATE<class_RenderingServer_constant_ARRAY_FLAG_USE_DYNAMIC_UPDATE>`, :ref:`ARRAY_FLAG_USE_8_BONE_WEIGHTS<class_RenderingServer_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS>`, or :ref:`ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY<class_RenderingServer_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY>`.
+
+See :ref:`ArrayMesh.add_surface_from_arrays()<class_ArrayMesh_method_add_surface_from_arrays>` and :ref:`ImporterMesh.add_surface()<class_ImporterMesh_method_add_surface>` for higher-level equivalents of this method.
+
+\ **Note:** When using indices, it is recommended to only use points, lines, or triangles.
 
 .. rst-class:: classref-item-separator
 
@@ -9728,9 +9724,15 @@ To place in a scene, attach this mesh to an instance using :ref:`instance_set_ba
 
 :ref:`RID<class_RID>` **mesh_create_from_surfaces**\ (\ surfaces\: :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\], blend_shape_count\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingServer_method_mesh_create_from_surfaces>`
 
-.. container:: contribute
+Creates a new mesh with predefined surfaces for it and adds the mesh to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``mesh_*`` RenderingServer functions. This method is more efficient for creating meshes with multiple surfaces compared to creating an empty mesh with :ref:`mesh_create()<class_RenderingServer_method_mesh_create>` and adding surfaces one by one with :ref:`mesh_add_surface()<class_RenderingServer_method_mesh_add_surface>`.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Each element in the ``surfaces`` array must follow the same structure as described in :ref:`mesh_add_surface()<class_RenderingServer_method_mesh_add_surface>`. The ``blend_shape_count`` parameter must match the blend shape data defined in all surfaces.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
+
+To place in a scene, attach this mesh to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent resource is :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9778,9 +9780,7 @@ Returns a mesh's custom aabb.
 
 :ref:`Dictionary<class_Dictionary>` **mesh_get_surface**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_get_surface>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns a mesh's surface as a dictionary following the same structure as described in :ref:`mesh_add_surface()<class_RenderingServer_method_mesh_add_surface>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9828,9 +9828,9 @@ Sets a mesh's custom aabb.
 
 |void| **mesh_set_shadow_mesh**\ (\ mesh\: :ref:`RID<class_RID>`, shadow_mesh\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_set_shadow_mesh>`
 
-.. container:: contribute
+Sets an optional second mesh which can be used for rendering shadows and the depth prepass. Can be used to increase performance by supplying a mesh with fused vertices and only vertex position data (without normals, UVs, colors, etc.).
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+\ **Note:** This mesh must have exactly the same vertex positions as the source mesh (including the source mesh's LODs, if present). If vertex positions differ, then the mesh will not draw correctly.
 
 .. rst-class:: classref-item-separator
 
@@ -9974,9 +9974,11 @@ Sets a mesh's surface's material.
 
 |void| **mesh_surface_update_attribute_region**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_surface_update_attribute_region>`
 
-.. container:: contribute
+Updates the attribute buffer of the mesh surface with the given ``data``. The expected data per attribute is 8 or 12 bytes (4 bytes per float, 2 floats per :ref:`Vector2<class_Vector2>`, and 3 floats per :ref:`Vector3<class_Vector3>`) depending on if the mesh is using :ref:`Vector2<class_Vector2>` or :ref:`Vector3<class_Vector3>` vertices. This value can be determined with :ref:`mesh_surface_get_format_attribute_stride()<class_RenderingServer_method_mesh_surface_get_format_attribute_stride>` instead.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+The starting point of the updates can be changed with ``offset``. The value of ``offset`` should be a multiple of 12 bytes in most cases to align to each attribute.
+
+A :ref:`PackedVector3Array<class_PackedVector3Array>` of attribute locations can be converted into a :ref:`PackedByteArray<class_PackedByteArray>` using :ref:`PackedVector3Array.to_byte_array()<class_PackedVector3Array_method_to_byte_array>` for use in ``data``.
 
 .. rst-class:: classref-item-separator
 
@@ -10000,9 +10002,11 @@ Updates the index buffer of the mesh surface with the given ``data``. The expect
 
 |void| **mesh_surface_update_skin_region**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_surface_update_skin_region>`
 
-.. container:: contribute
+Updates the skin buffer of the mesh surface with the given ``data``. The expected data per skin is 8 or 12 bytes (4 bytes per float, 2 floats per :ref:`Vector2<class_Vector2>`, and 3 floats per :ref:`Vector3<class_Vector3>`) depending on if the mesh is using :ref:`Vector2<class_Vector2>` or :ref:`Vector3<class_Vector3>` vertices. This value can be determined with :ref:`mesh_surface_get_format_skin_stride()<class_RenderingServer_method_mesh_surface_get_format_skin_stride>` instead.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+The starting point of the updates can be changed with ``offset``. The value of ``offset`` should be a multiple of 12 bytes in most cases to align to each skin.
+
+A :ref:`PackedVector3Array<class_PackedVector3Array>` of skin locations can be converted into a :ref:`PackedByteArray<class_PackedByteArray>` using :ref:`PackedVector3Array.to_byte_array()<class_PackedVector3Array_method_to_byte_array>` for use in ``data``.
 
 .. rst-class:: classref-item-separator
 
@@ -10014,9 +10018,11 @@ Updates the index buffer of the mesh surface with the given ``data``. The expect
 
 |void| **mesh_surface_update_vertex_region**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_surface_update_vertex_region>`
 
-.. container:: contribute
+Updates the vertex buffer of the mesh surface with the given ``data``. The expected data per vertex is 8 or 12 bytes (4 bytes per float, 2 floats per :ref:`Vector2<class_Vector2>`, and 3 floats per :ref:`Vector3<class_Vector3>`) depending on if the mesh is using :ref:`Vector2<class_Vector2>` or :ref:`Vector3<class_Vector3>` vertices. This value can be determined with :ref:`mesh_surface_get_format_vertex_stride()<class_RenderingServer_method_mesh_surface_get_format_vertex_stride>` instead.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+The starting point of the updates can be changed with ``offset``. The value of ``offset`` should be a multiple of 12 bytes in most cases to align to each vertex.
+
+A :ref:`PackedVector3Array<class_PackedVector3Array>` of vertex locations can be converted into a :ref:`PackedByteArray<class_PackedByteArray>` using :ref:`PackedVector3Array.to_byte_array()<class_PackedVector3Array_method_to_byte_array>` for use in ``data``.
 
 .. rst-class:: classref-item-separator
 
@@ -10028,9 +10034,7 @@ Updates the index buffer of the mesh surface with the given ``data``. The expect
 
 |void| **multimesh_allocate_data**\ (\ multimesh\: :ref:`RID<class_RID>`, instances\: :ref:`int<class_int>`, transform_format\: :ref:`MultimeshTransformFormat<enum_RenderingServer_MultimeshTransformFormat>`, color_format\: :ref:`bool<class_bool>` = false, custom_data_format\: :ref:`bool<class_bool>` = false, use_indirect\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_multimesh_allocate_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets up the multimesh using the specified data. The number of instances is set by ``instances``. The format of the instance transforms is set by ``transform_format``, which should be set according to whether the multimesh is meant to be rendered in 2D or 3D. If ``color_format`` is ``true``, each instance will have a color associated with it. If ``custom_data_format`` is ``true``, each instance will have a custom data vector associated with it. If ``use_indirect`` is ``true``, an indirect command buffer will be created for this multimesh, allowing the instance count to be modified directly on the GPU. See also :ref:`multimesh_get_command_buffer_rd_rid()<class_RenderingServer_method_multimesh_get_command_buffer_rd_rid>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10112,7 +10116,7 @@ Each of the values in the buffer correspond to these options:
       2 - firstIndex;
       3 - vertexOffset;
       4 - firstInstance;
-    Non Indexed:
+    Non-indexed:
       0 - vertexCount;
       1 - instanceCount;
       2 - firstVertex;
@@ -10730,9 +10734,7 @@ Sets the amount ratio for particles to be emitted. Equivalent to :ref:`GPUPartic
 
 |void| **particles_set_collision_base_size**\ (\ particles\: :ref:`RID<class_RID>`, size\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_collision_base_size>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the base size for particle collision. Equivalent to :ref:`GPUParticles3D.collision_base_size<class_GPUParticles3D_property_collision_base_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10876,9 +10878,7 @@ Sets the value that informs a :ref:`ParticleProcessMaterial<class_ParticleProces
 
 |void| **particles_set_interpolate**\ (\ particles\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_interpolate>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets whether particles should use interpolation between fixed steps. Equivalent to :ref:`GPUParticles3D.interpolate<class_GPUParticles3D_property_interpolate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10976,9 +10976,7 @@ Sets the speed scale of the particle system. Equivalent to :ref:`GPUParticles3D.
 
 |void| **particles_set_subemitter**\ (\ particles\: :ref:`RID<class_RID>`, subemitter_particles\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_subemitter>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the subemitter particles for the particle system. Equivalent to :ref:`GPUParticles3D.sub_emitter<class_GPUParticles3D_property_sub_emitter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10990,9 +10988,7 @@ Sets the speed scale of the particle system. Equivalent to :ref:`GPUParticles3D.
 
 |void| **particles_set_trail_bind_poses**\ (\ particles\: :ref:`RID<class_RID>`, bind_poses\: :ref:`Array<class_Array>`\[:ref:`Transform3D<class_Transform3D>`\]\ ) :ref:`🔗<class_RenderingServer_method_particles_set_trail_bind_poses>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the trail bind poses for the particle system. This specified as an array of :ref:`Transform3D<class_Transform3D>`\ s representing the bind pose for each draw pass. See :ref:`GPUParticles3D.draw_skin<class_GPUParticles3D_property_draw_skin>`, :ref:`Skin.get_bind_count()<class_Skin_method_get_bind_count>`, and :ref:`Skin.get_bind_pose()<class_Skin_method_get_bind_pose>`. Set the value for each draw pass to :ref:`Transform3D.IDENTITY<class_Transform3D_constant_IDENTITY>` to use the default behavior, which is what built-in trails use (:ref:`RibbonTrailMesh<class_RibbonTrailMesh>` and :ref:`TubeTrailMesh<class_TubeTrailMesh>`).
 
 .. rst-class:: classref-item-separator
 
@@ -11016,9 +11012,7 @@ If ``enable`` is ``true``, enables trails for the ``particles`` with the specifi
 
 |void| **particles_set_transform_align**\ (\ particles\: :ref:`RID<class_RID>`, align\: :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the transform alignment for the particle system. Equivalent to :ref:`GPUParticles3D.transform_align<class_GPUParticles3D_property_transform_align>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11498,9 +11492,7 @@ Sets the path hint for the specified shader. This should generally match the :re
 
 |void| **skeleton_allocate_data**\ (\ skeleton\: :ref:`RID<class_RID>`, bones\: :ref:`int<class_int>`, is_2d_skeleton\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_skeleton_allocate_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Allocates data for this skeleton using the number of bones specified in ``bones``. If ``is_2d_skeleton`` is ``true``, the skeleton will be treated as a 2D skeleton instead of a 3D skeleton. See also :ref:`skeleton_get_bone_count()<class_RenderingServer_method_skeleton_get_bone_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11574,7 +11566,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`int<class_int>` **skeleton_get_bone_count**\ (\ skeleton\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_skeleton_get_bone_count>`
 
-Returns the number of bones allocated for this skeleton.
+Returns the number of bones allocated for this skeleton. See also :ref:`skeleton_allocate_data()<class_RenderingServer_method_skeleton_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11586,9 +11578,7 @@ Returns the number of bones allocated for this skeleton.
 
 |void| **skeleton_set_base_transform_2d**\ (\ skeleton\: :ref:`RID<class_RID>`, base_transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_RenderingServer_method_skeleton_set_base_transform_2d>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the base :ref:`Transform2D<class_Transform2D>` to use for the specified skeleton.
 
 .. rst-class:: classref-item-separator
 
@@ -11878,6 +11868,60 @@ Creates a texture based on a native handle that was created outside of Godot's r
 
 ----
 
+.. _class_RenderingServer_method_texture_drawable_blit_rect:
+
+.. rst-class:: classref-method
+
+|void| **texture_drawable_blit_rect**\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], rect\: :ref:`Rect2i<class_Rect2i>`, material\: :ref:`RID<class_RID>`, modulate\: :ref:`Color<class_Color>`, source_textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], to_mipmap\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingServer_method_texture_drawable_blit_rect>`
+
+Draws to ``rect`` on up to 4 given Drawable ``textures``, using a TextureBlit Shader from ``material``. ``modulate`` and up to 4 ``source_textures`` are uniforms for the Shader to process with. ``to_mipmap`` can specify to perform this draw to a lower mipmap level.
+
+\ **Note:** All ``textures`` must be the same size and format.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_drawable_create:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **texture_drawable_create**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, format\: :ref:`TextureDrawableFormat<enum_RenderingServer_TextureDrawableFormat>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), with_mipmaps\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingServer_method_texture_drawable_create>`
+
+Creates a 2-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_drawable*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`DrawableTexture2D<class_DrawableTexture2D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_drawable_generate_mipmaps:
+
+.. rst-class:: classref-method
+
+|void| **texture_drawable_generate_mipmaps**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_texture_drawable_generate_mipmaps>`
+
+Calculates new MipMaps for the given Drawable ``texture``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_drawable_get_default_material:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **texture_drawable_get_default_material**\ (\ ) |const| :ref:`🔗<class_RenderingServer_method_texture_drawable_get_default_material>`
+
+Returns a ShaderMaterial with the default texture_blit Shader.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_texture_get_format:
 
 .. rst-class:: classref-method
@@ -11912,9 +11956,7 @@ Returns the internal graphics handle for this texture object. For use when commu
 
 :ref:`String<class_String>` **texture_get_path**\ (\ texture\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_texture_get_path>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the resource path (starting with ``res://`` or ``uid://``) for the specified texture RID. Returns an empty :ref:`String<class_String>` if the resource is built-in. See also :ref:`texture_set_path()<class_RenderingServer_method_texture_set_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11996,9 +12038,7 @@ Replaces ``texture``'s texture data by the texture specified by the ``by_texture
 
 |void| **texture_set_force_redraw_if_visible**\ (\ texture\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_texture_set_force_redraw_if_visible>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets whether the texture RID should force redrawing when it's visible on screen when :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>` is ``true``. This is used by :ref:`AnimatedTexture<class_AnimatedTexture>` to force redrawing.
 
 .. rst-class:: classref-item-separator
 
@@ -12010,9 +12050,9 @@ Replaces ``texture``'s texture data by the texture specified by the ``by_texture
 
 |void| **texture_set_path**\ (\ texture\: :ref:`RID<class_RID>`, path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RenderingServer_method_texture_set_path>`
 
-.. container:: contribute
+Sets the resource path for this texture RID. See also :ref:`texture_get_path()<class_RenderingServer_method_texture_get_path>`.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+\ **Note:** This is purely a hint and does not cause the texture to be automatically saved when set to a ``res://`` path.
 
 .. rst-class:: classref-item-separator
 
@@ -12024,9 +12064,7 @@ Replaces ``texture``'s texture data by the texture specified by the ``by_texture
 
 |void| **texture_set_size_override**\ (\ texture\: :ref:`RID<class_RID>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_texture_set_size_override>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the size at which the texture should be *displayed* in 2D, ignoring its original size. This does not rescale the texture data itself, only how it is drawn in 2D. Set ``width`` and ``height`` to 0 to disable the size override.
 
 .. rst-class:: classref-item-separator
 
@@ -12755,9 +12793,7 @@ To place in a scene, attach this notifier to an instance using :ref:`instance_se
 
 |void| **visibility_notifier_set_aabb**\ (\ notifier\: :ref:`RID<class_RID>`, aabb\: :ref:`AABB<class_AABB>`\ ) :ref:`🔗<class_RenderingServer_method_visibility_notifier_set_aabb>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the AABB of the specified visibility notifier.
 
 .. rst-class:: classref-item-separator
 
@@ -12769,9 +12805,7 @@ To place in a scene, attach this notifier to an instance using :ref:`instance_se
 
 |void| **visibility_notifier_set_callbacks**\ (\ notifier\: :ref:`RID<class_RID>`, enter_callable\: :ref:`Callable<class_Callable>`, exit_callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_RenderingServer_method_visibility_notifier_set_callbacks>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Sets the methods to be called when the notifier enters or exits the view.
 
 .. rst-class:: classref-item-separator
 
@@ -12783,9 +12817,7 @@ To place in a scene, attach this notifier to an instance using :ref:`instance_se
 
 |void| **voxel_gi_allocate_data**\ (\ voxel_gi\: :ref:`RID<class_RID>`, to_cell_xform\: :ref:`Transform3D<class_Transform3D>`, aabb\: :ref:`AABB<class_AABB>`, octree_size\: :ref:`Vector3i<class_Vector3i>`, octree_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, data_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, distance_field\: :ref:`PackedByteArray<class_PackedByteArray>`, level_counts\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_RenderingServer_method_voxel_gi_allocate_data>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Allocates and initializes the voxel GI data for the specified ``voxel_gi`` RID. ``octree_cells`` must be a multiple of 32. ``octree_cells`` must be double the size of ``data_cells``. The allocated data can be retrieved later using the various ``voxel_gi_get_*`` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -12813,9 +12845,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_data_cells**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_data_cells>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the data cells for the specified voxel GI data instance. See also :ref:`voxel_gi_allocate_data()<class_RenderingServer_method_voxel_gi_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12827,9 +12857,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_distance_field**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_distance_field>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the distance field data for the specified voxel GI data instance. See also :ref:`voxel_gi_allocate_data()<class_RenderingServer_method_voxel_gi_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12841,9 +12869,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **voxel_gi_get_level_counts**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_level_counts>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the level counts for the specified voxel GI data instance. See also :ref:`voxel_gi_allocate_data()<class_RenderingServer_method_voxel_gi_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12855,9 +12881,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`PackedByteArray<class_PackedByteArray>` **voxel_gi_get_octree_cells**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_octree_cells>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the octree cell data for the specified voxel GI data instance. See also :ref:`voxel_gi_allocate_data()<class_RenderingServer_method_voxel_gi_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12869,9 +12893,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Vector3i<class_Vector3i>` **voxel_gi_get_octree_size**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_octree_size>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the octree size for the specified voxel GI data instance, which corresponds to the number of subdivisions per axis. This can be viewed in the editor by hovering the **Bake VoxelGI** button at the top of the 3D editor viewport when a :ref:`VoxelGI<class_VoxelGI>` node is selected and looking at the **Subdivisions** field in the tooltip.
 
 .. rst-class:: classref-item-separator
 
@@ -12883,9 +12905,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Transform3D<class_Transform3D>` **voxel_gi_get_to_cell_xform**\ (\ voxel_gi\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_voxel_gi_get_to_cell_xform>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Returns the transform to cell space for the specified voxel GI data instance. See also :ref:`voxel_gi_allocate_data()<class_RenderingServer_method_voxel_gi_allocate_data>`.
 
 .. rst-class:: classref-item-separator
 
