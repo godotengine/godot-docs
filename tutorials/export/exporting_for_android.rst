@@ -10,7 +10,7 @@ Exporting for Android
     If you're looking to compile export template binaries from source instead,
     read :ref:`doc_compiling_for_android`.
 
-Exporting for Android has fewer requirements than compiling Godot for Android.
+Exporting a project to Android has fewer requirements than compiling the Godot source code to Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
 .. attention::
@@ -79,7 +79,7 @@ In that screen, 2 paths need to be set:
 
 - ``Java SDK Path`` should be the location where OpenJDK 17 was installed.
 
-- ``Android Sdk Path`` should be the location where the Android SDK was installed.
+- ``Android Sdk Path`` should be the location where the Android SDK was installed. This directory should contain platform-tools/adb.
   - For example ``%LOCALAPPDATA%\Android\Sdk\`` on Windows or ``/Users/$USER/Library/Android/sdk/`` on macOS.
 
 Once that is configured, everything is ready to export to Android!
