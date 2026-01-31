@@ -277,7 +277,7 @@ Manager.
 
     ::
 
-        scons platform=linuxbsd use_llvm=yes
+        scons platform=linuxbsd llvm=yes
 
     Using Clang appears to be a requirement for OpenBSD, otherwise fonts
     would not build.
@@ -470,7 +470,7 @@ Go to the root of the source code, and execute the following build command:
 ::
 
     PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH" \
-    scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
+    scons arch=rv64 llvm=yes linker=mold lto=none target=editor \
         ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
         linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
 
@@ -527,7 +527,7 @@ then use the following SCons command:
 
 ::
 
-    scons platform=linuxbsd use_llvm=yes linker=lld
+    scons platform=linuxbsd llvm=yes linker=lld
 
 After the build is completed, a new binary with a ``.llvm`` suffix will be
 created in the ``bin/`` folder.
@@ -543,7 +543,7 @@ If this error occurs:
 
 There are two solutions:
 
-- In your SCons command, add the parameter ``use_static_cpp=no``.
+- In your SCons command, add the parameter ``static_cpp=no``.
 - Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
   install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``, or create a soft link
   to ``libatomic_ops`` by command ``ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a``. The soft link can ensure the
