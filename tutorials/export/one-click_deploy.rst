@@ -67,7 +67,6 @@ Using one-click deploy
    - After enabling USB debugging, connect the device to your PC using a USB
      cable.
    - It's also possible to one-click deploy via wireless ADB instead of with a USB cable. In order to do this, it is necessary to:
-        - Switch your Android to Developer mode: go to Settings > About Phone > Software Information > press Build Number 7 times
         - Enable wireless debugging in Settings > Developer options > debugging
         - Connect to the same WiFi network on phone and PC
         - Click "Pair device with pairing code" (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.
