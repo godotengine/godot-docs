@@ -70,7 +70,7 @@ Using one-click deploy
         - Switch your Android to Developer mode: go to Settings > About Phone > Software Information > press Build Number 7 times
         - Enable wireless debugging in Settings > Developer options > debugging
         - Connect to the same WiFi network on phone and PC
-        - Click "Pair device with pairing code" (can be accessed via long press on wireless debugging) to display IP, port and pairing code
+        - Click "Pair device with pairing code" (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.
         - On your PC, enter the command "adb pair [ip address]:[port]" and provide the pairing code when prompted. If 'adb' is not recognized, you may need to add the android-sdk's platform-tools folder to your PATH or execute this command from there.
         - You can verify ADB device is succesfully connected by entering "adb devices" in the terminal.
 
