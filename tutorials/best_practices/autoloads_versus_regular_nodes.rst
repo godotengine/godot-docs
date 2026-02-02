@@ -1,4 +1,4 @@
-.. _doc_autoloads_versus_internal_nodes:
+.. _doc_autoloads_versus_regular_nodes:
 
 Autoloads versus regular nodes
 ==============================
