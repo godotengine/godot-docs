@@ -17,6 +17,7 @@ are some platform-specific considerations, which are covered in this section.
    :maxdepth: 1
    :name: toc-learn-features-platform
 
+   linux/index
    android/index
    ios/index
    web/index
