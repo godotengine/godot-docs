@@ -470,7 +470,7 @@ Best Practices:
 - :ref:`doc_what_are_godot_classes`
 - :ref:`doc_scene_organization`
 - :ref:`doc_scenes_versus_scripts`
-- :ref:`doc_autoloads_versus_internal_nodes`
+- :ref:`doc_autoloads_versus_regular_nodes`
 - :ref:`doc_node_alternatives`
 - :ref:`doc_godot_interfaces`
 - :ref:`doc_godot_notifications`
