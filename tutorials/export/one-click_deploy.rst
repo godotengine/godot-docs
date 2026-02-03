@@ -66,7 +66,13 @@ Using one-click deploy
      then enable USB debugging in the device's settings.
    - After enabling USB debugging, connect the device to your PC using a USB
      cable.
-   - For advanced users, it should also be possible to use wireless ADB.
+   - It's also possible to one-click deploy via wireless ADB instead of with a USB cable. In order to do this, it is necessary to:
+        - Enable wireless debugging on the device: :menu:`Settings > Developer options > Debugging`
+        - Connect to the same Wi-Fi network on your mobile device and PC.
+        - Click :button:`Pair device with pairing code: (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.`
+        - On your PC, enter the command ``adb pair <ip address>:<port>`` and provide the pairing code when prompted.
+          If ``adb`` is not recognized, you may need to add the android-sdk's platform-tools folder to your ``PATH`` or execute this command from there.
+        - You can verify the ADB device is successfully connected by entering ``adb devices`` in the terminal.
 
 - **iOS:**
    - Install Xcode, accept Xcode license and login with your Apple Developer
