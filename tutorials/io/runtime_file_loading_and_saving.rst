@@ -85,6 +85,28 @@ strings and more. These PackedByteArray methods have names that start with
 
 .. _doc_runtime_file_loading_and_saving_images:
 
+Moving directories and files
+----------------------------
+
+Godot's :ref:`class_DirAccess` class provides methods to manage directories and their content.
+
+DirAccess' :ref:`DirAccess.copy <class_DirAccess_method_load_copy>` can be used to copy files. If ``chmod_flags`` is different than ``-1``, then it will set the new file's permissions based on the provided value of ``chmod_flags``. These align with the octal flags provided by Unix, which are:
+
++------------+--------------------------+
+| chmod_flag | Granted Operations       |
++============+==========================+
+| 7          | Read, write and execute. |
+| 6          | Read, write.             |
+| 5          | Read, execute.           |
+| 4          | Read.                    |
+| 3          | Write, execute.          |
+| 2          | Write.                   |
+| 1          | Execute.                 |
+| 0          | None.                    |
++------------+--------------------------+
+
+Note that these permissions will only be set if available on the current operating system.
+
 Images
 ------
 
