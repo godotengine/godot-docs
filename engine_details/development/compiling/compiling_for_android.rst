@@ -30,7 +30,7 @@ For compiling under Windows, Linux or macOS, the following is required:
 - `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - Android SDK
 
-   - To install the Android SDK, follow the steps here <https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html>_.
+   - To install the Android SDK, follow the steps `here <https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html>`_.
    - On Linux, **do not use an Android SDK provided by your distribution's repositories** as it will often be outdated.
    - On macOS, **do not use an Android SDK provided by Homebrew** as it will not be installed in a unified location.
 
@@ -97,23 +97,17 @@ root directory with the following arguments:
     scons platform=android target=template_debug arch=arm32
     scons platform=android target=template_debug arch=arm64 generate_android_binaries=yes
 
-- (**Optional**) Dev template (used when troubleshooting)
-
-::
-
-    scons platform=android target=template_debug arch=arm32 dev_build=yes
-    scons platform=android target=template_debug arch=arm64 dev_build=yes generate_android_binaries=yes
-
 The resulting templates will be located under the ``bin`` directory:
 
 - ``bin/android_release.apk`` for the release template
 - ``bin/android_debug.apk`` for the debug template
-- ``bin/android_dev.apk`` for the dev template
 - ``bin/android_source.zip`` for the Gradle build template
 
 .. note::
 
    - If you are changing the list of architectures you're building, remember to add ``generate_android_binaries=yes`` to the *last* architecture you're building, so that the template files are generated after the build.
+
+   - To enable dev build (for use when troubleshooting) in the generated templates, add the ``dev_build=yes`` parameters to the SCons command.
 
    - To include debug symbols in the generated templates, add the ``debug_symbols=yes`` parameters to the SCons command.
 
