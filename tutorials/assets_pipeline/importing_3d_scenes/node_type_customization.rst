@@ -82,14 +82,14 @@ The option ``-convcolonly`` works in a similar way, but will create a
 
 The types of Blender nodes that the above 4 options work with are summarized below.
 
-+--------------+----------------------+--------------------+
-| Suffix       | Works on Mesh object | Works on Mesh data |
-+==============+======================+====================+
-| -col         | ✔️                   | ✔️                 |
-| -convcol     | ✔️                   | ✔️                 |
-| -colonly     | ✔️                   | ❌                 |
-| -convcolonly | ✔️                   | ❌                 |
-+--------------+----------------------+--------------------+
++------------------+----------------------+--------------------+
+| Suffix           | Works on Mesh object | Works on Mesh data |
++==================+======================+====================+
+| ``-col``         | ✔️                   | ✔️                 |
+| ``-convcol``     | ✔️                   | ✔️                 |
+| ``-colonly``     | ✔️                   | ❌                 |
+| ``-convcolonly`` | ✔️                   | ❌                 |
++------------------+----------------------+--------------------+
 
 With Collada files, the option ``-colonly`` can also be used with Blender's
 empty objects. On import, it will create a :ref:`class_StaticBody3D` with a
