@@ -112,6 +112,10 @@ This velocity vector should be used to move the NavigationAgent's parent node in
 
     Only other agents on the same map that are registered for avoidance themself will be considered in the avoidance calculation.
 
+.. note::
+
+    The NavigationAgent must be supplied with a ``target_position`` attribute even if you are only using the agent for avoidance, otherwise the ``safe_velocity`` received from the ``velocity_computed`` signal will always be (0,0).
+
 The following NavigationAgent properties are relevant for avoidance:
 
   - The property ``height`` is available in 3D only. The height together with the current global y-axis position of the agent determines the vertical placement of the agent in the avoidance simulation. Agents using the 2D avoidance will automatically ignore other agents or obstacles that are below or above them.
