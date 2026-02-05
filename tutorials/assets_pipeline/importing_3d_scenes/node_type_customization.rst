@@ -54,7 +54,7 @@ Settings dialog.
 Create collisions (-col, -convcol, -colonly, -convcolonly)
 ----------------------------------------------------------
 
-The option ``-col`` will work only for Mesh objects. If it is detected, a child
+If the option ``-col`` is detected, a child
 static collision node will be added, using the same geometry as the mesh. This
 will create a triangle mesh collision shape, which is a slow, but accurate
 option for collision detection. This option is usually what you want for level
@@ -79,6 +79,17 @@ This helps the visual mesh and actual collision to be separated.
 
 The option ``-convcolonly`` works in a similar way, but will create a
 :ref:`class_ConvexPolygonShape3D` instead using convex decomposition.
+
+The types of Blender nodes that the above 4 options work with are summarized below.
+
++--------------+----------------------+--------------------+
+| Suffix       | Works on Mesh object | Works on Mesh data |
++==============+======================+====================+
+| -col         | ✔️                   | ✔️                 |
+| -convcol     | ✔️                   | ✔️                 |
+| -colonly     | ✔️                   | ❌                 |
+| -convcolonly | ✔️                   | ❌                 |
++--------------+----------------------+--------------------+
 
 With Collada files, the option ``-colonly`` can also be used with Blender's
 empty objects. On import, it will create a :ref:`class_StaticBody3D` with a
