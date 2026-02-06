@@ -52,7 +52,7 @@ that runs and jumps, a life bar, a chest with which you can interact, and more.
 
 The Godot editor essentially is a **scene editor**. It has plenty of tools for
 editing 2D and 3D scenes, as well as user interfaces. A Godot project can
-contain as many of these scenes as you need. The engine only requires one as
+contain as many of these scenes as your computer can handle. The engine only requires one as
 your application's **main scene**. This is the scene Godot will first load when
 you or a player runs the game.
 
