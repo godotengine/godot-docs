@@ -109,6 +109,26 @@ on separate threads (making them thread-safe), enable the following project sett
 - **PhysicsServer2D:** :ref:`Physics > 2D > Run on Separate Thread <class_ProjectSettings_property_physics/2d/run_on_separate_thread>`.
 - **PhysicsServer3D:** :ref:`Physics > 3D > Run on Separate Thread <class_ProjectSettings_property_physics/3d/run_on_separate_thread>`.
 
+Navigation
+----------
+
+:ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>` are both thread-safe and thread-friendly.
+
+The navigation-related query functions can be called by threads and run in true parallel.
+
+By default, a conservative number of threads is supported running in true parallel on navigation maps before
+additional threads have to wait for map data access at a semaphore.
+To increase the number of threads that can run simultaneously on map data,
+set :ref:`Navigation > Pathfinding > Max Threads <class_ProjectSettings_property_navigation/pathfinding/max_threads>`.
+
+The navigation server-related resources like NavigationSourceGeometryData, NavigationMesh, and NavigationPolygon are all thread-safe but not necessarily thread-friendly.
+They use internal read-write locks for thread-safety so editing the same resource (e.g. a single big navmesh) on multiple threads at the same time can cause thread congestion.
+
+The navigation-related helper classes like :ref:`AStar2D<class_AStar2D>`, :ref:`AStar3D<class_AStar3D>`, and :ref:`AStarGrid2D<class_AStarGrid2D>` are **not** thread-safe.
+They can be used with threads to some limited capacity, but using two or more threads on the same AStar object causes corruption.
+For example, using a dedicated background thread per AStar object to populate points or do queries works,
+but two threads using the same AStar object would corrupt each other's data.
+
 GDScript arrays and dictionaries
 --------------------------------
 
