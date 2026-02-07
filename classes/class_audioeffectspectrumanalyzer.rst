@@ -40,13 +40,11 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                                | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` | ``2.0``  |
-   +----------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-   | :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           | ``2``    |
-   +----------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                                | :ref:`tap_back_pos<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`   | ``0.01`` |
-   +----------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                                | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` | ``2.0`` |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           | ``2``   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+---------+
 
 .. rst-class:: classref-section-separator
 
@@ -149,25 +147,6 @@ The length of the buffer to keep (in seconds). Higher values keep data around fo
 - :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` **get_fft_size**\ (\ )
 
 The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Fourier_transform>`__ buffer. Higher values smooth out the spectrum analysis over time, but have greater latency. The effects of this higher latency are especially noticeable with sudden amplitude changes.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_AudioEffectSpectrumAnalyzer_property_tap_back_pos:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **tap_back_pos** = ``0.01`` :ref:`🔗<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_tap_back_pos**\ (\ value\: :ref:`float<class_float>`\ )
-- :ref:`float<class_float>` **get_tap_back_pos**\ (\ )
-
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

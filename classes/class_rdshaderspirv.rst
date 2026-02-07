@@ -32,9 +32,19 @@ Properties
    :widths: auto
 
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_any_hit<class_RDShaderSPIRV_property_bytecode_any_hit>`                                         | ``PackedByteArray()`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_closest_hit<class_RDShaderSPIRV_property_bytecode_closest_hit>`                                 | ``PackedByteArray()`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`                                         | ``PackedByteArray()`` |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`                                       | ``PackedByteArray()`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_intersection<class_RDShaderSPIRV_property_bytecode_intersection>`                               | ``PackedByteArray()`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_miss<class_RDShaderSPIRV_property_bytecode_miss>`                                               | ``PackedByteArray()`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_raygen<class_RDShaderSPIRV_property_bytecode_raygen>`                                           | ``PackedByteArray()`` |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`                 | ``PackedByteArray()`` |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -42,9 +52,19 @@ Properties
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`                                           | ``PackedByteArray()`` |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                   | :ref:`compile_error_any_hit<class_RDShaderSPIRV_property_compile_error_any_hit>`                               | ``""``                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                   | :ref:`compile_error_closest_hit<class_RDShaderSPIRV_property_compile_error_closest_hit>`                       | ``""``                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>`                   | :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`                               | ``""``                |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>`                   | :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`                             | ``""``                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                   | :ref:`compile_error_intersection<class_RDShaderSPIRV_property_compile_error_intersection>`                     | ``""``                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                   | :ref:`compile_error_miss<class_RDShaderSPIRV_property_compile_error_miss>`                                     | ``""``                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`                   | :ref:`compile_error_raygen<class_RDShaderSPIRV_property_compile_error_raygen>`                                 | ``""``                |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>`                   | :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`       | ``""``                |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -80,6 +100,44 @@ Methods
 Property Descriptions
 ---------------------
 
+.. _class_RDShaderSPIRV_property_bytecode_any_hit:
+
+.. rst-class:: classref-property
+
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_any_hit** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_any_hit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The SPIR-V bytecode for the any hit shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_bytecode_closest_hit:
+
+.. rst-class:: classref-property
+
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_closest_hit** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_closest_hit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The SPIR-V bytecode for the closest hit shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RDShaderSPIRV_property_bytecode_compute:
 
 .. rst-class:: classref-property
@@ -111,6 +169,63 @@ The SPIR-V bytecode for the compute shader stage.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the fragment shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_bytecode_intersection:
+
+.. rst-class:: classref-property
+
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_intersection** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_intersection>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The SPIR-V bytecode for the intersection shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_bytecode_miss:
+
+.. rst-class:: classref-property
+
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_miss** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_miss>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The SPIR-V bytecode for the miss shader stage.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_bytecode_raygen:
+
+.. rst-class:: classref-property
+
+:ref:`PackedByteArray<class_PackedByteArray>` **bytecode_raygen** = ``PackedByteArray()`` :ref:`🔗<class_RDShaderSPIRV_property_bytecode_raygen>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The SPIR-V bytecode for the ray generation shader stage.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
@@ -175,6 +290,40 @@ The SPIR-V bytecode for the vertex shader stage.
 
 ----
 
+.. _class_RDShaderSPIRV_property_compile_error_any_hit:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **compile_error_any_hit** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_any_hit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The compilation error message for the any hit shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_compile_error_closest_hit:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **compile_error_closest_hit** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_closest_hit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The compilation error message for the closest hit shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RDShaderSPIRV_property_compile_error_compute:
 
 .. rst-class:: classref-property
@@ -204,6 +353,57 @@ The compilation error message for the compute shader stage (set by the SPIR-V co
 - :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the fragment shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_compile_error_intersection:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **compile_error_intersection** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_intersection>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The compilation error message for the intersection shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_compile_error_miss:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **compile_error_miss** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_miss>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The compilation error message for the miss shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDShaderSPIRV_property_compile_error_raygen:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **compile_error_raygen** = ``""`` :ref:`🔗<class_RDShaderSPIRV_property_compile_error_raygen>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
+
+The compilation error message for the ray generation shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-item-separator
 

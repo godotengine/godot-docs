@@ -577,6 +577,27 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_DisplayServer_signal_orientation_changed:
+
+.. rst-class:: classref-signal
+
+**orientation_changed**\ (\ orientation\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_signal_orientation_changed>`
+
+Emitted when the device orientation changes. ``orientation`` is the new orientation.
+
+Returns ``1`` for portrait, ``2`` for landscape, and ``0`` if the orientation is undefined.
+
+\ **Note:** This method is implemented on Android and iOS.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Enumerations
 ------------
 
@@ -1239,6 +1260,14 @@ Dialog window element.
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TOOLTIP** = ``45``
 
 Tooltip element.
+
+.. _class_DisplayServer_constant_ROLE_REGION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_REGION** = ``46``
+
+Region/landmark element. Screen readers can navigate between regions using landmark navigation.
 
 .. rst-class:: classref-item-separator
 
@@ -3944,7 +3973,7 @@ Each filter string in the ``filters`` array should be formatted like this: ``*.p
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``. **On Android,** the third callback argument (``selected_filter_index``) is always ``0``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, macOS, and Android (API level 29+).
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, macOS, and Android.
 
 \ **Note:** ``current_directory`` might be ignored.
 

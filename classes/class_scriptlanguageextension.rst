@@ -37,7 +37,7 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_complete_code<class_ScriptLanguageExtension_private_method__complete_code>`\ (\ code\: :ref:`String<class_String>`, path\: :ref:`String<class_String>`, owner\: :ref:`Object<class_Object>`\ ) |virtual| |required| |const|                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`                                      | :ref:`_create_script<class_ScriptLanguageExtension_private_method__create_script>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                                      |
+   | :ref:`Object<class_Object>`                                      | :ref:`_create_script<class_ScriptLanguageExtension_private_method__create_script>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                 |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_debug_get_current_stack_info<class_ScriptLanguageExtension_private_method__debug_get_current_stack_info>`\ (\ ) |virtual| |required|                                                                                                                                                                                                                                |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -584,11 +584,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_create_script**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__create_script>`
+:ref:`Object<class_Object>` **_create_script**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__create_script>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+**Deprecated:** This method is not called by the engine.
 
 .. rst-class:: classref-item-separator
 

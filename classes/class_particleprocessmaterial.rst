@@ -583,11 +583,7 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_DISABLED** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+The subemitter is disabled.
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_CONSTANT:
 
@@ -595,11 +591,7 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_CONSTANT** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+The submitter is emitted on the constant interval defined by :ref:`sub_emitter_frequency<class_ParticleProcessMaterial_property_sub_emitter_frequency>`.
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_AT_END:
 
@@ -607,11 +599,7 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_END** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+The subemitter is emitted at the end of the particle's lifetime.
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_AT_COLLISION:
 
@@ -619,11 +607,7 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_COLLISION** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+The subemitter is emitted when the particle collides.
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_AT_START:
 
@@ -631,11 +615,7 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_START** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+The subemitter is emitted when the particle spawns.
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_MAX:
 

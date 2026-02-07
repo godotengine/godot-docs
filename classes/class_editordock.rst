@@ -131,6 +131,18 @@ Signals
 
 Emitted when the dock is closed with the Close button in the context popup, before it's removed from its parent. See :ref:`closable<class_EditorDock_property_closable>`.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDock_signal_opened:
+
+.. rst-class:: classref-signal
+
+**opened**\ (\ ) :ref:`🔗<class_EditorDock_signal_opened>`
+
+Emitted when the dock is opened via the Editor > Editor Docks menu, before it's made visible.
+
 .. rst-class:: classref-section-separator
 
 ----
