@@ -183,13 +183,61 @@ Android
     For example, ``GodotApp.java`` moved from ``src/com/godot/game/GodotApp.java`` to
     ``src/main/java/com/godot/game/GodotApp.java``.
 
+Core
+~~~~
+
+.. note::
+
+    The :ref:`doc_tscn_file_format` has changed in two ways in Godot 4.6:
+
+    - ``load_steps`` is `no longer written in scene files <GH-103352>`_.
+      This attribute wasn't used by the editor.
+    - `Unique node IDs <GH-106837>`_ are now saved to scene files to help track nodes when
+      they are moved or renamed. This makes scene refactoring significantly more robust.
+
+    The changes are backwards-compatible and forwards-compatible, which means
+    scenes saved in Godot 4.5 can still be loaded in Godot 4.6 and vice-versa
+    (notwithstanding other incompatible changes performed in the scene itself).
+
+    As a result, when saving a scene that was last edited in Godot 4.5 in Godot
+    4.6, significant diffs will occur in version control programs. These diffs are
+    expected.
+
+    As a reminder, you can upgrade all files in a project to the latest format
+    using :menu:`Project > Tools > Upgrade Project Files...` in the editor,
+    then committing the changes to version control.
+    This allows you to avoid large diffs later on when editing scenes.
+
 Rendering
 ~~~~~~~~~
 
 .. note::
 
-    Soft Light blend mode now always behaves as it did previously with ``use_hdr_2d``, regardless of
-    the Viewport's ``use_hdr_2d`` setting (`GH-109971`_).
+    The default blend mode for Glow is now Screen, which looks more correct
+    but is significantly brighter than the previous Soft Light mode (`GH-110671`_).
+
+    Several other glow defaults were changed to ensure the glow didn't
+    become too strong, but you will likely need to tweak glow properties
+    in Environment after upgrading.
+
+    In addition, glow's Soft Light blend mode now always behaves as it did
+    previously with ``use_hdr_2d``, regardless of the Viewport's ``use_hdr_2d``
+    setting (`GH-109971`_).
+
+    When using the Mobile renderer, the rewritten glow effect will look
+    significantly different to the previous one for performance reasons
+    (`GH-110077`_). You may need to further adjust glow settings in Environment
+    to achieve a similar look to before.
+
+.. note::
+
+    Volumetric fog blending has been changed to be more physically accurate
+    (`GH-112494`_). This will cause volumetric fog to appear brighter in most
+    scenes.
+
+    To compensate for this, you will need to decrease volumetric fog density or
+    brightness in Environment, or decrease the **Volumetric Fog Energy**
+    property on specific lights.
 
 Navigation
 ~~~~~~~~~~
@@ -267,12 +315,15 @@ Property ``compress``                                                           
 .. |✔️ with compat| replace:: :abbr:`✔️ (This API does not break compatibility. A compatibility method was added.)`
 
 .. _GH-90411: https://github.com/godotengine/godot/pull/90411
+.. _GH-103352: https://github.com/godotengine/godot/pull/103352
 .. _GH-105737: https://github.com/godotengine/godot/pull/105737
+.. _GH-106837: https://github.com/godotengine/godot/pull/106837
 .. _GH-107167: https://github.com/godotengine/godot/pull/107167
 .. _GH-107902: https://github.com/godotengine/godot/pull/107902
 .. _GH-107954: https://github.com/godotengine/godot/pull/107954
 .. _GH-109302: https://github.com/godotengine/godot/pull/109302
 .. _GH-109971: https://github.com/godotengine/godot/pull/109971
+.. _GH-110077: https://github.com/godotengine/godot/pull/110077
 .. _GH-110120: https://github.com/godotengine/godot/pull/110120
 .. _GH-110250: https://github.com/godotengine/godot/pull/110250
 .. _GH-110256: https://github.com/godotengine/godot/pull/110256
@@ -289,6 +340,7 @@ Property ``compress``                                                           
 .. _GH-112073: https://github.com/godotengine/godot/pull/112073
 .. _GH-112267: https://github.com/godotengine/godot/pull/112267
 .. _GH-112379: https://github.com/godotengine/godot/pull/112379
+.. _GH-112494: https://github.com/godotengine/godot/pull/112494
 .. _GH-113213: https://github.com/godotengine/godot/pull/113213
 .. _GH-113459: https://github.com/godotengine/godot/pull/113459
 .. _GH-113988: https://github.com/godotengine/godot/pull/113988

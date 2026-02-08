@@ -534,17 +534,26 @@ EditorScripts, with a ``_run()`` method already inserted:
     func _run():
         pass
 
-This ``_run()`` method is executed when you use **File > Run** or the keyboard
-shortcut :kbd:`Ctrl + Shift + X` while the EditorScript is the currently open
-script in the script editor. This keyboard shortcut is only effective when
-currently focused on the script editor.
+This ``_run()`` method is executed when you use any of the 4 approaches that can be
+used to run an EditorScript:
 
-Scripts that extend EditorScript must be ``@tool`` scripts to function.
+- Use :menu:`File > Run` at the top of the script editor with the EditorScript
+  being the current tab.
+- Press the keyboard shortcut :kbd:`Ctrl + Shift + X` while the EditorScript is
+  the current tab. This keyboard shortcut is only effective when focused on the
+  script editor.
+- Right-click the script in the FileSystem dock and choose :menu:`Run`.
+- Add a ``class_name <name>`` at the top of the script, bring up the command
+  palette by pressing :kbd:`Ctrl + Shift + P`, and enter the class name to run
+  it. The entry will be named according to the class name, with automatic
+  capitalization applied.
+
+Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
 
 .. note::
 
     EditorScripts can only be run from the Godot script editor. If you are using
-    an external editor, open the script inside the Godot script editor to run it.
+    an external editor, use one of the last two approaches to run the script.
 
 .. danger::
 
@@ -552,43 +561,42 @@ Scripts that extend EditorScript must be ``@tool`` scripts to function.
     scene before running one** if the script is designed to modify any data.
 
 To access nodes in the currently edited scene, use the
-:ref:`EditorScript.get_scene <class_EditorScript_method_get_scene>` method which
-returns the root Node of the currently edited scene. Here's an example that
-recursively gets all nodes in the currently edited scene and doubles the range
-of all OmniLight3D nodes:
+:ref:`EditorInterface.get_edited_scene_root() <class_EditorInterface_method_get_edited_scene_root>`
+method which returns the root Node of the currently edited scene. Here's an
+example that recursively gets all nodes in the currently edited scene and
+doubles the range of all OmniLight3D nodes:
 
 ::
 
     @tool
+    # Thanks to the class name, we can run this script by bringing up
+    # the command palette and searching "Scale Omni Lights".
+    class_name ScaleOmniLights
     extends EditorScript
 
     func _run():
-        for node in get_all_children(get_scene()):
-            if node is OmniLight3D:
-                # Don't operate on instanced subscene children, as changes are lost
-                # when reloading the scene.
-                # See the "Instancing scenes" section below for a description of `owner`.
-                var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
-                if not is_instanced_subscene_child:
-                    node.omni_range *= 2.0
+        for node in EditorInterface.get_edited_scene_root().find_children("", "OmniLight3D"):
+            # Don't operate on instanced subscene children, as changes are lost
+            # when reloading the scene.
+            # See the "Instancing scenes" section below for a description of `owner`.
+            var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
+            if not is_instanced_subscene_child:
+                node.omni_range *= 2.0
+                EditorInterface.mark_scene_as_unsaved()
 
-    # This function is recursive: it calls itself to get lower levels of child nodes as needed.
-    # `children_acc` is the accumulator parameter that allows this function to work.
-    # It should be left to its default value when you call this function directly.
-    func get_all_children(in_node, children_acc = []):
-        children_acc.push_back(in_node)
-        for child in in_node.get_children():
-            children_acc = get_all_children(child, children_acc)
-
-        return children_acc
+In the above example, we also call
+:ref:`EditorScript.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`
+after any modification that affects the scene's state. This allows the editor to
+display the scene as "unsaved" (i.e. with an asterisk next to the name). This way,
+you also get a confirmation when trying to close the scene with unsaved changes.
 
 .. tip::
 
     You can change the currently edited scene at the top of the editor even
     while the Script view is open. This will affect the return value of
-    :ref:`EditorScript.get_scene <class_EditorScript_method_get_scene>`, so make
-    sure you've selected the scene you intend to iterate upon before running
-    the script.
+    :ref:`EditorInterface.get_edited_scene_root <class_EditorInterface_method_get_edited_scene_root>`,
+    so make sure you've selected the scene you intend to iterate upon before
+    running the script.
 
 Instancing scenes
 -----------------
@@ -626,7 +634,7 @@ If you are using ``@tool``:
         node.Owner = GetTree().EditedSceneRoot;
     }
 
-If you are using :ref:`EditorScript<class_EditorScript>`:
+If you are using :ref:`EditorScript <class_EditorScript>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

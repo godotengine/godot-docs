@@ -47,12 +47,10 @@ There are five main sections inside the TSCN file:
 3. Nodes
 4. Connections
 
-The file descriptor looks like ``[gd_scene load_steps=4 format=3 uid="uid://cecaux1sm7mo0"]``
-and should be the first entry in the file. The ``load_steps`` parameter is equal to the
-total amount of resources (internal and external) plus one (for the file itself).
-If the file has no resources, ``load_steps`` is omitted. The engine will
-still load the file correctly if ``load_steps`` is incorrect, but this will affect
-loading bars and any other piece of code relying on that value.
+The file descriptor looks like ``[gd_scene format=3 uid="uid://cecaux1sm7mo0"]``
+and should be the first entry in the file. Note that scenes saved before Godot 4.6
+will also have a ``load_steps=<int>`` attribute in the file descriptor. This
+attribute is now deprecated and should be ignored if present.
 
 ``uid`` is a unique string-based identifier representing the scene. This is
 used by the engine to track files that are moved around, even while the editor
@@ -92,15 +90,19 @@ so on. For example, a Node3D looks like:
 
 ::
 
-    [node name="Cube" type="Node3D"]
+    [node name="Cube" type="Node3D" unique_id=224283918]
     transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 3)
 
 The scene tree
 --------------
 
-The scene tree is made up of… nodes! The heading of each node consists of
-its name, parent and (most of the time) a type. For example:
-``[node name="PlayerCamera" type="Camera" parent="Player/Head"]``
+The scene tree is made up of… nodes! The heading of each node consists of its
+name, parent, a unique ID (used to track nodes even if they are moved or
+renamed), and most of the time, a type. For example: ``[node name="PlayerCamera"
+type="Camera" parent="Player/Head" unique_id=1697057368]``
+
+Note that ``unique_id`` is only present in scenes saved with Godot 4.6 or later.
+Therefore, it is not guaranteed to be present.
 
 Other valid keywords include:
 
@@ -120,10 +122,10 @@ the path should be ``"."``. Here is an example scene tree
 
 ::
 
-    [node name="Player" type="Node3D"]                    ; The scene root
-    [node name="Arm" type="Node3D" parent="."]            ; Parented to the scene root
-    [node name="Hand" type="Node3D" parent="Arm"]         ; Child of "Arm"
-    [node name="Finger" type="Node3D" parent="Arm/Hand"]  ; Child of "Hand"
+    [node name="Player" type="Node3D" unique_id=1155673912]                    ; The scene root
+    [node name="Arm" type="Node3D" parent="." unique_id=1010797352]            ; Parented to the scene root
+    [node name="Hand" type="Node3D" parent="Arm" unique_id=536436825]          ; Child of "Arm"
+    [node name="Finger" type="Node3D" parent="Arm/Hand" unique_id=1732647084]  ; Child of "Hand"
 
 .. tip::
 
@@ -138,7 +140,7 @@ collision, visuals (mesh + light) and a camera parented to the RigidBody3D:
 
 ::
 
-    [gd_scene load_steps=4 format=3 uid="uid://cecaux1sm7mo0"]
+    [gd_scene format=3 uid="uid://cecaux1sm7mo0"]
 
     [sub_resource type="SphereShape3D" id="SphereShape3D_tj6p1"]
 
@@ -147,20 +149,20 @@ collision, visuals (mesh + light) and a camera parented to the RigidBody3D:
     [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k54se"]
     albedo_color = Color(1, 0.639216, 0.309804, 1)
 
-    [node name="Ball" type="RigidBody3D"]
+    [node name="Ball" type="RigidBody3D" unique_id=1358867382]
 
-    [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+    [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1279975976]
     shape = SubResource("SphereShape3D_tj6p1")
 
-    [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+    [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=558852834]
     mesh = SubResource("SphereMesh_4w3ye")
     surface_material_override/0 = SubResource("StandardMaterial3D_k54se")
 
-    [node name="OmniLight3D" type="OmniLight3D" parent="."]
+    [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1581292810]
     light_color = Color(1, 0.698039, 0.321569, 1)
     omni_range = 10.0
 
-    [node name="Camera3D" type="Camera3D" parent="."]
+    [node name="Camera3D" type="Camera3D" parent="." unique_id=795715540]
     transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 1, 3)
 
 NodePath
@@ -187,7 +189,7 @@ For example, the ``skeleton`` property in the MeshInstance3D node called
 
 ::
 
-    [node name="mesh" type="MeshInstance3D" parent="Armature01"]
+    [node name="mesh" type="MeshInstance3D" parent="Armature01" unique_id=1638249225]
     skeleton = NodePath("..")
 
 Skeleton3D
@@ -208,7 +210,7 @@ Here's an example of a skeleton node with two bones:
 
 ::
 
-    [node name="Skeleton3D" type="Skeleton3D" parent="PlayerModel/Robot_Skeleton" index="0"]
+    [node name="Skeleton3D" type="Skeleton3D" parent="PlayerModel/Robot_Skeleton" index="0" unique_id=542985694]
     bones/1/position = Vector3(0.114471, 2.19771, -0.197845)
     bones/1/rotation = Quaternion(0.191422, -0.0471201, -0.00831942, 0.980341)
     bones/2/position = Vector3(-2.59096e-05, 0.236002, 0.000347473)
@@ -227,12 +229,12 @@ An example of a :ref:`class_Marker3D` node parented to a bone in Skeleton:
 
 ::
 
-    [node name="GunBone" type="BoneAttachment3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D" index="5"]
+    [node name="GunBone" type="BoneAttachment3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D" index="5" unique_id=63481392]
     transform = Transform3D(0.333531, 0.128981, -0.933896, 0.567174, 0.763886, 0.308015, 0.753209, -0.632331, 0.181604, -0.323915, 1.07098, 0.0497144)
     bone_name = "hand.R"
     bone_idx = 55
 
-    [node name="ShootFrom" type="Marker3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D/GunBone"]
+    [node name="ShootFrom" type="Marker3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D/GunBone" unique_id=679926736]
     transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 AnimationPlayer
@@ -353,7 +355,7 @@ Here's an example of an ArrayMesh saved to its own ``.tres`` file. Some fields w
 
 ::
 
-    [gd_resource type="ArrayMesh" load_steps=2 format=3 uid="uid://dww8o7hsqrhx5"]
+    [gd_resource type="ArrayMesh" format=3 uid="uid://dww8o7hsqrhx5"]
 
     [ext_resource type="Material" path="res://player/model/playerobot.tres" id="1_r3bjq"]
 
@@ -423,7 +425,7 @@ AnimationPlayer for brevity:
 
 ::
 
-    [gd_scene load_steps=4 format=3 uid="uid://cdyt3nktp6y6"]
+    [gd_scene format=3 uid="uid://cdyt3nktp6y6"]
 
     [sub_resource type="Animation" id="Animation_r2qdp"]
     resource_name = "scale_down"
@@ -450,15 +452,15 @@ AnimationPlayer for brevity:
 
     [sub_resource type="BoxMesh" id="BoxMesh_u688r"]
 
-    [node name="Node3D" type="Node3D"]
+    [node name="Node3D" type="Node3D" unique_id=2076735200]
 
-    [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+    [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2139773137]
     autoplay = "scale_down"
     libraries = {
     "": SubResource("AnimationLibrary_4qx36")
     }
 
-    [node name="Box" type="MeshInstance3D" parent="."]
+    [node name="Box" type="MeshInstance3D" parent="." unique_id=711004519]
     mesh = SubResource("BoxMesh_u688r")
 
 For generic property ``value`` tracks, ``keys`` is a dictionary containing 3

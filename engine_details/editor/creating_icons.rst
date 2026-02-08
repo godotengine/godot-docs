@@ -21,32 +21,56 @@ Clone the ``godot`` repository containing all the editor icons:
     git clone https://github.com/godotengine/godot.git
 
 The icons must be created in a vector graphics editor in SVG format. There are
-two main requirements to follow:
+three main requirements to follow:
 
 - Icons must be 16×16. In Inkscape, you can configure the document size in
   **File > Document Properties**.
 - Lines should be snapped to pixels whenever possible to remain crisp at lower DPI.
   You can create a 16×16 grid in Inkscape to make this easier.
+- If the user has configured their editor to use a light theme, Godot will
+  convert the icon's colors based on a
+  `set of predefined color mappings <https://github.com/godotengine/godot/blob/master/editor/themes/editor_color_map.cpp>`__.
+  This is to ensure the icon always displays with a sufficient contrast rate.
+  Try to restrict your icon's color palette to colors found in the list above.
+  Otherwise, your icon may become difficult to read on a light background.
 
 Once you're satisfied with the icon's design, save the icon in the cloned
 repository's ``editor/icons`` folder. The icon name should match the intended
 name in a case-sensitive manner. For example, to create an icon for
 CPUParticles2D, name the file ``CPUParticles2D.svg``.
 
+.. tip::
+
+    You can also browse all existing icons on the
+    `Godot editor icons <https://godotengine.github.io/editor-icons/>`__
+    website.
+
+Import options for custom icons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For custom icons that are present in projects (as opposed to the engine source code),
+there are two import options you should enable:
+
+Scaling for hiDPI displays
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Icons need to be scaled properly on hiDPI displays to ensure they remain
+crisp and large enough to be readable.
+
+To ensure the icon is rendered at a correct scale on hiDPI displays, select the
+SVG file in the FileSystem dock, enable the **Editor > Scale with Editor Scale**
+option in the Import dock and click :button:`Reimport`. Note that this option is
+only available for icons in SVG format, as it requires the use of a vector
+format to work.
+
 Color conversion for light editor themes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If the user has configured their editor to use a light theme, Godot will
-convert the icon's colors based on a
-`set of predefined color mappings <https://github.com/godotengine/godot/blob/master/editor/themes/editor_color_map.cpp>`__.
-This is to ensure the icon always displays with a sufficient contrast rate.
-Try to restrict your icon's color palette to colors found in the list above.
-Otherwise, your icon may become difficult to read on a light background.
-
-.. note::
-	To enable color conversion for light editor themes:
-		1. :ui:`Import > Import As > Texture2D`
-		2. Set ``editor/convert_colors_with_editor_theme`` to ``true``
+To ensure the icon has its colors converted when the user is using a light
+theme, select the SVG file in the FileSystem dock, enable the **Editor > Convert
+Colors with Editor Theme** option in the Import dock and click
+:button:`Reimport`. Note that this option is only available for icons in SVG
+format, as it requires the use of a vector format to work.
 
 Icon optimization
 ~~~~~~~~~~~~~~~~~
@@ -76,7 +100,7 @@ make a separate pull request for your icons to be available within the editor
 as they can be self-contained.
 
 For specific instructions on how to create module icons, refer to
-:ref:`Creating custom module icons<doc_custom_module_icons>`.
+:ref:`Creating custom module icons <doc_custom_module_icons>`.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
@@ -84,9 +108,8 @@ Troubleshooting
 If icons don't appear in the editor, make sure that:
 
 1. Each icon's filename matches the naming requirement as described previously.
-
-2. ``modules/svg`` is enabled (it should be enabled by default). Without it,
-   icons won't appear in the editor at all.
+2. The ``svg`` module is enabled at compile-time (it is enabled by default).
+   Without this module, icons won't appear in the editor at all.
 
 References
 ~~~~~~~~~~

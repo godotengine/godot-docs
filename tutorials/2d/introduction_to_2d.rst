@@ -300,10 +300,10 @@ Node2D and Control node
 for 2D game objects, and :ref:`Control <class_Control>` is the base node 
 for everything GUI. For 3D, Godot uses the :ref:`Node3D <class_Node3D>` node.
 
-3D in 2D
---------
+Displaying 3D nodes in 2D
+-------------------------
 
-It is possible to display 3D scenes in 2D screen, You can see this in the demo `3D in 2D Viewport <https://godotengine.org/asset-library/asset/2804>`__.
+It is possible to display 3D nodes in a 2D scene by using a :ref:`SubViewport<class_SubViewport>`. You can see this in the demo `3D in 2D Viewport <https://godotengine.org/asset-library/asset/2804>`__.
 
 .. image:: img/3d_in_2d_demo_editor.webp
 
