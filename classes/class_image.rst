@@ -1696,6 +1696,8 @@ Multiplies color values with alpha values. Resulting color values for a pixel ar
 
 Resizes the image to the given ``width`` and ``height``. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
 
+\ **Note:** If the image's format is :ref:`FORMAT_RGBA4444<class_Image_constant_FORMAT_RGBA4444>`, :ref:`FORMAT_RGB565<class_Image_constant_FORMAT_RGB565>`, or :ref:`FORMAT_RGBE9995<class_Image_constant_FORMAT_RGBE9995>`, it will be temporarily converted to either :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` or :ref:`FORMAT_RGBAH<class_Image_constant_FORMAT_RGBAH>`. This can affect the quality of the resized image.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -289,6 +289,7 @@ Nodes
     class_vflowcontainer
     class_videostreamplayer
     class_viewport
+    class_virtualjoystick
     class_visibleonscreenenabler2d
     class_visibleonscreenenabler3d
     class_visibleonscreennotifier2d
@@ -387,6 +388,7 @@ Resources
     class_audiostreamwav
     class_basematerial3d
     class_bitmap
+    class_blitmaterial
     class_bonemap
     class_boxmesh
     class_boxoccluder3d
@@ -428,6 +430,7 @@ Resources
     class_cylindermesh
     class_cylindershape3d
     class_dpitexture
+    class_drawabletexture2d
     class_editornode3dgizmoplugin
     class_editorsettings
     class_editorsyntaxhighlighter

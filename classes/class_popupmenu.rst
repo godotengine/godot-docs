@@ -194,6 +194,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_item_indent<class_PopupMenu_method_set_item_indent>`\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ )                                                                                                                                                        |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`set_item_index<class_PopupMenu_method_set_item_index>`\ (\ index\: :ref:`int<class_int>`, target_index\: :ref:`int<class_int>`\ )                                                                                                                                                    |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_item_language<class_PopupMenu_method_set_item_language>`\ (\ index\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ )                                                                                                                                            |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_item_metadata<class_PopupMenu_method_set_item_metadata>`\ (\ index\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )                                                                                                                                          |
@@ -912,7 +914,7 @@ Returns a :ref:`Color<class_Color>` modulating the item's icon at the given ``in
 
 :ref:`int<class_int>` **get_item_id**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_id>`
 
-Returns the ID of the item at the given ``index``. ``id`` can be manually assigned, while index can not.
+Returns the ID of the item at the given ``index``.
 
 .. rst-class:: classref-item-separator
 
@@ -936,7 +938,7 @@ Returns the horizontal offset of the item at the given ``index``.
 
 :ref:`int<class_int>` **get_item_index**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_get_item_index>`
 
-Returns the index of the item containing the specified ``id``. Index is automatically assigned to each item by the engine and can not be set manually.
+Returns the index of the item containing the specified ``id``. The index is automatically assigned to each item by the engine when added and represents the order items will be displayed.
 
 .. rst-class:: classref-item-separator
 
@@ -1351,6 +1353,20 @@ The ``id`` is used in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :
 |void| **set_item_indent**\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_indent>`
 
 Sets the horizontal offset of the item at the given ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_set_item_index:
+
+.. rst-class:: classref-method
+
+|void| **set_item_index**\ (\ index\: :ref:`int<class_int>`, target_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_index>`
+
+Changes the index of the item at index ``index`` to be at index ``target_index``. This can be used to move an item above other items. The moved item will keep the same ID, even if it was generated from the original index.
+
+\ **Note:** The indices of any items between index ``index`` and index ``target_index`` will be shifted by one.
 
 .. rst-class:: classref-item-separator
 
