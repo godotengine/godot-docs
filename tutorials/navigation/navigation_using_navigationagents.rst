@@ -116,7 +116,7 @@ This velocity vector should be used to move the NavigationAgent's parent node in
 
     The NavigationAgent **must** be supplied with a ``target_position`` attribute,
     even if you are only using the agent for avoidance. Otherwise, the ``safe_velocity``
-    received from the ``velocity_computed`` signal will always be ``(0, 0)``.
+    received from the ``velocity_computed`` signal will always be the zero vector.
 
 The following NavigationAgent properties are relevant for avoidance:
 
