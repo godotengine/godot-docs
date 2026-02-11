@@ -572,7 +572,7 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
 
 .. note::
     
-    C# EditorScripts cannot be ran from the script editor as it only supports
+    C# EditorScripts cannot be run from the script editor as it only supports
     GDScript. Please refer to the above alternative approaches to run custom C#
     EditorScripts.
 
