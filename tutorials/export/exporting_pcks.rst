@@ -123,7 +123,7 @@ The PCK or ZIP file contains a ``mod_scene.tscn`` test scene in its root.
     private void YourFunction()
     {
         // This could fail if, for example, mod.pck cannot be found.
-        var success = ProjectSettings.LoadResourcePack(OS.get_executable_path().get_base_dir().path_join("mod.pck));
+        var success = ProjectSettings.LoadResourcePack(OS.GetExecutablePath().GetBaseDir().PathJoin("mod.pck"));
 
         if (success)
         {
