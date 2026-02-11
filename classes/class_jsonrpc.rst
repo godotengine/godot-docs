@@ -199,9 +199,24 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 :ref:`String<class_String>` **process_string**\ (\ action\: :ref:`String<class_String>`\ ) :ref:`🔗<class_JSONRPC_method_process_string>`
 
-.. container:: contribute
+Processes a raw JSON-RPC text input and returns the corresponding JSON response as a string.
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+This is a high-level wrapper that handles the parsing of a JSON string, executes the requested action (via process_action), and serializes the result back into a formatted JSON string.
+
+Example Usage.
+
+.. code-block:: gdscript
+   var rpc = JSONRPC.new()
+   rpc.set_method("on_sum", _custom_sum_function)
+   var jsonrpc_request = '{
+		"jsonrpc": "2.0",
+		"method": "on_sum",
+		"params": [10, 5],
+		"id": 1
+	}'
+   var jsonrpc_response = rpc.process_string(jsonrpc_request) # '{"jsonrpc": "2.0", "result": 15, "id": 1}'
+
+	You can get more clarity by reviewing the `Official repository <https://github.com/godotengine/godot/blob/master/modules/jsonrpc/jsonrpc.cpp>`
 
 .. rst-class:: classref-item-separator
 
