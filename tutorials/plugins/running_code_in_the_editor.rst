@@ -570,6 +570,12 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
     EditorScripts can only be run from the Godot script editor. If you are using
     an external editor, use one of the last two approaches to run the script.
 
+.. note::
+    
+    C# EditorScripts cannot be ran from the script editor as it only supports
+    GDScript. Please refer to the above alternative approaches to run custom C#
+    EditorScripts.
+
 .. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
