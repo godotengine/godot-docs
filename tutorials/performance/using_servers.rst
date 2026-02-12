@@ -248,9 +248,10 @@ and moves a :ref:`class_CanvasItem` when the body moves.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # PhysicsServer2D expects references to be kept around.
-    var body
-    var shape
+    # PhysicsServer2D and RenderingServer expect references to be kept around.
+    var body: RID
+    var shape: RID
+    var ci_rid: RID
 
 
     func _body_moved(state, index):
@@ -283,13 +284,23 @@ and moves a :ref:`class_CanvasItem` when the body moves.
         # See the section above on creating a sprite.
         # ...
 
+
+    func _exit_tree():
+        # Free manually created RIDs when the node is removed.
+        PhysicsServer2D.free_rid(body)
+        PhysicsServer2D.free_rid(shape)
+        RenderingServer.free_rid(ci_rid)
+
  .. code-tab:: csharp
 
     using Godot;
 
     public partial class MyNode2D : Node2D
     {
+        // PhysicsServer2D and RenderingServer expect references to be kept around.
         private Rid _canvasItem;
+        private Rid _body;
+        private Rid _shape;
 
         private void BodyMoved(PhysicsDirectBodyState2D state, int index)
         {
@@ -302,26 +313,34 @@ and moves a :ref:`class_CanvasItem` when the body moves.
         public override void _Ready()
         {
             // Create the body.
-            var body = PhysicsServer2D.BodyCreate();
-            PhysicsServer2D.BodySetMode(body, PhysicsServer2D.BodyMode.Rigid);
+            _body = PhysicsServer2D.BodyCreate();
+            PhysicsServer2D.BodySetMode(_body, PhysicsServer2D.BodyMode.Rigid);
             // Add a shape.
-            var shape = PhysicsServer2D.RectangleShapeCreate();
+            _shape = PhysicsServer2D.RectangleShapeCreate();
             // Set rectangle extents.
-            PhysicsServer2D.ShapeSetData(shape, new Vector2(10, 10));
+            PhysicsServer2D.ShapeSetData(_shape, new Vector2(10, 10));
             // Make sure to keep the shape reference!
-            PhysicsServer2D.BodyAddShape(body, shape);
+            PhysicsServer2D.BodyAddShape(_body, _shape);
             // Set space, so it collides in the same space as current scene.
-            PhysicsServer2D.BodySetSpace(body, GetWorld2D().Space);
+            PhysicsServer2D.BodySetSpace(_body, GetWorld2D().Space);
             // Move initial position.
-            PhysicsServer2D.BodySetState(body, PhysicsServer2D.BodyState.Transform, new Transform2D(0, new Vector2(10, 20)));
+            PhysicsServer2D.BodySetState(_body, PhysicsServer2D.BodyState.Transform, new Transform2D(0, new Vector2(10, 20)));
             // Add the transform callback, when body moves
             // The last parameter is optional, can be used as index
             // if you have many bodies and a single callback.
-            PhysicsServer2D.BodySetForceIntegrationCallback(body, new Callable(this, MethodName.BodyMoved), 0);
+            PhysicsServer2D.BodySetForceIntegrationCallback(_body, new Callable(this, MethodName.BodyMoved), 0);
 
             // Also create a sprite using RenderingServer here.
             // See the section above on creating a sprite.
             // ...
+        }
+
+        public override void _ExitTree()
+        {
+            // Free manually created RIDs when the node is removed
+            PhysicsServer2D.FreeRid(_body);
+            PhysicsServer2D.FreeRid(_shape);
+            RenderingServer.FreeRid(_canvasItem);
         }
     }
 
