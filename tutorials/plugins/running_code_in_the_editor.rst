@@ -576,6 +576,10 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
     GDScript. Please refer to the above alternative approaches to run custom C#
     EditorScripts.
 
+    Keep in mind, C# Tool scripts will only appear in the command palette when
+    denoted by the :ref:`GlobalClass <doc_c_sharp_global_classes>`
+    attribute.
+
 .. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
@@ -610,8 +614,8 @@ doubles the range of all OmniLight3D nodes:
 
         using Godot;
 
-        [Tool]
-        // Thanks to the class name, we can run this script by bringing up
+        [GlobalClass, Tool]
+        // Thanks to the GlobalClass attribute, we can run this script by bringing up
         // the command palette and searching "Scale Omni Lights".
         public partial class ScaleOmniLights : EditorScript
         {
