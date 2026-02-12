@@ -621,12 +621,14 @@ doubles the range of all OmniLight3D nodes:
         {
             public override void _Run()
             {
-                foreach (OmniLight3D node in EditorInterface.Singleton.GetEditedSceneRoot().FindChildren("", "OmniLight3D"))
+                var sceneNode = EditorInterface.Singleton.GetEditedSceneRoot();
+            
+                foreach (OmniLight3D node in sceneNode.FindChildren("", "OmniLight3D"))
                 {
                     // Don't operate on instanced subscene children, as changes are lost
                     // when reloading the scene.
                     // See the "Instancing scenes" section below for a description of `owner`.
-                    var isInstancedSubsceneChild = node != GetScene() && node.Owner != GetScene();
+                    var isInstancedSubsceneChild = node != sceneNode && node.Owner != sceneNode;
                     if (!isInstancedSubsceneChild)
                     {
                         node.OmniRange *= 2.0f;
