@@ -285,11 +285,12 @@ and moves a :ref:`class_CanvasItem` when the body moves.
         # ...
 
 
-    func _exit_tree():
-        # Free manually created RIDs when the node is removed.
-        PhysicsServer2D.free_rid(body)
-        PhysicsServer2D.free_rid(shape)
-        RenderingServer.free_rid(ci_rid)
+    func _notification(what):
+        if what == NOTIFICATION_PREDELETE:
+            # Free manually created RIDs when the node is destroyed.
+            PhysicsServer2D.free_rid(body)
+            PhysicsServer2D.free_rid(shape)
+            RenderingServer.free_rid(ci_rid)
 
  .. code-tab:: csharp
 
@@ -335,12 +336,15 @@ and moves a :ref:`class_CanvasItem` when the body moves.
             // ...
         }
 
-        public override void _ExitTree()
+        public override void _Notification(int what)
         {
-            // Free manually created RIDs when the node is removed
-            PhysicsServer2D.FreeRid(_body);
-            PhysicsServer2D.FreeRid(_shape);
-            RenderingServer.FreeRid(_canvasItem);
+            if (what == NotificationPredelete)
+            {
+                // Free manually created RIDs when the node is destroyed.
+                PhysicsServer2D.FreeRid(_body);
+                PhysicsServer2D.FreeRid(_shape);
+                RenderingServer.FreeRid(_canvasItem);
+            }
         }
     }
 
