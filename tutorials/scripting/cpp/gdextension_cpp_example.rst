@@ -314,13 +314,18 @@ structure alongside ``godot-cpp``, ``src``, and ``project``, then run:
 
     scons platform=<platform>
 
-You should now be able to find the module in ``project/bin/<platform>``.
+You can omit the ``platform`` option if you are compiling for the platform you
+are currently using. The list of available ``platform`` options depends on which
+platform dependencies are set up (use ``platform=list`` to see all available platforms).
+See :ref:`doc_introduction_to_the_buildsystem` for details.
+
+You should now be able to find the compiled library in ``project/bin/``.
 
 .. note::
 
     Here, we've compiled both godot-cpp and our gdexample library as debug
-    builds. For optimized builds, you should compile them using the
-    ``target=template_release`` switch.
+    builds, which is the default. For optimized builds, you should compile
+    them using the ``target=template_release`` option.
 
 Using the GDExtension module
 ----------------------------
