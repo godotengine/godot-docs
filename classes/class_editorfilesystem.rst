@@ -40,6 +40,8 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>`\ (\ ) |const|                                      |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`is_importing<class_EditorFileSystem_method_is_importing>`\ (\ ) |const|                                                        |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>`\ (\ ) |const|                                                          |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>`\ (\ files\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |
@@ -180,6 +182,18 @@ Returns a view into the filesystem at ``path``.
 :ref:`float<class_float>` **get_scanning_progress**\ (\ ) |const| :ref:`🔗<class_EditorFileSystem_method_get_scanning_progress>`
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileSystem_method_is_importing:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_importing**\ (\ ) |const| :ref:`🔗<class_EditorFileSystem_method_is_importing>`
+
+Returns ``true`` if resources are currently being imported.
 
 .. rst-class:: classref-item-separator
 

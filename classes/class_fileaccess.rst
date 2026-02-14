@@ -1140,7 +1140,7 @@ Sets the file cursor to the specified position in bytes, from the beginning of t
 
 Sets the file cursor to the specified position in bytes, from the end of the file. This changes the value returned by :ref:`get_position()<class_FileAccess_method_get_position>`.
 
-\ **Note:** This is an offset, so you should use negative numbers otherwise the file cursor will be at the end of the file.
+\ **Note:** This is an offset, so you should use negative numbers otherwise the file cursor will move past the end of the file.
 
 .. rst-class:: classref-item-separator
 

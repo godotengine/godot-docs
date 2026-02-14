@@ -64,6 +64,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`force_native<class_Window_property_force_native>`                           | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`hdr_output_requested<class_Window_property_hdr_output_requested>`           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` | :ref:`initial_position<class_Window_property_initial_position>`                   | ``0``                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`keep_title_visible<class_Window_property_keep_title_visible>`               | ``false``                |
@@ -153,6 +155,8 @@ Methods
    | :ref:`Window<class_Window>`                         | :ref:`get_focused_window<class_Window_method_get_focused_window>`\ (\ ) |static|                                                                                                                                                                        |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LayoutDirection<enum_Window_LayoutDirection>` | :ref:`get_layout_direction<class_Window_method_get_layout_direction>`\ (\ ) |const|                                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_output_max_linear_value<class_Window_method_get_output_max_linear_value>`\ (\ ) |const|                                                                                                                                                       |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_position_with_decorations<class_Window_method_get_position_with_decorations>`\ (\ ) |const|                                                                                                                                                   |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1284,6 +1288,23 @@ If ``true``, native window will be used regardless of parent viewport and projec
 
 ----
 
+.. _class_Window_property_hdr_output_requested:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **hdr_output_requested** = ``false`` :ref:`🔗<class_Window_property_hdr_output_requested>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_hdr_output_requested**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_hdr_output_requested**\ (\ )
+
+If ``true``, requests HDR output for the **Window**, falling back to SDR if not supported, and automatically switching between HDR and SDR as the window moves between screens, screen capabilities change, or system settings are modified. This will internally force :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` to be enabled on the main :ref:`Viewport<class_Viewport>`. All other :ref:`SubViewport<class_SubViewport>` of this **Window** must have their :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` property enabled to produce HDR output.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_property_initial_position:
 
 .. rst-class:: classref-property
@@ -1978,6 +1999,51 @@ Returns the focused window.
 :ref:`LayoutDirection<enum_Window_LayoutDirection>` **get_layout_direction**\ (\ ) |const| :ref:`🔗<class_Window_method_get_layout_direction>`
 
 Returns layout direction and text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_get_output_max_linear_value:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_output_max_linear_value**\ (\ ) |const| :ref:`🔗<class_Window_method_get_output_max_linear_value>`
+
+Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window.
+
+When using the Linear tonemapper without :ref:`Environment<class_Environment>` effects or no :ref:`WorldEnvironment<class_WorldEnvironment>`, use the returned value to scale content to maximize the screen's brightness, such as for lasers or other bright effects. The following is an example that produces the brightest purple color that the screen can produce:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _process(_delta):
+        # output_max_linear_value may change often, so do this every frame.
+        var max_linear_value = get_window().get_output_max_linear_value()
+        # Replace this with your color:
+        var original_color = Color.PURPLE
+        # Normalize to max_linear_value to produce the brightest color possible,
+        # regardless of SDR or HDR output:
+        var bright_color = normalize_color(original_color, max_linear_value)
+
+
+    func normalize_color(srgb_color, max_linear_value = 1.0):
+        # Color must be linear-encoded to use math operations.
+        var linear_color = srgb_color.srgb_to_linear()
+        var max_rgb_value = maxf(linear_color.r, maxf(linear_color.g, linear_color.b))
+        var brightness_scale = max_linear_value / max_rgb_value
+        linear_color *= brightness_scale
+        # Undo changes to the alpha channel, which should not be modified.
+        linear_color.a = srgb_color.a
+        # Convert back to nonlinear sRGB encoding, which is required for Color in
+        # Godot unless stated otherwise.
+        return linear_color.linear_to_srgb()
+
+
+
+\ **Note:** You will need to convert sRGB colors to linear before multiplying by this value to get correct results.
 
 .. rst-class:: classref-item-separator
 

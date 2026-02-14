@@ -492,7 +492,7 @@ Inherits :ref:`process_mode<class_Node_property_process_mode>` from the node's p
 
 :ref:`ProcessMode<enum_Node_ProcessMode>` **PROCESS_MODE_PAUSABLE** = ``1``
 
-Stops processing when :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``true``. This is the inverse of :ref:`PROCESS_MODE_WHEN_PAUSED<class_Node_constant_PROCESS_MODE_WHEN_PAUSED>`, and the default for the root node.
+Processes when :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``false``. This is the inverse of :ref:`PROCESS_MODE_WHEN_PAUSED<class_Node_constant_PROCESS_MODE_WHEN_PAUSED>`, and the default for the root node.
 
 .. _class_Node_constant_PROCESS_MODE_WHEN_PAUSED:
 
@@ -500,7 +500,7 @@ Stops processing when :ref:`SceneTree.paused<class_SceneTree_property_paused>` i
 
 :ref:`ProcessMode<enum_Node_ProcessMode>` **PROCESS_MODE_WHEN_PAUSED** = ``2``
 
-Process **only** when :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``true``. This is the inverse of :ref:`PROCESS_MODE_PAUSABLE<class_Node_constant_PROCESS_MODE_PAUSABLE>`.
+Processes **only** when :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``true``. This is the inverse of :ref:`PROCESS_MODE_PAUSABLE<class_Node_constant_PROCESS_MODE_PAUSABLE>`.
 
 .. _class_Node_constant_PROCESS_MODE_ALWAYS:
 
@@ -508,7 +508,7 @@ Process **only** when :ref:`SceneTree.paused<class_SceneTree_property_paused>` i
 
 :ref:`ProcessMode<enum_Node_ProcessMode>` **PROCESS_MODE_ALWAYS** = ``3``
 
-Always process. Keeps processing, ignoring :ref:`SceneTree.paused<class_SceneTree_property_paused>`. This is the inverse of :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
+Always processes. Keeps processing, ignoring :ref:`SceneTree.paused<class_SceneTree_property_paused>`. This is the inverse of :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
 .. _class_Node_constant_PROCESS_MODE_DISABLED:
 
@@ -516,7 +516,7 @@ Always process. Keeps processing, ignoring :ref:`SceneTree.paused<class_SceneTre
 
 :ref:`ProcessMode<enum_Node_ProcessMode>` **PROCESS_MODE_DISABLED** = ``4``
 
-Never process. Completely disables processing, ignoring :ref:`SceneTree.paused<class_SceneTree_property_paused>`. This is the inverse of :ref:`PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_ALWAYS>`.
+Never processes. Completely disables processing, ignoring :ref:`SceneTree.paused<class_SceneTree_property_paused>`. This is the inverse of :ref:`PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_ALWAYS>`.
 
 .. rst-class:: classref-item-separator
 

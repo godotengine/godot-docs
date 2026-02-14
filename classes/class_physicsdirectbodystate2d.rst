@@ -702,7 +702,9 @@ Returns the current state of the space, useful for queries.
 
 :ref:`Vector2<class_Vector2>` **get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_PhysicsDirectBodyState2D_method_get_velocity_at_local_position>`
 
-Returns the body's velocity at the given relative position, including both translation and rotation.
+Returns the body's velocity at the given relative position.
+
+\ ``local_position`` is the offset from the body origin in global coordinates.
 
 .. rst-class:: classref-item-separator
 

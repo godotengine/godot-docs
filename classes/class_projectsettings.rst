@@ -469,6 +469,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/hdr/request_hdr_output<class_ProjectSettings_property_display/window/hdr/request_hdr_output>`                                                                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/ios/allow_high_refresh_rate<class_ProjectSettings_property_display/window/ios/allow_high_refresh_rate>`                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/ios/hide_home_indicator<class_ProjectSettings_property_display/window/ios/hide_home_indicator>`                                                                                       | ``true``                                                                                         |
@@ -1717,7 +1719,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/ggx_samples.mobile<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples.mobile>`                                                   | ``16``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`                                                       | ``7``                                                                                            |
+   | :ref:`int<class_int>`                             | :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`                                                       | ``8``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/reflections/sky_reflections/texture_array_reflections<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>`                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -4655,6 +4657,20 @@ Swappy mode to use. The options are:
 The default screen orientation to use on mobile devices. See :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` for possible values.
 
 \ **Note:** When set to a portrait orientation, this project setting does not flip the project resolution's width and height automatically. Instead, you have to set :ref:`display/window/size/viewport_width<class_ProjectSettings_property_display/window/size/viewport_width>` and :ref:`display/window/size/viewport_height<class_ProjectSettings_property_display/window/size/viewport_height>` accordingly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/window/hdr/request_hdr_output:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **display/window/hdr/request_hdr_output** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/hdr/request_hdr_output>`
+
+If ``true``, HDR output is requested for the main window and the editor. The main window and editor will automatically switch between HDR and SDR if it is moved between screens, screen capabilities change, or system settings are modified. This will internally force :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` to be enabled on the main :ref:`Viewport<class_Viewport>`. All other :ref:`SubViewport<class_SubViewport>` of the :ref:`Window<class_Window>` must have their :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` property enabled to produce HDR output.
+
+\ **Note:** This property is only read when the project starts. To change this property at runtime, set :ref:`Window.hdr_output_requested<class_Window_property_hdr_output_requested>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12922,7 +12938,7 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/ggx_samples<c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``7`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`
+:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``8`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`
 
 Limits the number of layers to use in radiance maps when using importance sampling. A lower number will be slightly faster and take up less VRAM.
 
