@@ -90,6 +90,14 @@ The colors are linearly interpolated in a circular pattern.
 
 The colors are linearly interpolated in a square pattern.
 
+.. _class_GradientTexture2D_constant_FILL_CONIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Fill<enum_GradientTexture2D_Fill>` **FILL_CONIC** = ``3``
+
+The colors are linearly interpolated in a cone pattern.
+
 .. rst-class:: classref-item-separator
 
 ----

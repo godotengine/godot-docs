@@ -4200,7 +4200,7 @@ enum **EnvironmentGlowBlendMode**: :ref:`🔗<enum_RenderingServer_EnvironmentGl
 
 :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` **ENV_GLOW_BLEND_MODE_ADDITIVE** = ``0``
 
-Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
+Adds the glow effect to the scene.
 
 .. _class_RenderingServer_constant_ENV_GLOW_BLEND_MODE_SCREEN:
 
@@ -4208,7 +4208,7 @@ Additive glow blending mode. Mostly used for particles, glows (bloom), lens flar
 
 :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` **ENV_GLOW_BLEND_MODE_SCREEN** = ``1``
 
-Screen glow blending mode. Increases brightness, used frequently with bloom.
+Adds the glow effect to the scene after modifying the glow influence based on the scene value; dark values will be highly influenced by glow and bright values will not be influenced by glow. This approach avoids bright values becoming overly bright from the glow effect. :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is used to determine the maximum scene value where the glow should have no influence. When :ref:`Environment.tonemap_mode<class_Environment_property_tonemap_mode>` is set to :ref:`Environment.TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>` and :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` is ``true``, the parent window's :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` will be used as the maximum scene value.
 
 .. _class_RenderingServer_constant_ENV_GLOW_BLEND_MODE_SOFTLIGHT:
 
@@ -4216,7 +4216,9 @@ Screen glow blending mode. Increases brightness, used frequently with bloom.
 
 :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` **ENV_GLOW_BLEND_MODE_SOFTLIGHT** = ``2``
 
-Soft light glow blending mode. Modifies contrast, exposes shadows and highlights (vivid bloom).
+Adds the glow effect to the tonemapped image after modifying the glow influence based on the image value; dark values and bright values will not be influenced by glow and mid-range values will be highly influenced by glow. This approach avoids bright values becoming overly bright from the glow effect. The glow will have the largest influence on image values of ``0.25`` and will have no influence when applied to image values greater than ``1.0``.
+
+\ **Note:** This blend mode does not support HDR output because expects a maximum output value of ``1.0``. It is recommended to use a different blend mode when rendering to an HDR screen.
 
 .. _class_RenderingServer_constant_ENV_GLOW_BLEND_MODE_REPLACE:
 
@@ -4224,7 +4226,7 @@ Soft light glow blending mode. Modifies contrast, exposes shadows and highlights
 
 :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` **ENV_GLOW_BLEND_MODE_REPLACE** = ``3``
 
-Replace glow blending mode. Replaces all pixels' color by the glow value. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness.
+Replaces all pixels' color by the glow effect. This can be used to simulate a full-screen blur effect by tweaking the glow parameters to match the original image's brightness or to preview glow configuration in the editor.
 
 .. _class_RenderingServer_constant_ENV_GLOW_BLEND_MODE_MIX:
 
@@ -4232,7 +4234,7 @@ Replace glow blending mode. Replaces all pixels' color by the glow value. This c
 
 :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` **ENV_GLOW_BLEND_MODE_MIX** = ``4``
 
-Mixes the glow with the underlying color to avoid increasing brightness as much while still maintaining a glow effect.
+Mixes the glow image with the scene image. Best used with :ref:`Environment.glow_bloom<class_Environment_property_glow_bloom>` to avoid darkening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -4296,6 +4298,8 @@ A simple tonemapping curve that rolls off bright values to prevent clipping. Thi
 
 Uses a film-like tonemapping curve to prevent clipping of bright values and provide better contrast than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`. Slightly slower than :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>`.
 
+\ **Note:** This tonemapper does not support HDR output because it produces output in the SDR range. It is recommended to use a different tonemapper when rendering to an HDR screen.
+
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_ACES:
 
 .. rst-class:: classref-enumeration-constant
@@ -4305,6 +4309,8 @@ Uses a film-like tonemapping curve to prevent clipping of bright values and prov
 Uses a high-contrast film-like tonemapping curve and desaturates bright values for a more realistic appearance. Slightly slower than :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>`.
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
+
+\ **Note:** This tonemapper does not support HDR output because it produces output in the SDR range. It is recommended to use a different tonemapper when rendering to an HDR screen.
 
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_AGX:
 

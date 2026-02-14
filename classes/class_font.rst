@@ -244,7 +244,7 @@ Returns :ref:`TextServer<class_TextServer>` RID of the font cache for specific v
 
 :ref:`float<class_float>` **get_ascent**\ (\ font_size\: :ref:`int<class_int>` = 16\ ) |const| :ref:`🔗<class_Font_method_get_ascent>`
 
-Returns the average font ascent (number of pixels above the baseline).
+Returns the maximum font ascent (number of pixels above the baseline) of this font and all fallback fonts.
 
 \ **Note:** Real ascent of the string is context-dependent and can be significantly different from the value returned by this function. Use it only as rough estimate (e.g. as the ascent of empty line).
 
@@ -272,7 +272,7 @@ Returns the size of a character. Does not take kerning into account.
 
 :ref:`float<class_float>` **get_descent**\ (\ font_size\: :ref:`int<class_int>` = 16\ ) |const| :ref:`🔗<class_Font_method_get_descent>`
 
-Returns the average font descent (number of pixels below the baseline).
+Returns the maximum font descent (number of pixels below the baseline) of this font and all fallback fonts.
 
 \ **Note:** Real descent of the string is context-dependent and can be significantly different from the value returned by this function. Use it only as rough estimate (e.g. as the descent of empty line).
 

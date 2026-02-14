@@ -223,6 +223,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d/show_gizmo_during_rotation<class_EditorSettings_property_editors/3d/show_gizmo_during_rotation>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/3d/view_plane_rotation_gizmo_scale<class_EditorSettings_property_editors/3d/view_plane_rotation_gizmo_scale>`                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/aabb<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/aabb>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/camera<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/camera>`                                                                                                 |
@@ -2066,6 +2068,18 @@ The color to use for the selection box that surrounds selected nodes in the 3D e
 :ref:`int<class_int>` **editors/3d/show_gizmo_during_rotation** :ref:`🔗<class_EditorSettings_property_editors/3d/show_gizmo_during_rotation>`
 
 If checked, the transform gizmo remains visible during rotation in that transform mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/3d/view_plane_rotation_gizmo_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/view_plane_rotation_gizmo_scale** :ref:`🔗<class_EditorSettings_property_editors/3d/view_plane_rotation_gizmo_scale>`
+
+The scale of the outer circle of the rotation gizmo as view plane rotation in the 3D editor. If set to ``2.0``, the outer circle has twice the radius of the XYZ rotation gizmo sphere.
 
 .. rst-class:: classref-item-separator
 

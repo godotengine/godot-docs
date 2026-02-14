@@ -4708,6 +4708,14 @@ Support for raytracing pipeline extension.
 
 \ **Note:** This is currently only supported when using Vulkan. This is not supported on macOS and iOS (even on hardware supporting raytracing) due to MoltenVK limitations.
 
+.. _class_RenderingDevice_constant_SUPPORTS_HDR_OUTPUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_HDR_OUTPUT** = ``13``
+
+Support for high dynamic range (HDR) output.
+
 .. rst-class:: classref-item-separator
 
 ----
