@@ -772,7 +772,7 @@ Override this method to customize the return value of :ref:`to_string()<class_Ob
 
 |void| **_validate_property**\ (\ property\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| :ref:`🔗<class_Object_private_method__validate_property>`
 
-Override this method to customize existing properties. Every property info goes through this method, except properties added with :ref:`_get_property_list()<class_Object_private_method__get_property_list>`. The dictionary contents is the same as in :ref:`_get_property_list()<class_Object_private_method__get_property_list>`.
+Override this method to customize existing properties. Every property info goes through this method. The dictionary contents is the same as in :ref:`_get_property_list()<class_Object_private_method__get_property_list>`.
 
 
 .. tabs::
