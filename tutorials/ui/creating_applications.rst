@@ -89,7 +89,8 @@ globally.
     Additionally, on macOS, native file dialogs are not supported when game embedding
     is enabled in the editor. To test this functionality when running the project,
     make sure you disable game embedding by switching to the :menu:`Game` screen,
-    clicking the 3 vertical dots and unchecking :menu:`Embed Game on Next Play`.
+    clicking the rightmost icon in the bar at the top and unchecking
+    :menu:`Embed Game on Next Play`.
 
 .. _doc_creating_applications_tray_icon:
 
@@ -224,7 +225,8 @@ directly without using the MenuBar node.
     Global menu integration is not supported when game embedding
     is enabled in the editor. To test this functionality when running the project,
     make sure you disable game embedding by switching to the :menu:`Game` screen,
-    clicking the 3 vertical dots and unchecking :menu:`Embed Game on Next Play`.
+    clicking the rightmost icon in the bar at the top and unchecking
+    :menu:`Embed Game on Next Play`.
 
 Using client-side decorations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -291,7 +293,63 @@ vertically center them).
     On macOS, client-side decorations are not supported when game embedding
     is enabled in the editor. To test this functionality when running the project,
     make sure you disable game embedding by switching to the :menu:`Game` screen,
-    clicking the 3 vertical dots and unchecking :menu:`Embed Game on Next Play`.
+    clicking the rightmost icon in the bar at the top and unchecking
+    :menu:`Embed Game on Next Play`.
+
+Displaying progress status on the taskbar/Dock
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This is only supported on Windows and macOS.*
+
+It is possible for applications to report a progress status to the operating
+system, which can be displayed on the taskbar or Dock icon. This status is
+composed of a state (active, paused, error) and a completion percentage.
+This can be used to show progress while the user is not focused
+on the application.
+
+.. figure:: img/creating_applications_progress_reporting.webp
+    :align: center
+    :alt: Progress reporting in the Dock on macOS
+
+    Progress reporting in the Dock on macOS
+
+This is often accomplished by synchronizing a :ref:`class_ProgressBar` node's
+progress with the progress reported to the operating system:
+
+::
+
+    func set_progress(value, indeterminate = false):
+        $ProgressBar.value = value
+        $ProgressBar.indeterminate = indeterminate
+
+        if $ProgressBar.indeterminate:
+            get_window().set_taskbar_progress_state(DisplayServer.PROGRESS_STATE_INDETERMINATE)
+        else:
+            get_window().set_taskbar_progress_state(DisplayServer.PROGRESS_STATE_NORMAL)
+
+        # The taskbar progress value must be between `0.0` and `1.0`
+        # (values outside this range are clamped).
+        # However, ProgressBar can have minimum/maximum values that differ.
+        # We use the `remap()` method to convert the value to the range
+        # expected by taskbar progress reporting.
+        get_window().set_taskbar_progress_value(remap($ProgressBar.value, $ProgressBar.min_value, $ProgressBar.max_value, 0.0, 1.0))
+
+Several progress states are available: no progress (hides the progress bar),
+indeterminate, normal, paused, error. Check the class reference for details.
+
+You can also use
+:ref:`Window.request_attention() <class_Window_method_request_attention>`
+to make the window flash in the taskbar (or bounce in the Dock on macOS).
+For example, this can be used to attract the user's attention after a
+long operation is completed.
+
+.. note::
+
+    Reporting progress is not supported when game embedding is enabled
+    in the editor. To test this functionality when running the project,
+    make sure you disable game embedding by switching to the :menu:`Game`
+    screen, clicking the rightmost icon in the bar at the top and unchecking
+    :menu:`Embed Game on Next Play`.
 
 Sending desktop notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -482,8 +540,8 @@ basis, so it should not be used as an absolute security measure or DRM.
     Displaying as an overlay is not supported when game embedding
     is enabled in the editor. To test this functionality
     when running the project, make sure you disable game embedding by
-    switching to the :menu:`Game` screen, clicking the 3 vertical dots
-    and unchecking :menu:`Embed Game on Next Play`.
+    switching to the :menu:`Game` screen, clicking the rightmost icon
+    in the bar at the top and unchecking :menu:`Embed Game on Next Play`.
 
     Additionally, keep in mind overlays cannot be shown on top
     of another application if the application in question uses
