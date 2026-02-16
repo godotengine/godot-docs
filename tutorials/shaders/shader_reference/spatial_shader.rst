@@ -190,6 +190,9 @@ Global built-ins are available everywhere, including custom functions.
 |                             | In the Forward+ or Mobile renderers, it's ``0.0``.                                                  |
 |                             | In the Compatibility renderer, it's ``-1.0``.                                                       |
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in bool **IN_SHADOW_PASS**  | ``true`` when the shader is being rendered in a shadow mapping pass, ``false`` otherwise.           |
+|                             | This can be used to render objects differently in shadow maps compared to their regular rendering.  |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Vertex built-ins
 ----------------
