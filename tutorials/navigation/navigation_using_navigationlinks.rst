@@ -191,3 +191,36 @@ The following script uses the NavigationServer to create a new navigation link.
             NavigationServer3D.LinkSetEndPosition(_linkRid, _linkEndPosition);
         }
     }
+
+.. warning:: If you reload the scene, navigation links created in this way will still exist. This may result in duplicate navigation links. Additionally, the links created prior to the scene reload will have a null value for their owner as the object instance set via the ``link_set_owner_id`` function no longer exists.
+
+If you are creating navigation links as described during runtime, you may want to remove if the owner Node leaves the tree. This can be done with a call to ``free_rid`` function of your navigation server:
+
+.. tabs::
+ .. code-tab:: gdscript 2D GDScript
+    func _exit_tree() -> void:
+        if link_rid.is_valid():
+            NavigationServer2D.free_rid(link_rid)
+
+    .. code-tab:: csharp 2D C#
+        public override void _ExitTree()
+        {
+            if (_linkRid.IsValid)
+            {
+                NavigationServer2D.FreeRid(_linkRid);
+            }
+        }
+    .. code-tab:: gdscript 3D GDScript
+        func _exit_tree() -> void:
+            if link_rid.is_valid():
+                NavigationServer3D.free_rid(link_rid)
+
+    .. code-tab:: csharp 3D C#
+        public override void _ExitTree()
+        {
+            if (_linkRid.IsValid)
+            {
+                NavigationServer3D.FreeRid(_linkRid);
+            }
+        }
+
