@@ -204,6 +204,7 @@ If you are creating navigation links as described during runtime, you may want t
             NavigationServer2D.free_rid(link_rid)
 
     .. code-tab:: csharp 2D C#
+
         public override void _ExitTree()
         {
             if (_linkRid.IsValid)
