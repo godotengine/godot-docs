@@ -198,6 +198,7 @@ If you are creating navigation links as described during runtime, you may want t
 
 .. tabs::
  .. code-tab:: gdscript 2D GDScript
+
     func _exit_tree() -> void:
         if link_rid.is_valid():
             NavigationServer2D.free_rid(link_rid)
