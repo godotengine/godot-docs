@@ -25,15 +25,27 @@ Available scripting languages
 
 Godot offers **four gameplay programming languages**: GDScript, C#,
 and, via its GDExtension technology, C and C++. There are more
-community-supported languages, but these are the official ones.
+community-supported languages, but these four are the official ones.
 
-You can use multiple languages in a single project. For instance, in a team, you
-could code gameplay logic in GDScript as it's fast to write, and use C# or C++ to
+More information about unofficial languages usable with Godot can be found on [the 
+other languages page](https://docs.godotengine.org/en/stable/tutorials/scripting/other_languages.html) 
+of the Godot manual. Additional language bindings may also be found elsewhere on the internet.
+However, be aware that although the vast majority of Godot community code is good-natured, 
+some third party code could conceivably be unsafe to use, whether from a practicality 
+or a security standpoint, and so bear that in mind when considering using them.
+
+Moreoever, you can even use multiple languages in a single project. For instance, in a team, 
+you could code gameplay logic in GDScript as it's fast to write, and use C# or C++ to
 implement complex algorithms and maximize their performance. Or you can write
-everything in GDScript or C#. It's your call.
+everything in GDScript or C#. It's your call. Godot is a very flexible game engine!
+
+It is also possible to communicate with external programs regardless of whether
+bindings exist for them by using [OS functions](https://docs.godotengine.org/en/stable/classes/class_os.html) 
+such as [execute_with_pipe](https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-execute-with-pipe),
+but doing so is significantly less seamless and has many other implications and shouldn't be done lightly.
 
 We provide this flexibility to answer the needs of different game projects and
-developers.
+developers to thereby provide a great experience for as wide an audience as possible.
 
 Which language should I use?
 ----------------------------
