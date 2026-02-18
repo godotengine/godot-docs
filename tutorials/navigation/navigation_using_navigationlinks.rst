@@ -192,7 +192,12 @@ The following script uses the NavigationServer to create a new navigation link.
         }
     }
 
-.. warning:: If you reload the scene, navigation links created in this way will still exist. This may result in duplicate navigation links. Additionally, the links created prior to the scene reload will have a null value for their owner as the object instance set via the ``link_set_owner_id`` function no longer exists.
+.. warning::
+
+    If you reload the scene, navigation links created in this way will still exist.
+    This may result in duplicate navigation links.
+    Additionally, the links created prior to the scene reload will have a null value for their owner
+    as the object instance set via the ``link_set_owner_id`` function no longer exists.
 
 If you are creating navigation links as described during runtime, you may want to remove if the owner Node leaves the tree. This can be done with a call to ``free_rid`` function of your navigation server:
 
