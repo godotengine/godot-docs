@@ -199,7 +199,8 @@ The following script uses the NavigationServer to create a new navigation link.
     Additionally, the links created prior to the scene reload will have a null value for their owner
     as the object instance set via the ``link_set_owner_id`` function no longer exists.
 
-If you are creating navigation links as described during runtime, you may want to remove if the owner Node leaves the tree. This can be done with a call to ``free_rid`` function of your navigation server:
+If you are creating navigation links as described during runtime, you may want to remove it if the owner Node leaves the tree.
+This can be done with a call to the ``free_rid`` function of your navigation server:
 
 .. tabs::
  .. code-tab:: gdscript 2D GDScript
