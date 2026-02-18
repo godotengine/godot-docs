@@ -461,7 +461,7 @@ To do so, enable **all** the following project settings:
     and also hides from the taskbar and task switcher. Mouse input
     can still be received by the overlay (see below).
 
-Remember to poosition and resize the window using scripts,
+Remember to position and resize the window using scripts,
 as a borderless window can generally not be moved by the user.
 
 To allow mouse input to pass through to the background application,
