@@ -220,6 +220,7 @@ If you are creating navigation links as described during runtime, you may want t
                 NavigationServer3D.free_rid(link_rid)
 
     .. code-tab:: csharp 3D C#
+
         public override void _ExitTree()
         {
             if (_linkRid.IsValid)
