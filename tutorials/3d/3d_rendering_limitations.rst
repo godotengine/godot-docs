@@ -77,6 +77,14 @@ two different objects end up on the same buffer value, then Z-fighting will
 occur. This will materialize as textures flickering back and forth as the camera
 moves or rotates.
 
+.. note::
+
+    The Forward+ rendering method uses a technique called *reverse-z buffer* that
+    cancels out the risk of visible Z-fighting in most situations. This allows 
+    rendering both nearby any (very) far away geometry by pushing the Camera node's
+    **Far** property to (very) large values, while keeping the **Near** property to
+    its defaults.
+
 To make the depth buffer more precise over the rendered area, you should
 *increase* the Camera node's **Near** property. However, be careful: if you set
 it too high, players will be able to see through nearby geometry. You should
