@@ -116,7 +116,7 @@ Below is the basis of the script that implements our manager logic:
     @export var marker_tracker_scene: PackedScene
 
     # Trackers we manage nodes for.
-    var _managed_nodes: Dictionary[OpenXRSpatialEntityTracker, XRAnchor3D]
+    var _managed_nodes: Dictionary[XRTracker, XRAnchor3D]
 
     # Enter tree is called whenever our node is added to our scene.
     func _enter_tree():
