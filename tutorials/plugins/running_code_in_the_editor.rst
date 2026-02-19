@@ -576,7 +576,7 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
     GDScript. Please refer to the above alternative approaches to run custom C#
     EditorScripts.
 
-    Keep in mind, C# Tool scripts will only appear in the command palette when
+    Keep in mind C# tool scripts will only appear in the command palette when
     denoted by the :ref:`GlobalClass <doc_c_sharp_global_classes>`
     attribute.
 
