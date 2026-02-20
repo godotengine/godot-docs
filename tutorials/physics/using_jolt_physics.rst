@@ -181,9 +181,16 @@ in cases where the two bodies in question are not colliding with any other bodie
 Area3D and SoftBody3D
 ~~~~~~~~~~~~~~~~~~~~~
 
-Jolt does not currently support any interactions between :ref:`class_SoftBody3D`
-and :ref:`class_Area3D`, such as the wind and gravity properties found on
-:ref:`class_Area3D`.
+Jolt supports the same type of interactions between :ref:`class_SoftBody3D` and
+:ref:`class_Area3D` as Godot Physics, such as the wind and gravity properties found
+on :ref:`class_Area3D`. Unlike Godot Physics however, Jolt also supports the various
+overlap signals and methods found on :ref:`class_Area3D`, for when a :ref:`class_SoftBody3D`
+enters or exits an overlap with it, such as :ref:`body_entered<class_Area3D_signal_body_entered>`.
+
+To revert back to the behavior of Godot Physics, where no overlap signals are
+emitted, you need to configure the area's :ref:`collision_mask<class_CollisionObject3D_property_collision_mask>`
+such that there's no overlap with the soft body's :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>`.
+You can also filter out any :ref:`class_SoftBody3D` in the signal connection yourself.
 
 WorldBoundaryShape3D
 ~~~~~~~~~~~~~~~~~~~~
