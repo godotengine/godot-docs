@@ -35,7 +35,6 @@ Text tutorials
 - `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
 - `GameDev Academy by Zenva <https://gamedevacademy.org/category/godot-tutorials/godot-4/>`__
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
-- `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
 
 Resources
 ---------
