@@ -19,15 +19,18 @@ up though, so this page provides in-depth descriptions of some properties and ho
 Getting started
 ---------------
 
-The parallax node supports adding nodes that render things as children, so you can use one or many nodes to make up each
-layer. To begin, place each node or nodes you want to have scroll independently as a child of their own parallax node.
-Make sure that the top left of the textures used are at the ``(0, 0)`` crossing, like in the image below. See the section
-on :ref:`positioning <doc_2d_parallax_positioning>` for why this is important.
+The parallax node supports adding nodes that render things as children, so you can use one or many child nodes to make 
+up each parallax layer. To begin, add one or more :ref:`Parallax2D <class_parallax2d>` nodes to your scene, then place 
+the node or nodes you want to scroll independently as children of their respective parallax node. Make sure that the 
+top left of the textures used are at the ``(0, 0)`` crossing, like in the image below. See the section on 
+:ref:`positioning <doc_2d_parallax_positioning>` for why this is important.
 
 .. image:: img/2d_parallax_size_viewport.webp
 
-The scene above uses one prepared texture for the higher clouds in a :ref:`Sprite2D <class_sprite2d>`, but you could
-just as easily use multiple nodes spaced out to compose the layer.
+In the scene above, multiple :ref:`Parallax2D <class_parallax2d>` nodes are used as children of the root node, with each
+node representing a different layer of the parallax background to create a complex depth effect. Each layer uses one
+prepared texture in a :ref:`Sprite2D <class_sprite2d>`, but you could just as easily use multiple nodes spaced out to
+compose the layer, such as multiple cloud sprites instead of the one cloud texture shown in the image above.
 
 Scroll scale
 ------------
