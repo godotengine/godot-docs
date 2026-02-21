@@ -5,6 +5,9 @@
  * based on browser preferences.
  */
 
+/** override rtd layer */
+@layer defaults, godot;
+
 @font-face {
     font-family: "JetBrains Mono";
     font-weight: 400;
@@ -329,6 +332,23 @@
         --btn-neutral-background-color: #404040;
         --btn-neutral-hover-background-color: #505050;
         --footer-color: #aaa;
+
+        @layer godot {
+            --readthedocs-search-color: var(--body-color);
+            --readthedocs-search-content-background-color: var(--navbar-background-color);
+            --readthedocs-search-content-border-color: var(--navbar-current-background-color);
+            --readthedocs-search-result-icon-color: var(--body-color);
+            --readthedocs-search-result-heading-color: var(--body-color);
+            --readthedocs-search-link-color: var(--link-color);
+            --readthedocs-search-result-subheading-color: var(--body-color);
+            --readthedocs-search-result-highlight-color: var(--navbar-heading-color);
+            --readthedocs-search-result-color:  var(--body-color);
+            --readthedocs-search-result-active-background-color: var(--navbar-current-background-color);
+            --readthedocs-search-footer-background-color: var(--navbar-current-background-color);
+            --readthedocs-search-footer-color: var(--body-color);
+            --readthedocs-search-footer-code-background-color: var(--code-tabs-background-color);
+            --readthedocs-search-input-background-color: var(--input-background-color);
+        }
     }
 }
 

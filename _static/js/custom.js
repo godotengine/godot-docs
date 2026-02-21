@@ -486,6 +486,17 @@ $(document).ready(() => {
 
   // Giscus
   registerGiscus();
+
+  // invert rtd's search logo in dark mode
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    let rtdSearch = document.querySelector("readthedocs-search");
+    if (rtdSearch) {
+      let rtdLogo = rtdSearch.shadowRoot.querySelector('.footer a img');
+      if (rtdLogo) {
+        rtdLogo.style.filter = 'brightness(0) invert(1)';
+      }
+    }
+  }
 });
 
 // Override the default implementation from doctools.js to avoid this behavior.
