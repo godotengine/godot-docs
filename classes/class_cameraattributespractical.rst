@@ -23,6 +23,10 @@ Controls camera-specific attributes such as auto-exposure, depth of field, and e
 
 When used in a :ref:`WorldEnvironment<class_WorldEnvironment>` it provides default settings for exposure, auto-exposure, and depth of field that will be used by all cameras without their own :ref:`CameraAttributes<class_CameraAttributes>`, including the editor camera. When used in a :ref:`Camera3D<class_Camera3D>` it will override any :ref:`CameraAttributes<class_CameraAttributes>` set in the :ref:`WorldEnvironment<class_WorldEnvironment>`. When used in :ref:`VoxelGI<class_VoxelGI>` or :ref:`LightmapGI<class_LightmapGI>`, only the exposure settings will be used.
 
+\ **Note:** Depth of field blur is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+
+\ **Note:** Auto-exposure is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+
 .. rst-class:: classref-reftable-group
 
 Properties

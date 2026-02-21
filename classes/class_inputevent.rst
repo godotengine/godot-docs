@@ -101,6 +101,22 @@ Constants
 
 Device ID used for emulated mouse input from a touchscreen, or for emulated touch input from a mouse. This can be used to distinguish emulated mouse input from physical mouse input, or emulated touch input from physical touch input.
 
+.. _class_InputEvent_constant_DEVICE_ID_KEYBOARD:
+
+.. rst-class:: classref-constant
+
+**DEVICE_ID_KEYBOARD** = ``16`` :ref:`🔗<class_InputEvent_constant_DEVICE_ID_KEYBOARD>`
+
+Device ID used for input from a keyboard. This can be used to distinguish keyboard input events from joypad input events.
+
+.. _class_InputEvent_constant_DEVICE_ID_MOUSE:
+
+.. rst-class:: classref-constant
+
+**DEVICE_ID_MOUSE** = ``32`` :ref:`🔗<class_InputEvent_constant_DEVICE_ID_MOUSE>`
+
+Device ID used for input from a mouse. This can be used to distinguish mouse input events from joypad input events.
+
 .. rst-class:: classref-section-separator
 
 ----

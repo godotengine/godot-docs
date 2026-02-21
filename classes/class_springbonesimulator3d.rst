@@ -33,6 +33,8 @@ For physical simulation, **SpringBoneSimulator3D** can have children as self-sta
 
 \ **Warning:** A scaled **SpringBoneSimulator3D** will likely not behave as expected. Make sure that the parent :ref:`Skeleton3D<class_Skeleton3D>` and its bones are not scaled.
 
+\ **Note:** Most methods in this class take an ``index`` parameter. This parameter specifies which setting list entry to return if the IK has multiple entries (e.g. ``settings/<index>/root_bone_name``).
+
 .. rst-class:: classref-reftable-group
 
 Properties

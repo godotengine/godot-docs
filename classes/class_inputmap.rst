@@ -72,6 +72,23 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_InputMap_signal_project_settings_loaded:
+
+.. rst-class:: classref-signal
+
+**project_settings_loaded**\ (\ ) :ref:`🔗<class_InputMap_signal_project_settings_loaded>`
+
+Emitted when the :ref:`ProjectSettings<class_ProjectSettings>` **InputMap** has been loaded.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 

@@ -71,6 +71,8 @@ Property Descriptions
 
 If ``true``, enables the tonemapping auto exposure mode of the scene renderer. If ``true``, the renderer will automatically determine the exposure setting to adapt to the scene's illumination and the observed light.
 
+\ **Note:** Auto-exposure is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----

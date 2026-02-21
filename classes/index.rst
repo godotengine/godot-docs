@@ -762,6 +762,7 @@ Other objects
     class_audiostreamplaybackpolyphonic
     class_audiostreamplaybackresampled
     class_audiostreamplaybacksynchronized
+    class_awaittweener
     class_callbacktweener
     class_camerafeed
     class_cameraserver
@@ -822,6 +823,9 @@ Other objects
     class_fileaccess
     class_framebuffercacherd
     class_gdextensionmanager
+    class_gdscriptlanguageprotocol
+    class_gdscripttextdocument
+    class_gdscriptworkspace
     class_geometry2d
     class_geometry3d
     class_gltfobjectmodelproperty

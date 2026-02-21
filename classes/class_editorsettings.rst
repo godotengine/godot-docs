@@ -663,6 +663,18 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`network/language_server/enable_smart_resolve<class_EditorSettings_property_network/language_server/enable_smart_resolve>`                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`network/language_server/poll_limit_usec<class_EditorSettings_property_network/language_server/poll_limit_usec>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`network/language_server/remote_host<class_EditorSettings_property_network/language_server/remote_host>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`network/language_server/remote_port<class_EditorSettings_property_network/language_server/remote_port>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`network/language_server/show_native_symbols_in_editor<class_EditorSettings_property_network/language_server/show_native_symbols_in_editor>`                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`network/language_server/use_thread<class_EditorSettings_property_network/language_server/use_thread>`                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`network/tls/editor_tls_certificates<class_EditorSettings_property_network/tls/editor_tls_certificates>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`network/tls/enable_tls_v1.3<class_EditorSettings_property_network/tls/enable_tls_v1.3>`                                                                                                                     |
@@ -706,6 +718,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/appearance/caret/highlight_current_line<class_EditorSettings_property_text_editor/appearance/caret/highlight_current_line>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/appearance/caret/type<class_EditorSettings_property_text_editor/appearance/caret/type>`                                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/appearance/drag_and_drop_info/show_drag_and_drop_info<class_EditorSettings_property_text_editor/appearance/drag_and_drop_info/show_drag_and_drop_info>`                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/appearance/enable_inline_color_picker<class_EditorSettings_property_text_editor/appearance/enable_inline_color_picker>`                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4964,6 +4978,93 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 ----
 
+.. _class_EditorSettings_property_network/language_server/enable_smart_resolve:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **network/language_server/enable_smart_resolve** :ref:`🔗<class_EditorSettings_property_network/language_server/enable_smart_resolve>`
+
+If ``true`` the language server will try to provide additional results when resolving symbols at the cost of showing wrong results. All symbols in the project are checked and resolved just based on their name, without taking context into account.
+
+::
+
+    func untyped(param):
+        param.print() # Will resolve to the global print method for e.g. hover hints.
+
+When using static typing it is recommended to disable this setting, since it will mostly add false positives for typed code.
+
+\ **Note:** This setting also influences how symbols are resolved when using renaming capabilities.
+
+\ **Note:** The default value of this setting might change in future versions.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/language_server/poll_limit_usec:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **network/language_server/poll_limit_usec** :ref:`🔗<class_EditorSettings_property_network/language_server/poll_limit_usec>`
+
+The upper limit of time, that the language server spends for IO each poll.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/language_server/remote_host:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **network/language_server/remote_host** :ref:`🔗<class_EditorSettings_property_network/language_server/remote_host>`
+
+The host used to listen for language server clients.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/language_server/remote_port:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **network/language_server/remote_port** :ref:`🔗<class_EditorSettings_property_network/language_server/remote_port>`
+
+The port used to listen for language server clients.
+
+\ **Note:** A port configured with command-line options will take priority over this setting: ``--lsp-port <port>``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/language_server/show_native_symbols_in_editor:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **network/language_server/show_native_symbols_in_editor** :ref:`🔗<class_EditorSettings_property_network/language_server/show_native_symbols_in_editor>`
+
+The declaration of native symbols can't be resolved to a position in the file system. If ``true`` the language server will instead open the documentation for native symbols in the editor.
+
+\ **Note:** The VSCode plugin adds additional functionality which allows viewing Godot documentation directly in VSCode, so this option is usually not needed in VSCode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_network/language_server/use_thread:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **network/language_server/use_thread** :ref:`🔗<class_EditorSettings_property_network/language_server/use_thread>`
+
+If ``true`` the language server will run in a separate thread, if ``false`` it will run on the main thread.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_network/tls/editor_tls_certificates:
 
 .. rst-class:: classref-property
@@ -5244,6 +5345,18 @@ The shape of the caret to use in the script editor. **Line** displays a vertical
 
 ----
 
+.. _class_EditorSettings_property_text_editor/appearance/drag_and_drop_info/show_drag_and_drop_info:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/drag_and_drop_info/show_drag_and_drop_info** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/drag_and_drop_info/show_drag_and_drop_info>`
+
+If ``true``, shows an info label listing available drop options when dragging an object into the script text editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/appearance/enable_inline_color_picker:
 
 .. rst-class:: classref-property
@@ -5430,7 +5543,7 @@ If ``true``, draws tab characters as chevrons.
 
 :ref:`int<class_int>` **text_editor/appearance/whitespace/line_spacing** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/whitespace/line_spacing>`
 
-The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
+The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen. Negative values allow for even more compact text, but may look broken with certain fonts.
 
 .. rst-class:: classref-item-separator
 

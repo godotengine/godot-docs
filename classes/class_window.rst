@@ -268,6 +268,10 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_layout_direction<class_Window_method_set_layout_direction>`\ (\ direction\: :ref:`LayoutDirection<enum_Window_LayoutDirection>`\ )                                                                                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_taskbar_progress_state<class_Window_method_set_taskbar_progress_state>`\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`\ )                                                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_taskbar_progress_value<class_Window_method_set_taskbar_progress_value>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                              |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>`\ (\ unparent\: :ref:`bool<class_bool>`\ )                                                                                                                           |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_use_font_oversampling<class_Window_method_set_use_font_oversampling>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                                                                                                                 |
@@ -2774,6 +2778,36 @@ Moves IME to the given position.
 |void| **set_layout_direction**\ (\ direction\: :ref:`LayoutDirection<enum_Window_LayoutDirection>`\ ) :ref:`🔗<class_Window_method_set_layout_direction>`
 
 Sets layout direction and text writing direction. Right-to-left layouts are necessary for certain languages (e.g. Arabic and Hebrew).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_set_taskbar_progress_state:
+
+.. rst-class:: classref-method
+
+|void| **set_taskbar_progress_state**\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`\ ) :ref:`🔗<class_Window_method_set_taskbar_progress_state>`
+
+Sets the type and state of the progress bar on the taskbar/dock icon of the **Window**. See :ref:`ProgressState<enum_DisplayServer_ProgressState>` for possible values and how each mode behaves.
+
+\ **Note:** This method is implemented only on Windows and macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_set_taskbar_progress_value:
+
+.. rst-class:: classref-method
+
+|void| **set_taskbar_progress_value**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Window_method_set_taskbar_progress_value>`
+
+Creates a progress bar on the taskbar/dock icon of the **Window** if it does not exist, sets the progress of the icon.
+
+\ ``value`` acts as a relative percentage value, ranges from ``0.0`` (lowest) to ``1.0`` (highest).
+
+\ **Note:** This method is implemented only on Windows and macOS.
 
 .. rst-class:: classref-item-separator
 

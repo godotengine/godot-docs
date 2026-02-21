@@ -107,6 +107,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                               | :ref:`get_joy_vibration_duration<class_Input_method_get_joy_vibration_duration>`\ (\ device\: :ref:`int<class_int>`\ )                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                               | :ref:`get_joy_vibration_remaining_duration<class_Input_method_get_joy_vibration_remaining_duration>`\ (\ device\: :ref:`int<class_int>`\ )                                                                                                                                                                          |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                           | :ref:`get_joy_vibration_strength<class_Input_method_get_joy_vibration_strength>`\ (\ device\: :ref:`int<class_int>`\ )                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                           | :ref:`get_last_mouse_screen_velocity<class_Input_method_get_last_mouse_screen_velocity>`\ (\ )                                                                                                                                                                                                                      |
@@ -122,6 +124,8 @@ Methods
    | :ref:`bool<class_bool>`                                                 | :ref:`has_joy_light<class_Input_method_has_joy_light>`\ (\ device\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_joy_motion_sensors<class_Input_method_has_joy_motion_sensors>`\ (\ device\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                              |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`has_joy_vibration<class_Input_method_has_joy_vibration>`\ (\ device\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>`\ (\ action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,6 +148,8 @@ Methods
    | :ref:`bool<class_bool>`                                                 | :ref:`is_joy_motion_sensors_calibrating<class_Input_method_is_joy_motion_sensors_calibrating>`\ (\ device\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                        |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_joy_motion_sensors_enabled<class_Input_method_is_joy_motion_sensors_enabled>`\ (\ device\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_joy_vibrating<class_Input_method_is_joy_vibrating>`\ (\ device\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_key_label_pressed<class_Input_method_is_key_label_pressed>`\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const|                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -558,7 +564,7 @@ Clears the calibration information for the specified joypad's motion sensors, if
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -714,7 +720,7 @@ For a joypad held in front of you, the returned axes are defined as follows:
 
 The gravity part value is measured as a vector with length of ``9.8`` away from the center of the Earth, which is a negative Y value.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, and macOS. On iOS, joypad accelerometer sensor reading is not supported due to OS limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -752,7 +758,7 @@ For a joypad held in front of you, the returned axes are defined as follows:
 
 The gravity part value is measured as a vector with length of ``9.8`` away from the center of the Earth, which is a negative Y value.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, and macOS. On iOS, joypad accelerometer sensor reading is not supported due to OS limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -764,7 +770,7 @@ The gravity part value is measured as a vector with length of ``9.8`` away from 
 
 :ref:`String<class_String>` **get_joy_guid**\ (\ device\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Input_method_get_joy_guid>`
 
-Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns an empty string if it cannot be found. Godot uses the `SDL2 game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__ to determine gamepad names and mappings based on this GUID.
+Returns an SDL-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns an empty string if it cannot be found. Godot uses SDL's internal mappings, supplemented by community-contributed mappings, to determine gamepad names and mappings based on this GUID.
 
 On Windows, all XInput joypad GUIDs will be overridden by Godot to ``__XINPUT_DEVICE__``, because their mappings are the same.
 
@@ -794,7 +800,7 @@ Z: Angular speed around the Z axis (roll).
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad gyroscope and gyroscope calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -808,7 +814,7 @@ See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_mo
 
 Returns a dictionary with extra platform-specific information about the device, e.g. the raw gamepad name from the OS or the Steam Input index.
 
-On Windows, Linux, and macOS, the dictionary contains the following fields:
+On Windows, Linux, macOS, and iOS, the dictionary contains the following fields:
 
 \ ``raw_name``: The name of the controller as it came from the OS, before getting renamed by the controller database.
 
@@ -818,13 +824,13 @@ On Windows, Linux, and macOS, the dictionary contains the following fields:
 
 \ ``serial_number``: The serial number of the device. This key won't be present if the serial number is unavailable.
 
-\ ``steam_input_index``: The Steam Input gamepad index, if the device is not a Steam Input device this key won't be present.
+The dictionary can also include the following fields under selected platforms:
 
-On Windows, the dictionary can have an additional field:
+\ ``steam_input_index``: The Steam Input gamepad index (Windows, Linux, and macOS only). If the device is not a Steam Input device this key won't be present.
 
-\ ``xinput_index``: The index of the controller in the XInput system. This key won't be present for devices not handled by XInput.
+\ ``xinput_index``: The index of the controller in the XInput system (Windows only). This key won't be present for devices not handled by XInput.
 
-\ **Note:** The returned dictionary is always empty on Android, iOS, visionOS, and Web.
+\ **Note:** The returned dictionary is always empty on Android and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -846,7 +852,7 @@ The dictionary contains the following fields:
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -862,7 +868,7 @@ See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_mo
 
 Returns the joypad's motion sensor rate in Hz, if the joypad has motion sensors and they're currently enabled. See also :ref:`set_joy_motion_sensors_enabled()<class_Input_method_set_joy_motion_sensors_enabled>`.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -888,6 +894,24 @@ Returns the name of the joypad at the specified device index, e.g. ``PS4 Control
 
 Returns the duration of the current vibration effect in seconds.
 
+\ **Note:** This method returns the same value that was passed to :ref:`start_joy_vibration()<class_Input_method_start_joy_vibration>`, and this value does **not** change when the joypad's vibration runs out, it only gets reset after a call to :ref:`stop_joy_vibration()<class_Input_method_stop_joy_vibration>`.
+
+If you want to check if a joypad is still vibrating, use :ref:`is_joy_vibrating()<class_Input_method_is_joy_vibrating>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_get_joy_vibration_remaining_duration:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joy_vibration_remaining_duration**\ (\ device\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Input_method_get_joy_vibration_remaining_duration>`
+
+**Experimental:** This method may be changed or removed in future versions.
+
+Returns the remaining duration of the current vibration effect in seconds.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -899,6 +923,10 @@ Returns the duration of the current vibration effect in seconds.
 :ref:`Vector2<class_Vector2>` **get_joy_vibration_strength**\ (\ device\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Input_method_get_joy_vibration_strength>`
 
 Returns the strength of the joypad vibration: x is the strength of the weak motor, and y is the strength of the strong motor.
+
+\ **Note:** This method returns the same values that were passed to :ref:`start_joy_vibration()<class_Input_method_start_joy_vibration>`, and these values do **not** change when the joypad's vibration runs out, they only get reset after a call to :ref:`stop_joy_vibration()<class_Input_method_stop_joy_vibration>`.
+
+If you want to check if a joypad is still vibrating, use :ref:`is_joy_vibrating()<class_Input_method_is_joy_vibrating>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -980,7 +1008,7 @@ By default, the deadzone is automatically calculated from the average of the act
 
 Returns ``true`` if the joypad has an LED light that can change colors and/or brightness. See also :ref:`set_joy_light()<class_Input_method_set_joy_light>`.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -996,7 +1024,23 @@ Returns ``true`` if the joypad has an LED light that can change colors and/or br
 
 Returns ``true`` if the joypad has motion sensors (accelerometer and gyroscope).
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** On iOS, joypad accelerometer sensor reading is not supported due to OS limitations.
+
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_has_joy_vibration:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_joy_vibration**\ (\ device\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Input_method_has_joy_vibration>`
+
+Returns ``true`` if the joypad supports vibration. See also :ref:`start_joy_vibration()<class_Input_method_start_joy_vibration>`.
+
+\ **Note:** For macOS, vibration is only supported in macOS 11 and later. When connected via USB, vibration is only supported for major brand controllers (except Xbox One and Xbox Series X/S controllers) due to macOS limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -1144,7 +1188,7 @@ Returns ``true`` if the joypad's motion sensors have been calibrated.
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1162,7 +1206,7 @@ Returns ``true`` if the joypad's motion sensors are currently being calibrated.
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1180,7 +1224,23 @@ Returns ``true`` if the requested joypad has motion sensors (accelerometer and g
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_is_joy_vibrating:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_joy_vibrating**\ (\ device\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Input_method_is_joy_vibrating>`
+
+**Experimental:** This method may be changed or removed in future versions.
+
+Returns ``true`` if the joypad is still vibrating after a call to :ref:`start_joy_vibration()<class_Input_method_start_joy_vibration>`.
+
+Unlike :ref:`get_joy_vibration_strength()<class_Input_method_get_joy_vibration_strength>` and :ref:`get_joy_vibration_duration()<class_Input_method_get_joy_vibration_duration>`, this method returns ``false`` after the joypad's vibration runs out.
 
 .. rst-class:: classref-item-separator
 
@@ -1379,7 +1439,7 @@ Sets the joypad's LED light, if available, to the specified color. See also :ref
 
 \ **Note:** There is no way to get the color of the light from a joypad. If you need to know the assigned color, store it separately.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1397,7 +1457,7 @@ Sets the specified joypad's calibration information. See also :ref:`get_joy_moti
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1417,7 +1477,7 @@ See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_mo
 
 It's recommended to disable the motion sensors when they're no longer being used, because otherwise it might drain the controller battery faster.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1496,27 +1556,27 @@ Here's an example of how to use joypad gyroscope and gyroscope calibration in yo
     func calibrate_motion():
         Input.start_joy_motion_sensors_calibration(0)
 
-        # Wait for some time
+        # Wait for some time.
         await get_tree().create_timer(1.0).timeout
 
         Input.stop_joy_motion_sensors_calibration(0)
         # The joypad is now calibrated.
 
     func move_object(delta):
-        var object: Node3D = ... # Put your object here.
+        var node: Node3D = ... # Put your node here.
 
         var gyro := Input.get_joy_gyroscope(0)
-        object.rotation.x -= -gyro.y * GYRO_SENSITIVITY * 0.5 * delta # Use rotation around the Y axis (yaw) here
-        object.rotation.y += -gyro.x * GYRO_SENSITIVITY * delta # Use rotation around the X axis (pitch) here
+        node.rotation.x -= -gyro.y * GYRO_SENSITIVITY * delta # Use rotation around the Y axis (yaw) here.
+        node.rotation.y += -gyro.x * GYRO_SENSITIVITY * delta # Use rotation around the X axis (pitch) here.
 
  .. code-tab:: csharp
 
-    const double GYRO_SENSITIVITY = 10.0;
+    private const float GyroSensitivity = 10.0;
 
     public override void _Ready()
     {
         // In this example we only use the first connected joypad (id 0).
-        if (!Input.GetConnectedJoypads().Has(0))
+        if (!Input.GetConnectedJoypads().Contains(0))
         {
             return;
         }
@@ -1544,12 +1604,12 @@ Here's an example of how to use joypad gyroscope and gyroscope calibration in yo
         }
     }
 
-    private void CalibrateMotion()
+    private async Task CalibrateMotion()
     {
         Input.StartJoyMotionSensorsCalibration(0);
 
         // Wait for some time.
-        await ToSignal(GetTree().CreateTimer(1.0), "timeout");
+        await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
 
         Input.StopJoyMotionSensorsCalibration(0);
         // The joypad is now calibrated.
@@ -1557,19 +1617,19 @@ Here's an example of how to use joypad gyroscope and gyroscope calibration in yo
 
     private void MoveObject(double delta)
     {
-        Node3D object = ... ; // Put your object here.
+        Node3D node = ... ; // Put your object here.
         Vector3 gyro = Input.GetJoyGyroscope(0);
-        Vector3 rotation = object.Rotation;
-        rotation.X -= -gyro.Y * GYRO_SENSITIVITY * 0.5 * delta; // Use rotation around the Y axis (yaw) here
-        rotation.Y += -gyro.X * GYRO_SENSITIVITY * delta; // Use rotation around the X axis (pitch) here
-        object.Rotation = rotation;
+        Vector3 rotation = node.Rotation;
+        rotation.X -= -gyro.Y * GyroSensitivity * (float)delta; // Use rotation around the Y axis (yaw) here.
+        rotation.Y += -gyro.X * GyroSensitivity * (float)delta; // Use rotation around the X axis (pitch) here.
+        node.Rotation = rotation;
     }
 
 
 
 \ **Note:** Accelerometer sensor doesn't usually require calibration.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -1581,9 +1641,19 @@ Here's an example of how to use joypad gyroscope and gyroscope calibration in yo
 
 |void| **start_joy_vibration**\ (\ device\: :ref:`int<class_int>`, weak_magnitude\: :ref:`float<class_float>`, strong_magnitude\: :ref:`float<class_float>`, duration\: :ref:`float<class_float>` = 0\ ) :ref:`🔗<class_Input_method_start_joy_vibration>`
 
-Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. ``weak_magnitude`` is the strength of the weak motor (between 0 and 1) and ``strong_magnitude`` is the strength of the strong motor (between 0 and 1). ``duration`` is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely). The vibration can be stopped early by calling :ref:`stop_joy_vibration()<class_Input_method_stop_joy_vibration>`.
+Starts to vibrate the joypad. See also :ref:`has_joy_vibration()<class_Input_method_has_joy_vibration>` and :ref:`is_joy_vibrating()<class_Input_method_is_joy_vibrating>`.
 
-\ **Note:** Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.
+Joypads usually come with two rumble motors, a strong and a weak one.
+
+\ ``weak_magnitude`` is the strength of the weak motor (between ``0.0`` and ``1.0``).
+
+\ ``strong_magnitude`` is the strength of the strong motor (between ``0.0`` and ``1.0``).
+
+\ ``duration`` is the duration of the effect in seconds (a duration of ``0.0`` will try to play the vibration as long as possible, which is about 65 seconds).
+
+The vibration can be stopped early by calling :ref:`stop_joy_vibration()<class_Input_method_stop_joy_vibration>`.
+
+See also :ref:`get_joy_vibration_strength()<class_Input_method_get_joy_vibration_strength>` and :ref:`get_joy_vibration_duration()<class_Input_method_get_joy_vibration_duration>`.
 
 \ **Note:** For macOS, vibration is only supported in macOS 11 and later. When connected via USB, vibration is only supported for major brand controllers (except Xbox One and Xbox Series X/S controllers) due to macOS limitations.
 
@@ -1603,7 +1673,7 @@ Stops the calibration process of the specified joypad's motion sensors.
 
 See :ref:`start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` for an example on how to use joypad motion sensors and calibration in your games.
 
-\ **Note:** This feature is only supported on Windows, Linux, and macOS.
+\ **Note:** This feature is only supported on Windows, Linux, macOS, and iOS.
 
 .. rst-class:: classref-item-separator
 
