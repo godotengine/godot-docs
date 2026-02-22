@@ -50,7 +50,7 @@ its value in the Inspector. This can be handy for values that you want to be
 able to adjust just like a node's built-in properties. Click on the ``Player``
 node and you'll see the property now appears in the Inspector in a new section
 with the name of the script. Remember, if you change the value here, it will
-override the value written in the script.
+override the default value specified in the script (the script won't be modified).
 
 .. warning::
 
