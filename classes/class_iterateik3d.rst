@@ -25,6 +25,8 @@ Base class of :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` to approach th
 
 Each bone chain (setting) has one effector, which is processed in order of the setting list. You can set some limitations for each joint.
 
+\ **Note:** All the methods in this class take an ``index`` parameter. This parameter specifies which setting list entry to return if the IK has multiple entries (e.g. ``settings/<index>/target_node``).
+
 .. rst-class:: classref-reftable-group
 
 Properties

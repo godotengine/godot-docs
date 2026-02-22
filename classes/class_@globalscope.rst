@@ -59,6 +59,8 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`GDExtensionManager<class_GDExtensionManager>`               | :ref:`GDExtensionManager<class_@GlobalScope_property_GDExtensionManager>`               |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`GDScriptLanguageProtocol<class_GDScriptLanguageProtocol>`   | :ref:`GDScriptLanguageProtocol<class_@GlobalScope_property_GDScriptLanguageProtocol>`   |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`Geometry2D<class_Geometry2D>`                               | :ref:`Geometry2D<class_@GlobalScope_property_Geometry2D>`                               |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`Geometry3D<class_Geometry3D>`                               | :ref:`Geometry3D<class_@GlobalScope_property_Geometry3D>`                               |
@@ -2755,11 +2757,51 @@ Game controller SDL paddle 4 button.
 
 Game controller SDL touchpad button.
 
+.. _class_@GlobalScope_constant_JOY_BUTTON_MISC2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_MISC2** = ``21``
+
+Game controller SDL miscellaneous button. Used by Nintendo Switch 2 Pro Controller and Horipad Steam controllers.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MISC3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_MISC3** = ``22``
+
+Game controller SDL miscellaneous button.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MISC4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_MISC4** = ``23``
+
+Game controller SDL miscellaneous button.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MISC5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_MISC5** = ``24``
+
+Game controller SDL miscellaneous button.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MISC6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_MISC6** = ``25``
+
+Game controller SDL miscellaneous button.
+
 .. _class_@GlobalScope_constant_JOY_BUTTON_SDL_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_SDL_MAX** = ``21``
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_SDL_MAX** = ``26``
 
 The number of SDL game controller buttons.
 
@@ -4849,6 +4891,103 @@ Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Oper
 
 .. rst-class:: classref-descriptions-group
 
+Constants
+---------
+
+.. _class_@GlobalScope_constant_UINT8_MAX:
+
+.. rst-class:: classref-constant
+
+**UINT8_MAX** = ``255`` :ref:`🔗<class_@GlobalScope_constant_UINT8_MAX>`
+
+Maximum value of an 8-bit unsigned integer.
+
+.. _class_@GlobalScope_constant_UINT16_MAX:
+
+.. rst-class:: classref-constant
+
+**UINT16_MAX** = ``65535`` :ref:`🔗<class_@GlobalScope_constant_UINT16_MAX>`
+
+Maximum value of a 16-bit unsigned integer.
+
+.. _class_@GlobalScope_constant_UINT32_MAX:
+
+.. rst-class:: classref-constant
+
+**UINT32_MAX** = ``4294967295`` :ref:`🔗<class_@GlobalScope_constant_UINT32_MAX>`
+
+Maximum value of a 32-bit unsigned integer.
+
+.. _class_@GlobalScope_constant_INT8_MIN:
+
+.. rst-class:: classref-constant
+
+**INT8_MIN** = ``-128`` :ref:`🔗<class_@GlobalScope_constant_INT8_MIN>`
+
+Minimum value of an 8-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT8_MAX:
+
+.. rst-class:: classref-constant
+
+**INT8_MAX** = ``127`` :ref:`🔗<class_@GlobalScope_constant_INT8_MAX>`
+
+Maximum value of an 8-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT16_MIN:
+
+.. rst-class:: classref-constant
+
+**INT16_MIN** = ``-32768`` :ref:`🔗<class_@GlobalScope_constant_INT16_MIN>`
+
+Minimum value of a 16-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT16_MAX:
+
+.. rst-class:: classref-constant
+
+**INT16_MAX** = ``32767`` :ref:`🔗<class_@GlobalScope_constant_INT16_MAX>`
+
+Maximum value of a 16-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT32_MIN:
+
+.. rst-class:: classref-constant
+
+**INT32_MIN** = ``-2147483648`` :ref:`🔗<class_@GlobalScope_constant_INT32_MIN>`
+
+Minimum value of a 32-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT32_MAX:
+
+.. rst-class:: classref-constant
+
+**INT32_MAX** = ``2147483647`` :ref:`🔗<class_@GlobalScope_constant_INT32_MAX>`
+
+Maximum value of a 32-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT64_MIN:
+
+.. rst-class:: classref-constant
+
+**INT64_MIN** = ``-9223372036854775808`` :ref:`🔗<class_@GlobalScope_constant_INT64_MIN>`
+
+Minimum value of a 64-bit signed integer.
+
+.. _class_@GlobalScope_constant_INT64_MAX:
+
+.. rst-class:: classref-constant
+
+**INT64_MAX** = ``9223372036854775807`` :ref:`🔗<class_@GlobalScope_constant_INT64_MAX>`
+
+Maximum value of a 64-bit signed integer.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 
@@ -4945,6 +5084,20 @@ The :ref:`EngineDebugger<class_EngineDebugger>` singleton.
 :ref:`GDExtensionManager<class_GDExtensionManager>` **GDExtensionManager** :ref:`🔗<class_@GlobalScope_property_GDExtensionManager>`
 
 The :ref:`GDExtensionManager<class_GDExtensionManager>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_property_GDScriptLanguageProtocol:
+
+.. rst-class:: classref-property
+
+:ref:`GDScriptLanguageProtocol<class_GDScriptLanguageProtocol>` **GDScriptLanguageProtocol** :ref:`🔗<class_@GlobalScope_property_GDScriptLanguageProtocol>`
+
+The :ref:`GDScriptLanguageProtocol<class_GDScriptLanguageProtocol>` singleton.
+
+\ **Note:** Only available in editor builds.
 
 .. rst-class:: classref-item-separator
 

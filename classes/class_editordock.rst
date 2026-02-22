@@ -172,7 +172,7 @@ Allows placing the dock in the vertical dock slots on either side of the editor.
 
 :ref:`DockLayout<enum_EditorDock_DockLayout>` **DOCK_LAYOUT_HORIZONTAL** = ``2``
 
-Allows placing the dock in the editor's bottom panel.
+Allows placing the dock in the horizontal dock slots at the bottom.
 
 .. _class_EditorDock_constant_DOCK_LAYOUT_FLOATING:
 
@@ -280,11 +280,27 @@ Dock slot, right side, bottom-right (empty in default layout).
 
 Bottom panel.
 
+.. _class_EditorDock_constant_DOCK_SLOT_BOTTOM_L:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockSlot<enum_EditorDock_DockSlot>` **DOCK_SLOT_BOTTOM_L** = ``9``
+
+Dock slot at the bottom, below bottom panel, on the left side.
+
+.. _class_EditorDock_constant_DOCK_SLOT_BOTTOM_R:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DockSlot<enum_EditorDock_DockSlot>` **DOCK_SLOT_BOTTOM_R** = ``10``
+
+Dock slot at the bottom, below bottom panel, on the right side.
+
 .. _class_EditorDock_constant_DOCK_SLOT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`DockSlot<enum_EditorDock_DockSlot>` **DOCK_SLOT_MAX** = ``9``
+:ref:`DockSlot<enum_EditorDock_DockSlot>` **DOCK_SLOT_MAX** = ``11``
 
 Represents the size of the :ref:`DockSlot<enum_EditorDock_DockSlot>` enum.
 

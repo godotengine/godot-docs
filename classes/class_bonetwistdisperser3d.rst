@@ -25,6 +25,8 @@ This is useful for smoothly twisting bones in combination with :ref:`CopyTransfo
 
 \ **Note:** If an extracted twist is greater than 180 degrees, flipping occurs. This is similar to :ref:`ConvertTransformModifier3D<class_ConvertTransformModifier3D>`.
 
+\ **Note:** Most methods in this class take an ``index`` parameter. This parameter specifies which setting list entry to return if the IK has multiple entries (e.g. ``settings/<index>/root_bone_name``).
+
 .. rst-class:: classref-reftable-group
 
 Properties

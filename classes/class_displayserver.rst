@@ -578,6 +578,10 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_size<class_DisplayServer_method_window_set_size>`\ (\ size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_taskbar_progress_state<class_DisplayServer_method_window_set_taskbar_progress_state>`\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                               |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_taskbar_progress_value<class_DisplayServer_method_window_set_taskbar_progress_value>`\ (\ value\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_title<class_DisplayServer_method_window_set_title>`\ (\ title\: :ref:`String<class_String>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_transient<class_DisplayServer_method_window_set_transient>`\ (\ window_id\: :ref:`int<class_int>`, parent_window_id\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -2235,6 +2239,62 @@ Full screen window covers the entire display area of a screen and has no border 
 
 ----
 
+.. _enum_DisplayServer_ProgressState:
+
+.. rst-class:: classref-enumeration
+
+enum **ProgressState**: :ref:`🔗<enum_DisplayServer_ProgressState>`
+
+.. _class_DisplayServer_constant_PROGRESS_STATE_NOPROGRESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProgressState<enum_DisplayServer_ProgressState>` **PROGRESS_STATE_NOPROGRESS** = ``0``
+
+Stops displaying progress and returns the button to its normal state.
+
+.. _class_DisplayServer_constant_PROGRESS_STATE_INDETERMINATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProgressState<enum_DisplayServer_ProgressState>` **PROGRESS_STATE_INDETERMINATE** = ``1``
+
+The progress indicator shows an indeterminate progress.
+
+On Windows, the progress indicator does not grow in size, but cycles repeatedly along the length of the taskbar button by default.
+
+.. _class_DisplayServer_constant_PROGRESS_STATE_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProgressState<enum_DisplayServer_ProgressState>` **PROGRESS_STATE_NORMAL** = ``2``
+
+The progress indicator shows progress normally.
+
+.. _class_DisplayServer_constant_PROGRESS_STATE_ERROR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProgressState<enum_DisplayServer_ProgressState>` **PROGRESS_STATE_ERROR** = ``3``
+
+The progress indicator shows that an error has occurred.
+
+On Windows, the progress indicator turns red by default to show that an error has occurred in one of the windows that is broadcasting progress.
+
+.. _class_DisplayServer_constant_PROGRESS_STATE_PAUSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProgressState<enum_DisplayServer_ProgressState>` **PROGRESS_STATE_PAUSED** = ``4``
+
+The progress indicator shows it was paused.
+
+On Windows, the progress indicator turns yellow by default to show that progress is currently stopped in one of the windows but can be resumed by the user.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_DisplayServer_WindowFlags:
 
 .. rst-class:: classref-enumeration
@@ -2690,6 +2750,26 @@ OpenGL context (only with the Compatibility renderer):
 - macOS: ``EGLConfig`` for the window (ANGLE).
 
 - Linux (Wayland): ``EGLConfig`` for the window.
+
+.. _class_DisplayServer_constant_GLX_VISUALID:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **GLX_VISUALID** = ``6``
+
+The GLX ``VisualID`` for the window.
+
+\ **Note:** Only available on Linux when using X11.
+
+.. _class_DisplayServer_constant_GLX_FBCONFIG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **GLX_FBCONFIG** = ``7``
+
+The ``GLXFBConfig`` for the window.
+
+\ **Note:** Only available on Linux when using X11.
 
 .. rst-class:: classref-item-separator
 
@@ -6931,6 +7011,40 @@ Sets the ``callback`` that will be called when the window specified by ``window_
 Sets the size of the given window to ``size`` (in pixels). See also :ref:`window_get_size()<class_DisplayServer_method_window_get_size>` and :ref:`window_get_position()<class_DisplayServer_method_window_get_position>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.size<class_Window_property_size>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_set_taskbar_progress_state:
+
+.. rst-class:: classref-method
+
+|void| **window_set_taskbar_progress_state**\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_taskbar_progress_state>`
+
+Sets the type and state of the progress bar on the taskbar/dock icon of the window specified by ``window_id``. See :ref:`ProgressState<enum_DisplayServer_ProgressState>` for possible values and how each mode behaves.
+
+\ **Note:** This method is implemented only on Windows and macOS.
+
+\ **Note:** On macOS, the progress bar is displayed only for the main window.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_set_taskbar_progress_value:
+
+.. rst-class:: classref-method
+
+|void| **window_set_taskbar_progress_value**\ (\ value\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_taskbar_progress_value>`
+
+Creates a progress bar on the taskbar/dock icon of the window specified by ``window_id`` if it does not exist, sets the progress of the icon.
+
+\ ``value`` acts as a relative percentage value, ranges from ``0.0`` (lowest) to ``1.0`` (highest).
+
+\ **Note:** This method is implemented only on Windows and macOS.
+
+\ **Note:** On macOS, the progress bar is displayed only for the main window.
 
 .. rst-class:: classref-item-separator
 

@@ -491,6 +491,15 @@ Finds and returns the first key whose associated value is equal to ``value``, or
 
 Returns the corresponding value for the given ``key`` in the dictionary. If the ``key`` does not exist, returns ``default``, or ``null`` if the parameter is omitted.
 
+\ **Note:** If the ``default`` argument is computationally expensive or has unwanted side effects, consider using the :ref:`has()<class_Dictionary_method_has>` method instead:
+
+::
+
+    # Always calls `expensive_function()`.
+    dict.get("key", expensive_function())
+    # Calls `expensive_function()` only if the key does not exist.
+    dict.get("key") if dict.has("key") else expensive_function()
+
 .. rst-class:: classref-item-separator
 
 ----

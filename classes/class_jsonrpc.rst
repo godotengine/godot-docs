@@ -12,6 +12,8 @@ JSONRPC
 
 **Inherits:** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`GDScriptLanguageProtocol<class_GDScriptLanguageProtocol>`
+
 A helper to handle dictionaries which look like JSONRPC documents.
 
 .. rst-class:: classref-introduction-group

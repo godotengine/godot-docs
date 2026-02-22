@@ -29,6 +29,8 @@ If the root bone joint and the start point of the :ref:`Curve3D<class_Curve3D>` 
 
 If the end bone joint exceeds the path length, it is bent as close as possible to the end point of the :ref:`Curve3D<class_Curve3D>`.
 
+\ **Note:** All the methods in this class take an ``index`` parameter. This parameter specifies which setting list entry to return if the IK has multiple entries (e.g. ``settings/<index>/root_bone_name``).
+
 .. rst-class:: classref-reftable-group
 
 Properties
