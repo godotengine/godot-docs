@@ -101,7 +101,7 @@ Mobile device (smartphone/tablet) - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (1.3 GB after installation)                                                             |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile)       |
+| **Operating system** | - **Native editor:** Android 7.0 (Compatibility) or Android 9.0 (Forward+/Mobile)       |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -174,7 +174,7 @@ Mobile device (smartphone/tablet) - Recommended
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)         |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Android 9.0                                                        |
+| **Operating system** | - **Native editor:** Android 11.0                                                       |
 |                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera,               |
 |                      |   Samsung Internet                                                                      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -282,7 +282,7 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Android 6.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
+| **Operating system** | - **For native exports:** Android 7.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
 |                      |   iOS 12.0 (Forward+/Mobile, Vulkan), iOS 16.0 (Forward+/Mobile, Metal)                 |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
