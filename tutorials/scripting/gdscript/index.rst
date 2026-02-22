@@ -16,6 +16,7 @@ GDScript
    gdscript_styleguide
    static_typing
    warning_system
+   warnings/index
    gdscript_format_string
 
 .. seealso::
