@@ -52,6 +52,10 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 | **unshaded**                  | Result is just albedo. No lighting/shading happens in material, making it faster to render.          |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **wireframe**                 | Geometry draws using lines (useful for troubleshooting).                                             |
+|                               | When using the Compatibility renderer, you must call                                                 |
+|                               | ``RenderingServer.set_debug_generate_wireframes(true)`` *before* the mesh is loaded for wireframe    |
+|                               | rendering to work. In the Compatibility renderer, backface culling is always disabled in wireframe   |
+|                               | mode, while in the Forward+ and Mobile renderers, the cull mode is respected.                        |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **debug_shadow_splits**       | Directional shadows are drawn using different colors for each split (useful for troubleshooting).    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
