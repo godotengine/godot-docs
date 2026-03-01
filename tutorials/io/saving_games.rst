@@ -356,7 +356,10 @@ Here are some important gotchas to know about when using JSON.
   JSON only offers a limited set of data types. If you have data types
   that JSON doesn't have, you will need to translate your data to and
   from types that JSON can handle. For example, some important types that JSON
-  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quaternion``.
+  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quaternion``. 
+  You can overcome this limitation by using the 
+  :ref:`from_native<class_JSON_method_from_native>` and 
+  :ref:`to_native<class_JSON_method_to_native>` methods of :ref:`JSON<class_json>`. 
 * **Custom logic needed for encoding/decoding:**
   If you have any custom classes that you want to store with JSON, you will
   need to write your own logic for encoding and decoding those classes.
