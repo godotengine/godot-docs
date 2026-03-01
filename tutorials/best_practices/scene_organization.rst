@@ -395,7 +395,7 @@ If you have a system that...
 
 If you have systems that modify other systems' data, you should define those as
 their own scripts or scenes, rather than autoloads. For more information, see
-:ref:`Autoloads versus regular nodes <doc_autoloads_versus_internal_nodes>`.
+:ref:`Autoloads versus regular nodes <doc_autoloads_versus_regular_nodes>`.
 
 Each subsystem within your game should have its own section within the
 SceneTree. You should use parent-child relationships only in cases where nodes
