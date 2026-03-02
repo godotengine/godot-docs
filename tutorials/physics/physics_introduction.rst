@@ -23,6 +23,10 @@ In this guide, you will learn:
           and collision shape has a direct equivalent in 3D and in most cases
           they work in much the same way.
 
+.. warning:: Physics in Godot, regardless of physics engine, is **not** deterministic,
+             the nature of physics engine determinism is very complex and has to do with many factors,
+             this means physics is not guaranteed to run the same way for seemingly identical situations.
+
 Collision objects
 -----------------
 
