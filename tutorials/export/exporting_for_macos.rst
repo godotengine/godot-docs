@@ -29,6 +29,12 @@ Requirements
 -  Download the Godot export templates. Use the Godot menu: ``Editor > Manage Export Templates``.
 -  A valid and unique ``Bundle identifier`` should be set in the ``Application`` section of the export options.
 
+.. note::
+
+    A valid bundle ID can only contain alphanumeric characters, hyphens, and periods (``A-Z``, ``a-z``, ``0-9``, ``-``, and ``.``).
+    Apple recommends using reverse-DNS format (e.g. com.example) of a domain you own, so that your bundle ID is guaranteed to be unique.
+    Bundle IDs are case-insensitive. See `CFBundleIdentifier  <https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleidentifier>`__.
+    
 .. warning::
 
     Projects exported without code signing and notarization will be blocked by Gatekeeper if they are downloaded from unknown sources, see the :ref:`Running Godot apps on macOS <doc_running_on_macos>` page for more information.
