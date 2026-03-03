@@ -27,7 +27,7 @@ input actions (see :ref:`InputEvent <doc_inputevent>` for details):
 
 .. image:: img/movement_inputs.webp
 
-.. _doc_2d_movement_8-way_movement:
+.. _doc_2d_movement_8_way_movement:
 
 8-way movement
 --------------

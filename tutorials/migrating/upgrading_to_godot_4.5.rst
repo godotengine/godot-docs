@@ -202,7 +202,7 @@ versions, you need to set
 :ref:`TileMapLayer.physics_quadrant_size <class_TileMapLayer_property_physics_quadrant_size>`
 to ``1``, which disables physics chunking.
 
-.. _doc_upgrading_to_godot_4.5_3d_model_import:
+.. _doc_upgrading_to_godot_4_5_3d_model_import:
 
 3D Model Import
 ~~~~~~~~~~~~~~~

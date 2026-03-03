@@ -59,7 +59,7 @@ Method ``blend_node`` adds a new ``test_only`` optional parameter               
 Method ``get_travel_path`` changes return type from ``PackedStringArray`` to ``Array[StringName]``                        |✔️|                 |❌|                  |❌|                  `GH-76418`_
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
-.. _doc_upgrading_to_godot_4.1_2d_nodes:
+.. _doc_upgrading_to_godot_4_1_2d_nodes:
 
 2D nodes
 ~~~~~~~~
@@ -71,7 +71,7 @@ Change                                                                          
 Property ``lookahead`` removed                                                                                            |❌|                 |❌|                  |❌|                  `GH-72842`_
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
-.. _doc_upgrading_to_godot_4.1_3d_nodes
+.. _doc_upgrading_to_godot_4_1_3d_nodes:
 
 3D nodes
 ~~~~~~~~

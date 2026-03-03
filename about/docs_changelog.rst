@@ -42,14 +42,14 @@ Scripting
 New pages since version 4.3
 ---------------------------
 
-.. _doc_docs_changelog_new_pages_since_version_4.3_2d:
+.. _doc_docs_changelog_new_pages_since_version_4_3_2d:
 
 2D
 ~~
 
 - :ref:`doc_introduction_to_2d`
 
-.. _doc_docs_changelog_new_pages_since_version_4.3_3d:
+.. _doc_docs_changelog_new_pages_since_version_4_3_3d:
 
 3D
 ~~

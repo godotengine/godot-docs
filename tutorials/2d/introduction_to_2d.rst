@@ -201,7 +201,7 @@ In the scale mode, the gizmos will have a square shape. You can hold and drag th
 red squares to scale the nodes in the ``y`` or ``x`` axes.
 Dragging in a negative direction flips the node horizontally or vertically.
 
-.. doc_introduction_to_2d_2d_viewport:
+.. _doc_introduction_to_2d_2d_viewport:
 
 2D Viewport
 ~~~~~~~~~~~
