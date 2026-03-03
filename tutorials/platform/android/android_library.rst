@@ -71,7 +71,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
   - By locking to a specific orientation using the `android:screenOrientation attribute <https://developer.android.com/guide/topics/manifest/activity-element#screen>`_.
   - By declaring that the Activity will handle these configuration events using the `android:configChanges attribute <https://developer.android.com/guide/topics/manifest/activity-element#config>`_.
 
-.. _docandroid_library_1_create_the_android_app:
+.. _doc_android_library_1_create_the_android_app:
 
 1. Create the Android app
 ~~~~~~~~~~~~~~~~~~~~~~~~~
