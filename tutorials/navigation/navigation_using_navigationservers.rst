@@ -41,6 +41,8 @@ Synchronization for the NavigationServer happens in the middle of the physics fr
 .. note::
     All setters and delete functions require synchronization.
 
+.. _doc_navigation_using_navigationservers_2d_and_3d_navigationserver_differences:
+
 2D and 3D NavigationServer differences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

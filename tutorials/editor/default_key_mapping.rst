@@ -116,6 +116,8 @@ Others must be manually bound in the Editor Settings if desired.
 | Toggle Shader Editor Bottom Panel | :kbd:`Alt + S`  | :kbd:`Alt + S`  | ``bottom_panels/toggle_shader_editor_bottom_panel`` |
 +-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
 
+.. _doc_default_key_mapping_2d_/_canvasitem_editor:
+
 2D / CanvasItem editor
 ----------------------
 

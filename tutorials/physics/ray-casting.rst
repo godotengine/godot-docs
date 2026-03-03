@@ -272,6 +272,8 @@ member variable. The array of exceptions can be supplied as the last argument as
 
 See :ref:`doc_physics_introduction_collision_layer_code_example` for details on how to set the collision mask.
 
+.. _doc_ray-casting_3d_ray_casting_from_screen:
+
 3D ray casting from screen
 --------------------------
 

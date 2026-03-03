@@ -23,6 +23,8 @@ In 3D, math is a little more complex than in 2D. For an introduction to the
 relevant math written for game developers, not mathemeticians or engineers,
 check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
+.. _doc_introduction_to_3d_3d_workspace:
+
 3D workspace
 ------------
 
@@ -300,6 +302,8 @@ scale.
 
 .. image:: img/tuto_3d2.webp
 
+.. _doc_introduction_to_3d_3d_content:
+
 3D content
 ----------
 
@@ -348,6 +352,8 @@ Godot provides a special :ref:`ImmediateMesh <class_ImmediateMesh>` resource
 that can be used in a :ref:`MeshInstance3D <class_MeshInstance3D>` node.
 This provides an OpenGL 1.x-style immediate-mode API to create points, lines,
 triangles, etc.
+
+.. _doc_introduction_to_3d_2d_in_3d:
 
 2D in 3D
 ~~~~~~~~

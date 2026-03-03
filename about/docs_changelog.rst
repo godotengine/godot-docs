@@ -42,10 +42,14 @@ Scripting
 New pages since version 4.3
 ---------------------------
 
+.. _doc_docs_changelog_new_pages_since_version_4.3_2d:
+
 2D
 ~~
 
 - :ref:`doc_introduction_to_2d`
+
+.. _doc_docs_changelog_new_pages_since_version_4.3_3d:
 
 3D
 ~~
@@ -99,6 +103,8 @@ About
 ~~~~~
 
 - :ref:`doc_system_requirements`
+
+.. _doc_docs_changelog_new_pages_since_version_4.2_2d:
 
 2D
 ~~
@@ -187,10 +193,14 @@ Physics
 New pages since version 3.6
 ---------------------------
 
+.. _doc_docs_changelog_new_pages_since_version_3.6_2d:
+
 2D
 ~~
 
 - :ref:`doc_2d_antialiasing`
+
+.. _doc_docs_changelog_new_pages_since_version_3.6_3d:
 
 3D
 ~~
@@ -260,6 +270,8 @@ None.
 New pages since version 3.4
 ---------------------------
 
+.. _doc_docs_changelog_new_pages_since_version_3.4_3d:
+
 3D
 ~~
 
@@ -285,6 +297,8 @@ GDScript
 
 New pages since version 3.2
 ---------------------------
+
+.. _doc_docs_changelog_new_pages_since_version_3.2_3d:
 
 3D
 ~~
@@ -371,6 +385,8 @@ Project workflow
 ~~~~~~~~~~~~~~~~
 
 - :ref:`doc_android_gradle_build`
+
+.. _doc_docs_changelog_new_pages_since_version_3.1_2d:
 
 2D
 ~~
@@ -477,11 +493,15 @@ Best Practices:
 - :ref:`doc_data_preferences`
 - :ref:`doc_logic_preferences`
 
+.. _doc_docs_changelog_new_pages_since_version_3.0_2d:
+
 2D
 ~~
 
 - :ref:`doc_2d_lights_and_shadows`
 - :ref:`doc_2d_meshes`
+
+.. _doc_docs_changelog_new_pages_since_version_3.0_3d:
 
 3D
 ~~

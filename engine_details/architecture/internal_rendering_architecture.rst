@@ -376,6 +376,8 @@ this.
 
 - `drivers/gles3/shaders/ <https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/>`__
 
+.. _doc_internal_rendering_architecture_2d_and_3d_rendering_separation:
+
 2D and 3D rendering separation
 ------------------------------
 

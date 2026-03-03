@@ -120,6 +120,8 @@ Godot 4 includes three renderers:
 
 See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
+.. _doc_list_of_features_2d_graphics:
+
 2D graphics
 -----------
 
@@ -165,6 +167,8 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Optional :ref:`2D HDR rendering <doc_environment_and_post_processing_using_glow_in_2d>`
   for better glow capabilities.
 
+.. _doc_list_of_features_2d_tools:
+
 2D tools
 --------
 
@@ -176,6 +180,8 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
    - PathFollow2D node to make nodes follow a Path2D.
 
 - :ref:`2D geometry helper class <class_Geometry2D>`.
+
+.. _doc_list_of_features_2d_physics:
 
 2D physics
 ----------
@@ -193,6 +199,8 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 - Built-in shapes: line, box, circle, capsule, world boundary (infinite plane).
 - Collision polygons (can be drawn manually or generated from a sprite in the editor).
+
+.. _doc_list_of_features_3d_graphics:
 
 3D graphics
 -----------
@@ -404,6 +412,8 @@ Most effects listed above can be adjusted for better performance or to further
 improve quality. This can be helpful when
 :ref:`using Godot for offline rendering <doc_creating_movies>`.
 
+.. _doc_list_of_features_3d_tools:
+
 3D tools
 --------
 
@@ -419,6 +429,8 @@ improve quality. This can be helpful when
 - :ref:`3D geometry helper class <class_Geometry3D>`.
 - Support for exporting the current scene as a glTF 2.0 file, both from the editor
   and at runtime from an exported project.
+
+.. _doc_list_of_features_3d_physics:
 
 3D physics
 ----------

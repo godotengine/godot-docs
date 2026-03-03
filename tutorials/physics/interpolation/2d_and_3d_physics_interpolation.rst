@@ -50,6 +50,8 @@ an existing project working.
 .. note:: If you move objects *after* adding to the scene tree, you will still need
           to call ``reset_physics_interpolation()`` as with 3D.
 
+.. _doc_2d_and_3d_physics_interpolation_2d_particles:
+
 2D Particles
 ------------
 
