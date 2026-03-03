@@ -36,7 +36,7 @@ are required. Leaving them blank will cause the exporter to throw an error. The 
 .. note::
 
     A valid bundle ID can only contain alphanumeric characters, hyphens, and periods (``A-Z``, ``a-z``, ``0-9``, ``-``, and ``.``).
-    Apple recommends using reverse-DNS format (e.g. com.example) of a domain you own, so that your bundle ID is guaranteed to be unique.
+    Apple recommends using reverse-DNS format (e.g. ``com.example.your-game``) of a domain you own, so that your bundle ID is guaranteed to be unique.
     Bundle IDs are case-insensitive. See `CFBundleIdentifier <https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleidentifier>`__.
     
 .. note:: | If you encounter an error during export similar to
