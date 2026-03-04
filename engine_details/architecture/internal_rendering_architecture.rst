@@ -498,6 +498,10 @@ planned in a future release.
 Clustering is also used for reflection probes and decal rendering in the
 Forward+ renderer.
 
+Area lights make use of the
+`Linearly Transformed Cosines <https://eheitzresearch.wordpress.com/757-2/>`__
+technique.
+
 Shadow mapping
 ~~~~~~~~~~~~~~
 
