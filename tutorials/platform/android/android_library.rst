@@ -167,6 +167,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
       ...
   </activity>
 
+.. _doc_android_library_2_create_the_godot_project:
 
 2. Create the Godot project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -241,6 +242,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
       add_child(current_gltf_node)
 
+.. _doc_android_library_3_build_and_run_the_app:
 
 3. Build and run the app
 ~~~~~~~~~~~~~~~~~~~~~~~~
