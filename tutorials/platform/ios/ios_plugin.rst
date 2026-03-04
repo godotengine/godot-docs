@@ -82,7 +82,7 @@ To build an iOS plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
-    -   The configuration file format is as follow:
+    -   The configuration file format is as follows:
 
     ::
 
