@@ -373,6 +373,87 @@ With the projector texture below, the following result is obtained:
     working entirely. If you need shadows for wider lights, use an omni light
     instead.
 
+Area light
+----------
+
+Sometimes, you want lighting to come from a large area instead of a single
+point. Area lights are useful for simulating soft, diffuse lighting, such as
+light coming from a window or a lit billboard. This type of light is expensive
+to render in real-time, so it should be used sparingly, especially when shadows
+are enabled.
+
+Godot provides the :ref:`class_AreaLight3D` node for this purpose, which emits
+light from a rectangular area. The node only emits light and has no other visual
+representation in the scene. The screenshots below use a :ref:`class_Sprite3D`
+node as a child of the area light for visualization purposes.
+
+Area lights can also cast shadows, with variable penumbra simulated using
+:ref:`PCSS <doc_lights_and_shadows_pcss_recommendations>` by default. The size
+of this penumbra can be controlled with the Light3D **Size** property. This
+effect can be quite demanding, so it can be turned off by setting **Size** to
+``0.0``.
+
+.. image:: img/lights_and_shadows_area_example.webp
+
+.. note::
+
+    Since area lights are difficult to simulate in a real-time rasterized
+    renderer, they come with a number of limitations.
+
+    For small light sources, you will likely get better results when using point
+    lights. Shadows from area lights are crude approximations, as they are
+    calculated as if they were point lights, and may appear to be distorted at
+    the edges. To get a better result, make sure the meshes in the light's range
+    are sufficiently subdivided.
+
+    Area lights suffer from light leaking on the backside of geometry closely in
+    front of them at grazing angles, so be careful with where you place them.
+
+    Lastly, not all material features are fully supported; area lights are
+    practically limited to Lambertian diffuse and GGX specular shading, while
+    anisotropic materials will appear as if isotropic. Vertex shading is also
+    not implemented for area lights.
+
+Area lights emit light in a rectangular area defined by the **Area > Size**
+property (not to be confused with the generic Light3D **Size** property). To get
+a physically accurate result, you should resize this area to match the size of
+the real-life light source you are trying to simulate. For example, if you are
+simulating a 1-meter neon tube that is 10 centimeters wide, set the area
+size to ``(1, 0.1)`` and adjust the energy accordingly.
+
+By default, the light's energy is normalized: the larger the area, the weaker
+the light. This allows you to change the area size without needing to adjust the
+energy to compensate, which is useful for animation. You can disable this
+behavior by unchecking **Area > Normalize Energy** if you want the energy to be
+independent of the area size.
+
+The rectangular area can optionally be textured. This can be effectively used to
+change the light's shape into any 2D shape, or tint it in different colors. The
+texture's alpha channel is treated as black (no light coming through). The area
+light's texture will be visible in reflections according to the surface's
+roughness. This behavior is different from omni/spot projectors, as it does not
+project the texture directly onto all diffuse lighting.
+
+When using a textures that are transparent or black toward the edges, you might
+want to leave a gap of a few pixels to make sure the texture is blurred
+smoothly.
+
+.. image:: img/lights_and_shadows_area_texture.webp
+
+.. note::
+
+    Changing the area light's texture at runtime can be expensive, especially if
+    the texture is large.
+
+    To reduce the performance impact of switching textures at runtime, make sure
+    each dimension of an area texture is either a multiple of 128 pixels, or a
+    power of two. This removes the need for a scaling pass, which slows down
+    texture changes. The textures don't necessarily have to be square to be
+    optimal. Examples of optimal texture sizes include 32×64, 128×128, and
+    256×384.
+
+    Textured area lights are not supported in the Compatibility renderer.
+
 .. _doc_lights_and_shadows_shadow_atlas:
 
 Shadow atlas
