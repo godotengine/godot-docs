@@ -273,8 +273,8 @@ are designed to utilize the capabilities of an ideal screen that is not yet wide
 
 In practice, this means that common HDR screens may perform their own internal tonemapping, gamut 
 mapping, or dynamic tonemapping (DTM) to support content that extends to a wider gamut and 
-luminance range than what the physical hardware can achieve. Some screens are not capabile of 
-presenting very bright color values that fill of more than a small (1% to 10%) portion of the 
+luminance range than what the physical hardware can achieve. Some screens are not capable of 
+presenting very bright color values that fill more than a small (1% to 10%) portion of the 
 screen and will dim the entire image or part of the image temporarily when this happens. These 
 features may produce colors that are not representative of other screens so it's best to disable 
 them, if possible, when developing your HDR game. You may be able to disable some or all of these 
