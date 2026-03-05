@@ -7,6 +7,8 @@ Before exporting a 3D model from a 3D modeling application, such as Blender,
 there are some considerations that should be taken into account to ensure that
 the model follows the conventions and best practices for Godot.
 
+.. _doc_model_export_considerations_3D_asset_direction_conventions:
+
 3D asset direction conventions
 ------------------------------
 

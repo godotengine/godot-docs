@@ -41,6 +41,8 @@ reduce these instructions to a bare minimum and group together similar objects
 as much as possible so they can be rendered together, or with the minimum number
 of these expensive state changes.
 
+.. _doc_gpu_optimization_2d_batching:
+
 2D batching
 ~~~~~~~~~~~
 
@@ -50,6 +52,8 @@ is used. Multiple similar items are grouped
 together and rendered in a batch, via a single draw call, rather than making a
 separate draw call for each item. In addition, this means state changes,
 material and texture changes can be kept to a minimum.
+
+.. _doc_gpu_optimization_3d_batching:
 
 3D batching
 ~~~~~~~~~~~
