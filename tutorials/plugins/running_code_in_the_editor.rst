@@ -273,6 +273,66 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
     but you can't access user variables. If you want to do so, other nodes have
     to run in the editor too.
 
+Getting notified when arrays or dictionaries change
+----------------------------------------------------
+
+You can use an Array or Dictionary as an ``@export`` variable. In a ``@tool``
+script, you can react to any changes to that collection by using a setter.
+Normally, at runtime, such a setter is only called when you assign to the
+variable, but when you modify an Array or Dictionary in the inspector, the
+setter will also be called.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    class_name MyTool
+    extends Node
+
+    @export var my_array = []:
+        set(new_array):
+            my_array = new_array
+            print("My array just changed!")
+
+    @export var my_dictionary = {}:
+        set(new_dictionary):
+            my_dictionary = new_dictionary
+            print("My dictionary just changed!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyTool : Node
+    {
+        private Array _myArray = new();
+        private Dictionary _myDictionary = new();
+
+        [Export]
+        public Array MyArray
+        {
+            get => _myArray;
+            set
+            {
+                _myArray = value;
+                GD.Print("My array just changed!");
+            }
+        }
+
+        [Export]
+        public Dictionary MyDictionary
+        {
+            get => _myDictionary;
+            set
+            {
+                _myDictionary = value;
+                GD.Print("My dictionary just changed!");
+            }
+        }
+    }
+
+
 Getting notified when resources change
 --------------------------------------
 
