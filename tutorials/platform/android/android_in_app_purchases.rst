@@ -145,11 +145,11 @@ Example use of ``purchase()``:
         print("response_code: ", result.response_code, "debug_message: ", result.debug_message)
 
 
-The result of the purchase will be sent through the ``on_purchases_updated`` signal.
+The result of the purchase will be sent through the ``on_purchase_updated`` signal.
 
 ::
 
-    func _on_purchases_updated(result: Dictionary):
+    func _on_purchase_updated(result: Dictionary):
         if result.response_code == BillingClient.BillingResponseCode.OK:
             print("Purchase update received")
             for purchase in result.purchases:
@@ -162,7 +162,7 @@ The result of the purchase will be sent through the ``on_purchases_updated`` sig
 Processing a purchase item
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``query_purchases_response`` and ``on_purchases_updated`` signals provide an array
+The ``query_purchases_response`` and ``on_purchase_updated`` signals provide an array
 of purchases in :ref:`Dictionary <class_Dictionary>` format. The purchase Dictionary
 includes keys that map to values of the Google Play Billing
 `Purchase <https://developer.android.com/reference/com/android/billingclient/api/Purchase>`_ class.
@@ -253,7 +253,7 @@ If your in-app item is a one-time purchase, you must acknowledge the purchase by
 calling the ``acknowledge_purchase()`` function, passing the ``purchase_token``
 value from the purchase dictionary. If you do not acknowledge a purchase within
 three days, the user automatically receives a refund, and Google Play revokes the purchase.
-If you are calling ``comsume_purchase()`` it automatically acknowledges the purchase and
+If you are calling ``consume_purchase()`` it automatically acknowledges the purchase and
 you do not need to call ``acknowledge_purchase()``.
 
 Example use of ``acknowledge_purchase()``:
@@ -299,7 +299,7 @@ subscription renewals.
 If you support upgrading or downgrading between different subscription levels,
 you should use ``update_subscription()`` to use the subscription update flow to
 change an active subscription. Like ``purchase()``, results are returned by the
-``on_purchases_updated`` signal.
+``on_purchase_updated`` signal.
 These are the parameters of ``update_subscription()``:
 
 1. old_purchase_token: The purchase token of the currently active subscription
