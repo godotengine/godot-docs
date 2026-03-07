@@ -43,6 +43,8 @@ Properties
    :widths: auto
 
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`AccessibilityServer<class_AccessibilityServer>`             | :ref:`AccessibilityServer<class_@GlobalScope_property_AccessibilityServer>`             |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`AudioServer<class_AudioServer>`                             | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                             |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`CameraServer<class_CameraServer>`                           | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                           |
@@ -4990,6 +4992,18 @@ Maximum value of a 64-bit signed integer.
 
 Property Descriptions
 ---------------------
+
+.. _class_@GlobalScope_property_AccessibilityServer:
+
+.. rst-class:: classref-property
+
+:ref:`AccessibilityServer<class_AccessibilityServer>` **AccessibilityServer** :ref:`🔗<class_@GlobalScope_property_AccessibilityServer>`
+
+The :ref:`AccessibilityServer<class_AccessibilityServer>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_@GlobalScope_property_AudioServer:
 

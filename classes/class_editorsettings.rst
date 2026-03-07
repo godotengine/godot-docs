@@ -153,6 +153,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/freelook/freelook_inertia<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/3d/freelook/freelook_invert_y_axis<class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis>`                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`                                                                                           |
@@ -550,8 +552,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`interface/editor/timers/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/timers/unfocused_low_processor_mode_sleep_usec>`                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editors/derive_script_globals_by_name<class_EditorSettings_property_interface/editors/derive_script_globals_by_name>`                                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editors/show_scene_tree_root_selection<class_EditorSettings_property_interface/editors/show_scene_tree_root_selection>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/auto_unfold_foreign_scenes<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1645,6 +1645,18 @@ The inertia of the 3D freelook camera. Higher values make the camera start and s
 
 ----
 
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/freelook/freelook_invert_y_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis>`
+
+If ``true``, invert the vertical mouse axis when using freelook mode in the 3D editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme:
 
 .. rst-class:: classref-property
@@ -1841,7 +1853,7 @@ If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D
 
 :ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`
 
-If ``true``, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
+If ``true``, invert the vertical mouse axis when panning or orbiting in the 3D editor.
 
 .. rst-class:: classref-item-separator
 
@@ -4229,18 +4241,6 @@ When the editor window is unfocused, the amount of sleeping between frames when 
 :ref:`bool<class_bool>` **interface/editors/derive_script_globals_by_name** :ref:`🔗<class_EditorSettings_property_interface/editors/derive_script_globals_by_name>`
 
 If ``true``, when extending a script, the global class name of the script is inserted in the script creation dialog, if it exists. If ``false``, the script's file path is always inserted.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_interface/editors/show_scene_tree_root_selection:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editors/show_scene_tree_root_selection** :ref:`🔗<class_EditorSettings_property_interface/editors/show_scene_tree_root_selection>`
-
-If ``true``, the Scene dock will display buttons to quickly add a root node to a newly created scene.
 
 .. rst-class:: classref-item-separator
 

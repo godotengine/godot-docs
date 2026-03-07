@@ -23,6 +23,13 @@ AudioStream that lets the user play custom streams at any time from code, simult
 
 Playback control is done via the :ref:`AudioStreamPlaybackPolyphonic<class_AudioStreamPlaybackPolyphonic>` instance set inside the player, which can be obtained via :ref:`AudioStreamPlayer.get_stream_playback()<class_AudioStreamPlayer_method_get_stream_playback>`, :ref:`AudioStreamPlayer2D.get_stream_playback()<class_AudioStreamPlayer2D_method_get_stream_playback>` or :ref:`AudioStreamPlayer3D.get_stream_playback()<class_AudioStreamPlayer3D_method_get_stream_playback>` methods. Obtaining the playback instance is only valid after the ``stream`` property is set as an **AudioStreamPolyphonic** in those players.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

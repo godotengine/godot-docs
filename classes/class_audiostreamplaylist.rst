@@ -14,6 +14,20 @@ AudioStreamPlaylist
 
 :ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playlist.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+An audio stream that can play back sub-streams in sequence. Streams can be added to the Playlist with :ref:`set_list_stream()<class_AudioStreamPlaylist_method_set_list_stream>`, and shuffled with :ref:`shuffle<class_AudioStreamPlaylist_property_shuffle>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

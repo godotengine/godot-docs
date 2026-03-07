@@ -745,6 +745,7 @@ Other objects
     :name: toc-class-ref-objects
 
     class_object
+    class_accessibilityserver
     class_aescontext
     class_astar2d
     class_astar3d
