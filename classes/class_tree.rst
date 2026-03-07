@@ -773,6 +773,8 @@ If ``true``, column titles are visible.
 
 The number of columns.
 
+Prints an error and does not allow setting the columns during mouse selection.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -962,6 +964,8 @@ Method Descriptions
 
 Clears the tree. This removes all items.
 
+Prints an error and does not allow clearing the tree if called during mouse selection.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -977,6 +981,8 @@ Creates an item in the tree and adds it as a child of ``parent``, which can be e
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
 The new item will be the ``index``-th child of parent, or it will be the last child if there are not enough siblings.
+
+Prints an error and returns ``null`` if called during mouse selection, or if the ``parent`` does not belong to this tree.
 
 .. rst-class:: classref-item-separator
 

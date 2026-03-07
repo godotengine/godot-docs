@@ -21,6 +21,13 @@ Description
 
 Picks a random AudioStream from the pool, depending on the playback mode, and applies random pitch shifting and volume shifting during playback.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

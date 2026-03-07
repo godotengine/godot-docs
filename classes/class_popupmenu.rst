@@ -52,6 +52,8 @@ Properties
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                             | ``false``                                                                    |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`search_bar_enabled_on_item_count<class_PopupMenu_property_search_bar_enabled_on_item_count>` | ``0``                                                                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`shrink_height<class_PopupMenu_property_shrink_height>`                                       | ``true``                                                                     |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`shrink_width<class_PopupMenu_property_shrink_width>`                                         | ``true``                                                                     |
@@ -161,6 +163,8 @@ Methods
    | :ref:`bool<class_bool>`                               | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                            |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`is_search_bar_enabled<class_PopupMenu_method_is_search_bar_enabled>`\ (\ ) |const|                                                                                                                                                                                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -283,6 +287,8 @@ Theme Properties
    | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                            |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked_disabled<class_PopupMenu_theme_icon_radio_unchecked_disabled>`          |                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`search<class_PopupMenu_theme_icon_search>`                                              |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                            |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -466,6 +472,25 @@ The number of items currently in the list.
 If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 
 \ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu()<class_PopupMenu_method_is_native_menu>` to check it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_enabled_on_item_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_enabled_on_item_count** = ``0`` :ref:`🔗<class_PopupMenu_property_search_bar_enabled_on_item_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_enabled_on_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_enabled_on_item_count**\ (\ )
+
+Enables the **PopupMenu** search bar if the item count is greater than ``0``.
+
+\ **Note:** When enabled, :ref:`allow_search<class_PopupMenu_property_allow_search>` is ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -1151,6 +1176,18 @@ Returns ``true`` if the specified item's shortcut is disabled.
 :ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_native_menu>`
 
 Returns ``true`` if the system native menu is supported and currently used by this **PopupMenu**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_is_search_bar_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_search_bar_enabled>`
+
+Returns ``true`` if search bar is currently enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1844,6 +1881,18 @@ Font size of the menu items.
 :ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_radio_unchecked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items when they are disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_icon_search:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **search** :ref:`🔗<class_PopupMenu_theme_icon_search>`
+
+:ref:`Texture2D<class_Texture2D>` icon for the search bar's search icon.
 
 .. rst-class:: classref-item-separator
 

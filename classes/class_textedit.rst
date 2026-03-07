@@ -371,6 +371,8 @@ Methods
    +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_line_gutter_clickable<class_TextEdit_method_is_line_gutter_clickable>`\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|                                                                                                                        |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_line_in_viewport<class_TextEdit_method_is_line_in_viewport>`\ (\ line\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                  |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_line_wrapped<class_TextEdit_method_is_line_wrapped>`\ (\ line\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                          |
    +--------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_menu_visible<class_TextEdit_method_is_menu_visible>`\ (\ ) |const|                                                                                                                                                                                                        |
@@ -3251,6 +3253,8 @@ Returns ``true`` if the caret is visible, ``false`` otherwise. A caret will be c
 
 \ **Note:** :ref:`is_caret_visible()<class_TextEdit_method_is_caret_visible>` does not account for a caret being off-screen if it is still within the scrollable area. It will return ``true`` even if the caret is off-screen as long as it meets **TextEdit**'s own conditions for being visible. This includes uses of :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>` and :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>` that cause the **TextEdit** to expand beyond the viewport's bounds.
 
+\ **Note:** This method does *not* guarantee an accurate visibility check immediately after setting the caret position. The correct value may only be available in the next frame after the **TextEdit** has finished drawing. This also applies to any operation that causes the **TextEdit** to change in size.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3322,6 +3326,18 @@ Returns ``true`` if a :ref:`begin_multicaret_edit()<class_TextEdit_method_begin_
 :ref:`bool<class_bool>` **is_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_line_gutter_clickable>`
 
 Returns ``true`` if the gutter at the given index on the given line is clickable. See :ref:`set_line_gutter_clickable()<class_TextEdit_method_set_line_gutter_clickable>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_method_is_line_in_viewport:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_line_in_viewport**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_line_in_viewport>`
+
+Returns ``true`` if the given line is within the scope of the scrollable area of the viewport.
 
 .. rst-class:: classref-item-separator
 

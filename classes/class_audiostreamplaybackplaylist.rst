@@ -14,6 +14,13 @@ AudioStreamPlaybackPlaylist
 
 Playback class used for :ref:`AudioStreamPlaylist<class_AudioStreamPlaylist>`.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Playback component of :ref:`AudioStreamPlaylist<class_AudioStreamPlaylist>`. Handles the playback of multiple :ref:`AudioStream<class_AudioStream>`\ s in sequence.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

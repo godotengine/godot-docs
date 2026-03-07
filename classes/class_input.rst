@@ -42,15 +42,17 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`emulate_mouse_from_touch<class_Input_property_emulate_mouse_from_touch>` |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`emulate_touch_from_mouse<class_Input_property_emulate_touch_from_mouse>` |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                             |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`       |
-   +----------------------------------------+--------------------------------------------------------------------------------+
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`emulate_mouse_from_touch<class_Input_property_emulate_mouse_from_touch>`                             |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`emulate_touch_from_mouse<class_Input_property_emulate_touch_from_mouse>`                             |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`ignore_joypad_on_unfocused_application<class_Input_property_ignore_joypad_on_unfocused_application>` |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                                                         |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`                                   |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -464,6 +466,23 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 - :ref:`bool<class_bool>` **is_emulating_touch_from_mouse**\ (\ )
 
 If ``true``, sends touch input events when clicking or dragging the mouse. See also :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_property_ignore_joypad_on_unfocused_application:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_joypad_on_unfocused_application** :ref:`🔗<class_Input_property_ignore_joypad_on_unfocused_application>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_joypad_on_unfocused_application**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_joypad_on_unfocused_application**\ (\ )
+
+If ``true``, joypad input (including motion sensors) and LED light changes will be ignored and joypad vibration will be stopped when the application is not focused.
 
 .. rst-class:: classref-item-separator
 
