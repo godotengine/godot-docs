@@ -96,6 +96,8 @@ length of ``1``, by our desired speed.
     If the code above does nothing when you press the keys, double-check that
     you've set up input actions correctly as described in the
     :ref:`doc_2d_movement_setup` part of this tutorial.
+    If using C#, make sure your script is named `Movement.cs`
+    to match the class name.
 
 Rotation + movement
 -------------------
