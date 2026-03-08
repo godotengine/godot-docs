@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created for Godot Engine documentation -->
+
+<svg
+   width="350"
+   height="350"
+   viewBox="0 0 350 350"
+   id="svg_rasterization"
+   version="1.1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="rendering_pipeline_rasterization.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <marker
+       id="arrowhead_label"
+       orient="auto"
+       markerWidth="7"
+       markerHeight="5"
+       refX="7"
+       refY="2.5">
+      <path
+         d="M 0,0 L 7,2.5 L 0,5 Z"
+         style="fill:#000000"
+         id="path1" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1.0"
+     inkscape:pageshadow="0"
+     inkscape:document-units="px"
+     inkscape:current-layer="labels"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="148.49242"
+     inkscape:cy="118.61716"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Rasterization: triangle to fragments</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <!--
+    Grid: 14x14 cells, each 22px. Grid origin at (7,7).
+    Triangle vertices (off-grid, no side parallel to grid):
+      A = (83, 30), B = (45, 258), C = (280, 186)
+    Fragment positions computed programmatically.
+  -->
+  <!-- Background -->
+  <!-- Pixel grid: 14x14, cell size 22, origin (7,7) -->
+  <!-- Fragments: pixels whose center falls inside the triangle -->
+  <!-- Triangle outline -->
+  <g
+     id="g105"
+     transform="translate(14,14)">
+    <g
+       inkscape:label="fragments"
+       inkscape:groupmode="layer"
+       id="fragments"
+       style="display:inline">
+      <rect
+         x="73"
+         y="29"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect30" />
+      <rect
+         x="73"
+         y="51"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect31" />
+      <rect
+         x="95"
+         y="51"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect32" />
+      <rect
+         x="73"
+         y="73"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect33" />
+      <rect
+         x="95"
+         y="73"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect34" />
+      <rect
+         x="117"
+         y="73"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect35" />
+      <rect
+         x="139"
+         y="73"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect36" />
+      <rect
+         x="73"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect37" />
+      <rect
+         x="95"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect38" />
+      <rect
+         x="117"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect39" />
+      <rect
+         x="139"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect40" />
+      <rect
+         x="161"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect41" />
+      <rect
+         x="73"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect42" />
+      <rect
+         x="95"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect43" />
+      <rect
+         x="117"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect44" />
+      <rect
+         x="139"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect45" />
+      <rect
+         x="161"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect46" />
+      <rect
+         x="183"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect47" />
+      <rect
+         x="73"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect48" />
+      <rect
+         x="95"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect49" />
+      <rect
+         x="117"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect50" />
+      <rect
+         x="139"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect51" />
+      <rect
+         x="161"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect52" />
+      <rect
+         x="183"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect53" />
+      <rect
+         x="205"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect54" />
+      <rect
+         x="51"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect55" />
+      <rect
+         x="73"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect56" />
+      <rect
+         x="95"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect57" />
+      <rect
+         x="117"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect58" />
+      <rect
+         x="139"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect59" />
+      <rect
+         x="161"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect60" />
+      <rect
+         x="183"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect61" />
+      <rect
+         x="205"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect62" />
+      <rect
+         x="227"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect63" />
+      <rect
+         x="249"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect64" />
+      <rect
+         x="51"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect65" />
+      <rect
+         x="73"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect66" />
+      <rect
+         x="95"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect67" />
+      <rect
+         x="117"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect68" />
+      <rect
+         x="139"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect69" />
+      <rect
+         x="161"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect70" />
+      <rect
+         x="183"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect71" />
+      <rect
+         x="205"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect72" />
+      <rect
+         x="227"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect73" />
+      <rect
+         x="51"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect74" />
+      <rect
+         x="73"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect75" />
+      <rect
+         x="95"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect76" />
+      <rect
+         x="117"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect77" />
+      <rect
+         x="139"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect78" />
+      <rect
+         x="161"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect79" />
+      <rect
+         x="51"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect80" />
+      <rect
+         x="73"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect81" />
+      <rect
+         x="95"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#333333"
+         id="rect82" />
+      <!-- Partial coverage: triangle edge crosses cell but center is outside -->
+      <rect
+         x="95"
+         y="29"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect83" />
+      <rect
+         x="117"
+         y="51"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect84" />
+      <rect
+         x="51"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect87" />
+      <rect
+         x="183"
+         y="95"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect88" />
+      <rect
+         x="51"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect89" />
+      <rect
+         x="205"
+         y="117"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect90" />
+      <rect
+         x="51"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect91" />
+      <rect
+         x="227"
+         y="139"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect92" />
+      <rect
+         x="271"
+         y="161"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect93" />
+      <rect
+         x="249"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect94" />
+      <rect
+         x="271"
+         y="183"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect95" />
+      <rect
+         x="29"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect96" />
+      <rect
+         x="183"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect97" />
+      <rect
+         x="205"
+         y="205"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect98" />
+      <rect
+         x="29"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect99" />
+      <rect
+         x="117"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect100" />
+      <rect
+         x="139"
+         y="227"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect101" />
+      <rect
+         x="29"
+         y="249"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect102" />
+      <rect
+         x="51"
+         y="249"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect103" />
+      <rect
+         x="73"
+         y="249"
+         width="22"
+         height="22"
+         style="fill:#aaaaaa"
+         id="rect104" />
+    </g>
+  </g>
+  <g
+     inkscape:label="grid"
+     inkscape:groupmode="layer"
+     id="grid"
+     style="display:inline"
+     transform="translate(14,14)">
+    <g
+       id="g104">
+      <line
+         x1="7"
+         y1="7"
+         x2="7"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line1" />
+      <line
+         x1="29"
+         y1="7"
+         x2="29"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line2" />
+      <line
+         x1="51"
+         y1="7"
+         x2="51"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line3" />
+      <line
+         x1="73"
+         y1="7"
+         x2="73"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line4" />
+      <line
+         x1="95"
+         y1="7"
+         x2="95"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line5" />
+      <line
+         x1="117"
+         y1="7"
+         x2="117"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line6" />
+      <line
+         x1="139"
+         y1="7"
+         x2="139"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line7" />
+      <line
+         x1="161"
+         y1="7"
+         x2="161"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line8" />
+      <line
+         x1="183"
+         y1="7"
+         x2="183"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line9" />
+      <line
+         x1="205"
+         y1="7"
+         x2="205"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line10" />
+      <line
+         x1="227"
+         y1="7"
+         x2="227"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line11" />
+      <line
+         x1="249"
+         y1="7"
+         x2="249"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line12" />
+      <line
+         x1="271"
+         y1="7"
+         x2="271"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line13" />
+      <line
+         x1="293"
+         y1="7"
+         x2="293"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line14" />
+      <line
+         x1="315"
+         y1="7"
+         x2="315"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line15" />
+      <line
+         x1="7"
+         y1="7"
+         x2="315"
+         y2="7"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line16" />
+      <line
+         x1="7"
+         y1="29"
+         x2="315"
+         y2="29"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line17" />
+      <line
+         x1="7"
+         y1="51"
+         x2="315"
+         y2="51"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line18" />
+      <line
+         x1="7"
+         y1="73"
+         x2="315"
+         y2="73"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line19" />
+      <line
+         x1="7"
+         y1="95"
+         x2="315"
+         y2="95"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line20" />
+      <line
+         x1="7"
+         y1="117"
+         x2="315"
+         y2="117"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line21" />
+      <line
+         x1="7"
+         y1="139"
+         x2="315"
+         y2="139"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line22" />
+      <line
+         x1="7"
+         y1="161"
+         x2="315"
+         y2="161"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line23" />
+      <line
+         x1="7"
+         y1="183"
+         x2="315"
+         y2="183"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line24" />
+      <line
+         x1="7"
+         y1="205"
+         x2="315"
+         y2="205"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line25" />
+      <line
+         x1="7"
+         y1="227"
+         x2="315"
+         y2="227"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line26" />
+      <line
+         x1="7"
+         y1="249"
+         x2="315"
+         y2="249"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line27" />
+      <line
+         x1="7"
+         y1="271"
+         x2="315"
+         y2="271"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line28" />
+      <line
+         x1="7"
+         y1="293"
+         x2="315"
+         y2="293"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line29" />
+      <line
+         x1="7"
+         y1="315"
+         x2="315"
+         y2="315"
+         style="stroke:#eeeeee;stroke-width:2"
+         id="line30" />
+    </g>
+  </g>
+  <g
+     inkscape:label="triangle"
+     inkscape:groupmode="layer"
+     id="triangle"
+     transform="translate(14,14)">
+    <polygon
+       points="83,38 45,258 280,186 "
+       style="display:inline;fill:none;stroke:#0b7baf;stroke-width:2.5"
+       id="raster_triangle" />
+  </g>
+  <!-- Labels -->
+  <g
+     inkscape:label="labels"
+     inkscape:groupmode="layer"
+     id="labels">
+    <line
+       x1="268.76212"
+       y1="80.119957"
+       x2="170.97484"
+       y2="118.45934"
+       style="stroke:#ff0000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       id="fragment_arrow" />
+    <text
+       x="224.28111"
+       y="69.37709"
+       style="font-size:21.3333px;font-family:Lato;fill:#000000"
+       id="fragment_label">fragment</text>
+  </g>
+</svg>
