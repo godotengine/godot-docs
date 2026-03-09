@@ -377,7 +377,7 @@ memory, the resource loader will return that reference. This means that
 there can be only one resource loaded from a file referenced on disk at
 the same time.
 
--  resourceinteractiveloader (TODO)
+-  `resourceloader <https://docs.godotengine.org/en/stable/classes/class_resourceloader.html>`__
 
 References:
 ^^^^^^^^^^^
