@@ -21,6 +21,7 @@ You could also add a background image, if you have one, by using a
 :ref:`TextureRect <class_TextureRect>` node instead.
 
 .. note::
+
     The ``Player`` may be invisible if the background is drawn on top of it. 
     Select the ``Player`` instance, then set **Ordering > Z Index** to ``1``.
 
