@@ -1565,6 +1565,7 @@ p + .classref-constant {
 .wy-nav-top {
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 .wy-nav-top,
