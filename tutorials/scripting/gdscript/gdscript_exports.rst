@@ -22,7 +22,7 @@ in the variable. Some of the export annotations have a specific type and don't n
 One of the fundamental benefits of exporting member variables is to have
 them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
-special export syntax is provided. Additionally, :ref:`documentation comments <doc_gdscript_documentation_comments>` can be 
+special export syntax is provided. Additionally, :ref:`documentation comments <doc_gdscript_documentation_comments>` can be
 used for tooltip descriptions, visible on mouse over.
 
 .. note::
@@ -145,6 +145,37 @@ field for editing over multiple lines. See :ref:`@export_multiline <class_@GDScr
 
     @export_multiline var text
 
+Strings as input actions
+------------------------
+
+String as an input action defined in the project's input map.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME) var my_input
+
+String as an input action defined in the project's input map, plus default
+built-in values such as ``ui_accept`` and ``ui_cancel``.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "show_builtin") var my_input
+
+String as an input action defined in the project's input map, plus arbitrary
+values that can manually be entered.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "loose_mode") var my_input
+
+String as an input action defined in the project's input map, plus default
+built-in values such as ``ui_accept`` and ``ui_cancel`` and arbitrary values
+that can manually be entered.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "show_builtin,loose_mode") var my_input
+
 Limiting editor input ranges
 ----------------------------
 
@@ -197,6 +228,13 @@ appears below ``float`` properties, or the up/down arrows that appear besides
 ::
 
     @export_range(0, 1000, 0.01, "hide_slider") var no_slider: float
+
+On the other hand, the ``"prefer_slider"`` hint can be used to show a horizontal
+bar below ``int`` properties instead of up/down arrows:
+
+::
+
+    @export_range(0, 100, 1, "prefer_slider") var with_slider: int
 
 Adding suffixes and handling degrees/radians
 --------------------------------------------
