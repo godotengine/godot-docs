@@ -373,11 +373,9 @@ Resources can be loaded with the ResourceLoader API, like this:
     Ref<Resource> res = ResourceLoader::load("res://someresource.res")
 
 If a reference to that resource has been loaded previously and is in
-memory, the resource loader will return that reference. This means that
+memory, the :ref:`ResourceLoader <class_ResourceLoader>` will return that reference. This means that
 there can be only one resource loaded from a file referenced on disk at
 the same time.
-
--  :ref:`ResourceLoader <class_ResourceLoader>`
 
 References:
 ^^^^^^^^^^^
