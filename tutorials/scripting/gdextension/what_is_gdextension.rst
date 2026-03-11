@@ -4,7 +4,7 @@ What is GDExtension?
 ====================
 
 **GDExtension** is a Godot-specific technology that lets the engine interact with
-native `shared libraries <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__
+native `shared libraries <https://en.wikipedia.org/wiki/Shared_library>`__
 at runtime. You can use it to run native code without compiling it with the engine.
 
 There are three primary methods with which this is achieved:
