@@ -161,17 +161,22 @@ The application should open in a new window and display the text "Hello World".
 
 Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the running scene.
 
+.. seealso::
+
+   See :ref:`doc_game_embedding` for more information about the Game window that appears
+   when running the project.
+
 Setting the main scene
 ----------------------
 
-To run our test scene, we used the :button:`Run Current Scene` button. Another button 
-next to it, :button:`Run Project`, allows you to set and run the project's 
+To run our test scene, we used the :button:`Run Current Scene` button. Another button
+next to it, :button:`Run Project`, allows you to set and run the project's
 **main scene**. You can also press :kbd:`F5` (:kbd:`Cmd + B` on macOS) to do so.
 
 .. image:: img/nodes_and_scenes_12_play_button.webp
 
-.. note:: Running the project's *main scene* is distinct from running the 
-          *current scene*. If you encounter unexpected behavior, check 
+.. note:: Running the project's *main scene* is distinct from running the
+          *current scene*. If you encounter unexpected behavior, check
           to ensure you are running the correct scene.
 
 A popup window appears and invites you to select the main scene.
