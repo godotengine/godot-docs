@@ -119,13 +119,13 @@ Settings such as tab placement and *StyleBox* can be modified in the *TabContain
 Split Container
 ~~~~~~~~~~~~~~~
 
-Accepts only one or two children controls, then places them side to side with a divisor
+Arranges child controls vertically or horizontally and creates grabbers between them
 (via :ref:`HSplitContainer <class_HSplitContainer>` and :ref:`VSplitContainer <class_VSplitContainer>`).
-Respects both horizontal and vertical flags, as well as *Ratio*.
+Respects both horizontal and vertical expand flags, as well as *Stretch Ratio*.
 
    .. image:: img/containers_split.png
 
-The divisor can be dragged around to change the size relation between both children:
+The grabbers can be dragged around to change the size relation between the children:
 
    .. image:: img/containers_split_drag.gif
 
