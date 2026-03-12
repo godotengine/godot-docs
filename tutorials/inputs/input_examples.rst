@@ -163,8 +163,12 @@ the InputMap tab:
 .. image:: img/inputs_inputmap.webp
 
 .. tip::
+
     A new Godot project includes a number of default actions already defined.
-    To see them, turn on ``Show Built-in Actions`` in the InputMap dialog.
+    To see them, turn on :button:`Show Built-in Actions` in the InputMap dialog.
+
+    While not strictly required, it's recommended to use the ``snake_case`` naming
+    convention for input action names.
 
 Capturing actions
 ~~~~~~~~~~~~~~~~~
