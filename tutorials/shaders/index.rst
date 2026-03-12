@@ -7,6 +7,7 @@ Shaders
    :maxdepth: 1
    :name: toc-learn-features-shading
 
+   rendering_pipeline
    introduction_to_shaders
    shader_reference/index
    your_first_shader/index
