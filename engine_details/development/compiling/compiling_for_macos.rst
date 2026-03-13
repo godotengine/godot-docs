@@ -160,7 +160,7 @@ editor binary built with ``dev_build=yes``:
     If you are building the ``master`` branch, you also need to include support
     for the MoltenVK Vulkan portability library. By default, it will be linked
     statically from your installation of the Vulkan SDK for macOS.
-    You can also choose to link it dynamically by passing ``use_volk=yes`` and
+    You can also choose to link it dynamically by passing ``volk=yes`` and
     including the dynamic library in your ``.app`` bundle:
 
     ::
@@ -235,7 +235,7 @@ ARM64 and x86_64 binaries (if both were compiled beforehand).
     You also need to include support for the MoltenVK Vulkan portability
     library. By default, it will be linked statically from your installation of
     the Vulkan SDK for macOS. You can also choose to link it dynamically by
-    passing ``use_volk=yes`` and including the dynamic library in your ``.app``
+    passing ``volk=yes`` and including the dynamic library in your ``.app``
     bundle:
 
     ::
