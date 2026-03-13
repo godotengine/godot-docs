@@ -473,6 +473,8 @@ make use of the increased sample count.
 
 .. image:: img/lights_and_shadows_filter_quality.webp
 
+.. _doc_lights_and_shadows_16_bits_versus_32_bit:
+
 16-bits versus 32-bit
 ~~~~~~~~~~~~~~~~~~~~~
 

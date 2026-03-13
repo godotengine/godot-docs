@@ -19,6 +19,8 @@ This page will show you the 2D workspace and how you can get to know it.
 
 .. tip:: If you would like to get an introduction to 3D, see :ref:`doc_introduction_to_3d`.
 
+.. _doc_introduction_to_2d_2d_workspace:
+
 2D workspace
 ------------
 
@@ -68,11 +70,11 @@ from left to right:
   selected, only movement and rotation are possible. In this mode, rotation and scaling 
   will not use the snapping options if snapping is enabled.
 - **Move Mode** (:kbd:`W`): Enables move (or translate) mode for the selected nodes. See 
-  :ref:`doc_introduction_to_2d_the_viewport` for more details.
+  :ref:`doc_introduction_to_2d_2d_viewport` for more details.
 - **Rotate Mode** (:kbd:`E`): Enables rotation mode for the selected nodes. See 
-  :ref:`doc_introduction_to_2d_the_viewport` for more details.
+  :ref:`doc_introduction_to_2d_2d_viewport` for more details.
 - **Scale Mode** (:kbd:`S`): Enables scaling and displays scaling gizmos in both 
-  axes for the selected node(s). See :ref:`doc_introduction_to_2d_the_viewport` for more details.
+  axes for the selected node(s). See :ref:`doc_introduction_to_2d_2d_viewport` for more details.
 - **Show list of selectable nodes at position clicked**: As the description suggests, 
   this provides a list of selectable nodes at the clicked position as a context menu, if 
   there is more than one node in the clicked area.
@@ -167,7 +169,7 @@ Use the three-dot menu for this:
 .. seealso:: To learn more about Skeletons, see :ref:`doc_cutout_animation`.
   
 - **View** menu: Provides options to control the viewport view. Since its options 
-  depend heavily on the viewport, it is covered in the :ref:`doc_introduction_to_2d_the_viewport` 
+  depend heavily on the viewport, it is covered in the :ref:`doc_introduction_to_2d_2d_viewport` 
   section.
 
 Next to the View menu, additional buttons may be visible. In the toolbar image
@@ -199,7 +201,7 @@ In the scale mode, the gizmos will have a square shape. You can hold and drag th
 red squares to scale the nodes in the ``y`` or ``x`` axes.
 Dragging in a negative direction flips the node horizontally or vertically.
 
-.. _doc_introduction_to_2d_the_viewport:
+.. _doc_introduction_to_2d_2d_viewport:
 
 2D Viewport
 ~~~~~~~~~~~
@@ -269,9 +271,9 @@ Viewport has a **View** menu which provides several options to change the look o
   transform properties (position, scaling, or rotation) if a transform operation has been 
   initiated. For `Control` nodes, it also shows the sizing parameters. Useful to see the deltas.
 - **Show Rulers**: Toggles the visibility of horizontal and vertical rulers. See 
-  :ref:`doc_introduction_to_2d_the_viewport` more on rulers.
+  :ref:`doc_introduction_to_2d_2d_viewport` more on rulers.
 - **Show Guides**: Toggles the visibility of created guides. See 
-  :ref:`doc_introduction_to_2d_the_viewport` for on how to create them.
+  :ref:`doc_introduction_to_2d_2d_viewport` for on how to create them.
 - **Show Origin**: Toggles the display of the green and red origin lines drawn at ``x: 0, y: 0``.
 - **Show Viewport**: Toggles the visibility of the game's default 
   viewport, indicated by an indigo-colored rectangle. It is also the default window size on desktop 
