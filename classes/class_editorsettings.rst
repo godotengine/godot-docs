@@ -129,7 +129,11 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/2d/locked_selection_rectangle_color<class_EditorSettings_property_editors/2d/locked_selection_rectangle_color>`                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/2d/ruler_width<class_EditorSettings_property_editors/2d/ruler_width>`                                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/2d/selection_rectangle_color<class_EditorSettings_property_editors/2d/selection_rectangle_color>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1493,6 +1497,18 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 
 ----
 
+.. _class_EditorSettings_property_editors/2d/locked_selection_rectangle_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/locked_selection_rectangle_color** :ref:`🔗<class_EditorSettings_property_editors/2d/locked_selection_rectangle_color>`
+
+The color to use for the selection rectangle that surrounds selected locked nodes in the 2D editor viewport.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/2d/ruler_width:
 
 .. rst-class:: classref-property
@@ -1500,6 +1516,18 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 :ref:`float<class_float>` **editors/2d/ruler_width** :ref:`🔗<class_EditorSettings_property_editors/2d/ruler_width>`
 
 The thickness of the coordinate ruler in the 2D editor. Increasing this will also increase the size of the ruler font, improving readability when using a lower editor scale. The editor may force a minimum size to keep the ruler numbers legible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/2d/selection_rectangle_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/selection_rectangle_color** :ref:`🔗<class_EditorSettings_property_editors/2d/selection_rectangle_color>`
+
+The color to use for the selection rectangle outlines that surrounds selected nodes in the 2D editor viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1559,7 +1587,7 @@ The factor to use when zooming in or out in the 2D editor. For example, ``1.1`` 
 
 :ref:`Color<class_Color>` **editors/3d/active_selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/active_selection_box_color>`
 
-The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport.
 
 \ **Note:** The term "active" indicates that this object is the primary selection used as the basis for certain operations. This is the last selected :ref:`Node3D<class_Node3D>`, which can be reordered with :kbd:`Shift + Left mouse button`.
 
@@ -2083,7 +2111,7 @@ The color to use for the secondary 3D grid. This is generally a less visible col
 
 :ref:`Color<class_Color>` **editors/3d/selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/selection_box_color>`
 
-The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+The color to use for the selection box that surrounds selected nodes in the 3D editor viewport.
 
 .. rst-class:: classref-item-separator
 
