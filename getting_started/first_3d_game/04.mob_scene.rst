@@ -145,7 +145,7 @@ We need to define another function to calculate the ``CharacterBody3D.velocity``
 function will turn the monster towards the player and randomize both its angle
 of motion and its velocity.
 
-The function will take a ``start_position``,the mob's spawn position, and the
+The function will take a ``start_position`` as the mob's spawn position, and the
 ``player_position`` as its arguments.
 
 We position the mob at ``start_position`` and turn it towards the player using
