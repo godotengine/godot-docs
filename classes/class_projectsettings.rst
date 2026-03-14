@@ -59,6 +59,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_angle_interpolation_type_conflicting<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_skeleton_modifier_node_paths<class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths>`                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_track_paths<class_ProjectSettings_property_animation/warnings/check_invalid_track_paths>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                                                                   | ``Color(0.14, 0.14, 0.14, 1)``                                                                   |
@@ -2069,6 +2071,18 @@ If ``true``, :ref:`MeshInstance3D.skeleton<class_MeshInstance3D_property_skeleto
 :ref:`bool<class_bool>` **animation/warnings/check_angle_interpolation_type_conflicting** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`
 
 If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of interpolation being forced to choose the shortest rotation path due to multiple angle interpolation types being mixed in the :ref:`AnimationMixer<class_AnimationMixer>` cache.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animation/warnings/check_invalid_skeleton_modifier_node_paths** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths>`
+
+If ``true``, :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` prints a warning if there's no matching object for the track path in the scene when assigning.
 
 .. rst-class:: classref-item-separator
 
@@ -10550,6 +10564,8 @@ Threshold angular velocity under which a 2D physics body will be considered inac
 
 Threshold linear velocity under which a 2D physics body will be considered inactive. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
 
+\ **Note:** Only supported when using GodotPhysics3D. This project setting is ignored when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10561,6 +10577,8 @@ Threshold linear velocity under which a 2D physics body will be considered inact
 :ref:`float<class_float>` **physics/2d/solver/contact_max_allowed_penetration** = ``0.3`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/contact_max_allowed_penetration>`
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
+
+\ **Note:** Only supported when using GodotPhysics3D. This project setting is ignored when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10802,6 +10820,8 @@ If ``true``, the 3D physics server runs on a separate thread, making better use 
 
 Threshold angular velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10813,6 +10833,8 @@ Threshold angular velocity under which a 3D physics body will be considered inac
 :ref:`float<class_float>` **physics/3d/sleep_threshold_linear** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_linear>`
 
 Threshold linear velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10826,6 +10848,8 @@ Threshold linear velocity under which a 3D physics body will be considered inact
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10838,6 +10862,8 @@ Maximum distance a shape can penetrate another shape before it is considered a c
 
 Maximum distance a shape can be from another before they are considered separated and the contact is discarded. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_SEPARATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10849,6 +10875,8 @@ Maximum distance a shape can be from another before they are considered separate
 :ref:`float<class_float>` **physics/3d/solver/contact_recycle_radius** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/contact_recycle_radius>`
 
 Maximum distance a pair of bodies has to move before their collision status has to be recalculated. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_RECYCLE_RADIUS<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_RECYCLE_RADIUS>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10864,6 +10892,8 @@ Default solver bias for all physics contacts. Defines how much bodies react to e
 
 Individual shapes can have a specific bias value (see :ref:`Shape3D.custom_solver_bias<class_Shape3D_property_custom_solver_bias>`).
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10876,6 +10906,8 @@ Individual shapes can have a specific bias value (see :ref:`Shape3D.custom_solve
 
 Number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance. See :ref:`PhysicsServer3D.SPACE_PARAM_SOLVER_ITERATIONS<class_PhysicsServer3D_constant_SPACE_PARAM_SOLVER_ITERATIONS>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10887,6 +10919,8 @@ Number of solver iterations for all contacts and constraints. The greater the nu
 :ref:`float<class_float>` **physics/3d/time_before_sleep** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/3d/time_before_sleep>`
 
 Time (in seconds) of inactivity before which a 3D physics body will put to sleep. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 

@@ -29,11 +29,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------+----------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | transparent    | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)        |
-   +-------------------------+----------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | transparent_bg | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`) |
-   +-------------------------+----------------+------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` | canvas_item_default_texture_filter | ``4`` (overrides :ref:`Viewport<class_Viewport_property_canvas_item_default_texture_filter>`) |
+   +-------------------------------------------------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` | canvas_item_default_texture_repeat | ``3`` (overrides :ref:`Viewport<class_Viewport_property_canvas_item_default_texture_repeat>`) |
+   +-------------------------------------------------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | transparent                        | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)                         |
+   +-------------------------------------------------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | transparent_bg                     | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`)                  |
+   +-------------------------------------------------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 

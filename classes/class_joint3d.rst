@@ -137,6 +137,8 @@ If left empty and :ref:`node_a<class_Joint3D_property_node_a>` is set, the body 
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 
+\ **Note:** Only supported when using GodotPhysics3D. This property is ignored when using Jolt Physics.
+
 .. rst-class:: classref-section-separator
 
 ----

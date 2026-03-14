@@ -82,6 +82,8 @@ The shape's custom solver bias. Defines how much bodies react to enforce contact
 
 When set to ``0``, the default value from :ref:`ProjectSettings.physics/3d/solver/default_contact_bias<class_ProjectSettings_property_physics/3d/solver/default_contact_bias>` is used.
 
+\ **Note:** :ref:`custom_solver_bias<class_Shape3D_property_custom_solver_bias>` is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----

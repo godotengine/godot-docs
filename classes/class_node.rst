@@ -1174,6 +1174,22 @@ Implemented on desktop and mobile platforms.
 
 Notification received when the :ref:`TextServer<class_TextServer>` is changed.
 
+.. _class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_ENTERED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APPLICATION_PIP_MODE_ENTERED** = ``2019`` :ref:`🔗<class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_ENTERED>`
+
+Notification received when the application enters picture-in-picture mode.
+
+.. _class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_EXITED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APPLICATION_PIP_MODE_EXITED** = ``2020`` :ref:`🔗<class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_EXITED>`
+
+Notification received when the application exits picture-in-picture mode.
+
 .. _class_Node_constant_NOTIFICATION_ACCESSIBILITY_UPDATE:
 
 .. rst-class:: classref-constant

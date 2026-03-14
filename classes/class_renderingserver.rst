@@ -9028,7 +9028,7 @@ Sets a margin to increase the size of the AABB when culling objects from the vie
 
 |void| **instance_set_ignore_culling**\ (\ instance\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_instance_set_ignore_culling>`
 
-If ``true``, ignores both frustum and occlusion culling on the specified 3D geometry instance. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling and leaves frustum culling intact.
+If ``true``, ignores all culling on the specified 3D geometry instance, including frustum culling, occlusion culling, and layer culling. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling but leaves frustum and layer culling intact.
 
 .. rst-class:: classref-item-separator
 
