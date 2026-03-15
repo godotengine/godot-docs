@@ -1562,6 +1562,12 @@ p + .classref-constant {
 
 /* Navigational top bar (mobile only) */
 
+.wy-nav-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .wy-nav-top,
 .wy-nav-top a {
     background-color: var(--navbar-background-color);
