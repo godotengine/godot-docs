@@ -24,7 +24,7 @@ XR Toolkits
 -----------
 
 There are various XR toolkits available that implement more complex XR logic ready for you to use.
-We have a :Ref:`small introduction to Godot XR Tools <godot-xr-tools>` that you can look at,
+We have a :Ref:`small introduction to Godot XR Tools <doc_introducing_xr_tools>` that you can look at,
 a toolkit developed by core contributors of Godot.
 
 There are more toolkits available for Godot:
