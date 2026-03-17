@@ -583,9 +583,9 @@ We've now learned the fundamentals of creating 2D gizmo plugins! We can:
 - Build advanced subgizmo systems for sub-parts of our nodes
 - Add custom pivot points for flexible rotation and scaling
 
-.. note:: **TODO:** Link to the complete demo project
-
-For complete working examples, see the demo project files:
+For complete working examples, see the
+`2D Gizmos demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/gizmos>`__.
+The demo project files include:
 
 - ``circle_gizmo_plugin.gd`` - Demonstrates outline rect, collision shapes, handles, and custom pivots
 - ``flower_gizmo_plugin.gd`` - Demonstrates subgizmos with full picking and transform support
