@@ -718,11 +718,12 @@ If you are using :ref:`EditorScript <class_EditorScript>`:
     }
 
 .. note::
+
     Changes made by tool scripts (e.g., adding nodes, modifying properties) do
     **not** automatically mark the scene as unsaved. To show the asterisk (*)
-    and prevent accidental data loss, call :ref:`EditorInterface.mark_scene_as_unsaved()
-    <class_EditorInterface_method_mark_scene_as_unsaved>` after modifications,
-    or use :ref:`EditorUndoRedoManager <class_EditorUndoRedoManager>` for undo support.
+    and prevent accidental data loss, call
+    :ref:`EditorInterface.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`
+    after modifications, or use :ref:`EditorUndoRedoManager <class_EditorUndoRedoManager>` for undo support.
 
 .. warning::
 
