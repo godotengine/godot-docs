@@ -619,5 +619,4 @@ As you build your own gizmo plugins, keep these tips in mind:
   calculations. Cache collision shapes if they don't change often.
 
 Feel free to experiment with these features and see what works best for your custom
-nodes. Making your nodes editor-friendly will greatly improve the workflow for anyone
-using them!
+nodes.
