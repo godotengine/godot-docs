@@ -303,12 +303,6 @@ as well as the `unofficial Python support <https://github.com/touilleMan/godot-p
 This would be a good starting point to see how another third-party library
 integrates with Godot.
 
-When is the next release of Godot out?
---------------------------------------
-
-When it's ready! See :ref:`doc_release_policy_when_is_next_release_out` for more
-information.
-
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
