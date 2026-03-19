@@ -87,3 +87,12 @@ Whenever a new major version is released, we make the previous stable branch a
 long-term supported release, and do our best to provide fixes for issues
 encountered by users of that branch who cannot port complex projects to the new
 major version.
+
+In a given minor release series, only the latest patch release receives support.
+If you experience an issue using an older patch release, please upgrade to the
+latest patch release of that series and test again before reporting an issue
+on GitHub.
+
+For an overview of current, past, and future releases, refer to the table on
+the stable branch of the documentation:
+`Release support table <https://docs.godotengine.org/en/stable/about/release_policy.html#release-support-timeline>`__.
