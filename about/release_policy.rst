@@ -90,10 +90,9 @@ on GitHub.
 | Godot 4.6    | January 2026         | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.5    | September 2025       | |supported| Receives fixes for bugs and security issues, as well as      |
-|              |                      | patches that enable platform support.                                    |
+| Godot 4.5    | September 2025       | |partial| Receives fixes for security and platform support issues only.  |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.4    | March 2025           | |partial| Receives fixes for security and platform support issues only.  |
+| Godot 4.4    | March 2025           | |eol| No longer supported (last update: 4.4.1).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 4.3    | August 2024          | |eol| No longer supported (last update: 4.3).                            |
 +--------------+----------------------+--------------------------------------------------------------------------+
