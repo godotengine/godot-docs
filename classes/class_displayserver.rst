@@ -923,7 +923,7 @@ Display server supports interaction with screen reader or Braille display. **Lin
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_HDR_OUTPUT** = ``35``
 
-Display server supports HDR output. **macOS, iOS, visionOS, Windows**
+Display server supports HDR output. **Linux (Wayland), macOS, iOS, visionOS, Windows**
 
 .. _class_DisplayServer_constant_FEATURE_PIP_MODE:
 

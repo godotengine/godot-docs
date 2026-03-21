@@ -203,6 +203,8 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                  | :ref:`_get_accessibility_container_name<class_Control_private_method__get_accessibility_container_name>`\ (\ node\: :ref:`Node<class_Node>`\ ) |virtual| |const|                                                                                                        |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                        | :ref:`_get_cursor_shape<class_Control_private_method__get_cursor_shape>`\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|                                                                                                                           |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                | :ref:`_get_drag_data<class_Control_private_method__get_drag_data>`\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|                                                                                                                                         |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`_get_minimum_size<class_Control_private_method__get_minimum_size>`\ (\ ) |virtual| |const|                                                                                                                                                                        |
@@ -255,7 +257,7 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_combined_pivot_offset<class_Control_method_get_combined_pivot_offset>`\ (\ ) |const|                                                                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`CursorShape<enum_Control_CursorShape>`                 | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>`\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|                                                                                                                                  |
+   | :ref:`CursorShape<enum_Control_CursorShape>`                 | :ref:`get_cursor_shape<class_Control_method_get_cursor_shape>`\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|                                                                                                                               |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                | :ref:`get_end<class_Control_method_get_end>`\ (\ ) |const|                                                                                                                                                                                                              |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2545,6 +2547,20 @@ Override this method to return a human-readable description of the position of t
 
 ----
 
+.. _class_Control_private_method__get_cursor_shape:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_cursor_shape**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__get_cursor_shape>`
+
+Virtual method to be implemented by the user. Returns the cursor shape for the position ``at_position`` in the control's local coordinates, which will typically be used while hovering over this control. See :ref:`get_cursor_shape()<class_Control_method_get_cursor_shape>`.
+
+If not overridden, defaults to :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_private_method__get_drag_data:
 
 .. rst-class:: classref-method
@@ -2604,7 +2620,7 @@ If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 :ref:`String<class_String>` **_get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__get_tooltip>`
 
-Virtual method to be implemented by the user. Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. See :ref:`get_tooltip()<class_Control_method_get_tooltip>`.
+Virtual method to be implemented by the user. Returns the tooltip text for the position ``at_position`` in the control's local coordinates, which will typically appear when the cursor is resting over this control. See :ref:`get_tooltip()<class_Control_method_get_tooltip>`.
 
 \ **Note:** If this method returns an empty :ref:`String<class_String>` and :ref:`_make_custom_tooltip()<class_Control_private_method__make_custom_tooltip>` is not overridden, no tooltip is displayed.
 
@@ -2673,7 +2689,7 @@ If the ``event`` inherits :ref:`InputEventMouse<class_InputEventMouse>`, this me
 
 Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
 
-If not overridden, default behavior is checking if the point is within control's Rect.
+If not overridden, default behavior is checking if the point is within the control's Rect.
 
 \ **Note:** If you want to check if a point is inside the control, you can use ``Rect2(Vector2.ZERO, size).has_point(point)``.
 
@@ -3069,9 +3085,11 @@ Returns the combined value of :ref:`pivot_offset<class_Control_property_pivot_of
 
 .. rst-class:: classref-method
 
-:ref:`CursorShape<enum_Control_CursorShape>` **get_cursor_shape**\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_cursor_shape>`
+:ref:`CursorShape<enum_Control_CursorShape>` **get_cursor_shape**\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_cursor_shape>`
 
-Returns the mouse cursor shape for this control when hovered over ``position`` in local coordinates. For most controls, this is the same as :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`, but some built-in controls implement more complex logic.
+Returns the mouse cursor shape for this control when hovered over ``at_position`` in local coordinates. For most controls, this is the same as :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`, but some built-in controls implement more complex logic.
+
+You can override :ref:`_get_cursor_shape()<class_Control_private_method__get_cursor_shape>` to implement custom behavior for this method.
 
 .. rst-class:: classref-item-separator
 
@@ -3388,9 +3406,9 @@ See :ref:`get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 :ref:`String<class_String>` **get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_tooltip>`
 
-Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
+Returns the tooltip text for the position ``at_position`` in the control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
 
-This method can be overridden to customize its behavior. See :ref:`_get_tooltip()<class_Control_private_method__get_tooltip>`.
+You can override :ref:`_get_tooltip()<class_Control_private_method__get_tooltip>` to implement custom behavior for this method.
 
 \ **Note:** If this method returns an empty :ref:`String<class_String>` and :ref:`_make_custom_tooltip()<class_Control_private_method__make_custom_tooltip>` is not overridden, no tooltip is displayed.
 

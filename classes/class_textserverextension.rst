@@ -126,6 +126,14 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`_font_get_oversampling<class_TextServerExtension_private_method__font_get_oversampling>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`                  | :ref:`_font_get_palette_colors<class_TextServerExtension_private_method__font_get_palette_colors>`\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                      |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_font_get_palette_count<class_TextServerExtension_private_method__font_get_palette_count>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                       |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`                  | :ref:`_font_get_palette_custom_colors<class_TextServerExtension_private_method__font_get_palette_custom_colors>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                       |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_font_get_palette_name<class_TextServerExtension_private_method__font_get_palette_name>`\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                          |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`_font_get_scale<class_TextServerExtension_private_method__font_get_scale>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) |virtual| |required| |const|                                                                                                                                                                                                                                              |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_font_get_script_support_override<class_TextServerExtension_private_method__font_get_script_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`\ ) |virtual|                                                                                                                                                                                                                     |
@@ -161,6 +169,8 @@ Methods
    | :ref:`float<class_float>`                                        | :ref:`_font_get_underline_position<class_TextServerExtension_private_method__font_get_underline_position>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) |virtual| |required| |const|                                                                                                                                                                                                                    |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`_font_get_underline_thickness<class_TextServerExtension_private_method__font_get_underline_thickness>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) |virtual| |required| |const|                                                                                                                                                                                                                  |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_font_get_used_palette<class_TextServerExtension_private_method__font_get_used_palette>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_font_get_variation_coordinates<class_TextServerExtension_private_method__font_get_variation_coordinates>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                       |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -258,6 +268,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_font_set_oversampling<class_TextServerExtension_private_method__font_set_oversampling>`\ (\ font_rid\: :ref:`RID<class_RID>`, oversampling\: :ref:`float<class_float>`\ ) |virtual|                                                                                                                                                                                                                                       |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_font_set_palette_custom_colors<class_TextServerExtension_private_method__font_set_palette_custom_colors>`\ (\ font_rid\: :ref:`RID<class_RID>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`\ ) |virtual|                                                                                                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_font_set_scale<class_TextServerExtension_private_method__font_set_scale>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, scale\: :ref:`float<class_float>`\ ) |virtual| |required|                                                                                                                                                                                                                   |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_font_set_script_support_override<class_TextServerExtension_private_method__font_set_script_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, script\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                |
@@ -281,6 +293,8 @@ Methods
    | |void|                                                           | :ref:`_font_set_underline_position<class_TextServerExtension_private_method__font_set_underline_position>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, underline_position\: :ref:`float<class_float>`\ ) |virtual| |required|                                                                                                                                                                            |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_font_set_underline_thickness<class_TextServerExtension_private_method__font_set_underline_thickness>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, underline_thickness\: :ref:`float<class_float>`\ ) |virtual| |required|                                                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_font_set_used_palette<class_TextServerExtension_private_method__font_set_used_palette>`\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                                                                                                                                                  |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_font_set_variation_coordinates<class_TextServerExtension_private_method__font_set_variation_coordinates>`\ (\ font_rid\: :ref:`RID<class_RID>`, variation_coordinates\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual|                                                                                                                                                                                                  |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1092,6 +1106,54 @@ Returns oversampling factor override. If set to a positive value, overrides the 
 
 ----
 
+.. _class_TextServerExtension_private_method__font_get_palette_colors:
+
+.. rst-class:: classref-method
+
+:ref:`PackedColorArray<class_PackedColorArray>` **_font_get_palette_colors**\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_palette_colors>`
+
+Returns the array in the predefined color palette at ``index``. Palette contains all colors used to render font glyphs. Each palette has the same number of colors. Colors can be overridden using :ref:`_font_set_palette_custom_colors()<class_TextServerExtension_private_method__font_set_palette_custom_colors>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_palette_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_font_get_palette_count**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_palette_count>`
+
+Returns the number of predefined color palettes. Palette contains all colors used to render font glyphs. Each palette has the same number of colors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_palette_custom_colors:
+
+.. rst-class:: classref-method
+
+:ref:`PackedColorArray<class_PackedColorArray>` **_font_get_palette_custom_colors**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_palette_custom_colors>`
+
+Returns array of custom colors to override predefined palette.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_palette_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_font_get_palette_name**\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_palette_name>`
+
+Returns the name of the predefined color palette at ``index``. Palette contains all colors used to render font glyphs. Each palette has the same number of colors.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__font_get_scale:
 
 .. rst-class:: classref-method
@@ -1303,6 +1365,18 @@ Returns pixel offset of the underline below the baseline.
 :ref:`float<class_float>` **_font_get_underline_thickness**\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) |virtual| |required| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_underline_thickness>`
 
 Returns thickness of the underline in pixels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_used_palette:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_font_get_used_palette**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_used_palette>`
+
+Returns used palette index.
 
 .. rst-class:: classref-item-separator
 
@@ -1884,6 +1958,18 @@ If set to a positive value, overrides the oversampling factor of the viewport th
 
 ----
 
+.. _class_TextServerExtension_private_method__font_set_palette_custom_colors:
+
+.. rst-class:: classref-method
+
+|void| **_font_set_palette_custom_colors**\ (\ font_rid\: :ref:`RID<class_RID>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_palette_custom_colors>`
+
+Sets array of custom colors to override predefined palette. Set to empty array to reset overrides. Use ``Color(0, 0, 0, 0)``, to keep predefined palette color at specific position.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__font_set_scale:
 
 .. rst-class:: classref-method
@@ -2023,6 +2109,18 @@ Sets pixel offset of the underline below the baseline.
 |void| **_font_set_underline_thickness**\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, underline_thickness\: :ref:`float<class_float>`\ ) |virtual| |required| :ref:`🔗<class_TextServerExtension_private_method__font_set_underline_thickness>`
 
 Sets thickness of the underline in pixels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_set_used_palette:
+
+.. rst-class:: classref-method
+
+|void| **_font_set_used_palette**\ (\ font_rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_used_palette>`
+
+Sets used palette index.
 
 .. rst-class:: classref-item-separator
 
