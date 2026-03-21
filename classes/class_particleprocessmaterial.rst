@@ -166,6 +166,14 @@ Properties
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`radial_velocity_min<class_ParticleProcessMaterial_property_radial_velocity_min>`                                 | ``0.0``                 |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                                      | :ref:`rotation_3d_max<class_ParticleProcessMaterial_property_rotation_3d_max>`                                         |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                                      | :ref:`rotation_3d_min<class_ParticleProcessMaterial_property_rotation_3d_min>`                                         |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                                      | :ref:`scale_3d_max<class_ParticleProcessMaterial_property_scale_3d_max>`                                               |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                                      | :ref:`scale_3d_min<class_ParticleProcessMaterial_property_scale_3d_min>`                                               |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                  | :ref:`scale_curve<class_ParticleProcessMaterial_property_scale_curve>`                                                 |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`scale_max<class_ParticleProcessMaterial_property_scale_max>`                                                     | ``1.0``                 |
@@ -217,6 +225,10 @@ Properties
    | :ref:`float<class_float>`                                          | :ref:`turbulence_noise_speed_random<class_ParticleProcessMaterial_property_turbulence_noise_speed_random>`             | ``0.2``                 |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`turbulence_noise_strength<class_ParticleProcessMaterial_property_turbulence_noise_strength>`                     | ``1.0``                 |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`use_rotation_3d<class_ParticleProcessMaterial_property_use_rotation_3d>`                                         | ``false``               |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`use_scale_3d<class_ParticleProcessMaterial_property_use_scale_3d>`                                               | ``false``               |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                  | :ref:`velocity_limit_curve<class_ParticleProcessMaterial_property_velocity_limit_curve>`                               |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
@@ -1878,6 +1890,78 @@ Minimum radial velocity applied to each particle. Makes particles move away from
 
 ----
 
+.. _class_ParticleProcessMaterial_property_rotation_3d_max:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **rotation_3d_max** :ref:`🔗<class_ParticleProcessMaterial_property_rotation_3d_max>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_rotation_3d_max**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_rotation_3d_max**\ (\ )
+
+The maximum 3D orientation, in degrees. Works only in 3D and if :ref:`use_rotation_3d<class_ParticleProcessMaterial_property_use_rotation_3d>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_rotation_3d_min:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **rotation_3d_min** :ref:`🔗<class_ParticleProcessMaterial_property_rotation_3d_min>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_rotation_3d_min**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_rotation_3d_min**\ (\ )
+
+The minimum 3D orientation, in degrees. Works only in 3D and if :ref:`use_rotation_3d<class_ParticleProcessMaterial_property_use_rotation_3d>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_scale_3d_max:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **scale_3d_max** :ref:`🔗<class_ParticleProcessMaterial_property_scale_3d_max>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_scale_3d_max**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_scale_3d_max**\ (\ )
+
+The maximum value of the random scale vector for each particle.
+
+Works only if :ref:`use_scale_3d<class_ParticleProcessMaterial_property_use_scale_3d>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_scale_3d_min:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **scale_3d_min** :ref:`🔗<class_ParticleProcessMaterial_property_scale_3d_min>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_scale_3d_min**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_scale_3d_min**\ (\ )
+
+The minimum value of the random scale vector for each particle.
+
+Works only if :ref:`use_scale_3d<class_ParticleProcessMaterial_property_use_scale_3d>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ParticleProcessMaterial_property_scale_curve:
 
 .. rst-class:: classref-property
@@ -2343,6 +2427,40 @@ A value of 0.0 will result in a fixed pattern.
 - :ref:`float<class_float>` **get_turbulence_noise_strength**\ (\ )
 
 The turbulence noise strength. Increasing this will result in a stronger, more contrasting, flow pattern.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_use_rotation_3d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_rotation_3d** = ``false`` :ref:`🔗<class_ParticleProcessMaterial_property_use_rotation_3d>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_rotation_3d**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_rotation_3d**\ (\ )
+
+Enable the usage of :ref:`rotation_3d_min<class_ParticleProcessMaterial_property_rotation_3d_min>` and :ref:`rotation_3d_max<class_ParticleProcessMaterial_property_rotation_3d_max>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_use_scale_3d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_scale_3d** = ``false`` :ref:`🔗<class_ParticleProcessMaterial_property_use_scale_3d>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_scale_3d**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_scale_3d**\ (\ )
+
+Enable the usage of :ref:`scale_3d_min<class_ParticleProcessMaterial_property_scale_3d_min>` and :ref:`scale_3d_max<class_ParticleProcessMaterial_property_scale_3d_max>`.
 
 .. rst-class:: classref-item-separator
 

@@ -268,6 +268,8 @@ Theme Properties
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>`                              | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`search_bar_separation<class_PopupMenu_theme_constant_search_bar_separation>`            | ``4``                             |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`separator_outline_size<class_PopupMenu_theme_constant_separator_outline_size>`          | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`v_separation<class_PopupMenu_theme_constant_v_separation>`                              | ``4``                             |
@@ -1741,6 +1743,18 @@ Horizontal padding to the left of the items (or right, in RTL layout).
 The size of the item text outline.
 
 \ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_constant_search_bar_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **search_bar_separation** = ``4`` :ref:`🔗<class_PopupMenu_theme_constant_search_bar_separation>`
+
+The vertical space between search bar and menu items.
 
 .. rst-class:: classref-item-separator
 

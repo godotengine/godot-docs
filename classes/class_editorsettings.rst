@@ -83,6 +83,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/ask_before_moving_files<class_EditorSettings_property_docks/filesystem/ask_before_moving_files>`                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/automatically_open_created_scripts<class_EditorSettings_property_docks/filesystem/automatically_open_created_scripts>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`docks/filesystem/other_file_extensions<class_EditorSettings_property_docks/filesystem/other_file_extensions>`                                                                                               |
@@ -653,6 +655,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_touch_optimizations<class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/haptic_on_long_press<class_EditorSettings_property_interface/touchscreen/haptic_on_long_press>`                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/touchscreen/touch_actions_panel<class_EditorSettings_property_interface/touchscreen/touch_actions_panel>`                                                                                         |
@@ -1212,6 +1216,18 @@ The refresh interval for the remote scene tree (in seconds). Lower values are mo
 If ``true``, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If ``false``, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the ``res://`` folder path.
 
 \ **Note:** This setting has no effect when split mode is disabled (which is the default).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_docks/filesystem/ask_before_moving_files:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/filesystem/ask_before_moving_files** :ref:`🔗<class_EditorSettings_property_docks/filesystem/ask_before_moving_files>`
+
+If ``true``, displays a confirmation dialog when moving or duplicating items in the FileSystem dock. This dialog can also be bypassed by holding :kbd:`Shift`.
 
 .. rst-class:: classref-item-separator
 
@@ -4897,6 +4913,20 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 If ``true``, increases the scrollbar touch area, enables a larger dragger for split containers, and increases PopupMenu vertical separation to improve usability on touchscreen devices.
 
 \ **Note:** Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/haptic_on_long_press:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/touchscreen/haptic_on_long_press** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/haptic_on_long_press>`
+
+If ``true``, the device will vibrate when a long-press gesture triggers a right-click context menu in the editor.
+
+\ **Note:** Only has an effect on devices with haptic feedback hardware. Defaults to ``true`` on touchscreen devices.
 
 .. rst-class:: classref-item-separator
 

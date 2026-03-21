@@ -75,6 +75,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>`\ (\ )                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`has_script_method<class_Script_method_has_script_method>`\ (\ method_name\: :ref:`StringName<class_StringName>`\ ) |const|        |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_script_signal<class_Script_method_has_script_signal>`\ (\ signal_name\: :ref:`StringName<class_StringName>`\ ) |const|        |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_source_code<class_Script_method_has_source_code>`\ (\ ) |const|                                                               |
@@ -261,6 +263,18 @@ Returns the list of properties in this **Script**.
 Returns the list of signals defined in this **Script**.
 
 \ **Note:** The dictionaries returned by this method are formatted identically to those returned by :ref:`Object.get_signal_list()<class_Object_method_get_signal_list>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Script_method_has_script_method:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_script_method**\ (\ method_name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Script_method_has_script_method>`
+
+Returns ``true`` if the script, or a base class, defines a method with the given name.
 
 .. rst-class:: classref-item-separator
 

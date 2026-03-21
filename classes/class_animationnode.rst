@@ -143,6 +143,20 @@ Emitted by nodes that inherit from this class and that have an internal tree whe
 
 ----
 
+.. _class_AnimationNode_signal_node_updated:
+
+.. rst-class:: classref-signal
+
+**node_updated**\ (\ object_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AnimationNode_signal_node_updated>`
+
+**Experimental:** This signal may be changed or removed in future versions.
+
+Emitted by :ref:`AnimationNodeAnimation<class_AnimationNodeAnimation>` when its :ref:`AnimationNodeAnimation.animation<class_AnimationNodeAnimation_property_animation>` resource is changed, or by :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` when its connections change.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNode_signal_tree_changed:
 
 .. rst-class:: classref-signal

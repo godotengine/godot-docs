@@ -1183,7 +1183,7 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 - A :ref:`Script<class_Script>` (you can use any class, including inner one).
 
-Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need to check the type dynamically.
+Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays and dictionaries). Use the operator instead of this method if you do not need to check the type dynamically.
 
 \ **Examples:**\ 
 
@@ -1196,7 +1196,7 @@ Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant 
 
 \ **Note:** If ``value`` and/or ``type`` are freed objects (see :ref:`@GlobalScope.is_instance_valid()<class_@GlobalScope_method_is_instance_valid>`), or ``type`` is not one of the above options, this method will raise a runtime error.
 
-See also :ref:`@GlobalScope.typeof()<class_@GlobalScope_method_typeof>`, :ref:`type_exists()<class_@GDScript_method_type_exists>`, :ref:`Array.is_same_typed()<class_Array_method_is_same_typed>` (and other :ref:`Array<class_Array>` methods).
+See also :ref:`@GlobalScope.typeof()<class_@GlobalScope_method_typeof>`, :ref:`Object.is_class()<class_Object_method_is_class>`, :ref:`Object.get_script()<class_Object_method_get_script>`, :ref:`Array.is_same_typed()<class_Array_method_is_same_typed>` (and other :ref:`Array<class_Array>` methods), :ref:`Dictionary.is_same_typed()<class_Dictionary_method_is_same_typed>` (and other :ref:`Dictionary<class_Dictionary>` methods).
 
 .. rst-class:: classref-item-separator
 
@@ -1401,6 +1401,8 @@ Output:
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **type_exists**\ (\ type\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_@GDScript_method_type_exists>`
+
+**Deprecated:** Use :ref:`ClassDB.class_exists()<class_ClassDB_method_class_exists>` instead.
 
 Returns ``true`` if the given :ref:`Object<class_Object>`-derived class exists in :ref:`ClassDB<class_ClassDB>`. Note that :ref:`Variant<class_Variant>` data types are not registered in :ref:`ClassDB<class_ClassDB>`.
 
