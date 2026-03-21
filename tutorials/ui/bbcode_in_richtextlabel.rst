@@ -763,7 +763,7 @@ Image options
 
   Image tooltip.
 
-- **alt**
+- **align**
 
   +-----------+------------------------------------------------------------------------+
   | `Values`  | see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`       |
