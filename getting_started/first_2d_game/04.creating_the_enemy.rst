@@ -31,9 +31,9 @@ property in the :ref:`RigidBody2D <class_RigidBody2D>`
 section of the inspector to ``0``.
 This will prevent the mob from falling downwards.
 
-In addition, under the :ref:`CollisionObject2D <class_CollisionObject2D>`
-section just beneath the **RigidBody2D** section,
-expand the **Collision** group and
+In addition, in the ``Mob`` node inspector,
+under the :ref:`CollisionObject2D <class_CollisionObject2D>`
+section, expand the **Collision** group and
 uncheck the ``1`` inside the ``Mask`` property.
 This will ensure the mobs do not collide with each other.
 
