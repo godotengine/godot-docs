@@ -199,6 +199,10 @@ below with almost any input video format (AVI, MOV, WebM, …).
    multiplexer. It's highly recommended to use one of the latest static daily
    builds, or build from their master branch to get the latest fixes.
 
+   On Windows, make sure to use 32-bit builds of FFmpeg. Windows 64-bit builds
+   have known issues with Theora encoding, which result in artifacts in the
+   output file.
+
 .. UPDATE: When the FFmpeg bugfixes for https://trac.ffmpeg.org/ticket/11451 and
 .. https://trac.ffmpeg.org/ticket/11454 are included in a stable FFmpeg release,
 .. this warning can be removed. That will likely be FFmpeg 7.2 or 8.0, and will
