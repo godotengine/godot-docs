@@ -23,7 +23,7 @@ it in a folder called ``main_screen``, but you can use any name you'd like.
 
 The plugin script will come with ``_enter_tree()`` and ``_exit_tree()``
 methods, but for a main screen plugin we need to add a few extra methods.
-Add five extra methods such that the script looks like this:
+Add four extra methods such that the script looks like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
