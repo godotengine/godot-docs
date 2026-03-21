@@ -777,6 +777,14 @@ If you are using :ref:`EditorScript <class_EditorScript>`:
         node.Owner = GetScene();
     }
 
+.. note::
+
+    Changes made by tool scripts and EditorScript (such as adding nodes or modifying properties)
+    do **not** automatically mark the scene as unsaved. To show the asterisk ``(*)``
+    and prevent accidental data loss, call
+    :ref:`EditorInterface.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`
+    after modifications, or use :ref:`EditorUndoRedoManager <class_EditorUndoRedoManager>` for undo support.
+
 .. warning::
 
     Using ``@tool`` improperly can yield many errors. It is advised to first
