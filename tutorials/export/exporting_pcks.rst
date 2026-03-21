@@ -64,7 +64,7 @@ See :ref:`doc_exporting_projects_pck_versus_zip` for a comparison of the two for
     The downside of this approach is that it's less transparent to the game logic,
     as it will not benefit from the same resource management as PCK/ZIP files.
 
-Security Concerns
+Security concerns
 -----------------
 
 It is important to note that loading PCK files for patches, mods, or extra content
@@ -81,8 +81,8 @@ asymmetric cryptography. You could store the public key in the main PCK, and sig
 patch or expansion PCK files with the private key. See the :ref:`class_Crypto` class
 for more information.
 
-Piracy Concerns
----------------
+Copyright concerns
+------------------
 
 If you want to use PCK files to distribute extra paid content, such as expansions,
 keep in mind that Godot provides no out-of-the-box way to prevent someone from
@@ -127,13 +127,15 @@ You can also add any patches you export to your base packs for future use. For
 example, adding ``patch.pck`` will ensure that ``patch2.pck`` will not include any
 resources from that first patch.
 
-Delta Encoding
+Delta encoding
 ~~~~~~~~~~~~~~
 
 Patch PCK files can be made smaller through the use of delta encoding. This makes it
 so that only the parts of a file that have been changed are updated. This does have a
-drawback of longer load times for the patch PCK files. There are two settings for
-delta encoding in addition to the filters:
+drawback of longer load times for the resources that are updated, and each patch for
+a resource cumulatively increases its load time.
+
+There are two settings for delta encoding in addition to the filters:
 
 - **Delta Encoding Compression Level:** Controls how much compression is applied to
   the files. We do not recommend any more than the default of 19. Beyond that more
@@ -148,6 +150,31 @@ delta encoding in addition to the filters:
   delta encoding.
 
 The default compression level, 19, is the highest recommended level.
+
+For the smallest patch size possible we recommend turning off compression for any
+resources you want to patch. Even if your base PCK files were compressed that
+shouldn't cause an issue.
+
+There are several places compression can be disabled for different resources:
+
+- Import settings related to compression on individually imported resources, such as
+  translation or 3D model files
+- :ui:`Compress Binary Resources` in the editor settings
+- :ui:`GDScript Export Mode` in the :button:`Scripts` tab of an export preset
+
+.. Note::
+
+    After disabling :ui:`Compress Binary Resources` you must delete the contents of
+    your projects ``.godot/imported/`` folder, then closing and open the project
+    again to re-generate it.
+
+It's important to note that when you export a delta encoded patch on top of previous
+patches, the packs you list under :ui:`Base Packs` in the :Button:`Patching` tab
+must be the exact same files that are loaded by the game at runtime, in the exact
+order they are loaded in. Re-exporting previous versions may end up being slightly
+different, due to non-determinism in Godot's export process, which can cause the
+patching to fail. This only applies to delta encoded patches, regular ones don't
+have this issue.
 
 Opening PCK or ZIP files at runtime
 -----------------------------------
