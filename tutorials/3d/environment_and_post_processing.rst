@@ -158,7 +158,7 @@ There are several background modes available:
 - **Keep** does not draw any sky, keeping what was present on previous frames
   instead. This improves performance in purely indoor scenes, but creates a
   "hall of mirrors" visual glitch if the sky is visible at any time.
-  - **Camera Feed** displays a :ref:`class_CameraFeed` from a physical camera as the
+- **Camera Feed** displays a :ref:`class_CameraFeed` from a physical camera as the
   background, useful for AR games on mobile devices.
 
 Sky materials
@@ -311,11 +311,11 @@ The tone mapping options are:
   For photorealistic lighting, recommended values are between ``6.0`` and
   ``8.0``. Higher values result in less blown out highlights, but may make the
   scene appear lower contrast. **White** is not available when using
-  **Linear**. If you're using AGX, the mobile renderer, and HDR 2D is disabled,
+  **Linear**. If you're using AgX, the mobile renderer, and HDR 2D is disabled,
   then the value set here will be ignored, and a value of ``2.0`` will be used
   instead.
 
-- **AGX Contrast:** Only available when using AGX. Increasing this makes dark values
+- **AGX Contrast:** Only available when using AgX. Increasing this makes dark values
   darker, and bright values brighter. It creates better results than the contrast
   option in the adjustment section at no additional performance cost.
 
@@ -900,7 +900,7 @@ Camera attribute options
 Godot has two kinds of camera attributes, physical and practical. When using
 CameraAttributesPhysical instead of CameraAttributesPractical, depth of field is
 automatically computed from the camera attributes' focus distance, focal length, and
-aperture. In addition, Frutsum options are available.
+aperture. In addition, Frustum options are available.
 
 Depth of Field / Far Blur
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -925,7 +925,8 @@ It has an initial **Distance** with a **Transition** region (in world units):
 .. image:: img/environment_dof_near.webp
 
 The **Amount** parameter controls the amount of blur. For larger blurs, tweaking
-the **Quality** may be needed in order to avoid artifacts.
+the depth of field quality in the advanced project settings may be needed to
+avoid artifacts.
 
 It is common to use both blurs together to focus the viewer's attention on a
 given object, or create a so-called
