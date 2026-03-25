@@ -415,7 +415,7 @@ Therefore, the process of writing integration tests for GDScript is the followin
 
    .. code-block:: shell
 
-       bin/<godot_binary> --gdscript-generate-tests modules/gdscript/tests/scripts
+       bin/<godot_binary> --test gdscript-generate-tests
 
 You may add the ``--print-filenames`` option to see filenames as their test
 outputs are generated. If you are working on a new feature that is causing
@@ -435,7 +435,7 @@ If no errors are printed and everything goes well, you're done!
 .. warning::
 
     Make sure the output does have the expected values before submitting a pull
-    request. If ``--gdscript-generate-tests`` produces ``*.out`` files which are
+    request. If ``gdscript-generate-tests`` produces ``*.out`` files which are
     unrelated to newly added tests, you should revert those files back and
     only commit ``*.out`` files for new tests.
 
