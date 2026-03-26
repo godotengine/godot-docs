@@ -234,9 +234,9 @@ However, the value passed to the fragment shader still comes from ``VERTEX``.
 For instancing, the ``INSTANCE_CUSTOM`` variable contains the instance custom data. When using particles, this information
 is usually:
 
-* **x**: Rotation angle in radians.
-* **y**: Phase during lifetime (``0.0`` to ``1.0``).
-* **z**: Animation frame.
+* **x**: Current rotation angle in radians.
+* **z**: Current animation frame.
+* **y / w** (division): Lifetime fraction from 0.0 to 1.0.
 
 This allows you to easily adjust the shader to a particle system using default particle material. When writing a custom particle
 shader, this value can be used as desired.
