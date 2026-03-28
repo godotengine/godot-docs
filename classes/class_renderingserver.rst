@@ -815,6 +815,10 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_set_transform_align<class_RenderingServer_method_particles_set_transform_align>`\ (\ particles\: :ref:`RID<class_RID>`, align\: :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`particles_set_transform_align_axis<class_RenderingServer_method_particles_set_transform_align_axis>`\ (\ particles\: :ref:`RID<class_RID>`, p_rotation_axis\: :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`particles_set_transform_align_channel_filter<class_RenderingServer_method_particles_set_transform_align_channel_filter>`\ (\ particles\: :ref:`RID<class_RID>`, channel_filter\: :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_set_use_local_coordinates<class_RenderingServer_method_particles_set_use_local_coordinates>`\ (\ particles\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`positional_soft_shadow_filter_set_quality<class_RenderingServer_method_positional_soft_shadow_filter_set_quality>`\ (\ quality\: :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -2745,6 +2749,90 @@ Align each particle's Y axis to the velocity vector.
 :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY** = ``3``
 
 Align each particle's Z axis to face the camera and Y axis to the velocity vector.
+
+.. _class_RenderingServer_constant_PARTICLES_TRANSFORM_ALIGN_LOCAL_BILLBOARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_LOCAL_BILLBOARD** = ``4``
+
+Billboard each particles around a local axis.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ParticlesTransformAlignCustomSrc:
+
+.. rst-class:: classref-enumeration
+
+enum **ParticlesTransformAlignCustomSrc**: :ref:`🔗<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_DISABLED** = ``0``
+
+Do not read from CUSTOM when performing billboarding.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_X** = ``1``
+
+Read from ``CUSTOM.x`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_Y** = ``2``
+
+Read from ``CUSTOM.y`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_Z:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_Z** = ``3``
+
+Read from ``CUSTOM.z`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_W:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_W** = ``4``
+
+Read from ``CUSTOM.w`` when performing billboarding and use it as an angle, in radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ParticlesTransformAlignAxis:
+
+.. rst-class:: classref-enumeration
+
+enum **ParticlesTransformAlignAxis**: :ref:`🔗<enum_RenderingServer_ParticlesTransformAlignAxis>`
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_AXIS_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **PARTICLES_ALIGN_AXIS_X** = ``0``
+
+Use the X axis for local billboarding.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_AXIS_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **PARTICLES_ALIGN_AXIS_Y** = ``1``
+
+Use the Y axis for local billboarding.
 
 .. rst-class:: classref-item-separator
 
@@ -11021,6 +11109,30 @@ If ``enable`` is ``true``, enables trails for the ``particles`` with the specifi
 |void| **particles_set_transform_align**\ (\ particles\: :ref:`RID<class_RID>`, align\: :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align>`
 
 Sets the transform alignment for the particle system. Equivalent to :ref:`GPUParticles3D.transform_align<class_GPUParticles3D_property_transform_align>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_particles_set_transform_align_axis:
+
+.. rst-class:: classref-method
+
+|void| **particles_set_transform_align_axis**\ (\ particles\: :ref:`RID<class_RID>`, p_rotation_axis\: :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align_axis>`
+
+Sets which axis to use for transform alignment.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_particles_set_transform_align_channel_filter:
+
+.. rst-class:: classref-method
+
+|void| **particles_set_transform_align_channel_filter**\ (\ particles\: :ref:`RID<class_RID>`, channel_filter\: :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align_channel_filter>`
+
+When using Z-Billboarding, which CUSTOM channel to read from.
 
 .. rst-class:: classref-item-separator
 

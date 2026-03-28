@@ -29,31 +29,41 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                                   |                       |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`                       | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`                         | ``16``                |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`                   | ``3.0``               |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>`                 | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`                   | ``0``                 |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`     | :ref:`paragraph_spacing<class_LabelSettings_property_paragraph_spacing>`         | ``0.0``               |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`                   | ``Color(0, 0, 0, 0)`` |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>`                 | ``Vector2(1, 1)``     |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`                     | ``1``                 |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`stacked_outline_count<class_LabelSettings_property_stacked_outline_count>` | ``0``                 |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`         | :ref:`stacked_shadow_count<class_LabelSettings_property_stacked_shadow_count>`   | ``0``                 |
-   +-------------------------------+----------------------------------------------------------------------------------+-----------------------+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                                                               |                       |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`                                                   | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`                                                     | ``16``                |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`                                               | ``3.0``               |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>`                                             | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`                                               | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`paragraph_spacing<class_LabelSettings_property_paragraph_spacing>`                                     | ``0.0``               |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`                                               | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>`                                             | ``Vector2(1, 1)``     |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`                                                 | ``1``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_outline_count<class_LabelSettings_property_stacked_outline_count>`                             | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`stacked_outline_{index}/color<class_LabelSettings_property_stacked_outline_{index}/color>`             | ``Color(0, 0, 0, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_outline_{index}/size<class_LabelSettings_property_stacked_outline_{index}/size>`               | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_shadow_count<class_LabelSettings_property_stacked_shadow_count>`                               | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`stacked_shadow_{index}/color<class_LabelSettings_property_stacked_shadow_{index}/color>`               | ``Color(0, 0, 0, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`stacked_shadow_{index}/offset<class_LabelSettings_property_stacked_shadow_{index}/offset>`             | ``Vector2i(1, 1)``    |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`stacked_shadow_{index}/outline_size<class_LabelSettings_property_stacked_shadow_{index}/outline_size>` | ``0``                 |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -293,6 +303,34 @@ The number of stacked outlines.
 
 ----
 
+.. _class_LabelSettings_property_stacked_outline_{index}/color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **stacked_outline_{index}/color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LabelSettings_property_stacked_outline_{index}/color>`
+
+The color of the outline at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. stacked_outline_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_outline_{index}/size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stacked_outline_{index}/size** = ``0`` :ref:`🔗<class_LabelSettings_property_stacked_outline_{index}/size>`
+
+The size of the outline at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. stacked_outline_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LabelSettings_property_stacked_shadow_count:
 
 .. rst-class:: classref-property
@@ -305,6 +343,48 @@ The number of stacked outlines.
 - :ref:`int<class_int>` **get_stacked_shadow_count**\ (\ )
 
 The number of stacked shadows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_shadow_{index}/color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **stacked_shadow_{index}/color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_LabelSettings_property_stacked_shadow_{index}/color>`
+
+The color of the shadow at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. stacked_shadow_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_shadow_{index}/offset:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **stacked_shadow_{index}/offset** = ``Vector2i(1, 1)`` :ref:`🔗<class_LabelSettings_property_stacked_shadow_{index}/offset>`
+
+The offset of the shadow at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. stacked_shadow_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LabelSettings_property_stacked_shadow_{index}/outline_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **stacked_shadow_{index}/outline_size** = ``0`` :ref:`🔗<class_LabelSettings_property_stacked_shadow_{index}/outline_size>`
+
+The size of the shadow outline at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. stacked_shadow_count - 1`` range.
 
 .. rst-class:: classref-section-separator
 

@@ -21,6 +21,13 @@ Description
 
 Custom logger to receive messages from the internal error/warning stream. Loggers are registered via :ref:`OS.add_logger()<class_OS_method_add_logger>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Logging <../tutorials/scripting/logging>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -105,7 +112,7 @@ Additionally, ``script_backtraces`` provides backtraces for each of the script l
 
 \ **Warning:** This method will be called from threads other than the main thread, possibly at the same time, so you will need to have some kind of thread-safety in your implementation of it, like a :ref:`Mutex<class_Mutex>`.
 
-\ **Note:** ``script_backtraces`` will not contain any captured variables, due to its prohibitively high cost. To get those you will need to capture the backtraces yourself, from within the **Logger** virtual methods, using :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
+\ **Note:** ``script_backtraces`` will not contain any captured variables, due to its prohibitively high cost. To get those, you will need to capture the backtraces yourself, from within the **Logger** virtual methods, using :ref:`Engine.capture_script_backtraces()<class_Engine_method_capture_script_backtraces>`.
 
 \ **Note:** Logging errors from this method using functions like :ref:`@GlobalScope.push_error()<class_@GlobalScope_method_push_error>` or :ref:`@GlobalScope.push_warning()<class_@GlobalScope_method_push_warning>` is not supported, as it could cause infinite recursion. These errors will only show up in the console output.
 

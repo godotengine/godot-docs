@@ -25,6 +25,8 @@ Description
 
 \ **Note:** **EditorFileDialog** is invisible by default. To make it visible, call one of the ``popup_*`` methods from :ref:`Window<class_Window>` on the node, such as :ref:`Window.popup_centered_clamped()<class_Window_method_popup_centered_clamped>`.
 
+\ **Note:** On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.
+
 .. rst-class:: classref-reftable-group
 
 Properties

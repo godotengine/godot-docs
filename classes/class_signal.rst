@@ -95,7 +95,7 @@ Connecting signals is one of the most common operations in Godot and the API giv
 
 
 
-\ **\ ``Object.connect()`` or ``Signal.connect()``?**\ 
+\ ``Object.connect()`` **or** ``Signal.connect()``\ **?**\ 
 
 As seen above, the recommended method to connect signals is not :ref:`Object.connect()<class_Object_method_connect>`. The code block below shows the four options for connecting signals, using either this legacy method or the recommended :ref:`connect()<class_Signal_method_connect>`, and using either an implicit :ref:`Callable<class_Callable>` or a manually defined one.
 

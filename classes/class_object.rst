@@ -240,7 +240,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ConnectFlags**: :ref:`🔗<enum_Object_ConnectFlags>`
+flags **ConnectFlags**: :ref:`🔗<enum_Object_ConnectFlags>`
 
 .. _class_Object_constant_CONNECT_DEFERRED:
 

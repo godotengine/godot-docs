@@ -55,6 +55,14 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`FocusMode<enum_Control_FocusMode>`          | :ref:`tab_focus_mode<class_TabContainer_property_tab_focus_mode>`                             | ``2``     |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`tab_{index}/disabled<class_TabContainer_property_tab_{index}/disabled>`                 | ``false`` |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`tab_{index}/hidden<class_TabContainer_property_tab_{index}/hidden>`                     | ``false`` |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Texture2D<class_Texture2D>`                 | :ref:`tab_{index}/icon<class_TabContainer_property_tab_{index}/icon>`                         |           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                       | :ref:`tab_{index}/title<class_TabContainer_property_tab_{index}/title>`                       | ``""``    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`TabPosition<enum_TabContainer_TabPosition>` | :ref:`tabs_position<class_TabContainer_property_tabs_position>`                               | ``0``     |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                             | :ref:`tabs_rearrange_group<class_TabContainer_property_tabs_rearrange_group>`                 | ``-1``    |
@@ -472,6 +480,62 @@ The position at which tabs will be placed.
 - :ref:`FocusMode<enum_Control_FocusMode>` **get_tab_focus_mode**\ (\ )
 
 The focus access mode for the internal :ref:`TabBar<class_TabBar>` node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_tab_{index}/disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **tab_{index}/disabled** = ``false`` :ref:`🔗<class_TabContainer_property_tab_{index}/disabled>`
+
+If ``true``, the tab at ``index`` is disabled.
+
+\ **Note:** ``index`` is a value in the ``0 .. get_tab_count() - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_tab_{index}/hidden:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **tab_{index}/hidden** = ``false`` :ref:`🔗<class_TabContainer_property_tab_{index}/hidden>`
+
+If ``true``, the tab at ``index`` is hidden.
+
+\ **Note:** ``index`` is a value in the ``0 .. get_tab_count() - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_tab_{index}/icon:
+
+.. rst-class:: classref-property
+
+:ref:`Texture2D<class_Texture2D>` **tab_{index}/icon** :ref:`🔗<class_TabContainer_property_tab_{index}/icon>`
+
+The title text of the tab at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. get_tab_count() - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_tab_{index}/title:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **tab_{index}/title** = ``""`` :ref:`🔗<class_TabContainer_property_tab_{index}/title>`
+
+The tooltip text of the tab at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. get_tab_count() - 1`` range.
 
 .. rst-class:: classref-item-separator
 
