@@ -70,6 +70,12 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`option_count<class_FileDialog_property_option_count>`                               | ``0``                                                                                    |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`option_{index}/default<class_FileDialog_property_option_{index}/default>`           | ``0``                                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`option_{index}/name<class_FileDialog_property_option_{index}/name>`                 | ``""``                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`option_{index}/values<class_FileDialog_property_option_{index}/values>`             | ``PackedStringArray()``                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`overwrite_warning_enabled<class_FileDialog_property_overwrite_warning_enabled>`     | ``true``                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`recent_list_enabled<class_FileDialog_property_recent_list_enabled>`                 | ``true``                                                                                 |
@@ -778,6 +784,50 @@ If ``true``, changing the :ref:`file_mode<class_FileDialog_property_file_mode>` 
 - :ref:`int<class_int>` **get_option_count**\ (\ )
 
 The number of additional :ref:`OptionButton<class_OptionButton>`\ s and :ref:`CheckBox<class_CheckBox>`\ es in the dialog.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_option_{index}/default:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **option_{index}/default** = ``0`` :ref:`🔗<class_FileDialog_property_option_{index}/default>`
+
+The default value for the option at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. option_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_option_{index}/name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **option_{index}/name** = ``""`` :ref:`🔗<class_FileDialog_property_option_{index}/name>`
+
+The name of the option at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. option_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_option_{index}/values:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **option_{index}/values** = ``PackedStringArray()`` :ref:`🔗<class_FileDialog_property_option_{index}/values>`
+
+The list of values for the option at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. option_count - 1`` range.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

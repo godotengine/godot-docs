@@ -1911,6 +1911,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`                                                                                                                 | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_with_subsampled_images<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`                                                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/startup_alert<class_ProjectSettings_property_xr/openxr/startup_alert>`                                                                                                                     | ``true``                                                                                         |
@@ -5608,13 +5610,13 @@ The minimum distance the mouse cursor must move while pressed before a drag oper
 
 :ref:`int<class_int>` **gui/common/show_focus_state_on_pointer_event** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/common/show_focus_state_on_pointer_event>`
 
-Determines whether a :ref:`Control<class_Control>` should visually indicate focus when said focus is gained using a mouse or touch input.
+Determines whether a :ref:`Control<class_Control>` should visually indicate focus when that focus is gained using a mouse or touch input.
 
 - **Never** (``0``) show the focused state for mouse/touch input.
 
-- **Control Supports Keyboard Input** (``1``) shows the focused state even when gained via mouse/touch input (similar to how browsers handle focus).
+- **Text Input Controls** (``1``) show the focused state even if that focus was gained via mouse/touch input (similar to browser behavior).
 
-- **Always** (``2``) show the focused state, even if said focus was gained via mouse/touch input.
+- **Always** (``2``) show the focused state, even if that focus was gained via mouse/touch input.
 
 .. rst-class:: classref-item-separator
 
@@ -14308,6 +14310,20 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 Applied foveation level if supported.
 
 \ **Note:** On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_with_subsampled_images** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`
+
+If ``true`` and foveation is also enabled, subsampled images will be used on Vulkan. This can improve the performance gain from foveated rendering, especially when using high foveation levels.
+
+\ **Note:**: Using subsampled images is incompatible with many screen-space rendering features or post-processing effects like FXAA or glow. If any such effects are enabled, subsampled images will automatically be disabled and a warning shown in the log.
 
 .. rst-class:: classref-item-separator
 

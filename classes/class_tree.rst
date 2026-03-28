@@ -203,6 +203,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`custom_button_font_highlight<class_Tree_theme_color_custom_button_font_highlight>` | ``Color(0.95, 0.95, 0.95, 1)``      |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`drop_on_item_color<class_Tree_theme_color_drop_on_item_color>`                     | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`drop_position_color<class_Tree_theme_color_drop_position_color>`                   | ``Color(1, 1, 1, 1)``               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_color<class_Tree_theme_color_font_color>`                                     | ``Color(0.7, 0.7, 0.7, 1)``         |
@@ -1503,6 +1505,18 @@ The :ref:`Color<class_Color>` of the relationship lines between the selected :re
 :ref:`Color<class_Color>` **custom_button_font_highlight** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_Tree_theme_color_custom_button_font_highlight>`
 
 Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_color_drop_on_item_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **drop_on_item_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Tree_theme_color_drop_on_item_color>`
+
+:ref:`Color<class_Color>` used to draw the highlight outline when dragging items that can only be dropped "on" other items.
 
 .. rst-class:: classref-item-separator
 

@@ -42,67 +42,71 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`amount<class_GPUParticles3D_property_amount>`                           | ``8``                         |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>`               | ``1.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`collision_base_size<class_GPUParticles3D_property_collision_base_size>` | ``0.01``                      |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>`           | :ref:`draw_order<class_GPUParticles3D_property_draw_order>`                   | ``0``                         |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Mesh<class_Mesh>`                                   | :ref:`draw_pass_1<class_GPUParticles3D_property_draw_pass_1>`                 |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Mesh<class_Mesh>`                                   | :ref:`draw_pass_2<class_GPUParticles3D_property_draw_pass_2>`                 |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Mesh<class_Mesh>`                                   | :ref:`draw_pass_3<class_GPUParticles3D_property_draw_pass_3>`                 |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Mesh<class_Mesh>`                                   | :ref:`draw_pass_4<class_GPUParticles3D_property_draw_pass_4>`                 |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`draw_passes<class_GPUParticles3D_property_draw_passes>`                 | ``1``                         |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Skin<class_Skin>`                                   | :ref:`draw_skin<class_GPUParticles3D_property_draw_skin>`                     |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`emitting<class_GPUParticles3D_property_emitting>`                       | ``true``                      |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`explosiveness<class_GPUParticles3D_property_explosiveness>`             | ``0.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>`                     | ``30``                        |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`fract_delta<class_GPUParticles3D_property_fract_delta>`                 | ``true``                      |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`interp_to_end<class_GPUParticles3D_property_interp_to_end>`             | ``0.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`interpolate<class_GPUParticles3D_property_interpolate>`                 | ``true``                      |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`lifetime<class_GPUParticles3D_property_lifetime>`                       | ``1.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`local_coords<class_GPUParticles3D_property_local_coords>`               | ``false``                     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`one_shot<class_GPUParticles3D_property_one_shot>`                       | ``false``                     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`preprocess<class_GPUParticles3D_property_preprocess>`                   | ``0.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`Material<class_Material>`                           | :ref:`process_material<class_GPUParticles3D_property_process_material>`       |                               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`randomness<class_GPUParticles3D_property_randomness>`                   | ``0.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`seed<class_GPUParticles3D_property_seed>`                               | ``0``                         |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`speed_scale<class_GPUParticles3D_property_speed_scale>`                 | ``1.0``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`NodePath<class_NodePath>`                           | :ref:`sub_emitter<class_GPUParticles3D_property_sub_emitter>`                 | ``NodePath("")``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>`             | ``false``                     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`trail_lifetime<class_GPUParticles3D_property_trail_lifetime>`           | ``0.3``                       |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` | :ref:`transform_align<class_GPUParticles3D_property_transform_align>`         | ``0``                         |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`use_fixed_seed<class_GPUParticles3D_property_use_fixed_seed>`           | ``false``                     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
-   | :ref:`AABB<class_AABB>`                                   | :ref:`visibility_aabb<class_GPUParticles3D_property_visibility_aabb>`         | ``AABB(-4, -4, -4, 8, 8, 8)`` |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`amount<class_GPUParticles3D_property_amount>`                                                 | ``8``                         |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>`                                     | ``1.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`collision_base_size<class_GPUParticles3D_property_collision_base_size>`                       | ``0.01``                      |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>`                                                | :ref:`draw_order<class_GPUParticles3D_property_draw_order>`                                         | ``0``                         |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Mesh<class_Mesh>`                                                                        | :ref:`draw_pass_1<class_GPUParticles3D_property_draw_pass_1>`                                       |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Mesh<class_Mesh>`                                                                        | :ref:`draw_pass_2<class_GPUParticles3D_property_draw_pass_2>`                                       |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Mesh<class_Mesh>`                                                                        | :ref:`draw_pass_3<class_GPUParticles3D_property_draw_pass_3>`                                       |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Mesh<class_Mesh>`                                                                        | :ref:`draw_pass_4<class_GPUParticles3D_property_draw_pass_4>`                                       |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`draw_passes<class_GPUParticles3D_property_draw_passes>`                                       | ``1``                         |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Skin<class_Skin>`                                                                        | :ref:`draw_skin<class_GPUParticles3D_property_draw_skin>`                                           |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`emitting<class_GPUParticles3D_property_emitting>`                                             | ``true``                      |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`explosiveness<class_GPUParticles3D_property_explosiveness>`                                   | ``0.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>`                                           | ``30``                        |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`fract_delta<class_GPUParticles3D_property_fract_delta>`                                       | ``true``                      |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`interp_to_end<class_GPUParticles3D_property_interp_to_end>`                                   | ``0.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`interpolate<class_GPUParticles3D_property_interpolate>`                                       | ``true``                      |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`lifetime<class_GPUParticles3D_property_lifetime>`                                             | ``1.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`local_coords<class_GPUParticles3D_property_local_coords>`                                     | ``false``                     |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`one_shot<class_GPUParticles3D_property_one_shot>`                                             | ``false``                     |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`preprocess<class_GPUParticles3D_property_preprocess>`                                         | ``0.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`Material<class_Material>`                                                                | :ref:`process_material<class_GPUParticles3D_property_process_material>`                             |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`randomness<class_GPUParticles3D_property_randomness>`                                         | ``0.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`seed<class_GPUParticles3D_property_seed>`                                                     | ``0``                         |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`speed_scale<class_GPUParticles3D_property_speed_scale>`                                       | ``1.0``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`NodePath<class_NodePath>`                                                                | :ref:`sub_emitter<class_GPUParticles3D_property_sub_emitter>`                                       | ``NodePath("")``              |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>`                                   | ``false``                     |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`trail_lifetime<class_GPUParticles3D_property_trail_lifetime>`                                 | ``0.3``                       |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>`                                      | :ref:`transform_align<class_GPUParticles3D_property_transform_align>`                               | ``0``                         |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`           | :ref:`transform_align_axis<class_GPUParticles3D_property_transform_align_axis>`                     |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` | :ref:`transform_align_channel_filter<class_GPUParticles3D_property_transform_align_channel_filter>` |                               |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`use_fixed_seed<class_GPUParticles3D_property_use_fixed_seed>`                                 | ``false``                     |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`AABB<class_AABB>`                                                                        | :ref:`visibility_aabb<class_GPUParticles3D_property_visibility_aabb>`                               | ``AABB(-4, -4, -4, 8, 8, 8)`` |
+   +------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -287,6 +291,14 @@ Align each particle's Y axis to the velocity vector.
 :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` **TRANSFORM_ALIGN_Z_BILLBOARD_Y_TO_VELOCITY** = ``3``
 
 Align each particle's Z axis to face the camera and Y axis to the velocity vector.
+
+.. _class_GPUParticles3D_constant_TRANSFORM_ALIGN_LOCAL_BILLBOARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` **TRANSFORM_ALIGN_LOCAL_BILLBOARD** = ``4``
+
+Align each particle's Z axis to face the camera, while preserving a given axis (X or Y).
 
 .. rst-class:: classref-section-separator
 
@@ -808,9 +820,41 @@ The amount of time the particle's trail should represent (in seconds). Only effe
 - |void| **set_transform_align**\ (\ value\: :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>`\ )
 - :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` **get_transform_align**\ (\ )
 
-.. container:: contribute
+The alignment of particles. Use this for billboarding and aligning to velocity.
 
-	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles3D_property_transform_align_axis:
+
+.. rst-class:: classref-property
+
+:ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **transform_align_axis** :ref:`🔗<class_GPUParticles3D_property_transform_align_axis>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_transform_align_axis**\ (\ value\: :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`\ )
+- :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **get_transform_align_axis**\ (\ )
+
+When using transform align local billboard, which axis to use for the billboarding. Supports only X or Y.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles3D_property_transform_align_channel_filter:
+
+.. rst-class:: classref-property
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **transform_align_channel_filter** :ref:`🔗<class_GPUParticles3D_property_transform_align_channel_filter>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_transform_align_channel_filter**\ (\ value\: :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`\ )
+- :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **get_transform_align_channel_filter**\ (\ )
+
+In the case of billboarded particles, which custom channel to read from to calculate their angle.
 
 .. rst-class:: classref-item-separator
 
