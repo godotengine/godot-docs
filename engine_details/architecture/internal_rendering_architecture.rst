@@ -376,6 +376,8 @@ this.
 
 - `drivers/gles3/shaders/ <https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/>`__
 
+.. _doc_internal_rendering_architecture_2d_and_3d_rendering_separation:
+
 2D and 3D rendering separation
 ------------------------------
 
@@ -420,6 +422,8 @@ release.
 - `servers/rendering/renderer_rd/effects/fsr.cpp <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/effects/fsr.cpp>`__
 - `thirdparty/amd-fsr/ <https://github.com/godotengine/godot/tree/master/thirdparty/amd-fsr>`__
 
+.. _doc_internal_rendering_architecture_2d_rendering_techniques:
+
 2D rendering techniques
 -----------------------
 
@@ -443,6 +447,8 @@ used to calculate particle collisions in 2D.
 **2D SDF generation GLSL shader:**
 
 - `servers/rendering/renderer_rd/shaders/canvas_sdf.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/canvas_sdf.glsl>`__
+
+.. _doc_internal_rendering_architecture_3d_rendering_techniques:
 
 3D rendering techniques
 -----------------------

@@ -48,6 +48,8 @@ Method ``get_queue`` changes return type from ``PackedStringArray`` to ``StringN
 Signal ``current_animation_changed`` changes ``name`` parameter type from ``String`` to ``StringName``                    |✔️|                 |❌|                  |❌|                  `GH-110767`_
 ========================================================================================================================  ===================  ====================  ====================  ============
 
+.. _doc_upgrading_to_godot_4_6_breaking_changes_3d:
+
 3D
 ~~
 
@@ -262,6 +264,8 @@ you may need to explicitly set them to the old values.
 
     The default 3D physics engine for **newly created** projects is now Jolt Physics (`GH-105737`_).
     This can be changed in Project Settings under ``physics/3d/physics_engine``.
+
+.. _doc_upgrading_to_godot_4_6_behaviour_changes_3d:
 
 3D
 ~~

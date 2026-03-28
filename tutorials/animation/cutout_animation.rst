@@ -370,6 +370,8 @@ To apply the same easing curve to multiple keyframes at once:
 
 .. image:: img/tuto_cutout24.png
 
+.. _doc_cutout_animation_2d_skeletal_deform:
+
 2D Skeletal deform
 ~~~~~~~~~~~~~~~~~~
 

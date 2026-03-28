@@ -71,6 +71,8 @@ GPU
    using_multimesh
    pipeline_compilations
 
+.. _doc_perfomance_3d:
+
 3D
 --
 
