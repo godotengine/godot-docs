@@ -1,9 +1,9 @@
 .. _doc_openxr_passthrough:
 
-AR / Passthrough
+MR / Passthrough
 ================
 
-Augmented Reality is supported through various methods depending on the capabilities of the hardware.
+Mixed Reality is supported through various methods depending on the capabilities of the hardware.
 
 Headsets such as the Magic Leap and glasses such as TiltFive show the rendered result on
 `see-through displays <https://en.wikipedia.org/wiki/See-through_display>`__ allowing the user
