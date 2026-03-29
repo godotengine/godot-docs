@@ -1196,7 +1196,7 @@ Returns the object's unique instance ID. This ID can be saved in :ref:`EncodedOb
 
 Returns the object's metadata value for the given entry ``name``. If the entry does not exist, returns ``default``. If ``default`` is ``null``, an error is also generated.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_ascii_identifier()<class_StringName_method_is_valid_ascii_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
@@ -1360,7 +1360,7 @@ Returns ``true`` if any connection exists on the given ``signal`` name.
 
 Returns ``true`` if a metadata entry is found with the given ``name``. See also :ref:`get_meta()<class_Object_method_get_meta>`, :ref:`set_meta()<class_Object_method_set_meta>` and :ref:`remove_meta()<class_Object_method_remove_meta>`.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_ascii_identifier()<class_StringName_method_is_valid_ascii_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
