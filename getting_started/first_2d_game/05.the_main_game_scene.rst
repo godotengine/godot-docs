@@ -108,8 +108,7 @@ You can assign this property's value in two ways:
 - Click the down arrow next to "[empty]" and choose "Load". Select ``mob.tscn``.
 
 Next, select the instance of the ``Player`` scene under ``Main`` node in the Scene dock,
-and access the Node dock on the sidebar. Make sure to have the Signals tab selected
-in the Node dock.
+and access the Signals dock on the sidebar.
 
 You should see a list of the signals for the ``Player`` node. Find and
 double-click the ``hit`` signal in the list (or right-click it and select
