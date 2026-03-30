@@ -16,7 +16,7 @@ XR (Extended Reality)
 
 In practice, XR refers to the complete system exposed through the
 :ref:`XRServer <class_xrserver>` and related APIs. This system abstracts away platform
-differences and provides a unified way to build extended reality applications.
+differences and provides a unified way to build XR applications.
 
 XR includes:
 
