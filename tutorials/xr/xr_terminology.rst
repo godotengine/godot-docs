@@ -3,7 +3,7 @@
 XR Terminology
 ==============
 
-This page defines how terms such as *XR*, *VR*, *AR*, and *MR* are used within Godot.
+This page defines how terms such as *XR*, *VR*, and *AR* are used within Godot.
 
 These terms are not always used consistently across the industry. In Godot, we use clear
 and practical definitions to avoid ambiguity and to better reflect how these technologies
@@ -12,11 +12,11 @@ are actually implemented.
 XR (Extended Reality)
 ---------------------
 
-**XR** is an umbrella term that covers all immersive technologies supported by Godot.
+**XR** is an umbrella term that covers all extended reality technologies supported by Godot.
 
 In practice, XR refers to the complete system exposed through the
 :ref:`XRServer <class_xrserver>` and related APIs. This system abstracts away platform
-differences and provides a unified way to build immersive applications.
+differences and provides a unified way to build extended reality applications.
 
 XR includes:
 
@@ -35,7 +35,7 @@ VR (Virtual Reality)
         <iframe src="https://www.youtube-nocookie.com/embed/xJKQ2ca5zVw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-**Virtual Reality (VR)** refers to fully immersive experiences where the user is placed
+**Virtual Reality (VR)** refers to fully **immersive** experiences where the user is placed
 inside a completely virtual environment.
 
 When using VR, the user does not see the real world. Instead, everything they see is
@@ -51,6 +51,18 @@ In Godot, VR typically involves:
 This is the most common use of XR in Godot. See
 :ref:`Setting up XR <doc_setting_up_xr>` for how to get started.
 
+.. note::
+
+    Even in VR applications, passthrough can be used if supported by the headset.
+
+    In this case, passthrough is typically used to reveal specific real-world
+    elements, such as a keyboard, mouse, or other peripherals, while the rest
+    of the experience remains fully virtual.
+
+    This is a hybrid use case and differs from Augmented Reality, as passthrough
+    is not used to place virtual content into the real world, but to selectively
+    expose parts of the real world within a VR experience.
+
 AR (Augmented Reality)
 ----------------------
 
@@ -63,63 +75,35 @@ AR (Augmented Reality)
 **Augmented Reality (AR)** refers to experiences where virtual content is overlaid onto
 the real world.
 
-In these applications, the user continues to see their physical surroundings, while
-virtual objects are rendered in a way that makes them appear part of that environment.
+The user continues to see their physical surroundings, while virtual objects are rendered
+in a way that makes them appear part of that environment.
 
-In Godot, AR is used in two different contexts.
+In Godot, AR is treated as a single concept, regardless of the type of device used.
+This includes XR headsets using camera passthrough, AR glasses, and handheld devices
+such as phones and tablets.
 
-Passthrough AR (XR devices)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For XR devices and AR glasses that support standards such as OpenXR or WebXR, AR
+functionality is available through the XR system. In these cases, applications can run
+across different devices with minimal changes. Passthrough on VR headsets is one example
+of this, and is simply a technical method used to enable AR capabilities on such devices.
 
-This refers to Augmented Reality experiences on XR headsets that use built-in cameras
-to capture the real world and display it inside the headset.
+Outside of Godot, this type of experience is often referred to as "Mixed Reality (MR)".
+In Godot documentation, this is treated as Augmented Reality to avoid ambiguity.
+Passthrough is considered an implementation detail, not a separate category.
 
-The application renders virtual content on top of this camera feed, allowing users to
-interact with virtual objects while still being aware of their surroundings.
-
-- Uses XR interfaces
-- Relies on camera passthrough provided by the device
-- Runs on head-mounted devices
-
-From Godot's perspective, this is part of the XR system and uses the same APIs as VR.
-See :ref:`AR passthrough <doc_openxr_passthrough>` for more details.
-
-Handheld AR (mobile devices)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This refers to Augmented Reality experiences on handheld devices, such as phones and tablets.
-
-These applications use the device camera to display the real world on screen, while
-sensor data (such as motion tracking and environment detection) is used to position
-virtual objects in a stable and believable way.
-
-This allows virtual content to appear anchored in the real world when viewed through
-the device.
-
-Implementation is done through platform-specific plugins:
-
-- :ref:`ARKit plugin (iOS) <doc_plugins_for_ios>`
-- `ARCore plugin (Android) <https://github.com/godotvr/godot_arcore>`_
-
-These integrations are separate from the XR interface system and must be set up
-individually.
-
-MR (Mixed Reality)
-------------------
-
-**Mixed Reality (MR)** is a term that is used inconsistently across the industry.
-
-It is often used to describe a range of experiences between VR and AR, or to refer to
-passthrough-based systems on XR headsets.
-
-In practice, MR does not represent a clearly defined technical category and is often
-used interchangeably with AR.
+See :ref:`AR passthrough <doc_openxr_passthrough>` for an example of AR using the XR system.
 
 .. note::
 
-    In Godot documentation, MR is not used as a separate classification.
+    Handheld platforms such as phones and tablets currently do not provide OpenXR support.
 
-    Experiences commonly referred to as "MR" are treated as **AR**, specifically
-    passthrough AR on XR devices.
+    Instead, AR functionality is exposed through proprietary APIs and requires
+    platform-specific plugins:
 
-    This keeps terminology consistent and avoids ambiguity.
+	- :ref:`ARKit plugin (iOS) <doc_plugins_for_ios>`
+	- `ARCore plugin (Android) <https://github.com/godotvr/godot_arcore>`_
+
+    This results in platform-specific implementations that are not fully portable.
+
+    OpenXR is capable of supporting handheld AR. If adopted by platform vendors, this would
+    allow AR applications to run across phones, headsets, and glasses using a shared codebase.
