@@ -98,7 +98,7 @@ the device.
 
 Implementation is done through platform-specific plugins:
 
-- `ARKit plugin (iOS) <https://docs.godotengine.org/de/4.x/tutorials/platform/ios/plugins_for_ios.html>`_
+- :ref:`ARKit plugin (iOS) <doc_plugins_for_ios>`
 - `ARCore plugin (Android) <https://github.com/godotvr/godot_arcore>`_
 
 These integrations are separate from the XR interface system and must be set up
