@@ -308,7 +308,6 @@ Development
 
 - :ref:`doc_common_engine_methods_and_macros_error_macros`
 - :ref:`doc_vulkan_validation_layers`
-- :ref:`doc_gdscript_grammar`
 - Configuring an IDE: :ref:`doc_configuring_an_ide_code_blocks`
 
 Editor
