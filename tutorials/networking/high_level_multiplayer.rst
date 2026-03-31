@@ -337,6 +337,14 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         // Process the input and affect game logic.
     }
 
+.. note::
+
+    Godot's high-level RPC system is node-based. Methods marked with ``@rpc`` should be defined on
+    scripts attached to ``Node``-derived classes. Defining RPC methods only on non-``Node`` classes
+    is not supported and may result in runtime errors.
+
+    If needed, keep RPC entry points on ``Node`` scripts and delegate logic to helper objects.
+
 RPC methods must be defined on Node-based scripts
 -----------------------------------------------
 
