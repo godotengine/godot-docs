@@ -79,7 +79,7 @@ The user continues to see their physical surroundings, while virtual objects are
 in a way that makes them appear part of that environment.
 
 In Godot, AR is treated as a single concept, regardless of the type of device used.
-This includes XR headsets using camera passthrough, see through glasses with displays, and handheld devices
+This includes XR headsets using camera passthrough, see-through glasses with displays, and handheld devices
 such as phones and tablets.
 
 For XR devices and AR glasses that support standards such as OpenXR or WebXR, AR
