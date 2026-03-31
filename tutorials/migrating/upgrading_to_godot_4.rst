@@ -672,6 +672,47 @@ The most notable examples of this are:
 - In ``_get_property_list()``, the ``noslider`` property hint string is now ``no_slider``.
 - VisualShaderNodeVec4Parameter now takes a :ref:`class_Vector4` as parameter
   instead of a :ref:`class_Quaternion`.
+- In :ref:`class_@GlobalScope` ``string()`` was renamed to ``str()``
+- :ref:`class_@GlobalScope`'s enum ``Margin`` has been completely removed 
+- ``get_joy_axis_string()`` was removed from ``Input``. There is no replacement, any code that
+  relied on this should be changed to work with ints: `GH-43591 <https://github.com/godotengine/godot/pull/43591>`
+- ``Plus_File()`` was removed. Any code that used it should be changed to manually add a
+  ``/`` to a string. For example ``"MyString" + "/" + "MySecondString"``
+- Using ``@export`` followed by the type hint in parenthesis, for example
+  ``@export (int) var MyVar``, is no longer valid syntax. Please see the :ref:`doc_gdscript_exports`
+  page for correct syntax.
+- ``set_target_fps()`` is now ``set_max_fps()``
+- ``VisualServer``'s ``RenderInfo`` enum is now :ref:`class_RenderingServer`'s ``RenderingInfo``
+  enum. Some settings have been renamed. Material change stats have been removed as they're
+  too difficult to guess on Vulkan: `GH-50096 <https://github.com/godotengine/godot/pull/50096>`
+- ``VisualServer``'s ``INFO_SHADER_COMPILES_IN_FRAME`` was never added to Godot 4:
+  `GH-50096 <https://github.com/godotengine/godot/pull/50096>`
+- :ref:`class_OS` functions related to clipboard and TTS were moved to :ref:`class_DisplayServer`
+- The Basis constructor ``Basis(Transform3D)`` was removed. As a replacement use the
+  static method ``Basis.from_euler()``
+- ``_unhandled_key_input`` now takes ``InputEvent`` instead of ``InputEventKey``
+- ``get_font()`` is now ``get_theme_font()``
+- ``ResourceInteractiveLoader`` has been fully removed, and is superseded by
+  :ref:`ResourceLoader.load_threaded_request() <class_ResourceLoader_method_load_threaded_request>`.
+- in :ref:`class_OS` the arguments for ``execute()`` have changed. ``blocking`` has been removed,
+  in Godot 4 blocking the main thread until completion is the default behavior now. Use of
+  ``Thread`` can be used to create a separate thread that will not block the main one,
+  ``create_process()`` can also be used to make an independent process
+- :ref:`class_SceneTree`'s signal ``idle_frame`` has been renamed to ``process_frame``.
+- :ref:`class_PhysicsDirectSpaceState3d` and :ref:`class_PhysicsDirectSpaceState2d`'s
+  ``intersect_ray()`` arguments must now be provided in the form of
+  ``PhysicsRayQueryParameters3D`` or ``PhysicsRayQueryParameters2D``. Within the query
+  parameters the order of the collision mask and array arguments have been switched, and
+  the ``collide_with_bodies`` and ``Colide_with_areas`` arguments have been removed.
+- :ref:`class_Label`'s ``Align`` property is now ``HorizontalAllignment``.
+- :ref:`class_NodePath` now uses ``^`` instead of ``@``
+- ``get_data`` in ``Texture`` is now ``get_image`` in :ref:`class_Texture2D`
+- :ref:`class_Camera2D`'s ``current`` property has been removed. You can check if a camera is
+  current with the method ``is_current()`` and make it the current camera with the method
+  ``make_current()``
+- ``lerp()`` will **NOT** automatically convert an int to a float anymore. If a float is
+  your second value, add a ``.0`` to the int
+- MSAA viewport and project settings have been split up between 2D and 3D
 
 **Removed or replaced nodes/resources**
 
@@ -791,3 +832,27 @@ Updating version control settings
 
 Godot 3.x and 4.x have entirely different lists of files and folders that should
 be ignored by your :ref:`version control system<doc_version_control_systems>`.
+
+Conversion created bugs
+-----------------------
+
+Manual resource fixes
+~~~~~~~~~~~~~~~~~~~~~
+
+Some scene resources will need to be manually setup again to look or behave the way
+they did in 3.x.
+
+- Materials set in ``MeshInstance`` properties in 3.x will need to be re-assigned in
+  4.0.
+- ``Surface Material Override``s need to be manually set again.
+- ``Label3D``s will need their fonts re-assigned to them. In addition, their font
+  size will need to be manually adjusted.
+- The location of your default audio bus may need to be set again in project settings.
+
+Erroneous "super" conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In Godot 3, a parent class method call can be done by prefixing ``.`` to a method like
+this ``.method()``. The converter will automatically add ``super`` to the front since that's
+the new syntax, like this ``super.method()``. However, this will also erroneously happen to
+code that is broken up over multiple lines, that will require manual cleanup.
