@@ -79,7 +79,7 @@ The user continues to see their physical surroundings, while virtual objects are
 in a way that makes them appear part of that environment.
 
 In Godot, AR is treated as a single concept, regardless of the type of device used.
-This includes XR headsets using camera passthrough, AR glasses, and handheld devices
+This includes XR headsets using camera passthrough, see through glasses with displays, and handheld devices
 such as phones and tablets.
 
 For XR devices and AR glasses that support standards such as OpenXR or WebXR, AR
@@ -87,7 +87,7 @@ functionality is available through the XR system. In these cases, applications c
 across different devices with minimal changes. Passthrough on VR headsets is one example
 of this, and is simply a technical method used to enable AR capabilities on such devices.
 
-Outside of Godot, this type of experience is often referred to as "Mixed Reality (MR)".
+Outside of Godot, this type of experience is sometimes referred to as "Mixed Reality (MR)".
 In Godot documentation, this is treated as Augmented Reality to avoid ambiguity.
 Passthrough is considered an implementation detail, not a separate category.
 
