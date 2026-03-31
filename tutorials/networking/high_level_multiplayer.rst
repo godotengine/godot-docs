@@ -47,6 +47,34 @@ In summary, you can use the low-level networking API for maximum control and imp
              You can of course experiment, but when you release a networked application,
              always take care of any possible security concerns.
 
+Secure multiplayer design
+-------------------------
+
+Godot's high-level multiplayer API makes it easier to build networked games, but it does not
+automatically make gameplay logic secure. For competitive or persistent multiplayer games, treat
+all client input as untrusted.
+
+A common mistake is to let clients authoritatively decide important game state, such as player
+position, combat results, inventory changes, or match outcomes. This can make cheating and desyncs
+much easier.
+
+In general, prefer the following patterns:
+
+- Use server-authoritative logic for gameplay-critical decisions.
+- Validate RPC arguments before applying them to game state.
+- Avoid trusting client-reported positions, timers, cooldowns, or resource values without checks.
+- Add sanity checks and rate limits to actions that can be triggered frequently.
+- Keep RPC methods on ``Node``-derived classes. High-level RPC calls are not supported on methods
+  defined only in non-``Node`` classes.
+
+For example, instead of accepting a client's final position directly, consider sending player input
+or movement intent to the authority/server, then validating and applying the result there.
+
+High-level multiplayer is designed for convenience, not as a complete anti-cheat solution. If your
+game has strict fairness, persistence, or security requirements, design your networking so that the
+server remains the source of truth for important state.
+
+
 Mid-level abstraction
 ---------------------
 
@@ -717,30 +745,3 @@ On the client:
 As soon as both, the client's and the server's :ref:`complete_auth() <class_SceneMultiplayer_method_complete_auth>`
 methods have been called, the connection is considered to be established and the
 `connected_to_server` and `peer_connected` signals fire.
-
-Secure multiplayer design
--------------------------
-
-Godot's high-level multiplayer API makes it easier to build networked games, but it does not
-automatically make gameplay logic secure. For competitive or persistent multiplayer games, treat
-all client input as untrusted.
-
-A common mistake is to let clients authoritatively decide important game state, such as player
-position, combat results, inventory changes, or match outcomes. This can make cheating and desyncs
-much easier.
-
-In general, prefer the following patterns:
-
-- Use server-authoritative logic for gameplay-critical decisions.
-- Validate RPC arguments before applying them to game state.
-- Avoid trusting client-reported positions, timers, cooldowns, or resource values without checks.
-- Add sanity checks and rate limits to actions that can be triggered frequently.
-- Keep RPC methods on ``Node``-derived classes. High-level RPC calls are not supported on methods
-  defined only in non-``Node`` classes.
-
-For example, instead of accepting a client's final position directly, consider sending player input
-or movement intent to the authority/server, then validating and applying the result there.
-
-High-level multiplayer is designed for convenience, not as a complete anti-cheat solution. If your
-game has strict fairness, persistence, or security requirements, design your networking so that the
-server remains the source of truth for important state.
