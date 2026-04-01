@@ -21,6 +21,7 @@ that some aspects of the code or directory structures may be different in GDExte
    :name: toc-devel-cpp-source-advanced
 
    custom_modules_in_cpp
+   gdextension/index
    binding_to_external_libraries
    custom_godot_servers
    custom_resource_format_loaders
