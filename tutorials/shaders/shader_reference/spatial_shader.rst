@@ -449,9 +449,17 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | inout vec3 **BINORMAL**                | Binormal that comes from the ``vertex()`` function, in view space.                               |
 |                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **NORMAL_MAP**                | Set normal here if reading normal from a texture instead of ``NORMAL``.                          |
+| out vec3 **NORMAL_MAP**                | Set normal here in tangent space if reading normal from a texture instead of ``NORMAL``.         |
+|                                        | The blue channel is ignored, as it's reconstructed in the engine instead.                        |
+|                                        | This allows normal maps with :abbr:`RGTC (Red-Green Texture Compression)` compression to work.   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **NORMAL_MAP_DEPTH**         | Depth from ``NORMAL_MAP``. Defaults to ``1.0``.                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **BENT_NORMAL_MAP**           | Set bent normal map here in tangent space to enable                                              |
+|                                        | :ref:`bent normals <doc_standard_material_3d_bent_normal_map>`.                                  |
+|                                        | This is used to improve specular occlusion, and requires a specially authored bent normal map.   |
+|                                        | The blue channel is ignored, as it's reconstructed in the engine instead. This allows            |
+|                                        | bent normal maps with :abbr:`RGTC (Red-Green Texture Compression)` compression to work.          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white). Base color.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
