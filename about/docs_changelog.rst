@@ -15,6 +15,43 @@ added since version 3.0.
     This document only contains new pages, so not all changes are reflected.
     Many pages have been substantially updated but are not reflected in this document.
 
+New pages since version 4.6
+---------------------------
+
+Editor
+~~~~~~
+
+- :ref:`doc_game_embedding`
+
+User Interface (UI)
+~~~~~~~~~~~~~~~~~~~
+
+- :ref:`doc_creating_applications`
+
+New pages since version 4.5
+---------------------------
+
+Input
+~~~~~
+
+- :ref:`doc_controller_features`
+
+Migrating
+~~~~~~~~~
+
+- :ref:`doc_upgrading_to_godot_4.6`
+
+Platform-specific
+~~~~~~~~~~~~~~~~~
+
+- :ref:`doc_resolving_crashes_on_android`
+- :ref:`doc_wayland_x11`
+
+Scripting
+~~~~~~~~~
+
+- :ref:`doc_godot_cpp_core_types`
+
 New pages since version 4.4
 ---------------------------
 
