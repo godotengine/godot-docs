@@ -74,11 +74,10 @@ High-level multiplayer is designed for convenience, not as a complete anti-cheat
 game has strict fairness, persistence, or security requirements, design your networking so that the
 server remains the source of truth for important state.
 
-Note
+.. note::
 
-RPC methods should be defined on ``Node``-derived classes. Attempting to use high-level RPC calls
-on methods defined only in non-``Node`` classes will result in runtime errors.
-
+    RPC methods should be defined on ``Node``-derived classes. Attempting to use high-level RPC calls
+    on methods defined only in non-``Node`` classes will result in runtime errors.
 
 Mid-level abstraction
 ---------------------
