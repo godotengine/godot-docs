@@ -955,6 +955,7 @@ Other objects
     class_projectsettings
     class_propertytweener
     class_randomnumbergenerator
+    class_rdaccelerationstructuregeometry
     class_rdattachmentformat
     class_rdframebufferpass
     class_rdpipelinecolorblendstate
@@ -1141,6 +1142,30 @@ Editor-only
     class_editorundoredomanager
     class_editorvcsinterface
     class_filesystemdock
+    class_gdscriptlanguageprotocol
+    class_gdscriptsyntaxhighlighter
+    class_gdscripttextdocument
+    class_gdscriptworkspace
+    class_gridmapeditorplugin
+    class_openxrbindingmodifiereditor
+    class_openxrinteractionprofileeditor
+    class_openxrinteractionprofileeditorbase
+    class_resourceimporterbitmap
+    class_resourceimporterbmfont
+    class_resourceimportercsvtranslation
+    class_resourceimporterdynamicfont
+    class_resourceimporterimage
+    class_resourceimporterimagefont
+    class_resourceimporterlayeredtexture
+    class_resourceimportermp3
+    class_resourceimporterobj
+    class_resourceimporteroggvorbis
+    class_resourceimporterscene
+    class_resourceimportershaderfile
+    class_resourceimportersvg
+    class_resourceimportertexture
+    class_resourceimportertextureatlas
+    class_resourceimporterwav
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase

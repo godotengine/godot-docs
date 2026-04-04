@@ -46,18 +46,6 @@ Command key names use slash delimiters to distinguish sections, for example: ``"
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
-
-.. table::
-   :widths: auto
-
-   +-------------------------+-------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | dialog_hide_on_ok | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`) |
-   +-------------------------+-------------------+------------------------------------------------------------------------------------------+
-
-.. rst-class:: classref-reftable-group
-
 Methods
 -------
 

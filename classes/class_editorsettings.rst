@@ -469,6 +469,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/accessibility/accessibility_support<class_EditorSettings_property_interface/accessibility/accessibility_support>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/accessibility/property_descriptions<class_EditorSettings_property_interface/accessibility/property_descriptions>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/appearance/accept_dialog_cancel_ok_buttons>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/collapse_main_menu<class_EditorSettings_property_interface/editor/appearance/collapse_main_menu>`                                                                               |
@@ -3671,6 +3673,18 @@ Editor accessibility support mode:
 - **Disabled** (``2``): Accessibility support is fully disabled.
 
 \ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD), do not count as assistive apps. To test the editor with these tools, use **Always Active**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/accessibility/property_descriptions:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/accessibility/property_descriptions** :ref:`🔗<class_EditorSettings_property_interface/accessibility/property_descriptions>`
+
+If ``true``, editor inspector uses property documentation as an accessible description of the property.
 
 .. rst-class:: classref-item-separator
 

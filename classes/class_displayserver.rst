@@ -562,6 +562,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_hdr_output_reference_luminance<class_DisplayServer_method_window_set_hdr_output_reference_luminance>`\ (\ reference_luminance\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_icon<class_DisplayServer_method_window_set_icon>`\ (\ icon\: :ref:`Image<class_Image>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_ime_active<class_DisplayServer_method_window_set_ime_active>`\ (\ active\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -2742,6 +2744,16 @@ Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXT
 Sent when the window has been forcibly closed by the display server. The window will immediately hide and clean any internal rendering references.
 
 \ **Note:** This flag is implemented only on Linux (Wayland).
+
+.. _class_DisplayServer_constant_WINDOW_EVENT_OUTPUT_MAX_LINEAR_VALUE_CHANGED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_OUTPUT_MAX_LINEAR_VALUE_CHANGED** = ``9``
+
+Sent when the output max linear value returned by :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed.
+
+This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen.
 
 .. rst-class:: classref-item-separator
 
@@ -6296,7 +6308,7 @@ Sets the callback that should be called when a hardware keyboard is connected or
 
 |void| **set_icon**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_DisplayServer_method_set_icon>`
 
-Sets the window icon (usually displayed in the top-left corner) with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` instead.
+Sets the application icon and icons of all windows with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` instead.
 
 \ **Note:** Requires support for :ref:`FEATURE_ICON<class_DisplayServer_constant_FEATURE_ICON>`.
 
@@ -7215,6 +7227,20 @@ Sets the maximum luminance in nits (cd/m²) for HDR output by the window specifi
 |void| **window_set_hdr_output_reference_luminance**\ (\ reference_luminance\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_hdr_output_reference_luminance>`
 
 Sets the reference white luminance in nits (cd/m²) for HDR output by the window specified by ``window_id``. If ``reference_luminance`` is negative, the window automatically adjusts to the brightness set by the operating system. By default, this luminance is set to ``-1.0`` for every window. Typically this property should be left at this default value, but may optionally be exposed as an "HDR Brightness" in-game setting to allow the player to adjust the brightness of their game, independently of their device settings. See also :ref:`window_get_hdr_output_current_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_current_reference_luminance>` and :ref:`window_get_hdr_output_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_reference_luminance>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_set_icon:
+
+.. rst-class:: classref-method
+
+|void| **window_set_icon**\ (\ icon\: :ref:`Image<class_Image>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_icon>`
+
+Sets the window icon (usually displayed in the top-left corner) for the window specified by ``window_id``.
+
+\ **Note:** This method is implemented on Linux and Windows.
 
 .. rst-class:: classref-item-separator
 

@@ -152,6 +152,8 @@ Properties
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_disable_z<class_ParticleProcessMaterial_property_particle_flag_disable_z>`                         | ``false``               |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_inherit_emitter_scale<class_ParticleProcessMaterial_property_particle_flag_inherit_emitter_scale>` | ``false``               |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_rotate_y<class_ParticleProcessMaterial_property_particle_flag_rotate_y>`                           | ``false``               |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                  | :ref:`radial_accel_curve<class_ParticleProcessMaterial_property_radial_accel_curve>`                                   |                         |
@@ -505,11 +507,23 @@ Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_part
 
 
 
+.. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_INHERIT_EMITTER_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_INHERIT_EMITTER_SCALE** = ``4``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+
+
+
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_MAX** = ``4``
+:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_MAX** = ``5``
 
 Represents the size of the :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` enum.
 
@@ -1768,6 +1782,25 @@ Changes the behavior of the damping properties from a linear deceleration to a d
 - :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>`\ ) |const|
 
 If ``true``, particles will not move on the z axis.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_particle_flag_inherit_emitter_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **particle_flag_inherit_emitter_scale** = ``false`` :ref:`🔗<class_ParticleProcessMaterial_property_particle_flag_inherit_emitter_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>`\ ) |const|
+
+If ``true``, particles will inherit the scale of the emitter.
+
+\ **Note:** This has no effect when :ref:`GPUParticles3D.local_coords<class_GPUParticles3D_property_local_coords>` is ``true``, since particles in local space are already affected by the emitter's scale.
 
 .. rst-class:: classref-item-separator
 
