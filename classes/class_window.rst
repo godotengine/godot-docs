@@ -462,6 +462,18 @@ Emitted when the mouse event is received by the custom decoration area defined b
 
 ----
 
+.. _class_Window_signal_output_max_linear_value_changed:
+
+.. rst-class:: classref-signal
+
+**output_max_linear_value_changed**\ (\ output_max_linear_value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Window_signal_output_max_linear_value_changed>`
+
+Emitted when the output max linear value returned by :ref:`get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed. This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen. ``output_max_linear_value`` is the new value.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_signal_theme_changed:
 
 .. rst-class:: classref-signal
@@ -2014,9 +2026,9 @@ Returns layout direction and text writing direction.
 
 :ref:`float<class_float>` **get_output_max_linear_value**\ (\ ) |const| :ref:`🔗<class_Window_method_get_output_max_linear_value>`
 
-Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window.
+Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. The :ref:`output_max_linear_value_changed<class_Window_signal_output_max_linear_value_changed>` signal will be emitted whenever this value changes.
 
-When using the Linear tonemapper without :ref:`Environment<class_Environment>` effects or no :ref:`WorldEnvironment<class_WorldEnvironment>`, use the returned value to scale content to maximize the screen's brightness, such as for lasers or other bright effects. The following is an example that produces the brightest purple color that the screen can produce:
+This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. When using the Linear tonemapper without :ref:`Environment<class_Environment>` effects or no :ref:`WorldEnvironment<class_WorldEnvironment>`, use the returned value to scale content to maximize the screen's brightness, such as for lasers or other bright effects. The following is an example that produces the brightest purple color that the screen can produce:
 
 
 .. tabs::

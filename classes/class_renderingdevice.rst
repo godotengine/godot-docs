@@ -49,7 +49,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                     | :ref:`barrier<class_RenderingDevice_method_barrier>`\ (\ from\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767, to\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`blas_create<class_RenderingDevice_method_blas_create>`\ (\ vertex_array\: :ref:`RID<class_RID>`, index_array\: :ref:`RID<class_RID>`, geometry_bits\: |bitfield|\[:ref:`AccelerationStructureGeometryBits<enum_RenderingDevice_AccelerationStructureGeometryBits>`\] = 0, position_attribute_location\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   | :ref:`RID<class_RID>`                                      | :ref:`blas_create<class_RenderingDevice_method_blas_create>`\ (\ geometries\: :ref:`Array<class_Array>`\[:ref:`RDAccelerationStructureGeometry<class_RDAccelerationStructureGeometry>`\]\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                      | :ref:`buffer_clear<class_RenderingDevice_method_buffer_clear>`\ (\ buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`, size_bytes\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3292,25 +3292,25 @@ Allows usage of this buffer as input data for an acceleration structure build op
 
 ----
 
-.. _enum_RenderingDevice_AccelerationStructureGeometryBits:
+.. _enum_RenderingDevice_AccelerationStructureGeometryFlagBits:
 
 .. rst-class:: classref-enumeration
 
-flags **AccelerationStructureGeometryBits**: :ref:`🔗<enum_RenderingDevice_AccelerationStructureGeometryBits>`
+flags **AccelerationStructureGeometryFlagBits**: :ref:`🔗<enum_RenderingDevice_AccelerationStructureGeometryFlagBits>`
 
-.. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE:
+.. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccelerationStructureGeometryBits<enum_RenderingDevice_AccelerationStructureGeometryBits>` **ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE** = ``1``
+:ref:`AccelerationStructureGeometryFlagBits<enum_RenderingDevice_AccelerationStructureGeometryFlagBits>` **ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT** = ``1``
 
 An opaque geometry does not invoke the any hit shaders.
 
-.. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION:
+.. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AccelerationStructureGeometryBits<enum_RenderingDevice_AccelerationStructureGeometryBits>` **ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION** = ``2``
+:ref:`AccelerationStructureGeometryFlagBits<enum_RenderingDevice_AccelerationStructureGeometryFlagBits>` **ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT** = ``2``
 
 This geometry only calls the any hit shader a single time for each primitive.
 
@@ -5480,13 +5480,11 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **blas_create**\ (\ vertex_array\: :ref:`RID<class_RID>`, index_array\: :ref:`RID<class_RID>`, geometry_bits\: |bitfield|\[:ref:`AccelerationStructureGeometryBits<enum_RenderingDevice_AccelerationStructureGeometryBits>`\] = 0, position_attribute_location\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_blas_create>`
+:ref:`RID<class_RID>` **blas_create**\ (\ geometries\: :ref:`Array<class_Array>`\[:ref:`RDAccelerationStructureGeometry<class_RDAccelerationStructureGeometry>`\]\ ) :ref:`🔗<class_RenderingDevice_method_blas_create>`
 
 Creates a new Bottom Level Acceleration Structure. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
-
-\ ``position_attribute_location`` selects which vertex attribute location supplies the position data (default is 0).
 
 .. rst-class:: classref-item-separator
 
@@ -6621,7 +6619,7 @@ A simple raytracing operation might look like this (code is not a complete examp
     assert(rd.has_feature(RenderingDevice.SUPPORTS_RAYTRACING_PIPELINE))
 
     # Create a BLAS for a mesh.
-    blas = rd.blas_create(vertex_array, index_array, RenderingDevice.ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE)
+    blas = rd.blas_create(geometries)
     # Create TLAS with BLASs.
     instances_buffer = rd.tlas_instances_buffer_create(1)
     rd.tlas_instances_buffer_fill(instances_buffer, [blas], [Transform3D()])

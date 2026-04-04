@@ -194,6 +194,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`icons/spotlight_120x120_tinted<class_EditorExportPlatformIOS_property_icons/spotlight_120x120_tinted>`                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`modules/camera<class_EditorExportPlatformIOS_property_modules/camera>`                                                                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`privacy/active_keyboard_access_reasons<class_EditorExportPlatformIOS_property_privacy/active_keyboard_access_reasons>`                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`privacy/camera_usage_description<class_EditorExportPlatformIOS_property_privacy/camera_usage_description>`                                                                     |
@@ -1521,6 +1523,18 @@ Spotlight icon file on iPad and iPhone (3x DPI), dark version. See `App icons <h
 :ref:`String<class_String>` **icons/spotlight_120x120_tinted** :ref:`🔗<class_EditorExportPlatformIOS_property_icons/spotlight_120x120_tinted>`
 
 Spotlight icon file on iPad and iPhone (3x DPI), tinted version. See `App icons <https://developer.apple.com/design/human-interface-guidelines/foundations/app-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_modules/camera:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **modules/camera** :ref:`🔗<class_EditorExportPlatformIOS_property_modules/camera>`
+
+If ``true``, :ref:`CameraServer<class_CameraServer>` module is added to the exported project.
 
 .. rst-class:: classref-item-separator
 

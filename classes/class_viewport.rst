@@ -426,11 +426,21 @@ More information: `MetalFX <https://developer.apple.com/documentation/metalfx>`_
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
+.. _class_Viewport_constant_SCALING_3D_MODE_NEAREST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_NEAREST** = ``5``
+
+Use nearest-neighbor filtering for the viewport's 3D buffer. This looks crisper than :ref:`SCALING_3D_MODE_BILINEAR<class_Viewport_constant_SCALING_3D_MODE_BILINEAR>` and has no additional rendering cost. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
+
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``5``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``6``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 

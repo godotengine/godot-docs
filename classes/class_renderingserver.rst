@@ -759,7 +759,7 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_request_process<class_RenderingServer_method_particles_request_process>`\ (\ particles\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`particles_request_process_time<class_RenderingServer_method_particles_request_process_time>`\ (\ particles\: :ref:`RID<class_RID>`, time\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   | |void|                                                                           | :ref:`particles_request_process_time<class_RenderingServer_method_particles_request_process_time>`\ (\ particles\: :ref:`RID<class_RID>`, process_time\: :ref:`float<class_float>`, process_time_residual\: :ref:`float<class_float>` = 0.0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_restart<class_RenderingServer_method_particles_restart>`\ (\ particles\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3120,11 +3120,21 @@ Use MetalFX temporal upscaling for the viewport's 3D buffer. The amount of scali
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_NEAREST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_NEAREST** = ``5``
+
+Use nearest-neighbor filtering for the viewport's 3D buffer. This looks crisper than :ref:`VIEWPORT_SCALING_3D_MODE_BILINEAR<class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_BILINEAR>` and has no additional rendering cost. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``5``
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``6``
 
 Represents the size of the :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` enum.
 
@@ -10780,9 +10790,11 @@ Add particle system to list of particle systems that need to be updated. Update 
 
 .. rst-class:: classref-method
 
-|void| **particles_request_process_time**\ (\ particles\: :ref:`RID<class_RID>`, time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_particles_request_process_time>`
+|void| **particles_request_process_time**\ (\ particles\: :ref:`RID<class_RID>`, process_time\: :ref:`float<class_float>`, process_time_residual\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_RenderingServer_method_particles_request_process_time>`
 
-Requests particles to process for extra process time during a single frame.
+Requests the particles to process for extra process time during a single frame.
+
+\ ``process_time`` defines the time that the particles will process while emitting is on. ``process_time_residual`` defines the time that particles will process with emitting turned off for the simulation. When combined with the particles' speed scale set to ``0.0``, this is useful to be able to seek a particle system timeline.
 
 .. rst-class:: classref-item-separator
 
