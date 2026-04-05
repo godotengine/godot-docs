@@ -102,20 +102,19 @@ order to skip those kind of tests, run the following command:
 Writing tests
 -------------
 
-Test suites represent C++ header files which must be included as part of the
-main test entry point in ``tests/test_main.cpp``. Most test suites are located
-directly under ``tests/`` directory.
+Test suites represent C++ implementation files which must include the ``TEST_FORCE_LINK()`` macro.
+Most test suites are located directly under ``tests/`` directory.
 
-All header files are prefixed with ``test_``, and this is a naming convention
+All test files are prefixed with ``test_``, and this is a naming convention
 which the Godot build system relies on to detect tests throughout the engine.
 
 Here's a minimal working test suite with a single test case written:
 
 .. code-block:: cpp
 
-    #pragma once
-
     #include "tests/test_macros.h"
+
+    TEST_FORCE_LINK(test_string)
 
     namespace TestString {
 
@@ -129,7 +128,6 @@ Here's a minimal working test suite with a single test case written:
 .. note::
     You can quickly generate new tests using the ``create_test.py`` script found in the ``tests/`` directory.
     This script automatically creates a new test file with the required boilerplate code in the appropriate location.
-    It's also able to automatically include the new header in ``tests/test_main.cpp`` using invasive mode (``-i`` flag).
     To view usage instructions, run the script with the ``-h`` flag.
 
 The ``tests/test_macros.h`` header encapsulates everything which is needed for
