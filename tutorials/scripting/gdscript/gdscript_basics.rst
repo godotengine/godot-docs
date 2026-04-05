@@ -2005,6 +2005,12 @@ The following pattern types are available:
             [42, ..]:
                 print("Open ended array")
 
+    .. warning::
+
+        Array patterns do not match packed arrays (such as ``PackedStringArray``).
+        Call ``Array(packed_array)`` to convert them into arrays before matching with array patterns.
+
+
 - Dictionary pattern
     Works in the same way as the array pattern. Every key has to be a constant pattern.
 
