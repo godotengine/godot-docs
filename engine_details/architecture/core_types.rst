@@ -188,7 +188,7 @@ efficiency reasons.
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
 | |binary_mutex|        | ``std::mutex``               | Non-recursive mutex type. Use ``MutexLock lock(mutex)`` to lock it.                   |
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
-| |rw_lock|             | ``std::shared_timed_mutex``  | Read-write aware mutex type. Use ``RWLockRead lock(mutex)`` or                        |
+| |rw_lock|             | ``std::shared_mutex``        | Read-write aware mutex type. Use ``RWLockRead lock(mutex)`` or                        |
 |                       |                              | ``RWLockWrite lock(mutex)`` to lock it.                                               |
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
 | |safe_binary_mutex|   | ``std::mutex``               | Recursive mutex type that can be used with ``ConditionVariable``.                     |
