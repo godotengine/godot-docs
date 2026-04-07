@@ -71,8 +71,8 @@ jobs:
           # Convert WebP images to PNG and replace references, so that ePub readers can display those images.
           # The ePub 3.0 specification has WebP support, but it's not widely supported by apps and e-readers yet.
           shopt -s globstar nullglob
-          parallel --will-cite convert {} {.}.png ::: {about,community,contributing,getting_started,img,tutorials}/**/*.webp
-          parallel --will-cite sed -i "s/\\.webp$/\\.png/g" ::: {about,community,contributing,getting_started,tutorials}/**/*.rst
+          parallel --will-cite convert {} {.}.png ::: {about,community,engine_details,getting_started,img,tutorials}/**/*.webp
+          parallel --will-cite sed -i "s/\\.webp$/\\.png/g" ::: {about,community,engine_details,getting_started,tutorials}/**/*.rst
 
           # Remove banners at the top of each page when building `latest`.
           sed -i 's/"godot_is_latest": True/"godot_is_latest": False/' conf.py

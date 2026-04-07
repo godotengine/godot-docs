@@ -7,7 +7,7 @@ Overview
 --------
 
 One of the important components of any operating system is its display server.
-Windows and MacOS only provide one option, Linux however has two, X11 and Wayland.
+Windows and macOS only provide one option, Linux however has two, X11 and Wayland.
 
 X11 is an older standard and is currently being gradually phased out by the majority
 of linux distributions in favor of supporting Wayland, which has been developed as a

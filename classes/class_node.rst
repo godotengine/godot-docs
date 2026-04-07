@@ -1066,6 +1066,16 @@ Notification received when the mouse cursor leaves the :ref:`Viewport<class_View
 
 Notification received when the window is moved.
 
+.. _class_Node_constant_NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED** = ``1013`` :ref:`🔗<class_Node_constant_NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED>`
+
+Notification received when the output max linear value returned by :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed.
+
+This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen.
+
 .. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
 
 .. rst-class:: classref-constant

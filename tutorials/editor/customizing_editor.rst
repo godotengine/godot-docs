@@ -96,11 +96,6 @@ following changes are persisted to the saved layout:
 - FileSystem dock properties: split mode, display mode, sorting order, file list
   display mode, selected paths and unfolded paths.
 
-.. note::
-
-    Splitting the script or shader editor to its own window is *not* persisted
-    as part of a layout.
-
 After making changes, open the **Editor** menu at the top of the editor then
 choose **Editor Layouts > Save**. Enter a name for the layout, then click
 **Save**. If you've already saved an editor layout, you can choose to override

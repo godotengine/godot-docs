@@ -432,6 +432,8 @@ and wider compatibility.
   popular engines) can be found
   `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
+.. _doc_standard_material_3d_bent_normal_map:
+
 Bent normal map
 ---------------
 

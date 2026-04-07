@@ -1909,9 +1909,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_eye_tracked<class_ProjectSettings_property_xr/openxr/foveation_eye_tracked>`                                                                                                     | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`                                                                                                                 | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_with_subsampled_images<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`                                                                               | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_with_subsampled_images<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -13518,6 +13520,8 @@ macOS override for :ref:`rendering/scaling_3d/mode<class_ProjectSettings_propert
 
 Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` for multi-sample antialiasing, which is significantly cheaper but only smooths the edges of polygons.
 
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -14301,6 +14305,18 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/foveation_eye_tracked:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_eye_tracked** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_eye_tracked>`
+
+If ``true`` and foveation level is set to anything other than "Disabled", eye-tracked foveation will be used, so long as it's supported by the headset.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/foveation_level:
 
 .. rst-class:: classref-property
@@ -14319,7 +14335,7 @@ Applied foveation level if supported.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/foveation_with_subsampled_images** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`
+:ref:`bool<class_bool>` **xr/openxr/foveation_with_subsampled_images** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`
 
 If ``true`` and foveation is also enabled, subsampled images will be used on Vulkan. This can improve the performance gain from foveated rendering, especially when using high foveation levels.
 
