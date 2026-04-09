@@ -348,6 +348,7 @@ Reference
       | If both ``{width}`` and ``{height}`` are provided, the image will be scaled
         to that size.
       | Add ``%`` to the end of ``{width}`` or ``{height}`` value to specify it as percentages of the control width instead of pixels.
+      | Add ``em`` to the end of ``{width}`` or ``{height}`` value to specify it as a ratio of the current font size. For example, ``height=1em`` will make the image as tall as the surrounding text.
       | If ``{valign}`` configuration is provided, the image will try to align to the
         surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`.
       | Supports configuration options, see :ref:`doc_bbcode_in_richtextlabel_image_options`.
@@ -716,22 +717,38 @@ Image options
 - **height**
 
   +-----------+--------------------------------------------+
-  | `Values`  | Integer number                             |
+  | `Values`  | Floating-point number                      |
   +-----------+--------------------------------------------+
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Target height of the image in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
+  Target height of the image in pixels.
+
+  Alternative units to pixels can be specified:
+
+  - Add ``%`` to the end of the value to specify it as a percentage of the control width instead of pixels.
+    For example, ``height=50%`` will make the image half as tall as the control is wide.
+
+  - Add ``em`` to the end of the value to specify it as a ratio of the surrounding font size instead of pixels.
+    For example, ``height=1em`` will make the image as tall as the surrounding text.
 
 - **width**
 
   +-----------+--------------------------------------------+
-  | `Values`  | Integer number                             |
+  | `Values`  | Floating-point number                      |
   +-----------+--------------------------------------------+
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Target width of the image in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
+  Target width of the image in pixels.
+
+  Alternative units to pixels can be specified:
+
+  - Add ``%`` to the end of the value to specify it as a percentage of the control width instead of pixels.
+    For example, ``width=50%`` will make the image take up half of the control width.
+
+  - Add ``em`` to the end of the value to specify it as a ratio of the surrounding font size instead of pixels.
+    For example, ``width=1em`` will make the image as wide as the surrounding text is tall.
 
 - **region**
 
