@@ -54,7 +54,7 @@ You can find these in the OpenXR section:
        becoming available.
    * - Enable marker tracking
      - Enables our marker tracking capability that allows detection of markers such as QR codes,
-       Aruco markers, and April tags. 
+       Aruco markers, and April tags.
    * - Enable built-in marker tracking
      - Enables our built-in marker detection logic, this will automatically react to new markers being
        found or markers being moved around the player's space.
@@ -249,7 +249,7 @@ Spatial anchors are tracked using :ref:`OpenXRAnchorTracker<class_OpenXRAnchorTr
 registered with the XRServer.
 
 When needed, the location of the spatial anchor will be updated automatically; the pose on the
-related tracker will be updated and thus the :ref:`XRAnchor3D<class_XRAnchor3D>` node will 
+related tracker will be updated and thus the :ref:`XRAnchor3D<class_XRAnchor3D>` node will
 reposition.
 
 When a spatial anchor has been made persistent, a Universally Unique Identifier (or UUID) is
@@ -354,7 +354,7 @@ subscene as metadata for our UUID.
                 if scene_path.is_empty():
                     # Give a warning that we don't have a scene file stored for this UUID.
                     push_warning("Unknown UUID given, can't determine child scene.")
-                    
+
                     # Load a default scene so we can at least see something.
                     set_child_scene("res://unknown_anchor.tscn")
                     return
@@ -523,7 +523,7 @@ We also need to add a script to our scene to ensure our collision and mesh are a
             plane_tracker.mesh_changed.connect(_update_mesh_and_collision)
 
 If supported by the XR runtime there is additional metadata you can query on the plane tracker
-object. 
+object.
 Of specific note is the ``plane_label`` property that, if available, identifies the type of surface.
 Please consult the :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` class documentation for
 further information.
@@ -560,18 +560,18 @@ required code:
             match marker_tracker.marker_type:
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_QRCODE:
                     var data = marker_tracker.get_marker_data()
-                    if type_of(data) == TYPE_STRING:
+                    if data is String:
                         # Data is a QR code as a string, usually a URL.
                         pass
-                    elif type_of(data) == TYPE_PACKED_BYTE_ARRAY:
+                    elif data is PackedByteArray:
                         # Data is binary, can be anything.
                         pass
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_MICRO_QRCODE:
                     var data = marker_tracker.get_marker_data()
-                    if type_of(data) == TYPE_STRING:
+                    if data is String:
                         # Data is a QR code as a string, usually a URL.
                         pass
-                    elif type_of(data) == TYPE_PACKED_BYTE_ARRAY:
+                    elif data is PackedByteArray:
                         # Data is binary, can be anything.
                         pass
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_ARUCO:
@@ -608,7 +608,7 @@ in the sections above.
 Spatial entity core
 ~~~~~~~~~~~~~~~~~~~
 
-The core spatial entity functionality is exposed through the 
+The core spatial entity functionality is exposed through the
 :ref:`OpenXRSpatialEntityExtension<class_OpenXRSpatialEntityExtension>` singleton.
 
 Specific logic is exposed through capabilities that introduce specialised component types,
@@ -721,7 +721,7 @@ OpenXR emits an event when there are new entities to be processed, this results 
 :ref:`OpenXRSpatialEntityExtension<class_OpenXRSpatialEntityExtension>` singleton.
 
 Note in the example code shown above, we're already connecting to this signal and calling the
-``_on_perform_discovery`` method on our node. Let's implement this: 
+``_on_perform_discovery`` method on our node. Let's implement this:
 
 .. code-block:: gdscript
 
@@ -733,7 +733,7 @@ Note in the example code shown above, we're already connecting to this signal an
         # We get this signal for all spatial contexts, so exit if this is not for us.
         if p_spatial_context != spatial_context:
             return
-        
+
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
             discovery_result.cancel_discovery()
@@ -969,7 +969,7 @@ In the core of OpenXR two types of persistence scopes are supported:
    * - PERSISTENCE_SCOPE_SYSTEM_MANAGED
      - Provides the application with read-only access (i.e. applications cannot modify this store)
        to spatial entities persisted and managed by the system.
-       The application can use the UUID in the persistence component for this store to correlate 
+       The application can use the UUID in the persistence component for this store to correlate
        entities across spatial contexts and device reboots.
    * - PERSISTENCE_SCOPE_LOCAL_ANCHORS
      - Persistence operations and data access is limited to spatial anchors, on the same device,
@@ -1061,7 +1061,7 @@ The first being the creation of our persistence scope.
         if openxr_interface and openxr_interface.is_initialized():
             openxr_interface.session_begun.disconnect(_set_up_persistence_context)
 
-With our persistence scope created, we can now create our spatial context. 
+With our persistence scope created, we can now create our spatial context.
 
 .. code-block:: gdscript
 
@@ -1198,7 +1198,7 @@ as our tracker class as this already has all the support for anchors built in.
 
     func _process_snapshot(p_snapshot, p_get_uuids):
         var result_data : Array
-        
+
         # Always include our query result data.
         var query_result_data : OpenXRSpatialQueryResultData = OpenXRSpatialQueryResultData.new()
         result_data.push_back(query_result_data)
@@ -1265,16 +1265,16 @@ Plane tracking capability
 
 Plane tracking is handled by the
 :ref:`OpenXRSpatialPlaneTrackingCapability<class_OpenXRSpatialPlaneTrackingCapability>`
-singleton class. 
+singleton class.
 
 After the OpenXR session has been created you can call ``OpenXRSpatialPlaneTrackingCapability.is_supported``
 to check if the plane tracking feature is supported on your hardware.
 
 While we've provided most of the code for plane tracking up above, we'll present the full implementation below
-as it has a few small tweaks. 
+as it has a few small tweaks.
 There is no need to update snapshots here, we just do our discovery snapshot and implement our process function.
 
-Plane tracking gives access to two components that are guaranteed to be supported, and three optional components. 
+Plane tracking gives access to two components that are guaranteed to be supported, and three optional components.
 
 .. list-table:: Plane tracking components
    :header-rows: 1
@@ -1369,7 +1369,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
         # We get this signal for all spatial contexts, so exit if this is not for us.
         if p_spatial_context != spatial_context:
             return
-            
+
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
             discovery_result.cancel_discovery()
@@ -1500,7 +1500,7 @@ Marker tracking capability
 
 Marker tracking is handled by the
 :ref:`OpenXRSpatialMarkerTrackingCapability<class_OpenXRSpatialMarkerTrackingCapability>`
-singleton class. 
+singleton class.
 
 Marker tracking works similarly to plane tracking, however we're now tracking specific entities in
 the real world based on some code printed on an object like a piece of paper.
@@ -1635,7 +1635,7 @@ We add our discovery implementation:
         # We get this signal for all spatial contexts, so exit if this is not for us.
         if p_spatial_context != spatial_context:
             return
-            
+
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
             discovery_result.cancel_discovery()
@@ -1768,4 +1768,3 @@ And we add our update functionality:
 
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
-
