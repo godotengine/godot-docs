@@ -204,7 +204,7 @@ From left to right in the toolbar:
   that will be painted on the Z-axis. This will also rotate selected areas if they
   are being moved.
 - **Change Grid Floor**: Adjusts what floor is currently being worked on, can be
-  changed with the arrows or typing
+  changed with the arrows or typing or with ctrl-scroll
 - **Filter Meshes**: Used to search for a specific mesh in the bottom panel.
 - **Zoom**: Controls the zoom level on meshes in the bottom panel.
 - **Layout toggles**: These two buttons toggle between different layouts for meshes
