@@ -700,12 +700,24 @@ Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s 
 
 Before this method is called, the default ease type is :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_property(self, "position", Vector2(300, 0), 0.5) # Uses EASE_IN_OUT.
     tween.set_ease(Tween.EASE_IN)
     tween.tween_property(self, "rotation_degrees", 45.0, 0.5) # Uses EASE_IN.
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(this, "position", new Vector2(300, 0), 0.5); // Uses EaseType.InOut.
+    tween.SetEase(Tween.EaseType.In);
+    tween.TweenProperty(this, "rotation_degrees", 45.0, 0.5); // Uses EaseType.In.
+
+
 
 .. rst-class:: classref-item-separator
 

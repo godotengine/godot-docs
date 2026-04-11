@@ -956,13 +956,16 @@ Other objects
     class_propertytweener
     class_randomnumbergenerator
     class_rdaccelerationstructuregeometry
+    class_rdaccelerationstructureinstance
     class_rdattachmentformat
     class_rdframebufferpass
+    class_rdhitgroup
     class_rdpipelinecolorblendstate
     class_rdpipelinecolorblendstateattachment
     class_rdpipelinedepthstencilstate
     class_rdpipelinemultisamplestate
     class_rdpipelinerasterizationstate
+    class_rdpipelineshader
     class_rdpipelinespecializationconstant
     class_rdsamplerstate
     class_rdshadersource
