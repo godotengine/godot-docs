@@ -475,11 +475,23 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 
 
+.. _class_ScriptLanguageExtension_constant_CODE_COMPLETION_KIND_KEYWORD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_KEYWORD** = ``10``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+
+
+
 .. _class_ScriptLanguageExtension_constant_CODE_COMPLETION_KIND_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_MAX** = ``10``
+:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_MAX** = ``11``
 
 .. container:: contribute
 

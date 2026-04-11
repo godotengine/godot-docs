@@ -485,6 +485,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/project_manager_screen<class_EditorSettings_property_interface/editor/appearance/project_manager_screen>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/show_renderer_selector<class_EditorSettings_property_interface/editor/appearance/show_renderer_selector>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/show_update_spinner<class_EditorSettings_property_interface/editor/appearance/show_update_spinner>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/use_embedded_menu<class_EditorSettings_property_interface/editor/appearance/use_embedded_menu>`                                                                                 |
@@ -3789,6 +3791,18 @@ Specific to the macOS platform.
 :ref:`int<class_int>` **interface/editor/appearance/project_manager_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/appearance/project_manager_screen>`
 
 The preferred monitor to display the project manager.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/appearance/show_renderer_selector:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/appearance/show_renderer_selector** :ref:`🔗<class_EditorSettings_property_interface/editor/appearance/show_renderer_selector>`
+
+If ``true``, a renderer selector that can be used to change the :ref:`ProjectSettings.rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>` project setting will be shown in the top right of the main editor window.
 
 .. rst-class:: classref-item-separator
 

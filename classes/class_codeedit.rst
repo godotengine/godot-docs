@@ -463,6 +463,14 @@ Marks the option as a file path.
 
 Marks the option as unclassified or plain text.
 
+.. _class_CodeEdit_constant_KIND_KEYWORD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CodeCompletionKind<enum_CodeEdit_CodeCompletionKind>` **KIND_KEYWORD** = ``10``
+
+Marks the option as a keyword.
+
 .. rst-class:: classref-item-separator
 
 ----
