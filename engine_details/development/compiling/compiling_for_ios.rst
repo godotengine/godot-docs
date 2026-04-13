@@ -76,11 +76,10 @@ linked on iOS; there is no dynamic linking option available, unlike macOS.
 
 .. warning::
 
-    Compiling for the iOS simulator is currently not supported as per
-    `GH-102149 <https://github.com/godotengine/godot/issues/102149>`__.
+    The iOS simulator only supports the ``Compatibility`` renderer.
 
     Apple Silicon Macs can run iOS apps natively, so you can run exported iOS projects
-    directly on an Apple Silicon Mac without needing the iOS simulator.
+    directly on an Apple Silicon Mac without iOS simulator limitations.
 
 Run
 ---
