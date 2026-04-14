@@ -216,11 +216,6 @@ Leaving the screen
 We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node's ``screen_exited`` signal to the ``Mob``.
 
-Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Opt + 2` on macOS).
-
-|image8|
-
 Select the :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node and on the right side of the interface,
 navigate to the *Signals* dock. Double-click the ``screen_exited()`` signal.
 
@@ -338,6 +333,5 @@ Here is the complete ``mob.gd`` script for reference.
 .. |image5| image:: img/04.mob_scene/06.visibility_notifier.webp
 .. |image6| image:: img/04.mob_scene/07.visibility_notifier_bbox_resized.png
 .. |image7| image:: img/04.mob_scene/08.mob_attach_script.webp
-.. |image8| image:: img/04.mob_scene/09.switch_to_3d_workspace.webp
 .. |image9| image:: img/04.mob_scene/10.node_dock.webp
 .. |image10| image:: img/04.mob_scene/11.connect_signal.webp
