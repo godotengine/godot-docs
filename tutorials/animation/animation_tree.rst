@@ -336,6 +336,39 @@ BlendSpace1D works just like BlendSpace2D, but in one dimension (a line). Triang
 
 .. image:: img/animtree_blendspace1d.webp
 
+Sync mode
+~~~~~~~~~
+
+Both ``BlendSpace1D`` and ``BlendSpace2D`` have a **Sync Mode** property that controls how animations advance when they are blended.
+This replaces the older boolean ``sync`` property and offers more precise control.
+
+.. image:: img/animtree_syncmode_mutable.png
+
+There are four modes available:
+
+* **None** (default): Inactive animations are frozen and do not advance. Only the currently active (highest-weight) animation moves forward.
+* **Independent**: Inactive animations advance with a weight of ``0``. This matches the behavior of the old ``sync = true`` setting.
+* **Cyclic Mutable**: All animations are time-scaled so their phases stay aligned. The shared cycle length is computed dynamically from the active blend weights,
+  which means a single unblended animation plays at its normal speed. This is useful when all your animations have the same logical cycle (e.g. locomotion loops)
+  but may differ slightly in length.
+* **Cyclic Constant**: All animations are time-scaled to complete one full cycle in exactly **Cyclic Length** seconds, regardless of their individual lengths.
+  Set the ``cyclic_length`` property to your desired cycle duration (must be greater than ``0``).
+
+.. warning::
+
+   Cyclic sync modes require that all blend points use :ref:`AnimationNodeAnimation <class_AnimationNodeAnimation>`
+   with a finite, immutable length. If any blend point uses a different node type, a warning will be shown
+   and cyclic sync will not take effect:
+
+   .. image:: img/animtree_syncmode_warning.png
+
+.. note::
+
+   When using either cyclic mode with animations of different lengths, applying an
+   :ref:`AnimationNodeTimeSeek <class_AnimationNodeTimeSeek>` to the output will break synchronization.
+   In that case, use :ref:`AnimationNodeAnimation.use_custom_timeline <class_AnimationNodeAnimation_property_use_custom_timeline>`
+   to normalize animation lengths before syncing.
+
 For better blending
 -------------------
 
