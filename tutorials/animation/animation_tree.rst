@@ -342,7 +342,7 @@ Sync mode
 Both ``BlendSpace1D`` and ``BlendSpace2D`` have a **Sync Mode** property that controls how animations advance when they are blended.
 This replaces the older boolean ``sync`` property and offers more precise control.
 
-.. image:: img/animtree_syncmode_mutable.png
+.. image:: img/animtree_syncmode_mutable.webp
 
 There are four modes available:
 
@@ -360,7 +360,7 @@ There are four modes available:
    with a finite, immutable length. If any blend point uses a different node type, a warning will be shown
    and cyclic sync will not take effect:
 
-   .. image:: img/animtree_syncmode_warning.png
+   .. image:: img/animtree_syncmode_warning.webp
 
 .. note::
 
