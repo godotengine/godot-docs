@@ -318,7 +318,8 @@ in another context without any extra changes to its API.
   then self-documents the scene through the script code. No content duplication
   via documentation is necessary.
 
-  A `Graphical User Interface (GUI) <https://en.wikipedia.org/wiki/Graphical_user_interface>`_ like this can better inform project users of critical information about
+  A `Graphical User Interface (GUI) <https://en.wikipedia.org/wiki/Graphical_user_interface>`_
+  like this can better inform project users of critical information about
   a Node. Does it have external dependencies? Have those dependencies been
   satisfied? Other programmers, and especially designers and writers, will need
   clear instructions in the messages telling them what to do to configure it.
