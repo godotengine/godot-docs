@@ -37,6 +37,13 @@ and :ref:`@warning_ignore_restore <class_@GDScript_annotation_@warning_ignore_re
 annotations. You can omit ``@warning_ignore_restore`` if you want to ignore
 the specified warning types until the end of the file.
 
+The names of the warnings to ignore match the names of the project settings.
+For example, to ignore the warning configured by the
+:ref:`debug/gdscript/warnings/unused_variable <class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`
+project setting, use ``@warning_ignore("unused_variable")``.
+An autocompletion dialog displays when entering a warning name in the
+annotation, listing all available warnings.
+
 Warnings won't prevent the game from running, but you can turn them into
 errors if you'd like. This way your game won't compile unless you fix
 all warnings. Head to the ``GDScript`` section of the Project Settings to
