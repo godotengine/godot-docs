@@ -83,9 +83,9 @@ left to right:
 - **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also 
   temporarily be activated using :kbd:`Ctrl` while performing the action.
   The settings for changing snap options are explained below.
-- ** Use Trackball** (:kbd:`U`): When enabled, dragging the center of a node (represented by a
+- **Use Trackball** (:kbd:`U`): When enabled, dragging the center of a node (represented by a
   subtle ray disc highlight) will rotate the node like a physical trackball.
-- ** Prserve Children Transform ** (:kbd:`P`): When enabled, transforming a node will preserve the
+- **Preserve Children Transform** (:kbd:`P`): When enabled, transforming a node will preserve the
   global transform of its children.
 - **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview 
   of sunlight can be used as a light source. See 
