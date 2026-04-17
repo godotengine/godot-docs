@@ -7,6 +7,9 @@ HDR output is a feature that enables presentation of High Dynamic Range (HDR) vi
 HDR-capable screens. HDR **output** is not to be confused with the internal HDR rendering that is
 used by Godot for both Standard Dynamic Range (SDR) output and HDR output modes.
 
+HDR output is supported on iOS, Linux (Wayland), macOS, visionOS, and Windows. It is not supported
+on Android, Linux (X11), or web.
+
 Enabling HDR output in your project
 -----------------------------------
 
@@ -190,6 +193,8 @@ demonstrates this:
 		# Godot unless stated otherwise.
 		return linear_color.linear_to_srgb()
 
+The `HDR output demo project <https://github.com/godotengine/godot-demo-projects/tree/master/misc/hdr_output>`__
+includes more advanced versions of this script and examples of how this approach can be used in your project.
 
 Using Tonemapping
 ^^^^^^^^^^^^^^^^^
@@ -285,17 +290,30 @@ This value is typically around 100 to 300 nits and is always represented by an
 :ref:`output max linear value<class_Window_method_get_output_max_linear_value>` of exactly ``1.0``.
 This value may also be referred to as "paper white" or the "SDR white level".
 
+.. note::
+
+	When using an external screen on Windows, the *SDR content brightness* HDR display setting
+	directly controls the reference luminance value and is the primary way to adjust the brightness
+	of the Windows desktop and Godot. When using a built-in HDR screen on Windows, changing *HDR
+	content brightness* also directly controls the reference luminance, but has no effect on the
+	brightness of the Windows desktop or Godot because a separate brightness implementation negates
+	any effect of changes to the reference luminance.
+
 Maximum luminance
 ^^^^^^^^^^^^^^^^^
 
 The maximum luminance is a property of an HDR screen. This value may be anywhere from 250 to 2,000
-nits or beyond.
+nits or beyond. It is common for external screens to report a maximum luminance value that is higher
+than the physical capabilities of the screen that results in visible tonemapping applied by the screen.
+Some desktop or laptop operating systems provide a way to calibrate the maximum luminance value that
+is used for each external screen.
 
-Although this value is a property of the screen hardware and is expected to not change, some
-devices dynamically adapt this value to work within the constraints of the platform. For example,
-the reported maximum luminance of Windows laptops with built-in HDR screens will change as the
-user adjusts their laptop screen brightness while the reported reference luminance remains
-constant.
+.. note::
+
+	When using a built-in screen on Windows, the reported maximum luminance will change as the user
+	adjusts their laptop screen brightness while the reported reference luminance remains constant.
+	This behavior is opposite from using an external display on Windows and adjusting the *SDR content
+	brightness* HDR display setting and also opposite of other platforms.
 
 Output max linear value in practice
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
