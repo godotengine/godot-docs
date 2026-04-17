@@ -25,7 +25,7 @@ To fix these problems, you must instantiate the sub-scenes without them
 requiring details about their environment. You need to be able to trust
 that the sub-scene will create itself without being picky about how it's used.
 
-One of the biggest things to consider in OOP is maintaining
+One of the biggest things to consider in `Object-Oriented Programming (OOP) <https://en.wikipedia.org/wiki/Object-oriented_programming>`_ is maintaining
 focused, singular-purpose classes with
 `loose coupling <https://en.wikipedia.org/wiki/Loose_coupling>`_
 to other parts of the codebase. This keeps the size of objects small (for
@@ -318,7 +318,8 @@ in another context without any extra changes to its API.
   then self-documents the scene through the script code. No content duplication
   via documentation is necessary.
 
-  A GUI like this can better inform project users of critical information about
+  A `Graphical User Interface (GUI) <https://en.wikipedia.org/wiki/Graphical_user_interface>`_
+  like this can better inform project users of critical information about
   a Node. Does it have external dependencies? Have those dependencies been
   satisfied? Other programmers, and especially designers and writers, will need
   clear instructions in the messages telling them what to do to configure it.
@@ -335,10 +336,15 @@ adversely affecting other classes dependent on it.
 Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...
 
-- `SOLID <https://en.wikipedia.org/wiki/SOLID>`_
-- `DRY <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
-- `KISS <https://en.wikipedia.org/wiki/KISS_principle>`_
-- `YAGNI <https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>`_
+- `SOLID: <https://en.wikipedia.org/wiki/SOLID>`_
+    - `Single responsibility <https://en.wikipedia.org/wiki/Single-responsibility_principle>`_
+    - `Open for extension, closed for modification <https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle>`_
+    - `Liskov substitution <https://en.wikipedia.org/wiki/Liskov_substitution_principle>`_
+    - `Interface segregation <https://en.wikipedia.org/wiki/Interface_segregation_principle>`_
+    - `Dependency inversion <https://en.wikipedia.org/wiki/Dependency_inversion_principle>`_
+- `DRY: Don't Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
+- `KISS: Keep It Simple Stupid <https://en.wikipedia.org/wiki/KISS_principle>`_
+- `YAGNI: You Aren't Gonna Need It <https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>`_
 
 Choosing a node tree structure
 ------------------------------
