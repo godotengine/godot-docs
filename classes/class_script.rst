@@ -312,6 +312,8 @@ Returns ``true`` if the script contains non-empty source code.
 
 :ref:`bool<class_bool>` **instance_has**\ (\ base_object\: :ref:`Object<class_Object>`\ ) |const| :ref:`🔗<class_Script_method_instance_has>`
 
+**Deprecated:** Compare this script with :ref:`Object.get_script()<class_Object_method_get_script>` instead.
+
 Returns ``true`` if ``base_object`` is an instance of this script.
 
 .. rst-class:: classref-item-separator

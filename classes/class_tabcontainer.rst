@@ -356,7 +356,9 @@ Property Descriptions
 - |void| **set_all_tabs_in_front**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_all_tabs_in_front**\ (\ )
 
-If ``true``, all tabs are drawn in front of the panel. If ``false``, inactive tabs are drawn behind the panel.
+**Deprecated:** Due to internal changes this doesn't do anything anymore, as they're always in front.
+
+This doesn't do anything.
 
 .. rst-class:: classref-item-separator
 

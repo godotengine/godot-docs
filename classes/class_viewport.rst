@@ -958,6 +958,26 @@ Draws the internal resolution buffer of the scene in linear colorspace before to
 
 \ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
+.. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_AREA_LIGHTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_AREA_LIGHTS** = ``27``
+
+Draws the cluster used by :ref:`AreaLight3D<class_AreaLight3D>` nodes to optimize light rendering.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
+
+.. _class_Viewport_constant_DEBUG_DRAW_AREA_LIGHT_ATLAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_AREA_LIGHT_ATLAS** = ``28``
+
+Draws the atlas used by :ref:`AreaLight3D<class_AreaLight3D>` nodes in the upper left quadrant of the **Viewport**.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering method.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -39,6 +39,7 @@ Nodes
     class_animationtree
     class_area2d
     class_area3d
+    class_arealight3d
     class_aspectratiocontainer
     class_audiolistener2d
     class_audiolistener3d

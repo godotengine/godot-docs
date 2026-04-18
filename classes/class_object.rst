@@ -155,7 +155,7 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_blocking_signals<class_Object_method_is_blocking_signals>`\ (\ ) |const|                                                                                                                                                        |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_class<class_Object_method_is_class>`\ (\ class\: :ref:`String<class_String>`\ ) |const|                                                                                                                                         |
+   | :ref:`bool<class_bool>`                                          | :ref:`is_class<class_Object_method_is_class>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                 |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_connected<class_Object_method_is_connected>`\ (\ signal\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ ) |const|                                                                            |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -591,7 +591,9 @@ Initializes the iterator. ``iter`` stores the iteration state. Since GDScript do
         for x in my_range:
             print(x) # Prints 2, 3, 4.
 
-\ **Note:** Alternatively, you can ignore ``iter`` and use the object's state instead, see `online docs <../tutorials/scripting/gdscript/gdscript_advanced.html#custom-iterators>`__ for an example. Note that in this case you will not be able to reuse the same iterator instance in nested loops. Also, make sure you reset the iterator state in this method if you want to reuse the same instance multiple times.
+\ **Note:** Avoid storing iterator state in a member variable, use the ``iter`` parameter instead. Otherwise, you won't be able to reuse the same iterator instance in nested loops.
+
+See also `online docs <../tutorials/scripting/gdscript/gdscript_advanced.html#custom-iterators>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1424,7 +1426,7 @@ Returns ``true`` if the object is blocking its signals from being emitted. See :
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_class**\ (\ class\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Object_method_is_class>`
+:ref:`bool<class_bool>` **is_class**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Object_method_is_class>`
 
 Returns ``true`` if the object inherits from the given ``class``. See also :ref:`get_class()<class_Object_method_get_class>`.
 

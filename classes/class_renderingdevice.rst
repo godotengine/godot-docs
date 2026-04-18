@@ -3282,6 +3282,8 @@ Set this flag so that it is created as storage. This is useful if Compute Shader
 
 :ref:`BufferCreationBits<enum_RenderingDevice_BufferCreationBits>` **BUFFER_CREATION_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT** = ``8``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Allows usage of this buffer as input data for an acceleration structure build operation. You must first check that the GPU supports it:
 
 
@@ -3312,6 +3314,8 @@ flags **AccelerationStructureFlagBits**: :ref:`🔗<enum_RenderingDevice_Acceler
 
 :ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>` **ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT** = ``1``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Allows the acceleration structure to be updated after it has been built.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT:
@@ -3319,6 +3323,8 @@ Allows the acceleration structure to be updated after it has been built.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>` **ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT** = ``2``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 Allows the acceleration structure to be compacted to reduce memory usage after it has been built.
 
@@ -3328,6 +3334,8 @@ Allows the acceleration structure to be compacted to reduce memory usage after i
 
 :ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>` **ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT** = ``4``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Prioritizes ray traversal performance over build performance when building the acceleration structure.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT:
@@ -3336,6 +3344,8 @@ Prioritizes ray traversal performance over build performance when building the a
 
 :ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>` **ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT** = ``8``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Prioritizes build performance over ray traversal performance when building the acceleration structure.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT:
@@ -3343,6 +3353,8 @@ Prioritizes build performance over ray traversal performance when building the a
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>` **ACCELERATION_STRUCTURE_LOW_MEMORY_BIT** = ``16``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 Reduces the memory usage of the acceleration structure, potentially at the cost of reduced ray traversal performance.
 
@@ -3362,6 +3374,8 @@ flags **AccelerationStructureGeometryFlagBits**: :ref:`🔗<enum_RenderingDevice
 
 :ref:`AccelerationStructureGeometryFlagBits<enum_RenderingDevice_AccelerationStructureGeometryFlagBits>` **ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT** = ``1``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 An opaque geometry does not invoke the any hit shaders.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT:
@@ -3369,6 +3383,8 @@ An opaque geometry does not invoke the any hit shaders.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccelerationStructureGeometryFlagBits<enum_RenderingDevice_AccelerationStructureGeometryFlagBits>` **ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT** = ``2``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 This geometry only calls the any hit shader a single time for each primitive.
 
@@ -3388,6 +3404,8 @@ flags **AccelerationStructureInstanceFlagBits**: :ref:`🔗<enum_RenderingDevice
 
 :ref:`AccelerationStructureInstanceFlagBits<enum_RenderingDevice_AccelerationStructureInstanceFlagBits>` **ACCELERATION_STRUCTURE_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT** = ``1``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Disables triangle face culling for this instance during ray traversal.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_INSTANCE_TRIANGLE_FLIP_FACING_BIT:
@@ -3395,6 +3413,8 @@ Disables triangle face culling for this instance during ray traversal.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccelerationStructureInstanceFlagBits<enum_RenderingDevice_AccelerationStructureInstanceFlagBits>` **ACCELERATION_STRUCTURE_INSTANCE_TRIANGLE_FLIP_FACING_BIT** = ``2``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 Flips the triangle facing direction for this instance during ray traversal.
 
@@ -3404,6 +3424,8 @@ Flips the triangle facing direction for this instance during ray traversal.
 
 :ref:`AccelerationStructureInstanceFlagBits<enum_RenderingDevice_AccelerationStructureInstanceFlagBits>` **ACCELERATION_STRUCTURE_INSTANCE_FORCE_OPAQUE_BIT** = ``4``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Forces all geometries in this instance to be treated as opaque, preventing any hit shaders from being invoked.
 
 .. _class_RenderingDevice_constant_ACCELERATION_STRUCTURE_INSTANCE_FORCE_NO_OPAQUE_BIT:
@@ -3411,6 +3433,8 @@ Forces all geometries in this instance to be treated as opaque, preventing any h
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccelerationStructureInstanceFlagBits<enum_RenderingDevice_AccelerationStructureInstanceFlagBits>` **ACCELERATION_STRUCTURE_INSTANCE_FORCE_NO_OPAQUE_BIT** = ``8``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 Forces all geometries in this instance to be treated as non-opaque, allowing any hit shaders to be invoked.
 
@@ -5570,6 +5594,8 @@ This method does nothing.
 
 :ref:`Error<enum_@GlobalScope_Error>` **blas_build**\ (\ blas\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_blas_build>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Builds the ``blas``.
 
 .. rst-class:: classref-item-separator
@@ -5581,6 +5607,8 @@ Builds the ``blas``.
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **blas_create**\ (\ geometries\: :ref:`Array<class_Array>`\[:ref:`RDAccelerationStructureGeometry<class_RDAccelerationStructureGeometry>`\], flags\: |bitfield|\[:ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>`\]\ ) :ref:`🔗<class_RenderingDevice_method_blas_create>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Creates a new Bottom-Level Acceleration Structure (BLAS). It can be accessed with the RID that is returned.
 
@@ -6660,6 +6688,8 @@ Returns ``true`` if the ``feature`` is supported by the GPU.
 
 :ref:`RID<class_RID>` **hit_sbt_create**\ (\ raytracing_pipeline\: :ref:`RID<class_RID>`, initial_hit_group_capacity\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_hit_sbt_create>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Creates a new hit shader binding table (SBT). It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid()<class_RenderingDevice_method_free_rid>` method.
@@ -6677,6 +6707,8 @@ The hit SBT resizes itself as needed. ``initial_hit_group_capacity`` is used to 
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **hit_sbt_range_alloc**\ (\ hit_sbt\: :ref:`RID<class_RID>`, hit_group_count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_hit_sbt_range_alloc>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Allocates a contiguous range of SBT entries from ``hit_sbt``.
 
@@ -6710,6 +6742,8 @@ The allocated range is uninitialized and must be filled using :ref:`hit_sbt_rang
 
 :ref:`Error<enum_@GlobalScope_Error>` **hit_sbt_range_free**\ (\ hit_sbt\: :ref:`RID<class_RID>`, range\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_hit_sbt_range_free>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Frees a hit SBT range previously allocated with :ref:`hit_sbt_range_alloc()<class_RenderingDevice_method_hit_sbt_range_alloc>`.
 
 The range must not be in use by any acceleration structure after being freed.
@@ -6723,6 +6757,8 @@ The range must not be in use by any acceleration structure after being freed.
 .. rst-class:: classref-method
 
 :ref:`Error<enum_@GlobalScope_Error>` **hit_sbt_range_update**\ (\ hit_sbt\: :ref:`RID<class_RID>`, range\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, hit_group_indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_RenderingDevice_method_hit_sbt_range_update>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Updates the contents of a hit SBT range.
 
@@ -6739,6 +6775,8 @@ The ``offset`` parameter specifies where within the allocated range the writing 
 .. rst-class:: classref-method
 
 :ref:`Error<enum_@GlobalScope_Error>` **hit_sbt_set_pipeline**\ (\ hit_sbt\: :ref:`RID<class_RID>`, raytracing_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_hit_sbt_set_pipeline>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Sets a new ``raytracing_pipeline`` for ``hit_sbt``.
 
@@ -6799,6 +6837,8 @@ Limits for various graphics hardware can be found in the `Vulkan Hardware Databa
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **raytracing_list_begin**\ (\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_begin>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Starts a list of raytracing commands. The returned value should be passed to other ``raytracing_list_*`` functions.
 
@@ -6866,6 +6906,8 @@ A simple raytracing operation might look like this (code is not a complete examp
 
 |void| **raytracing_list_bind_raytracing_pipeline**\ (\ raytracing_list\: :ref:`int<class_int>`, raytracing_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_bind_raytracing_pipeline>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Binds ``raytracing_pipeline`` to the specified ``raytracing_list``.
 
 .. rst-class:: classref-item-separator
@@ -6877,6 +6919,8 @@ Binds ``raytracing_pipeline`` to the specified ``raytracing_list``.
 .. rst-class:: classref-method
 
 |void| **raytracing_list_bind_uniform_set**\ (\ raytracing_list\: :ref:`int<class_int>`, uniform_set\: :ref:`RID<class_RID>`, set_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_bind_uniform_set>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Binds the ``uniform_set`` to this ``raytracing_list``.
 
@@ -6890,6 +6934,8 @@ Binds the ``uniform_set`` to this ``raytracing_list``.
 
 |void| **raytracing_list_end**\ (\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_end>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Finishes a list of raytracing commands created with the ``raytracing_*`` methods.
 
 .. rst-class:: classref-item-separator
@@ -6902,6 +6948,8 @@ Finishes a list of raytracing commands created with the ``raytracing_*`` methods
 
 |void| **raytracing_list_set_push_constant**\ (\ raytracing_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_set_push_constant>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Sets the push constant data to ``buffer`` for the specified ``raytracing_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size()<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
 .. rst-class:: classref-item-separator
@@ -6913,6 +6961,8 @@ Sets the push constant data to ``buffer`` for the specified ``raytracing_list``.
 .. rst-class:: classref-method
 
 |void| **raytracing_list_trace_rays**\ (\ raytracing_list\: :ref:`int<class_int>`, raygen_shader_index\: :ref:`int<class_int>`, hit_sbt\: :ref:`RID<class_RID>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_list_trace_rays>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Initializes a raytracing dispatch for ``raytracing_list``, launching ``width`` × ``height`` × ``depth`` rays.
 
@@ -6929,6 +6979,8 @@ Initializes a raytracing dispatch for ``raytracing_list``, launching ``width`` �
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **raytracing_pipeline_create**\ (\ raygen_shaders\: :ref:`Array<class_Array>`\[:ref:`RDPipelineShader<class_RDPipelineShader>`\], miss_shaders\: :ref:`Array<class_Array>`\[:ref:`RDPipelineShader<class_RDPipelineShader>`\], hit_groups\: :ref:`Array<class_Array>`\[:ref:`RDHitGroup<class_RDHitGroup>`\], max_trace_recursion_depth\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_pipeline_create>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Creates a new raytracing pipeline. It can be accessed with the RID that is returned.
 
@@ -6953,6 +7005,8 @@ Input order defines stable indices used by the API:
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **raytracing_pipeline_is_valid**\ (\ raytracing_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_raytracing_pipeline_is_valid>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Returns ``true`` if the raytracing pipeline specified by the ``raytracing_pipeline`` RID is valid, ``false`` otherwise.
 
@@ -7493,6 +7547,8 @@ Updates texture data with new data, replacing the previous data in place. The up
 
 :ref:`Error<enum_@GlobalScope_Error>` **tlas_build**\ (\ tlas\: :ref:`RID<class_RID>`, instances\: :ref:`Array<class_Array>`\[:ref:`RDAccelerationStructureInstance<class_RDAccelerationStructureInstance>`\]\ ) :ref:`🔗<class_RenderingDevice_method_tlas_build>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Builds the ``tlas``. The contents of previous builds are discarded.
 
 Any BLAS provided through the :ref:`RDAccelerationStructureInstance.blas<class_RDAccelerationStructureInstance_property_blas>` member must already have been built using the :ref:`blas_build()<class_RenderingDevice_method_blas_build>` method.
@@ -7510,6 +7566,8 @@ The number of instances can be equal to or smaller than the maximum instance cou
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **tlas_create**\ (\ max_instance_count\: :ref:`int<class_int>`, flags\: |bitfield|\[:ref:`AccelerationStructureFlagBits<enum_RenderingDevice_AccelerationStructureFlagBits>`\]\ ) :ref:`🔗<class_RenderingDevice_method_tlas_create>`
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Creates a new Top-Level Acceleration Structure (TLAS). It can be accessed with the RID that is returned.
 

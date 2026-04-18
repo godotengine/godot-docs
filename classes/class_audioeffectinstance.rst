@@ -40,11 +40,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                  | :ref:`_process<class_AudioEffectInstance_private_method__process>`\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |required| |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>`\ (\ ) |virtual| |const|                                                                                     |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`_process<class_AudioEffectInstance_private_method__process>`\ (\ src_buffer\: ``const void*``, r_dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |required| |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>`\ (\ ) |virtual| |const|                                                                                       |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -59,7 +59,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_process**\ (\ src_buffer\: ``const void*``, dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |required| :ref:`🔗<class_AudioEffectInstance_private_method__process>`
+|void| **_process**\ (\ src_buffer\: ``const void*``, r_dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |required| :ref:`🔗<class_AudioEffectInstance_private_method__process>`
 
 Called by the :ref:`AudioServer<class_AudioServer>` to process this effect. When :ref:`_process_silence()<class_AudioEffectInstance_private_method__process_silence>` is not overridden or it returns ``false``, this method is called only when the bus is active.
 

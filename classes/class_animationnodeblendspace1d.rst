@@ -40,19 +40,23 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace1D_property_blend_mode>`   | ``0``       |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`                                  | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | ``1.0``     |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`                                  | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | ``-1.0``    |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`                                  | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | ``0.1``     |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`bool<class_bool>`                                    | :ref:`sync<class_AnimationNodeBlendSpace1D_property_sync>`               | ``false``   |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`String<class_String>`                                | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | ``"value"`` |
-   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace1D_property_blend_mode>`       | ``0``       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`cyclic_length<class_AnimationNodeBlendSpace1D_property_cyclic_length>` | ``0.0``     |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`         | ``1.0``     |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`         | ``-1.0``    |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`                   | ``0.1``     |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`sync<class_AnimationNodeBlendSpace1D_property_sync>`                   |             |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>`   | :ref:`sync_mode<class_AnimationNodeBlendSpace1D_property_sync_mode>`         | ``0``       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
+   | :ref:`String<class_String>`                                | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>`     | ``"value"`` |
+   +------------------------------------------------------------+------------------------------------------------------------------------------+-------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -125,6 +129,52 @@ The blend space plays the animation of the animation node which blending positio
 
 Similar to :ref:`BLEND_MODE_DISCRETE<class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_DISCRETE>`, but starts the new animation at the last animation's playback position.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_AnimationNodeBlendSpace1D_SyncMode:
+
+.. rst-class:: classref-enumeration
+
+enum **SyncMode**: :ref:`🔗<enum_AnimationNodeBlendSpace1D_SyncMode>`
+
+.. _class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **SYNC_MODE_NONE** = ``0``
+
+Inactive animations are frozen and do not advance.
+
+.. _class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_INDEPENDENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **SYNC_MODE_INDEPENDENT** = ``1``
+
+Inactive animations advance with a weight of ``0``. This is equivalent to the previous ``sync = true`` behavior.
+
+.. _class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_CYCLIC_MUTABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **SYNC_MODE_CYCLIC_MUTABLE** = ``2``
+
+All animations are time-scaled so they stay in sync, with the cycle length dynamically computed from active blend weights. This is self-normalizing: a solo animation plays at normal speed.
+
+\ **Note:** If you apply :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>` to the result when handling animations of different lengths, synchronization will be broken. In such cases, it is recommended to use :ref:`AnimationNodeAnimation.use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` to align the animation lengths.
+
+.. _class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_CYCLIC_CONSTANT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **SYNC_MODE_CYCLIC_CONSTANT** = ``3``
+
+All animations are time-scaled so they complete one cycle in :ref:`cyclic_length<class_AnimationNodeBlendSpace1D_property_cyclic_length>` seconds, keeping them in sync regardless of their individual lengths.
+
+\ **Note:** If you apply :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>` to the result when handling animations of different lengths, synchronization will be broken. In such cases, it is recommended to use :ref:`AnimationNodeAnimation.use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` to align the animation lengths.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -146,6 +196,23 @@ Property Descriptions
 - :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **get_blend_mode**\ (\ )
 
 Controls the interpolation between animations.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeBlendSpace1D_property_cyclic_length:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **cyclic_length** = ``0.0`` :ref:`🔗<class_AnimationNodeBlendSpace1D_property_cyclic_length>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_cyclic_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cyclic_length**\ (\ )
+
+The cycle length in seconds used by :ref:`SYNC_MODE_CYCLIC_CONSTANT<class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_CYCLIC_CONSTANT>`. All animations are time-scaled so they complete one full cycle in this duration. Must be greater than ``0`` for cyclic sync to take effect.
 
 .. rst-class:: classref-item-separator
 
@@ -206,16 +273,33 @@ Position increment to snap to when moving a point on the axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sync** = ``false`` :ref:`🔗<class_AnimationNodeBlendSpace1D_property_sync>`
+:ref:`bool<class_bool>` **sync** :ref:`🔗<class_AnimationNodeBlendSpace1D_property_sync>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_use_sync**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_sync**\ (\ )
 
-If ``false``, the blended animations' frame are stopped when the blend value is ``0``.
+**Deprecated:** Use :ref:`sync_mode<class_AnimationNodeBlendSpace1D_property_sync_mode>` instead.
 
-If ``true``, forcing the blended animations to advance frame.
+If ``true``, sync mode is enabled (equivalent to :ref:`SYNC_MODE_INDEPENDENT<class_AnimationNodeBlendSpace1D_constant_SYNC_MODE_INDEPENDENT>`). This property is kept for backward compatibility.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeBlendSpace1D_property_sync_mode:
+
+.. rst-class:: classref-property
+
+:ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **sync_mode** = ``0`` :ref:`🔗<class_AnimationNodeBlendSpace1D_property_sync_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_sync_mode**\ (\ value\: :ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>`\ )
+- :ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` **get_sync_mode**\ (\ )
+
+Controls how animations are synced when blended. See :ref:`SyncMode<enum_AnimationNodeBlendSpace1D_SyncMode>` for available options.
 
 .. rst-class:: classref-item-separator
 
