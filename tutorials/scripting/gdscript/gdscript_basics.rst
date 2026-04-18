@@ -2233,14 +2233,14 @@ abstract class:
     class_name AbstractClass
     extends Node
 
-    @abstract class AbstractSubClass:
+    @abstract class AbstractInnerClass:
         func _ready():
             pass
 
-    # This is an example of a concrete subclass of AbstractSubClass.
-    # This class can be instantiated using `AbstractClass.ConcreteSubclass.new()`
+    # This is an example of a concrete subclass of `AbstractInnerClass`.
+    # This class can be instantiated using `AbstractClass.ConcreteInnerClass.new()`
     # in other scripts, even though it's part of an abstract `class_name` script.
-    class ConcreteClass extends AbstractSubClass:
+    class ConcreteInnerClass extends AbstractInnerClass:
         func _ready():
             print("Concrete class ready.")
 
