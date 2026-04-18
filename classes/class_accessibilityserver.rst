@@ -67,7 +67,7 @@ Methods
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                        | :ref:`update_set_background_color<class_AccessibilityServer_method_update_set_background_color>`\ (\ id\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`update_set_bounds<class_AccessibilityServer_method_update_set_bounds>`\ (\ id\: :ref:`RID<class_RID>`, p_rect\: :ref:`Rect2<class_Rect2>`\ )                                                                                                                                                                   |
+   | |void|                        | :ref:`update_set_bounds<class_AccessibilityServer_method_update_set_bounds>`\ (\ id\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`\ )                                                                                                                                                                     |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                        | :ref:`update_set_braille_label<class_AccessibilityServer_method_update_set_braille_label>`\ (\ id\: :ref:`RID<class_RID>`, name\: :ref:`String<class_String>`\ )                                                                                                                                                     |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1320,7 +1320,7 @@ Sets element background color.
 
 .. rst-class:: classref-method
 
-|void| **update_set_bounds**\ (\ id\: :ref:`RID<class_RID>`, p_rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_AccessibilityServer_method_update_set_bounds>`
+|void| **update_set_bounds**\ (\ id\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_AccessibilityServer_method_update_set_bounds>`
 
 Sets element bounding box, relative to the node position.
 

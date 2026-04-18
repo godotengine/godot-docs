@@ -31,11 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`add_persistence_context<class_OpenXRSpatialContextPersistenceConfig_method_add_persistence_context>`\ (\ persistence_context\: :ref:`RID<class_RID>`\ )       |
-   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`remove_persistence_context<class_OpenXRSpatialContextPersistenceConfig_method_remove_persistence_context>`\ (\ persistence_context\: :ref:`RID<class_RID>`\ ) |
-   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_persistence_context<class_OpenXRSpatialContextPersistenceConfig_method_add_persistence_context>`\ (\ persistence_context\: :ref:`RID<class_RID>`\ )       |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_persistence_contexts<class_OpenXRSpatialContextPersistenceConfig_method_get_persistence_contexts>`\ (\ ) |const|                                          |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`remove_persistence_context<class_OpenXRSpatialContextPersistenceConfig_method_remove_persistence_context>`\ (\ persistence_context\: :ref:`RID<class_RID>`\ ) |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -53,6 +55,18 @@ Method Descriptions
 |void| **add_persistence_context**\ (\ persistence_context\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_OpenXRSpatialContextPersistenceConfig_method_add_persistence_context>`
 
 Adds a persistence context to this configuration. You must add at least one persistence context to create a valid configuration. You can create a persistence context by calling :ref:`OpenXRSpatialAnchorCapability.create_persistence_context()<class_OpenXRSpatialAnchorCapability_method_create_persistence_context>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialContextPersistenceConfig_method_get_persistence_contexts:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_persistence_contexts**\ (\ ) |const| :ref:`🔗<class_OpenXRSpatialContextPersistenceConfig_method_get_persistence_contexts>`
+
+Gets the persistence context(s) (as :ref:`RID<class_RID>`\ s) received by :ref:`add_persistence_context()<class_OpenXRSpatialContextPersistenceConfig_method_add_persistence_context>`.
 
 .. rst-class:: classref-item-separator
 

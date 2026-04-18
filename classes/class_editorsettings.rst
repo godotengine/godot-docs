@@ -317,6 +317,22 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_max_db_color<class_EditorSettings_property_editors/audio_buses/active_max_db_color>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_min_db_color<class_EditorSettings_property_editors/audio_buses/active_min_db_color>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_normalized_db_color<class_EditorSettings_property_editors/audio_buses/active_normalized_db_color>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_max_db_color<class_EditorSettings_property_editors/audio_buses/inactive_max_db_color>`                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_min_db_color<class_EditorSettings_property_editors/audio_buses/inactive_min_db_color>`                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_normalized_db_color<class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color>`                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/tint_over_color<class_EditorSettings_property_editors/audio_buses/tint_over_color>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/tint_under_color<class_EditorSettings_property_editors/audio_buses/tint_under_color>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/error<class_EditorSettings_property_editors/bone_mapper/handle_colors/error>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/missing<class_EditorSettings_property_editors/bone_mapper/handle_colors/missing>`                                                                                         |
@@ -1091,7 +1107,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **asset_library/use_threads** :ref:`🔗<class_EditorSettings_property_asset_library/use_threads>`
 
-If ``true``, the Asset Library uses multiple threads for its HTTP requests. This prevents the Asset Library from blocking the main thread for every loaded asset.
+If ``true``, the Asset Store uses multiple threads for its HTTP requests. This prevents the Asset Store from blocking the main thread for every loaded asset.
 
 .. rst-class:: classref-item-separator
 
@@ -2666,6 +2682,102 @@ The modulate color to use for "future" frames displayed in the animation editor'
 :ref:`Color<class_Color>` **editors/animation/onion_layers_past_color** :ref:`🔗<class_EditorSettings_property_editors/animation/onion_layers_past_color>`
 
 The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_max_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_max_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_max_db_color>`
+
+The color at the top of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_min_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_min_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_min_db_color>`
+
+The color at the bottom of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_normalized_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_normalized_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_normalized_db_color>`
+
+The color at 0 dB of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_max_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_max_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_max_db_color>`
+
+The color at the top of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_min_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_min_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_min_db_color>`
+
+The color at the bottom of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_normalized_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color>`
+
+The color at 0 dB of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/tint_over_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/tint_over_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/tint_over_color>`
+
+The multiplier color for the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/tint_under_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/tint_under_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/tint_under_color>`
+
+The multiplier color for the VU meter gradient where audio is not reaching.
 
 .. rst-class:: classref-item-separator
 
@@ -5018,7 +5130,7 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 
 :ref:`int<class_int>` **network/connection/network_mode** :ref:`🔗<class_EditorSettings_property_network/connection/network_mode>`
 
-Determines whether online features, such as the Asset Library or update checks, are enabled in the editor. If this is a privacy concern, disabling these online features prevents the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
+Determines whether online features, such as the Asset Store or update checks, are enabled in the editor. If this is a privacy concern, disabling these online features prevents the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Store.
 
 Editor plugins and tool scripts are recommended to follow this setting. However, Godot can't prevent them from violating this rule.
 
@@ -5056,7 +5168,7 @@ The port to listen to when starting the remote debugger. Godot will try to use p
 
 :ref:`String<class_String>` **network/http_proxy/host** :ref:`🔗<class_EditorSettings_property_network/http_proxy/host>`
 
-The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
+The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset store and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
 
 \ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
@@ -5070,7 +5182,7 @@ The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset
 
 :ref:`int<class_int>` **network/http_proxy/port** :ref:`🔗<class_EditorSettings_property_network/http_proxy/port>`
 
-The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
+The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset store and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
 
 \ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
@@ -5171,7 +5283,7 @@ If ``true`` the language server will run in a separate thread, if ``false`` it w
 
 :ref:`String<class_String>` **network/tls/editor_tls_certificates** :ref:`🔗<class_EditorSettings_property_network/tls/editor_tls_certificates>`
 
-The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__ will be used.
+The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the Asset Store tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__ will be used.
 
 .. rst-class:: classref-item-separator
 

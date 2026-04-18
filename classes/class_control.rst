@@ -189,6 +189,8 @@ Properties
    +------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                  | :ref:`tooltip_text<class_Control_property_tooltip_text>`                                         | ``""``                                                                        |
    +------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                                          | :ref:`translation_context<class_Control_property_translation_context>`                           | ``&""``                                                                       |
+   +------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -2509,6 +2511,23 @@ The tooltip popup will use either a default implementation, or a custom one that
     Theme.SetColor("font_color", "TooltipLabel", new Color(0, 1, 1));
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_property_translation_context:
+
+.. rst-class:: classref-property
+
+:ref:`StringName<class_StringName>` **translation_context** = ``&""`` :ref:`🔗<class_Control_property_translation_context>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_translation_context**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_translation_context**\ (\ )
+
+The translation context used when translating this control's displayed text, if it has any. Also used when generating translation templates.
 
 .. rst-class:: classref-section-separator
 

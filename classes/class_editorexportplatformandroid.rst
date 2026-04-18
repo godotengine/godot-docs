@@ -34,12 +34,6 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`apk_expansion/SALT<class_EditorExportPlatformAndroid_property_apk_expansion/SALT>`                                                         |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`apk_expansion/enable<class_EditorExportPlatformAndroid_property_apk_expansion/enable>`                                                     |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`apk_expansion/public_key<class_EditorExportPlatformAndroid_property_apk_expansion/public_key>`                                             |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`architectures/arm64-v8a<class_EditorExportPlatformAndroid_property_architectures/arm64-v8a>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`architectures/armeabi-v7a<class_EditorExportPlatformAndroid_property_architectures/armeabi-v7a>`                                           |
@@ -461,44 +455,6 @@ Properties
 
 Property Descriptions
 ---------------------
-
-.. _class_EditorExportPlatformAndroid_property_apk_expansion/SALT:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **apk_expansion/SALT** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/SALT>`
-
-Array of random bytes that the licensing policy uses to create an `Obfuscator <https://developer.android.com/google/play/licensing/adding-licensing#impl-Obfuscator>`__.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformAndroid_property_apk_expansion/enable:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **apk_expansion/enable** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/enable>`
-
-If ``true``, project resources are stored in the separate APK expansion file, instead of the APK.
-
-\ **Note:** APK expansion should be enabled to use PCK encryption. See `APK Expansion Files <https://developer.android.com/google/play/expansion-files>`__
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformAndroid_property_apk_expansion/public_key:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **apk_expansion/public_key** :ref:`🔗<class_EditorExportPlatformAndroid_property_apk_expansion/public_key>`
-
-Base64 encoded RSA public key for your publisher account, available from the profile page on the "Google Play Console".
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_EditorExportPlatformAndroid_property_architectures/arm64-v8a:
 
