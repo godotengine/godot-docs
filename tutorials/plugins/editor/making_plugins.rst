@@ -164,7 +164,7 @@ clicked. For that, we'll need a script that extends from
 
         # Icons are optional.
         # Alternatively, you may use the UID of the icon or the absolute path.
-        @icon("icon.png")
+        @icon("icon.svg")
 
         # Automatically register the node in the Create New Node dialog
         # and make it available for use with other scripts.
@@ -188,7 +188,7 @@ clicked. For that, we'll need a script that extends from
 
         // Icons are optional.
         // Alternatively, you may use the UID of the icon or the absolute path.
-        [Icon("icon.png")]
+        [Icon("icon.svg")]
 
         // Automatically register the node in the Create New Node dialog
         // and make it available for use with other scripts.
@@ -209,7 +209,7 @@ clicked. For that, we'll need a script that extends from
 That's it for our basic button. You can save this as ``my_button.gd`` inside the
 plugin folder. You may have a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
-`addons/my_custom_node` folder as `icon.png`, or use the default Godot logo
+`addons/my_custom_node` folder as `icon.svg`, or use the default Godot logo
 (`preload("res://icon.svg")`).
 
 .. tip::

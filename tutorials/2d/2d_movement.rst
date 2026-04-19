@@ -19,7 +19,7 @@ Setup
 -----
 
 Each example below uses the same scene setup. Start with a ``CharacterBody2D`` with two
-children: ``Sprite2D`` and ``CollisionShape2D``. You can use the Godot icon ("icon.png")
+children: ``Sprite2D`` and ``CollisionShape2D``. You can use the Godot icon (``icon.svg``)
 for the Sprite2D's texture or use any other 2D image you have.
 
 Open ``Project -> Project Settings`` and select the "Input Map" tab. Add the following
