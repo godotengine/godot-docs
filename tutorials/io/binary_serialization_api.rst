@@ -794,7 +794,7 @@ The array data is padded to 4 bytes.
 
 Following the array length is a contiguous block of strings.
 
-For each string entry (0 <= i < length):
+For each string entry ``(0 <= i < length)``:
 
 .. note::
 
@@ -826,7 +826,7 @@ Every string is padded to 4 bytes.
 
 Following the array length is a contiguous block of Vector2s.
 
-For each Vector2 entry (0 <= i < length):
+For each Vector2 entry ``(0 <= i < length)``:
 
 +---------------+----------+---------+----------------+
 | Offset        | Length   | Type    | Description    |
@@ -870,7 +870,7 @@ For each Vector3 entry ``(0 <= i < length)``:
 
 Following the array length is a contiguous block of Colors.
 
-For each Color entry (0 <= i < length):
+For each Color entry ``(0 <= i < length)``:
 
 +----------------+----------+---------+----------------------------------------------------------------+
 | Offset         | Length   | Type    | Description                                                    |
@@ -899,7 +899,7 @@ For each Color entry (0 <= i < length):
 
 Following the array length is a contiguous block of Vector4s.
 
-For each Vector4 entry (0 <= i < length):
+For each Vector4 entry ``(0 <= i < length)``:
 
 +----------------+----------+---------+----------------+
 | Offset         | Length   | Type    | Description    |
