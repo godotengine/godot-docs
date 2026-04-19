@@ -847,7 +847,7 @@ For each Vector2 entry (0 <= i < length):
 
 Following the array length is a contiguous block of Vector3s.
 
-For each Vector3 entry (0 <= i < length):
+For each Vector3 entry ``(0 <= i < length)``:
 
 +----------------+----------+---------+----------------+
 | Offset         | Length   | Type    | Description    |
