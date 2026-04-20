@@ -89,6 +89,12 @@ Godot currently supports three tracing profilers:
 - :ref:`Perfetto <doc_profiler_perfetto>`
 - :ref:`Instruments <doc_profiler_instruments>` (Apple only)
 
+.. note::
+
+    Perfetto is the default tracing system for Android, so prebuilt export templates
+    with Perfetto built-in and enabled are provided from 
+    the `GitHub Releases page <https://github.com/godotengine/godot-builds/releases>`__.
+
 In order to use either of them, you'll need to build the engine from source.
 If you've never done this before, please read
 :ref:`these docs <doc_compiling_index>` for the platform you want to profile on.
