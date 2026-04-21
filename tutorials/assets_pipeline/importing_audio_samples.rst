@@ -6,7 +6,7 @@ Importing audio samples
 Supported audio formats
 -----------------------
 
-Godot provides 4 options to import your audio data: WAV, Ogg Vorbis, MP3 and Opus.
+Godot provides 4 options to import your audio data: WAV, Ogg Vorbis, MP3, and Opus.
 
 Each format has different advantages:
 
@@ -52,9 +52,9 @@ each format:
 | Opus 128 Kb/s, stereo        | 16 KB             |
 +------------------------------+-------------------+
 
-Note that the MP3, Ogg Vorbis and Opus figures can vary depending on the
+Note that the MP3, Ogg Vorbis, and Opus figures can vary depending on the
 encoding type. The above figures use :abbr:`CBR (Constant Bit Rate)` encoding
-for simplicity, but most MP3, Ogg Vorbis and Opus files you can find online are
+for simplicity, but most MP3, Ogg Vorbis, and Opus files you can find online are
 encoded with :abbr:`VBR (Variable Bit Rate)` encoding which is more efficient.
 VBR encoding makes the effective audio file size depend on how "complex" the
 source audio is.
@@ -78,7 +78,7 @@ the FileSystem dock:
 
    Import options in the Import dock after selecting a WAV file in the FileSystem dock
 
-The set of options available after selecting an Ogg Vorbis, MP3 or Opus file is different:
+The set of options available after selecting an Ogg Vorbis, MP3, or Opus file is different:
 
 .. figure:: img/importing_audio_samples_import_options_mp3.webp
    :align: center
@@ -102,7 +102,7 @@ file is 16-bit or higher.
 
 Enabling this is generally not recommended, as 8-bit quantization decreases
 audio quality significantly. If you need smaller file sizes, consider using Opus,
-Ogg Vorbis or MP3 audio instead.
+Ogg Vorbis, or MP3 audio instead.
 
 Force > Mono
 ------------
@@ -143,7 +143,7 @@ its original peak volume.
 Edit > Loop Mode
 ----------------
 
-Unlike Ogg Vorbis, MP3 and Opus, WAV files can contain metadata to indicate whether
+Unlike Ogg Vorbis, MP3, and Opus, WAV files can contain metadata to indicate whether
 they're looping (in addition to loop points). By default, Godot will follow this
 metadata, but you can choose to apply a specific loop mode:
 
@@ -179,12 +179,12 @@ and memory usage a little, at the cost of decreasing quality in an audible manne
 decrease is much less noticeable, at the cost of slightly higher CPU usage (still
 much lower than MP3).
 
-Ogg Vorbis, MP3 and Opus don't decrease quality as much and can provide greater file
+Ogg Vorbis, MP3, and Opus don't decrease quality as much and can provide greater file
 size reductions, at the cost of higher CPU usage during playback. This higher
 CPU usage is usually not a problem (especially with MP3), unless playing dozens
 of compressed sounds at the same time on mobile/web platforms.
 
-Import options (Ogg Vorbis, MP3 and Opus)
+Import options (Ogg Vorbis, MP3, and Opus)
 -----------------------------------------
 
 Loop
@@ -250,17 +250,17 @@ dialog, as it lets you preview your changes without having to reimport the audio
 
 .. _doc_importing_audio_samples_advanced_import_settings:
 
-Advanced import settings (Ogg Vorbis, MP3 and Opus)
+Advanced import settings (Ogg Vorbis, MP3, and Opus)
 ---------------------------------------------------
 
-If you double-click an Ogg Vorbis, MP3 or Opus file in the FileSystem dock (or choose
+If you double-click an Ogg Vorbis, MP3, or Opus file in the FileSystem dock (or choose
 **Advanced…** in the Import dock), you will see a dialog appear:
 
 .. figure:: img/importing_audio_samples_advanced_import_settings.webp
    :align: center
-   :alt: Advanced dialog when double-clicking an Ogg Vorbis, MP3 or Opus file in the FileSystem dock
+   :alt: Advanced dialog when double-clicking an Ogg Vorbis, MP3, or Opus file in the FileSystem dock
 
-   Advanced dialog when double-clicking an Ogg Vorbis, MP3 or Opus file in the FileSystem dock
+   Advanced dialog when double-clicking an Ogg Vorbis, MP3, or Opus file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
 in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.
@@ -270,7 +270,7 @@ music tracks).
 
 .. note::
 
-    Unlike WAV files, Ogg Vorbis, MP3 and Opus only support a "loop begin" loop point,
+    Unlike WAV files, Ogg Vorbis, MP3, and Opus only support a "loop begin" loop point,
     not a "loop end" point. Looping can also be only be standard forward looping,
     not ping-pong or backward.
 
