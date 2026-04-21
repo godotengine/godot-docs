@@ -43,7 +43,7 @@ The header is structured as follows:
     flags = header >> 16;
 
 +-------------+----------------------+
-| Value       | Type Description     |
+| Value       | Type description     |
 +=============+======================+
 | 0  (0x00)   | null                 |
 +-------------+----------------------+
