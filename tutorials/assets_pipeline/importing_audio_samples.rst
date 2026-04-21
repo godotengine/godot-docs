@@ -185,7 +185,7 @@ CPU usage is usually not a problem (especially with MP3), unless playing dozens
 of compressed sounds at the same time on mobile/web platforms.
 
 Import options (Ogg Vorbis, MP3, and Opus)
------------------------------------------
+------------------------------------------
 
 Loop
 ~~~~
@@ -251,7 +251,7 @@ dialog, as it lets you preview your changes without having to reimport the audio
 .. _doc_importing_audio_samples_advanced_import_settings:
 
 Advanced import settings (Ogg Vorbis, MP3, and Opus)
----------------------------------------------------
+----------------------------------------------------
 
 If you double-click an Ogg Vorbis, MP3, or Opus file in the FileSystem dock (or choose
 **Advanced…** in the Import dock), you will see a dialog appear:
