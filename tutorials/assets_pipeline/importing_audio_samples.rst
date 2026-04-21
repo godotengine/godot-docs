@@ -314,7 +314,7 @@ and Opus can provide lower sizes with higher quality.
 Here is a comparative chart with estimates for "transparent" bitrates for each audio format:
 
 +--------------------+--------------------------------+
-| Format             | Estimated Transparency Bitrate |
+| Format             | Estimated transparency bitrate |
 +====================+================================+
 | WAV (uncompressed) | 1411 kbps                      |
 +--------------------+--------------------------------+
