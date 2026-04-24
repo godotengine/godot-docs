@@ -117,7 +117,7 @@ Distro-specific one-liners
 
         ::
 
-            pkg install \
+            pkg install -y \
               devel/scons \
               pkgconf \
               xorg-libraries \
@@ -169,22 +169,21 @@ Distro-specific one-liners
 
         ::
 
-            pkgin install \
+            pkg_add pkgin
+            pkgin -y install \
               pkg-config \
-              py313-scons
-
-        .. hint::
-
-            For audio support, you can optionally install ``pulseaudio``.
+              py313-scons \
+              wayland \
+              pulseaudio
 
     .. tab:: OpenBSD
 
         ::
 
-            pkg_add \
-              python \
+            pkg_add -I \
               scons \
-              llvm
+              wayland \
+              pulseaudio
 
     .. tab:: openKylin
 
