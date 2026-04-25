@@ -333,7 +333,7 @@ in the Godot source repository. After running this script, compile Godot as usua
 Compiling with WinRT support
 ----------------------------
 
-WinRT provides support for OneCore TTS (accessing Windows 10+ voices), and Emoji Picker.
+WinRT provides support for OneCore TTS (accessing Windows 10+ voices), HDR color information monitoring, and emoji picker.
 
 If you are building with MinGW, compiling with WinRT requires additional dependencies to be installed.
 If you wish to skip this step, you can use the ``winrt=no`` SCons option.
