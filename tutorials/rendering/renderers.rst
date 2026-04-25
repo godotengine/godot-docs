@@ -195,8 +195,10 @@ See :ref:`doc_lights_and_shadows` for more information.
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Feature                 | Compatibility            | Mobile                   | Forward+                 |
 +=========================+==========================+==========================+==========================+
-| Lighting approach       | Forward                  | Forward                  | Clustered Forward        |
-|                         |                          |                          |                          |
+| Lighting approach       | Forward single-pass.     | Forward single-pass.     | Clustered forward.       |
+|                         | Lights with shadows use  |                          |                          |
+|                         | a multi-pass approach and|                          |                          |
+|                         | less accurate blending.  |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Maximum                 | 8 per mesh. Can be       | 8 per mesh, 256 per view.| 512 per cluster. Can be  |
 | OmniLights              | increased.               |                          | increased.               |
@@ -346,6 +348,17 @@ Other features
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Feature                 | Compatibility            | Mobile                   | Forward+                 |
 +=========================+==========================+==========================+==========================+
+| Color precision         | RGBA8. Low dynamic range,| RGB10A2. Medium dynamic  | RGBA16F. High dynamic    |
+|                         | medium precision.        | range, low precision.    | range, good precision.   |
+|                         |                          | RGBA16F if HDR 2D is     |                          |
+|                         |                          | enabled.                 |                          |
++-------------------------+--------------------------+--------------------------+--------------------------+
+| Depth precision         | 24-bit without reverse Z.| 24-bit with reverse Z.   | 32-bit with reverse Z.   |
+|                         | Medium precision.        | Medium precision.        | Good precision.          |
++-------------------------+--------------------------+--------------------------+--------------------------+
+| Debanding               | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
+|                         |                          |                          |                          |
++-------------------------+--------------------------+--------------------------+--------------------------+
 | Variable rate           | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 | shading                 |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
@@ -361,6 +374,8 @@ Other features
 | VSync modes             |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | 2D HDR Viewport         | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
++-------------------------+--------------------------+--------------------------+--------------------------+
+| HDR output              | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | RenderingDevice         | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 | access                  |                          |                          |                          |
