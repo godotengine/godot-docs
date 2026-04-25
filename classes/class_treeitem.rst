@@ -1536,6 +1536,8 @@ Sets the given column's custom draw callback. Use an empty :ref:`Callable<class_
 
 The ``callback`` should accept two arguments: the **TreeItem** that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 
+To draw custom content over the native style, please use :ref:`Tree.get_custom_drawing_canvas_item()<class_Tree_method_get_custom_drawing_canvas_item>`.
+
 .. rst-class:: classref-item-separator
 
 ----

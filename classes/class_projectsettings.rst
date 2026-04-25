@@ -201,6 +201,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_usage<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`                                                                       | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_temporary_modification<class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification>`                                                 | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`debug/gdscript/warnings/directory_rules<class_ProjectSettings_property_debug/gdscript/warnings/directory_rules>`                                                                                     | ``{ "res://addons": 0 }``                                                                        |
@@ -3034,6 +3036,18 @@ When set to **Warn** or **Error**, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_temporary_modification** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification>`
+
+When set to **Warn** or **Error**, produces a warning or an error respectively when a built-in property of type ``Packed*Array`` is modified using a complex assignment chain or a non-``const`` method call. In this case, you are only modifying a temporary value, and the property's value remains unchanged.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword:
 
 .. rst-class:: classref-property
@@ -5038,7 +5052,7 @@ Defines how the aspect ratio of the base size is preserved when stretching to fi
 
 \ ``"keep_height"``: Keep aspect ratio when stretching the screen. If the screen is taller than the base size, black bars are added at the top and bottom (letterboxing). But if the screen is wider than the base resolution, the viewport will be grown in the horizontal direction (and more content will be visible to the right). You can also think of this as "Expand Horizontally".
 
-\ ``"expand"``: Keep aspect ratio when stretching the screen, but keep neither the base width nor height. Depending on the screen aspect ratio, the viewport will either be larger in the horizontal direction (if the screen is wider than the base size) or in the vertical direction (if the screen is taller than the original size).
+\ ``"expand"``: Keep aspect ratio when stretching the screen, but keep neither the base width nor height. Depending on the screen aspect ratio, the viewport will either be larger in the horizontal direction (if the screen is wider than the base size) or in the vertical direction (if the screen is taller than the original size). This is the default for projects created starting in Godot 4.8.
 
 .. rst-class:: classref-item-separator
 
@@ -5054,7 +5068,7 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 \ ``"disabled"``: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ ``"canvas_items"``: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ ``"canvas_items"``: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D). This is the default for projects created starting in Godot 4.8.
 
 \ ``"viewport"``: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
