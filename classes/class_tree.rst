@@ -139,6 +139,8 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_column_width<class_Tree_method_get_column_width>`\ (\ column\: :ref:`int<class_int>`\ ) |const|                                                                                                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                             | :ref:`get_custom_drawing_canvas_item<class_Tree_method_get_custom_drawing_canvas_item>`\ (\ ) |const|                                                                                                      |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`                                         | :ref:`get_custom_popup_rect<class_Tree_method_get_custom_popup_rect>`\ (\ ) |const|                                                                                                                        |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_drop_section_at_position<class_Tree_method_get_drop_section_at_position>`\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                |
@@ -1137,6 +1139,20 @@ Returns the column title's tooltip text.
 :ref:`int<class_int>` **get_column_width**\ (\ column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Tree_method_get_column_width>`
 
 Returns the column's width in pixels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_method_get_custom_drawing_canvas_item:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_custom_drawing_canvas_item**\ (\ ) |const| :ref:`🔗<class_Tree_method_get_custom_drawing_canvas_item>`
+
+Returns the internal canvas item designated for custom drawing. See :ref:`TreeItem.set_custom_draw_callback()<class_TreeItem_method_set_custom_draw_callback>`.
+
+\ **Note:** This canvas item clears automatically on each Tree draw call.
 
 .. rst-class:: classref-item-separator
 
