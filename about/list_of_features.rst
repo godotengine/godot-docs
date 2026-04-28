@@ -672,7 +672,7 @@ Mobile
 ------
 
 - In-app purchases on :ref:`Android <doc_android_in_app_purchases>`
-  and :ref:`iOS <doc_plugins_for_ios>`.
+  and `iOS <https://github.com/godot-sdk-integrations/godot-storekit2>`_.
 - Support for advertisements using third-party modules.
 
 .. _doc_xr_support:
