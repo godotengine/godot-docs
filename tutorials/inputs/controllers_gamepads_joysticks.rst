@@ -283,8 +283,19 @@ the SDL game controller database used by Godot or the
 `Godot game controller database <https://github.com/godotengine/godot/blob/master/core/input/godotcontrollerdb.txt>`__.
 In this case, you will need to create a custom mapping for your controller.
 
-There are many ways to create mappings. One option is to use the mapping wizard
-in the `official Joypads demo <https://godotengine.org/asset-library/asset/2785>`__.
+.. Nintorch: Currently Godot's Input.add_joy_mapping() is broken, it will add a new mapping
+   on top of an already existing mapping from SDL (if it exists), so I'm not sure it
+   should be used as an example at the moment. See GH-118606 in Godot's main repository
+   for more information.
+
+   One option is to use the mapping wizard
+   in the `official Joypads demo <https://godotengine.org/asset-library/asset/2785>`__.
+
+There are many ways to create mappings.
+One option is to start Steam in Big Picture mode, configure the controller and then look in ``config/config.vdf``
+in the Steam installation directory for the ``SDL_GamepadBind`` entry.
+Another option is to use `SDL's testcontroller application <https://www.libsdl.org/tmp/testcontroller.zip>`__
+(the link only provides a Windows executable).
 Once you have a working mapping for your controller, you can test it by defining
 the ``SDL_GAMECONTROLLERCONFIG`` environment variable before running Godot:
 
@@ -304,14 +315,21 @@ the ``SDL_GAMECONTROLLERCONFIG`` environment variable before running Godot:
     $env:SDL_GAMECONTROLLERCONFIG="your:mapping:here"
     path\to\godot.exe
 
-To test mappings on non-desktop platforms or to distribute your project with
-additional controller mappings, you can add them by calling
-:ref:`Input.add_joy_mapping() <class_Input_method_add_joy_mapping>`
-as early as possible in a script's ``_ready()`` function.
+.. Nintorch: See the comment above on why this is commented out.
+   To test mappings on non-desktop platforms or to distribute your project with
+   additional controller mappings, you can add them by calling
+   :ref:`Input.add_joy_mapping() <class_Input_method_add_joy_mapping>`
+   as early as possible in a script's ``_ready()`` function.
 
 Once you are satisfied with the custom mapping, you can contribute it for
 the next Godot version by opening a pull request on the
-`Godot game controller database <https://github.com/godotengine/godot/blob/master/core/input/godotcontrollerdb.txt>`__.
+`Godot game controller database <https://github.com/godotengine/godot/blob/master/core/input/godotcontrollerdb.txt>`__,
+or creating an issue in the `Godot repository <https://github.com/godotengine/godot/issues>`__.
+
+Since Godot uses SDL 3 for controller input, please consider contributing
+the mapping for the SDL library as well by opening a pull request on the
+`official SDL gamepad database <https://github.com/libsdl-org/SDL/blob/main/src/joystick/SDL_gamepad_db.h>`__,
+or creating an issue in the `SDL repository <https://github.com/libsdl-org/SDL/issues>`__.
 
 My controller works on a given platform, but not on another platform.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
