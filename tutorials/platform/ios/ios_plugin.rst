@@ -82,7 +82,7 @@ To build an iOS plugin:
 
     -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
-    -   The configuration file format is as follow:
+    -   The configuration file format is as follows:
 
     ::
 
@@ -103,6 +103,14 @@ To build an iOS plugin:
             files=["data.json"]
 
             linker_flags=["-ObjC"]
+
+            spm_packages=[
+                {
+                    "url": "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
+                    "version": "12.14.0",
+                    "products": ["GoogleMobileAds"]
+                }
+            ]
 
             [plist]
             PlistKeyWithDefaultType="Some Info.plist key you might need"
@@ -142,6 +150,8 @@ To build an iOS plugin:
                 -   **files**: contains a list of files that should be copied on export. This is useful for data files or images.
 
                 -   **linker_flags**: contains a list of linker flags to add to the Xcode project when exporting the plugin.
+
+                -   **spm_packages**: contains a list of Swift Package Manager dependencies, specifying exact versions. Each package should be a `Dictionary` with ``url`` (string), ``version`` (string, exact version), and ``products`` (array of strings, listing the libraries to link).
 
             -   **plist**: should have keys and values that should be present in ``Info.plist`` file.
 
