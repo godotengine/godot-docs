@@ -738,6 +738,56 @@ The size reduction is often significant (relative to the project's size),
 since applications contain fewer large assets compared to games.
 See :ref:`doc_optimizing_for_size` for more information on how to do this.
 
+Creating a single-executable distribution
+-----------------------------------------
+
+By default, Godot creates a PCK file containing the project data next to the
+executable. This means that if the executable is moved without moving the PCK
+file at the same time, the application will not run. This is not ideal for
+applications, which are increasingly being distributed as a single executable
+file.
+
+To make the application entirely self-contained to a single executable, you can
+enable **Embed PCK** in the export preset options. This will embed the PCK data
+within the executable, so that the application can be moved around without
+breaking. This also makes it possible to run the application directly from a ZIP
+archive without having to extract it first.
+
+.. note::
+
+    PCK embedding has a size limitation depending on the platform. Very large
+    applications (several GBs) may not be able to use this feature on all platforms.
+    Check the export documentation for the target platform for more details.
+
+Creating portable applications
+------------------------------
+
+An application is called *portable* when it can be run without installation, and
+when its configuration is entirely self-contained to the folder it was extracted
+to. This allows placing the application files on an USB drive or similar, and
+running it on different machines without having to go through an installation
+process.
+
+The Godot editor's own :ref:`self-contained mode <doc_data_paths_self_contained_mode>`
+currently can't be used within projects. However, you can still choose to save
+your own configuration files to the folder containing the executable as follows:
+
+::
+
+    var config_path = OS.get_executable_path().get_base_dir().path_join("config.ini")
+    # Then use `config_path` to save/load configuration files using ConfigFile or similar.
+
+You may want to make portable mode optional as it's not always desired.
+Typically, this is performed by detecting the presence of a specific file in the
+executable's folder (e.g. a file named ``portable.txt``), and only using the
+executable's folder for configuration if that file is present.
+
+.. warning::
+
+    Remember that this will only work if the application is extracted to a
+    writable location. This will result in permission errors if the executable
+    is run from a read-only location, such as ``C:\Program Files`` on Windows.
+
 Creating installers
 -------------------
 
