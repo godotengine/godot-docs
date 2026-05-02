@@ -25,7 +25,7 @@ engine physics properties, like gravity or friction. While this means that you
 have to write some code to create their behavior, it also means you have more
 precise control over how they move and react.
 
-Despite it's name ``CharacterBody2D``, it can also be used for other physics objects that requires
+Despite its name ``CharacterBody2D``, it can also be used for other physics objects that require
 precise manual movement logic and detailed collision information, such as moving
 platforms or complex projectiles.
 
