@@ -65,7 +65,7 @@ iOS support is currently experimental and has a few limitations.
 
 - The official export templates for the iOS simulator only supports the ``x64`` architecture.
 
-- Exporting to iOS can only be done from a MacOS device.
+- Exporting to iOS can only be done from a macOS device.
 
 Currently, projects written in C# cannot be exported to the web platform. To use C#
 on that platform, consider Godot 3 instead.

@@ -21,17 +21,17 @@ removed by removing all nodes from a given group.
 
 There are two ways to add/remove nodes to groups:
 
-- During design, by using the Node dock in the editor, or the Global Groups in project settings.
+- During design, by using the Groups dock in the editor, or the Groups tab in the Globals dock in project settings.
 - During execution, by calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>`
   or :ref:`Node.remove_from_group() <class_Node_method_remove_from_group>`.
 
 
-Using the Node dock
-~~~~~~~~~~~~~~~~~~~
+Using the Groups dock
+~~~~~~~~~~~~~~~~~~~~~
 
-You can create new groups using the Groups tab in the Node dock.
+You can create new groups using the Groups dock.
 
-.. image:: img/groups_node_tab.webp
+.. image:: img/groups_dock.webp
 
 Select a node in the Scene dock then click the add button with the + symbol.
 
@@ -46,13 +46,13 @@ When done, press Ok to create it.
 
 .. image:: img/groups_add_new_group_modal.webp
 
-You should see the new groups appear in the Groups tab under Scene Groups if the Global option was
+You should see the new groups appear in the Groups dock under Scene Groups if the Global option was
 unmarked, or under Global Groups if that option was marked.
 
 A selected Node from the Scene dock can be added into groups by marking the checkbox on the left side
 of the groups in the Groups dock. The node you had selected when creating a new group will be automatically checked.
 
-.. image:: img/groups_node_tab_with_created_groups.webp
+.. image:: img/groups_dock_with_created_groups.webp
 
 All groups present in the project that were marked as Global, created from any scene, will be visible under Global Groups.
 
@@ -63,7 +63,7 @@ Any other group derived from nodes in the current scene will appear under Scene 
 
 .. image:: img/groups_node_tab_with_multiple_types_of_groups.webp
 
-You can manage Global Groups in the Global Groups dock, inside Project Settings. There, you will be able to add new
+You can manage Global Groups in the Groups tab of the Globals dock, inside Project Settings. There, you will be able to add new
 global groups, or change existing groups' names and descriptions.
 
 .. image:: img/groups_global_groups_settings.webp

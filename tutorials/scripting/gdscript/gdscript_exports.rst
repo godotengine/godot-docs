@@ -302,6 +302,17 @@ Therefore, if you specify an extension of Resource such as:
 The drop-down menu will be limited to AnimationNode and all
 its derived classes.
 
+.. note::
+
+    Using ``@export`` variables for :ref:`Resource <class_Resource>` objects
+    makes them a dependency of the instance, meaning that all the resources
+    referenced by ``@export`` variables are loaded when the scene
+    containing the script is loaded. If you want to reference a
+    :ref:`Resource <class_Resource>` object but load it manually when you need
+    it (which, for example, is often the case for
+    :ref:`PackedScenes <class_PackedScene>` containing a whole level), use
+    ``@export_file`` or ``@export_file_path`` instead.
+
 .. _doc_gdscript_exports_exporting_bit_flags:
 
 Exporting bit flags

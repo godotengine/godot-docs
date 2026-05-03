@@ -116,7 +116,7 @@ Below is the basis of the script that implements our manager logic:
     @export var marker_tracker_scene: PackedScene
 
     # Trackers we manage nodes for.
-    var _managed_nodes: Dictionary[OpenXRSpatialEntityTracker, XRAnchor3D]
+    var _managed_nodes: Dictionary[XRTracker, XRAnchor3D]
 
     # Enter tree is called whenever our node is added to our scene.
     func _enter_tree():
@@ -560,18 +560,18 @@ required code:
             match marker_tracker.marker_type:
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_QRCODE:
                     var data = marker_tracker.get_marker_data()
-                    if data.type_of() == TYPE_STRING:
+                    if type_of(data) == TYPE_STRING:
                         # Data is a QR code as a string, usually a URL.
                         pass
-                    elif data.type_of() == TYPE_PACKED_BYTE_ARRAY:
+                    elif type_of(data) == TYPE_PACKED_BYTE_ARRAY:
                         # Data is binary, can be anything.
                         pass
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_MICRO_QRCODE:
                     var data = marker_tracker.get_marker_data()
-                    if data.type_of() == TYPE_STRING:
+                    if type_of(data) == TYPE_STRING:
                         # Data is a QR code as a string, usually a URL.
                         pass
-                    elif data.type_of() == TYPE_PACKED_BYTE_ARRAY:
+                    elif type_of(data) == TYPE_PACKED_BYTE_ARRAY:
                         # Data is binary, can be anything.
                         pass
                 OpenXRSpatialComponentMarkerList.MARKER_TYPE_ARUCO:

@@ -525,14 +525,29 @@ in the field on the left, though note this is case-sensitive):
 This will automatically select a script template that is suited for
 EditorScripts, with a ``_run()`` method already inserted:
 
-::
+.. tabs::
+    .. code-tab:: gdscript GDScript
 
-    @tool
-    extends EditorScript
+        @tool
+        extends EditorScript
 
-    # Called when the script is executed (using File -> Run in Script Editor).
-    func _run():
-        pass
+        # Called when the script is executed (using File -> Run in Script Editor).
+        func _run():
+            pass
+
+    .. code-tab:: csharp
+
+        using Godot;
+
+        [Tool]
+        public partial class MyEditorScript : EditorScript
+        {
+            // Called when the script is executed (right-click on Script -> Run in FileSystem dock).
+            public override void _Run()
+            {
+                // ...
+            }
+        }
 
 This ``_run()`` method is executed when you use any of the 4 approaches that can be
 used to run an EditorScript:
@@ -555,6 +570,16 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
     EditorScripts can only be run from the Godot script editor. If you are using
     an external editor, use one of the last two approaches to run the script.
 
+.. note::
+    
+    C# EditorScripts cannot be run from the script editor as it only supports
+    GDScript. Please refer to the above alternative approaches to run custom C#
+    EditorScripts.
+
+    Keep in mind C# tool scripts will only appear in the command palette when
+    denoted by the :ref:`GlobalClass <doc_c_sharp_global_classes>`
+    attribute.
+
 .. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
@@ -566,23 +591,52 @@ method which returns the root Node of the currently edited scene. Here's an
 example that recursively gets all nodes in the currently edited scene and
 doubles the range of all OmniLight3D nodes:
 
-::
+.. tabs::
+    .. code-tab:: gdscript GDScript
 
-    @tool
-    # Thanks to the class name, we can run this script by bringing up
-    # the command palette and searching "Scale Omni Lights".
-    class_name ScaleOmniLights
-    extends EditorScript
+        @tool
+        # Thanks to the class name, we can run this script by bringing up
+        # the command palette and searching "Scale Omni Lights".
+        class_name ScaleOmniLights
+        extends EditorScript
 
-    func _run():
-        for node in EditorInterface.get_edited_scene_root().find_children("", "OmniLight3D"):
-            # Don't operate on instanced subscene children, as changes are lost
-            # when reloading the scene.
-            # See the "Instancing scenes" section below for a description of `owner`.
-            var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
-            if not is_instanced_subscene_child:
-                node.omni_range *= 2.0
-                EditorInterface.mark_scene_as_unsaved()
+        func _run():
+            for node in EditorInterface.get_edited_scene_root().find_children("", "OmniLight3D"):
+                # Don't operate on instanced subscene children, as changes are lost
+                # when reloading the scene.
+                # See the "Instancing scenes" section below for a description of `owner`.
+                var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
+                if not is_instanced_subscene_child:
+                    node.omni_range *= 2.0
+                    EditorInterface.mark_scene_as_unsaved()
+
+    .. code-tab:: csharp
+
+        using Godot;
+
+        [GlobalClass, Tool]
+        // Thanks to the GlobalClass attribute, we can run this script by bringing up
+        // the command palette and searching "Scale Omni Lights".
+        public partial class ScaleOmniLights : EditorScript
+        {
+            public override void _Run()
+            {
+                var sceneNode = EditorInterface.Singleton.GetEditedSceneRoot();
+            
+                foreach (OmniLight3D node in sceneNode.FindChildren("", "OmniLight3D"))
+                {
+                    // Don't operate on instanced subscene children, as changes are lost
+                    // when reloading the scene.
+                    // See the "Instancing scenes" section below for a description of `owner`.
+                    var isInstancedSubsceneChild = node != sceneNode && node.Owner != sceneNode;
+                    if (!isInstancedSubsceneChild)
+                    {
+                        node.OmniRange *= 2.0f;
+                        EditorInterface.Singleton.MarkSceneAsUnsaved();
+                    }
+                }
+            }
+        }
 
 In the above example, we also call
 :ref:`EditorScript.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`

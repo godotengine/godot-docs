@@ -135,7 +135,7 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
 .. note::
 
-   When connecting signals via the editor's Node dock, you can use two
+   When connecting signals via the editor's Signals dock, you can use two
    modes. The simple one only allows you to connect to nodes that have a
    script attached to them and creates a new callback function on them.
 
@@ -520,7 +520,7 @@ names between parentheses:
 
 .. note::
 
-    The signal arguments show up in the editor's node dock, and Godot can use
+    The signal arguments show up in the editor's Signals dock, and Godot can use
     them to generate callback functions for you. However, you can still emit any
     number of arguments when you emit signals. So it's up to you to emit the
     correct values.
