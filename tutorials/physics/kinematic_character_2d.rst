@@ -47,7 +47,8 @@ Physics process
 ~~~~~~~~~~~~~~~
 
 To manage the logic of a kinematic body or character, it is always
-advised to use physics process, because it's called before physics step and its execution is
+advised to use :ref:`physics process <doc_idle_and_physics_processing>`,
+because it's called before physics step and its execution is
 in sync with physics server, also it is called the same amount of times
 per second, always. This makes physics and motion calculation work in a
 more predictable way than using regular process, which might have spikes

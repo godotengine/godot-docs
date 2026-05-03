@@ -190,10 +190,10 @@ Core
 
     The :ref:`doc_tscn_file_format` has changed in two ways in Godot 4.6:
 
-    - ``load_steps`` is `no longer written in scene files <GH-103352>`_.
+    - ``load_steps`` is no longer written in scene files (`GH-103352`_).
       This attribute wasn't used by the editor.
-    - `Unique node IDs <GH-106837>`_ are now saved to scene files to help track nodes when
-      they are moved or renamed. This makes scene refactoring significantly more robust.
+    - Unique node IDs are now saved to scene files to help track nodes when
+      they are moved or renamed (`GH-106837`_). This makes scene refactoring significantly more robust.
 
     The changes are backwards-compatible and forwards-compatible, which means
     scenes saved in Godot 4.5 can still be loaded in Godot 4.6 and vice-versa

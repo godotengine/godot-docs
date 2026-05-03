@@ -102,6 +102,7 @@ loaded at), use one of the following methods depending on the file format:
   or :ref:`Image.load_svg_from_string <class_Image_method_load_svg_from_string>`
 - :ref:`Image.load_tga_from_buffer <class_Image_method_load_tga_from_buffer>`
 - :ref:`Image.load_webp_from_buffer <class_Image_method_load_webp_from_buffer>`
+- :ref:`Image.load_exr_from_buffer <class_Image_method_load_exr_from_buffer>`
 
 Several image formats can also be saved by Godot at runtime using the following
 methods:
@@ -114,7 +115,6 @@ methods:
   or :ref:`Image.save_jpg_to_buffer <class_Image_method_save_jpg_to_buffer>`
 - :ref:`Image.save_exr <class_Image_method_save_exr>`
   or :ref:`Image.save_exr_to_buffer <class_Image_method_save_exr_to_buffer>`
-  *(only available in editor builds, cannot be used in exported projects)*
 
 The methods with the ``to_buffer`` suffix save the image to a PackedByteArray
 instead of the filesystem. This is useful to send the image over the network or

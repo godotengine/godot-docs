@@ -11,7 +11,7 @@ Best practices
    what_are_godot_classes
    scene_organization
    scenes_versus_scripts
-   autoloads_versus_internal_nodes
+   autoloads_versus_regular_nodes
    node_alternatives
    godot_interfaces
    godot_notifications

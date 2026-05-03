@@ -2233,14 +2233,14 @@ abstract class:
     class_name AbstractClass
     extends Node
 
-    @abstract class AbstractSubClass:
+    @abstract class AbstractInnerClass:
         func _ready():
             pass
 
-    # This is an example of a concrete subclass of AbstractSubClass.
-    # This class can be instantiated using `AbstractClass.ConcreteSubclass.new()`
+    # This is an example of a concrete subclass of `AbstractInnerClass`.
+    # This class can be instantiated using `AbstractClass.ConcreteInnerClass.new()`
     # in other scripts, even though it's part of an abstract `class_name` script.
-    class ConcreteClass extends AbstractSubClass:
+    class ConcreteInnerClass extends AbstractInnerClass:
         func _ready():
             print("Concrete class ready.")
 
@@ -2769,7 +2769,7 @@ You can write optional argument names in parentheses after the signal's definiti
     # Defining a signal that forwards two arguments.
     signal health_changed(old_value, new_value)
 
-These arguments show up in the editor's node dock, and Godot can use them to
+These arguments show up in the editor's Signals dock, and Godot can use them to
 generate callback functions for you. However, you can still emit any number of
 arguments when you emit signals; it's up to you to emit the correct values.
 
