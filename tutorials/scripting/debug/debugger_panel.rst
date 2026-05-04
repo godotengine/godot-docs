@@ -164,9 +164,9 @@ specific frame number and highlight the selected data type in the result
 categories on the left.
 
 You can switch the result display between a time value (in milliseconds per
-frame) or a percentage of the target frametime. The :ref:`debugger/profiler_target_fps <class_EditorSettings_property_debugger/profiler_target_fps>`
-editor setting controls the target frametime value (clamped between 1 and 1000
-FPS).
+frame) or a percentage of the target frametime. The
+:ref:`debugger/profiler_target_fps <class_EditorSettings_property_debugger/profiler_target_fps>`
+editor setting controls the target frametime value according to the specified FPS.
 
 If framerate spikes occur during profiling, this can cause the graph to be
 poorly scaled. Disable **Fit to Frame** so that the graph will zoom onto the 60
