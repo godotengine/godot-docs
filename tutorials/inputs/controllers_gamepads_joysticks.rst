@@ -333,11 +333,11 @@ or creating an issue in the `SDL repository <https://github.com/libsdl-org/SDL/i
 
 .. note::
 
-   Note that there are "generic" controllers on the market (usually their
-   ``Input.get_joy_info(device)["raw_name"]`` property contains ``"USB Gamepad"`` string),
-   and different generic controllers may use the same chipset, but they would have a different button placement,
-   so creating a mapping for one of those controllers will most likely conflict with other ones,
-   because the engine has no way of differentiating between controllers with the same chipset.
+    Note that there are "generic" controllers on the market (usually their
+    ``Input.get_joy_info(device)["raw_name"]`` property contains ``"USB Gamepad"`` string),
+    and different generic controllers may use the same chipset, but they would have a different button placement,
+    so creating a mapping for one of those controllers will most likely conflict with other ones,
+    because the engine has no way of differentiating between controllers with the same chipset.
 
 My controller works on a given platform, but not on another platform.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
