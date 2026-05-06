@@ -16,8 +16,8 @@ Requirements
 To compile export templates for the Web, the following is required:
 
 - `Emscripten 4.0.0+ <https://emscripten.org>`__.
-- `Python 3.8+ <https://www.python.org/>`__.
-- `SCons 4.0+ <https://scons.org/pages/download.html>`__ build system.
+- `Python 3.9+ <https://www.python.org/>`__.
+- `SCons 4.4+ <https://scons.org/pages/download.html>`__ build system.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.

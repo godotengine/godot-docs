@@ -26,8 +26,8 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
-- `Python 3.8+ <https://www.python.org/downloads/>`_.
-- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.9+ <https://www.python.org/downloads/>`_.
+- `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system.
 - Android SDK
 
    - To install the Android SDK, follow the steps `here <https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html>`_.
