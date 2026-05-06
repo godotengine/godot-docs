@@ -20,6 +20,7 @@ For compiling under Windows, the following is required:
     - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
       version 2019 or later. Visual Studio 2022 is recommended.
       **Make sure to enable C++ in the list of workflows to install.**
+      **Make sure to enable Windows SDK 10.0.22621 (for Visual Studio 2019) or more recent version (for Visual Studio 2022+).**
       If you've already installed Visual Studio without C++ support, run the installer
       again; it should present you a **Modify** button.
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
@@ -30,9 +31,9 @@ For compiling under Windows, the following is required:
     - `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
       an alternative to Visual Studio and MinGW-w64.
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `Python 3.8+ <https://www.python.org/downloads/windows/>`_.
+- `Python 3.9+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
-- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system. Using the
+- `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
 - :ref:`Direct3D 12 dependencies <doc_compiling_for_windows_installing_d3d12_requirements>`
