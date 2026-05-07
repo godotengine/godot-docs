@@ -272,7 +272,7 @@ external resource also has (but subresources don't).
 
 External resources and internal resources are referred to with
 ``ExtResource("id")`` and ``SubResource("id")``, respectively. Because there
-have different methods to refer to internal and external resources, you can have
+are different methods to refer to internal and external resources, you can have
 the same ID for both an internal and external resource.
 
 For example, to refer to the resource
