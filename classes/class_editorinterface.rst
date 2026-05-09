@@ -997,7 +997,7 @@ Pops up an editor dialog for quick selecting a resource file. The ``callback`` m
 
 |void| **reload_scene_from_path**\ (\ scene_filepath\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_reload_scene_from_path>`
 
-Reloads the scene at the given path.
+Reloads the scene at the given path. Fails if the scene is not open.
 
 .. rst-class:: classref-item-separator
 

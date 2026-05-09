@@ -61,7 +61,9 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`asset_library/use_threads<class_EditorSettings_property_asset_library/use_threads>`                                                                                                                         |
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`asset_store/available_urls<class_EditorSettings_property_asset_store/available_urls>`                                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`asset_store/use_threads<class_EditorSettings_property_asset_store/use_threads>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debugger/auto_switch_to_remote_scene_tree<class_EditorSettings_property_debugger/auto_switch_to_remote_scene_tree>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1101,11 +1103,23 @@ Emitted after any editor setting has changed. It's used by various editor plugin
 Property Descriptions
 ---------------------
 
-.. _class_EditorSettings_property_asset_library/use_threads:
+.. _class_EditorSettings_property_asset_store/available_urls:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **asset_library/use_threads** :ref:`🔗<class_EditorSettings_property_asset_library/use_threads>`
+:ref:`Dictionary<class_Dictionary>` **asset_store/available_urls** :ref:`🔗<class_EditorSettings_property_asset_store/available_urls>`
+
+A list of the available URLs that can be chosen in the Asset Store to fetch asset data. With the key being the name, and the value being the URL.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_asset_store/use_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **asset_store/use_threads** :ref:`🔗<class_EditorSettings_property_asset_store/use_threads>`
 
 If ``true``, the Asset Store uses multiple threads for its HTTP requests. This prevents the Asset Store from blocking the main thread for every loaded asset.
 

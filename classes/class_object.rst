@@ -360,6 +360,7 @@ Combined with :ref:`_set()<class_Object_private_method__set>` and :ref:`_get_pro
         if property == "fake_property":
             print("Getting my property!")
             return 4
+        return null
 
     func _get_property_list():
         return [
@@ -429,7 +430,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
     var numbers = PackedInt32Array([0, 0, 0])
 
     func _get_property_list():
-        var properties = []
+        var properties: Array[Dictionary] = []
 
         for i in range(number_count):
             properties.append({
@@ -445,6 +446,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
         if property.begins_with("number_"):
             var index = property.get_slice("_", 1).to_int()
             return numbers[index]
+        return null
 
     func _set(property, value):
         if property.begins_with("number_"):
@@ -1475,7 +1477,9 @@ Returns ``true`` if a connection exists between the given ``signal`` name and ``
 
 :ref:`bool<class_bool>` **is_queued_for_deletion**\ (\ ) |const| :ref:`🔗<class_Object_method_is_queued_for_deletion>`
 
-Returns ``true`` if the :ref:`Node.queue_free()<class_Node_method_queue_free>` method was called for the object.
+Returns ``true`` if the methods :ref:`Node.queue_free()<class_Node_method_queue_free>` or :ref:`SceneTree.queue_delete()<class_SceneTree_method_queue_delete>` was called for the object.
+
+\ **Note:** This method does not return ``true`` on children of the node that :ref:`Node.queue_free()<class_Node_method_queue_free>` has been called on, even though they will be freed together with the parent.
 
 .. rst-class:: classref-item-separator
 
