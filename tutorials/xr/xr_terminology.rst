@@ -100,7 +100,6 @@ See :ref:`AR passthrough <doc_openxr_passthrough>` for an example of AR using th
     Instead, AR functionality is exposed through proprietary APIs and requires
     platform-specific plugins:
 
-	- :ref:`ARKit plugin (iOS) <doc_plugins_for_ios>`
 	- `ARCore plugin (Android) <https://github.com/godotvr/godot_arcore>`_
 
     This results in platform-specific implementations that are not fully portable.

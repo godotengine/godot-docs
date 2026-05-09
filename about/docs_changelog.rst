@@ -371,7 +371,6 @@ Math
 Platform-specific
 ~~~~~~~~~~~~~~~~~
 
-- :ref:`doc_plugins_for_ios`
 - :ref:`doc_ios_plugin`
 - :ref:`doc_html5_shell_classref`
 

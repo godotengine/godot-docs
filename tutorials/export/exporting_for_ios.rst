@@ -132,7 +132,7 @@ Plugins for iOS
 ---------------
 
 Special iOS plugins can be used in Godot. Check out the
-:ref:`doc_plugins_for_ios` page.
+:ref:`doc_ios_plugin` page.
 
 Environment variables
 ---------------------
