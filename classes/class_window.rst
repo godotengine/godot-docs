@@ -25,6 +25,13 @@ A node that creates a window. The window can either be a native system window or
 
 At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using the :ref:`close_requested<class_Window_signal_close_requested>` signal (this applies both to pressing the close button and clicking outside of a popup).
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`HDR output <../tutorials/rendering/hdr_output>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -2028,7 +2035,7 @@ Returns layout direction and text writing direction.
 
 Returns the maximum value for linear color components that can be displayed in this window, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. The :ref:`output_max_linear_value_changed<class_Window_signal_output_max_linear_value_changed>` signal will be emitted whenever this value changes.
 
-This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. When using the Linear tonemapper without :ref:`Environment<class_Environment>` effects or no :ref:`WorldEnvironment<class_WorldEnvironment>`, use the returned value to scale content to maximize the screen's brightness, such as for lasers or other bright effects. The following is an example that produces the brightest purple color that the screen can produce:
+This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. When using this maximum linear value in your project, it should only be used to present colors directly to the screen without tonemapping and without influencing lighting, post-processing effects, or surrounding color. The following is an example that produces the brightest purple color that the screen can produce:
 
 
 .. tabs::
