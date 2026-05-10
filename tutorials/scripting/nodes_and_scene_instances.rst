@@ -132,7 +132,7 @@ script.
     var sprite2d
 
     func _ready():
-        var sprite2d = Sprite2D.new() # Create a new Sprite2D.
+        sprite2d = Sprite2D.new() # Create a new Sprite2D.
         add_child(sprite2d) # Add it as a child of this node.
 
  .. code-tab:: csharp
