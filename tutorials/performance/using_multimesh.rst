@@ -62,7 +62,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         multimesh = MultiMesh.new()
         # Set the format first.
         multimesh.transform_format = MultiMesh.TRANSFORM_3D
-        # Set the mesh that will be duplicated
+        # Set the mesh that will be duplicated.
         multimesh.mesh = BoxMesh.new()
         # Then resize (otherwise, changing the format is not allowed).
         multimesh.instance_count = 10000
