@@ -242,7 +242,7 @@ call in a specific peer.
     }
 
 
-RPCs will not serialize objects or callables.
+RPCs will not serialize Objects or Callables.
 
 For a remote call to be successful, the sending and receiving node need to have the same ``NodePath``, which means they
 must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
@@ -335,6 +335,12 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         int senderId = Multiplayer.GetRemoteSenderId();
         // Process the input and affect game logic.
     }
+
+.. note::
+
+    RPC methods must be defined on :ref:`class_Node`-derived classes. Attempting
+    to use high-level RPC calls on methods defined only in non-Node classes
+    (such as Resource) will result in runtime errors.
 
 Channels
 --------
@@ -714,6 +720,39 @@ On the client:
             # Tell the MultiplayerAPI that the authentication was successful.
             multiplayer.complete_auth(peer_id)
 
-As soon as both, the client's and the server's :ref:`complete_auth() <class_SceneMultiplayer_method_complete_auth>`
+As soon as both the client's and the server's :ref:`complete_auth() <class_SceneMultiplayer_method_complete_auth>`
 methods have been called, the connection is considered to be established and the
-`connected_to_server` and `peer_connected` signals fire.
+``connected_to_server`` and ``peer_connected`` signals fire.
+
+Secure multiplayer design
+-------------------------
+
+Godot's high-level multiplayer API makes it easier to build networked games, but
+it does not automatically make gameplay logic secure. For competitive or
+persistent multiplayer games, treat all client input as untrusted.
+
+A common mistake is to let clients authoritatively decide important game states,
+such as player position, combat results, inventory changes, or match outcomes.
+This can make cheating much easier, and result in more frequent desynchronization
+("desync").
+
+In general, prefer the following patterns:
+
+- Use server-authoritative logic for gameplay-critical decisions.
+- Validate RPC arguments before applying them to the game state.
+- Avoid trusting client-reported positions, timers, cooldowns, or resource
+  values without checks.
+- Add safety checks and rate limits to actions that can be triggered frequently.
+
+In short, you should design your networking so that the server remains the
+source of truth for important states.
+
+For example, instead of accepting a client's final position directly, consider
+sending player input or movement intent to the authority/server, then validating
+and applying the result there. This comes with some tradeoffs (such as
+server-side performance and complexity due to the need for client-side
+prediction), but will make it much harder for attackers to cheat by sending
+falsified data.
+
+See `Choosing the right network model for your multiplayer game <https://mas-bandwidth.com/choosing-the-right-network-model-for-your-multiplayer-game/>`__
+for more information on different multiplayer models and their security implications.
