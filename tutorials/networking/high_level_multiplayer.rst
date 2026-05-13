@@ -269,6 +269,7 @@ must have the same name. When using ``add_child()`` for nodes which are expected
 
     See further explanation and troubleshooting on `this post <https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138>`__.
 
+
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
 .. tabs::
@@ -335,6 +336,47 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         int senderId = Multiplayer.GetRemoteSenderId();
         // Process the input and affect game logic.
     }
+
+.. note::
+
+    Godot's high-level RPC system is node-based. Methods marked with ``@rpc`` should be defined on
+    scripts attached to ``Node``-derived classes. Defining RPC methods only on non-``Node`` classes
+    is not supported and may result in runtime errors.
+
+    If needed, keep RPC entry points on ``Node`` scripts and delegate logic to helper objects.
+
+RPC methods must be defined on Node-based scripts
+-----------------------------------------------
+
+Godot's high-level multiplayer RPC system is built around the scene tree and ``Node`` paths.
+In practice, RPC methods should be defined on scripts attached to ``Node``-derived classes.
+
+Using ``@rpc`` on methods defined only in non-``Node`` classes (for example, plain ``Resource`` or
+``RefCounted``-based helper scripts) is not supported by the high-level multiplayer API and can
+result in runtime errors when calling ``rpc()`` or ``rpc_id()``.
+
+Supported pattern:
+
+.. code-block:: gdscript
+
+    extends Node
+
+    @rpc("any_peer")
+    func submit_input(input_vector: Vector2) -> void:
+        pass
+
+Unsupported pattern:
+
+.. code-block:: gdscript
+
+    extends RefCounted
+
+    @rpc("any_peer")
+    func submit_input(input_vector: Vector2) -> void:
+        pass
+
+If you need multiplayer RPC behavior, keep the RPC entry points on ``Node`` scripts and call into
+helper objects from there.
 
 Channels
 --------
