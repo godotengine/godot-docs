@@ -105,6 +105,7 @@ Save your newly created scene as ``node_2d.tscn``, if you haven't already.
 You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 At the moment, the button will be visible, but nothing will happen if you
 press it.
+If you can not find the button, you may need to open Project → Project Settings → General → Application → Run → Main Scene, replace the Sprite2D.tscn with node_2d.tscn.
 
 Connecting a signal in the editor
 ---------------------------------
