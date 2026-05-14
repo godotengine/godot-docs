@@ -34,7 +34,7 @@ Create a new scene and add the following nodes exactly as shown below.
 
 .. image:: img/viewport_texture_node_tree.webp
 
-Go into the the MeshInstance3D and make the mesh a SphereMesh
+Go into the MeshInstance3D and make the mesh a SphereMesh
 
 Setting up the SubViewport
 --------------------------
