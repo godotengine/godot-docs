@@ -462,7 +462,7 @@ It is possible but discouraged to store the state in a member variable.
 Multiple states are necessary in cases such as nested loops where the same
 iterator instance is used simultaneously. The ``iter`` parameter in 
 ``_iter_init()`` and ``_iter_next()`` is a single-element array so that updates
-can persist. Whereas in ``_iter_get()``, the state is is not wrapped because it
+can persist. Whereas in ``_iter_get()``, the state is not wrapped because it
 is supposed to be read-only.
 
 Returning ``true`` from ``_iter_init()`` and ``_iter_next()`` indicates that the

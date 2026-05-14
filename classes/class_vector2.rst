@@ -679,7 +679,7 @@ Creates a **Vector2** rotated to the given ``angle`` in radians. This is equival
     print(Vector2(1, 0).angle()) # Prints 0.0, which is the angle used above.
     print(Vector2.from_angle(PI / 2)) # Prints (0.0, 1.0)
 
-\ **Note:** The length of the returned **Vector2** is *approximately* ``1.0``, but is is not guaranteed to be exactly ``1.0`` due to floating-point precision issues. Call :ref:`normalized()<class_Vector2_method_normalized>` on the returned **Vector2** if you require a unit vector.
+\ **Note:** The length of the returned **Vector2** is *approximately* ``1.0``, but is not guaranteed to be exactly ``1.0`` due to floating-point precision issues. Call :ref:`normalized()<class_Vector2_method_normalized>` on the returned **Vector2** if you require a unit vector.
 
 .. rst-class:: classref-item-separator
 
