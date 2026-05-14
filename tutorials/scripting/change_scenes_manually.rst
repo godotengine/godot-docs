@@ -74,7 +74,7 @@ access and integrity.
 2. **Hide the existing scene.** By changing the visibility or collision
    detection of the nodes, you can hide the entire node sub-tree from the
    player's perspective. Use
-   :ref:`CanvasItem.hide() <class_CanvasItem_method_hide>` to hide a scene and
+   :ref:`CanvasItem.hide() <class_CanvasItem_method_hide>` to hide a scene (does not alter collision detection) and
    :ref:`CanvasItem.show() <class_CanvasItem_method_show>` to show it again.
 
     - Memory still exists.
@@ -83,7 +83,7 @@ access and integrity.
 
         - Pro: There's no need to move any more nodes around to save data.
 
-        - Con: More data is being kept in memory, which will be become a problem
+        - Con: More data is being kept in memory, which will become a problem
           on memory-sensitive platforms like web or mobile.
 
     - Processing continues.
@@ -122,16 +122,16 @@ access and integrity.
 
 There are also cases where you may wish to have many scenes present at the same
 time, such as adding your own singleton at runtime, or preserving
-a scene's data between scene changes (adding the scene to the root node).
+a scene's data between scene changes (adding the scene's data to the root node).
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        get_tree().root.add_child(scene)
+        get_tree().root.add_child(scene_data)
 
  .. code-tab:: csharp
 
-        GetTree().Root.AddChild(scene);
+        GetTree().Root.AddChild(scene_data);
 
 Another case may be displaying multiple scenes at the same time using
 :ref:`SubViewportContainers <class_SubViewportContainer>`. This is optimal for
