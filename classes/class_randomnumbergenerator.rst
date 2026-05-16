@@ -100,9 +100,9 @@ Initializes the random number generator state based on the given seed value. A g
 
 \ **Note:** The RNG does not have an avalanche effect, and can output similar random streams given similar seeds. Consider using a hash function to improve your seed quality if they're sourced externally.
 
-\ **Note:** Setting this property produces a side effect of changing the internal :ref:`state<class_RandomNumberGenerator_property_state>`, so make sure to initialize the seed *before* modifying the :ref:`state<class_RandomNumberGenerator_property_state>`:
-
 \ **Note:** The default value of this property is pseudo-random, and changes when calling :ref:`randomize()<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
+
+\ **Note:** Setting this property produces a side effect of changing the internal :ref:`state<class_RandomNumberGenerator_property_state>`, so make sure to initialize the seed *before* modifying the :ref:`state<class_RandomNumberGenerator_property_state>`:
 
 ::
 
