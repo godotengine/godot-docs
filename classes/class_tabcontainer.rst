@@ -39,7 +39,7 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                           | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       | ``false`` |
+   | :ref:`bool<class_bool>`                           | :ref:`all_tabs_in_front<class_TabContainer_property_all_tabs_in_front>`                       |           |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`                                       | ``true``  |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
@@ -349,7 +349,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **all_tabs_in_front** = ``false`` :ref:`🔗<class_TabContainer_property_all_tabs_in_front>`
+:ref:`bool<class_bool>` **all_tabs_in_front** :ref:`🔗<class_TabContainer_property_all_tabs_in_front>`
 
 .. rst-class:: classref-property-setget
 

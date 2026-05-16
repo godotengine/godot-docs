@@ -1547,6 +1547,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/environment/defaults/default_environment<class_ProjectSettings_property_rendering/environment/defaults/default_environment>`                                                               | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/environment/fog/use_legacy_blending<class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending>`                                                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode.mobile<class_ProjectSettings_property_rendering/environment/glow/upscale_mode.mobile>`                                                                       | ``0``                                                                                            |
@@ -11795,6 +11797,18 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 :ref:`String<class_String>` **rendering/environment/defaults/default_environment** = ``""`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/defaults/default_environment>`
 
 :ref:`Environment<class_Environment>` that will be used as a fallback environment in case a scene does not specify its own environment. The default environment is loaded in at scene load time regardless of whether you have set an environment or not. If you do not rely on the fallback environment, you do not need to set this property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/environment/fog/use_legacy_blending** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending>`
+
+Enables legacy fog blending behavior from version 4.5 and earlier. This is intended for users who are developing on pre-4.6 versions and want to upgrade to 4.6 with the smallest possible change to their visuals.
 
 .. rst-class:: classref-item-separator
 

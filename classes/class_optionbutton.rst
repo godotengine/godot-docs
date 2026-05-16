@@ -45,8 +45,6 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`allow_reselect<class_OptionButton_property_allow_reselect>`                                         | ``false``                                                                     |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`enable_search_bar_on_item_count<class_OptionButton_property_enable_search_bar_on_item_count>`       | ``0``                                                                         |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`fit_to_longest_item<class_OptionButton_property_fit_to_longest_item>`                               | ``true``                                                                      |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`item_count<class_OptionButton_property_item_count>`                                                 | ``0``                                                                         |
@@ -61,9 +59,13 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`popup/item_{index}/text<class_OptionButton_property_popup/item_{index}/text>`                       | ``""``                                                                        |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`search_bar_enabled<class_OptionButton_property_search_bar_enabled>`                                 | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`search_bar_fuzzy_search_enabled<class_OptionButton_property_search_bar_fuzzy_search_enabled>`       | ``true``                                                                      |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`search_bar_fuzzy_search_max_misses<class_OptionButton_property_search_bar_fuzzy_search_max_misses>` | ``2``                                                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`search_bar_min_item_count<class_OptionButton_property_search_bar_min_item_count>`                   | ``0``                                                                         |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`selected<class_OptionButton_property_selected>`                                                     | ``-1``                                                                        |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -114,8 +116,6 @@ Methods
    | :ref:`bool<class_bool>`                               | :ref:`is_item_disabled<class_OptionButton_method_is_item_disabled>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                               |
    +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_item_separator<class_OptionButton_method_is_item_separator>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                             |
-   +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_search_bar_enabled<class_OptionButton_method_is_search_bar_enabled>`\ (\ ) |const|                                                                                                  |
    +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`remove_item<class_OptionButton_method_remove_item>`\ (\ idx\: :ref:`int<class_int>`\ )                                                                                                 |
    +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,23 +208,6 @@ Property Descriptions
 - :ref:`bool<class_bool>` **get_allow_reselect**\ (\ )
 
 If ``true``, the currently selected item can be selected again.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_property_enable_search_bar_on_item_count:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **enable_search_bar_on_item_count** = ``0`` :ref:`🔗<class_OptionButton_property_enable_search_bar_on_item_count>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_search_bar_enabled_on_item_count**\ (\ value\: :ref:`int<class_int>`\ )
-- :ref:`int<class_int>` **get_search_bar_enabled_on_item_count**\ (\ )
-
-Enables the :ref:`PopupMenu<class_PopupMenu>` search bar if the item count is greater than ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -336,6 +319,23 @@ The text of the item at ``index``.
 
 ----
 
+.. _class_OptionButton_property_search_bar_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **search_bar_enabled** = ``false`` :ref:`🔗<class_OptionButton_property_search_bar_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ )
+
+If ``true``, shows a search bar at the top of the :ref:`PopupMenu<class_PopupMenu>` for filtering items. See :ref:`search_bar_min_item_count<class_OptionButton_property_search_bar_min_item_count>` for dynamically controlling its visibility based on the number of items.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OptionButton_property_search_bar_fuzzy_search_enabled:
 
 .. rst-class:: classref-property
@@ -367,6 +367,23 @@ Use :ref:`search_bar_fuzzy_search_max_misses<class_OptionButton_property_search_
 - :ref:`int<class_int>` **get_search_bar_fuzzy_search_max_misses**\ (\ )
 
 Sets the maximum number of mismatches allowed in each search result when fuzzy searching is enabled for the :ref:`PopupMenu<class_PopupMenu>` search bar. Any item with more mismatches will be hidden from the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_search_bar_min_item_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_min_item_count** = ``0`` :ref:`🔗<class_OptionButton_property_search_bar_min_item_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_min_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_min_item_count**\ (\ )
+
+Sets the minimum number of items required for the :ref:`PopupMenu<class_PopupMenu>` search bar to be visible. :ref:`search_bar_enabled<class_OptionButton_property_search_bar_enabled>` must be ``true`` for this to have any effect.
 
 .. rst-class:: classref-item-separator
 
@@ -612,18 +629,6 @@ Returns ``true`` if the item at index ``idx`` is disabled.
 :ref:`bool<class_bool>` **is_item_separator**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_is_item_separator>`
 
 Returns ``true`` if the item at index ``idx`` is marked as a separator.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_method_is_search_bar_enabled:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_is_search_bar_enabled>`
-
-Returns ``true`` if the search bar is enabled.
 
 .. rst-class:: classref-item-separator
 

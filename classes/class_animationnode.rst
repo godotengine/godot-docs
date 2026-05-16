@@ -123,7 +123,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**animation_node_removed**\ (\ object_id\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_signal_animation_node_removed>`
+**animation_node_removed**\ (\ object_id\: :ref:`int<class_int>`, node_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_signal_animation_node_removed>`
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation nodes removes. The animation nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, and :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 

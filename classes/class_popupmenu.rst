@@ -70,11 +70,13 @@ Properties
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                             | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                                 | ``false``                                                                                     |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                                               | :ref:`search_bar_enabled_on_item_count<class_PopupMenu_property_search_bar_enabled_on_item_count>`     | ``0``                                                                                         |
+   | :ref:`bool<class_bool>`                                                             | :ref:`search_bar_enabled<class_PopupMenu_property_search_bar_enabled>`                                 | ``false``                                                                                     |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                             | :ref:`search_bar_fuzzy_search_enabled<class_PopupMenu_property_search_bar_fuzzy_search_enabled>`       | ``true``                                                                                      |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                               | :ref:`search_bar_fuzzy_search_max_misses<class_PopupMenu_property_search_bar_fuzzy_search_max_misses>` | ``2``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`search_bar_min_item_count<class_PopupMenu_property_search_bar_min_item_count>`                   | ``0``                                                                                         |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                             | :ref:`shrink_height<class_PopupMenu_property_shrink_height>`                                           | ``true``                                                                                      |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
@@ -185,8 +187,6 @@ Methods
    | :ref:`bool<class_bool>`                               | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                            |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_search_bar_enabled<class_PopupMenu_method_is_search_bar_enabled>`\ (\ ) |const|                                                                                                                                                                                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -599,18 +599,18 @@ If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 
 ----
 
-.. _class_PopupMenu_property_search_bar_enabled_on_item_count:
+.. _class_PopupMenu_property_search_bar_enabled:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **search_bar_enabled_on_item_count** = ``0`` :ref:`🔗<class_PopupMenu_property_search_bar_enabled_on_item_count>`
+:ref:`bool<class_bool>` **search_bar_enabled** = ``false`` :ref:`🔗<class_PopupMenu_property_search_bar_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_search_bar_enabled_on_item_count**\ (\ value\: :ref:`int<class_int>`\ )
-- :ref:`int<class_int>` **get_search_bar_enabled_on_item_count**\ (\ )
+- |void| **set_search_bar_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ )
 
-Enables the **PopupMenu** search bar if the item count is greater than ``0``.
+If ``true``, shows a search bar at the top of the **PopupMenu** for filtering items. See :ref:`search_bar_min_item_count<class_PopupMenu_property_search_bar_min_item_count>` for dynamically controlling its visibility based on the number of items.
 
 \ **Note:** When enabled, :ref:`allow_search<class_PopupMenu_property_allow_search>` is ignored.
 
@@ -649,6 +649,23 @@ Use :ref:`search_bar_fuzzy_search_max_misses<class_PopupMenu_property_search_bar
 - :ref:`int<class_int>` **get_search_bar_fuzzy_search_max_misses**\ (\ )
 
 Sets the maximum number of mismatches allowed in each search result when fuzzy searching is enabled for the **PopupMenu** search bar. Any item with more mismatches will be hidden from the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_min_item_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_min_item_count** = ``0`` :ref:`🔗<class_PopupMenu_property_search_bar_min_item_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_min_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_min_item_count**\ (\ )
+
+Sets the minimum number of items required for the search bar to be visible. :ref:`search_bar_enabled<class_PopupMenu_property_search_bar_enabled>` must be ``true`` for this to have any effect.
 
 .. rst-class:: classref-item-separator
 
@@ -1334,18 +1351,6 @@ Returns ``true`` if the specified item's shortcut is disabled.
 :ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_native_menu>`
 
 Returns ``true`` if the system native menu is supported and currently used by this **PopupMenu**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PopupMenu_method_is_search_bar_enabled:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_search_bar_enabled>`
-
-Returns ``true`` if search bar is currently enabled.
 
 .. rst-class:: classref-item-separator
 
