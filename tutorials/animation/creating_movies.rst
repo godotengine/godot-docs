@@ -482,7 +482,7 @@ only 5.2 seconds of video after that point:
     ffmpeg -i input.avi -ss 00:00:12.10 -t 00:00:05.20 -crf 15 output.mp4
 
 Cutting videos can also be done with the GUI tool
-`LosslessCut <https://mifi.github.io/lossless-cut/>`__.
+`LosslessCut <https://losslesscut.app/>`__.
 
 Resizing video
 ~~~~~~~~~~~~~~

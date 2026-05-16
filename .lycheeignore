@@ -10,18 +10,27 @@ tcp:\/\/.*
 # Security checks prevent checking the URLs of these websites automatically,
 # typically returning 403 errors.
 .*asecuritysite\.com.*
+.*computerhope\.com*
+.*developer\.arm\.com.*
+.*guru3d\.com.*
+.*inkscape\.org.*
 .*intel\.com.*
+.*itch\.io.*
+.*khronos\.org.*
+.*medium\.com.*
 .*reddit\.com.*
-.*inkscape.org.*
-.*computerhope.com*
+.*shadertoy\.com.*
 
 # Don't check URLs from these websites due to frequent rate limits (error 429) or timeouts.
 .*adobe\.com.*
+.*developer\.apple\.com.*
+.*flathub\.org.*
 .*gamedevartisan\.com.*
 .*github\.com.*
 .*gnu\.org.*
 .*loopit\.dk.*
 .*meta\.com.*
+.*nightly\.link.*
 .*sourceforge\.io.*
 
 # Not a valid URL with the GET method, which lychee always sends.

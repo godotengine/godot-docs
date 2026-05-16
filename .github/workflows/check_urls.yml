@@ -24,13 +24,14 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           args: >
-            --base .
+            --root-dir .
             --no-progress
             --cache
             --max-cache-age 1d
+            --exclude-path _build/
             --exclude-path _templates/
             --exclude-path classes/
-            "**/*.md" "**/*.html" "**/*.rst"
+            "**/*.md" "**/*.rst"
 
       - name: Fail if there were link errors
         run: exit ${{ steps.lc.outputs.exit_code }}

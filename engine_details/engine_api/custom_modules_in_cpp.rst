@@ -466,7 +466,7 @@ Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced
 in your ``get_doc_classes`` function.
 
-Edit the file(s) following the `class reference primer <https://contributing.godotengine.org/en/latest/documentation/class_reference/class_reference_primer.html>`__ and recompile the engine.
+Edit the file(s) following the `class reference primer <https://docs.godotengine.org/en/latest/engine_details/class_reference/index.html>`__ and recompile the engine.
 
 Once the compilation process is finished, the docs will become accessible within
 the engine's built-in documentation system.
