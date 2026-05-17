@@ -16,7 +16,7 @@ can also help answer questions related to physics engine behavior.
 Objects are passing through each other at high speeds
 -----------------------------------------------------
 
-This is known as *tunneling*. Enabling **Continuous CD** in the RigidBody
+This is known as *tunneling*. Enabling **Continuous Collision Detection** in the RigidBody
 properties can sometimes resolve this issue. If this does not help, there are
 other solutions you can try:
 
