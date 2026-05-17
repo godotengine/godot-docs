@@ -336,7 +336,7 @@ POT generation custom plugin
 ----------------------------
 
 If you have any extra file format to deal with, you could write a custom plugin
-to parse and and extract the strings from the custom file. This custom plugin
+to parse and extract the strings from the custom file. This custom plugin
 will extract the strings and write into the POT file when you hit **Generate POT**.
 To learn more about how to create the translation parser plugin, see
 :ref:`EditorTranslationParserPlugin <class_EditorTranslationParserPlugin>`.
