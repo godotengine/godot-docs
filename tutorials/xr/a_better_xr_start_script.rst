@@ -61,7 +61,7 @@ We introduce a few new variables to our script as well:
 
 - ``maximum_refresh_rate`` will control the headsets refresh rate if this is supported by the headset.
 - ``xr_interface`` holds a reference to our XR interface, this already existed but we now type it to get full access to our :ref:`XRInterface <class_xrinterface>` API.
-- ``xr_is_focussed`` will be set to true whenever our game has focus.
+- ``xr_is_focused`` will be set to true whenever our game has focus.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -71,7 +71,7 @@ We introduce a few new variables to our script as well:
     @export var maximum_refresh_rate : int = 90
 
     var xr_interface : OpenXRInterface
-    var xr_is_focussed = false
+    var xr_is_focused = false
 
     ...
 
@@ -333,10 +333,10 @@ If you haven't, you can connect a method to the signal that performs additional 
     func _on_openxr_visible_state() -> void:
         # We always pass this state at startup,
         # but the second time we get this it means our player took off their headset
-        if xr_is_focussed:
+        if xr_is_focused:
             print("OpenXR lost focus")
 
-            xr_is_focussed = false
+            xr_is_focused = false
 
             # pause our game
             get_tree().paused = true
@@ -371,7 +371,7 @@ If you haven't, you can connect a method to the signal that performs additional 
 
     ...
 
-On focussed state
+On focused state
 -----------------
 
 This signal is emitted by OpenXR when our game gets focus.
@@ -400,7 +400,7 @@ While handling our signal we will update the focuses state, unpause our node and
     # Handle OpenXR focused state
     func _on_openxr_focused_state() -> void:
         print("OpenXR gained focus")
-        xr_is_focussed = true
+        xr_is_focused = true
 
         # unpause our game
         get_tree().paused = false
