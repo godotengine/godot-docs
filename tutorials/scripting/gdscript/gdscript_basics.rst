@@ -1364,7 +1364,8 @@ want to assign consecutive integers to some constant.
 
 If you pass a name to the enum, it will put all the keys inside a constant
 :ref:`Dictionary <class_Dictionary>` of that name. This means all constant methods of
-a dictionary can also be used with a named enum.
+a dictionary can also be used with a named enum. This only works for
+GDScript enums, not for enums from built-in classes.
 
 .. important:: Keys in a named enum are not registered
                as global constants. They should be accessed prefixed
