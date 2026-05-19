@@ -217,7 +217,7 @@ then performing a selection.
     You can copy and paste tiles that were already placed by performing a
     selection, pressing :kbd:`Ctrl + C` then pressing :kbd:`Ctrl + V`.
     The selection will be pasted after left-clicking. You can press
-    :kbd:`Ctrl + V` another time to perform more copies this way.
+    :kbd:`Ctrl + V` another time to perform more pastes this way.
     Right-click or press :kbd:`Escape` to cancel pasting.
 
 Paint
