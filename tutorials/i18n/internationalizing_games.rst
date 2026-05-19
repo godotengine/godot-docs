@@ -201,6 +201,10 @@ identical:
     // "Close", as in a distance (opposite of "far").
     GetNode<Label>("Distance").Text = Tr("Close", "Distance");
 
+To add a translation context, it must correspond to the ``msgctxt`` field 
+in a PO file. CSV files do not support translation contexts, therefore PO 
+files must be used if the project requires context.
+
 .. _doc_internationalizing_games_pluralization:
 
 Pluralization
