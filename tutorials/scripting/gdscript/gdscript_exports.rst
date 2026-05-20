@@ -262,6 +262,32 @@ If the angle is stored in degrees instead, use the `"degrees"` hint to display
 the degree symbol while disabling the automatic degrees-to-radians conversion
 when the value is modified from the inspector.
 
+Linking vector values together
+------------------------------
+
+It is possible to link vector values together. When the user adjusts one of the
+vector's components, the other components are automatically adjusted
+proportionally. For example, this is useful to maintain the aspect ratio of a 2D
+sprite when adjusting its scale. This feature can be temporarily disabled by the
+user by clicking the link icon to the right of the property.
+
+::
+
+    # Leave the hint string empty if you don't want to add a suffix.
+    @export_custom(PROPERTY_HINT_LINK, "suffix:px") var vector2_linked: Vector2 = Vector2(16, 16)
+
+Results in:
+
+.. figure:: img/gdscript_exports_linked_vector.webp
+   :align: center
+   :alt: Linked Vector2i property with the "px" suffix
+
+   Linked Vector2i property with the "px" suffix
+
+:ref:`This hint <class_@GlobalScope_constant_PROPERTY_HINT_LINK>` is effective
+on Vector2, Vector2i, Vector3, Vector3i, Vector4, and Vector4i. It can be used
+at the same time as a property suffix, as seen in the example above.
+
 .. _doc_gdscript_exports_floats_with_easing_hint:
 
 Floats with easing hint
