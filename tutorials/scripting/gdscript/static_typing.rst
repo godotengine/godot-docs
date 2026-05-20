@@ -274,8 +274,8 @@ and custom classes, and enums may be used as element types. Nested typed collect
     var dictionary_of_dictionaries: Dictionary[String, Dictionary] = { { } }
     # var dicts: Dictionary[String, Dictionary[String, int]] -- disallowed
 
-    for cost in fruit_costs:
-        # cost has type `int`
+    for fruit in fruit_costs:
+        # `fruit` has type `String`
 
     # The following would be errors:
     fruit_costs["pear"] += vehicles

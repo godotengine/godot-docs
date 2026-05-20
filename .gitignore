@@ -61,3 +61,6 @@ tmp-unused-images-history
 
 # Jetbrains IDE files
 /.idea/
+
+# Lychee URL checking cache
+.lycheecache

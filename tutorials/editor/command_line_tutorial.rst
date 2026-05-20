@@ -106,11 +106,11 @@ given build type.
 | ``--audio-output-latency <ms>``          | |release| Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may   |
 |                                          | result in audio cracking if the CPU can't keep up.                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--rendering-method <renderer>``        | |release| Renderer name. Requires driver support.                                                                                                            |
+| ``--rendering-method <renderer>``        | |release| Renderer name. Valid values are ``forward_plus``, ``mobile``, and ``gl_compatibility``. Requires driver support.                                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--rendering-driver <driver>``          | |release| Rendering driver (depends on display driver). Use ``--help`` first to display the list of available drivers.                                       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--gpu-index <device_index>``           | |release| Use a specific GPU (run with ``--verbose`` to get available device list).                                                                          |
+| ``--gpu-index <device_index>``           | |release| Use a specific GPU (only available on the Forward+/Mobile renderers; run with ``--verbose`` to get available device list).                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--text-driver <driver>``               | |release| Text driver (Fonts, BiDi, shaping).                                                                                                                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+

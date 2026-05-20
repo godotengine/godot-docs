@@ -6,6 +6,12 @@ XR
 This section of the manual covers everything related to XR (
 Virtual Reality and Augmented Reality).
 
+.. toctree::
+   :maxdepth: 1
+   :name: xr-overview
+
+   xr_terminology
+   
 Basic Tutorial
 --------------
 

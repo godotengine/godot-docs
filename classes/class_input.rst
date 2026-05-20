@@ -42,15 +42,17 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`emulate_mouse_from_touch<class_Input_property_emulate_mouse_from_touch>` |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`emulate_touch_from_mouse<class_Input_property_emulate_touch_from_mouse>` |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                             |
-   +----------------------------------------+--------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`       |
-   +----------------------------------------+--------------------------------------------------------------------------------+
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`emulate_mouse_from_touch<class_Input_property_emulate_mouse_from_touch>`                             |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`emulate_touch_from_mouse<class_Input_property_emulate_touch_from_mouse>`                             |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`ignore_joypad_on_unfocused_application<class_Input_property_ignore_joypad_on_unfocused_application>` |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`MouseMode<enum_Input_MouseMode>` | :ref:`mouse_mode<class_Input_property_mouse_mode>`                                                         |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                | :ref:`use_accumulated_input<class_Input_property_use_accumulated_input>`                                   |
+   +----------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -464,6 +466,23 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 - :ref:`bool<class_bool>` **is_emulating_touch_from_mouse**\ (\ )
 
 If ``true``, sends touch input events when clicking or dragging the mouse. See also :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_property_ignore_joypad_on_unfocused_application:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_joypad_on_unfocused_application** :ref:`🔗<class_Input_property_ignore_joypad_on_unfocused_application>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_joypad_on_unfocused_application**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_joypad_on_unfocused_application**\ (\ )
+
+If ``true``, joypad input (including motion sensors) and LED light changes will be ignored and joypad vibration will be stopped when the application is not focused.
 
 .. rst-class:: classref-item-separator
 
@@ -1162,6 +1181,29 @@ Returns ``true`` if any action, key, joypad button, or mouse button is being pre
 
 Returns ``true`` if you are pressing the joypad button at index ``button``.
 
+\ **Note:** If you want to check if a joypad button was just pressed, use Godot's input action system with :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` or use the :ref:`Node._input()<class_Node_private_method__input>` method like this instead:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventJoypadButton and event.is_pressed() and event.button_index == JOY_BUTTON_A:
+            pass # Your code here.
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventJoypadButton eventButton && eventButton.Pressed && eventButton.ButtonIndex == JoyButton.A)
+        {
+            // Your code here.
+        }
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1256,6 +1298,29 @@ Unlike :ref:`get_joy_vibration_strength()<class_Input_method_get_joy_vibration_s
 
 Returns ``true`` if you are pressing the key with the ``keycode`` printed on it. You can pass a :ref:`Key<enum_@GlobalScope_Key>` constant or any Unicode character code.
 
+\ **Note:** If you want to check if a key was just pressed by using its label, use Godot's input action system with :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` or use the :ref:`Node._input()<class_Node_private_method__input>` method like this instead:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventKey and not event.is_echo() and event.is_pressed() and event.key_label == KEY_SPACE:
+            pass # Your code here.
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventKey eventKey && !eventKey.IsEcho() && eventKey.Pressed && eventKey.KeyLabel == Key.Space)
+        {
+            // Your code here.
+        }
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1272,6 +1337,29 @@ Returns ``true`` if you are pressing the Latin key in the current keyboard layou
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_key_pressed()<class_Input_method_is_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
+\ **Note:** If you want to check if a key was just pressed by using its keycode, use Godot's input action system with :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` or use the :ref:`Node._input()<class_Node_private_method__input>` method like this instead:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventKey and not event.is_echo() and event.is_pressed() and event.keycode == KEY_SPACE:
+            pass # Your code here.
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventKey eventKey && !eventKey.IsEcho() && eventKey.Pressed && eventKey.Keycode == Key.Space)
+        {
+            // Your code here.
+        }
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1283,6 +1371,29 @@ Returns ``true`` if you are pressing the Latin key in the current keyboard layou
 :ref:`bool<class_bool>` **is_mouse_button_pressed**\ (\ button\: :ref:`MouseButton<enum_@GlobalScope_MouseButton>`\ ) |const| :ref:`🔗<class_Input_method_is_mouse_button_pressed>`
 
 Returns ``true`` if you are pressing the mouse button specified with :ref:`MouseButton<enum_@GlobalScope_MouseButton>`.
+
+\ **Note:** If you want to check if a mouse button was just pressed, use Godot's input action system with :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` or use the :ref:`Node._input()<class_Node_private_method__input>` method like this instead:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
+            pass # Your code here.
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == MouseButton.Left)
+        {
+            // Your code here.
+        }
+    }
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1299,6 +1410,29 @@ Returns ``true`` if you are pressing the key in the physical location on the 101
 \ :ref:`is_physical_key_pressed()<class_Input_method_is_physical_key_pressed>` is recommended over :ref:`is_key_pressed()<class_Input_method_is_key_pressed>` for in-game actions, as it will make :kbd:`W`/:kbd:`A`/:kbd:`S`/:kbd:`D` layouts work regardless of the user's keyboard layout. :ref:`is_physical_key_pressed()<class_Input_method_is_physical_key_pressed>` will also ensure that the top row number keys work on any keyboard layout. If in doubt, use :ref:`is_physical_key_pressed()<class_Input_method_is_physical_key_pressed>`.
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_physical_key_pressed()<class_Input_method_is_physical_key_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
+
+\ **Note:** If you want to check if a key was just pressed by using its physical keycode, use Godot's input action system with :ref:`is_action_just_pressed()<class_Input_method_is_action_just_pressed>` or use the :ref:`Node._input()<class_Node_private_method__input>` method like this instead:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventKey and not event.is_echo() and event.is_pressed() and event.physical_keycode == KEY_SPACE:
+            pass # Your code here.
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventKey eventKey && !eventKey.IsEcho() && eventKey.Pressed && eventKey.PhysicalKeycode == Key.Space)
+        {
+            // Your code here.
+        }
+    }
+
+
 
 .. rst-class:: classref-item-separator
 

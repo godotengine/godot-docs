@@ -199,14 +199,18 @@ below with almost any input video format (AVI, MOV, WebM, …).
    multiplexer. It's highly recommended to use one of the latest static daily
    builds, or build from their master branch to get the latest fixes.
 
+   On Windows, make sure to use 32-bit builds of FFmpeg. Windows 64-bit builds
+   have known issues with Theora encoding, which result in artifacts in the
+   output file.
+
 .. UPDATE: When the FFmpeg bugfixes for https://trac.ffmpeg.org/ticket/11451 and
 .. https://trac.ffmpeg.org/ticket/11454 are included in a stable FFmpeg release,
 .. this warning can be removed. That will likely be FFmpeg 7.2 or 8.0, and will
 .. likely happen during the Godot 4.5 or 4.6 release cycle.
 .. Commits fixing the issues:
-.. - https://github.org/FFmpeg/FFmpeg@22aa71d4da37a4ad2b0d28deeace64b57aa2ef50
-.. - https://github.org/FFmpeg/FFmpeg@84d85e7ad4ace228265af0c8c5caccc0730042fd
-.. - https://github.org/FFmpeg/FFmpeg@6e26f57f672b05e7b8b052007a83aef99dc81ccb
+.. - https://github.com/FFmpeg/FFmpeg/commit/22aa71d4da37a4ad2b0d28deeace64b57aa2ef50
+.. - https://github.com/FFmpeg/FFmpeg/commit/84d85e7ad4ace228265af0c8c5caccc0730042fd
+.. - https://github.com/FFmpeg/FFmpeg/commit/6e26f57f672b05e7b8b052007a83aef99dc81ccb
 
 Balancing quality and file size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

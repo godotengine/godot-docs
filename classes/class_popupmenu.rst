@@ -39,31 +39,57 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``true``                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false``                                                                    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`item_count<class_PopupMenu_property_item_count>`                                             | ``0``                                                                        |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                             | ``false``                                                                    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`shrink_height<class_PopupMenu_property_shrink_height>`                                       | ``true``                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`shrink_width<class_PopupMenu_property_shrink_width>`                                         | ``true``                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                       | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.2``                                                                      |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`SystemMenus<enum_NativeMenu_SystemMenus>` | :ref:`system_menu_id<class_PopupMenu_property_system_menu_id>`                                     | ``0``                                                                        |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | transparent                                                                                        | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)        |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | transparent_bg                                                                                     | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`) |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                             | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` | canvas_item_default_texture_filter                                                                     | ``4`` (overrides :ref:`Viewport<class_Viewport_property_canvas_item_default_texture_filter>`) |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` | canvas_item_default_texture_repeat                                                                     | ``3`` (overrides :ref:`Viewport<class_Viewport_property_canvas_item_default_texture_repeat>`) |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>`     | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                         | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`             | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`item_count<class_PopupMenu_property_item_count>`                                                 | ``0``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`item_{index}/checkable<class_PopupMenu_property_item_{index}/checkable>`                         | ``0``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`item_{index}/checked<class_PopupMenu_property_item_{index}/checked>`                             | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`item_{index}/disabled<class_PopupMenu_property_item_{index}/disabled>`                           | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`                                                   | :ref:`item_{index}/icon<class_PopupMenu_property_item_{index}/icon>`                                   |                                                                                               |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`item_{index}/id<class_PopupMenu_property_item_{index}/id>`                                       | ``0``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`item_{index}/separator<class_PopupMenu_property_item_{index}/separator>`                         | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                         | :ref:`item_{index}/text<class_PopupMenu_property_item_{index}/text>`                                   | ``""``                                                                                        |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`prefer_native_menu<class_PopupMenu_property_prefer_native_menu>`                                 | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`search_bar_enabled<class_PopupMenu_property_search_bar_enabled>`                                 | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`search_bar_fuzzy_search_enabled<class_PopupMenu_property_search_bar_fuzzy_search_enabled>`       | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`search_bar_fuzzy_search_max_misses<class_PopupMenu_property_search_bar_fuzzy_search_max_misses>` | ``2``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                               | :ref:`search_bar_min_item_count<class_PopupMenu_property_search_bar_min_item_count>`                   | ``0``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`shrink_height<class_PopupMenu_property_shrink_height>`                                           | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`shrink_width<class_PopupMenu_property_shrink_width>`                                             | ``true``                                                                                      |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                           | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                               | ``0.2``                                                                                       |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`SystemMenus<enum_NativeMenu_SystemMenus>`                                     | :ref:`system_menu_id<class_PopupMenu_property_system_menu_id>`                                         | ``0``                                                                                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | transparent                                                                                            | ``true`` (overrides :ref:`Window<class_Window_property_transparent>`)                         |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | transparent_bg                                                                                         | ``true`` (overrides :ref:`Viewport<class_Viewport_property_transparent_bg>`)                  |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -260,6 +286,8 @@ Theme Properties
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>`                              | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`search_bar_separation<class_PopupMenu_theme_constant_search_bar_separation>`            | ``4``                             |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`separator_outline_size<class_PopupMenu_theme_constant_separator_outline_size>`          | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`v_separation<class_PopupMenu_theme_constant_v_separation>`                              | ``4``                             |
@@ -283,6 +311,8 @@ Theme Properties
    | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked<class_PopupMenu_theme_icon_radio_unchecked>`                            |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_unchecked_disabled<class_PopupMenu_theme_icon_radio_unchecked_disabled>`          |                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`search<class_PopupMenu_theme_icon_search>`                                              |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`submenu<class_PopupMenu_theme_icon_submenu>`                                            |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -452,6 +482,104 @@ The number of items currently in the list.
 
 ----
 
+.. _class_PopupMenu_property_item_{index}/checkable:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **item_{index}/checkable** = ``0`` :ref:`🔗<class_PopupMenu_property_item_{index}/checkable>`
+
+The checkable item type of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/checked:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **item_{index}/checked** = ``false`` :ref:`🔗<class_PopupMenu_property_item_{index}/checked>`
+
+If ``true``, the item at ``index`` is checked.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **item_{index}/disabled** = ``false`` :ref:`🔗<class_PopupMenu_property_item_{index}/disabled>`
+
+If ``true``, the item at ``index`` is disabled.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/icon:
+
+.. rst-class:: classref-property
+
+:ref:`Texture2D<class_Texture2D>` **item_{index}/icon** :ref:`🔗<class_PopupMenu_property_item_{index}/icon>`
+
+The icon of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/id:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **item_{index}/id** = ``0`` :ref:`🔗<class_PopupMenu_property_item_{index}/id>`
+
+The ID of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/separator:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **item_{index}/separator** = ``false`` :ref:`🔗<class_PopupMenu_property_item_{index}/separator>`
+
+If ``true``, the item at ``index`` is a separator.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/text:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **item_{index}/text** = ``""`` :ref:`🔗<class_PopupMenu_property_item_{index}/text>`
+
+The text of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PopupMenu_property_prefer_native_menu:
 
 .. rst-class:: classref-property
@@ -466,6 +594,78 @@ The number of items currently in the list.
 If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
 
 \ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu()<class_PopupMenu_method_is_native_menu>` to check it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **search_bar_enabled** = ``false`` :ref:`🔗<class_PopupMenu_property_search_bar_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ )
+
+If ``true``, shows a search bar at the top of the **PopupMenu** for filtering items. See :ref:`search_bar_min_item_count<class_PopupMenu_property_search_bar_min_item_count>` for dynamically controlling its visibility based on the number of items.
+
+\ **Note:** When enabled, :ref:`allow_search<class_PopupMenu_property_allow_search>` is ignored.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_fuzzy_search_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **search_bar_fuzzy_search_enabled** = ``true`` :ref:`🔗<class_PopupMenu_property_search_bar_fuzzy_search_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_fuzzy_search_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_fuzzy_search_enabled**\ (\ )
+
+If ``true``, enables fuzzy searching in the **PopupMenu** search bar. This allows the search results to include items that almost match the search query, as well items that match the individual characters of the search query, but not in sequence.
+
+Use :ref:`search_bar_fuzzy_search_max_misses<class_PopupMenu_property_search_bar_fuzzy_search_max_misses>` to set the maximum number of mismatches allowed in the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_fuzzy_search_max_misses:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_fuzzy_search_max_misses** = ``2`` :ref:`🔗<class_PopupMenu_property_search_bar_fuzzy_search_max_misses>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_fuzzy_search_max_misses**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_fuzzy_search_max_misses**\ (\ )
+
+Sets the maximum number of mismatches allowed in each search result when fuzzy searching is enabled for the **PopupMenu** search bar. Any item with more mismatches will be hidden from the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_search_bar_min_item_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_min_item_count** = ``0`` :ref:`🔗<class_PopupMenu_property_search_bar_min_item_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_min_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_min_item_count**\ (\ )
+
+Sets the minimum number of items required for the search bar to be visible. :ref:`search_bar_enabled<class_PopupMenu_property_search_bar_enabled>` must be ``true`` for this to have any effect.
 
 .. rst-class:: classref-item-separator
 
@@ -1705,6 +1905,18 @@ The size of the item text outline.
 
 ----
 
+.. _class_PopupMenu_theme_constant_search_bar_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **search_bar_separation** = ``4`` :ref:`🔗<class_PopupMenu_theme_constant_search_bar_separation>`
+
+The vertical space between search bar and menu items.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PopupMenu_theme_constant_separator_outline_size:
 
 .. rst-class:: classref-themeproperty
@@ -1844,6 +2056,18 @@ Font size of the menu items.
 :ref:`Texture2D<class_Texture2D>` **radio_unchecked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_radio_unchecked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the unchecked radio button items when they are disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_icon_search:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **search** :ref:`🔗<class_PopupMenu_theme_icon_search>`
+
+:ref:`Texture2D<class_Texture2D>` icon for the search bar's search icon.
 
 .. rst-class:: classref-item-separator
 

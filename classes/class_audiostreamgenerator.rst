@@ -91,6 +91,8 @@ See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` f
 Tutorials
 ---------
 
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
+
 - `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
 
 .. rst-class:: classref-reftable-group

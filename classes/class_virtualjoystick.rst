@@ -50,11 +50,7 @@ Properties
    +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                  | :ref:`joystick_size<class_VirtualJoystick_property_joystick_size>`               | ``100.0``             |
    +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Texture2D<class_Texture2D>`                          | :ref:`joystick_texture<class_VirtualJoystick_property_joystick_texture>`         |                       |
-   +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                  | :ref:`tip_size<class_VirtualJoystick_property_tip_size>`                         | ``50.0``              |
-   +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Texture2D<class_Texture2D>`                          | :ref:`tip_texture<class_VirtualJoystick_property_tip_texture>`                   |                       |
    +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
    | :ref:`VisibilityMode<enum_VirtualJoystick_VisibilityMode>` | :ref:`visibility_mode<class_VirtualJoystick_property_visibility_mode>`           | ``0``                 |
    +------------------------------------------------------------+----------------------------------------------------------------------------------+-----------------------+
@@ -67,15 +63,15 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------+---------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>` | :ref:`ring_normal_color<class_VirtualJoystick_theme_color_ring_normal_color>`   | ``Color(0, 0, 0, 1)`` |
-   +---------------------------+---------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>` | :ref:`ring_pressed_color<class_VirtualJoystick_theme_color_ring_pressed_color>` | ``Color(0, 0, 0, 1)`` |
-   +---------------------------+---------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>` | :ref:`tip_normal_color<class_VirtualJoystick_theme_color_tip_normal_color>`     | ``Color(0, 0, 0, 1)`` |
-   +---------------------------+---------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>` | :ref:`tip_pressed_color<class_VirtualJoystick_theme_color_tip_pressed_color>`   | ``Color(0, 0, 0, 1)`` |
-   +---------------------------+---------------------------------------------------------------------------------+-----------------------+
+   +---------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal_joystick<class_VirtualJoystick_theme_style_normal_joystick>`   |
+   +---------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal_tip<class_VirtualJoystick_theme_style_normal_tip>`             |
+   +---------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed_joystick<class_VirtualJoystick_theme_style_pressed_joystick>` |
+   +---------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed_tip<class_VirtualJoystick_theme_style_pressed_tip>`           |
+   +---------------------------------+-----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -381,23 +377,6 @@ The size of the joystick in pixels.
 
 ----
 
-.. _class_VirtualJoystick_property_joystick_texture:
-
-.. rst-class:: classref-property
-
-:ref:`Texture2D<class_Texture2D>` **joystick_texture** :ref:`🔗<class_VirtualJoystick_property_joystick_texture>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_joystick_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
-- :ref:`Texture2D<class_Texture2D>` **get_joystick_texture**\ (\ )
-
-The texture to use for the joystick base. When ``null``, a ring is drawn using the :ref:`ring_normal_color<class_VirtualJoystick_theme_color_ring_normal_color>` and :ref:`ring_pressed_color<class_VirtualJoystick_theme_color_ring_pressed_color>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_VirtualJoystick_property_tip_size:
 
 .. rst-class:: classref-property
@@ -410,23 +389,6 @@ The texture to use for the joystick base. When ``null``, a ring is drawn using t
 - :ref:`float<class_float>` **get_tip_size**\ (\ )
 
 The size of the joystick tip in pixels.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VirtualJoystick_property_tip_texture:
-
-.. rst-class:: classref-property
-
-:ref:`Texture2D<class_Texture2D>` **tip_texture** :ref:`🔗<class_VirtualJoystick_property_tip_texture>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_tip_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
-- :ref:`Texture2D<class_Texture2D>` **get_tip_texture**\ (\ )
-
-The texture to use for the joystick tip. When ``null``, a circle is drawn using the :ref:`tip_normal_color<class_VirtualJoystick_theme_color_tip_normal_color>` and :ref:`tip_pressed_color<class_VirtualJoystick_theme_color_tip_pressed_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -454,49 +416,49 @@ The visibility mode to use.
 Theme Property Descriptions
 ---------------------------
 
-.. _class_VirtualJoystick_theme_color_ring_normal_color:
+.. _class_VirtualJoystick_theme_style_normal_joystick:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **ring_normal_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_VirtualJoystick_theme_color_ring_normal_color>`
+:ref:`StyleBox<class_StyleBox>` **normal_joystick** :ref:`🔗<class_VirtualJoystick_theme_style_normal_joystick>`
 
-Default ring joystick :ref:`Color<class_Color>`.
+Base joystick :ref:`StyleBox<class_StyleBox>`.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_VirtualJoystick_theme_color_ring_pressed_color:
+.. _class_VirtualJoystick_theme_style_normal_tip:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **ring_pressed_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_VirtualJoystick_theme_color_ring_pressed_color>`
+:ref:`StyleBox<class_StyleBox>` **normal_tip** :ref:`🔗<class_VirtualJoystick_theme_style_normal_tip>`
 
-Ring joystick :ref:`Color<class_Color>` when pressed.
+Tip joystick :ref:`StyleBox<class_StyleBox>`.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_VirtualJoystick_theme_color_tip_normal_color:
+.. _class_VirtualJoystick_theme_style_pressed_joystick:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **tip_normal_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_VirtualJoystick_theme_color_tip_normal_color>`
+:ref:`StyleBox<class_StyleBox>` **pressed_joystick** :ref:`🔗<class_VirtualJoystick_theme_style_pressed_joystick>`
 
-Default Tip joystick :ref:`Color<class_Color>`.
+Base joystick :ref:`StyleBox<class_StyleBox>` when pressed.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_VirtualJoystick_theme_color_tip_pressed_color:
+.. _class_VirtualJoystick_theme_style_pressed_tip:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **tip_pressed_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_VirtualJoystick_theme_color_tip_pressed_color>`
+:ref:`StyleBox<class_StyleBox>` **pressed_tip** :ref:`🔗<class_VirtualJoystick_theme_style_pressed_tip>`
 
-Tip joystick :ref:`Color<class_Color>` when pressed.
+Tip joystick :ref:`StyleBox<class_StyleBox>` when pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

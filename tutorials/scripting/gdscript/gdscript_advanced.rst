@@ -418,36 +418,37 @@ while() loops are the same everywhere:
 Custom iterators
 ----------------
 You can create custom iterators in case the default ones don't quite meet your
-needs by overriding the Variant class's ``_iter_init``, ``_iter_next``, and ``_iter_get``
+needs by overriding ``_iter_init()``, ``_iter_next()``, and ``_iter_get()``
 functions in your script. An example implementation of a forward iterator follows:
 
 ::
 
     class ForwardIterator:
-        var start
-        var current
-        var end
-        var increment
+        var _start
+        var _end
+        var _increment
 
-        func _init(start, stop, increment):
-            self.start = start
-            self.current = start
-            self.end = stop
-            self.increment = increment
+        func _init(start, end, increment):
+            _start = start
+            _end = end
+            _increment = increment
 
-        func should_continue():
-            return (current < end)
+        func _should_continue(current):
+            return current < _end
 
-        func _iter_init(arg):
-            current = start
-            return should_continue()
+        func _iter_init(iter):
+            # Initialize the state to store the current value.
+            iter[0] = _start
+            return _should_continue(iter[0])
 
-        func _iter_next(arg):
-            current += increment
-            return should_continue()
+        func _iter_next(iter):
+            iter[0] += _increment
+            return _should_continue(iter[0])
 
-        func _iter_get(arg):
-            return current
+        func _iter_get(iter):
+            # The state is not wrapped in an array for `_iter_get()`.
+            # The iteration value is the same as the state.
+            return iter
 
 And it can be used like any other iterator:
 
@@ -457,8 +458,19 @@ And it can be used like any other iterator:
     for i in itr:
         print(i) # Will print 0, 2, and 4.
 
-Make sure to reset the state of the iterator in ``_iter_init``, otherwise nested
-for-loops that use custom iterators will not work as expected.
+It is possible but discouraged to store the state in a member variable. 
+Multiple states are necessary in cases such as nested loops where the same
+iterator instance is used simultaneously. The ``iter`` parameter in 
+``_iter_init()`` and ``_iter_next()`` is a single-element array so that updates
+can persist. Whereas in ``_iter_get()``, the state is is not wrapped because it
+is supposed to be read-only.
+
+Returning ``true`` from ``_iter_init()`` and ``_iter_next()`` indicates that the
+iterator is valid. Returning ``false`` will terminate the loop.
+
+For more details see :ref:`_iter_init() <class_Object_private_method__iter_init>`,
+:ref:`_iter_next() <class_Object_private_method__iter_next>`, and
+:ref:`_iter_get() <class_Object_private_method__iter_get>`.
 
 Duck typing
 -----------

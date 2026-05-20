@@ -31,15 +31,23 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``   |
-   +---------------------------+--------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`closed<class_Curve3D_property_closed>`                       | ``false`` |
-   +---------------------------+--------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`     | :ref:`point_count<class_Curve3D_property_point_count>`             | ``0``     |
-   +---------------------------+--------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true``  |
-   +---------------------------+--------------------------------------------------------------------+-----------+
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`bake_interval<class_Curve3D_property_bake_interval>`                   | ``0.2``              |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`closed<class_Curve3D_property_closed>`                                 | ``false``            |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`point_count<class_Curve3D_property_point_count>`                       | ``0``                |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`point_{index}/in<class_Curve3D_property_point_{index}/in>`             | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`point_{index}/out<class_Curve3D_property_point_{index}/out>`           | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`point_{index}/position<class_Curve3D_property_point_{index}/position>` | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`point_{index}/tilt<class_Curve3D_property_point_{index}/tilt>`         | ``0.0``              |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>`           | ``true``             |
+   +-------------------------------+------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -154,6 +162,62 @@ If ``true``, and the curve has more than 2 control points, the last point and th
 - :ref:`int<class_int>` **get_point_count**\ (\ )
 
 The number of points describing the curve.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve3D_property_point_{index}/in:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **point_{index}/in** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Curve3D_property_point_{index}/in>`
+
+The position of the control point leading to the vertex at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. point_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve3D_property_point_{index}/out:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **point_{index}/out** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Curve3D_property_point_{index}/out>`
+
+The position of the control point leading out of the vertex at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. point_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve3D_property_point_{index}/position:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **point_{index}/position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_Curve3D_property_point_{index}/position>`
+
+The position of for the vertex at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. point_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve3D_property_point_{index}/tilt:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **point_{index}/tilt** = ``0.0`` :ref:`🔗<class_Curve3D_property_point_{index}/tilt>`
+
+The tilt angle in radians for the point at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. point_count - 1`` range.
 
 .. rst-class:: classref-item-separator
 

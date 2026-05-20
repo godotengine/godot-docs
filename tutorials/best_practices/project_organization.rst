@@ -69,7 +69,10 @@ the project. While this can be useful in large projects, it
 resulted in an organization hassle for most developers.
 
 Because of this, assets are now transparently imported from within the project
-folder.
+folder. See :ref:`doc_import_process` for more details on how importing works
+in Godot.
+
+.. _doc_project_organization_ignoring_specific_folders:
 
 Ignoring specific folders
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,7 +84,7 @@ This can be useful to speed up the initial project importing.
 .. note::
 
     To create a file whose name starts with a dot on Windows, place a dot
-    at both the beginning and end of the filename (".gdignore."). Windows
+    at both the beginning and end of the filename (``.gdignore.``). Windows
     will automatically remove the trailing dot when you confirm the name.
 
     Alternatively, you can use a text editor such as Notepad++ or use the

@@ -21,6 +21,18 @@ for a Node, the children will recursively also be affected (as they default to
 inheriting the parent setting). This means you can easily disable interpolation for
 an entire subscene.
 
+.. figure:: img/physics_interpolation_mode.webp
+
+It is worth noting that, both in 2D and 3D, physics interpolation is performed
+on the **local transform** of each instance. During rendering, interpolated local 
+transforms are passed down to children.
+
+This means that if a parent has ``physics_interpolation_mode`` set to ``On``, 
+but the child is set to ``Off``, the child will still be interpolated if the parent
+is moving. *Only the child's local transform is uninterpolated.*
+Controlling the on / off behavior of nodes therefore requires some 
+thought and planning.
+
 The most common situation where you may want to perform your own interpolation is
 Cameras.
 

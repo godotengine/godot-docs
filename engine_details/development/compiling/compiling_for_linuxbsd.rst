@@ -17,8 +17,8 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 - GCC 9+ or Clang 6+.
-- `Python 3.8+ <https://www.python.org/downloads/>`_.
-- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.9+ <https://www.python.org/downloads/>`_.
+- `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
@@ -117,7 +117,7 @@ Distro-specific one-liners
 
         ::
 
-            pkg install \
+            pkg install -y \
               devel/scons \
               pkgconf \
               xorg-libraries \
@@ -169,22 +169,21 @@ Distro-specific one-liners
 
         ::
 
-            pkgin install \
+            pkg_add pkgin
+            pkgin -y install \
               pkg-config \
-              py313-scons
-
-        .. hint::
-
-            For audio support, you can optionally install ``pulseaudio``.
+              py313-scons \
+              wayland \
+              pulseaudio
 
     .. tab:: OpenBSD
 
         ::
 
-            pkg_add \
-              python \
+            pkg_add -I \
               scons \
-              llvm
+              wayland \
+              pulseaudio
 
     .. tab:: openKylin
 

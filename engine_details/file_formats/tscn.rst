@@ -111,6 +111,7 @@ Other valid keywords include:
  - ``owner``
  - ``index`` (sets the order of appearance in the tree; if absent, inherited nodes will take precedence over plain ones)
  - ``groups``
+ - ``node_paths`` (lists names of properties exported as a Node type, but referenced as a NodePath in the file)
 
 The first node in the file, which is also the scene root, must **not** have a
 ``parent="Path/To/Node"`` entry in its heading. All scene files should have
@@ -158,9 +159,10 @@ collision, visuals (mesh + light) and a camera parented to the RigidBody3D:
     mesh = SubResource("SphereMesh_4w3ye")
     surface_material_override/0 = SubResource("StandardMaterial3D_k54se")
 
-    [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1581292810]
+    [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1581292810 node_paths=PackedStringArray("follow_node")]
     light_color = Color(1, 0.698039, 0.321569, 1)
     omni_range = 10.0
+    follow_node = NodePath("..")
 
     [node name="Camera3D" type="Camera3D" parent="." unique_id=795715540]
     transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 1, 3)
@@ -270,7 +272,7 @@ external resource also has (but subresources don't).
 
 External resources and internal resources are referred to with
 ``ExtResource("id")`` and ``SubResource("id")``, respectively. Because there
-have different methods to refer to internal and external resources, you can have
+are different methods to refer to internal and external resources, you can have
 the same ID for both an internal and external resource.
 
 For example, to refer to the resource

@@ -10,7 +10,7 @@ We've prepared a Godot project with the 3D models and sounds we'll use for this
 tutorial, linked in the index page. If you haven't done so yet, you can download
 the archive here: `Squash the Creeps assets <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/3d_squash_the_creeps_starter.zip>`_.
 
-Once you downloaded it, extract the .zip archive on your computer. Open the
+Once you've downloaded it, extract the .zip archive on your computer. Open the
 Godot Project Manager and click the *Import* button.
 
 .. image:: img/01.game_setup/01.import_button.webp
@@ -31,7 +31,7 @@ Click *OK* to convert the project to your current Godot version.
 
 .. image:: img/01.game_setup/import_project_to_4.x_prompt.webp
 
-If it doesn't open immediately open the project from your project list.
+If it doesn't open immediately, open the project from your project list.
 
 The start project contains an icon and two folders: ``art/`` and ``fonts/``.
 There, you will find the art assets and music we'll use in the game.

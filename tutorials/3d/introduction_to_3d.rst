@@ -50,12 +50,7 @@ left to right:
 
 .. image:: img/3d_toolbar.webp
 
-- **Select Mode** (:kbd:`Q`): Allows selection of nodes in the viewport. Left clicking
-  on a node to select one. Left clicking and dragging a rectangle selects all 
-  nodes within the rectangle's boundaries, once released.
-  Holding :kbd:`Shift` while selecting adds more nodes to the selection.
-  Clicking on a selected node while holding :kbd:`Shift` deselects the node.
-  In this mode, you can use the gizmos to perform movement or rotation.
+- **Transform Mode** (:kbd:`Q`): Enables a combined move + rotation mode for the selected nodes. 
 - **Move Mode** (:kbd:`W`): Enables move (or translate) mode for the selected nodes. 
   See :ref:`doc_introduction_to_3d_space_and_manipulation` for more details.
 - **Rotate Mode** (:kbd:`E`): Enables rotation mode for the selected nodes. See 
@@ -63,6 +58,12 @@ left to right:
 - **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in different 
   axes for the selected nodes. See :ref:`doc_introduction_to_3d_space_and_manipulation` 
   for more details.
+- **Select Mode** (:kbd:`Q`): Allows selection of nodes in the viewport. Left clicking
+  on a node to select one. Left clicking and dragging a rectangle selects all 
+  nodes within the rectangle's boundaries, once released.
+  Holding :kbd:`Shift` while selecting adds more nodes to the selection.
+  Clicking on a selected node while holding :kbd:`Shift` deselects the node.
+  In this mode, you can use the gizmos to perform movement or rotation.
 - **Show the list of selectable nodes at the clicked position**: As the description suggests,
   this provides a list of selectable nodes at the clicked position as a context menu,
   if there is more than one node in the clicked area.
@@ -82,6 +83,10 @@ left to right:
 - **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also 
   temporarily be activated using :kbd:`Ctrl` while performing the action.
   The settings for changing snap options are explained below.
+- **Use Trackball** (:kbd:`U`): When enabled, dragging the center of a node (represented by a
+  subtle ray disc highlight) will rotate the node like a physical trackball.
+- **Preserve Children Transform** (:kbd:`P`): When enabled, transforming a node will preserve the
+  global transform of its children.
 - **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview 
   of sunlight can be used as a light source. See 
   :ref:`doc_introduction_to_3d_preview_environment_light` for more details.

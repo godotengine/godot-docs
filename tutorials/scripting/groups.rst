@@ -25,6 +25,10 @@ There are two ways to add/remove nodes to groups:
 - During execution, by calling :ref:`Node.add_to_group() <class_Node_method_add_to_group>`
   or :ref:`Node.remove_from_group() <class_Node_method_remove_from_group>`.
 
+.. tip::
+
+    While not strictly required, it's recommended to use the ``snake_case`` naming
+    convention for group names.
 
 Using the Groups dock
 ~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +62,7 @@ All groups present in the project that were marked as Global, created from any s
 
 Any other group derived from nodes in the current scene will appear under Scene Groups.
 
-.. warning:: The same underlying logic is used for both Global and Scene groups. 
+.. warning:: The same underlying logic is used for both Global and Scene groups.
              Groups with the same name are considered one and the same. This feature is purely organizational.
 
 .. image:: img/groups_node_tab_with_multiple_types_of_groups.webp

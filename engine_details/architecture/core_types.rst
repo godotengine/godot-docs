@@ -117,7 +117,7 @@ scripting API.
 |                       |                          | otherwise.                                                                            |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |rb_map|              | ``std::map``             | Map type that uses a                                                                  |
-|                       |                          | `red-black tree <https://en.wikipedia.org/wiki/Red-black-tree>`__ to find keys.       |
+|                       |                          | `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__ to find keys.       |
 |                       |                          | The performance benefits of ``RBMap`` aren't established, so prefer using other types.|
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |dictionary| 📜       | ``std::unordered_map``   | Keys and values can be of any Variant type. No static typing is imposed.              |
@@ -188,7 +188,7 @@ efficiency reasons.
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
 | |binary_mutex|        | ``std::mutex``               | Non-recursive mutex type. Use ``MutexLock lock(mutex)`` to lock it.                   |
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
-| |rw_lock|             | ``std::shared_timed_mutex``  | Read-write aware mutex type. Use ``RWLockRead lock(mutex)`` or                        |
+| |rw_lock|             | ``std::shared_mutex``        | Read-write aware mutex type. Use ``RWLockRead lock(mutex)`` or                        |
 |                       |                              | ``RWLockWrite lock(mutex)`` to lock it.                                               |
 +-----------------------+------------------------------+---------------------------------------------------------------------------------------+
 | |safe_binary_mutex|   | ``std::mutex``               | Recursive mutex type that can be used with ``ConditionVariable``.                     |

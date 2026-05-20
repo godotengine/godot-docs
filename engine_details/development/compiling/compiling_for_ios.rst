@@ -13,8 +13,8 @@ Compiling for iOS
 Requirements
 ------------
 
-- `Python 3.8+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.9+ <https://www.python.org/downloads/macos/>`_.
+- `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
     - Launch Xcode once and install iOS support. If you have already launched
       Xcode and need to install iOS support, go to *Xcode -> Settings... -> Platforms*.
@@ -76,11 +76,10 @@ linked on iOS; there is no dynamic linking option available, unlike macOS.
 
 .. warning::
 
-    Compiling for the iOS simulator is currently not supported as per
-    `GH-102149 <https://github.com/godotengine/godot/issues/102149>`__.
+    The iOS simulator only supports the ``Compatibility`` renderer.
 
     Apple Silicon Macs can run iOS apps natively, so you can run exported iOS projects
-    directly on an Apple Silicon Mac without needing the iOS simulator.
+    directly on an Apple Silicon Mac without iOS simulator limitations.
 
 Run
 ---

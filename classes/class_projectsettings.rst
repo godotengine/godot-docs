@@ -49,6 +49,8 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`accessibility/general/accessibility_driver<class_ProjectSettings_property_accessibility/general/accessibility_driver>`                                                                               | ``"accesskit"``                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`accessibility/general/accessibility_support<class_ProjectSettings_property_accessibility/general/accessibility_support>`                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`accessibility/general/updates_per_second<class_ProjectSettings_property_accessibility/general/updates_per_second>`                                                                                   | ``60``                                                                                           |
@@ -56,6 +58,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`animation/compatibility/default_parent_skeleton_in_mesh_instance_3d<class_ProjectSettings_property_animation/compatibility/default_parent_skeleton_in_mesh_instance_3d>`                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_angle_interpolation_type_conflicting<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_skeleton_modifier_node_paths<class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths>`                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_track_paths<class_ProjectSettings_property_animation/warnings/check_invalid_track_paths>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -196,6 +200,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_declaration<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration>`                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_local_usage<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`                                                                       | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_temporary_modification<class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification>`                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -822,6 +828,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/compatibility/legacy_just_pressed_behavior<class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior>`                                                   | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/joypads/ignore_joypad_on_unfocused_application<class_ProjectSettings_property_input_devices/joypads/ignore_joypad_on_unfocused_application>`                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>`                                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1539,6 +1547,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/environment/defaults/default_environment<class_ProjectSettings_property_rendering/environment/defaults/default_environment>`                                                               | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/environment/fog/use_legacy_blending<class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending>`                                                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode.mobile<class_ProjectSettings_property_rendering/environment/glow/upscale_mode.mobile>`                                                                       | ``0``                                                                                            |
@@ -1903,7 +1913,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_eye_tracked<class_ProjectSettings_property_xr/openxr/foveation_eye_tracked>`                                                                                                     | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`                                                                                                                 | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_with_subsampled_images<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1996,6 +2010,22 @@ Emitted when any setting is changed, up to once per process frame.
 Property Descriptions
 ---------------------
 
+.. _class_ProjectSettings_property_accessibility/general/accessibility_driver:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **accessibility/general/accessibility_driver** = ``"accesskit"`` :ref:`🔗<class_ProjectSettings_property_accessibility/general/accessibility_driver>`
+
+Accessibility driver:
+
+-**accesskit** (default): AccessKit driver.
+
+-**dummy**: Dummy driver, screen reader support is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_accessibility/general/accessibility_support:
 
 .. rst-class:: classref-property
@@ -2049,6 +2079,18 @@ If ``true``, :ref:`MeshInstance3D.skeleton<class_MeshInstance3D_property_skeleto
 :ref:`bool<class_bool>` **animation/warnings/check_angle_interpolation_type_conflicting** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`
 
 If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of interpolation being forced to choose the shortest rotation path due to multiple angle interpolation types being mixed in the :ref:`AnimationMixer<class_AnimationMixer>` cache.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animation/warnings/check_invalid_skeleton_modifier_node_paths** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_invalid_skeleton_modifier_node_paths>`
+
+If ``true``, :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` prints a warning if there's no matching object for the track path in the scene when assigning.
 
 .. rst-class:: classref-item-separator
 
@@ -2991,6 +3033,18 @@ When set to **Warn** or **Error**, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_usage** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`
 
 When set to **Warn** or **Error**, produces a warning or an error respectively when an identifier that will be shadowed below in the block is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_temporary_modification** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_temporary_modification>`
+
+When set to **Warn** or **Error**, produces a warning or an error respectively when a built-in property of type ``Packed*Array`` is modified using a complex assignment chain or a non-``const`` method call. In this case, you are only modifying a temporary value, and the property's value remains unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -5000,7 +5054,7 @@ Defines how the aspect ratio of the base size is preserved when stretching to fi
 
 \ ``"keep_height"``: Keep aspect ratio when stretching the screen. If the screen is taller than the base size, black bars are added at the top and bottom (letterboxing). But if the screen is wider than the base resolution, the viewport will be grown in the horizontal direction (and more content will be visible to the right). You can also think of this as "Expand Horizontally".
 
-\ ``"expand"``: Keep aspect ratio when stretching the screen, but keep neither the base width nor height. Depending on the screen aspect ratio, the viewport will either be larger in the horizontal direction (if the screen is wider than the base size) or in the vertical direction (if the screen is taller than the original size).
+\ ``"expand"``: Keep aspect ratio when stretching the screen, but keep neither the base width nor height. Depending on the screen aspect ratio, the viewport will either be larger in the horizontal direction (if the screen is wider than the base size) or in the vertical direction (if the screen is taller than the original size). This is the default for projects created starting in Godot 4.7.
 
 .. rst-class:: classref-item-separator
 
@@ -5016,7 +5070,7 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 \ ``"disabled"``: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ ``"canvas_items"``: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ ``"canvas_items"``: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D). This is the default for projects created starting in Godot 4.7.
 
 \ ``"viewport"``: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
@@ -5574,13 +5628,13 @@ The minimum distance the mouse cursor must move while pressed before a drag oper
 
 :ref:`int<class_int>` **gui/common/show_focus_state_on_pointer_event** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/common/show_focus_state_on_pointer_event>`
 
-Determines whether a :ref:`Control<class_Control>` should visually indicate focus when said focus is gained using a mouse or touch input.
+Determines whether a :ref:`Control<class_Control>` should visually indicate focus when that focus is gained using a mouse or touch input.
 
 - **Never** (``0``) show the focused state for mouse/touch input.
 
-- **Control Supports Keyboard Input** (``1``) shows the focused state even when gained via mouse/touch input (similar to how browsers handle focus).
+- **Text Input Controls** (``1``) show the focused state even if that focus was gained via mouse/touch input (similar to browser behavior).
 
-- **Always** (``2``) show the focused state, even if said focus was gained via mouse/touch input.
+- **Always** (``2``) show the focused state, even if that focus was gained via mouse/touch input.
 
 .. rst-class:: classref-item-separator
 
@@ -7099,6 +7153,18 @@ If ``true``, :ref:`Input.is_action_just_pressed()<class_Input_method_is_action_j
 If ``false``, no input will be lost.
 
 \ **Note:** You should in nearly all cases prefer the ``false`` setting. The legacy behavior is to enable supporting old projects that rely on the old logic, without changes to script.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/joypads/ignore_joypad_on_unfocused_application:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/joypads/ignore_joypad_on_unfocused_application** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/joypads/ignore_joypad_on_unfocused_application>`
+
+If ``true``, joypad input (including motion sensors) and LED light changes will be ignored and joypad vibration will be stopped when the application is not focused.
 
 .. rst-class:: classref-item-separator
 
@@ -10518,6 +10584,8 @@ Threshold angular velocity under which a 2D physics body will be considered inac
 
 Threshold linear velocity under which a 2D physics body will be considered inactive. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
 
+\ **Note:** Only supported when using GodotPhysics3D. This project setting is ignored when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10529,6 +10597,8 @@ Threshold linear velocity under which a 2D physics body will be considered inact
 :ref:`float<class_float>` **physics/2d/solver/contact_max_allowed_penetration** = ``0.3`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/contact_max_allowed_penetration>`
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
+
+\ **Note:** Only supported when using GodotPhysics3D. This project setting is ignored when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10770,6 +10840,8 @@ If ``true``, the 3D physics server runs on a separate thread, making better use 
 
 Threshold angular velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10781,6 +10853,8 @@ Threshold angular velocity under which a 3D physics body will be considered inac
 :ref:`float<class_float>` **physics/3d/sleep_threshold_linear** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_linear>`
 
 Threshold linear velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10794,6 +10868,8 @@ Threshold linear velocity under which a 3D physics body will be considered inact
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10806,6 +10882,8 @@ Maximum distance a shape can penetrate another shape before it is considered a c
 
 Maximum distance a shape can be from another before they are considered separated and the contact is discarded. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_SEPARATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10817,6 +10895,8 @@ Maximum distance a shape can be from another before they are considered separate
 :ref:`float<class_float>` **physics/3d/solver/contact_recycle_radius** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/contact_recycle_radius>`
 
 Maximum distance a pair of bodies has to move before their collision status has to be recalculated. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_RECYCLE_RADIUS<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_RECYCLE_RADIUS>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -10832,6 +10912,8 @@ Default solver bias for all physics contacts. Defines how much bodies react to e
 
 Individual shapes can have a specific bias value (see :ref:`Shape3D.custom_solver_bias<class_Shape3D_property_custom_solver_bias>`).
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10844,6 +10926,8 @@ Individual shapes can have a specific bias value (see :ref:`Shape3D.custom_solve
 
 Number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance. See :ref:`PhysicsServer3D.SPACE_PARAM_SOLVER_ITERATIONS<class_PhysicsServer3D_constant_SPACE_PARAM_SOLVER_ITERATIONS>`.
 
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -10855,6 +10939,8 @@ Number of solver iterations for all contacts and constraints. The greater the nu
 :ref:`float<class_float>` **physics/3d/time_before_sleep** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/3d/time_before_sleep>`
 
 Time (in seconds) of inactivity before which a 3D physics body will put to sleep. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
+
+\ **Note:** This project setting is only effective when using GodotPhysics3D. It has no effect when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -11711,6 +11797,18 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 :ref:`String<class_String>` **rendering/environment/defaults/default_environment** = ``""`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/defaults/default_environment>`
 
 :ref:`Environment<class_Environment>` that will be used as a fallback environment in case a scene does not specify its own environment. The default environment is loaded in at scene load time regardless of whether you have set an environment or not. If you do not rely on the fallback environment, you do not need to set this property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/environment/fog/use_legacy_blending** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/fog/use_legacy_blending>`
+
+Enables legacy fog blending behavior from version 4.5 and earlier. This is intended for users who are developing on pre-4.6 versions and want to upgrade to 4.6 with the smallest possible change to their visuals.
 
 .. rst-class:: classref-item-separator
 
@@ -12798,6 +12896,8 @@ On desktop platforms, values below ``4096`` are recommended, ideally below ``204
 
 The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionProbe<class_ReflectionProbe>`. Higher values will use less detailed versions of meshes that have LOD variations generated. If set to ``0.0``, automatic LOD is disabled. Increase :ref:`rendering/mesh_lod/lod_change/threshold_pixels<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>` to improve performance at the cost of geometry detail.
 
+\ **Note:** Depending on the mesh's attributes (vertex colors, blend shapes, ...), a mesh may have fewer levels of LOD generated to avoid visible distortion of the mesh once it is affected by vertex colors or blend shapes. Meshes with a very low vertex count will also not have any LODs generated, which means this setting will not affect them at all. In general, this setting makes the largest impact on static meshes with a high vertex count.
+
 \ **Note:** :ref:`rendering/mesh_lod/lod_change/threshold_pixels<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>` does not affect :ref:`GeometryInstance3D<class_GeometryInstance3D>` visibility ranges (also known as "manual" LOD or hierarchical LOD).
 
 \ **Note:** This property is only read when the project starts. To adjust the automatic LOD threshold at runtime, set :ref:`Viewport.mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>` on the root :ref:`Viewport<class_Viewport>`.
@@ -13447,6 +13547,8 @@ macOS override for :ref:`rendering/scaling_3d/mode<class_ProjectSettings_propert
 :ref:`float<class_float>` **rendering/scaling_3d/scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_rendering/scaling_3d/scale>`
 
 Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` for multi-sample antialiasing, which is significantly cheaper but only smooths the edges of polygons.
+
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
 
 .. rst-class:: classref-item-separator
 
@@ -14231,6 +14333,18 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/foveation_eye_tracked:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_eye_tracked** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_eye_tracked>`
+
+If ``true`` and foveation level is set to anything other than "Disabled", eye-tracked foveation will be used, so long as it's supported by the headset.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/foveation_level:
 
 .. rst-class:: classref-property
@@ -14240,6 +14354,20 @@ If ``true`` and foveation is supported, will automatically adjust foveation leve
 Applied foveation level if supported.
 
 \ **Note:** On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_with_subsampled_images** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_with_subsampled_images>`
+
+If ``true`` and foveation is also enabled, subsampled images will be used on Vulkan. This can improve the performance gain from foveated rendering, especially when using high foveation levels.
+
+\ **Note:**: Using subsampled images is incompatible with many screen-space rendering features or post-processing effects like FXAA or glow. If any such effects are enabled, subsampled images will automatically be disabled and a warning shown in the log.
 
 .. rst-class:: classref-item-separator
 

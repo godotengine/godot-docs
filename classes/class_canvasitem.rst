@@ -376,7 +376,7 @@ enum **TextureRepeat**: :ref:`🔗<enum_CanvasItem_TextureRepeat>`
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_PARENT_NODE** = ``0``
 
-The **CanvasItem** will inherit the filter from its parent.
+The **CanvasItem** will inherit the repeat mode from its parent.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_DISABLED:
 

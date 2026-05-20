@@ -124,39 +124,39 @@ To build an iOS plugin:
             "
             StringPlistKeyToInput:string_input="Type something"
 
-        The ``config`` section and fields are required and defined as follow:
+The ``config`` section and fields are required and defined as follow:
 
-            -   **name**: name of the plugin
+    -   **name**: name of the plugin
 
-            -   **binary**: this should be the filepath of the plugin library (``a`` or ``xcframework``) file.
+    -   **binary**: this should be the filepath of the plugin library (``a`` or ``xcframework``) file.
 
-                -   The filepath can be relative (e.g.: ``MyPlugin.a``, ``MyPlugin.xcframework``) in which case it's relative to the directory where the ``gdip`` file is located.
-                -   The filepath can be absolute: ``res://some_path/MyPlugin.a`` or ``res://some_path/MyPlugin.xcframework``.
-                -   In case you need multitarget library usage, the filename should be ``MyPlugin.a`` and ``.a`` files should be named as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
-                -   In case you use multitarget ``xcframework`` libraries, their filename in the configuration should be ``MyPlugin.xcframework``. The ``.xcframework`` files should be named as ``MyPlugin.release.xcframework`` and ``MyPlugin.debug.xcframework``.
+        -   The filepath can be relative (e.g.: ``MyPlugin.a``, ``MyPlugin.xcframework``) in which case it's relative to the directory where the ``gdip`` file is located.
+        -   The filepath can be absolute: ``res://some_path/MyPlugin.a`` or ``res://some_path/MyPlugin.xcframework``.
+        -   In case you need multitarget library usage, the filename should be ``MyPlugin.a`` and ``.a`` files should be named as ``MyPlugin.release.a`` and ``MyPlugin.debug.a``.
+        -   In case you use multitarget ``xcframework`` libraries, their filename in the configuration should be ``MyPlugin.xcframework``. The ``.xcframework`` files should be named as ``MyPlugin.release.xcframework`` and ``MyPlugin.debug.xcframework``.
 
-        The ``dependencies`` and ``plist`` sections are optional and defined as follow:
+The ``dependencies`` and ``plist`` sections are optional and defined as follow:
 
-            -   **dependencies**:
+    -   **dependencies**:
 
-                -   **linked**: contains a list of iOS frameworks that the iOS application should be linked with.
+        -   **linked**: contains a list of iOS frameworks that the iOS application should be linked with.
 
-                -   **embedded**: contains a list of iOS frameworks or libraries that should be both linked and embedded into the resulting iOS application.
+        -   **embedded**: contains a list of iOS frameworks or libraries that should be both linked and embedded into the resulting iOS application.
 
-                -   **system**: contains a list of iOS system frameworks that are required for plugin.
+        -   **system**: contains a list of iOS system frameworks that are required for plugin.
 
-                -   **capabilities**: contains a list of iOS capabilities that is required for plugin. A list of available capabilities can be found at `Apple UIRequiredDeviceCapabilities documentation page <https://developer.apple.com/documentation/bundleresources/information_property_list/uirequireddevicecapabilities>`_.
+        -   **capabilities**: contains a list of iOS capabilities that is required for plugin. A list of available capabilities can be found at `Apple UIRequiredDeviceCapabilities documentation page <https://developer.apple.com/documentation/bundleresources/information_property_list/uirequireddevicecapabilities>`_.
 
-                -   **files**: contains a list of files that should be copied on export. This is useful for data files or images.
+        -   **files**: contains a list of files that should be copied on export. This is useful for data files or images.
 
-                -   **linker_flags**: contains a list of linker flags to add to the Xcode project when exporting the plugin.
+        -   **linker_flags**: contains a list of linker flags to add to the Xcode project when exporting the plugin.
 
-                -   **spm_packages**: contains a list of Swift Package Manager dependencies, specifying exact versions. Each package should be a `Dictionary` with ``url`` (string), ``version`` (string, exact version), and ``products`` (array of strings, listing the libraries to link).
+        -   **spm_packages**: contains a list of Swift Package Manager dependencies, specifying exact versions. Each package should be a `Dictionary` with ``url`` (string), ``version`` (string, exact version), and ``products`` (array of strings, listing the libraries to link).
 
-            -   **plist**: should have keys and values that should be present in ``Info.plist`` file.
+    -   **plist**: should have keys and values that should be present in ``Info.plist`` file.
 
-                -   Each line should follow pattern: ``KeyName:KeyType=KeyValue``
-                -   Supported values for ``KeyType`` are ``string``, ``integer``, ``boolean``, ``raw``, ``string_input``
-                -   If no type is used (e.g.: ``KeyName="KeyValue"``) ``string`` type will be used.
-                -   If ``raw`` type is used value for corresponding key will be stored in ``Info.plist`` as is.
-                -   If ``string_input`` type is used you will be able to modify value in Export window.
+        -   Each line should follow pattern: ``KeyName:KeyType=KeyValue``
+        -   Supported values for ``KeyType`` are ``string``, ``integer``, ``boolean``, ``raw``, ``string_input``
+        -   If no type is used (e.g.: ``KeyName="KeyValue"``) ``string`` type will be used.
+        -   If ``raw`` type is used value for corresponding key will be stored in ``Info.plist`` as is.
+        -   If ``string_input`` type is used you will be able to modify value in Export window.

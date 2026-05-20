@@ -171,7 +171,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_neq_bool>`
 
-Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and the other is ``false``. This operation can be seen as a logical XOR.
+Returns ``true`` if one operand is ``true`` and the other operand is ``false``. Equivalent to logical **XOR** (**NEQ**).
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 
 :ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_eq_bool>`
 
-Returns ``true`` if the two booleans are equal. That is, both are ``true`` or both are ``false``. This operation can be seen as a logical EQ or XNOR.
+Returns ``true`` if both operands are ``true``, or if both operands are ``false``. Equivalent to logical **XNOR** (**EQ**).
 
 .. rst-class:: classref-item-separator
 

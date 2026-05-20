@@ -31,8 +31,14 @@ In the Godot editor, open the **Export** window from the **Project** menu. When 
 Export window opens, click **Add..** and select **iOS**.
 
 The **App Store Team ID** and (Bundle) **Identifier** options in the **Application** category
-are required. Leaving them blank will cause the exporter to throw an error.
+are required. Leaving them blank will cause the exporter to throw an error. The bundle ID must be unique.
 
+.. note::
+
+    A valid bundle ID can only contain alphanumeric characters, hyphens, and periods (``A-Z``, ``a-z``, ``0-9``, ``-``, and ``.``).
+    Apple recommends using reverse-DNS format (e.g. ``com.example.your-game``) of a domain you own, so that your bundle ID is guaranteed to be unique.
+    Bundle IDs are case-insensitive. See `CFBundleIdentifier <https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleidentifier>`__.
+    
 .. note:: | If you encounter an error during export similar to
           | ``JSON text did not start with array or object and option to allow fragments not set``
           | then it might be due to a malformated **App Store Team ID**!
@@ -60,11 +66,10 @@ When the export completes, the output folder should look like this:
 
 .. warning::
 
-    Exporting for the iOS simulator is currently not supported as per
-    `GH-102149 <https://github.com/godotengine/godot/issues/102149>`__.
+    The iOS simulator only supports the ``Compatibility`` renderer.
 
     Apple Silicon Macs can run iOS apps natively, so you can run exported iOS projects
-    directly on an Apple Silicon Mac without needing the iOS simulator.
+    directly on an Apple Silicon Mac without iOS simulator limitations.
 
 Opening **exported_xcode_project_name.xcodeproj** lets you build and deploy
 like any other iOS app.
@@ -127,7 +132,7 @@ Plugins for iOS
 ---------------
 
 Special iOS plugins can be used in Godot. Check out the
-:ref:`doc_plugins_for_ios` page.
+:ref:`doc_ios_plugin` page.
 
 Environment variables
 ---------------------

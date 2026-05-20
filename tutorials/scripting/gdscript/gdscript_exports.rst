@@ -22,7 +22,7 @@ in the variable. Some of the export annotations have a specific type and don't n
 One of the fundamental benefits of exporting member variables is to have
 them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
-special export syntax is provided. Additionally, :ref:`documentation comments <doc_gdscript_documentation_comments>` can be 
+special export syntax is provided. Additionally, :ref:`documentation comments <doc_gdscript_documentation_comments>` can be
 used for tooltip descriptions, visible on mouse over.
 
 .. note::
@@ -145,6 +145,37 @@ field for editing over multiple lines. See :ref:`@export_multiline <class_@GDScr
 
     @export_multiline var text
 
+Strings as input actions
+------------------------
+
+String as an input action defined in the project's input map.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME) var my_input
+
+String as an input action defined in the project's input map, plus default
+built-in values such as ``ui_accept`` and ``ui_cancel``.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "show_builtin") var my_input
+
+String as an input action defined in the project's input map, plus arbitrary
+values that can manually be entered.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "loose_mode") var my_input
+
+String as an input action defined in the project's input map, plus default
+built-in values such as ``ui_accept`` and ``ui_cancel`` and arbitrary values
+that can manually be entered.
+
+::
+
+    @export_custom(PROPERTY_HINT_INPUT_NAME, "show_builtin,loose_mode") var my_input
+
 Limiting editor input ranges
 ----------------------------
 
@@ -198,6 +229,13 @@ appears below ``float`` properties, or the up/down arrows that appear besides
 
     @export_range(0, 1000, 0.01, "hide_slider") var no_slider: float
 
+On the other hand, the ``"prefer_slider"`` hint can be used to show a horizontal
+bar below ``int`` properties instead of up/down arrows:
+
+::
+
+    @export_range(0, 100, 1, "prefer_slider") var with_slider: int
+
 Adding suffixes and handling degrees/radians
 --------------------------------------------
 
@@ -223,6 +261,32 @@ by Godot's own `rotation` properties throughout the editor.
 If the angle is stored in degrees instead, use the `"degrees"` hint to display
 the degree symbol while disabling the automatic degrees-to-radians conversion
 when the value is modified from the inspector.
+
+Linking vector values together
+------------------------------
+
+It is possible to link vector values together. When the user adjusts one of the
+vector's components, the other components are automatically adjusted
+proportionally. For example, this is useful to maintain the aspect ratio of a 2D
+sprite when adjusting its scale. This feature can be temporarily disabled by the
+user by clicking the link icon to the right of the property.
+
+::
+
+    # Leave the hint string empty if you don't want to add a suffix.
+    @export_custom(PROPERTY_HINT_LINK, "suffix:px") var vector2_linked: Vector2 = Vector2(16, 16)
+
+Results in:
+
+.. figure:: img/gdscript_exports_linked_vector.webp
+   :align: center
+   :alt: Linked Vector2i property with the "px" suffix
+
+   Linked Vector2i property with the "px" suffix
+
+:ref:`This hint <class_@GlobalScope_constant_PROPERTY_HINT_LINK>` is effective
+on Vector2, Vector2i, Vector3, Vector3i, Vector4, and Vector4i. It can be used
+at the same time as a property suffix, as seen in the example above.
 
 .. _doc_gdscript_exports_floats_with_easing_hint:
 

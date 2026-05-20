@@ -31,6 +31,8 @@ This animation node has three inputs:
 
 If the absolute value of the amount is greater than ``1.0``, the animation connected to "in" port is blended with the amplified animation connected to "-add"/"+add" port.
 
+\ **Note:** The signs are only used to distinguish ports, and additive blending occurs based on absolute values always, meaning the animation of a "-add" port does not subtract from the animation of an "in" port.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

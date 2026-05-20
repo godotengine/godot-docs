@@ -130,6 +130,18 @@ project settings to handle multiple resolutions.
 Stretch settings
 ----------------
 
+.. note::
+
+    When testing different stretch modes and stretch aspect settings, make sure
+    :ref:`game embedding <doc_game_embedding>` is configured to use the :ui:`Stretch to Fit`
+    scaling option:
+
+    .. figure:: img/multiple_resolutions_game_embedding_size_dropdown.webp
+      :align: center
+
+    This ensures the viewport size always matches the window size, like when
+    game embedding is disabled.
+
 Stretch settings are located in the project settings and provide several options:
 
 .. image:: img/stretchsettings.webp

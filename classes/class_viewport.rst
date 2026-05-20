@@ -426,11 +426,21 @@ More information: `MetalFX <https://developer.apple.com/documentation/metalfx>`_
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
+.. _class_Viewport_constant_SCALING_3D_MODE_NEAREST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_NEAREST** = ``5``
+
+Use nearest-neighbor filtering for the viewport's 3D buffer. This looks crisper than :ref:`SCALING_3D_MODE_BILINEAR<class_Viewport_constant_SCALING_3D_MODE_BILINEAR>` and has no additional rendering cost. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
+
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``5``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``6``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
@@ -948,6 +958,26 @@ Draws the internal resolution buffer of the scene in linear colorspace before to
 
 \ **Note:** Only supported when using the Forward+ or Mobile rendering methods.
 
+.. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_AREA_LIGHTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_AREA_LIGHTS** = ``27``
+
+Draws the cluster used by :ref:`AreaLight3D<class_AreaLight3D>` nodes to optimize light rendering.
+
+\ **Note:** Only supported when using the Forward+ rendering method.
+
+.. _class_Viewport_constant_DEBUG_DRAW_AREA_LIGHT_ATLAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_AREA_LIGHT_ATLAS** = ``28``
+
+Draws the atlas used by :ref:`AreaLight3D<class_AreaLight3D>` nodes in the upper left quadrant of the **Viewport**.
+
+\ **Note:** Only supported when using the Forward+ or Mobile rendering method.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -994,11 +1024,19 @@ The texture filter reads from the nearest pixel and blends between the nearest 2
 
 Use this for non-pixel art textures that may be viewed at a low scale (e.g. due to :ref:`Camera2D<class_Camera2D>` zoom or sprite scaling), as mipmaps are important to smooth out pixels that are smaller than on-screen pixels.
 
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_PARENT_NODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_PARENT_NODE** = ``4``
+
+The **Viewport** will inherit the filter from its parent :ref:`CanvasItem<class_CanvasItem>` or **Viewport**.
+
 .. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX** = ``4``
+:ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX** = ``5``
 
 Represents the size of the :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` enum.
 
@@ -1036,11 +1074,19 @@ Enables the texture to repeat when UV coordinates are outside the 0-1 range. If 
 
 Flip the texture when repeating so that the edge lines up instead of abruptly changing.
 
+.. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_PARENT_NODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_PARENT_NODE** = ``3``
+
+The **Viewport** will inherit the repeat mode from its parent :ref:`CanvasItem<class_CanvasItem>` or **Viewport**.
+
 .. _class_Viewport_constant_DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX** = ``3``
+:ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX** = ``4``
 
 Represents the size of the :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` enum.
 
@@ -1529,6 +1575,8 @@ See also :ref:`set_input_as_handled()<class_Viewport_method_set_input_as_handled
 The automatic LOD bias to use for meshes rendered within the **Viewport** (this is analogous to :ref:`ReflectionProbe.mesh_lod_threshold<class_ReflectionProbe_property_mesh_lod_threshold>`). Higher values will use less detailed versions of meshes that have LOD variations generated. If set to ``0.0``, automatic LOD is disabled. Increase :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>` to improve performance at the cost of geometry detail.
 
 To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/mesh_lod/lod_change/threshold_pixels<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>` project setting.
+
+\ **Note:** Depending on the mesh's attributes (vertex colors, blend shapes, ...), a mesh may have fewer levels of LOD generated to avoid visible distortion of the mesh once it is affected by vertex colors or blend shapes. Meshes with a very low vertex count will also not have any LODs generated, which means this setting will not affect them at all. In general, this setting makes the largest impact on static meshes with a high vertex count.
 
 \ **Note:** :ref:`mesh_lod_threshold<class_Viewport_property_mesh_lod_threshold>` does not affect :ref:`GeometryInstance3D<class_GeometryInstance3D>` visibility ranges (also known as "manual" LOD or hierarchical LOD).
 

@@ -65,6 +65,8 @@ Methods
    :widths: auto
 
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`area_light_create<class_RenderingServer_method_area_light_create>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]                           | :ref:`bake_render_uv2<class_RenderingServer_method_bake_render_uv2>`\ (\ base\: :ref:`RID<class_RID>`, material_overrides\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], image_size\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`call_on_render_thread<class_RenderingServer_method_call_on_render_thread>`\ (\ callable\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -399,7 +401,7 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_tonemap_agx_contrast<class_RenderingServer_method_environment_set_tonemap_agx_contrast>`\ (\ env\: :ref:`RID<class_RID>`, agx_contrast\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`environment_set_volumetric_fog<class_RenderingServer_method_environment_set_volumetric_fog>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, density\: :ref:`float<class_float>`, albedo\: :ref:`Color<class_Color>`, emission\: :ref:`Color<class_Color>`, emission_energy\: :ref:`float<class_float>`, anisotropy\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`, p_detail_spread\: :ref:`float<class_float>`, gi_inject\: :ref:`float<class_float>`, temporal_reprojection\: :ref:`bool<class_bool>`, temporal_reprojection_amount\: :ref:`float<class_float>`, ambient_inject\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`\ )      |
+   | |void|                                                                           | :ref:`environment_set_volumetric_fog<class_RenderingServer_method_environment_set_volumetric_fog>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, density\: :ref:`float<class_float>`, albedo\: :ref:`Color<class_Color>`, emission\: :ref:`Color<class_Color>`, emission_energy\: :ref:`float<class_float>`, anisotropy\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`, detail_spread\: :ref:`float<class_float>`, gi_inject\: :ref:`float<class_float>`, temporal_reprojection\: :ref:`bool<class_bool>`, temporal_reprojection_amount\: :ref:`float<class_float>`, ambient_inject\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`\ )        |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_volumetric_fog_filter_active<class_RenderingServer_method_environment_set_volumetric_fog_filter_active>`\ (\ active\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -534,6 +536,10 @@ Methods
    | :ref:`PackedInt64Array<class_PackedInt64Array>`                                  | :ref:`instances_cull_ray<class_RenderingServer_method_instances_cull_ray>`\ (\ from\: :ref:`Vector3<class_Vector3>`, to\: :ref:`Vector3<class_Vector3>`, scenario\: :ref:`RID<class_RID>` = RID()\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                          | :ref:`is_on_render_thread<class_RenderingServer_method_is_on_render_thread>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`light_area_set_normalize_energy<class_RenderingServer_method_light_area_set_normalize_energy>`\ (\ light\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`light_area_set_size<class_RenderingServer_method_light_area_set_size>`\ (\ light\: :ref:`RID<class_RID>`, size\: :ref:`Vector2<class_Vector2>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`light_directional_set_blend_splits<class_RenderingServer_method_light_directional_set_blend_splits>`\ (\ light\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -759,7 +765,7 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_request_process<class_RenderingServer_method_particles_request_process>`\ (\ particles\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`particles_request_process_time<class_RenderingServer_method_particles_request_process_time>`\ (\ particles\: :ref:`RID<class_RID>`, time\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   | |void|                                                                           | :ref:`particles_request_process_time<class_RenderingServer_method_particles_request_process_time>`\ (\ particles\: :ref:`RID<class_RID>`, process_time\: :ref:`float<class_float>`, process_time_residual\: :ref:`float<class_float>` = 0.0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_restart<class_RenderingServer_method_particles_restart>`\ (\ particles\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -814,6 +820,10 @@ Methods
    | |void|                                                                           | :ref:`particles_set_trails<class_RenderingServer_method_particles_set_trails>`\ (\ particles\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, length_sec\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_set_transform_align<class_RenderingServer_method_particles_set_transform_align>`\ (\ particles\: :ref:`RID<class_RID>`, align\: :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`particles_set_transform_align_axis<class_RenderingServer_method_particles_set_transform_align_axis>`\ (\ particles\: :ref:`RID<class_RID>`, rotation_axis\: :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`particles_set_transform_align_channel_filter<class_RenderingServer_method_particles_set_transform_align_channel_filter>`\ (\ particles\: :ref:`RID<class_RID>`, channel_filter\: :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`particles_set_use_local_coordinates<class_RenderingServer_method_particles_set_use_local_coordinates>`\ (\ particles\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2098,6 +2108,14 @@ Omni light (see :ref:`OmniLight3D<class_OmniLight3D>`).
 
 Spot light (see :ref:`SpotLight3D<class_SpotLight3D>`).
 
+.. _class_RenderingServer_constant_LIGHT_AREA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightType<enum_RenderingServer_LightType>` **LIGHT_AREA** = ``3``
+
+Area light (see :ref:`AreaLight3D<class_AreaLight3D>`).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2746,6 +2764,90 @@ Align each particle's Y axis to the velocity vector.
 
 Align each particle's Z axis to face the camera and Y axis to the velocity vector.
 
+.. _class_RenderingServer_constant_PARTICLES_TRANSFORM_ALIGN_LOCAL_BILLBOARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>` **PARTICLES_TRANSFORM_ALIGN_LOCAL_BILLBOARD** = ``4``
+
+Billboard each particles around a local axis.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ParticlesTransformAlignCustomSrc:
+
+.. rst-class:: classref-enumeration
+
+enum **ParticlesTransformAlignCustomSrc**: :ref:`🔗<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_DISABLED** = ``0``
+
+Do not read from CUSTOM when performing billboarding.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_X** = ``1``
+
+Read from ``CUSTOM.x`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_Y** = ``2``
+
+Read from ``CUSTOM.y`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_Z:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_Z** = ``3``
+
+Read from ``CUSTOM.z`` when performing billboarding and use it as an angle, in radians.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_CHANNEL_FILTER_W:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>` **PARTICLES_ALIGN_CHANNEL_FILTER_W** = ``4``
+
+Read from ``CUSTOM.w`` when performing billboarding and use it as an angle, in radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ParticlesTransformAlignAxis:
+
+.. rst-class:: classref-enumeration
+
+enum **ParticlesTransformAlignAxis**: :ref:`🔗<enum_RenderingServer_ParticlesTransformAlignAxis>`
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_AXIS_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **PARTICLES_ALIGN_AXIS_X** = ``0``
+
+Use the X axis for local billboarding.
+
+.. _class_RenderingServer_constant_PARTICLES_ALIGN_AXIS_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>` **PARTICLES_ALIGN_AXIS_Y** = ``1``
+
+Use the Y axis for local billboarding.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3032,11 +3134,21 @@ Use MetalFX temporal upscaling for the viewport's 3D buffer. The amount of scali
 
 \ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_NEAREST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_NEAREST** = ``5``
+
+Use nearest-neighbor filtering for the viewport's 3D buffer. This looks crisper than :ref:`VIEWPORT_SCALING_3D_MODE_BILINEAR<class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_BILINEAR>` and has no additional rendering cost. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+\ **Note:** When using the **Nearest** scaling mode, to avoid uneven pixel scaling, it's highly recommended to use a value equal to an integer divisor with a dividend of ``1``. For example, it's best to use a scale of ``0.5`` (1/2), ``0.3333`` (1/3), ``0.25`` (1/4), ``0.2`` (1/5), and so on.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``5``
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``6``
 
 Represents the size of the :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` enum.
 
@@ -6174,6 +6286,24 @@ If ``false``, disables rendering completely, but the engine logic is still being
 Method Descriptions
 -------------------
 
+.. _class_RenderingServer_method_area_light_create:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **area_light_create**\ (\ ) :ref:`🔗<class_RenderingServer_method_area_light_create>`
+
+Creates a new area light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid()<class_RenderingServer_method_free_rid>` method.
+
+To place in a scene, attach this area light to an instance using :ref:`instance_set_base()<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`AreaLight3D<class_AreaLight3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_bake_render_uv2:
 
 .. rst-class:: classref-method
@@ -8288,7 +8418,7 @@ See :ref:`Environment.tonemap_agx_contrast<class_Environment_property_tonemap_ag
 
 .. rst-class:: classref-method
 
-|void| **environment_set_volumetric_fog**\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, density\: :ref:`float<class_float>`, albedo\: :ref:`Color<class_Color>`, emission\: :ref:`Color<class_Color>`, emission_energy\: :ref:`float<class_float>`, anisotropy\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`, p_detail_spread\: :ref:`float<class_float>`, gi_inject\: :ref:`float<class_float>`, temporal_reprojection\: :ref:`bool<class_bool>`, temporal_reprojection_amount\: :ref:`float<class_float>`, ambient_inject\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_volumetric_fog>`
+|void| **environment_set_volumetric_fog**\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, density\: :ref:`float<class_float>`, albedo\: :ref:`Color<class_Color>`, emission\: :ref:`Color<class_Color>`, emission_energy\: :ref:`float<class_float>`, anisotropy\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`, detail_spread\: :ref:`float<class_float>`, gi_inject\: :ref:`float<class_float>`, temporal_reprojection\: :ref:`bool<class_bool>`, temporal_reprojection_amount\: :ref:`float<class_float>`, ambient_inject\: :ref:`float<class_float>`, sky_affect\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_environment_set_volumetric_fog>`
 
 Sets the variables to be used with the volumetric fog post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
@@ -9028,7 +9158,7 @@ Sets a margin to increase the size of the AABB when culling objects from the vie
 
 |void| **instance_set_ignore_culling**\ (\ instance\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_instance_set_ignore_culling>`
 
-If ``true``, ignores both frustum and occlusion culling on the specified 3D geometry instance. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling and leaves frustum culling intact.
+If ``true``, ignores all culling on the specified 3D geometry instance, including frustum culling, occlusion culling, and layer culling. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling but leaves frustum and layer culling intact.
 
 .. rst-class:: classref-item-separator
 
@@ -9179,6 +9309,30 @@ Returns an array of object IDs intersecting with the provided 3D ray. Only 3D no
 :ref:`bool<class_bool>` **is_on_render_thread**\ (\ ) :ref:`🔗<class_RenderingServer_method_is_on_render_thread>`
 
 Returns ``true`` if our code is currently executing on the rendering thread.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_light_area_set_normalize_energy:
+
+.. rst-class:: classref-method
+
+|void| **light_area_set_normalize_energy**\ (\ light\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_light_area_set_normalize_energy>`
+
+Defines whether the energy of an :ref:`AreaLight3D<class_AreaLight3D>` is normalized (divided) by its area. If set to ``true``, changing the size does not affect the total energy output. Equivalent to :ref:`AreaLight3D.area_normalize_energy<class_AreaLight3D_property_area_normalize_energy>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_light_area_set_size:
+
+.. rst-class:: classref-method
+
+|void| **light_area_set_size**\ (\ light\: :ref:`RID<class_RID>`, size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_RenderingServer_method_light_area_set_size>`
+
+Sets the extents (width and height) in meters for this area light. Equivalent to :ref:`AreaLight3D.area_size<class_AreaLight3D_property_area_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10692,9 +10846,11 @@ Add particle system to list of particle systems that need to be updated. Update 
 
 .. rst-class:: classref-method
 
-|void| **particles_request_process_time**\ (\ particles\: :ref:`RID<class_RID>`, time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RenderingServer_method_particles_request_process_time>`
+|void| **particles_request_process_time**\ (\ particles\: :ref:`RID<class_RID>`, process_time\: :ref:`float<class_float>`, process_time_residual\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_RenderingServer_method_particles_request_process_time>`
 
-Requests particles to process for extra process time during a single frame.
+Requests the particles to process for extra process time during a single frame.
+
+\ ``process_time`` defines the time that the particles will process while emitting is on. ``process_time_residual`` defines the time that particles will process with emitting turned off for the simulation. When combined with the particles' speed scale set to ``0.0``, this is useful to be able to seek a particle system timeline.
 
 .. rst-class:: classref-item-separator
 
@@ -11021,6 +11177,30 @@ If ``enable`` is ``true``, enables trails for the ``particles`` with the specifi
 |void| **particles_set_transform_align**\ (\ particles\: :ref:`RID<class_RID>`, align\: :ref:`ParticlesTransformAlign<enum_RenderingServer_ParticlesTransformAlign>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align>`
 
 Sets the transform alignment for the particle system. Equivalent to :ref:`GPUParticles3D.transform_align<class_GPUParticles3D_property_transform_align>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_particles_set_transform_align_axis:
+
+.. rst-class:: classref-method
+
+|void| **particles_set_transform_align_axis**\ (\ particles\: :ref:`RID<class_RID>`, rotation_axis\: :ref:`ParticlesTransformAlignAxis<enum_RenderingServer_ParticlesTransformAlignAxis>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align_axis>`
+
+Sets which axis to use for transform alignment.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_particles_set_transform_align_channel_filter:
+
+.. rst-class:: classref-method
+
+|void| **particles_set_transform_align_channel_filter**\ (\ particles\: :ref:`RID<class_RID>`, channel_filter\: :ref:`ParticlesTransformAlignCustomSrc<enum_RenderingServer_ParticlesTransformAlignCustomSrc>`\ ) :ref:`🔗<class_RenderingServer_method_particles_set_transform_align_channel_filter>`
+
+When using Z-Billboarding, which CUSTOM channel to read from.
 
 .. rst-class:: classref-item-separator
 

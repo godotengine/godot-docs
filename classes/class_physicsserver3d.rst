@@ -476,9 +476,9 @@ enum **PinJointParam**: :ref:`🔗<enum_PhysicsServer3D_PinJointParam>`
 
 :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>` **PIN_JOINT_BIAS** = ``0``
 
-The strength with which the pinned objects try to stay in positional relation to each other.
+The strength with which the pinned objects try to stay in positional relation to each other. The higher, the stronger.
 
-The higher, the stronger.
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_PIN_JOINT_DAMPING:
 
@@ -486,9 +486,9 @@ The higher, the stronger.
 
 :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>` **PIN_JOINT_DAMPING** = ``1``
 
-The strength with which the pinned objects try to stay in velocity relation to each other.
+The strength with which the pinned objects try to stay in velocity relation to each other. The higher, the stronger.
 
-The higher, the stronger.
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_PIN_JOINT_IMPULSE_CLAMP:
 
@@ -497,6 +497,8 @@ The higher, the stronger.
 :ref:`PinJointParam<enum_PhysicsServer3D_PinJointParam>` **PIN_JOINT_IMPULSE_CLAMP** = ``2``
 
 If above 0, this value is the maximum value for an impulse that this Joint3D puts on its ends.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -515,6 +517,8 @@ enum **HingeJointParam**: :ref:`🔗<enum_PhysicsServer3D_HingeJointParam>`
 :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>` **HINGE_JOINT_BIAS** = ``0``
 
 The speed with which the two bodies get pulled together when they move in different directions.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_HINGE_JOINT_LIMIT_UPPER:
 
@@ -540,17 +544,15 @@ The minimum rotation across the Hinge.
 
 The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_HINGE_JOINT_LIMIT_SOFTNESS:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>` **HINGE_JOINT_LIMIT_SOFTNESS** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
-
-
+**Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_HINGE_JOINT_LIMIT_RELAXATION:
 
@@ -559,6 +561,8 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 :ref:`HingeJointParam<enum_PhysicsServer3D_HingeJointParam>` **HINGE_JOINT_LIMIT_RELAXATION** = ``5``
 
 The lower this value, the more the rotation gets slowed down.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_HINGE_JOINT_MOTOR_TARGET_VELOCITY:
 
@@ -636,6 +640,8 @@ The minimum difference between the pivot points on their X axis before damping h
 
 A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION:
 
 .. rst-class:: classref-enumeration-constant
@@ -643,6 +649,8 @@ A factor applied to the movement across the slider axis once the limits get surp
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = ``3``
 
 The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_LIMIT_DAMPING:
 
@@ -652,6 +660,8 @@ The amount of restitution once the limits are surpassed. The lower, the more vel
 
 The amount of damping once the slider limits are surpassed.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_MOTION_SOFTNESS:
 
 .. rst-class:: classref-enumeration-constant
@@ -659,6 +669,8 @@ The amount of damping once the slider limits are surpassed.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_MOTION_SOFTNESS** = ``5``
 
 A factor applied to the movement across the slider axis as long as the slider is in the limits. The lower, the slower the movement.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_MOTION_RESTITUTION:
 
@@ -668,6 +680,8 @@ A factor applied to the movement across the slider axis as long as the slider is
 
 The amount of restitution inside the slider limits.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_MOTION_DAMPING:
 
 .. rst-class:: classref-enumeration-constant
@@ -675,6 +689,8 @@ The amount of restitution inside the slider limits.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_MOTION_DAMPING** = ``7``
 
 The amount of damping inside the slider limits.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS:
 
@@ -684,6 +700,8 @@ The amount of damping inside the slider limits.
 
 A factor applied to the movement across axes orthogonal to the slider.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION:
 
 .. rst-class:: classref-enumeration-constant
@@ -691,6 +709,8 @@ A factor applied to the movement across axes orthogonal to the slider.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION** = ``9``
 
 The amount of restitution when movement is across axes orthogonal to the slider.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING:
 
@@ -700,6 +720,8 @@ The amount of restitution when movement is across axes orthogonal to the slider.
 
 The amount of damping when movement is across axes orthogonal to the slider.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_LIMIT_UPPER:
 
 .. rst-class:: classref-enumeration-constant
@@ -707,6 +729,8 @@ The amount of damping when movement is across axes orthogonal to the slider.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_LIMIT_UPPER** = ``11``
 
 The upper limit of rotation in the slider.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_LIMIT_LOWER:
 
@@ -716,6 +740,8 @@ The upper limit of rotation in the slider.
 
 The lower limit of rotation in the slider.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS:
 
 .. rst-class:: classref-enumeration-constant
@@ -723,6 +749,8 @@ The lower limit of rotation in the slider.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS** = ``13``
 
 A factor applied to the all rotation once the limit is surpassed.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_LIMIT_RESTITUTION:
 
@@ -732,6 +760,8 @@ A factor applied to the all rotation once the limit is surpassed.
 
 The amount of restitution of the rotation when the limit is surpassed.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_LIMIT_DAMPING:
 
 .. rst-class:: classref-enumeration-constant
@@ -739,6 +769,8 @@ The amount of restitution of the rotation when the limit is surpassed.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_LIMIT_DAMPING** = ``15``
 
 The amount of damping of the rotation when the limit is surpassed.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_MOTION_SOFTNESS:
 
@@ -748,6 +780,8 @@ The amount of damping of the rotation when the limit is surpassed.
 
 A factor that gets applied to the all rotation in the limits.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION:
 
 .. rst-class:: classref-enumeration-constant
@@ -755,6 +789,8 @@ A factor that gets applied to the all rotation in the limits.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_MOTION_RESTITUTION** = ``17``
 
 The amount of restitution of the rotation in the limits.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_MOTION_DAMPING:
 
@@ -764,6 +800,8 @@ The amount of restitution of the rotation in the limits.
 
 The amount of damping of the rotation in the limits.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS:
 
 .. rst-class:: classref-enumeration-constant
@@ -771,6 +809,8 @@ The amount of damping of the rotation in the limits.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_ORTHOGONAL_SOFTNESS** = ``19``
 
 A factor that gets applied to the all rotation across axes orthogonal to the slider.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION:
 
@@ -780,6 +820,8 @@ A factor that gets applied to the all rotation across axes orthogonal to the sli
 
 The amount of restitution of the rotation across axes orthogonal to the slider.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING:
 
 .. rst-class:: classref-enumeration-constant
@@ -787,6 +829,8 @@ The amount of restitution of the rotation across axes orthogonal to the slider.
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING** = ``21``
 
 The amount of damping of the rotation across axes orthogonal to the slider.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_MAX:
 
@@ -816,9 +860,7 @@ Swing is rotation from side to side, around the axis perpendicular to the twist 
 
 The swing span defines, how much rotation will not get corrected along the swing axis.
 
-Could be defined as looseness in the :ref:`ConeTwistJoint3D<class_ConeTwistJoint3D>`.
-
-If below 0.05, this behavior is locked.
+Could be defined as looseness in the :ref:`ConeTwistJoint3D<class_ConeTwistJoint3D>`. If below 0.05, this behavior is locked.
 
 .. _class_PhysicsServer3D_constant_CONE_TWIST_JOINT_TWIST_SPAN:
 
@@ -826,9 +868,7 @@ If below 0.05, this behavior is locked.
 
 :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>` **CONE_TWIST_JOINT_TWIST_SPAN** = ``1``
 
-Twist is the rotation around the twist axis, this value defined how far the joint can twist.
-
-Twist is locked if below 0.05.
+Twist is the rotation around the twist axis, this value defined how far the joint can twist. Twist is locked if below 0.05.
 
 .. _class_PhysicsServer3D_constant_CONE_TWIST_JOINT_BIAS:
 
@@ -836,9 +876,9 @@ Twist is locked if below 0.05.
 
 :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>` **CONE_TWIST_JOINT_BIAS** = ``2``
 
-The speed with which the swing or twist will take place.
+The speed with which the swing or twist will take place. The higher, the faster.
 
-The higher, the faster.
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_CONE_TWIST_JOINT_SOFTNESS:
 
@@ -848,6 +888,8 @@ The higher, the faster.
 
 The ease with which the Joint3D twists, if it's too low, it takes more force to twist the joint.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_CONE_TWIST_JOINT_RELAXATION:
 
 .. rst-class:: classref-enumeration-constant
@@ -855,6 +897,8 @@ The ease with which the Joint3D twists, if it's too low, it takes more force to 
 :ref:`ConeTwistJointParam<enum_PhysicsServer3D_ConeTwistJointParam>` **CONE_TWIST_JOINT_RELAXATION** = ``4``
 
 Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -890,6 +934,8 @@ The maximum difference between the pivot points' axes.
 
 A factor that gets applied to the movement across the axes. The lower, the slower the movement.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_RESTITUTION:
 
 .. rst-class:: classref-enumeration-constant
@@ -898,6 +944,8 @@ A factor that gets applied to the movement across the axes. The lower, the slowe
 
 The amount of restitution on the axes movement. The lower, the more velocity-energy gets lost.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_DAMPING:
 
 .. rst-class:: classref-enumeration-constant
@@ -905,6 +953,8 @@ The amount of restitution on the axes movement. The lower, the more velocity-ene
 :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_LINEAR_DAMPING** = ``4``
 
 The amount of damping that happens at the linear motion across the axes.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_MOTOR_TARGET_VELOCITY:
 
@@ -982,6 +1032,8 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 A factor that gets multiplied onto all rotations across the axes.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_DAMPING:
 
 .. rst-class:: classref-enumeration-constant
@@ -989,6 +1041,8 @@ A factor that gets multiplied onto all rotations across the axes.
 :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_DAMPING** = ``13``
 
 The amount of rotational damping across the axes. The lower, the more damping occurs.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_RESTITUTION:
 
@@ -998,6 +1052,8 @@ The amount of rotational damping across the axes. The lower, the more damping oc
 
 The amount of rotational restitution across the axes. The lower, the more restitution occurs.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_FORCE_LIMIT:
 
 .. rst-class:: classref-enumeration-constant
@@ -1006,6 +1062,8 @@ The amount of rotational restitution across the axes. The lower, the more restit
 
 The maximum amount of force that can occur, when rotating around the axes.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_ERP:
 
 .. rst-class:: classref-enumeration-constant
@@ -1013,6 +1071,8 @@ The maximum amount of force that can occur, when rotating around the axes.
 :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_ERP** = ``16``
 
 When correcting the crossing of limits in rotation across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY:
 
@@ -1746,6 +1806,8 @@ Constant to set/get the default solver bias for all physics contacts. A solver b
 
 Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
 
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
+
 .. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD:
 
 .. rst-class:: classref-enumeration-constant
@@ -1753,6 +1815,8 @@ Constant to set/get the threshold linear velocity of activity. A body marked as 
 :ref:`SpaceParameter<enum_PhysicsServer3D_SpaceParameter>` **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = ``5``
 
 Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+
+\ **Note:** Only supported when using GodotPhysics3D. This parameter is ignored when using Jolt Physics.
 
 .. _class_PhysicsServer3D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP:
 
@@ -3209,6 +3273,8 @@ Sets whether the bodies attached to the :ref:`Joint3D<class_Joint3D>` will colli
 
 Gets the priority value of the Joint3D.
 
+\ **Note:** Only supported when using GodotPhysics3D. This method always returns ``1`` when using Jolt Physics, as it does not support joint solver priority.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3312,6 +3378,8 @@ Make the joint a generic six degrees of freedom (6DOF) joint. Use :ref:`generic_
 |void| **joint_set_solver_priority**\ (\ joint\: :ref:`RID<class_RID>`, priority\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PhysicsServer3D_method_joint_set_solver_priority>`
 
 Sets the priority value of the Joint3D.
+
+\ **Note:** Only supported when using GodotPhysics3D. This method has no effect when using Jolt Physics, as it does not support joint solver priority.
 
 .. rst-class:: classref-item-separator
 

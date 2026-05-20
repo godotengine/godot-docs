@@ -1364,7 +1364,8 @@ want to assign consecutive integers to some constant.
 
 If you pass a name to the enum, it will put all the keys inside a constant
 :ref:`Dictionary <class_Dictionary>` of that name. This means all constant methods of
-a dictionary can also be used with a named enum.
+a dictionary can also be used with a named enum. This only works for
+GDScript enums, not for enums from built-in classes.
 
 .. important:: Keys in a named enum are not registered
                as global constants. They should be accessed prefixed
@@ -1701,7 +1702,7 @@ Here are some examples of expressions:
     do_something() # Function call.
     [1, 2, 3] # Array definition.
     {A = 1, B = 2} # Dictionary definition.
-    preload("res://icon.png") # Preload builtin function.
+    preload("res://icon.svg") # Preload builtin function.
     self # Reference to current instance.
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
@@ -2233,14 +2234,14 @@ abstract class:
     class_name AbstractClass
     extends Node
 
-    @abstract class AbstractSubClass:
+    @abstract class AbstractInnerClass:
         func _ready():
             pass
 
-    # This is an example of a concrete subclass of AbstractSubClass.
-    # This class can be instantiated using `AbstractClass.ConcreteSubclass.new()`
+    # This is an example of a concrete subclass of `AbstractInnerClass`.
+    # This class can be instantiated using `AbstractClass.ConcreteInnerClass.new()`
     # in other scripts, even though it's part of an abstract `class_name` script.
-    class ConcreteClass extends AbstractSubClass:
+    class ConcreteInnerClass extends AbstractInnerClass:
         func _ready():
             print("Concrete class ready.")
 
@@ -2769,7 +2770,7 @@ You can write optional argument names in parentheses after the signal's definiti
     # Defining a signal that forwards two arguments.
     signal health_changed(old_value, new_value)
 
-These arguments show up in the editor's node dock, and Godot can use them to
+These arguments show up in the editor's Signals dock, and Godot can use them to
 generate callback functions for you. However, you can still emit any number of
 arguments when you emit signals; it's up to you to emit the correct values.
 
@@ -2886,6 +2887,30 @@ This also means that returning a signal from a function that isn't a coroutine w
           This is done to ensure type safety.
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
+
+You can store the arguments passed to the signal's parameters. If there is only one parameter, the awaited value will have the same type as the argument:
+
+::
+
+    func toggled():
+        var signal_args = await $Button.toggled
+        assert(typeof(signal_args) == TYPE_BOOL)
+
+If there is more than one parameter, the awaited value will be of type ``Array``:
+
+::
+
+    func request_completed():
+        var signal_args = await $HTTPRequest.request_completed
+        assert(typeof(signal_args) == TYPE_ARRAY)
+
+Otherwise, the awaited value will be ``null``:
+
+::
+
+    func button_up():
+        var signal_args = await $Button.button_up
+        assert(signal_args == null)
 
 Assert keyword
 --------------

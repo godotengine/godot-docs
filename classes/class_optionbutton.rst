@@ -38,21 +38,39 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`ActionMode<enum_BaseButton_ActionMode>`                     | action_mode                                                                 | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | alignment                                                                   | ``0`` (overrides :ref:`Button<class_Button_property_alignment>`)              |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`allow_reselect<class_OptionButton_property_allow_reselect>`           | ``false``                                                                     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`fit_to_longest_item<class_OptionButton_property_fit_to_longest_item>` | ``true``                                                                      |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`item_count<class_OptionButton_property_item_count>`                   | ``0``                                                                         |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`selected<class_OptionButton_property_selected>`                       | ``-1``                                                                        |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | toggle_mode                                                                 | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`ActionMode<enum_BaseButton_ActionMode>`                     | action_mode                                                                                               | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | alignment                                                                                                 | ``0`` (overrides :ref:`Button<class_Button_property_alignment>`)              |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`allow_reselect<class_OptionButton_property_allow_reselect>`                                         | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`fit_to_longest_item<class_OptionButton_property_fit_to_longest_item>`                               | ``true``                                                                      |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`item_count<class_OptionButton_property_item_count>`                                                 | ``0``                                                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`popup/item_{index}/disabled<class_OptionButton_property_popup/item_{index}/disabled>`               | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`popup/item_{index}/icon<class_OptionButton_property_popup/item_{index}/icon>`                       |                                                                               |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`popup/item_{index}/id<class_OptionButton_property_popup/item_{index}/id>`                           | ``0``                                                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`popup/item_{index}/separator<class_OptionButton_property_popup/item_{index}/separator>`             | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`popup/item_{index}/text<class_OptionButton_property_popup/item_{index}/text>`                       | ``""``                                                                        |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`search_bar_enabled<class_OptionButton_property_search_bar_enabled>`                                 | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`search_bar_fuzzy_search_enabled<class_OptionButton_property_search_bar_fuzzy_search_enabled>`       | ``true``                                                                      |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`search_bar_fuzzy_search_max_misses<class_OptionButton_property_search_bar_fuzzy_search_max_misses>` | ``2``                                                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`search_bar_min_item_count<class_OptionButton_property_search_bar_min_item_count>`                   | ``0``                                                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                             | :ref:`selected<class_OptionButton_property_selected>`                                                     | ``-1``                                                                        |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | toggle_mode                                                                                               | ``true`` (overrides :ref:`BaseButton<class_BaseButton_property_toggle_mode>`) |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -153,7 +171,7 @@ Signals
 
 **item_focused**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_signal_item_focused>`
 
-Emitted when the user navigates to an item using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input actions. The index of the item selected is passed as argument.
+Emitted when the user navigates to an item using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input actions. The index of the item focused is passed as argument.
 
 .. rst-class:: classref-item-separator
 
@@ -226,6 +244,146 @@ If ``true``, minimum size will be determined by the longest item's text, instead
 - :ref:`int<class_int>` **get_item_count**\ (\ )
 
 The number of items to select from.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_popup/item_{index}/disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **popup/item_{index}/disabled** = ``false`` :ref:`🔗<class_OptionButton_property_popup/item_{index}/disabled>`
+
+If ``true``, the item at ``index`` is disabled.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_popup/item_{index}/icon:
+
+.. rst-class:: classref-property
+
+:ref:`Texture2D<class_Texture2D>` **popup/item_{index}/icon** :ref:`🔗<class_OptionButton_property_popup/item_{index}/icon>`
+
+The icon of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_popup/item_{index}/id:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **popup/item_{index}/id** = ``0`` :ref:`🔗<class_OptionButton_property_popup/item_{index}/id>`
+
+The ID of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_popup/item_{index}/separator:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **popup/item_{index}/separator** = ``false`` :ref:`🔗<class_OptionButton_property_popup/item_{index}/separator>`
+
+If ``true``, the item at ``index`` is a separator.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_popup/item_{index}/text:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **popup/item_{index}/text** = ``""`` :ref:`🔗<class_OptionButton_property_popup/item_{index}/text>`
+
+The text of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_search_bar_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **search_bar_enabled** = ``false`` :ref:`🔗<class_OptionButton_property_search_bar_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_enabled**\ (\ )
+
+If ``true``, shows a search bar at the top of the :ref:`PopupMenu<class_PopupMenu>` for filtering items. See :ref:`search_bar_min_item_count<class_OptionButton_property_search_bar_min_item_count>` for dynamically controlling its visibility based on the number of items.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_search_bar_fuzzy_search_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **search_bar_fuzzy_search_enabled** = ``true`` :ref:`🔗<class_OptionButton_property_search_bar_fuzzy_search_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_fuzzy_search_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_search_bar_fuzzy_search_enabled**\ (\ )
+
+If ``true``, enables fuzzy searching in the :ref:`PopupMenu<class_PopupMenu>` search bar. This allows the search results to include items that almost match the search query, as well items that match the individual characters of the search query, but not in sequence.
+
+Use :ref:`search_bar_fuzzy_search_max_misses<class_OptionButton_property_search_bar_fuzzy_search_max_misses>` to set the maximum number of mismatches allowed in the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_search_bar_fuzzy_search_max_misses:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_fuzzy_search_max_misses** = ``2`` :ref:`🔗<class_OptionButton_property_search_bar_fuzzy_search_max_misses>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_fuzzy_search_max_misses**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_fuzzy_search_max_misses**\ (\ )
+
+Sets the maximum number of mismatches allowed in each search result when fuzzy searching is enabled for the :ref:`PopupMenu<class_PopupMenu>` search bar. Any item with more mismatches will be hidden from the search results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_property_search_bar_min_item_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **search_bar_min_item_count** = ``0`` :ref:`🔗<class_OptionButton_property_search_bar_min_item_count>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_search_bar_min_item_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_search_bar_min_item_count**\ (\ )
+
+Sets the minimum number of items required for the :ref:`PopupMenu<class_PopupMenu>` search bar to be visible. :ref:`search_bar_enabled<class_OptionButton_property_search_bar_enabled>` must be ``true`` for this to have any effect.
 
 .. rst-class:: classref-item-separator
 

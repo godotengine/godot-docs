@@ -41,6 +41,26 @@ Properties
    | :ref:`TrackerType<enum_XRServer_TrackerType>`                                   | type                                                                                            | ``8`` (overrides :ref:`XRTracker<class_XRTracker_property_type>`) |
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`add_next<class_OpenXRSpatialEntityTracker_method_add_next>`\ (\ next\: :ref:`OpenXRStructureBase<class_OpenXRStructureBase>`\ )       |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRStructureBase<class_OpenXRStructureBase>` | :ref:`get_next<class_OpenXRSpatialEntityTracker_method_get_next>`\ (\ ) |const|                                                             |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                 | :ref:`get_spatial_context<class_OpenXRSpatialEntityTracker_method_get_spatial_context>`\ (\ ) |const|                                       |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`remove_next<class_OpenXRSpatialEntityTracker_method_remove_next>`\ (\ next\: :ref:`OpenXRStructureBase<class_OpenXRStructureBase>`\ ) |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`set_spatial_context<class_OpenXRSpatialEntityTracker_method_set_spatial_context>`\ (\ spatial_context\: :ref:`RID<class_RID>`\ )      |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -49,6 +69,18 @@ Properties
 
 Signals
 -------
+
+.. _class_OpenXRSpatialEntityTracker_signal_next_changed:
+
+.. rst-class:: classref-signal
+
+**next_changed**\ (\ ) :ref:`🔗<class_OpenXRSpatialEntityTracker_signal_next_changed>`
+
+Emitted when the next-chain changes, from either :ref:`add_next()<class_OpenXRSpatialEntityTracker_method_add_next>` or :ref:`remove_next()<class_OpenXRSpatialEntityTracker_method_remove_next>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRSpatialEntityTracker_signal_spatial_tracking_state_changed:
 
@@ -137,6 +169,75 @@ The spatial entity associated with this tracker.
 - :ref:`EntityTrackingState<enum_OpenXRSpatialEntityTracker_EntityTrackingState>` **get_spatial_tracking_state**\ (\ )
 
 The spatial tracking state for this tracker.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_OpenXRSpatialEntityTracker_method_add_next:
+
+.. rst-class:: classref-method
+
+|void| **add_next**\ (\ next\: :ref:`OpenXRStructureBase<class_OpenXRStructureBase>`\ ) :ref:`🔗<class_OpenXRSpatialEntityTracker_method_add_next>`
+
+Adds a new :ref:`OpenXRStructureBase<class_OpenXRStructureBase>` to the next-chain.
+
+\ :ref:`get_next()<class_OpenXRSpatialEntityTracker_method_get_next>` will return this ``next`` until either :ref:`add_next()<class_OpenXRSpatialEntityTracker_method_add_next>` is called again or it's removed in :ref:`remove_next()<class_OpenXRSpatialEntityTracker_method_remove_next>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialEntityTracker_method_get_next:
+
+.. rst-class:: classref-method
+
+:ref:`OpenXRStructureBase<class_OpenXRStructureBase>` **get_next**\ (\ ) |const| :ref:`🔗<class_OpenXRSpatialEntityTracker_method_get_next>`
+
+Gets the head :ref:`OpenXRStructureBase<class_OpenXRStructureBase>` in the next-chain.
+
+See also :ref:`add_next()<class_OpenXRSpatialEntityTracker_method_add_next>` and :ref:`remove_next()<class_OpenXRSpatialEntityTracker_method_remove_next>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialEntityTracker_method_get_spatial_context:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_spatial_context**\ (\ ) |const| :ref:`🔗<class_OpenXRSpatialEntityTracker_method_get_spatial_context>`
+
+Gets the spatial context used to create this **OpenXRSpatialEntityTracker**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialEntityTracker_method_remove_next:
+
+.. rst-class:: classref-method
+
+|void| **remove_next**\ (\ next\: :ref:`OpenXRStructureBase<class_OpenXRStructureBase>`\ ) :ref:`🔗<class_OpenXRSpatialEntityTracker_method_remove_next>`
+
+Removes a ``next`` object previously added in :ref:`add_next()<class_OpenXRSpatialEntityTracker_method_add_next>` from the next-chain.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialEntityTracker_method_set_spatial_context:
+
+.. rst-class:: classref-method
+
+|void| **set_spatial_context**\ (\ spatial_context\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_OpenXRSpatialEntityTracker_method_set_spatial_context>`
+
+Sets the spatial context used to create this tracker.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

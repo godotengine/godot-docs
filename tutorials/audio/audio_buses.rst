@@ -112,7 +112,7 @@ all effects).
 
 .. figure:: img/audio_buses5.webp
 
-   Disabled buses have a blue VU meter instead of a red-green one.
+   Disabled buses have a dark blue VU meter instead of a red-green one.
 
 Bus rearrangement
 -----------------

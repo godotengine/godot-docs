@@ -33,15 +33,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>` | :ref:`_get_component_type<class_OpenXRSpatialComponentData_private_method__get_component_type>`\ (\ ) |virtual| |const|                               |
-   +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>` | :ref:`_get_structure_data<class_OpenXRSpatialComponentData_private_method__get_structure_data>`\ (\ next\: :ref:`int<class_int>`\ ) |virtual| |const| |
-   +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                | :ref:`_set_capacity<class_OpenXRSpatialComponentData_private_method__set_capacity>`\ (\ capacity\: :ref:`int<class_int>`\ ) |virtual|                 |
-   +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                | :ref:`set_capacity<class_OpenXRSpatialComponentData_method_set_capacity>`\ (\ capacity\: :ref:`int<class_int>`\ )                                     |
-   +-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`_get_component_type<class_OpenXRSpatialComponentData_private_method__get_component_type>`\ (\ ) |virtual| |const|                       |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`_get_structure_data<class_OpenXRSpatialComponentData_private_method__get_structure_data>`\ (\ next\: :ref:`int<class_int>`\ ) |virtual| |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                | :ref:`_set_capacity<class_OpenXRSpatialComponentData_private_method__set_capacity>`\ (\ capacity\: :ref:`int<class_int>`\ ) |virtual|         |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_component_type<class_OpenXRSpatialComponentData_method_get_component_type>`\ (\ ) |const|                                           |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                | :ref:`set_capacity<class_OpenXRSpatialComponentData_method_set_capacity>`\ (\ capacity\: :ref:`int<class_int>`\ )                             |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,7 +70,7 @@ Return the component type for the component we store data for.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_structure_data**\ (\ next\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_OpenXRSpatialComponentData_private_method__get_structure_data>`
+:ref:`int<class_int>` **_get_structure_data**\ (\ next\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRSpatialComponentData_private_method__get_structure_data>`
 
 Return a pointer to the structure data that will be submitted along with the snapshot query. This pointer must remain valid as long as this object is instantiated.
 
@@ -82,7 +84,19 @@ Return a pointer to the structure data that will be submitted along with the sna
 
 |void| **_set_capacity**\ (\ capacity\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRSpatialComponentData_private_method__set_capacity>`
 
-Set the expected capacity as provided by the spatial entities query system. Buffers should be initialized with the correct storage.
+Sets the expected capacity as provided by the spatial entities query system. Buffers should be initialized with the correct storage.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRSpatialComponentData_method_get_component_type:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_component_type**\ (\ ) |const| :ref:`🔗<class_OpenXRSpatialComponentData_method_get_component_type>`
+
+Gets this **OpenXRSpatialComponentData**'s ``XrSpatialComponentTypeEXT``.
 
 .. rst-class:: classref-item-separator
 
@@ -94,7 +108,7 @@ Set the expected capacity as provided by the spatial entities query system. Buff
 
 |void| **set_capacity**\ (\ capacity\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OpenXRSpatialComponentData_method_set_capacity>`
 
-Set the expected capacity as provided by the spatial entities query system. Buffers should be initialized with the correct storage.
+Sets the expected capacity as provided by the spatial entities query system. Buffers should be initialized with the correct storage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

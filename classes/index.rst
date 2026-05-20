@@ -39,6 +39,7 @@ Nodes
     class_animationtree
     class_area2d
     class_area3d
+    class_arealight3d
     class_aspectratiocontainer
     class_audiolistener2d
     class_audiolistener3d
@@ -745,6 +746,7 @@ Other objects
     :name: toc-class-ref-objects
 
     class_object
+    class_accessibilityserver
     class_aescontext
     class_astar2d
     class_astar3d
@@ -954,13 +956,17 @@ Other objects
     class_projectsettings
     class_propertytweener
     class_randomnumbergenerator
+    class_rdaccelerationstructuregeometry
+    class_rdaccelerationstructureinstance
     class_rdattachmentformat
     class_rdframebufferpass
+    class_rdhitgroup
     class_rdpipelinecolorblendstate
     class_rdpipelinecolorblendstateattachment
     class_rdpipelinedepthstencilstate
     class_rdpipelinemultisamplestate
     class_rdpipelinerasterizationstate
+    class_rdpipelineshader
     class_rdpipelinespecializationconstant
     class_rdsamplerstate
     class_rdshadersource
@@ -1140,6 +1146,30 @@ Editor-only
     class_editorundoredomanager
     class_editorvcsinterface
     class_filesystemdock
+    class_gdscriptlanguageprotocol
+    class_gdscriptsyntaxhighlighter
+    class_gdscripttextdocument
+    class_gdscriptworkspace
+    class_gridmapeditorplugin
+    class_openxrbindingmodifiereditor
+    class_openxrinteractionprofileeditor
+    class_openxrinteractionprofileeditorbase
+    class_resourceimporterbitmap
+    class_resourceimporterbmfont
+    class_resourceimportercsvtranslation
+    class_resourceimporterdynamicfont
+    class_resourceimporterimage
+    class_resourceimporterimagefont
+    class_resourceimporterlayeredtexture
+    class_resourceimportermp3
+    class_resourceimporterobj
+    class_resourceimporteroggvorbis
+    class_resourceimporterscene
+    class_resourceimportershaderfile
+    class_resourceimportersvg
+    class_resourceimportertexture
+    class_resourceimportertextureatlas
+    class_resourceimporterwav
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase

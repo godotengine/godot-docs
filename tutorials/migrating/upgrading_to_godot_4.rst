@@ -764,7 +764,7 @@ ArrayMesh resource again.
 List of automatically renamed methods, properties, signals and constants
 ------------------------------------------------------------------------
 
-The `editor/renames_map_3_to_4.cpp <https://github.com/godotengine/godot/blob/master/editor/renames_map_3_to_4.cpp>`__
+The `editor/project_upgrade/renames_map_3_to_4.cpp <https://github.com/godotengine/godot/blob/master/editor/project_upgrade/renames_map_3_to_4.cpp>`__
 source file lists all automatic renames performed by the project upgrade tool.
 Lines that are commented out refer to API renames that :ref:`cannot be performed automatically <doc_upgrading_to_godot_4_manual_rename>`.
 

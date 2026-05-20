@@ -82,7 +82,7 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`accessibility_update_set_background_color<class_DisplayServer_method_accessibility_update_set_background_color>`\ (\ id\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                  | :ref:`accessibility_update_set_bounds<class_DisplayServer_method_accessibility_update_set_bounds>`\ (\ id\: :ref:`RID<class_RID>`, p_rect\: :ref:`Rect2<class_Rect2>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   | |void|                                                                  | :ref:`accessibility_update_set_bounds<class_DisplayServer_method_accessibility_update_set_bounds>`\ (\ id\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`accessibility_update_set_checked<class_DisplayServer_method_accessibility_update_set_checked>`\ (\ id\: :ref:`RID<class_RID>`, checekd\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -362,6 +362,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_dark_mode_supported<class_DisplayServer_method_is_dark_mode_supported>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_in_pip_mode<class_DisplayServer_method_is_in_pip_mode>`\ (\ window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_touchscreen_available<class_DisplayServer_method_is_touchscreen_available>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -387,6 +389,12 @@ Methods
    | :ref:`Vector2i<class_Vector2i>`                                         | :ref:`mouse_get_position<class_DisplayServer_method_mouse_get_position>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`pip_mode_enter<class_DisplayServer_method_pip_mode_enter>`\ (\ window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`pip_mode_set_aspect_ratio<class_DisplayServer_method_pip_mode_set_aspect_ratio>`\ (\ numerator\: :ref:`int<class_int>`, denominator\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`pip_mode_set_auto_enter_on_background<class_DisplayServer_method_pip_mode_set_auto_enter_on_background>`\ (\ auto_enter_on_background\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                   |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`process_events<class_DisplayServer_method_process_events>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -554,6 +562,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_hdr_output_reference_luminance<class_DisplayServer_method_window_set_hdr_output_reference_luminance>`\ (\ reference_luminance\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_icon<class_DisplayServer_method_window_set_icon>`\ (\ icon\: :ref:`Image<class_Image>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_ime_active<class_DisplayServer_method_window_set_ime_active>`\ (\ active\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -657,7 +667,7 @@ Display server supports multiple windows that can be moved outside of the main w
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_TOUCHSCREEN** = ``2``
 
-Display server supports touchscreen input. **Windows, Linux (X11), Android, iOS, Web**
+Display server supports touchscreen input. **Windows, Linux (X11/Wayland), Android, iOS, Web**
 
 .. _class_DisplayServer_constant_FEATURE_MOUSE:
 
@@ -915,7 +925,15 @@ Display server supports interaction with screen reader or Braille display. **Lin
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_HDR_OUTPUT** = ``35``
 
-Display server supports HDR output. **Windows**
+Display server supports HDR output. **Linux (Wayland), macOS, iOS, visionOS, Windows**
+
+.. _class_DisplayServer_constant_FEATURE_PIP_MODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_PIP_MODE** = ``36``
+
+Display server supports putting the application in picture-in-picture mode. **Android**
 
 .. rst-class:: classref-item-separator
 
@@ -933,6 +951,8 @@ enum **AccessibilityRole**: :ref:`🔗<enum_DisplayServer_AccessibilityRole>`
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_UNKNOWN** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Unknown or custom role.
 
 .. _class_DisplayServer_constant_ROLE_DEFAULT_BUTTON:
@@ -940,6 +960,8 @@ Unknown or custom role.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_DEFAULT_BUTTON** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Default dialog button element.
 
@@ -949,6 +971,8 @@ Default dialog button element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_AUDIO** = ``2``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Audio player element.
 
 .. _class_DisplayServer_constant_ROLE_VIDEO:
@@ -956,6 +980,8 @@ Audio player element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_VIDEO** = ``3``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Video player element.
 
@@ -965,6 +991,8 @@ Video player element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_STATIC_TEXT** = ``4``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Non-editable text label.
 
 .. _class_DisplayServer_constant_ROLE_CONTAINER:
@@ -972,6 +1000,8 @@ Non-editable text label.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_CONTAINER** = ``5``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Container element. Elements with this role are used for internal structure and ignored by screen readers.
 
@@ -981,6 +1011,8 @@ Container element. Elements with this role are used for internal structure and i
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_PANEL** = ``6``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Panel container element.
 
 .. _class_DisplayServer_constant_ROLE_BUTTON:
@@ -988,6 +1020,8 @@ Panel container element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_BUTTON** = ``7``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Button element.
 
@@ -997,6 +1031,8 @@ Button element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_LINK** = ``8``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Link element.
 
 .. _class_DisplayServer_constant_ROLE_CHECK_BOX:
@@ -1004,6 +1040,8 @@ Link element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_CHECK_BOX** = ``9``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Check box element.
 
@@ -1013,6 +1051,8 @@ Check box element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_RADIO_BUTTON** = ``10``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Radio button element.
 
 .. _class_DisplayServer_constant_ROLE_CHECK_BUTTON:
@@ -1020,6 +1060,8 @@ Radio button element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_CHECK_BUTTON** = ``11``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Check button element.
 
@@ -1029,6 +1071,8 @@ Check button element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_SCROLL_BAR** = ``12``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Scroll bar element.
 
 .. _class_DisplayServer_constant_ROLE_SCROLL_VIEW:
@@ -1036,6 +1080,8 @@ Scroll bar element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_SCROLL_VIEW** = ``13``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Scroll container element.
 
@@ -1045,6 +1091,8 @@ Scroll container element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_SPLITTER** = ``14``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Container splitter handle element.
 
 .. _class_DisplayServer_constant_ROLE_SLIDER:
@@ -1052,6 +1100,8 @@ Container splitter handle element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_SLIDER** = ``15``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Slider element.
 
@@ -1061,6 +1111,8 @@ Slider element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_SPIN_BUTTON** = ``16``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Spin box element.
 
 .. _class_DisplayServer_constant_ROLE_PROGRESS_INDICATOR:
@@ -1068,6 +1120,8 @@ Spin box element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_PROGRESS_INDICATOR** = ``17``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Progress indicator element.
 
@@ -1077,6 +1131,8 @@ Progress indicator element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TEXT_FIELD** = ``18``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Editable text field element.
 
 .. _class_DisplayServer_constant_ROLE_MULTILINE_TEXT_FIELD:
@@ -1084,6 +1140,8 @@ Editable text field element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MULTILINE_TEXT_FIELD** = ``19``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Multiline editable text field element.
 
@@ -1093,6 +1151,8 @@ Multiline editable text field element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_COLOR_PICKER** = ``20``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Color picker element.
 
 .. _class_DisplayServer_constant_ROLE_TABLE:
@@ -1100,6 +1160,8 @@ Color picker element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TABLE** = ``21``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Table element.
 
@@ -1109,6 +1171,8 @@ Table element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_CELL** = ``22``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Table/tree cell element.
 
 .. _class_DisplayServer_constant_ROLE_ROW:
@@ -1116,6 +1180,8 @@ Table/tree cell element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_ROW** = ``23``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Table/tree row element.
 
@@ -1125,6 +1191,8 @@ Table/tree row element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_ROW_GROUP** = ``24``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Table/tree row group element.
 
 .. _class_DisplayServer_constant_ROLE_ROW_HEADER:
@@ -1132,6 +1200,8 @@ Table/tree row group element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_ROW_HEADER** = ``25``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Table/tree row header element.
 
@@ -1141,6 +1211,8 @@ Table/tree row header element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_COLUMN_HEADER** = ``26``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Table/tree column header element.
 
 .. _class_DisplayServer_constant_ROLE_TREE:
@@ -1148,6 +1220,8 @@ Table/tree column header element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TREE** = ``27``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Tree view element.
 
@@ -1157,6 +1231,8 @@ Tree view element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TREE_ITEM** = ``28``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Tree view item element.
 
 .. _class_DisplayServer_constant_ROLE_LIST:
@@ -1164,6 +1240,8 @@ Tree view item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_LIST** = ``29``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 List element.
 
@@ -1173,6 +1251,8 @@ List element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_LIST_ITEM** = ``30``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 List item element.
 
 .. _class_DisplayServer_constant_ROLE_LIST_BOX:
@@ -1180,6 +1260,8 @@ List item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_LIST_BOX** = ``31``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 List view element.
 
@@ -1189,6 +1271,8 @@ List view element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_LIST_BOX_OPTION** = ``32``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 List view item element.
 
 .. _class_DisplayServer_constant_ROLE_TAB_BAR:
@@ -1196,6 +1280,8 @@ List view item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TAB_BAR** = ``33``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Tab bar element.
 
@@ -1205,6 +1291,8 @@ Tab bar element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TAB** = ``34``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Tab bar item element.
 
 .. _class_DisplayServer_constant_ROLE_TAB_PANEL:
@@ -1212,6 +1300,8 @@ Tab bar item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TAB_PANEL** = ``35``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Tab panel element.
 
@@ -1221,6 +1311,8 @@ Tab panel element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MENU_BAR** = ``36``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Menu bar element.
 
 .. _class_DisplayServer_constant_ROLE_MENU:
@@ -1228,6 +1320,8 @@ Menu bar element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MENU** = ``37``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Popup menu element.
 
@@ -1237,6 +1331,8 @@ Popup menu element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MENU_ITEM** = ``38``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Popup menu item element.
 
 .. _class_DisplayServer_constant_ROLE_MENU_ITEM_CHECK_BOX:
@@ -1244,6 +1340,8 @@ Popup menu item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MENU_ITEM_CHECK_BOX** = ``39``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Popup menu check button item element.
 
@@ -1253,6 +1351,8 @@ Popup menu check button item element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_MENU_ITEM_RADIO** = ``40``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Popup menu radio button item element.
 
 .. _class_DisplayServer_constant_ROLE_IMAGE:
@@ -1260,6 +1360,8 @@ Popup menu radio button item element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_IMAGE** = ``41``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Image element.
 
@@ -1269,6 +1371,8 @@ Image element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_WINDOW** = ``42``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Window element.
 
 .. _class_DisplayServer_constant_ROLE_TITLE_BAR:
@@ -1276,6 +1380,8 @@ Window element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TITLE_BAR** = ``43``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Embedded window title bar element.
 
@@ -1285,6 +1391,8 @@ Embedded window title bar element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_DIALOG** = ``44``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Dialog window element.
 
 .. _class_DisplayServer_constant_ROLE_TOOLTIP:
@@ -1292,6 +1400,8 @@ Dialog window element.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TOOLTIP** = ``45``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Tooltip element.
 
@@ -1301,7 +1411,21 @@ Tooltip element.
 
 :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_REGION** = ``46``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Region/landmark element. Screen readers can navigate between regions using landmark navigation.
+
+.. _class_DisplayServer_constant_ROLE_TEXT_RUN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>` **ROLE_TEXT_RUN** = ``47``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
+Unifor text run.
+
+Note: This role is used for internal text elements, and should not be assigned to nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -1319,6 +1443,8 @@ enum **AccessibilityPopupType**: :ref:`🔗<enum_DisplayServer_AccessibilityPopu
 
 :ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_MENU** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Popup menu.
 
 .. _class_DisplayServer_constant_POPUP_LIST:
@@ -1326,6 +1452,8 @@ Popup menu.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_LIST** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Popup list.
 
@@ -1335,6 +1463,8 @@ Popup list.
 
 :ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_TREE** = ``2``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Popup tree view.
 
 .. _class_DisplayServer_constant_POPUP_DIALOG:
@@ -1342,6 +1472,8 @@ Popup tree view.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>` **POPUP_DIALOG** = ``3``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Popup dialog.
 
@@ -1361,6 +1493,8 @@ enum **AccessibilityFlags**: :ref:`🔗<enum_DisplayServer_AccessibilityFlags>`
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_HIDDEN** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Element is hidden for accessibility tools.
 
 .. _class_DisplayServer_constant_FLAG_MULTISELECTABLE:
@@ -1368,6 +1502,8 @@ Element is hidden for accessibility tools.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MULTISELECTABLE** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Element supports multiple item selection.
 
@@ -1377,6 +1513,8 @@ Element supports multiple item selection.
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_REQUIRED** = ``2``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Element require user input.
 
 .. _class_DisplayServer_constant_FLAG_VISITED:
@@ -1384,6 +1522,8 @@ Element require user input.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_VISITED** = ``3``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Element is a visited link.
 
@@ -1393,6 +1533,8 @@ Element is a visited link.
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_BUSY** = ``4``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Element content is not ready (e.g. loading).
 
 .. _class_DisplayServer_constant_FLAG_MODAL:
@@ -1400,6 +1542,8 @@ Element content is not ready (e.g. loading).
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_MODAL** = ``5``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Element is modal window.
 
@@ -1409,6 +1553,8 @@ Element is modal window.
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_TOUCH_PASSTHROUGH** = ``6``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Element allows touches to be passed through when a screen reader is in touch exploration mode.
 
 .. _class_DisplayServer_constant_FLAG_READONLY:
@@ -1416,6 +1562,8 @@ Element allows touches to be passed through when a screen reader is in touch exp
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_READONLY** = ``7``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Element is text field with selectable but read-only text.
 
@@ -1425,6 +1573,8 @@ Element is text field with selectable but read-only text.
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_DISABLED** = ``8``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Element is disabled.
 
 .. _class_DisplayServer_constant_FLAG_CLIPS_CHILDREN:
@@ -1432,6 +1582,8 @@ Element is disabled.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>` **FLAG_CLIPS_CHILDREN** = ``9``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Element clips children.
 
@@ -1451,6 +1603,8 @@ enum **AccessibilityAction**: :ref:`🔗<enum_DisplayServer_AccessibilityAction>
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_CLICK** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Single click action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_FOCUS:
@@ -1458,6 +1612,8 @@ Single click action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_FOCUS** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Focus action, callback argument is not set.
 
@@ -1467,6 +1623,8 @@ Focus action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_BLUR** = ``2``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Blur action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_COLLAPSE:
@@ -1474,6 +1632,8 @@ Blur action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_COLLAPSE** = ``3``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Collapse action, callback argument is not set.
 
@@ -1483,6 +1643,8 @@ Collapse action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_EXPAND** = ``4``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Expand action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_DECREMENT:
@@ -1490,6 +1652,8 @@ Expand action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_DECREMENT** = ``5``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Decrement action, callback argument is not set.
 
@@ -1499,6 +1663,8 @@ Decrement action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_INCREMENT** = ``6``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Increment action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_HIDE_TOOLTIP:
@@ -1506,6 +1672,8 @@ Increment action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_HIDE_TOOLTIP** = ``7``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Hide tooltip action, callback argument is not set.
 
@@ -1515,6 +1683,8 @@ Hide tooltip action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SHOW_TOOLTIP** = ``8``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Show tooltip action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_SET_TEXT_SELECTION:
@@ -1522,6 +1692,8 @@ Show tooltip action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SET_TEXT_SELECTION** = ``9``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Set text selection action, callback argument is set to :ref:`Dictionary<class_Dictionary>` with the following keys:
 
@@ -1539,6 +1711,8 @@ Set text selection action, callback argument is set to :ref:`Dictionary<class_Di
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_REPLACE_SELECTED_TEXT** = ``10``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Replace text action, callback argument is set to :ref:`String<class_String>` with the replacement text.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_BACKWARD:
@@ -1546,6 +1720,8 @@ Replace text action, callback argument is set to :ref:`String<class_String>` wit
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_BACKWARD** = ``11``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Scroll backward action, callback argument is not set.
 
@@ -1555,6 +1731,8 @@ Scroll backward action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_DOWN** = ``12``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Scroll down action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_FORWARD:
@@ -1562,6 +1740,8 @@ Scroll down action, callback argument is set to :ref:`AccessibilityScrollUnit<en
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_FORWARD** = ``13``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Scroll forward action, callback argument is not set.
 
@@ -1571,6 +1751,8 @@ Scroll forward action, callback argument is not set.
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_LEFT** = ``14``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Scroll left action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_RIGHT:
@@ -1578,6 +1760,8 @@ Scroll left action, callback argument is set to :ref:`AccessibilityScrollUnit<en
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_RIGHT** = ``15``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Scroll right action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
@@ -1587,6 +1771,8 @@ Scroll right action, callback argument is set to :ref:`AccessibilityScrollUnit<e
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_UP** = ``16``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Scroll up action, callback argument is set to :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>`.
 
 .. _class_DisplayServer_constant_ACTION_SCROLL_INTO_VIEW:
@@ -1594,6 +1780,8 @@ Scroll up action, callback argument is set to :ref:`AccessibilityScrollUnit<enum
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_INTO_VIEW** = ``17``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Scroll into view action, callback argument is set to :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>`.
 
@@ -1603,6 +1791,8 @@ Scroll into view action, callback argument is set to :ref:`AccessibilityScrollHi
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SCROLL_TO_POINT** = ``18``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Scroll to point action, callback argument is set to :ref:`Vector2<class_Vector2>` with the relative point coordinates.
 
 .. _class_DisplayServer_constant_ACTION_SET_SCROLL_OFFSET:
@@ -1610,6 +1800,8 @@ Scroll to point action, callback argument is set to :ref:`Vector2<class_Vector2>
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SET_SCROLL_OFFSET** = ``19``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Set scroll offset action, callback argument is set to :ref:`Vector2<class_Vector2>` with the scroll offset.
 
@@ -1619,6 +1811,8 @@ Set scroll offset action, callback argument is set to :ref:`Vector2<class_Vector
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SET_VALUE** = ``20``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Set value action, callback argument is set to :ref:`String<class_String>` or number with the new value.
 
 .. _class_DisplayServer_constant_ACTION_SHOW_CONTEXT_MENU:
@@ -1627,6 +1821,8 @@ Set value action, callback argument is set to :ref:`String<class_String>` or num
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_SHOW_CONTEXT_MENU** = ``21``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Show context menu action, callback argument is not set.
 
 .. _class_DisplayServer_constant_ACTION_CUSTOM:
@@ -1634,6 +1830,8 @@ Show context menu action, callback argument is not set.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>` **ACTION_CUSTOM** = ``22``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Custom action, callback argument is set to the integer action ID.
 
@@ -1653,6 +1851,8 @@ enum **AccessibilityLiveMode**: :ref:`🔗<enum_DisplayServer_AccessibilityLiveM
 
 :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **LIVE_OFF** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Indicates that updates to the live region should not be presented.
 
 .. _class_DisplayServer_constant_LIVE_POLITE:
@@ -1661,6 +1861,8 @@ Indicates that updates to the live region should not be presented.
 
 :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **LIVE_POLITE** = ``1``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Indicates that updates to the live region should be presented at the next opportunity (for example at the end of speaking the current sentence).
 
 .. _class_DisplayServer_constant_LIVE_ASSERTIVE:
@@ -1668,6 +1870,8 @@ Indicates that updates to the live region should be presented at the next opport
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>` **LIVE_ASSERTIVE** = ``2``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Indicates that updates to the live region have the highest priority and should be presented immediately.
 
@@ -1687,6 +1891,8 @@ enum **AccessibilityScrollUnit**: :ref:`🔗<enum_DisplayServer_AccessibilityScr
 
 :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>` **SCROLL_UNIT_ITEM** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 The amount by which to scroll. A single item of a list, line of text.
 
 .. _class_DisplayServer_constant_SCROLL_UNIT_PAGE:
@@ -1694,6 +1900,8 @@ The amount by which to scroll. A single item of a list, line of text.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityScrollUnit<enum_DisplayServer_AccessibilityScrollUnit>` **SCROLL_UNIT_PAGE** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 The amount by which to scroll. A single page.
 
@@ -1713,6 +1921,8 @@ enum **AccessibilityScrollHint**: :ref:`🔗<enum_DisplayServer_AccessibilityScr
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_TOP_LEFT** = ``0``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 A preferred position for the node scrolled into view. Top-left edge of the scroll container.
 
 .. _class_DisplayServer_constant_SCROLL_HINT_BOTTOM_RIGHT:
@@ -1720,6 +1930,8 @@ A preferred position for the node scrolled into view. Top-left edge of the scrol
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_BOTTOM_RIGHT** = ``1``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 A preferred position for the node scrolled into view. Bottom-right edge of the scroll container.
 
@@ -1729,6 +1941,8 @@ A preferred position for the node scrolled into view. Bottom-right edge of the s
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_TOP_EDGE** = ``2``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 A preferred position for the node scrolled into view. Top edge of the scroll container.
 
 .. _class_DisplayServer_constant_SCROLL_HINT_BOTTOM_EDGE:
@@ -1736,6 +1950,8 @@ A preferred position for the node scrolled into view. Top edge of the scroll con
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_BOTTOM_EDGE** = ``3``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 A preferred position for the node scrolled into view. Bottom edge of the scroll container.
 
@@ -1745,6 +1961,8 @@ A preferred position for the node scrolled into view. Bottom edge of the scroll 
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_LEFT_EDGE** = ``4``
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 A preferred position for the node scrolled into view. Left edge of the scroll container.
 
 .. _class_DisplayServer_constant_SCROLL_HINT_RIGHT_EDGE:
@@ -1752,6 +1970,8 @@ A preferred position for the node scrolled into view. Left edge of the scroll co
 .. rst-class:: classref-enumeration-constant
 
 :ref:`AccessibilityScrollHint<enum_DisplayServer_AccessibilityScrollHint>` **SCROLL_HINT_RIGHT_EDGE** = ``5``
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 A preferred position for the node scrolled into view. Right edge of the scroll container.
 
@@ -2525,6 +2745,16 @@ Sent when the window has been forcibly closed by the display server. The window 
 
 \ **Note:** This flag is implemented only on Linux (Wayland).
 
+.. _class_DisplayServer_constant_WINDOW_EVENT_OUTPUT_MAX_LINEAR_VALUE_CHANGED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_OUTPUT_MAX_LINEAR_VALUE_CHANGED** = ``9``
+
+Sent when the output max linear value returned by :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed.
+
+This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2909,6 +3139,8 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **accessibility_create_element**\ (\ window_id\: :ref:`int<class_int>`, role\: :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_create_element>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Creates a new, empty accessibility element resource.
 
 \ **Note:** An accessibility element is created and freed automatically for each :ref:`Node<class_Node>`. In general, this function should not be called manually.
@@ -2923,6 +3155,8 @@ Creates a new, empty accessibility element resource.
 
 :ref:`RID<class_RID>` **accessibility_create_sub_element**\ (\ parent_rid\: :ref:`RID<class_RID>`, role\: :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>`, insert_pos\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_accessibility_create_sub_element>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Creates a new, empty accessibility sub-element resource. Sub-elements can be used to provide accessibility information for objects which are not :ref:`Node<class_Node>`\ s, such as list items, table cells, or menu items. Sub-elements are freed automatically when the parent element is freed, or can be freed early using the :ref:`accessibility_free_element()<class_DisplayServer_method_accessibility_free_element>` method.
 
 .. rst-class:: classref-item-separator
@@ -2934,6 +3168,8 @@ Creates a new, empty accessibility sub-element resource. Sub-elements can be use
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **accessibility_create_sub_text_edit_elements**\ (\ parent_rid\: :ref:`RID<class_RID>`, shaped_text\: :ref:`RID<class_RID>`, min_height\: :ref:`float<class_float>`, insert_pos\: :ref:`int<class_int>` = -1, is_last_line\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Creates a new, empty accessibility sub-element from the shaped text buffer. Sub-elements are freed automatically when the parent element is freed, or can be freed early using the :ref:`accessibility_free_element()<class_DisplayServer_method_accessibility_free_element>` method.
 
@@ -2949,6 +3185,8 @@ If ``is_last_line`` is ``true``, no trailing newline is appended to the text con
 
 :ref:`Variant<class_Variant>` **accessibility_element_get_meta**\ (\ id\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_DisplayServer_method_accessibility_element_get_meta>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Returns the metadata of the accessibility element ``id``.
 
 .. rst-class:: classref-item-separator
@@ -2960,6 +3198,8 @@ Returns the metadata of the accessibility element ``id``.
 .. rst-class:: classref-method
 
 |void| **accessibility_element_set_meta**\ (\ id\: :ref:`RID<class_RID>`, meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_element_set_meta>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets the metadata of the accessibility element ``id`` to ``meta``.
 
@@ -2973,6 +3213,8 @@ Sets the metadata of the accessibility element ``id`` to ``meta``.
 
 |void| **accessibility_free_element**\ (\ id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_free_element>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Frees the accessibility element ``id`` created by :ref:`accessibility_create_element()<class_DisplayServer_method_accessibility_create_element>`, :ref:`accessibility_create_sub_element()<class_DisplayServer_method_accessibility_create_sub_element>`, or :ref:`accessibility_create_sub_text_edit_elements()<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`.
 
 .. rst-class:: classref-item-separator
@@ -2985,6 +3227,8 @@ Frees the accessibility element ``id`` created by :ref:`accessibility_create_ele
 
 :ref:`RID<class_RID>` **accessibility_get_window_root**\ (\ window_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_accessibility_get_window_root>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Returns the main accessibility element of the OS native window.
 
 .. rst-class:: classref-item-separator
@@ -2996,6 +3240,8 @@ Returns the main accessibility element of the OS native window.
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **accessibility_has_element**\ (\ id\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_DisplayServer_method_accessibility_has_element>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Returns ``true`` if ``id`` is a valid accessibility element.
 
@@ -3025,6 +3271,8 @@ Returns ``1`` if a screen reader, Braille display or other assistive app is acti
 
 |void| **accessibility_set_window_focused**\ (\ window_id\: :ref:`int<class_int>`, focused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_set_window_focused>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets the window focused state for assistive apps.
 
 \ **Note:** This method is implemented on Linux, macOS, and Windows.
@@ -3040,6 +3288,8 @@ Sets the window focused state for assistive apps.
 .. rst-class:: classref-method
 
 |void| **accessibility_set_window_rect**\ (\ window_id\: :ref:`int<class_int>`, rect_out\: :ref:`Rect2<class_Rect2>`, rect_in\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_set_window_rect>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets window outer (with decorations) and inner (without decorations) bounds for assistive apps.
 
@@ -3099,6 +3349,8 @@ Returns ``1`` if background images, transparency, and other features that can re
 
 |void| **accessibility_update_add_action**\ (\ id\: :ref:`RID<class_RID>`, action\: :ref:`AccessibilityAction<enum_DisplayServer_AccessibilityAction>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_action>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds a callback for the accessibility action (action which can be performed by using a special screen reader command or buttons on the Braille display), and marks this action as supported. The action callback receives one :ref:`Variant<class_Variant>` argument, which value depends on action type.
 
 .. rst-class:: classref-item-separator
@@ -3110,6 +3362,8 @@ Adds a callback for the accessibility action (action which can be performed by u
 .. rst-class:: classref-method
 
 |void| **accessibility_update_add_child**\ (\ id\: :ref:`RID<class_RID>`, child_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_child>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Adds a child accessibility element.
 
@@ -3125,6 +3379,8 @@ Adds a child accessibility element.
 
 |void| **accessibility_update_add_custom_action**\ (\ id\: :ref:`RID<class_RID>`, action_id\: :ref:`int<class_int>`, action_description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_custom_action>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds support for a custom accessibility action. ``action_id`` is passed as an argument to the callback of :ref:`ACTION_CUSTOM<class_DisplayServer_constant_ACTION_CUSTOM>` action.
 
 .. rst-class:: classref-item-separator
@@ -3136,6 +3392,8 @@ Adds support for a custom accessibility action. ``action_id`` is passed as an ar
 .. rst-class:: classref-method
 
 |void| **accessibility_update_add_related_controls**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_controls>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Adds an element that is controlled by this element.
 
@@ -3149,6 +3407,8 @@ Adds an element that is controlled by this element.
 
 |void| **accessibility_update_add_related_described_by**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_described_by>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds an element that describes this element.
 
 .. rst-class:: classref-item-separator
@@ -3160,6 +3420,8 @@ Adds an element that describes this element.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_add_related_details**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_details>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Adds an element that details this element.
 
@@ -3173,6 +3435,8 @@ Adds an element that details this element.
 
 |void| **accessibility_update_add_related_flow_to**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_flow_to>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds an element that this element flow into.
 
 .. rst-class:: classref-item-separator
@@ -3185,6 +3449,8 @@ Adds an element that this element flow into.
 
 |void| **accessibility_update_add_related_labeled_by**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_labeled_by>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds an element that labels this element.
 
 .. rst-class:: classref-item-separator
@@ -3196,6 +3462,8 @@ Adds an element that labels this element.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_add_related_radio_group**\ (\ id\: :ref:`RID<class_RID>`, related_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_add_related_radio_group>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Adds an element that is part of the same radio group.
 
@@ -3211,6 +3479,8 @@ Adds an element that is part of the same radio group.
 
 |void| **accessibility_update_set_active_descendant**\ (\ id\: :ref:`RID<class_RID>`, other_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_active_descendant>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Adds an element that is an active descendant of this element.
 
 .. rst-class:: classref-item-separator
@@ -3223,6 +3493,8 @@ Adds an element that is an active descendant of this element.
 
 |void| **accessibility_update_set_background_color**\ (\ id\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_background_color>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element background color.
 
 .. rst-class:: classref-item-separator
@@ -3233,7 +3505,9 @@ Sets element background color.
 
 .. rst-class:: classref-method
 
-|void| **accessibility_update_set_bounds**\ (\ id\: :ref:`RID<class_RID>`, p_rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_bounds>`
+|void| **accessibility_update_set_bounds**\ (\ id\: :ref:`RID<class_RID>`, rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_bounds>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element bounding box, relative to the node position.
 
@@ -3247,6 +3521,8 @@ Sets element bounding box, relative to the node position.
 
 |void| **accessibility_update_set_checked**\ (\ id\: :ref:`RID<class_RID>`, checekd\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_checked>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element checked state.
 
 .. rst-class:: classref-item-separator
@@ -3258,6 +3534,8 @@ Sets element checked state.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_classname**\ (\ id\: :ref:`RID<class_RID>`, classname\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_classname>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element class name.
 
@@ -3271,6 +3549,8 @@ Sets element class name.
 
 |void| **accessibility_update_set_color_value**\ (\ id\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_color_value>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element color value.
 
 .. rst-class:: classref-item-separator
@@ -3282,6 +3562,8 @@ Sets element color value.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_description**\ (\ id\: :ref:`RID<class_RID>`, description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_description>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element accessibility description.
 
@@ -3295,6 +3577,8 @@ Sets element accessibility description.
 
 |void| **accessibility_update_set_error_message**\ (\ id\: :ref:`RID<class_RID>`, other_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_error_message>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets an element which contains an error message for this element.
 
 .. rst-class:: classref-item-separator
@@ -3306,6 +3590,8 @@ Sets an element which contains an error message for this element.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_extra_info**\ (\ id\: :ref:`RID<class_RID>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_extra_info>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element accessibility extra information added to the element name.
 
@@ -3319,6 +3605,8 @@ Sets element accessibility extra information added to the element name.
 
 |void| **accessibility_update_set_flag**\ (\ id\: :ref:`RID<class_RID>`, flag\: :ref:`AccessibilityFlags<enum_DisplayServer_AccessibilityFlags>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_flag>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element flag.
 
 .. rst-class:: classref-item-separator
@@ -3330,6 +3618,8 @@ Sets element flag.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_focus**\ (\ id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_focus>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets currently focused element.
 
@@ -3343,6 +3633,8 @@ Sets currently focused element.
 
 |void| **accessibility_update_set_foreground_color**\ (\ id\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_foreground_color>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element foreground color.
 
 .. rst-class:: classref-item-separator
@@ -3354,6 +3646,8 @@ Sets element foreground color.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_in_page_link_target**\ (\ id\: :ref:`RID<class_RID>`, other_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_in_page_link_target>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets target element for the link.
 
@@ -3367,6 +3661,8 @@ Sets target element for the link.
 
 |void| **accessibility_update_set_language**\ (\ id\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_language>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element text language.
 
 .. rst-class:: classref-item-separator
@@ -3378,6 +3674,8 @@ Sets element text language.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_list_item_count**\ (\ id\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_item_count>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets number of items in the list.
 
@@ -3391,6 +3689,8 @@ Sets number of items in the list.
 
 |void| **accessibility_update_set_list_item_expanded**\ (\ id\: :ref:`RID<class_RID>`, expanded\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_item_expanded>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets list/tree item expanded status.
 
 .. rst-class:: classref-item-separator
@@ -3402,6 +3702,8 @@ Sets list/tree item expanded status.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_list_item_index**\ (\ id\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_item_index>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets the position of the element in the list.
 
@@ -3415,6 +3717,8 @@ Sets the position of the element in the list.
 
 |void| **accessibility_update_set_list_item_level**\ (\ id\: :ref:`RID<class_RID>`, level\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_item_level>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets the hierarchical level of the element in the list.
 
 .. rst-class:: classref-item-separator
@@ -3426,6 +3730,8 @@ Sets the hierarchical level of the element in the list.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_list_item_selected**\ (\ id\: :ref:`RID<class_RID>`, selected\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_item_selected>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets list/tree item selected status.
 
@@ -3439,6 +3745,8 @@ Sets list/tree item selected status.
 
 |void| **accessibility_update_set_list_orientation**\ (\ id\: :ref:`RID<class_RID>`, vertical\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_list_orientation>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets the orientation of the list elements.
 
 .. rst-class:: classref-item-separator
@@ -3450,6 +3758,8 @@ Sets the orientation of the list elements.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_live**\ (\ id\: :ref:`RID<class_RID>`, live\: :ref:`AccessibilityLiveMode<enum_DisplayServer_AccessibilityLiveMode>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_live>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets the priority of the live region updates.
 
@@ -3463,6 +3773,8 @@ Sets the priority of the live region updates.
 
 |void| **accessibility_update_set_member_of**\ (\ id\: :ref:`RID<class_RID>`, group_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_member_of>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets the element to be a member of the group.
 
 .. rst-class:: classref-item-separator
@@ -3474,6 +3786,8 @@ Sets the element to be a member of the group.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_name**\ (\ id\: :ref:`RID<class_RID>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_name>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element accessibility name.
 
@@ -3487,6 +3801,8 @@ Sets element accessibility name.
 
 |void| **accessibility_update_set_next_on_line**\ (\ id\: :ref:`RID<class_RID>`, other_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_next_on_line>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets next element on the line.
 
 .. rst-class:: classref-item-separator
@@ -3498,6 +3814,8 @@ Sets next element on the line.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_num_jump**\ (\ id\: :ref:`RID<class_RID>`, jump\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_num_jump>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets numeric value jump.
 
@@ -3511,6 +3829,8 @@ Sets numeric value jump.
 
 |void| **accessibility_update_set_num_range**\ (\ id\: :ref:`RID<class_RID>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_num_range>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets numeric value range.
 
 .. rst-class:: classref-item-separator
@@ -3522,6 +3842,8 @@ Sets numeric value range.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_num_step**\ (\ id\: :ref:`RID<class_RID>`, step\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_num_step>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets numeric value step.
 
@@ -3535,6 +3857,8 @@ Sets numeric value step.
 
 |void| **accessibility_update_set_num_value**\ (\ id\: :ref:`RID<class_RID>`, position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_num_value>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets numeric value.
 
 .. rst-class:: classref-item-separator
@@ -3546,6 +3870,8 @@ Sets numeric value.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_placeholder**\ (\ id\: :ref:`RID<class_RID>`, placeholder\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_placeholder>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets placeholder text.
 
@@ -3559,6 +3885,8 @@ Sets placeholder text.
 
 |void| **accessibility_update_set_popup_type**\ (\ id\: :ref:`RID<class_RID>`, popup\: :ref:`AccessibilityPopupType<enum_DisplayServer_AccessibilityPopupType>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_popup_type>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets popup type for popup buttons.
 
 .. rst-class:: classref-item-separator
@@ -3570,6 +3898,8 @@ Sets popup type for popup buttons.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_previous_on_line**\ (\ id\: :ref:`RID<class_RID>`, other_id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_previous_on_line>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets previous element on the line.
 
@@ -3583,6 +3913,8 @@ Sets previous element on the line.
 
 |void| **accessibility_update_set_role**\ (\ id\: :ref:`RID<class_RID>`, role\: :ref:`AccessibilityRole<enum_DisplayServer_AccessibilityRole>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_role>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element accessibility role.
 
 .. rst-class:: classref-item-separator
@@ -3594,6 +3926,8 @@ Sets element accessibility role.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_role_description**\ (\ id\: :ref:`RID<class_RID>`, description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_role_description>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element accessibility role description text.
 
@@ -3607,6 +3941,8 @@ Sets element accessibility role description text.
 
 |void| **accessibility_update_set_scroll_x**\ (\ id\: :ref:`RID<class_RID>`, position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_scroll_x>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets scroll bar x position.
 
 .. rst-class:: classref-item-separator
@@ -3618,6 +3954,8 @@ Sets scroll bar x position.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_scroll_x_range**\ (\ id\: :ref:`RID<class_RID>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_scroll_x_range>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets scroll bar x range.
 
@@ -3631,6 +3969,8 @@ Sets scroll bar x range.
 
 |void| **accessibility_update_set_scroll_y**\ (\ id\: :ref:`RID<class_RID>`, position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_scroll_y>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets scroll bar y position.
 
 .. rst-class:: classref-item-separator
@@ -3642,6 +3982,8 @@ Sets scroll bar y position.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_scroll_y_range**\ (\ id\: :ref:`RID<class_RID>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_scroll_y_range>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets scroll bar y range.
 
@@ -3655,6 +3997,8 @@ Sets scroll bar y range.
 
 |void| **accessibility_update_set_shortcut**\ (\ id\: :ref:`RID<class_RID>`, shortcut\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_shortcut>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets the list of keyboard shortcuts used by element.
 
 .. rst-class:: classref-item-separator
@@ -3666,6 +4010,8 @@ Sets the list of keyboard shortcuts used by element.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_state_description**\ (\ id\: :ref:`RID<class_RID>`, description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_state_description>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets human-readable description of the current checked state.
 
@@ -3679,6 +4025,8 @@ Sets human-readable description of the current checked state.
 
 |void| **accessibility_update_set_table_cell_position**\ (\ id\: :ref:`RID<class_RID>`, row_index\: :ref:`int<class_int>`, column_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_cell_position>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets cell position in the table.
 
 .. rst-class:: classref-item-separator
@@ -3690,6 +4038,8 @@ Sets cell position in the table.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_table_cell_span**\ (\ id\: :ref:`RID<class_RID>`, row_span\: :ref:`int<class_int>`, column_span\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_cell_span>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets cell row/column span.
 
@@ -3703,6 +4053,8 @@ Sets cell row/column span.
 
 |void| **accessibility_update_set_table_column_count**\ (\ id\: :ref:`RID<class_RID>`, count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_column_count>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets number of columns in the table.
 
 .. rst-class:: classref-item-separator
@@ -3714,6 +4066,8 @@ Sets number of columns in the table.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_table_column_index**\ (\ id\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_column_index>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets position of the column.
 
@@ -3727,6 +4081,8 @@ Sets position of the column.
 
 |void| **accessibility_update_set_table_row_count**\ (\ id\: :ref:`RID<class_RID>`, count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_row_count>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets number of rows in the table.
 
 .. rst-class:: classref-item-separator
@@ -3738,6 +4094,8 @@ Sets number of rows in the table.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_table_row_index**\ (\ id\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_table_row_index>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets position of the row in the table.
 
@@ -3751,6 +4109,8 @@ Sets position of the row in the table.
 
 |void| **accessibility_update_set_text_align**\ (\ id\: :ref:`RID<class_RID>`, align\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_text_align>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets element text alignment.
 
 .. rst-class:: classref-item-separator
@@ -3762,6 +4122,8 @@ Sets element text alignment.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_text_decorations**\ (\ id\: :ref:`RID<class_RID>`, underline\: :ref:`bool<class_bool>`, strikethrough\: :ref:`bool<class_bool>`, overline\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_text_decorations>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets text underline/overline/strikethrough.
 
@@ -3775,6 +4137,8 @@ Sets text underline/overline/strikethrough.
 
 |void| **accessibility_update_set_text_orientation**\ (\ id\: :ref:`RID<class_RID>`, vertical\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_text_orientation>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets text orientation.
 
 .. rst-class:: classref-item-separator
@@ -3786,6 +4150,8 @@ Sets text orientation.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_text_selection**\ (\ id\: :ref:`RID<class_RID>`, text_start_id\: :ref:`RID<class_RID>`, start_char\: :ref:`int<class_int>`, text_end_id\: :ref:`RID<class_RID>`, end_char\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_text_selection>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets text selection to the text field. ``text_start_id`` and ``text_end_id`` should be elements created by :ref:`accessibility_create_sub_text_edit_elements()<class_DisplayServer_method_accessibility_create_sub_text_edit_elements>`. Character offsets are relative to the corresponding element.
 
@@ -3799,6 +4165,8 @@ Sets text selection to the text field. ``text_start_id`` and ``text_end_id`` sho
 
 |void| **accessibility_update_set_tooltip**\ (\ id\: :ref:`RID<class_RID>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_tooltip>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets tooltip text.
 
 .. rst-class:: classref-item-separator
@@ -3810,6 +4178,8 @@ Sets tooltip text.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_transform**\ (\ id\: :ref:`RID<class_RID>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_transform>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element 2D transform.
 
@@ -3823,6 +4193,8 @@ Sets element 2D transform.
 
 |void| **accessibility_update_set_url**\ (\ id\: :ref:`RID<class_RID>`, url\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_url>`
 
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
+
 Sets link URL.
 
 .. rst-class:: classref-item-separator
@@ -3834,6 +4206,8 @@ Sets link URL.
 .. rst-class:: classref-method
 
 |void| **accessibility_update_set_value**\ (\ id\: :ref:`RID<class_RID>`, value\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_accessibility_update_set_value>`
+
+**Deprecated:** Use :ref:`AccessibilityServer<class_AccessibilityServer>` instead.
 
 Sets element text value.
 
@@ -5410,6 +5784,20 @@ Returns ``true`` if OS supports dark mode.
 
 ----
 
+.. _class_DisplayServer_method_is_in_pip_mode:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_in_pip_mode**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_is_in_pip_mode>`
+
+Returns ``true`` if the application is in picture-in-picture mode.
+
+\ **Note:** This method is implemented on Android.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_is_touchscreen_available:
 
 .. rst-class:: classref-method
@@ -5575,6 +5963,48 @@ Returns the mouse cursor's current position in screen coordinates.
 |void| **mouse_set_mode**\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ ) :ref:`🔗<class_DisplayServer_method_mouse_set_mode>`
 
 Sets the current mouse mode. See also :ref:`mouse_get_mode()<class_DisplayServer_method_mouse_get_mode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_pip_mode_enter:
+
+.. rst-class:: classref-method
+
+|void| **pip_mode_enter**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_pip_mode_enter>`
+
+Enters picture-in-picture mode.
+
+\ **Note:** This method is implemented on Android.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_pip_mode_set_aspect_ratio:
+
+.. rst-class:: classref-method
+
+|void| **pip_mode_set_aspect_ratio**\ (\ numerator\: :ref:`int<class_int>`, denominator\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_pip_mode_set_aspect_ratio>`
+
+Specifies the aspect ratio for picture-in-picture mode.
+
+\ **Note:** This method is implemented on Android.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_pip_mode_set_auto_enter_on_background:
+
+.. rst-class:: classref-method
+
+|void| **pip_mode_set_auto_enter_on_background**\ (\ auto_enter_on_background\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_pip_mode_set_auto_enter_on_background>`
+
+Specifies whether picture-in-picture mode should be entered automatically when the application goes in the background.
+
+\ **Note:** This method is implemented on Android.
 
 .. rst-class:: classref-item-separator
 
@@ -5878,7 +6308,7 @@ Sets the callback that should be called when a hardware keyboard is connected or
 
 |void| **set_icon**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_DisplayServer_method_set_icon>`
 
-Sets the window icon (usually displayed in the top-left corner) with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` instead.
+Sets the application icon and icons of all windows with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon()<class_DisplayServer_method_set_native_icon>` instead.
 
 \ **Note:** Requires support for :ref:`FEATURE_ICON<class_DisplayServer_constant_FEATURE_ICON>`.
 
@@ -6474,7 +6904,7 @@ Returns internal structure pointers for use in plugins.
 
 :ref:`float<class_float>` **window_get_output_max_linear_value**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_output_max_linear_value>`
 
-Returns the maximum value for linear color components that can be displayed for the window specified by ``window_id``, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. When HDR output is enabled, this is calculated based on :ref:`window_get_hdr_output_current_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_current_reference_luminance>` and :ref:`window_get_hdr_output_current_max_luminance()<class_DisplayServer_method_window_get_hdr_output_current_max_luminance>`. This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. Corresponds to :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>`.
+Returns the maximum value for linear color components that can be displayed for the window specified by ``window_id``, regardless of SDR or HDR output. Returns ``1.0`` if HDR is not enabled or not supported. When HDR output is enabled, this is calculated based on :ref:`window_get_hdr_output_current_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_current_reference_luminance>` and :ref:`window_get_hdr_output_current_max_luminance()<class_DisplayServer_method_window_get_hdr_output_current_max_luminance>`. The :ref:`Window.output_max_linear_value_changed<class_Window_signal_output_max_linear_value_changed>` signal will be emitted whenever this value changes. This value is used by tonemapping and other :ref:`Environment<class_Environment>` effects to ensure that bright colors are presented in the range that can be displayed by this window. Corresponds to :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6786,6 +7216,8 @@ Enables or disables the given window's given ``flag``.
 
 Sets the maximum luminance in nits (cd/m²) for HDR output by the window specified by ``window_id``. If ``max_luminance`` is negative, the window uses the screen's maximum luminance that is reported by the operating system. By default, this luminance is set to ``-1.0`` for every window. Typically this property should be left at this default value, but may optionally be exposed through in-game settings to allow the player to correct an inaccurate maximum luminance reported by the operating system. See also :ref:`window_get_hdr_output_current_max_luminance()<class_DisplayServer_method_window_get_hdr_output_current_max_luminance>` and :ref:`window_get_hdr_output_max_luminance()<class_DisplayServer_method_window_get_hdr_output_max_luminance>`.
 
+\ **Note:** This method is only implemented on macOS and Windows. Other platforms will always use the screen's maximum luminance that is reported by the operating system.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6797,6 +7229,22 @@ Sets the maximum luminance in nits (cd/m²) for HDR output by the window specifi
 |void| **window_set_hdr_output_reference_luminance**\ (\ reference_luminance\: :ref:`float<class_float>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_hdr_output_reference_luminance>`
 
 Sets the reference white luminance in nits (cd/m²) for HDR output by the window specified by ``window_id``. If ``reference_luminance`` is negative, the window automatically adjusts to the brightness set by the operating system. By default, this luminance is set to ``-1.0`` for every window. Typically this property should be left at this default value, but may optionally be exposed as an "HDR Brightness" in-game setting to allow the player to adjust the brightness of their game, independently of their device settings. See also :ref:`window_get_hdr_output_current_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_current_reference_luminance>` and :ref:`window_get_hdr_output_reference_luminance()<class_DisplayServer_method_window_get_hdr_output_reference_luminance>`.
+
+\ **Note:** This method is only implemented on Windows. Other platforms will always use the reference luminance that is reported by the operating system.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_set_icon:
+
+.. rst-class:: classref-method
+
+|void| **window_set_icon**\ (\ icon\: :ref:`Image<class_Image>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_icon>`
+
+Sets the window icon (usually displayed in the top-left corner) for the window specified by ``window_id``.
+
+\ **Note:** This method is implemented on Linux and Windows.
 
 .. rst-class:: classref-item-separator
 

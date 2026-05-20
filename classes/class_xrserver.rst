@@ -161,6 +161,18 @@ Emitted when a tracker is removed. You should remove any :ref:`XRController3D<cl
 
 Emitted when an existing tracker has been updated. This can happen if the user switches controllers.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRServer_signal_world_origin_changed:
+
+.. rst-class:: classref-signal
+
+**world_origin_changed**\ (\ ) :ref:`🔗<class_XRServer_signal_world_origin_changed>`
+
+Emitted when the world origin transform changes.
+
 .. rst-class:: classref-section-separator
 
 ----

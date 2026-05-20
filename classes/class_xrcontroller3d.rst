@@ -67,7 +67,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**button_pressed**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_pressed>`
+**button_pressed**\ (\ action_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_pressed>`
 
 Emitted when a button on this controller is pressed.
 
@@ -79,7 +79,7 @@ Emitted when a button on this controller is pressed.
 
 .. rst-class:: classref-signal
 
-**button_released**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_released>`
+**button_released**\ (\ action_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_released>`
 
 Emitted when a button on this controller is released.
 
@@ -91,7 +91,7 @@ Emitted when a button on this controller is released.
 
 .. rst-class:: classref-signal
 
-**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_XRController3D_signal_input_float_changed>`
+**input_float_changed**\ (\ action_name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_XRController3D_signal_input_float_changed>`
 
 Emitted when a trigger or similar input on this controller changes value.
 
@@ -103,7 +103,7 @@ Emitted when a trigger or similar input on this controller changes value.
 
 .. rst-class:: classref-signal
 
-**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_XRController3D_signal_input_vector2_changed>`
+**input_vector2_changed**\ (\ action_name\: :ref:`String<class_String>`, value\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_XRController3D_signal_input_vector2_changed>`
 
 Emitted when a thumbstick or thumbpad on this controller is moved.
 

@@ -23,6 +23,13 @@ This is an audio stream that can playback music interactively, combining clips a
 
 The way this is used is by filling a number of clips, then configuring the transition table. From there, clips are selected for playback and the music will smoothly go from the current to the new one while using the corresponding transition rule defined in the transition table.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio streams <../tutorials/audio/audio_streams>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -157,6 +164,14 @@ Transition to the same position in the destination clip. This is useful when bot
 :ref:`TransitionToTime<enum_AudioStreamInteractive_TransitionToTime>` **TRANSITION_TO_TIME_START** = ``1``
 
 Transition to the start of the destination clip.
+
+.. _class_AudioStreamInteractive_constant_TRANSITION_TO_TIME_PREVIOUS_POSITION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionToTime<enum_AudioStreamInteractive_TransitionToTime>` **TRANSITION_TO_TIME_PREVIOUS_POSITION** = ``2``
+
+Transition to the last played position in the destination clip, if there was a previous transition from that clip. Otherwise, plays from the start of the destination clip.
 
 .. rst-class:: classref-item-separator
 

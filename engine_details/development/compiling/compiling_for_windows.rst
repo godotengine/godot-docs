@@ -20,6 +20,7 @@ For compiling under Windows, the following is required:
     - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
       version 2019 or later. Visual Studio 2022 is recommended.
       **Make sure to enable C++ in the list of workflows to install.**
+      **Make sure to enable Windows SDK 10.0.22621 (for Visual Studio 2019) or more recent version (for Visual Studio 2022+).**
       If you've already installed Visual Studio without C++ support, run the installer
       again; it should present you a **Modify** button.
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
@@ -30,9 +31,9 @@ For compiling under Windows, the following is required:
     - `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
       an alternative to Visual Studio and MinGW-w64.
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `Python 3.8+ <https://www.python.org/downloads/windows/>`_.
+- `Python 3.9+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
-- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system. Using the
+- `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
 - :ref:`Direct3D 12 dependencies <doc_compiling_for_windows_installing_d3d12_requirements>`
@@ -298,24 +299,14 @@ Compiling with AccessKit support
 
 AccessKit provides support for screen readers.
 
-By default, Godot is built with AccessKit dynamically linked. You can use it by placing
-``accesskit.dll`` alongside the executable.
+Compiling with AccessKit requires additional dependencies to be installed.
+If you wish to skip this step, you can use the ``accesskit=no`` SCons option.
 
-.. note:: You can use dynamically linked AccessKit with export templates as well, rename
-          the DLL to ``accesskit.{architecture}.dll``
-          and place them alongside the export template executables, and the libraries will
-          be automatically copied during the export process.
+You can install the required dependencies by running
+``python misc/scripts/install_accesskit.py``
+in the Godot source repository. After running this script, compile Godot as usual.
 
-To compile Godot with statically linked AccessKit:
-
-- Download the pre-built static libraries from `godot-accesskit-c-static library <https://github.com/godotengine/godot-accesskit-c-static/releases>`_, and unzip them.
-- When building Godot, add ``accesskit_sdk_path={path}`` to tell SCons where to look for the AccessKit libraries:
-
-    ::
-
-        scons platform=windows accesskit_sdk_path=<...>
-
-.. note:: You can optionally build the godot-angle-static libraries yourself with
+.. note:: You can optionally build the AccessKit libraries yourself with
           the following steps:
 
           1. Clone the `godot-accesskit-c-static <https://github.com/godotengine/godot-accesskit-c-static/>`_
@@ -333,6 +324,46 @@ To compile Godot with statically linked AccessKit:
           same CRT (if you are building with MinGW) you are using for building
           Godot.
 
+          To compile Godot with a custom build of AccessKit, add ``accesskit_sdk_path={path}`` to
+          tell SCons where to look for the AccessKit libraries:
+
+          ::
+
+              scons platform=windows accesskit_sdk_path=<...>
+
+Compiling with WinRT support
+----------------------------
+
+WinRT provides support for OneCore TTS (accessing Windows 10+ voices), HDR color information monitoring, and emoji picker.
+
+If you are building with MinGW, compiling with WinRT requires additional dependencies to be installed.
+If you wish to skip this step, you can use the ``winrt=no`` SCons option.
+
+You can install the required dependencies by running
+``python misc/scripts/install_winrt.py``
+in the Godot source repository. After running this script, compile Godot as usual.
+
+.. note:: You can optionally build the WinRT headers yourself with
+          the following steps:
+
+          1. Clone the `winrt-mingw <https://github.com/godotengine/winrt-mingw>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cmake -Bbuild -DCMAKE_BUILD_TYPE=Release -DCPPWINRT_BUILD_VERSION=2.0.250303.1 -DBUILD_TESTING=OFF cppwinrt/
+              echo "" > build/app.manifest.rc
+              cmake --build build
+              ./build/cppwinrt.exe -input windows-rs/crates/libs/bindgen/default/ -output include/
+
+          To compile Godot with a custom build of WinRT, add ``winrt_path={path}`` to
+          tell SCons where to look for the AccessKit headers:
+
+          ::
+
+              scons platform=windows winrt_path=<...>
+
 Compiling with ANGLE support
 ----------------------------
 
@@ -340,22 +371,12 @@ ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be 
 to improve support for the Compatibility renderer on some older GPUs with outdated
 OpenGL drivers and on Windows for ARM.
 
-By default, Godot is built with dynamically linked ANGLE, you can use it by placing
-``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
+Compiling with ANGLE requires additional dependencies to be installed.
+If you wish to skip this step, you can use the ``angle=no`` SCons option.
 
-.. note:: You can use dynamically linked ANGLE with export templates as well, rename
-          the DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
-          and place them alongside the export template executables, and the libraries will
-          be automatically copied during the export process.
-
-To compile Godot with statically linked ANGLE:
-
-- Download the pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
-- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries:
-
-    ::
-
-        scons platform=windows angle_libs=<...>
+You can install the required dependencies by running
+``python misc/scripts/install_angle.py``
+in the Godot source repository. After running this script, compile Godot as usual.
 
 .. note:: You can optionally build the godot-angle-static libraries yourself with
           the following steps:
@@ -382,6 +403,13 @@ To compile Godot with statically linked ANGLE:
           The ANGLE static library should be built using the same compiler and the
           same CRT (if you are building with MinGW) you are using for building
           Godot.
+
+          To compile Godot with a custom build of ANGLE, add ``angle_libs={path}`` to
+          tell SCons where to look for the ANGLE libraries:
+
+          ::
+
+              scons platform=windows angle_libs=<...>
 
 Development in Visual Studio
 ----------------------------

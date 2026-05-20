@@ -61,29 +61,33 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Font<class_Font>`               | :ref:`base_font<class_FontVariation_property_base_font>`                       |                                   |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`             | :ref:`baseline_offset<class_FontVariation_property_baseline_offset>`           | ``0.0``                           |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`   | :ref:`opentype_features<class_FontVariation_property_opentype_features>`       | ``{}``                            |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`spacing_bottom<class_FontVariation_property_spacing_bottom>`             | ``0``                             |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`spacing_glyph<class_FontVariation_property_spacing_glyph>`               | ``0``                             |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`spacing_space<class_FontVariation_property_spacing_space>`               | ``0``                             |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`spacing_top<class_FontVariation_property_spacing_top>`                   | ``0``                             |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`float<class_float>`             | :ref:`variation_embolden<class_FontVariation_property_variation_embolden>`     | ``0.0``                           |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`variation_face_index<class_FontVariation_property_variation_face_index>` | ``0``                             |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`   | :ref:`variation_opentype<class_FontVariation_property_variation_opentype>`     | ``{}``                            |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Transform2D<class_Transform2D>` | :ref:`variation_transform<class_FontVariation_property_variation_transform>`   | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`                         | :ref:`base_font<class_FontVariation_property_base_font>`                         |                                   |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`baseline_offset<class_FontVariation_property_baseline_offset>`             | ``0.0``                           |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`             | :ref:`opentype_features<class_FontVariation_property_opentype_features>`         | ``{}``                            |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>` | :ref:`palette_custom_colors<class_FontVariation_property_palette_custom_colors>` | ``PackedColorArray()``            |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`palette_index<class_FontVariation_property_palette_index>`                 | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`spacing_bottom<class_FontVariation_property_spacing_bottom>`               | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`spacing_glyph<class_FontVariation_property_spacing_glyph>`                 | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`spacing_space<class_FontVariation_property_spacing_space>`                 | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`spacing_top<class_FontVariation_property_spacing_top>`                     | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`variation_embolden<class_FontVariation_property_variation_embolden>`       | ``0.0``                           |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`variation_face_index<class_FontVariation_property_variation_face_index>`   | ``0``                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`             | :ref:`variation_opentype<class_FontVariation_property_variation_opentype>`       | ``{}``                            |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Transform2D<class_Transform2D>`           | :ref:`variation_transform<class_FontVariation_property_variation_transform>`     | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
+   +-------------------------------------------------+----------------------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -152,6 +156,42 @@ Extra baseline offset (as a fraction of font height).
 - :ref:`Dictionary<class_Dictionary>` **get_opentype_features**\ (\ )
 
 A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontVariation_property_palette_custom_colors:
+
+.. rst-class:: classref-property
+
+:ref:`PackedColorArray<class_PackedColorArray>` **palette_custom_colors** = ``PackedColorArray()`` :ref:`🔗<class_FontVariation_property_palette_custom_colors>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_palette_custom_colors**\ (\ value\: :ref:`PackedColorArray<class_PackedColorArray>`\ )
+- :ref:`PackedColorArray<class_PackedColorArray>` **get_palette_custom_colors**\ (\ )
+
+An array of colors to override predefined palette. Use ``Color(0, 0, 0, 0)``, to keep predefined palette color at specific position.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontVariation_property_palette_index:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **palette_index** = ``0`` :ref:`🔗<class_FontVariation_property_palette_index>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_palette_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_palette_index**\ (\ )
+
+A palette index.
 
 .. rst-class:: classref-item-separator
 

@@ -1066,6 +1066,16 @@ Notification received when the mouse cursor leaves the :ref:`Viewport<class_View
 
 Notification received when the window is moved.
 
+.. _class_Node_constant_NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED** = ``1013`` :ref:`🔗<class_Node_constant_NOTIFICATION_WM_OUTPUT_MAX_LINEAR_VALUE_CHANGED>`
+
+Notification received when the output max linear value returned by :ref:`Window.get_output_max_linear_value()<class_Window_method_get_output_max_linear_value>` has changed.
+
+This occurs when HDR output is enabled or disabled and when any HDR output luminance values of the window have changed, such as when the player adjusts their screen brightness setting or moves the window to a different screen.
+
 .. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
 
 .. rst-class:: classref-constant
@@ -1173,6 +1183,22 @@ Implemented on desktop and mobile platforms.
 **NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018`` :ref:`🔗<class_Node_constant_NOTIFICATION_TEXT_SERVER_CHANGED>`
 
 Notification received when the :ref:`TextServer<class_TextServer>` is changed.
+
+.. _class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_ENTERED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APPLICATION_PIP_MODE_ENTERED** = ``2019`` :ref:`🔗<class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_ENTERED>`
+
+Notification received when the application enters picture-in-picture mode.
+
+.. _class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_EXITED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APPLICATION_PIP_MODE_EXITED** = ``2020`` :ref:`🔗<class_Node_constant_NOTIFICATION_APPLICATION_PIP_MODE_EXITED>`
+
+Notification received when the application exits picture-in-picture mode.
 
 .. _class_Node_constant_NOTIFICATION_ACCESSIBILITY_UPDATE:
 
@@ -2881,6 +2907,8 @@ Removes the node from the given ``group``. Does nothing if the node is not in th
 Changes the parent of this **Node** to the ``new_parent``. The node needs to already have a parent. The node's :ref:`owner<class_Node_property_owner>` is preserved if its owner is still reachable from the new location (i.e., the node is still a descendant of the new parent after the operation).
 
 If ``keep_global_transform`` is ``true``, the node's global transform will be preserved if supported. :ref:`Node2D<class_Node2D>`, :ref:`Node3D<class_Node3D>` and :ref:`Control<class_Control>` support this argument (but :ref:`Control<class_Control>` keeps only position).
+
+\ **Warning:** If :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` is enabled and reparenting causes a large change in global transform, the object may appear to move from its old position to its new one over the next physics tick. To avoid this, call :ref:`reset_physics_interpolation()<class_Node_method_reset_physics_interpolation>` after reparenting.
 
 .. rst-class:: classref-item-separator
 

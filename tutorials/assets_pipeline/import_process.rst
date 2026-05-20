@@ -73,6 +73,19 @@ When the MD5 checksum of the source asset changes, Godot will perform an
 automatic reimport of it, applying the preset configured for that specific
 asset.
 
+Ignoring specific folders
+-------------------------
+
+Sometimes, you have files that you don't want to be imported by Godot, such as
+images used in a game's press kit or promotional materials. You can place those
+files in a folder that you instruct Godot to ignore. Ignoring a folder ensures
+it is not imported by Godot; this also hides the folder from the FileSystem
+dock. Ignoring a folder also results in its contents not being exported with the
+project, therefore reducing the exported PCK size.
+
+See :ref:`doc_project_organization_ignoring_specific_folders`
+in the project organization tutorial for details.
+
 Files generated
 ---------------
 

@@ -296,8 +296,8 @@ shader, this value can be used as desired.
 | inout vec3 **BINORMAL**                | Binormal in model space.                               |
 |                                        | In world space if ``world_vertex_coords`` is used.     |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **POSITION**                  | If written to, overrides final vertex position in clip |
-|                                        | space.                                                 |
+| out vec4 **POSITION**                  | If written to on any branch, overrides final vertex    |
+|                                        | position in clip space.                                |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec2 **UV**                      | UV main channel.                                       |
 +----------------------------------------+--------------------------------------------------------+
@@ -341,8 +341,8 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **CUSTOM3**                    | Custom value from vertex primitive.                    |
 +----------------------------------------+--------------------------------------------------------+
-| out float **Z_CLIP_SCALE**             | If written to, scales the vertex towards the camera to |
-|                                        | avoid clipping into things like walls.                 |
+| out float **Z_CLIP_SCALE**             | If written to on any branch, scales the vertex towards |
+|                                        | the camera to avoid clipping into things like walls.   |
 |                                        | Lighting and shadows will continue to work correctly   |
 |                                        | when this is written to, but screen-space effects like |
 |                                        | SSAO and SSR may break with lower scales. Try to keep  |
@@ -449,16 +449,24 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | inout vec3 **BINORMAL**                | Binormal that comes from the ``vertex()`` function, in view space.                               |
 |                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **NORMAL_MAP**                | Set normal here if reading normal from a texture instead of ``NORMAL``.                          |
+| out vec3 **NORMAL_MAP**                | Set normal here in tangent space if reading normal from a texture instead of ``NORMAL``.         |
+|                                        | The blue channel is ignored, as it's reconstructed in the engine instead.                        |
+|                                        | This allows normal maps with :abbr:`RGTC (Red-Green Texture Compression)` compression to work.   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **NORMAL_MAP_DEPTH**         | Depth from ``NORMAL_MAP``. Defaults to ``1.0``.                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **BENT_NORMAL_MAP**           | Set bent normal map here in tangent space to enable                                              |
+|                                        | :ref:`bent normals <doc_standard_material_3d_bent_normal_map>`.                                  |
+|                                        | This is used to improve specular occlusion, and requires a specially authored bent normal map.   |
+|                                        | The blue channel is ignored, as it's reconstructed in the engine instead. This allows            |
+|                                        | bent normal maps with :abbr:`RGTC (Red-Green Texture Compression)` compression to work.          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white). Base color.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA**                    | Alpha (range ``[0.0, 1.0]``). If read from or written to, the material will go to the            |
 |                                        | transparent pipeline.                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
+| out float **ALPHA_SCISSOR_THRESHOLD**  | If written to on any branch, values below a certain amount of alpha are discarded.               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_HASH_SCALE**         | Alpha hash scale when using the alpha hash transparency mode. Defaults to ``1.0``.               |
 |                                        | Higher values result in more visible pixels in the dithering pattern.                            |
@@ -515,11 +523,12 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**                  | Emission color (can go over ``(1.0, 1.0, 1.0)`` for HDR).                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **FOG**                       | If written to, blends final pixel color with ``FOG.rgb`` based on ``FOG.a``.                     |
+| out vec4 **FOG**                       | If written to on any branch, blends final pixel color with ``FOG.rgb`` based on ``FOG.a``.       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **RADIANCE**                  | If written to, blends environment map radiance with ``RADIANCE.rgb`` based on ``RADIANCE.a``.    |
+| out vec4 **RADIANCE**                  | If written to on any branch, blends environment map radiance with ``RADIANCE.rgb`` based on      |
+|                                        | ``RADIANCE.a``.                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **IRRADIANCE**                | If written to, blends environment map irradiance with ``IRRADIANCE.rgb`` based on                |
+| out vec4 **IRRADIANCE**                | If written to on any branch, blends environment map irradiance with ``IRRADIANCE.rgb`` based on  |
 |                                        | ``IRRADIANCE.a``.                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 
@@ -544,7 +553,14 @@ Below is an example of a custom ``light()`` function using a Lambertian lighting
 .. code-block:: glsl
 
     void light() {
-        DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR / PI;
+        if (LIGHT_IS_AREA) {
+            // Area light GGX shading.
+            DIFFUSE_LIGHT += LIGHT_AREA_DIFFUSE_MULTIPLIER * ATTENUATION * LIGHT_COLOR;
+            SPECULAR_LIGHT += LIGHT_AREA_SPECULAR_MULTIPLIER * ATTENUATION * LIGHT_COLOR * SPECULAR_AMOUNT;
+        } else {
+            // Used for all other light types (directional, omni, spot).
+            DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR / PI;
+        }
     }
 
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
@@ -614,8 +630,8 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+------------------------------------------------------------------------+
 | out vec3 **SPECULAR_LIGHT**       | Specular light result.                                                 |
 +-----------------------------------+------------------------------------------------------------------------+
-| out float **ALPHA**               | Alpha (range ``[0.0, 1.0]``). If written to, the material will go to   |
-|                                   | the transparent pipeline.                                              |
+| out float **ALPHA**               | Alpha (range ``[0.0, 1.0]``). If written to on any branch, the         |
+|                                   | material will go through the transparent pipeline.                     |
 +-----------------------------------+------------------------------------------------------------------------+
 
 .. note::

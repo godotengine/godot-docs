@@ -46,7 +46,7 @@ rendering, where banding may be visible when using smooth gradient textures.
 
 There are two main ways to alleviate banding:
 
-- If using the Forward+ or Forward Mobile rendering methods, enable 
+- If using the Forward+ or Forward Mobile rendering methods, enable
   :ref:`Use Debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
   in **Project Settings > Rendering > Anti Aliasing**. This applies a fullscreen debanding
   shader as a post-processing effect and is very cheap.
@@ -72,11 +72,11 @@ Depth buffer precision
 ----------------------
 
 To sort objects in 3D space, rendering engines rely on a *depth buffer* (also
-called *Z-buffer*). This buffer has a finite precision: 24-bit on desktop
-platforms, sometimes 16-bit on mobile platforms (for performance reasons). If
-two different objects end up on the same buffer value, then Z-fighting will
-occur. This will materialize as textures flickering back and forth as the camera
-moves or rotates.
+called *Z-buffer*). This buffer has a finite precision: 32-bit on desktop
+platforms, 24-bit on mobile platforms (for performance reasons). If two
+different objects end up on the same buffer value, then Z-fighting will occur.
+This will materialize as textures flickering back and forth as the camera moves
+or rotates.
 
 To make the depth buffer more precise over the rendered area, you should
 *increase* the Camera node's **Near** property. However, be careful: if you set

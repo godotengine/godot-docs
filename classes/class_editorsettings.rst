@@ -61,7 +61,9 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`asset_library/use_threads<class_EditorSettings_property_asset_library/use_threads>`                                                                                                                         |
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`asset_store/available_urls<class_EditorSettings_property_asset_store/available_urls>`                                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`asset_store/use_threads<class_EditorSettings_property_asset_store/use_threads>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debugger/auto_switch_to_remote_scene_tree<class_EditorSettings_property_debugger/auto_switch_to_remote_scene_tree>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,6 +84,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`debugger/remote_scene_tree_refresh_interval<class_EditorSettings_property_debugger/remote_scene_tree_refresh_interval>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/ask_before_moving_files<class_EditorSettings_property_docks/filesystem/ask_before_moving_files>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/automatically_open_created_scripts<class_EditorSettings_property_docks/filesystem/automatically_open_created_scripts>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -129,7 +133,11 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/2d/locked_selection_rectangle_color<class_EditorSettings_property_editors/2d/locked_selection_rectangle_color>`                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/2d/ruler_width<class_EditorSettings_property_editors/2d/ruler_width>`                                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/2d/selection_rectangle_color<class_EditorSettings_property_editors/2d/selection_rectangle_color>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,6 +160,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`editors/3d/freelook/freelook_base_speed<class_EditorSettings_property_editors/3d/freelook/freelook_base_speed>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/freelook/freelook_inertia<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/3d/freelook/freelook_invert_y_axis<class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -309,6 +319,22 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_max_db_color<class_EditorSettings_property_editors/audio_buses/active_max_db_color>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_min_db_color<class_EditorSettings_property_editors/audio_buses/active_min_db_color>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/active_normalized_db_color<class_EditorSettings_property_editors/audio_buses/active_normalized_db_color>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_max_db_color<class_EditorSettings_property_editors/audio_buses/inactive_max_db_color>`                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_min_db_color<class_EditorSettings_property_editors/audio_buses/inactive_min_db_color>`                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/inactive_normalized_db_color<class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color>`                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/tint_over_color<class_EditorSettings_property_editors/audio_buses/tint_over_color>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`editors/audio_buses/tint_under_color<class_EditorSettings_property_editors/audio_buses/tint_under_color>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/error<class_EditorSettings_property_editors/bone_mapper/handle_colors/error>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/missing<class_EditorSettings_property_editors/bone_mapper/handle_colors/missing>`                                                                                         |
@@ -461,6 +487,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/accessibility/accessibility_support<class_EditorSettings_property_interface/accessibility/accessibility_support>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/accessibility/property_descriptions<class_EditorSettings_property_interface/accessibility/property_descriptions>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/appearance/accept_dialog_cancel_ok_buttons>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/collapse_main_menu<class_EditorSettings_property_interface/editor/appearance/collapse_main_menu>`                                                                               |
@@ -474,6 +502,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/expand_to_title<class_EditorSettings_property_interface/editor/appearance/expand_to_title>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/project_manager_screen<class_EditorSettings_property_interface/editor/appearance/project_manager_screen>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/show_renderer_selector<class_EditorSettings_property_interface/editor/appearance/show_renderer_selector>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/show_update_spinner<class_EditorSettings_property_interface/editor/appearance/show_update_spinner>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -550,8 +580,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`interface/editor/timers/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/timers/unfocused_low_processor_mode_sleep_usec>`                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editors/derive_script_globals_by_name<class_EditorSettings_property_interface/editors/derive_script_globals_by_name>`                                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editors/show_scene_tree_root_selection<class_EditorSettings_property_interface/editors/show_scene_tree_root_selection>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/auto_unfold_foreign_scenes<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -648,6 +676,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_pan_and_scale_gestures<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/enable_touch_optimizations<class_EditorSettings_property_interface/touchscreen/enable_touch_optimizations>`                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/touchscreen/haptic_on_long_press<class_EditorSettings_property_interface/touchscreen/haptic_on_long_press>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1073,13 +1103,25 @@ Emitted after any editor setting has changed. It's used by various editor plugin
 Property Descriptions
 ---------------------
 
-.. _class_EditorSettings_property_asset_library/use_threads:
+.. _class_EditorSettings_property_asset_store/available_urls:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **asset_library/use_threads** :ref:`🔗<class_EditorSettings_property_asset_library/use_threads>`
+:ref:`Dictionary<class_Dictionary>` **asset_store/available_urls** :ref:`🔗<class_EditorSettings_property_asset_store/available_urls>`
 
-If ``true``, the Asset Library uses multiple threads for its HTTP requests. This prevents the Asset Library from blocking the main thread for every loaded asset.
+A list of the available URLs that can be chosen in the Asset Store to fetch asset data. With the key being the name, and the value being the URL.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_asset_store/use_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **asset_store/use_threads** :ref:`🔗<class_EditorSettings_property_asset_store/use_threads>`
+
+If ``true``, the Asset Store uses multiple threads for its HTTP requests. This prevents the Asset Store from blocking the main thread for every loaded asset.
 
 .. rst-class:: classref-item-separator
 
@@ -1208,6 +1250,18 @@ The refresh interval for the remote scene tree (in seconds). Lower values are mo
 If ``true``, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If ``false``, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the ``res://`` folder path.
 
 \ **Note:** This setting has no effect when split mode is disabled (which is the default).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_docks/filesystem/ask_before_moving_files:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/filesystem/ask_before_moving_files** :ref:`🔗<class_EditorSettings_property_docks/filesystem/ask_before_moving_files>`
+
+If ``true``, displays a confirmation dialog when moving or duplicating items in the FileSystem dock. This dialog can also be bypassed by holding :kbd:`Shift`.
 
 .. rst-class:: classref-item-separator
 
@@ -1493,6 +1547,18 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 
 ----
 
+.. _class_EditorSettings_property_editors/2d/locked_selection_rectangle_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/locked_selection_rectangle_color** :ref:`🔗<class_EditorSettings_property_editors/2d/locked_selection_rectangle_color>`
+
+The color to use for the selection rectangle that surrounds selected locked nodes in the 2D editor viewport.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/2d/ruler_width:
 
 .. rst-class:: classref-property
@@ -1500,6 +1566,18 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 :ref:`float<class_float>` **editors/2d/ruler_width** :ref:`🔗<class_EditorSettings_property_editors/2d/ruler_width>`
 
 The thickness of the coordinate ruler in the 2D editor. Increasing this will also increase the size of the ruler font, improving readability when using a lower editor scale. The editor may force a minimum size to keep the ruler numbers legible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/2d/selection_rectangle_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/selection_rectangle_color** :ref:`🔗<class_EditorSettings_property_editors/2d/selection_rectangle_color>`
+
+The color to use for the selection rectangle outlines that surrounds selected nodes in the 2D editor viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1559,7 +1637,7 @@ The factor to use when zooming in or out in the 2D editor. For example, ``1.1`` 
 
 :ref:`Color<class_Color>` **editors/3d/active_selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/active_selection_box_color>`
 
-The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+The color to use for the active selection box that surrounds selected nodes in the 3D editor viewport.
 
 \ **Note:** The term "active" indicates that this object is the primary selection used as the basis for certain operations. This is the last selected :ref:`Node3D<class_Node3D>`, which can be reordered with :kbd:`Shift + Left mouse button`.
 
@@ -1640,6 +1718,18 @@ The base 3D freelook speed in units per second. This can be adjusted by using th
 :ref:`float<class_float>` **editors/3d/freelook/freelook_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`
 
 The inertia of the 3D freelook camera. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/freelook/freelook_invert_y_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_invert_y_axis>`
+
+If ``true``, invert the vertical mouse axis when using freelook mode in the 3D editor.
 
 .. rst-class:: classref-item-separator
 
@@ -1841,7 +1931,7 @@ If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D
 
 :ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`
 
-If ``true``, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
+If ``true``, invert the vertical mouse axis when panning or orbiting in the 3D editor.
 
 .. rst-class:: classref-item-separator
 
@@ -2071,7 +2161,7 @@ The color to use for the secondary 3D grid. This is generally a less visible col
 
 :ref:`Color<class_Color>` **editors/3d/selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/selection_box_color>`
 
-The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+The color to use for the selection box that surrounds selected nodes in the 3D editor viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -2606,6 +2696,102 @@ The modulate color to use for "future" frames displayed in the animation editor'
 :ref:`Color<class_Color>` **editors/animation/onion_layers_past_color** :ref:`🔗<class_EditorSettings_property_editors/animation/onion_layers_past_color>`
 
 The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_max_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_max_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_max_db_color>`
+
+The color at the top of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_min_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_min_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_min_db_color>`
+
+The color at the bottom of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/active_normalized_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/active_normalized_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/active_normalized_db_color>`
+
+The color at 0 dB of the VU meter gradient when it is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_max_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_max_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_max_db_color>`
+
+The color at the top of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_min_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_min_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_min_db_color>`
+
+The color at the bottom of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/inactive_normalized_db_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/inactive_normalized_db_color>`
+
+The color at 0 dB of the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/tint_over_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/tint_over_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/tint_over_color>`
+
+The multiplier color for the VU meter gradient when it is inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/audio_buses/tint_under_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/audio_buses/tint_under_color** :ref:`🔗<class_EditorSettings_property_editors/audio_buses/tint_under_color>`
+
+The multiplier color for the VU meter gradient where audio is not reaching.
 
 .. rst-class:: classref-item-separator
 
@@ -3620,6 +3806,18 @@ Editor accessibility support mode:
 
 ----
 
+.. _class_EditorSettings_property_interface/accessibility/property_descriptions:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/accessibility/property_descriptions** :ref:`🔗<class_EditorSettings_property_interface/accessibility/property_descriptions>`
+
+If ``true``, editor inspector uses property documentation as an accessible description of the property.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/appearance/accept_dialog_cancel_ok_buttons:
 
 .. rst-class:: classref-property
@@ -3719,6 +3917,18 @@ Specific to the macOS platform.
 :ref:`int<class_int>` **interface/editor/appearance/project_manager_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/appearance/project_manager_screen>`
 
 The preferred monitor to display the project manager.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/appearance/show_renderer_selector:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/appearance/show_renderer_selector** :ref:`🔗<class_EditorSettings_property_interface/editor/appearance/show_renderer_selector>`
+
+If ``true``, a renderer selector that can be used to change the :ref:`ProjectSettings.rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>` project setting will be shown in the top right of the main editor window.
 
 .. rst-class:: classref-item-separator
 
@@ -4234,18 +4444,6 @@ If ``true``, when extending a script, the global class name of the script is ins
 
 ----
 
-.. _class_EditorSettings_property_interface/editors/show_scene_tree_root_selection:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editors/show_scene_tree_root_selection** :ref:`🔗<class_EditorSettings_property_interface/editors/show_scene_tree_root_selection>`
-
-If ``true``, the Scene dock will display buttons to quickly add a root node to a newly created scene.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes:
 
 .. rst-class:: classref-property
@@ -4666,7 +4864,7 @@ The editor color preset to use.
 
 :ref:`float<class_float>` **interface/theme/contrast** :ref:`🔗<class_EditorSettings_property_interface/theme/contrast>`
 
-The contrast factor to use when deriving the editor theme's base color (see :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`). When using a positive values, the derived colors will be *darker* than the base color. This contrast factor can be set to a negative value, which will make the derived colors *brighter* than the base color. Negative contrast rates often look better for light themes.
+The contrast factor to use when deriving the editor theme's base color (see :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`). When using positive values, the derived colors will be *darker* than the base color. This contrast factor can be set to a negative value, which will make the derived colors *brighter* than the base color. Negative contrast rates often look better for light themes.
 
 .. rst-class:: classref-item-separator
 
@@ -4874,6 +5072,20 @@ If ``true``, increases the scrollbar touch area, enables a larger dragger for sp
 
 ----
 
+.. _class_EditorSettings_property_interface/touchscreen/haptic_on_long_press:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/touchscreen/haptic_on_long_press** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/haptic_on_long_press>`
+
+If ``true``, the device will vibrate when a long-press gesture triggers a right-click context menu in the editor.
+
+\ **Note:** Only has an effect on devices with haptic feedback hardware. Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles:
 
 .. rst-class:: classref-property
@@ -4932,7 +5144,7 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 
 :ref:`int<class_int>` **network/connection/network_mode** :ref:`🔗<class_EditorSettings_property_network/connection/network_mode>`
 
-Determines whether online features, such as the Asset Library or update checks, are enabled in the editor. If this is a privacy concern, disabling these online features prevents the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
+Determines whether online features, such as the Asset Store or update checks, are enabled in the editor. If this is a privacy concern, disabling these online features prevents the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Store.
 
 Editor plugins and tool scripts are recommended to follow this setting. However, Godot can't prevent them from violating this rule.
 
@@ -4970,7 +5182,7 @@ The port to listen to when starting the remote debugger. Godot will try to use p
 
 :ref:`String<class_String>` **network/http_proxy/host** :ref:`🔗<class_EditorSettings_property_network/http_proxy/host>`
 
-The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
+The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset store and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
 
 \ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
@@ -4984,7 +5196,7 @@ The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset
 
 :ref:`int<class_int>` **network/http_proxy/port** :ref:`🔗<class_EditorSettings_property_network/http_proxy/port>`
 
-The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
+The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset store and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
 
 \ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
 
@@ -5085,7 +5297,7 @@ If ``true`` the language server will run in a separate thread, if ``false`` it w
 
 :ref:`String<class_String>` **network/tls/editor_tls_certificates** :ref:`🔗<class_EditorSettings_property_network/tls/editor_tls_certificates>`
 
-The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__ will be used.
+The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the Asset Store tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-bundle.crt>`__ will be used.
 
 .. rst-class:: classref-item-separator
 

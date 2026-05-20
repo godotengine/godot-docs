@@ -475,11 +475,23 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 
 
+.. _class_ScriptLanguageExtension_constant_CODE_COMPLETION_KIND_KEYWORD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_KEYWORD** = ``10``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+
+
+
 .. _class_ScriptLanguageExtension_constant_CODE_COMPLETION_KIND_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_MAX** = ``10``
+:ref:`CodeCompletionKind<enum_ScriptLanguageExtension_CodeCompletionKind>` **CODE_COMPLETION_KIND_MAX** = ``11``
 
 .. container:: contribute
 
@@ -1208,9 +1220,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 |void| **_reload_scripts**\ (\ scripts\: :ref:`Array<class_Array>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| |required| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_scripts>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Reloads all ``scripts`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
 
 .. rst-class:: classref-item-separator
 
@@ -1222,9 +1232,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 |void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| |required| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_tool_script>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+Reloads the given ``script`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
 
 .. rst-class:: classref-item-separator
 

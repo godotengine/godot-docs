@@ -48,7 +48,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         # Perform a POST request. The URL below returns JSON as of writing.
         # Note: Don't make simultaneous requests using a single HTTPRequest node.
         # The snippet below is provided for reference only.
-        var body = JSON.new().stringify({"name": "Godette"})
+        var body = JSON.stringify({"name": "Godette"})
         error = http_request.request("https://httpbin.org/post", [], HTTPClient.METHOD_POST, body)
         if error != OK:
             push_error("An error occurred in the HTTP request.")
@@ -81,7 +81,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         // Perform a POST request. The URL below returns JSON as of writing.
         // Note: Don't make simultaneous requests using a single HTTPRequest node.
         // The snippet below is provided for reference only.
-        string body = new Json().Stringify(new Godot.Collections.Dictionary
+        string body = Json.Stringify(new Godot.Collections.Dictionary
         {
             { "name", "Godette" }
         });

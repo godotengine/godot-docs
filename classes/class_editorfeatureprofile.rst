@@ -92,7 +92,7 @@ The Script tab, which contains the script editor and class reference browser. If
 
 :ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_ASSET_LIB** = ``2``
 
-The AssetLib tab. If this feature is disabled, the AssetLib tab won't display.
+The Asset Store tab. If this feature is disabled, the Asset Store tab won't display.
 
 .. _class_EditorFeatureProfile_constant_FEATURE_SCENE_TREE:
 

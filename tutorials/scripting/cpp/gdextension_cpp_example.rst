@@ -548,6 +548,7 @@ The first two arguments are the minimum and maximum value and the third is the s
     For simplicity, we've only used the hint_range of the property method.
     There are a lot more options to choose from. These can be used to
     further configure how properties are displayed and set on the Godot side.
+    You can find more information on property hints here :ref:`@GlobalScope<enum_@GlobalScope_PropertyHint>`.
 
 Signals
 -------

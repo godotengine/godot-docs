@@ -39,14 +39,14 @@ And many of the callbacks that *do* exist in Nodes don't have any dedicated
 methods, but are still quite useful.
 
 - :ref:`Node::NOTIFICATION_PARENTED <class_Node_constant_NOTIFICATION_PARENTED>`:
-  a callback that triggers anytime one adds a child node to another node.
+  a callback that triggers anytime you add a child node to another node.
 
 - :ref:`Node::NOTIFICATION_UNPARENTED <class_Node_constant_NOTIFICATION_UNPARENTED>`:
-  a callback that triggers anytime one removes a child node from another
+  a callback that triggers anytime you remove a child node from another
   node.
 
-One can access all these custom notifications from the universal
-``_notification()`` method.
+The universal ``_notification()`` method provides access to all these custom
+notifications.
 
 .. note::
   Methods in the documentation labeled as "virtual" are also intended to be
@@ -57,17 +57,17 @@ One can access all these custom notifications from the universal
   ``NOTIFICATION_*`` equivalent, the engine still calls the method. Most languages
   (except C#) rely on it as a constructor.
 
-So, in which situation should one use each of these notifications or
+So, when should you use each of these notifications or
 virtual functions?
 
 _process vs. _physics_process vs. \*_input
 ------------------------------------------
 
-Use ``_process()`` when one needs a framerate-dependent delta time between
+Use ``_process()`` when you need a framerate-dependent delta time between
 frames. If code that updates object data needs to update as often as
 possible, this is the right place. Recurring logic checks and data caching
-often execute here, but it comes down to the frequency at which one needs
-the evaluations to update. If they don't need to execute every frame, then
+often execute here, but it comes down to how often
+the evaluations need to update. If they don't need to execute every frame, then
 implementing a Timer-timeout loop is another option.
 
 .. tabs::
@@ -125,19 +125,19 @@ implementing a Timer-timeout loop is another option.
         }
     };
 
-Use ``_physics_process()`` when one needs a framerate-independent delta time
+Use ``_physics_process()`` when you need a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
 Recurring kinematic and object transform operations should execute here.
 
-While it is possible, to achieve the best performance, one should avoid
+While it is possible, to achieve the best performance, you should avoid
 making input checks during these callbacks. ``_process()`` and
 ``_physics_process()`` will trigger at every opportunity (they do not "rest" by
 default). In contrast, ``*_input()`` callbacks will trigger only on frames in
 which the engine has actually detected the input.
 
-One can check for input actions within the input callbacks just the same.
-If one wants to use delta time, one can fetch it from the related
+You can check for input actions within the input callbacks just the same.
+If you want to use delta time, you can fetch it from the related
 delta time methods as needed.
 
 .. tabs::
@@ -246,7 +246,7 @@ values will set up according to the following sequence:
         # Triggers the setter, changing test's value from "one" to "two!".
         test = "two"
 
-    # If someone sets test to "three" from the Inspector, it would trigger
+    # If you set test to "three" from the Inspector, it would trigger
     # the setter, changing test's value from "two!" to "three!".
 
   .. code-tab:: csharp
@@ -270,7 +270,7 @@ values will set up according to the following sequence:
             Test = "two";
         }
 
-        // If someone sets Test to "three" in the Inspector, it would trigger
+        // If you set Test to "three" in the Inspector, it would trigger
         // the setter, changing _test's value from "two!" to "three!".
     }
 
@@ -299,7 +299,7 @@ values will set up according to the following sequence:
             set_test("two");
         }
 
-        // If someone sets test to "three" in the Inspector, it would trigger
+        // If you set test to "three" in the Inspector, it would trigger
         // the setter, changing test's value from "two!" to "three!".
     };
 
@@ -321,12 +321,12 @@ added to the SceneTree upon creation, so no ``_enter_tree()`` callbacks
 trigger. Instead, only the ``_init()`` call occurs. When the scene is added
 to the SceneTree, the ``_enter_tree()`` and ``_ready()`` calls occur.
 
-If one needs to trigger behavior that occurs as nodes parent to another,
-regardless of whether it occurs as part of the main/active scene or not, one
+If you need to trigger behavior that occurs as nodes parent to another,
+regardless of whether it occurs as part of the main/active scene or not, you
 can use the :ref:`PARENTED <class_Node_constant_NOTIFICATION_PARENTED>` notification.
 For example, here is a snippet that connects a node's method to
 a custom signal on the parent node without failing. Useful on data-centric
-nodes that one might create at runtime.
+nodes potentially created at runtime.
 
 .. tabs::
   .. code-tab:: gdscript GDScript

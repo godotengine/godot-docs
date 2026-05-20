@@ -80,6 +80,9 @@ For more complex use cases, these can be used:
   that does **not** print to the editor Output panel.
   It prints to the standard output stream *only*, which means it's still included
   in file logging.
+- :ref:`print_debug() <class_@GDScript_method_print_debug>`: Same as ``print()``,
+  but adds the current stack frame on a new line at the end. Only supported when
+  running from the editor, or when the project is exported in debug mode.
 - :ref:`print_stack() <class_@GDScript_method_print_stack>`: Print a stack trace
   from the current location. Only supported when running from the editor,
   or when the project is exported in debug mode.

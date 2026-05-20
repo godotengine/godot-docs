@@ -69,7 +69,7 @@ to save you time coding games. Its features include:
 - Built-in vector and transform types, making it efficient for heavy use of
   linear algebra, a must for games.
 - Supports multiple threads as efficiently as statically typed languages.
-- No `garbage collection
+- No tracing `garbage collection
   <https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>`_, as
   this feature eventually gets in the way when creating games. The engine counts
   references and manages the memory for you in most cases by default, but you

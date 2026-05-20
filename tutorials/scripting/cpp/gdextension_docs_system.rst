@@ -53,7 +53,7 @@ help dialog. If everything went well, you should see something like this:
 Writing and styling documentation
 ---------------------------------
 
-The format of the class reference XML files is the same as the one used by Godot. Is is documented in
+The format of the class reference XML files is the same as the one used by Godot. It is documented in
 :ref:`doc_class_reference_primer`.
 
 If you are looking for pointers to write high quality documentation, feel free to refer to Godot's
