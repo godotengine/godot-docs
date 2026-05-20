@@ -70,7 +70,7 @@ Godot has a node that detects when objects leave the screen,
     called pooling. It consists of pre-creating an array of objects and reusing
     them over and over.
 
-    When working with GDScript, you don't need to worry about this. The main
+    When working with GDScript, this usually isn't needed. The main
     reason to use pools is to avoid freezes with garbage-collected languages
     like C# or Lua. GDScript uses a different technique to manage memory,
     reference counting, which doesn't have that caveat. You can learn more
