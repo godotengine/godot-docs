@@ -393,6 +393,12 @@ of this penumbra can be controlled with the Light3D **Size** property. This
 effect can be quite demanding, so it can be turned off by setting **Size** to
 ``0.0``.
 
+.. note::
+
+    Shadows cast by an area light may look incorrect if the object casting shadows
+    doesn't have enough subdivisions and it's very close to the area light.
+    This is the same limitation as Dual Paraboloid shadow mode on an omni light.
+
 .. image:: img/lights_and_shadows_area_example.webp
 
 .. note::
