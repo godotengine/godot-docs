@@ -643,7 +643,7 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Raises ``e`` to the power of ``x``, or the the natural exponentiation.
+    Raises ``e`` to the power of ``x``, or the natural exponentiation.
 
     Equivalent to ``pow(e, x)``.
 
