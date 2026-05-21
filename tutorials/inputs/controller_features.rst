@@ -113,11 +113,13 @@ Here's an image of the axes mapping for more clarity:
 .. image:: img/controller_axes.webp
 
 The controller's gyroscope values show rotation around their respective axes:
+
 - the X value of the gyroscope data shows the rotation around the X axis (roll).
 - the Y value of the gyroscope data shows the rotation around the Y axis (yaw).
 - the Z value of the gyroscope data shows the rotation around the Z axis (pitch).
 
 The controller's accelerometer will provide values in the following ways, respectively:
+
 - Movement left and right are reported as **+X** and **-X**.
 - Movement down and up are reported as **+Y** and **-Y**.
 - Movement away from and towards the user are reported as **+Z** and **-Z**.
