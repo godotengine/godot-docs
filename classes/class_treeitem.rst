@@ -196,7 +196,7 @@ Methods
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`remove_child<class_TreeItem_method_remove_child>`\ (\ child\: :ref:`TreeItem<class_TreeItem>`\ )                                                                                                                                                                                                              |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                            | :ref:`select<class_TreeItem_method_select>`\ (\ column\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                   |
+   | |void|                                                            | :ref:`select<class_TreeItem_method_select>`\ (\ column\: :ref:`int<class_int>`, set_as_cursor\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                   |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`set_accept_children<class_TreeItem_method_set_accept_children>`\ (\ allowed\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                      |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1318,9 +1318,9 @@ Removes the given child **TreeItem** and all its children from the :ref:`Tree<cl
 
 .. rst-class:: classref-method
 
-|void| **select**\ (\ column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TreeItem_method_select>`
+|void| **select**\ (\ column\: :ref:`int<class_int>`, set_as_cursor\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_TreeItem_method_select>`
 
-Selects the given ``column``.
+Selects the given ``column``. If ``set_as_cursor`` is ``true``, the :ref:`Tree<class_Tree>`'s cursor will be moved to this item (only matters if :ref:`Tree.select_mode<class_Tree_property_select_mode>` is set to :ref:`Tree.SELECT_MULTI<class_Tree_constant_SELECT_MULTI>`).
 
 .. rst-class:: classref-item-separator
 
