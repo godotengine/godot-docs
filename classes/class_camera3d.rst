@@ -25,6 +25,19 @@ Description
 
 .. rst-class:: classref-introduction-group
 
+Editor and Inspector `:ref: Camera3D<class_Camera3D>` preview
+-----------------------------------------------------------
+
+When selecting the `:ref: Camera3D<class_Camera3D>` node in your scene, you will see a camera preview at the top of your inspector. 
+`<https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_inspector.png>`
+If you ever want to remove this preivew, you can make a plugin.
+For reference, this is the pull request that contributed to this change `<https://github.com/godotengine/godot/pull/90778>`. 
+From this pull request you can see code on how to make a plugin that can diable preview in inspector, and any further details you may want.
+You can also see this preview at a larger scale when you select your `:ref: Camera3D<class_Camera3D>` node and check Preview.
+`<https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_editor_preview.png>`
+
+
+
 Tutorials
 ---------
 
