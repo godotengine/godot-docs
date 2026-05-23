@@ -26,7 +26,7 @@ Description
 .. rst-class:: classref-introduction-group
 
 Editor and Inspector `:ref: Camera3D<class_Camera3D>` preview
------------------------------------------------------------
+-------------------------------------------------------------
 
 When selecting the `:ref: Camera3D<class_Camera3D>` node in your scene, you will see a camera preview at the top of your inspector. 
 `<https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_inspector.png>`
