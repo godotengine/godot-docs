@@ -13766,6 +13766,8 @@ Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<cl
 
 \ **Note:** If :ref:`rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` is lower than ``1.0`` (exclusive), :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>` is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``log2(scaling_3d_scale) + mipmap_bias``.
 
+\ **Note:** This property is only supported in the Forward+ and Mobile renderers, not Compatibility. In Compatibility, this property is always treated as if it was set to ``0.0``.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -12829,6 +12829,8 @@ Affects the final texture sharpness by reading from a lower or higher mipmap (al
 
 \ **Note:** When the 3D scaling mode is set to FSR 1.0, this value is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``-log2(1.0 / scale) + mipmap_bias``.
 
+\ **Note:** This method is only supported in the Forward+ and Mobile renderers, not Compatibility. In Compatibility, this method is always treated as if ``mipmap_bias`` was set to ``0.0``.
+
 .. rst-class:: classref-item-separator
 
 ----
