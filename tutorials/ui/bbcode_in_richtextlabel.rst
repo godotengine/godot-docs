@@ -36,7 +36,7 @@ Using BBCode
 ------------
 
 By default, :ref:`class_RichTextLabel` functions like a normal :ref:`class_Label`.
-It has the :ref:`property_text <class_RichTextLabel_property_text>` property, which you can
+It has the :ref:`text <class_RichTextLabel_property_text>` property, which you can
 edit to have uniformly formatted text. To be able to use BBCode for rich text formatting,
 you need to turn on the BBCode mode by setting :ref:`bbcode_enabled <class_RichTextLabel_property_bbcode_enabled>`.
 After that, you can edit the :ref:`text <class_RichTextLabel_property_text>`
