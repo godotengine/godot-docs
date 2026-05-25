@@ -1,0 +1,209 @@
+# This file is for the github actions labeler: https://github.com/actions/labeler
+# This file is used for stating which files get what label.
+# A github action needs to be run for assignment to happen.
+
+area:about:
+- changed-files:
+  - any-glob-to-any-files: area/**
+
+area:community:
+- changed-files:
+  - any-glob-to-any-files: community/**
+
+area:engine details:
+- changed-files:
+  - any-glob-to-any-files: engine_details/**
+
+area:getting started:
+- changed-files:
+  - any-glob-to-any-files: getting_started/**
+
+area:manual:
+- changed-files:
+  - any-glob-to-any-files: tutorials/**
+
+area:class reference:
+- changed-files:
+  - any-glob-to-any-files: classes/**
+
+content:website:
+- changed-files:
+  - any-glob-to-any-files:
+    - _extensions/**
+    - _static/**
+    - _styleguides/**
+    - _templates/**
+    - _tools/**
+
+platform:android:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_android.rst
+    - engine_details/development/configuring_an_ide/android_studio.rst
+    - tutorials/editor/using_the_android_editor.rst
+    - tutorials/export/android_gradle_build.rst
+    - tutorials/export/exporting_for_android.rst
+    - tutorials/platofrm/android/**
+
+platform:ios:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_ios.rst
+    - engine_details/development/compiling/compiling_for_ios_on_linux.rst
+    - tutorials/export/exporting_for_ios.rst
+    - tutorials/platform/ios/**
+
+platform:macos:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_macos.rst
+    - engine_details/development/debugging/macos_debug.rst
+    - tutorials/export/exporting_for_macos.rst
+
+platform:visionos:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_visionos.rst
+    - tutorials/export/exporting_for_visionos.rst
+
+platform:web:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_web.rst
+    - tutorials/editor/using_the_web_editor.rst
+    - tutorials/export/exporting_for_web.rst
+    - tutorials/platform/web/**
+
+topic:2d:
+- changed-files:
+  - any-glob-to-any-files:
+    - tutorials/2d/**
+    - tutorials/physics/collision_shapes_2d.rst
+    - tutorials/physics/kinematic_character_2d.rst
+    - tutorials/physics/using_area_2d.rst
+    - tutorials/physics/using_character_body_2d.rst
+
+
+topic:3d:
+- changed-files:
+  - any-glob-to-any-files:
+    - tutorials/3d/**
+    - tutorials/physics/collision_shapes_3d.rst
+    - tutorials/physics/ragdoll_system.rst
+    - tutorials/physics/rigid_body.rst
+    - tutorials/physics/soft_body.rst
+
+topic:animation:
+- changed-files:
+  - any-glob-to-any-files: tutorials/animation/**
+
+#TODO Update when new asset store pages have been added
+#topic:assetstore:
+#- changed-files:
+#  - any-glob-to-any-files: community/asset_library/**
+
+topic:audio:
+- changed-files:
+  - any-glob-to-any-files: tutorials/audio/**
+
+topic:buildsystem:
+- changed-files:
+  - any-glob-to-any-files: engine_details/development/compiling/**
+
+topic:codestyle:
+- changed-files:
+  - any-glob-to-any-files:
+    - tutorials/scripting/c_sharp/c_sharp_style_guide.rst
+    - tutorials/scripting/gdscript/gdscript_styleguide.rst
+
+topic:dotnet:
+- changed-files:
+  - any-glob-to-any-files: tutorials/scripting/c_sharp/**
+
+topic:editor:
+- changed-files:
+  - any-glob-to-any-files: tutorials/editor/**
+
+topic:export:
+- changed-files:
+  - any-glob-to-any-files: tutorials/export/**
+
+topic:gdextension:
+- changed-files:
+  - any-glob-to-any-files:
+    - tutorials/scripting/cpp/gdextension_cpp_example.rst
+    - tutorials/scripting/cpp/gdextension_docs_system.rst
+
+topic:gdscript:
+- changed-files:
+  - any-glob-to-any-files: tutorials/scripting/gdscript/**
+
+topic:gui:
+- changed-files:
+  - any-glob-to-any-files: tutorials/ui/**
+
+topic:i18n:
+- changed-files:
+  - any-glob-to-any-files: tutorials/i18n/**
+
+topic:import:
+- changed-files:
+  - any-glob-to-any-files: tutorials/assets_pipeline/**
+
+topic:input:
+- changed-files:
+  - any-glob-to-any-files: tutorials/inputs/**
+
+topic:migrating:
+- changed-files:
+  - any-glob-to-any-files: tutorials/migrating/**
+
+topic:multiplayer:
+- changed-files:
+  - any-glob-to-any-files: tutorials/networking/**
+
+topic:navigation:
+- changed-files:
+  - any-glob-to-any-files: tutorials/navigation/**
+
+topic:network:
+- changed-files:
+  - any-glob-to-any-files: tutorials/networking/**
+
+topic:particles:
+- changed-files:
+  - any-glob-to-any-files:
+    - tutorials/2d/particle_process_material_2d.rst
+    - tutorials/2d/particle_systems_2d.rst
+    - tutorials/3d/particles/**
+
+topic:physics:
+- changed-files:
+  - any-glob-to-any-files: tutorials/physics/**
+
+topic:plugin:
+- changed-files:
+  - any-glob-to-any-files: tutorials/plugins/**
+
+topic:rendering:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/architecture/internal_rendering_architecture.rst
+    - engine_details/development/debugging/vulkan/**
+    - tutorials/rendering/**
+
+topic:shaders:
+- changed-files:
+  - any-glob-to-any-files: tutorials/shaders/**
+
+topic:tests:
+- changed-files:
+  - any-glob-to-any-files: engine_details/architecture/unit_testing.rst
+
+topic:xr:
+- changed-files:
+  - any-glob-to-any-files:
+    - engine_details/development/compiling/compiling_for_visionos.rst
+    - tutorials/editor/using_the_xr_editor.rst
+    - tutorials/export/exporting_for_visionos.rst
+    - tutorials/xr/**
