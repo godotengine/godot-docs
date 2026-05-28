@@ -105,7 +105,7 @@ Moving when pressing "up"
 -------------------------
 
 To only move when pressing a key, we need to modify the code that calculates the
-velocity. Uncomment the code and replace the line starting with ``var velocity`` with the code below.
+velocity. To modify, add the code starting with ``var velocity`` seen in the code below.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -114,6 +114,8 @@ velocity. Uncomment the code and replace the line starting with ``var velocity``
     if Input.is_action_pressed("ui_up"):
         velocity = Vector2.UP.rotated(rotation) * speed
 
+ position += velocity * delta
+
  .. code-tab:: csharp C#
 
     var velocity = Vector2.Zero;
@@ -121,6 +123,8 @@ velocity. Uncomment the code and replace the line starting with ``var velocity``
     {
         velocity = Vector2.Up.Rotated(Rotation) * _speed;
     }
+
+    Position += velocity * (float)delta;
 
 We initialize the ``velocity`` with a value of ``Vector2.ZERO``, another
 constant of the built-in ``Vector`` type representing a 2D vector of length 0.
