@@ -224,6 +224,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :name: sec-community
 
    community/asset_library/index
+   community/asset_store/index
    community/channels
    community/tutorials
 
