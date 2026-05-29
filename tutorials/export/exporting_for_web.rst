@@ -16,11 +16,8 @@ in the user's browser.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to the
-    web. See `this blog post <https://godotengine.org/article/platform-state-in-csharp-for-godot-4-2/#web>`__
-    for more information.
-
-    To use C# on web platforms, use Godot 3 instead.
+    Projects written in C# using Godot 4 have experimental support for Android and iOS since 4.2,
+    and for the web platform since 4.5. See :ref:`doc_c_sharp_platforms` for more information.
 
 .. tip::
 
