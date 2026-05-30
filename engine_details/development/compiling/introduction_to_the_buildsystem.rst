@@ -185,6 +185,8 @@ same command line with different values. For example, you can use ``scons
 production=yes debug_symbols=yes`` to create production-optimized binaries with
 debugging symbols included.
 
+.. _doc_introduction_to_the_buildsystem_dev_build:
+
 Dev build
 ---------
 
