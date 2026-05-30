@@ -545,6 +545,7 @@ Import
    - WAV with optional IMA-ADPCM compression.
    - Ogg Vorbis.
    - MP3.
+   - Opus.
 
 - *3D scenes:* See :ref:`doc_importing_3d_scenes`.
 

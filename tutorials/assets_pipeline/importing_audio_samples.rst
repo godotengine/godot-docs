@@ -6,7 +6,7 @@ Importing audio samples
 Supported audio formats
 -----------------------
 
-Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
+Godot provides 4 options to import your audio data: WAV, Ogg Vorbis, MP3, and Opus.
 
 Each format has different advantages:
 
@@ -20,6 +20,9 @@ Each format has different advantages:
   worse than Ogg Vorbis. This means that an MP3 file with roughly equal quality 
   to Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
+- Opus files use a more modern compression than Ogg Vorbis and MP3 that results in
+  much smaller file size for a given quality, but require slightly more processing
+  power to play back than Ogg Vorbis.
 
 .. note::
 
@@ -46,17 +49,19 @@ each format:
 +------------------------------+-------------------+
 | Ogg Vorbis 96 Kb/s, stereo   | 12 KB             |
 +------------------------------+-------------------+
+| Opus 128 Kb/s, stereo        | 16 KB             |
++------------------------------+-------------------+
 
-Note that the MP3 and Ogg Vorbis figures can vary depending on the encoding
-type. The above figures use :abbr:`CBR (Constant Bit Rate)` encoding for
-simplicity, but most Ogg Vorbis and MP3 files you can find online are encoded
-with :abbr:`VBR (Variable Bit Rate)` encoding which is more efficient.
+Note that the MP3, Ogg Vorbis, and Opus figures can vary depending on the
+encoding type. The above figures use :abbr:`CBR (Constant Bit Rate)` encoding
+for simplicity, but most MP3, Ogg Vorbis, and Opus files you can find online are
+encoded with :abbr:`VBR (Variable Bit Rate)` encoding which is more efficient.
 VBR encoding makes the effective audio file size depend on how "complex" the
 source audio is.
 
 .. tip::
 
-    Consider using WAV for short and repetitive sound effects, and Ogg Vorbis for
+    Consider using WAV for short and repetitive sound effects, and Opus for
     music, speech, and long sound effects. MP3 is useful for mobile and web projects
     where CPU resources are limited, especially when playing multiple compressed
     sounds at the same time (such as long ambient sounds).
@@ -73,14 +78,14 @@ the FileSystem dock:
 
    Import options in the Import dock after selecting a WAV file in the FileSystem dock
 
-The set of options available after selecting an Ogg Vorbis or MP3 file is different:
+The set of options available after selecting an Ogg Vorbis, MP3, or Opus file is different:
 
 .. figure:: img/importing_audio_samples_import_options_mp3.webp
    :align: center
    :alt: Import options in the Import dock after selecting an MP3 file in the FileSystem dock
 
    Import options in the Import dock after selecting an MP3 file in the
-   FileSystem dock. Options are identical for Ogg Vorbis files.
+   FileSystem dock. Options are identical for Ogg Vorbis and Opus files.
 
 After importing a sound, you can play it back using the AudioStreamPlayer,
 AudioStreamPlayer2D or AudioStreamPlayer3D nodes. See :ref:`doc_audio_streams`
@@ -96,8 +101,8 @@ If enabled, forces the imported audio to use 8-bit quantization if the source
 file is 16-bit or higher.
 
 Enabling this is generally not recommended, as 8-bit quantization decreases
-audio quality significantly. If you need smaller file sizes, consider using Ogg
-Vorbis or MP3 audio instead.
+audio quality significantly. If you need smaller file sizes, consider using Opus,
+Ogg Vorbis, or MP3 audio instead.
 
 Force > Mono
 ------------
@@ -138,7 +143,7 @@ its original peak volume.
 Edit > Loop Mode
 ----------------
 
-Unlike Ogg Vorbis and MP3, WAV files can contain metadata to indicate whether
+Unlike Ogg Vorbis, MP3, and Opus, WAV files can contain metadata to indicate whether
 they're looping (in addition to loop points). By default, Godot will follow this
 metadata, but you can choose to apply a specific loop mode:
 
@@ -174,13 +179,13 @@ and memory usage a little, at the cost of decreasing quality in an audible manne
 decrease is much less noticeable, at the cost of slightly higher CPU usage (still
 much lower than MP3).
 
-Ogg Vorbis and MP3 don't decrease quality as much and can provide greater file
+Ogg Vorbis, MP3, and Opus don't decrease quality as much and can provide greater file
 size reductions, at the cost of higher CPU usage during playback. This higher
 CPU usage is usually not a problem (especially with MP3), unless playing dozens
 of compressed sounds at the same time on mobile/web platforms.
 
-Import options (Ogg Vorbis and MP3)
------------------------------------
+Import options (Ogg Vorbis, MP3, and Opus)
+------------------------------------------
 
 Loop
 ~~~~
@@ -245,17 +250,17 @@ dialog, as it lets you preview your changes without having to reimport the audio
 
 .. _doc_importing_audio_samples_advanced_import_settings:
 
-Advanced import settings (Ogg Vorbis and MP3)
----------------------------------------------
+Advanced import settings (Ogg Vorbis, MP3, and Opus)
+----------------------------------------------------
 
-If you double-click an Ogg Vorbis or MP3 file in the FileSystem dock (or choose
+If you double-click an Ogg Vorbis, MP3, or Opus file in the FileSystem dock (or choose
 **Advanced…** in the Import dock), you will see a dialog appear:
 
 .. figure:: img/importing_audio_samples_advanced_import_settings.webp
    :align: center
-   :alt: Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
+   :alt: Advanced dialog when double-clicking an Ogg Vorbis, MP3, or Opus file in the FileSystem dock
 
-   Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
+   Advanced dialog when double-clicking an Ogg Vorbis, MP3, or Opus file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
 in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.
@@ -265,7 +270,7 @@ music tracks).
 
 .. note::
 
-    Unlike WAV files, Ogg Vorbis and MP3 only support a "loop begin" loop point,
+    Unlike WAV files, Ogg Vorbis, MP3, and Opus only support a "loop begin" loop point,
     not a "loop end" point. Looping can also be only be standard forward looping,
     not ping-pong or backward.
 
@@ -299,6 +304,38 @@ sample rate and number of channels for your audio:
 - Voices can generally be converted to mono, but can also have their sample rate
   reduced to 22 kHz without a noticeable loss in quality (unless the voice is
   very high-pitched). This is because most human voices never go past 11 kHz.
+
+Use the right bitrate for the chosen file format
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While audio files are commonly compressed as MP3 for historical reasons, formats like Ogg Vorbis
+and Opus can provide lower sizes with higher quality.
+
+Here is a comparative chart with estimates for "transparent" bitrates for each audio format:
+
++--------------------+--------------------------------+
+| Format             | Estimated transparency bitrate |
++====================+================================+
+| WAV (uncompressed) | 1411 kbps                      |
++--------------------+--------------------------------+
+| MP3                | 192 kbps                       |
++--------------------+--------------------------------+
+| Ogg Vorbis         | 160 kbps                       |
++--------------------+--------------------------------+
+| Opus               | 128 kbps                       |
++--------------------+--------------------------------+
+
+Since audio at "transparent" bitrates has no noticeable compression artifacts (even with studio
+headphones) you can save space without impacting quality by reducing the bitrate to the level
+of transparency. Note that audio can sound "good enough" at much lower bitrates, depending on
+the purpose of the audio.
+
+When changing the format or reducing the bitrate of an audio file, avoid converting from one lossy
+format to another (e.g. MP3 to Ogg Vorbis) to avoid generational loss. Always convert from
+the source WAV file if possible.
+
+Unless processing power is limited, always prefer Opus encoding as it provides the best quality
+for a given bitrate. MP3 and Ogg Vorbis are older and use outdated compression techniques.
 
 Use real-time audio effects to reduce file size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
