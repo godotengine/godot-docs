@@ -144,7 +144,7 @@ Constructs a **bool** as a copy of the given **bool**.
 
 :ref:`bool<class_bool>` **bool**\ (\ from\: :ref:`float<class_float>`\ )
 
-Cast a :ref:`float<class_float>` value to a boolean value. Returns ``false`` if ``from`` is equal to ``0.0`` (including ``-0.0``), and ``true`` for all other values (including :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`).
+Casts a :ref:`float<class_float>` value to a **bool**. Returns ``false`` if ``from`` is equal to ``0.0`` (including ``-0.0``), and ``true`` for all other values (including :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`).
 
 .. rst-class:: classref-item-separator
 
@@ -154,7 +154,7 @@ Cast a :ref:`float<class_float>` value to a boolean value. Returns ``false`` if 
 
 :ref:`bool<class_bool>` **bool**\ (\ from\: :ref:`int<class_int>`\ )
 
-Cast an :ref:`int<class_int>` value to a boolean value. Returns ``false`` if ``from`` is equal to ``0``, and ``true`` for all other values.
+Casts an :ref:`int<class_int>` value to a **bool**. Returns ``false`` if ``from`` is equal to ``0``, and ``true`` for all other values.
 
 .. rst-class:: classref-section-separator
 
@@ -171,7 +171,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_neq_bool>`
 
-Returns ``true`` if one operand is ``true`` and the other operand is ``false``. Equivalent to logical **XOR** (**NEQ**).
+Returns ``true`` if one **bool** is ``true`` and the other **bool** is ``false``. Equivalent to logical XOR (NEQ).
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +183,7 @@ Returns ``true`` if one operand is ``true`` and the other operand is ``false``. 
 
 :ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_lt_bool>`
 
-Returns ``true`` if the left operand is ``false`` and the right operand is ``true``.
+Returns ``true`` if the left **bool** is ``false`` and ``right`` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 
 :ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_eq_bool>`
 
-Returns ``true`` if both operands are ``true``, or if both operands are ``false``. Equivalent to logical **XNOR** (**EQ**).
+Returns ``true`` if both **bool**\ s are ``true``, or if both **bool**\ s are ``false``. Equivalent to logical XNOR (EQ).
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +207,7 @@ Returns ``true`` if both operands are ``true``, or if both operands are ``false`
 
 :ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_gt_bool>`
 
-Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
+Returns ``true`` if the left **bool** is ``true`` and ``right`` is ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

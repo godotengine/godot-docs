@@ -490,7 +490,7 @@ The axis of the first rotation. This :ref:`SkeletonModifier3D<class_SkeletonModi
 
 The relative option. If ``true``, the rotation is applied relative to the pose. If ``false``, the rotation is applied relative to the rest. It means to replace the current pose with the **LookAtModifier3D**'s result.
 
-\ **Note:** This option affects the base angle for :ref:`use_angle_limitation<class_LookAtModifier3D_property_use_angle_limitation>` unlike :ref:`IterateIK3D<class_IterateIK3D>`'s :ref:`JointLimitation3D<class_JointLimitation3D>`. Since the **LookAtModifier3D** relies strongly on Euler rotation, the axis that determines the limitation and the actual rotation are strongly tied together.
+\ **Note:** This option affects the base angle for :ref:`use_angle_limitation<class_LookAtModifier3D_property_use_angle_limitation>`. Since the **LookAtModifier3D** relies strongly on Euler rotation, the axis that determines the limitation and the actual rotation are strongly tied together.
 
 .. rst-class:: classref-item-separator
 

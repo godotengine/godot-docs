@@ -557,7 +557,7 @@ Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
 :ref:`int<class_int>` **set_point_offset**\ (\ index\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Curve_method_set_point_offset>`
 
-Sets the offset from ``0.5``.
+Assigns the horizontal position ``offset`` to the point at ``index``.
 
 .. rst-class:: classref-item-separator
 
