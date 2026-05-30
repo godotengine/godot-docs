@@ -50,37 +50,39 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` | :ref:`clip_children<class_CanvasItem_property_clip_children>`             | ``0``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                     | :ref:`light_mask<class_CanvasItem_property_light_mask>`                   | ``1``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`Material<class_Material>`                           | :ref:`material<class_CanvasItem_property_material>`                       |                       |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                                 | :ref:`modulate<class_CanvasItem_property_modulate>`                       | ``Color(1, 1, 1, 1)`` |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                                 | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`             | ``Color(1, 1, 1, 1)`` |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`   | ``false``             |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`TextureFilter<enum_CanvasItem_TextureFilter>`       | :ref:`texture_filter<class_CanvasItem_property_texture_filter>`           | ``0``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>`       | :ref:`texture_repeat<class_CanvasItem_property_texture_repeat>`           | ``0``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`top_level<class_CanvasItem_property_top_level>`                     | ``false``             |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>` | ``false``             |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                     | :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>`       | ``1``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`visible<class_CanvasItem_property_visible>`                         | ``true``              |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`y_sort_enabled<class_CanvasItem_property_y_sort_enabled>`           | ``false``             |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`z_as_relative<class_CanvasItem_property_z_as_relative>`             | ``true``              |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                     | :ref:`z_index<class_CanvasItem_property_z_index>`                         | ``0``                 |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------+-----------------------+
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>`           | :ref:`clip_children<class_CanvasItem_property_clip_children>`                     | ``0``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                               | :ref:`light_mask<class_CanvasItem_property_light_mask>`                           | ``1``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Material<class_Material>`                                     | :ref:`material<class_CanvasItem_property_material>`                               |                       |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                           | :ref:`modulate<class_CanvasItem_property_modulate>`                               | ``Color(1, 1, 1, 1)`` |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` | :ref:`oversampling_with_scale<class_CanvasItem_property_oversampling_with_scale>` | ``0``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                           | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`                     | ``Color(1, 1, 1, 1)`` |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`show_behind_parent<class_CanvasItem_property_show_behind_parent>`           | ``false``             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`TextureFilter<enum_CanvasItem_TextureFilter>`                 | :ref:`texture_filter<class_CanvasItem_property_texture_filter>`                   | ``0``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>`                 | :ref:`texture_repeat<class_CanvasItem_property_texture_repeat>`                   | ``0``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`top_level<class_CanvasItem_property_top_level>`                             | ``false``             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`use_parent_material<class_CanvasItem_property_use_parent_material>`         | ``false``             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                               | :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>`               | ``1``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`visible<class_CanvasItem_property_visible>`                                 | ``true``              |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`y_sort_enabled<class_CanvasItem_property_y_sort_enabled>`                   | ``false``             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`z_as_relative<class_CanvasItem_property_z_as_relative>`                     | ``true``              |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                               | :ref:`z_index<class_CanvasItem_property_z_index>`                                 | ``0``                 |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -452,6 +454,48 @@ This node is used as a mask and is also drawn. The mask is based on this node's 
 
 Represents the size of the :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_CanvasItem_OversamplingWithScale:
+
+.. rst-class:: classref-enumeration
+
+enum **OversamplingWithScale**: :ref:`🔗<enum_CanvasItem_OversamplingWithScale>`
+
+.. _class_CanvasItem_constant_OVERSAMPLING_WITH_SCALE_PARENT_NODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **OVERSAMPLING_WITH_SCALE_PARENT_NODE** = ``0``
+
+The **CanvasItem** will inherit the oversampling mode from its parent.
+
+.. _class_CanvasItem_constant_OVERSAMPLING_WITH_SCALE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **OVERSAMPLING_WITH_SCALE_DISABLED** = ``1``
+
+The oversampling is not affected by **CanvasItem** scale, and is equal to the :ref:`Viewport<class_Viewport>` oversampling.
+
+.. _class_CanvasItem_constant_OVERSAMPLING_WITH_SCALE_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **OVERSAMPLING_WITH_SCALE_ENABLED** = ``2``
+
+The oversampling is a product of **CanvasItem** scale and :ref:`Viewport<class_Viewport>` oversampling.
+
+.. _class_CanvasItem_constant_OVERSAMPLING_WITH_SCALE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **OVERSAMPLING_WITH_SCALE_MAX** = ``3``
+
+Represents the size of the :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -599,6 +643,23 @@ The material applied to this **CanvasItem**.
 - :ref:`Color<class_Color>` **get_modulate**\ (\ )
 
 The color applied to this **CanvasItem**. This property does affect child **CanvasItem**\ s, unlike :ref:`self_modulate<class_CanvasItem_property_self_modulate>` which only affects the node itself.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CanvasItem_property_oversampling_with_scale:
+
+.. rst-class:: classref-property
+
+:ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **oversampling_with_scale** = ``0`` :ref:`🔗<class_CanvasItem_property_oversampling_with_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_oversampling_with_scale**\ (\ value\: :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>`\ )
+- :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **get_oversampling_with_scale**\ (\ )
+
+If enabled, oversampling for this **CanvasItem** is automatically adjusted with scale.
 
 .. rst-class:: classref-item-separator
 

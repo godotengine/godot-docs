@@ -139,7 +139,7 @@ Emitted when scrolling stops when dragging the scrollable area *with a touch eve
 
 **scroll_started**\ (\ ) :ref:`🔗<class_ScrollContainer_signal_scroll_started>`
 
-Emitted when scrolling starts when dragging the scrollable area w\ *ith a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
+Emitted when scrolling starts when dragging the scrollable area *with a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
 \ **Note:** This signal is only emitted on Android or iOS, or on desktop/web platforms when :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is enabled.
 

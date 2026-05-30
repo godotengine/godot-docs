@@ -238,7 +238,9 @@ Rotation is done in the local space which is constructed by the bone direction (
 
 If the +X and +Y axes are not orthogonal, the +X axis is implicitly modified to make it orthogonal.
 
-Also, if the length of :ref:`get_joint_limitation_right_axis_vector()<class_IterateIK3D_method_get_joint_limitation_right_axis_vector>` is zero, the space is created by rotating the bone rest using the shortest arc that rotates the +Y axis of the bone rest to match the bone direction.
+Also, if the length of :ref:`get_joint_limitation_right_axis_vector()<class_IterateIK3D_method_get_joint_limitation_right_axis_vector>` is zero, the space is created by rotating the reference pose using the shortest arc that rotates the +Y axis of the reference pose to match the bone direction.
+
+In here, the reference pose is the bone pose immediately before processing IK.
 
 .. rst-class:: classref-item-separator
 
@@ -330,7 +332,9 @@ Rotation is done in the local space which is constructed by the bone direction (
 
 If the +X and +Y axes are not orthogonal, the +X axis is implicitly modified to make it orthogonal.
 
-Also, if the length of :ref:`get_joint_limitation_right_axis_vector()<class_IterateIK3D_method_get_joint_limitation_right_axis_vector>` is zero, the space is created by rotating the bone rest using the shortest arc that rotates the +Y axis of the bone rest to match the bone direction.
+Also, if the length of :ref:`get_joint_limitation_right_axis_vector()<class_IterateIK3D_method_get_joint_limitation_right_axis_vector>` is zero, the space is created by rotating the reference pose using the shortest arc that rotates the +Y axis of the reference pose to match the bone direction.
+
+In here, the reference pose is the bone pose immediately before processing IK.
 
 .. rst-class:: classref-item-separator
 
@@ -344,7 +348,9 @@ Also, if the length of :ref:`get_joint_limitation_right_axis_vector()<class_Iter
 
 Sets the rotation axis at ``joint`` in the bone chain's joint list.
 
-The axes are based on the :ref:`Skeleton3D.get_bone_rest()<class_Skeleton3D_method_get_bone_rest>`'s space, if ``axis`` is :ref:`SkeletonModifier3D.ROTATION_AXIS_CUSTOM<class_SkeletonModifier3D_constant_ROTATION_AXIS_CUSTOM>`, you can specify any axis.
+The axes are based on the reference pose's space, if ``axis`` is :ref:`SkeletonModifier3D.ROTATION_AXIS_CUSTOM<class_SkeletonModifier3D_constant_ROTATION_AXIS_CUSTOM>`, you can specify any axis.
+
+In here, the reference pose is the bone pose immediately before processing IK.
 
 \ **Note:** The rotation axis and the forward vector shouldn't be colinear to avoid unintended rotation since :ref:`ChainIK3D<class_ChainIK3D>` does not factor in twisting forces.
 
