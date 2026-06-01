@@ -274,3 +274,7 @@ The shader baker will only export shaders that match the
 
     This also means the shader baker is not supported on the web platform,
     as the web platform only supports the Compatibility renderer.
+
+    Additionally, the shader baker is not supported when exporting a project
+    using the ``--headless`` :ref:`command line argument <doc_command_line_tutorial>`,
+    as Godot cannot access the GPU when running in headless mode.
