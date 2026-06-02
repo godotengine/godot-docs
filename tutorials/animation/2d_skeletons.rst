@@ -156,9 +156,8 @@ Deforming the polygons
 ----------------------
 
 Select the previously created polygons and assign the skeleton node to their
-``Skeleton`` property. This will ensure that they can eventually be deformed by
-it.
-
+``Skeleton`` property, found under the ``Skeleton`` section in the Inspector.
+This ensures they can eventually be deformed by it.
 .. image:: img/skel2d15.png
 
 Click the property highlighted above and select the skeleton node:
