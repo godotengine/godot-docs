@@ -186,7 +186,7 @@ For LOD selection, the point of the node's :abbr:`AABB (Axis-Aligned Bounding Bo
 that is the closest to the camera is used as a basis. This applies to any kind
 of mesh LOD (including for individual MeshInstance3D)s, but this has some implications
 for nodes that display multiple meshes at once, such as MultiMeshInstance3D,
-CPUParticles3D and GPUParticles3D. Most importantly, this means that all
+CPUParticles3D, and GPUParticles3D. Most importantly, this means that all
 instances will be drawn with the same LOD level at a given time.
 
 If you are noticing incorrect LOD selection with GPUParticles3D, make sure
