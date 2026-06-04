@@ -549,6 +549,50 @@ on all other platforms.
     from the editor will only be DPI-aware if **Allow hiDPI** is enabled in the
     Project Settings.
 
+.. _doc_multiple_resolutions_font_and_image_oversampling:
+
+Font and image oversampling
+---------------------------
+
+Godot supports a process called *oversampling*, which refers to automatically
+re-rendering textures from their original vector source when the viewport scale
+factor changes. This ensures font and image textures remain crisp at any
+resolution.
+
+Font oversampling is enabled by default, but it can be disabled by unchecking
+**GUI > Fonts > Dynamic Fonts > Use Oversampling** in the Project Settings.
+
+Image oversampling is disabled by default, and can be enabled for specific
+images in SVG format by changing their import type to :ref:`class_DPITexture` in
+the Import dock. Other image formats do not support oversampling, as they store
+bitmap data instead of vectors.
+
+The editor automatically performs oversampling when zooming in the 2D editor,
+which allows you to preview how oversampling will look at specific scale
+factors. This can be disabled by unchecking **View > Auto Resample CanvasItems**
+at the top of the 2D editor viewport.
+
+Oversampling can also be applied according to the Node2D or Control's Scale
+property. This *scale-based oversampling* behavior is disabled by default,
+but it can be enabled by setting **Oversampling with Scale** in the inspector
+to **Enabled** on the desired node. This is useful for nodes that may have
+their scale changed at runtime, such as custom scale factors for certain UI
+elements like crosshairs. However, keep in mind this can be demanding on the
+CPU if the scale changes frequently, as the texture has to be re-rendered each time.
+
+For best results, the node should use uniform scaling. Non-uniform scaling will
+work, but may result in aliasing on the shorter axis as oversampling is always
+applied uniformly.
+
+.. note::
+
+    Control's :ref:`offset_transform_enabled <class_Control_property_offset_transform_enabled>`
+    property is taken into account by scale-based oversampling, but only if
+    :ref:`offset_transform_visual_only <class_Control_property_offset_transform_visual_only>` is *disabled*.
+    When :ref:`offset_transform_visual_only <class_Control_property_offset_transform_visual_only>` is enabled,
+    it does not affect the node's actual scale (as used for input coordinates),
+    but only its visual representation. Therefore, it is ignored by oversampling.
+
 .. _doc_multiple_resolutions_reducing_aliasing_on_downsampling:
 
 Reducing aliasing on downsampling
@@ -560,6 +604,10 @@ appear when downsampling to something considerably lower like 1280×720.
 To resolve this, you can :ref:`enable mipmaps <doc_importing_images_mipmaps>` on
 all your 2D textures. However, enabling mipmaps will increase memory usage which
 can be an issue on low-end mobile devices.
+
+For SVG images, you can also change their import type to :ref:`class_DPITexture` in the Import dock
+to benefit from automatic oversampling as described above. This avoids aliasing by re-rasterizing
+the texture when the scale factor changes.
 
 Handling aspect ratios
 ----------------------
