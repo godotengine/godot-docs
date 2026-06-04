@@ -22,6 +22,7 @@ and how you can get started with them in Godot.
     for players whose controllers support them, without detracting from those who
     don't have controllers.
 
+.. _doc_controller_features_led_color:
 
 LED color
 ---------
@@ -46,7 +47,7 @@ and turns it off if no button is being pressed:
 
     func _process(_delta):
         var color := Color.BLACK
-        
+
         if Input.is_joy_button_pressed(0, JOY_BUTTON_A):
             color = Color.BLUE
         elif Input.is_joy_button_pressed(0, JOY_BUTTON_X):
@@ -55,7 +56,7 @@ and turns it off if no button is being pressed:
             color = Color.RED
         elif Input.is_joy_button_pressed(0, JOY_BUTTON_Y):
             color = Color.GREEN
-            
+
         Input.set_joy_light(0, color)
 
 
@@ -91,6 +92,8 @@ The following example makes the LED blink red three times when the south button 
         blink_tween.tween_callback(func(): Input.set_joy_light(0, Color.BLACK))
         blink_tween.tween_interval(0.2)
         blink_tween.set_loops(3)
+
+.. _doc_controller_features_motion_sensors:
 
 Motion sensors (gyroscope and accelerometer)
 --------------------------------------------
@@ -140,7 +143,7 @@ You can also access this example by taking a look at the
 :ref:`Input.start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` documentation.
 
 .. code-block::
-    
+
     const GYRO_SENSITIVITY = 10.0
 
     func _ready():
@@ -254,7 +257,7 @@ you can tweak the ``THRESHOLD`` constant or you can replace it by using a differ
             if acceleration.x > THRESHOLD:
                 print("Moved left")
             elif acceleration.x < -THRESHOLD:
-                print("Moved right") 
+                print("Moved right")
             if acceleration.y < -THRESHOLD:
                 print("Moved up")
             elif acceleration.y > THRESHOLD:

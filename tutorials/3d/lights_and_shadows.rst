@@ -170,6 +170,8 @@ rendering approach so lights with shadows are rendered in sRGB space instead of 
 This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar
 appearance to an unshadowed light, you may need to adjust the light's energy setting.
 
+.. _doc_lights_and_shadows_directional_light:
+
 Directional light
 -----------------
 
@@ -260,6 +262,8 @@ shadows when using large objects with unsubdivided meshes. Only change this
 value if you notice missing shadows that are not related to shadow biasing
 issues.
 
+.. _doc_lights_and_shadows_omni_light:
+
 Omni light
 ----------
 
@@ -328,6 +332,8 @@ With the projector texture below, the following result is obtained:
     `this web-based conversion tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__
     to convert them to a single panorama image.
 
+.. _doc_lights_and_shadows_spot_light:
+
 Spot light
 ----------
 
@@ -372,6 +378,8 @@ With the projector texture below, the following result is obtained:
     surface. At angles wider than 89 degrees, spot light shadows will stop
     working entirely. If you need shadows for wider lights, use an omni light
     instead.
+
+.. _doc_lights_and_shadows_area_light:
 
 Area light
 ----------
