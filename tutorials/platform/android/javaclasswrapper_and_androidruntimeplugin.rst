@@ -30,7 +30,7 @@ JavaClassWrapper (Godot singleton)
 ----------------------------------
 
 ``JavaClassWrapper`` is a :ref:`Godot singleton <class_JavaClassWrapper>` which allows
-creating instances of Java / Kotlin classes and calling methods on them using only GDScript, C# or GDExtension.
+creating instances of Java / Kotlin classes, implementing Java / Kotlin interfaces, and calling methods on them using only GDScript, C# or GDExtension.
 
 .. code-block:: gdscript
 
@@ -44,6 +44,21 @@ creating instances of Java / Kotlin classes and calling methods on them using on
 
 In the code snippet above, ``JavaClassWrapper`` is used from GDScript to access the Java ``LocalDateTime`` and ``DateTimeFormatter`` classes.
 Through ``JavaClassWrapper``, we can call the Java classes methods directly from GDScript as if they were GDScript methods.
+
+.. code-block:: gdscript
+
+    class PrintProxy:
+        func println(content: String) -> void:
+            print(content)
+
+    var print_proxy = PrintProxy.new()
+    var printer_object = JavaClassWrapper.create_proxy(print_proxy, ["android.util.Printer"])
+    printer_object.println("Hello Godot World!")
+
+In the code snippet above, ``JavaClassWrapper`` is used to implement the Java ``android.util.Printer`` interface from GDScript using a :ref:`Object<class_Object>` as the implementation.
+The instantiated proxy can then be passed to Java methods that accept a ``android.util.Printer`` parameter.
+
+Check out the :ref:`JavaClassWrapper documentation <class_JavaClassWrapper>` to learn more about its API.
 
 AndroidRuntime plugin
 ---------------------
