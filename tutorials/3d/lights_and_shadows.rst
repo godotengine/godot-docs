@@ -378,14 +378,27 @@ Area light
 
 Sometimes, you want lighting to come from a large area instead of a single
 point. Area lights are useful for simulating soft, diffuse lighting, such as
-light coming from a window or a lit billboard. This type of light is expensive
-to render in real-time, so it should be used sparingly, especially when shadows
-are enabled.
+light coming from a window or a lit billboard.
 
 Godot provides the :ref:`class_AreaLight3D` node for this purpose, which emits
 light from a rectangular area. The node only emits light and has no other visual
 representation in the scene. The screenshots below use a :ref:`class_Sprite3D`
 node as a child of the area light for visualization purposes.
+
+.. warning::
+
+    This type of light is the most expensive to render in real-time. It should
+    be used sparingly, especially when shadows are enabled.
+    Consider using them only for cinematics or when targeting high-end devices.
+
+    In Forward+, as soon as one area light is visible in the view frustum, it
+    incurs an additional performance cost on **all** rendered objects in the
+    scene, even those that are not reached by an area light. This tradeoff
+    allows for a greater number of area lights to be rendered (clustered
+    lighting).
+
+    In Mobile and Compatibility, only objects that are reached by an area light
+    incur an additional performance cost.
 
 Area lights can also cast shadows, with variable penumbra simulated using
 :ref:`PCSS <doc_lights_and_shadows_pcss_recommendations>` by default. The size
