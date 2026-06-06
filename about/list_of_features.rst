@@ -159,6 +159,13 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
      requiring re-rasterization. Multi-channel usage makes SDF fonts scale down
      to lower sizes better compared to monochrome SDF fonts.
 
+- :ref:`Oversampling <doc_multiple_resolutions_font_and_image_oversampling>` for SVG images
+  using the :ref:`class_DPITexture` import type. This allows for sharper results when scaling
+  up the texture by re-rasterizing the SVG source image to a new resolution at run-time.
+
+  - Oversampling can optionally take individual :ref:`class_CanvasItem` scales into
+    account for crisper rendering when scaling nodes.
+
 - GPU-based :ref:`particles <doc_particle_systems_2d>` with support for
   :ref:`custom particle shaders <doc_particle_shader>`.
 - CPU-based particles.
