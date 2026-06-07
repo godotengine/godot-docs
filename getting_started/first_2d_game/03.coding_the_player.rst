@@ -239,7 +239,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
         Position += velocity * (float)delta;
         Position = new Vector2(
             x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
+            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y));
         );
 
 .. tip:: The `delta` parameter in the `_process()` function refers to the *frame
