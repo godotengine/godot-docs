@@ -283,9 +283,6 @@ To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
 - Finally, unbind **Scale Mode** so that its shortcut won't conflict with
   **Begin Rotate Transformation**.
 
-.. tip:: More shortcuts can be found on the 
-  :ref:`doc_default_key_mapping_shortcuts_spatial_editor` page.
-
 Node3D node
 -----------
 

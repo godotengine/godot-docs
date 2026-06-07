@@ -350,7 +350,6 @@ Development
 Editor
 ~~~~~~
 
-- :ref:`doc_default_key_mapping`
 - :ref:`doc_using_the_web_editor`
 
 Export
