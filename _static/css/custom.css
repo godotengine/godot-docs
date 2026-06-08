@@ -1208,16 +1208,51 @@ code,
     margin-right: 9px;
 }
 
+.rst-content .admonition.note .admonition-title::before,
+.rst-content .admonition.warning .admonition-title::before,
+.rst-content .admonition.tip .admonition-title::before,
+.rst-content .admonition.important .admonition-title::before {
+    content: "";
+    top: 0.1rem;
+    display: inline;
+    height: 1rem;
+    width: 1rem;
+    padding-right: 1rem;
+    mask-repeat: no-repeat;
+}
+
+.rst-content .admonition.note .admonition-title::before {
+    mask-image: var(--admonition-note-icon);
+    background-color: var(--admonition-note-title-color);
+}
+
+.rst-content .admonition.warning .admonition-title::before {
+    mask-image: var(--admonition-danger-icon);
+    background-color: var(--admonition-attention-title-color);
+}
+
+.rst-content .admonition.tip .admonition-title::before {
+    mask-image: var(--admonition-tip-icon);
+    background-color: var(--admonition-tip-title-color);
+}
+
+.rst-content .admonition.important .admonition-title::before {
+    mask-image: var(--admonition-attention-icon);
+    background-color: var(--admonition-attention-title-color);
+}
+
 .rst-content .admonition.attention,
 .rst-content .admonition.caution,
-.rst-content .admonition.warning {
+.rst-content .admonition.warning,
+.rst-content .admonition.important {
     background-color: var(--admonition-attention-background-color);
     color: var(--admonition-attention-color);
 }
 
 .rst-content .admonition.attention .admonition-title,
 .rst-content .admonition.caution .admonition-title,
-.rst-content .admonition.warning .admonition-title {
+.rst-content .admonition.warning .admonition-title,
+.rst-content .admonition.important .admonition-title {
     background-color: var(--admonition-attention-title-background-color);
     color: var(--admonition-attention-title-color);
 }
@@ -1232,14 +1267,12 @@ code,
     color: var(--admonition-danger-title-color);
 }
 
-.rst-content .admonition.tip,
-.rst-content .admonition.important {
+.rst-content .admonition.tip {
     background-color: var(--admonition-tip-background-color);
     color: var(--admonition-tip-color);
 }
 
-.rst-content .admonition.tip .admonition-title,
-.rst-content .admonition.important .admonition-title {
+.rst-content .admonition.tip .admonition-title {
     background-color: var(--admonition-tip-title-background-color);
     color: var(--admonition-tip-title-color);
 }
