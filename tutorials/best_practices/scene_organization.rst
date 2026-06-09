@@ -17,7 +17,7 @@ They create their first scene and fill it with content only to eventually end
 up saving branches of their scene into separate scenes as the nagging feeling
 that they should split things up starts to accumulate. However, they then
 notice that the hard references they were able to rely on before are no longer
-possible. Re-using the scene in multiple places creates issues because the
+possible. Reusing the scene in multiple places creates issues because the
 node paths do not find their targets and signal connections established in the
 editor break.
 
