@@ -12,7 +12,7 @@ a subselection of common and useful ways to do it.
 
 Alternatively, some of the functions presented here are also available through the
 :ref:`GDExtension <doc_what_is_gdextension>` API.
-You can use them in C++ by using creating a :ref:`godot-cpp <doc_about_godot_cpp>` based GDExtension,
+You can use them in C++ by creating a :ref:`godot-cpp <doc_about_godot_cpp>` based GDExtension,
 or with any of the :ref:`community-created GDExtension implementations <doc_scripting_languages>`. Note though
 that some aspects of the code or directory structures may be different in GDExtension compared to the module APIs.
 
@@ -21,6 +21,7 @@ that some aspects of the code or directory structures may be different in GDExte
    :name: toc-devel-cpp-source-advanced
 
    custom_modules_in_cpp
+   vendor_runtime_module
    gdextension/index
    binding_to_external_libraries
    custom_godot_servers
