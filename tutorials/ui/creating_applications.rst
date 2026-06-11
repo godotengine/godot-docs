@@ -329,10 +329,9 @@ progress with the progress reported to the operating system:
 
         # The taskbar progress value must be between `0.0` and `1.0`
         # (values outside this range are clamped).
-        # However, ProgressBar can have minimum/maximum values that differ.
-        # We use the `remap()` method to convert the value to the range
-        # expected by taskbar progress reporting.
-        get_window().set_taskbar_progress_value(remap($ProgressBar.value, $ProgressBar.min_value, $ProgressBar.max_value, 0.0, 1.0))
+        # ProgressBar provides a `ratio` property that represents its current progress
+        # as a value between `0.0` and `1.0`.
+        get_window().set_taskbar_progress_value($ProgressBar.ratio)
 
 Several progress states are available: no progress (hides the progress bar),
 indeterminate, normal, paused, error. Check the class reference for details.
