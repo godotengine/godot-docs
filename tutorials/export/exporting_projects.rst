@@ -60,7 +60,7 @@ After many attempts at different export workflows, the current one has
 proven to work the best. At the time of this writing, not all platforms are
 supported yet, but the supported platforms continue to grow.
 
-To open the export menu, click the **Export** button:
+To open the export menu, click the :button:`Export` button:
 
 .. image:: img/export.webp
 
@@ -101,15 +101,42 @@ different ways:
 Export templates
 ~~~~~~~~~~~~~~~~
 
-Apart from setting up the platform, the export templates must be
-installed to be able to export projects. They can be obtained as a
-TPZ file (which is a renamed ZIP archive) from the
-`download page of the website <https://www.godotengine.org/download>`_.
-
-Once downloaded, they can be installed using the **Install Export Templates**
-option in the editor:
+Export templates must be installed to export projects. To manage your export
+templates go to :menu:`Editor > Manage Export Templates...`.
 
 .. image:: img/export_templates.webp
+
+This will open the export template manager.
+
+.. image:: img/export_template_manager.webp
+
+Here you can see all export templates that are and aren't installed. There are two
+ways to install export templates. First, you can check the box for the platform and
+architecture you want to use, then click the :button:`Install Selected Templates`
+button.
+
+.. note:: If you're unsure which architecture you need, check your platform's export
+          page for a detailed description.
+
+Below the platform options there's another option called "ICU Data". This is required for
+emojis and the following languages:
+
+- Burmese
+- Chinese
+- Japanese
+- Korean
+- Central Khmer
+- Lao
+- Thai
+
+If you click the button in the upper right of the window, you can install templates
+from a TPZ file (which is a renamed ZIP archive). You can download a TPZ file of all
+export templates from the `download page of the website <https://www.godotengine.org/download>`_.
+
+There is no inherent advantage to using the TPZ file for all platforms,
+functionality is identical, and it will take up more space compared to only
+selecting what you need.
+
 
 .. _doc_exporting_projects_export_mode:
 
