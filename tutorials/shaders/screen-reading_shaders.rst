@@ -17,6 +17,12 @@ The workaround is to make a copy of the screen, or a part of the screen,
 to a back-buffer and then read from it while drawing. Godot provides a
 few tools that make this process easy.
 
+.. warning::
+
+    Reading from the back-buffer disrupts the render pipeline and
+    can be performance intensive. For shaders that don't require access
+    to the depth buffer, consider a :ref:`Viewport <doc_viewports>` instead.
+
 Screen texture
 --------------
 
