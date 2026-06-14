@@ -121,7 +121,7 @@ Method Descriptions
 
 |void| **blit_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, source\: :ref:`Texture2D<class_Texture2D>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), mipmap\: :ref:`int<class_int>` = 0, material\: :ref:`Material<class_Material>` = null\ ) :ref:`🔗<class_DrawableTexture2D_method_blit_rect>`
 
-**Experimental:** This function and its parameters are likely to change in the 4.7 Dev Cycle
+**Experimental:** This method may be changed or removed in future versions.
 
 Draws to given ``rect`` on this texture by copying from the given ``source``. A ``modulate`` color can be passed in for the shader to use, but defaults to White. The ``mipmap`` value can specify a draw to a lower mipmap level. The ``material`` parameter can take a ShaderMaterial with a TextureBlit Shader for custom drawing behavior.
 
@@ -135,7 +135,7 @@ Draws to given ``rect`` on this texture by copying from the given ``source``. A 
 
 |void| **blit_rect_multi**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, sources\: :ref:`Array<class_Array>`\[:ref:`Texture2D<class_Texture2D>`\], extra_targets\: :ref:`Array<class_Array>`\[:ref:`DrawableTexture2D<class_DrawableTexture2D>`\], modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), mipmap\: :ref:`int<class_int>` = 0, material\: :ref:`Material<class_Material>` = null\ ) :ref:`🔗<class_DrawableTexture2D_method_blit_rect_multi>`
 
-**Experimental:** This function and its parameters are likely to change in the 4.7 Dev Cycle
+**Experimental:** This method may be changed or removed in future versions.
 
 Draws to the given ``rect`` on this texture, as well as on up to 3 DrawableTexture ``extra_targets``. All ``extra_targets`` must be the same size and DrawableFormat as the original target, otherwise the Shader may fail. Expects up to 4 Texture ``sources``, but will replace missing ``sources`` with default Black Textures.
 
@@ -197,7 +197,7 @@ Sets if mipmaps should be used on this DrawableTexture.
 
 |void| **setup**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, format\: :ref:`DrawableFormat<enum_DrawableTexture2D_DrawableFormat>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), use_mipmaps\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_DrawableTexture2D_method_setup>`
 
-**Experimental:** This function and its parameters are likely to change in the 4.7 Dev Cycle
+**Experimental:** This method may be changed or removed in future versions.
 
 Initializes the DrawableTexture to a White texture of the given ``width``, ``height``, and ``format``.
 
