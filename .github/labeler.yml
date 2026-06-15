@@ -4,7 +4,7 @@
 
 area:about:
 - changed-files:
-  - any-glob-to-any-files: area/**
+  - any-glob-to-any-files: about/**
 
 area:community:
 - changed-files:
