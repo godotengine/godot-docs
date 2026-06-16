@@ -250,19 +250,17 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             # get_collider will return null, leading to a null pointer when calling 
             # collision.get_collider().is_in_group("mob").
             # This block of code prevents processing duplicate collisions.
-            if collision.get_collider() == null:
-                continue
-
-            # If the collider is with a mob
-            if collision.get_collider().is_in_group("mob"):
-                var mob = collision.get_collider()
-                # we check that we are hitting it from above.
-                if Vector3.UP.dot(collision.get_normal()) > 0.1:
-                    # If so, we squash it and bounce.
-                    mob.squash()
-                    target_velocity.y = bounce_impulse
-                    # Prevent further duplicate calls.
-                    break
+            if collision.get_collider() is Node:
+                # If the collider is with a mob
+                if collision.get_collider().is_in_group("mob"):
+                    var mob = collision.get_collider()
+                    # we check that we are hitting it from above.
+                    if Vector3.UP.dot(collision.get_normal()) > 0.1:
+                        # If so, we squash it and bounce.
+                        mob.squash()
+                        target_velocity.y = bounce_impulse
+                        # Prevent further duplicate calls.
+                        break
 
  .. code-tab:: csharp
 
