@@ -150,7 +150,7 @@ Godot 4 includes three renderers:
      :ref:`class_Polygon2D` and :ref:`class_Line2D`, with support for texturing.
 
 - AnimatedSprite2D as a helper for creating animated sprites.
-- Parallax layers.
+- :ref:`class_Parallax2D` layers.
 
    - Pseudo-3D support including preview in the editor.
 
