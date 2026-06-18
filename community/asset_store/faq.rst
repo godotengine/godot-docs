@@ -19,7 +19,7 @@ Yes! Please open an issue in the `asset store tracker repository <https://github
 How do I report an asset for theft/copyright infringement/malicious code?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the bottom of the assets page, underneath the panel on the right, there is a
+At the bottom of the assets page, below the panel on the right, there is a
 "Flag This Asset" button. You **must** be logged in to use it.
 
 I can't find an addon I download before when this was the Asset Library, was everything old removed?
@@ -81,6 +81,6 @@ other models that fulfill the same role.
 
 If you're altering something AI generated, or using something AI generated inside of
 something created manually, that still counts and you must disclose it. For example,
-if you AI generate an image, and then tweak it manually afterwards. Or If you AI
+if you AI generate an image, and then tweak it manually afterwards. Or if you AI
 generate an image and put it inside a human created image, for example an AI
 painting in a drawing of a room.
