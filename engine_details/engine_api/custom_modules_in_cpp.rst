@@ -86,6 +86,8 @@ And then the cpp file.
 
     #include "summator.h"
 
+    #include "core/object/class_db.h"
+
     void Summator::add(int p_value) {
         count += p_value;
     }
