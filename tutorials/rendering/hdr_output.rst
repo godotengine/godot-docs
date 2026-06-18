@@ -10,6 +10,16 @@ used by Godot for both Standard Dynamic Range (SDR) output and HDR output modes.
 HDR output is supported on iOS, Linux (Wayland), macOS, visionOS, and Windows. It is not supported
 on Android, Linux (X11), or web.
 
+.. note::
+
+    Both Windows 10 and 11 support HDR output, but only Windows 11
+    provides an app that can be used to configure the screen’s maximum
+    luminance that is used by the Godot editor.
+
+    On Linux, GNOME versions prior to 50 have a bug that prevents HDR output from working
+    on Wayland. If you are using an older version of GNOME, you will need to
+    upgrade to version 50 or later to use HDR output on Wayland.
+
 Enabling HDR output in your project
 -----------------------------------
 
