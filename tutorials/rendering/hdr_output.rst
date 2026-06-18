@@ -12,8 +12,9 @@ on Android, Linux (X11), or web.
 
 .. note::
 
-    Both Windows 10 and Windows 11 support HDR output, but Windows 11 is
-    preferred as it features better HDR calibration tools.
+    Both Windows 10 and 11 support HDR output, but only Windows 11
+    provides an app that can be used to configure the screen’s maximum
+    luminance that is used by the Godot editor.
 
     On Linux, GNOME versions prior to 50 have a bug that prevents HDR output from working
     on Wayland. If you are using an older version of GNOME, you will need to
