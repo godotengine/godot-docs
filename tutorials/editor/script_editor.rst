@@ -93,7 +93,8 @@ column, and whether the indentation is done using tabs, or spaces.
 
 Many of the actions performed in the text editor can also be executed using
 shortcuts. The actions show their corresponding shortcuts next to them.
-For a complete shortcut list, see the :ref:`text editor shortcuts <doc_default_key_mapping_shortcuts_text_editor>`.
+Within Godot itself, you can find and rebind all shortcuts by going to
+:menu:`Editor > Editor Settings... > Shortcuts`.
 
 In the next sections, we will go through different aspects of the text editor.
 You can also select a section below to jump to a specific topic:
