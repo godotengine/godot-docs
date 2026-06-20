@@ -475,7 +475,7 @@ Here's the code for the player body:
 
     func _physics_process(delta):
         # Add the gravity.
-        velocity.y += get_gravity() * delta
+        velocity += get_gravity() * delta
 
         # Handle Jump.
         if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -503,7 +503,7 @@ Here's the code for the player body:
             Vector2 velocity = Velocity;
 
             // Add the gravity.
-            velocity.Y += GetGravity() * (float)delta;
+            velocity += GetGravity() * (float)delta;
 
             // Handle jump.
             if (Input.IsActionJustPressed("jump") && IsOnFloor())
