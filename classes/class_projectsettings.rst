@@ -491,6 +491,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/size/enable_toggle_fullscreen_shortcut<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/extend_to_title<class_ProjectSettings_property_display/window/size/extend_to_title>`                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                   | :ref:`display/window/size/initial_position<class_ProjectSettings_property_display/window/size/initial_position>`                                                                                           | ``Vector2i(0, 0)``                                                                               |
@@ -818,6 +820,10 @@ Properties
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_submit<class_ProjectSettings_property_input/ui_text_submit>`                                                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`                                                                                                   |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_toggle_fullscreen<class_ProjectSettings_property_input/ui_toggle_fullscreen>`                                                                                                               |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_toggle_fullscreen.macos<class_ProjectSettings_property_input/ui_toggle_fullscreen.macos>`                                                                                                   |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_undo<class_ProjectSettings_property_input/ui_undo>`                                                                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -4820,6 +4826,18 @@ Forces the main window to be borderless.
 
 ----
 
+.. _class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **display/window/size/enable_toggle_fullscreen_shortcut** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>`
+
+If ``true``, allows the user to toggle fullscreen mode by pressing the shortcut defined in :ref:`input/ui_toggle_fullscreen<class_ProjectSettings_property_input/ui_toggle_fullscreen>` (:kbd:`Alt + Enter` by default).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_display/window/size/extend_to_title:
 
 .. rst-class:: classref-property
@@ -7077,6 +7095,32 @@ Default :ref:`InputEventAction<class_InputEventAction>` to submit a text field.
 Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* in a text field. While in insert mode, inserting new text overrides the character after the cursor, unless the next character is a new line.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_toggle_fullscreen:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_toggle_fullscreen** :ref:`🔗<class_ProjectSettings_property_input/ui_toggle_fullscreen>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to toggle fullscreen mode on the main window. This input action is only effective if :ref:`display/window/size/enable_toggle_fullscreen_shortcut<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>` is ``true``. Game embedding currently does not make use of this shortcut, as it does not support fullscreen mode.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_toggle_fullscreen.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_toggle_fullscreen.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_toggle_fullscreen.macos>`
+
+macOS specific override for the shortcut to toggle fullscreen mode on the main window.
 
 .. rst-class:: classref-item-separator
 

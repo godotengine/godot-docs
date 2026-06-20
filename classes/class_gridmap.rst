@@ -51,33 +51,37 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                                      | :ref:`bake_navigation<class_GridMap_property_bake_navigation>`                     | ``false``            |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`                         | ``true``             |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`                         | ``true``             |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`                         | ``true``             |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                                        | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>`                   | ``8``                |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                    | :ref:`cell_scale<class_GridMap_property_cell_scale>`                               | ``1.0``              |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                                | :ref:`cell_size<class_GridMap_property_cell_size>`                                 | ``Vector3(2, 2, 2)`` |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                                        | :ref:`collision_layer<class_GridMap_property_collision_layer>`                     | ``1``                |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                                        | :ref:`collision_mask<class_GridMap_property_collision_mask>`                       | ``1``                |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                    | :ref:`collision_priority<class_GridMap_property_collision_priority>`               | ``1.0``              |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`DebugVisibilityMode<enum_GridMap_DebugVisibilityMode>` | :ref:`collision_visibility_mode<class_GridMap_property_collision_visibility_mode>` | ``0``                |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`MeshLibrary<class_MeshLibrary>`                        | :ref:`mesh_library<class_GridMap_property_mesh_library>`                           |                      |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
-   | :ref:`PhysicsMaterial<class_PhysicsMaterial>`                | :ref:`physics_material<class_GridMap_property_physics_material>`                   |                      |
-   +--------------------------------------------------------------+------------------------------------------------------------------------------------+----------------------+
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`bake_navigation<class_GridMap_property_bake_navigation>`                     | ``false``             |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`                         | ``true``              |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`                         | ``true``              |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`                         | ``true``              |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                        | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>`                   | ``8``                 |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                    | :ref:`cell_scale<class_GridMap_property_cell_scale>`                               | ``1.0``               |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`                                | :ref:`cell_size<class_GridMap_property_cell_size>`                                 | ``Vector3(2, 2, 2)``  |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                        | :ref:`collision_layer<class_GridMap_property_collision_layer>`                     | ``1``                 |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                        | :ref:`collision_mask<class_GridMap_property_collision_mask>`                       | ``1``                 |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                    | :ref:`collision_priority<class_GridMap_property_collision_priority>`               | ``1.0``               |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`DebugVisibilityMode<enum_GridMap_DebugVisibilityMode>` | :ref:`collision_visibility_mode<class_GridMap_property_collision_visibility_mode>` | ``0``                 |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                    | :ref:`debug_octant_color<class_GridMap_property_debug_octant_color>`               | ``Color(1, 1, 1, 1)`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`debug_show_octants<class_GridMap_property_debug_show_octants>`               | ``false``             |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`MeshLibrary<class_MeshLibrary>`                        | :ref:`mesh_library<class_GridMap_property_mesh_library>`                           |                       |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PhysicsMaterial<class_PhysicsMaterial>`                | :ref:`physics_material<class_GridMap_property_physics_material>`                   |                       |
+   +--------------------------------------------------------------+------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -431,6 +435,40 @@ The priority used to solve colliding when occurring penetration. The higher the 
 - :ref:`DebugVisibilityMode<enum_GridMap_DebugVisibilityMode>` **get_collision_visibility_mode**\ (\ )
 
 Show or hide the **GridMap**'s collision shapes. If set to :ref:`DEBUG_VISIBILITY_MODE_DEFAULT<class_GridMap_constant_DEBUG_VISIBILITY_MODE_DEFAULT>`, this depends on the show collision debug settings.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GridMap_property_debug_octant_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug_octant_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_GridMap_property_debug_octant_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_octant_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_octant_color**\ (\ )
+
+The :ref:`Color<class_Color>` used for rendering octant debug visuals when :ref:`debug_show_octants<class_GridMap_property_debug_show_octants>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GridMap_property_debug_show_octants:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug_show_octants** = ``false`` :ref:`🔗<class_GridMap_property_debug_show_octants>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_show_octants**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_debug_show_octants**\ (\ )
+
+If ``true``, shows debug visuals for octants.
 
 .. rst-class:: classref-item-separator
 
