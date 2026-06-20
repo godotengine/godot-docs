@@ -49,6 +49,7 @@ For example:
 
 ::
 
+    class_name MyClass
     extends Node2D
     ## A brief description of the class's role and functionality.
     ##
@@ -140,6 +141,7 @@ Complete script example
 
 ::
 
+    class_name MyClass
     extends Node2D
     ## A brief description of the class's role and functionality.
     ##
