@@ -23,15 +23,15 @@ For compiling under Windows, the following is required:
 
       .. tabs::
 
-          .. tab:: Visaul Studio 2019
+          .. tab:: Visual Studio 2019
               - **MSVC v142 - VS 2019 C++ {arch} build tools (Latest)** for the target architectures.
               - **Windows 11 SDK (10.0.22621.0)** (exact version).
 
-          .. tab:: Visaul Studio 2022
+          .. tab:: Visual Studio 2022
               - **MSVC v143 - VS 2022 C++ {arch} build tools (Latest)** for the target architectures.
               - **Windows 11 SDK (10.0.22621.0)** or newer.
 
-          .. tab:: Visaul Studio 2026
+          .. tab:: Visual Studio 2026
               - **MSVC Build Tools for {arch} (Latest)** for the target architectures.
               - **Windows 11 SDK (10.0.22621.0)** or newer.
 
