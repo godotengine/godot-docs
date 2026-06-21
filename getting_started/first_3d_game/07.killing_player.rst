@@ -267,10 +267,10 @@ Next is ``mob.gd``.
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public float MinSpeed { get; set; } = 10.0;
+        public float MinSpeed { get; set; } = 10.0f;
         // Maximum speed of the mob in meters per second
         [Export]
-        public float MaxSpeed { get; set; } = 18.0;
+        public float MaxSpeed { get; set; } = 18.0f;
 
         public override void _PhysicsProcess(double delta)
         {
