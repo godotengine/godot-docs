@@ -13,7 +13,7 @@ If you decide to work with it, here's what to expect your workflow to look like:
 * Develop your code with your :ref:`favorite IDE <toc-devel-configuring_an_ide>` locally.
 * Build and test your code with the earliest compatible Godot version.
 * Create builds for all platforms you want to support (e.g. using `GitHub Actions <https://github.com/godotengine/godot-cpp-template/blob/main/.github/workflows/make_build.yml>`__).
-* Optional: Publish on the `Godot Asset Library <https://godotengine.org/asset-library/asset>`__.
+* Optional: Publish on the `Godot Asset Store <https://store.godotengine.org/>`__.
 
 Example project
 ---------------
