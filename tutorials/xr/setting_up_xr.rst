@@ -38,9 +38,9 @@ Which Renderer to use
 
 Godot has 3 renderer options for projects: Compatibility, Mobile, and Forward+.
 The current recommendation is to use the Mobile renderer for any desktop VR project,
-and use the Compatibility renderer for any project running on a standalone headset
-like the Meta Quest 3. XR projects will run with the Forward+ renderer, but it isn't
-well optimized for XR right now compared to the other two.
+or any project running on a standalone headset like the Meta Quest 3. XR projects
+will run with the Forward+ renderer, but it isn't well optimized for XR right now
+compared to the other two.
 
 OpenXR
 ------
