@@ -264,6 +264,14 @@ The following default values have been changed. If your project uses any of thes
 with their default value, you can achieve a similar behavior to the previous version by manually
 setting the values to match the old defaults.
 
+
+.. note::
+
+    The default stretch mode and stretch aspect for **newly created** projects
+    is now ``canvas_items`` and ``expand`` respectively (previously ``disabled``
+    and ``keep``). This can be changed in the Project Settings under
+    ``display/window/stretch/mode`` and ``display/window/stretch/aspect``.
+
 Animation
 ~~~~~~~~~
 
