@@ -10,6 +10,7 @@ and use it as an export template every time you export the project.
 
 There are some reasons why you may want to do this:
 
+* Export an AAB file for Google Play.
 * Modify the project before it's built.
 * Add external SDKs that build with your project.
 
@@ -40,13 +41,9 @@ When setting up the Android project in the **Project > Export** dialog,
 .. image:: img/gradle_build_enable.webp
 
 From now on, attempting to export the project or one-click deploy will call the
-`Gradle <https://gradle.org/>`__ build system to generate fresh templates (this
-window will appear every time):
-
-.. image:: img/gradle_build_gradle.webp
-
-The templates built will be used automatically afterwards, so no further
-configuration is needed.
+`Gradle <https://gradle.org/>`__ build system to generate fresh templates. The
+templates built will be used automatically afterwards, so no further configuration
+is needed.
 
 .. note::
 

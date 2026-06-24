@@ -59,7 +59,7 @@ those specific parameters changed. To do this, select every asset you want
 to reimport in the file system. In the import tab there will now be a
 checkbox to the left of every import parameter.
 
-.. image:: img/reimport_multiple.png
+.. image:: img/reimport_multiple.webp
 
 Select the checkbox of the parameters you want to change on your imported
 assets, then change the parameters normally. Finally, click the reimport

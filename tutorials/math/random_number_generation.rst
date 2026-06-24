@@ -30,46 +30,22 @@ using the :ref:`class_RandomNumberGenerator` class.
 
 Global scope methods are easier to set up, but they don't offer as much control.
 
-RandomNumberGenerator requires more code to use, but allows creating
-multiple instances, each with their own seed and state.
+RandomNumberGenerator requires more code to use, but allows creating multiple
+instances, each with their own seed and state. This is useful in certain
+scenarios like networked multiplayer, replay systems, games that feature rewind
+mechanics, and more.
 
 This tutorial uses global scope methods, except when the method only exists in
 the RandomNumberGenerator class.
 
-The randomize() method
-----------------------
+Random seed and internal state
+------------------------------
 
-.. note::
-
-    Since Godot 4.0, the random seed is automatically set to a random value when
-    the project starts. This means you don't need to call ``randomize()`` in
-    ``_ready()`` anymore to ensure that results are random across project runs.
-    However, you can still use ``randomize()`` if you want to use a specific
-    seed number, or generate it using a different method.
-
-In global scope, you can find a :ref:`randomize()
-<class_@GlobalScope_method_randomize>` method. **This method should be called only
-once when your project starts to initialize the random seed.** Calling it
-multiple times is unnecessary and may impact performance negatively.
-
-Putting it in your main scene script's ``_ready()`` method is a good choice:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _ready():
-        randomize()
-
- .. code-tab:: csharp
-
-    public override void _Ready()
-    {
-        GD.Randomize();
-    }
-
-You can also set a fixed random seed instead using :ref:`seed()
-<class_@GlobalScope_method_seed>`. Doing so will give you *deterministic* results
-across runs:
+By default, Godot uses a randomly generated random seed. This means that results
+will be different on every run. To get deterministic results, you can set a
+fixed seed using the :ref:`seed() <class_@GlobalScope_method_seed>` method. The
+*seed* is an integer that initializes the random number generator's state. If
+you use the same seed, you'll get the same sequence of random numbers every run.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -88,19 +64,66 @@ across runs:
         GD.Seed("Hello world".Hash());
     }
 
-When using the RandomNumberGenerator class, you should call ``randomize()`` on
-the instance since it has its own seed:
+When using the RandomNumberGenerator class, you can set the
+:ref:`RandomNumberGenerator.seed <class_RandomNumberGenerator_property_seed>`
+property on individual instances:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var random = RandomNumberGenerator.new()
-    random.randomize()
+    random.seed = 12345
 
  .. code-tab:: csharp
 
     var random = new RandomNumberGenerator();
-    random.Randomize();
+    random.Seed = 12345;
+
+You can set the seed back to a randomly generated value using the
+:ref:`randomize() <class_@GlobalScope_method_randomize>` global scope method.
+This is also available as the
+:ref:`RandomNumberGenerator.randomize() <class_RandomNumberGenerator_method_randomize>`
+method on RandomNumberGenerator instances.
+
+Random number generators also feature an internal *state* that changes every
+time a random number is generated. This state is used to generate the next
+random number in the sequence.
+
+Unlike global scope random number generation, RandomNumberGenerator features a
+:ref:`state <class_RandomNumberGenerator_property_state>` property. This is
+useful if you are performing multiple random number operations, and you want to
+return to a previous state of the random number generator without changing the
+seed. To do so, store the current state in a variable, and then set the state
+property back to that variable when needed:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var random = RandomNumberGenerator.new()
+    # Changing the seed will reset the state, so make sure to set the seed first.
+    random.seed = 12345
+    var previous_random_state = random.state
+    # Each call to a random function on this instance alters its state.
+    print(random.randi())
+
+    random.state = previous_random_state
+    # This will return the same value as the previous call,
+    # even though we didn't change the seed.
+    print(random.randi())
+
+ .. code-tab:: csharp
+
+    var random = new RandomNumberGenerator();
+    // Changing the seed will reset the state, so make sure to set the seed first.
+    random.Seed = 12345;
+    int previousRandomState = random.State;
+    // Each call to a random function on this instance alters its state.
+    GD.Print(random.Randi());
+
+    random.State = previousRandomState;
+    // This will return the same value as the previous call,
+    // even though we didn't change the seed.
+    GD.Print(random.Randi());
 
 Getting a random number
 -----------------------
@@ -419,7 +442,7 @@ floating-point number between 0.0 and 1.0. We can use this to create a
     }
 
 You can also get a weighted random *index* using the
-:ref:`rand_weighted() <class_RandomNumberGenerator_method_rand_weighted>` method
+:ref:`RandomNumberGenerator.rand_weighted() <class_RandomNumberGenerator_method_rand_weighted>` method
 on a RandomNumberGenerator instance. This returns a random integer
 between 0 and the size of the array that is passed as a parameter. Each value in the
 array is a floating-point number that represents the *relative* likelihood that it

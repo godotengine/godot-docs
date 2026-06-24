@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 120
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Style checks via pre-commit
         uses: pre-commit/action@v3.0.1
@@ -29,7 +29,7 @@ jobs:
           echo "PYTHON_VERSION=$(python --version)" >> $GITHUB_OUTPUT
 
       - name: Restore cached virtualenv
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
           path: .venv
@@ -43,7 +43,7 @@ jobs:
           echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
 
       - name: Save virtualenv cache
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
           path: .venv
