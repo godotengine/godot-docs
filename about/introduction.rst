@@ -82,7 +82,7 @@ This documentation is organized into several sections:
   or developing C++ modules.
 - **Community** is dedicated to the life of Godot's community and contains a list of
   recommended third-party tutorials and materials outside of this documentation.
-  It also provides details on the Asset Library. It also used to list Godot
+  It also provides details on the Asset Store. It also used to list Godot
   communities, which are now listed on the `Godot website <https://godotengine.org/community/>`_.
 - Finally, the **Class reference** documents the full Godot API,
   also available directly within the engine's script editor.

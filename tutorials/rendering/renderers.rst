@@ -65,7 +65,8 @@ Choose **Forward+** if:
 
 Choose **Mobile** if:
 
-    - You are developing for newer mobile devices, desktop XR, or desktop.
+    - You are developing for newer mobile devices, desktop XR, standalone XR, or
+      desktop.
     - You have relatively new hardware which supports Vulkan, Direct3D 12, or Metal.
     - You are developing a 3D game.
     - You want to use advanced rendering features, subject to the limitations
@@ -73,8 +74,8 @@ Choose **Mobile** if:
 
 Choose **Compatibility** if:
 
-    - You are developing for older mobile devices, older desktop devices, or
-      standalone XR. The Compatibility renderer supports the widest range of hardware.
+    - You are developing for older mobile devices, or older desktop devices.
+      The Compatibility renderer supports the widest range of hardware.
     - You are developing for web. In this case, Compatibility is the only choice.
     - You have older hardware which does not support Vulkan. In this case,
       Compatibility is the only choice.
@@ -151,9 +152,9 @@ Overall comparison
 |                     |                          |                          | optimized. Use Mobile or |
 |                     |                          |                          | Compatibility instead.   |
 +---------------------+--------------------------+--------------------------+--------------------------+
-| XR                  | ✔️ Yes. Recommended for  | ✔️ Yes. Recommended for  | ⚠️ Supported, but poorly |
-|                     | standalone headsets.     | desktop headsets.        | optimized. Use Mobile or |
-|                     |                          |                          | Compatibility instead.   |
+| XR                  | ⚠️ Supported, but not    | ✔️ Yes. Recommended for | ⚠️ Supported, but poorly  |
+|                     | recommended. Use Mobile  | desktop and standalone   | optimized. Use Mobile or |
+|                     | instead.                 | headsets.                | Compatibility instead.   |
 +---------------------+--------------------------+--------------------------+--------------------------+
 | Web                 | ✔️ Yes.                  | ❌ No.                   | ❌ No.                   |
 +---------------------+--------------------------+--------------------------+--------------------------+
