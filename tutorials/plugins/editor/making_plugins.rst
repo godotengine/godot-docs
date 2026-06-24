@@ -238,6 +238,8 @@ click the button, you can see some text in the console:
 
 .. image:: img/making_plugins-custom_node_console.webp
 
+.. _doc_making_plugins_custom_dock:
+
 A custom dock
 -------------
 
