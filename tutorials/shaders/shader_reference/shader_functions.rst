@@ -1,9 +1,9 @@
 .. _doc_shader_functions:
 
-Built-in functions
-==================
+Built-in shader functions
+=========================
 
-Godot supports a large number of built-in functions, conforming roughly to the
+Godot supports a large number of built-in shader functions, conforming roughly to the
 GLSL ES 3.0 specification.
 
 .. note::
@@ -1674,9 +1674,9 @@ vec3 **cross**\ (\ vec3 a, vec3 b) :ref:`🔗<shader_func_cross>`
 
     .. code-block:: glsl
 
-        vec2( a.y * b.z - b.y * a.z,
+        vec3( a.y * b.z - b.y * a.z,
               a.z * b.x - b.z * a.x,
-              a.x * b.z - b.x * a.y)
+              a.x * b.y - b.x * a.y)
 
     :param a:
         The first vector.
