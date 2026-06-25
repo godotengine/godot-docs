@@ -1,37 +1,37 @@
 :allow_comments: False
 
-Godot Docs – *master* branch
-============================
+Tài liệu Godot – nhánh *master*
+===============================
 
 .. only:: not i18n
 
-  .. note:: Godot's documentation is available in various languages and versions.
-            Expand the "Read the Docs" panel at the bottom of the sidebar to see
-            the list.
+  .. note:: Tài liệu của Godot hiện có ở nhiều ngôn ngữ và phiên bản.
+            Mở rộng bảng điều khiển "Read the Docs" ở cuối sidebar để xem
+            danh sách.
 
 .. only:: i18n
 
-  .. note:: This documentation is translated from the `original English one
-            <https://docs.godotengine.org/en/stable>`_ by community members
-            on `Weblate <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_.
+  .. note:: Tài liệu này được dịch từ `bản gốc tiếng Anh
+            <https://docs.godotengine.org/en/stable>`_ bởi các thành viên cộng đồng
+            trên `Weblate <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_.
 
-            Depending on the translation effort's completion level, you may
-            find paragraphs or whole pages which are still in English. You can
-            help the community by providing new translations or reviewing existing
-            ones on Weblate.
+            Tùy thuộc vào mức độ hoàn thành của quá trình dịch, bạn có thể
+            thấy các đoạn văn hoặc toàn bộ trang vẫn còn bằng tiếng Anh. Bạn có thể
+            giúp cộng đồng bằng cách cung cấp các bản dịch mới hoặc đánh giá các bản dịch hiện có
+            trên Weblate.
 
-            For the time being, localized translations are only available for
-            the "stable" branch. You can still view the English documentation for
-            other engine versions using the "Read the Docs" panel at the bottom
-            of the sidebar.
+            Ở thời điểm hiện tại, các bản dịch được địa phương hóa chỉ khả dụng cho
+            nhánh "stable". Bạn vẫn có thể xem tài liệu tiếng Anh cho
+            các phiên bản engine khác bằng cách sử dụng bảng "Read the Docs" ở cuối
+            sidebar.
 
-Welcome to the official documentation of `Godot Engine <https://godotengine.org>`__,
-the free and open source community-driven 2D and 3D game engine! If you are new
-to this documentation, we recommend that you read the
-:ref:`introduction page <doc_about_intro>` to get an overview of what this
-documentation has to offer.
+Chào mừng bạn đến với tài liệu chính thức của `Godot Engine <https://godotengine.org>`__,
+game engine 2D và 3D mã nguồn mở và miễn phí được phát triển bởi cộng đồng! Nếu bạn mới
+làm quen với tài liệu này, chúng tôi khuyên bạn nên đọc
+:ref:`trang giới thiệu <doc_about_intro>` để có cái nhìn tổng quan về những gì
+tài liệu này cung cấp.
 
-To begin reading the relevant documentation, select the tile that matches your profile:
+Để bắt đầu đọc tài liệu liên quan, hãy chọn thẻ (tile) phù hợp với hồ sơ của bạn:
 
 .. raw:: html
 
@@ -90,52 +90,52 @@ To begin reading the relevant documentation, select the tile that matches your p
     </style>
     <div class="grid-container">
         <a class="grid-item new-to-game" href="about/introduction.html">
-            I've never made a game before,<br>
-            <strong>I want to make a game.</strong>
+            Tôi chưa từng làm game bao giờ,<br>
+            <strong>Tôi muốn làm một trò chơi.</strong>
         </a>
         <a class="grid-item know-game-learn-godot" href="getting_started/step_by_step/index.html">
-            I know how to make a game,<br>
-            <strong>I want to know how to use Godot.</strong>
+            Tôi đã biết cách làm game,<br>
+            <strong>Tôi muốn biết cách sử dụng Godot.</strong>
             </a>
         <a class="grid-item know-godot-learn-godot" href="tutorials/index.html">
-            I know how to use Godot,<br>
-            <strong>I want to learn more advanced Godot topics.</strong>
+            Tôi đã biết cách sử dụng Godot,<br>
+            <strong>Tôi muốn tìm hiểu các chủ đề nâng cao về Godot.</strong>
         </a>
         <a class="grid-item contribute-to-godot" href="https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html">
-            I know how to use Godot,<br>
-            <strong>I want to contribute to Godot.</strong>
+            Tôi đã biết cách sử dụng Godot,<br>
+            <strong>Tôi muốn đóng góp cho Godot.</strong>
         </a>
     </div>
     <br>
 
-You can also use the table of contents in the sidebar to easily access
-any section of the documentation for your topic of interest. You can
-also use the search function in the top-left corner.
+Bạn cũng có thể sử dụng mục lục ở sidebar để dễ dàng truy cập
+bất kỳ phần nào của tài liệu cho chủ đề bạn quan tâm. Bạn cũng có thể
+sử dụng chức năng tìm kiếm ở góc trên bên trái.
 
-Get involved
-------------
+Tham gia đóng góp
+-----------------
 
-Godot Engine is an open source project developed by a community of volunteers.
-The documentation team can always use your feedback and help to improve the
-tutorials and class reference. If you don't understand something, or cannot find
-what you are looking for in the docs, help us make the documentation better
-by letting us know!
+Godot Engine là một dự án mã nguồn mở được phát triển bởi cộng đồng các tình nguyện viên.
+Nhóm tài liệu luôn sẵn sàng đón nhận phản hồi và sự trợ giúp của bạn để cải thiện
+các hướng dẫn và class reference (tài liệu tham khảo lớp). Nếu bạn không hiểu điều gì đó, hoặc không thể tìm thấy
+những gì bạn đang tìm kiếm trong tài liệu, hãy giúp chúng tôi làm cho tài liệu tốt hơn
+bằng cách cho chúng tôi biết!
 
-Submit an issue or pull request on the `GitHub repository <https://github.com/godotengine/godot-docs/issues>`_,
-help us `translate the documentation <https://hosted.weblate.org/engage/godot-engine/>`_
-into your language, or talk to us on the ``#documentation`` channel on the
+Gửi một issue hoặc pull request trên `kho lưu trữ GitHub <https://github.com/godotengine/godot-docs/issues>`_,
+giúp chúng tôi `dịch tài liệu <https://hosted.weblate.org/engage/godot-engine/>`_
+sang ngôn ngữ của bạn, hoặc trò chuyện với chúng tôi trên kênh ``#documentation`` tại
 `Godot Contributors Chat <https://chat.godotengine.org/>`_!
 
 .. centered:: |weblate_widget|
 
-Offline documentation
----------------------
+Tài liệu ngoại tuyến
+--------------------
 
-To browse the documentation offline, you can download an HTML copy (updated every Monday): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip>`__. Extract the ZIP archive then open
-the top-level ``index.html`` in a web browser.
+Để xem tài liệu ngoại tuyến, bạn có thể tải xuống bản sao HTML (được cập nhật vào mỗi thứ Hai): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip>`__. Giải nén kho lưu trữ ZIP sau đó mở
+tập tin ``index.html`` cấp cao nhất trong trình duyệt web.
 
-For mobile devices or e-readers, you can also download an ePub copy (updated every Monday): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip>`__. Extract the ZIP archive then open
-the ``GodotEngine.epub`` file in an e-book reader application.
+Đối với thiết bị di động hoặc thiết bị đọc sách điện tử (e-reader), bạn cũng có thể tải xuống bản sao ePub (được cập nhật vào mỗi thứ Hai): `stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip>`__, `latest <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip>`__, `3.6 <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip>`__. Giải nén kho lưu trữ ZIP sau đó mở
+tập tin ``GodotEngine.epub`` trong ứng dụng đọc sách điện tử.
 
 .. Below is the main table-of-content tree of the documentation website.
    It is hidden on the page itself, but it makes up the sidebar for navigation.
@@ -143,7 +143,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: About
+   :caption: Giới thiệu
    :name: sec-general
 
    about/introduction
@@ -157,7 +157,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Getting started
+   :caption: Bắt đầu
    :name: sec-learn
 
    getting_started/introduction/index
@@ -172,7 +172,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Manual
+   :caption: Hướng dẫn sử dụng
    :name: sec-tutorials
 
    tutorials/best_practices/index
@@ -206,7 +206,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Engine details
+   :caption: Chi tiết engine
    :name: sec-engine-details
 
    engine_details/architecture/index
@@ -220,7 +220,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Community
+   :caption: Cộng đồng
    :name: sec-community
 
    community/asset_library/index
@@ -232,7 +232,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Class reference
+   :caption: Tài liệu tham khảo lớp
    :name: sec-class-ref
 
    classes/index
