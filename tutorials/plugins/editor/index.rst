@@ -14,3 +14,4 @@ Editor plugins
    3d_gizmos
    inspector_plugins
    visual_shader_plugins
+   internationalizing_plugins
