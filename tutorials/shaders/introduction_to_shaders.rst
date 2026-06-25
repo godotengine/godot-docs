@@ -36,6 +36,8 @@ look like this.
 
 .. code-block:: glsl
 
+    shader_type canvas_item;
+
     void fragment() {
         COLOR = some_color;
     }
