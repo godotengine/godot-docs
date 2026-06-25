@@ -246,7 +246,7 @@ Not matching the physics update rate will cause stuttering as frames are rendere
 
         # Now match our physics rate
         Engine.physics_ticks_per_second = current_refresh_rate
- 
+
     ...
 
   .. code-tab:: csharp
@@ -342,7 +342,7 @@ If you haven't, you can connect a method to the signal that performs additional 
             get_tree().paused = true
 
             emit_signal("focus_lost")
- 
+
     ...
 
   .. code-tab:: csharp
@@ -506,6 +506,6 @@ Often it is enough to call :ref:`center_on_hmd() <class_XRServer_method_center_o
         }
     }
 
-And that finished our script. It was written so that it can be re-used over multiple projects.
+And that finished our script. It was written so that it can be reused over multiple projects.
 Just add it as the script on your main node (and extend it if needed)
 or add it on a child node specific for this script.
