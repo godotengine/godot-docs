@@ -95,6 +95,7 @@ supported_languages = {
     "pt_BR": "Documentação da Godot Engine %s em Português Brasileiro",
     "ru": "Документация Godot Engine %s на русском языке",
     "uk": "Документація до Godot Engine %s українською мовою",
+    "vi": "Tài liệu Godot Engine %s bằng tiếng Việt",
     "zh_Hans": "Godot Engine %s 简体中文文档",
     "zh_Hant": "Godot Engine %s 正體中文 (台灣) 文件",
     # Keeping those as RTD doesn't support Hans/Hant names yet.
