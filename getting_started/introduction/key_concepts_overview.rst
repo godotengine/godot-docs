@@ -1,6 +1,5 @@
 .. Intention: introduce only a handful of key concepts and avoid a big cognitive
-   load. Readers will then be reminded of the concepts further in the getting
-   started series, reinforcing their learning.
+   load. Readers will then be reminded of the concepts further in the Getting Started series, reinforcing their learning.
 
 .. _doc_key_concepts_overview:
 
@@ -9,7 +8,7 @@ Overview of Godot's key concepts
 
 Every game engine revolves around abstractions you use to build your
 applications. In Godot, a game is a **tree** of **nodes** that you group
-together into **scenes**. You can then wire these nodes so they can communicate
+into **scenes**. You can then wire these nodes so they can communicate
 using **signals**.
 
 These are the four concepts you will learn here. We're going to look at them
@@ -21,7 +20,7 @@ series, you will get to use them in practice.
 Scenes
 ------
 
-In Godot, you break down your game in reusable scenes. A scene can be a character,
+In Godot, you break down your game into reusable scenes. A scene can be a character,
 a weapon, a menu in the user interface, a single house, an entire level, or
 anything you can think of. Godot's scenes are flexible; they fill the role of
 both prefabs and scenes in some other game engines.
@@ -85,11 +84,11 @@ flexibility in how you structure your scenes.
           https://gameprogrammingpatterns.com/observer.html
 
 For example, buttons emit a signal when pressed. You can connect a piece of code
-to this signal which will run in reaction to this event, like starting the game
+to this signal, which will run in reaction to this event, like starting the game
 or opening a menu.
 
-Other built-in signals can tell you when two objects collided, when a character
-or monster entered a given area, and much more. You can also define new signals
+Other built-in signals can tell you when two objects collide, when a character
+or monster enters a given area, and much more. You can also define new signals
 tailored to your game.
 
 Summary
@@ -103,4 +102,4 @@ that you then combine and nest into the scene tree. You can then use signals to
 make nodes react to events in other nodes or different scene tree branches.
 
 After this short breakdown, you probably have many questions. Bear with us as
-you will get many answers throughout the getting started series.
+you will get many answers throughout the Getting Started series.
