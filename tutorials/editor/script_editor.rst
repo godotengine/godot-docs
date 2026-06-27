@@ -238,7 +238,7 @@ The **Edit** menu provides several options for line operations:
 - **Cut***: Cuts the selection to the clipboard.
 - **Copy***: Copies the selection to the clipboard.
 - **Paste***: Pastes the content of the clipboard if it contains text.
-- **Select All***: Selects the all code in the text editor.
+- **Select All***: Selects all code in the text editor.
 - **Duplicate Selection**: Copies the selection and appends it next to the selection.
 - **Duplicate Lines**: Duplicates the current line and adds it as a new line below the
   current line.
@@ -407,5 +407,5 @@ Line 55 is a breakpoint that can be used in :ref:`debugging <doc_overview_of_deb
 .. image:: img/script_editor_icons/text_editor_coding_area_indicators.webp
 
 Many of the colors of the text editor such as highlighting colors, or even breakpoint or
-bookmark icon colors can be customized. You can experiment them by opening the text editor
-settings navigating to **Editor > Editor Settings > Text Editor** section.
+bookmark icon colors can be customized. You can experiment with them by opening the text editor
+settings and navigating to the **Editor > Editor Settings > Text Editor** section.
