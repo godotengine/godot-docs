@@ -2224,7 +2224,7 @@ Copies the current text selection. Can be overridden with :ref:`_copy()<class_Te
 
 |void| **cut**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_cut>`
 
-Cut's the current selection. Can be overridden with :ref:`_cut()<class_TextEdit_private_method__cut>`.
+Cuts the current selection. Can be overridden with :ref:`_cut()<class_TextEdit_private_method__cut>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3041,7 +3041,7 @@ If ``include_ignored_carets`` is ``false``, carets from :ref:`multicaret_edit_ig
 
 :ref:`int<class_int>` **get_tab_size**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_tab_size>`
 
-Returns the **TextEdit**'s' tab size.
+Returns the **TextEdit**'s tab size.
 
 .. rst-class:: classref-item-separator
 

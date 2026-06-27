@@ -1830,7 +1830,7 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 - |void| **set_positional_shadow_atlas_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_positional_shadow_atlas_size**\ (\ )
 
-The shadow atlas' resolution (used for omni and spot lights). The value is rounded up to the nearest power of 2.
+The shadow atlas's resolution (used for omni and spot lights). The final value is rounded up to the nearest power of 2.
 
 \ **Note:** If this is set to ``0``, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 

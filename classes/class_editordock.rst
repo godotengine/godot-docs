@@ -107,7 +107,7 @@ Methods
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`_save_layout_to_config<class_EditorDock_private_method__save_layout_to_config>`\ (\ config\: :ref:`ConfigFile<class_ConfigFile>`, section\: :ref:`String<class_String>`\ ) |virtual| |const| |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`_update_layout<class_EditorDock_private_method__update_layout>`\ (\ layout\: :ref:`int<class_int>`\ ) |virtual|                                                                              |
+   | |void| | :ref:`_update_layout<class_EditorDock_private_method__update_layout>`\ (\ layout\: :ref:`int<class_int>`, slot\: :ref:`int<class_int>`\ ) |virtual|                                                |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`close<class_EditorDock_method_close>`\ (\ )                                                                                                                                                  |
    +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -554,13 +554,13 @@ Implement this method to handle saving this dock's layout. It's equivalent to :r
 
 .. rst-class:: classref-method
 
-|void| **_update_layout**\ (\ layout\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDock_private_method__update_layout>`
+|void| **_update_layout**\ (\ layout\: :ref:`int<class_int>`, slot\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDock_private_method__update_layout>`
 
-Implement this method to handle the layout switching for this dock. ``layout`` is one of the :ref:`DockLayout<enum_EditorDock_DockLayout>` constants.
+Implement this method to handle the layout/slot switching for this dock. ``layout`` is one of the :ref:`DockLayout<enum_EditorDock_DockLayout>` constants, and ``slot`` is one of the :ref:`DockSlot<enum_EditorDock_DockSlot>` ones.
 
 ::
 
-    func _update_layout(layout):
+    func _update_layout(layout, slot):
         box_container.vertical = (layout == DOCK_LAYOUT_VERTICAL)
 
 .. rst-class:: classref-item-separator

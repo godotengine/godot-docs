@@ -45,6 +45,8 @@ Methods
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                  | :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                                                  |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                                    | :ref:`get_item_category<class_MeshLibrary_method_get_item_category>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                          |
+   +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                  | :ref:`get_item_count<class_MeshLibrary_method_get_item_count>`\ (\ ) |const|                                                                                                                                            |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`                        | :ref:`get_item_list<class_MeshLibrary_method_get_item_list>`\ (\ ) |const|                                                                                                                                              |
@@ -70,6 +72,8 @@ Methods
    | :ref:`int<class_int>`                                                  | :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>`\ (\ ) |const|                                                                                                                          |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`remove_item<class_MeshLibrary_method_remove_item>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                                                              |
+   +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`set_item_category<class_MeshLibrary_method_set_item_category>`\ (\ id\: :ref:`int<class_int>`, category\: :ref:`StringName<class_StringName>`\ )                                                                  |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`set_item_mesh<class_MeshLibrary_method_set_item_mesh>`\ (\ id\: :ref:`int<class_int>`, mesh\: :ref:`Mesh<class_Mesh>`\ )                                                                                          |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,6 +136,18 @@ You can get an unused ID from :ref:`get_last_unused_item_id()<class_MeshLibrary_
 :ref:`int<class_int>` **find_item_by_name**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_find_item_by_name>`
 
 Returns the first item with the given name, or ``-1`` if no item is found.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_method_get_item_category:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_item_category**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_get_item_category>`
+
+Returns the category for a specific item ``id``. See also :ref:`set_item_category()<class_MeshLibrary_method_set_item_category>`.
 
 .. rst-class:: classref-item-separator
 
@@ -290,6 +306,18 @@ Gets an unused ID for a new item.
 |void| **remove_item**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MeshLibrary_method_remove_item>`
 
 Removes the item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_method_set_item_category:
+
+.. rst-class:: classref-method
+
+|void| **set_item_category**\ (\ id\: :ref:`int<class_int>`, category\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_MeshLibrary_method_set_item_category>`
+
+Sets the ``category`` for a specific item ``id`` for organization in the :ref:`GridMap<class_GridMap>` editor. A category can include ``/`` as a delimiter to create sub categories.
 
 .. rst-class:: classref-item-separator
 

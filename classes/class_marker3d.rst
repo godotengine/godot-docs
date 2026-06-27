@@ -19,7 +19,7 @@ Generic 3D position hint for editing.
 Description
 -----------
 
-Generic 3D position hint for editing. It's just like a plain :ref:`Node3D<class_Node3D>`, but it displays as a cross in the 3D editor at all times.
+Generic 3D position hint for editing. This is like a plain :ref:`Node3D<class_Node3D>`, but it displays as a cross in the 3D editor.
 
 .. rst-class:: classref-reftable-group
 

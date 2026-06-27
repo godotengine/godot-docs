@@ -21,11 +21,11 @@ A server interface for low-level 2D navigation access.
 Description
 -----------
 
-NavigationServer2D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar2D<class_AStar2D>` or :ref:`AStarGrid2D<class_AStarGrid2D>`.
+NavigationServer2D is the server that handles navigation maps, regions, and agents. It does not handle A\* navigation from :ref:`AStar2D<class_AStar2D>` or :ref:`AStarGrid2D<class_AStarGrid2D>`.
 
 Maps are divided into regions, which are composed of navigation polygons. Together, they define the traversable areas in the 2D world.
 
-\ **Note:** Most **NavigationServer2D** changes take effect after the next physics frame and not immediately. This includes all changes made to maps, regions or agents by navigation-related nodes in the scene tree or made through scripts.
+\ **Note:** Most **NavigationServer2D** changes take effect after the next physics frame and not immediately. This includes all changes made to maps, regions, or agents by navigation-related nodes in the scene tree or made through scripts.
 
 For two regions to be connected to each other, they must share a similar edge. An edge is considered connected to another if both of its two vertices are at a distance less than ``edge_connection_margin`` to the respective other edge's vertex.
 
@@ -833,7 +833,7 @@ Sets the radius of the agent.
 
 |void| **agent_set_time_horizon_agents**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_time_horizon_agents>`
 
-The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
+The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. A too high value will slow down agent movement considerably. Must be positive.
 
 .. rst-class:: classref-item-separator
 
@@ -845,7 +845,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 |void| **agent_set_time_horizon_obstacles**\ (\ agent\: :ref:`RID<class_RID>`, time_horizon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_time_horizon_obstacles>`
 
-The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to static avoidance obstacles. The larger this number, the sooner this agent will respond to the presence of static avoidance obstacles, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
+The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to static avoidance obstacles. The larger this number, the sooner this agent will respond to the presence of static avoidance obstacles, but the less freedom this agent has in choosing its velocities. A too high value will slow down agent movement considerably. Must be positive.
 
 .. rst-class:: classref-item-separator
 
@@ -857,7 +857,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 |void| **agent_set_velocity**\ (\ agent\: :ref:`RID<class_RID>`, velocity\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_NavigationServer2D_method_agent_set_velocity>`
 
-Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfill this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position far away use :ref:`agent_set_velocity_forced()<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
+Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to achieve this velocity if possible, but will adjust it to avoid colliding with other agents and obstacles. When an agent is teleported to a new position far away, use :ref:`agent_set_velocity_forced()<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
 
 .. rst-class:: classref-item-separator
 
@@ -1159,7 +1159,7 @@ Sets the navigation map :ref:`RID<class_RID>` for the link.
 
 |void| **link_set_navigation_layers**\ (\ link\: :ref:`RID<class_RID>`, navigation_layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_link_set_navigation_layers>`
 
-Set the links's navigation layers. This allows selecting links from a path request (when using :ref:`map_get_path()<class_NavigationServer2D_method_map_get_path>`).
+Sets the given ``link``'s navigation layers to ``navigation_layers``. This allows selecting links from a path request (when using :ref:`map_get_path()<class_NavigationServer2D_method_map_get_path>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1223,7 +1223,7 @@ Create a new map.
 
 This function immediately forces synchronization of the specified navigation ``map`` :ref:`RID<class_RID>`. By default navigation maps are only synchronized at the end of each physics frame. This function can be used to immediately (re)calculate all the navigation meshes and region connections of the navigation map. This makes it possible to query a navigation path for a changed map immediately and in the same frame (multiple times if needed).
 
-Due to technical restrictions the current NavigationServer command queue will be flushed. This means all already queued update commands for this physics frame will be executed, even those intended for other maps, regions and agents not part of the specified map. The expensive computation of the navigation meshes and region connections of a map will only be done for the specified map. Other maps will receive the normal synchronization at the end of the physics frame. Should the specified map receive changes after the forced update it will update again as well when the other maps receive their update.
+Due to technical restrictions the current NavigationServer command queue will be flushed. This means all already queued update commands for this physics frame will be executed, even those intended for other maps, regions, and agents not part of the specified map. The expensive computation of the navigation meshes and region connections of a map will only be done for the specified map. Other maps will receive the normal synchronization at the end of the physics frame. Should the specified map receive changes after the forced update it will update again as well when the other maps receive their update.
 
 Avoidance processing and dispatch of the ``safe_velocity`` signals is unaffected by this function and continues to happen for all maps and agents at the end of the physics frame.
 
@@ -1239,7 +1239,7 @@ Avoidance processing and dispatch of the ``safe_velocity`` signals is unaffected
 
 :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_agents**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_agents>`
 
-Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+Returns all navigation agent :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1337,7 +1337,7 @@ Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned
 
 :ref:`float<class_float>` **map_get_merge_rasterizer_cell_scale**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_merge_rasterizer_cell_scale>`
 
-Returns map's internal merge rasterizer cell scale.
+Returns the map's internal merge rasterizer cell scale.
 
 .. rst-class:: classref-item-separator
 
@@ -1389,7 +1389,7 @@ If ``uniformly`` is ``false``, just a random region and a random polygon are pic
 
 :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **map_get_regions**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_regions>`
 
-Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+Returns all navigation region :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1641,7 +1641,7 @@ If ``enabled`` is ``true``, the provided ``obstacle`` affects avoidance using ag
 
 |void| **obstacle_set_avoidance_layers**\ (\ obstacle\: :ref:`RID<class_RID>`, layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_NavigationServer2D_method_obstacle_set_avoidance_layers>`
 
-Set the obstacles's ``avoidance_layers`` bitmask.
+Sets the given ``obstacle``'s avoidance layers to ``layers``.
 
 .. rst-class:: classref-item-separator
 
@@ -2123,7 +2123,7 @@ If ``true`` enables debug mode on the NavigationServer.
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **simplify_path**\ (\ path\: :ref:`PackedVector2Array<class_PackedVector2Array>`, epsilon\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_simplify_path>`
 
-Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in worlds units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
+Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in world units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
 
 Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
 

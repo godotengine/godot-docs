@@ -182,7 +182,7 @@ Returns a :ref:`String<class_String>` representation of the event.
 
 :ref:`float<class_float>` **get_action_strength**\ (\ action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_InputEvent_method_get_action_strength>`
 
-Returns a value between 0.0 and 1.0 depending on the given actions' state. Useful for getting the value of events of type :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
+Returns a value between ``0.0`` and ``1.0`` depending on the given action's state. Useful for getting the value of events of type :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 

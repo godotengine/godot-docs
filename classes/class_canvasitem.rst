@@ -659,7 +659,9 @@ The color applied to this **CanvasItem**. This property does affect child **Canv
 - |void| **set_oversampling_with_scale**\ (\ value\: :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>`\ )
 - :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **get_oversampling_with_scale**\ (\ )
 
-If enabled, oversampling for this **CanvasItem** is automatically adjusted with scale.
+If enabled, oversampling for this **CanvasItem** is automatically adjusted with scale. This makes fonts and :ref:`DPITexture<class_DPITexture>` images automatically re-render to match the actual scale they are drawn at, for crisper visuals. This has a performance impact on the CPU every time the node's scale changes, so it is disabled by default.
+
+\ **Note:** For :ref:`Control<class_Control>` nodes with :ref:`Control.offset_transform_enabled<class_Control_property_offset_transform_enabled>` set to ``true``, scale-based oversampling is only effective if :ref:`Control.offset_transform_visual_only<class_Control_property_offset_transform_visual_only>` is ``false``. This ensures there is no performance overhead when using visual-only offset transforms (as often used in animations).
 
 .. rst-class:: classref-item-separator
 
@@ -1477,7 +1479,7 @@ Returns the global transform matrix of this item, i.e. the combined transform up
 
 :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_transform_with_canvas>`
 
-Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
+Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`'s coordinate system.
 
 .. rst-class:: classref-item-separator
 

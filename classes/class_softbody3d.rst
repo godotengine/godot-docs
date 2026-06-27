@@ -55,6 +55,8 @@ Properties
    +-------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
    | :ref:`NodePath<class_NodePath>`                 | :ref:`parent_collision_ignore<class_SoftBody3D_property_parent_collision_ignore>` | ``NodePath("")`` |
    +-------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`                           | :ref:`point_count<class_SoftBody3D_property_point_count>`                         |                  |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
    | :ref:`float<class_float>`                       | :ref:`pressure_coefficient<class_SoftBody3D_property_pressure_coefficient>`       | ``0.0``          |
    +-------------------------------------------------+-----------------------------------------------------------------------------------+------------------+
    | :ref:`bool<class_bool>`                         | :ref:`ray_pickable<class_SoftBody3D_property_ray_pickable>`                       | ``true``         |
@@ -268,6 +270,22 @@ Higher values will result in a stiffer body, while lower values will increase th
 - :ref:`NodePath<class_NodePath>` **get_parent_collision_ignore**\ (\ )
 
 :ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` this SoftBody3D should avoid clipping.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SoftBody3D_property_point_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **point_count** :ref:`🔗<class_SoftBody3D_property_point_count>`
+
+.. rst-class:: classref-property-setget
+
+- :ref:`int<class_int>` **get_point_count**\ (\ )
+
+The number of vertices (points) on the soft body mesh.
 
 .. rst-class:: classref-item-separator
 

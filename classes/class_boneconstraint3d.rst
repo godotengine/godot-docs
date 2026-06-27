@@ -90,7 +90,7 @@ enum **ReferenceType**: :ref:`🔗<enum_BoneConstraint3D_ReferenceType>`
 
 :ref:`ReferenceType<enum_BoneConstraint3D_ReferenceType>` **REFERENCE_TYPE_BONE** = ``0``
 
-The reference target is a bone. In this case, the reference target spaces is local space.
+The reference target is a bone. In this case, the reference target space is local space.
 
 .. _class_BoneConstraint3D_constant_REFERENCE_TYPE_NODE:
 
@@ -98,9 +98,9 @@ The reference target is a bone. In this case, the reference target spaces is loc
 
 :ref:`ReferenceType<enum_BoneConstraint3D_ReferenceType>` **REFERENCE_TYPE_NODE** = ``1``
 
-The reference target is a :ref:`Node3D<class_Node3D>`. In this case, the reference target spaces is model space.
+The reference target is a :ref:`Node3D<class_Node3D>`. In this case, the reference target space is model space.
 
-In other words, the reference target's coordinates are treated as if it were placed directly under :ref:`Skeleton3D<class_Skeleton3D>` which parent of the **BoneConstraint3D**.
+In other words, the reference target's coordinates are treated as if it was placed directly under the :ref:`Skeleton3D<class_Skeleton3D>` parent of the **BoneConstraint3D**.
 
 .. rst-class:: classref-section-separator
 
@@ -195,7 +195,7 @@ This bone will be only referenced and not modified by this modifier.
 
 Returns the reference node path of the setting at ``index``.
 
-This node will be only referenced and not modified by this modifier.
+This node will only be referenced and not modified by this modifier.
 
 .. rst-class:: classref-item-separator
 
@@ -269,7 +269,7 @@ Sets the apply bone of the setting at ``index`` to ``bone_name``. This bone will
 
 Sets the reference bone of the setting at ``index`` to ``bone``.
 
-This bone will be only referenced and not modified by this modifier.
+This bone will only be referenced and not modified by this modifier.
 
 .. rst-class:: classref-item-separator
 
@@ -283,7 +283,7 @@ This bone will be only referenced and not modified by this modifier.
 
 Sets the reference bone of the setting at ``index`` to ``bone_name``.
 
-This bone will be only referenced and not modified by this modifier.
+This bone will only be referenced and not modified by this modifier.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +297,7 @@ This bone will be only referenced and not modified by this modifier.
 
 Sets the reference node path of the setting at ``index`` to ``node``.
 
-This node will be only referenced and not modified by this modifier.
+This node will only be referenced and not modified by this modifier.
 
 .. rst-class:: classref-item-separator
 

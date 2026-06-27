@@ -92,6 +92,8 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>`\ (\ ) |const|                                                                                                   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_joint_rid<class_PhysicalBone3D_method_get_joint_rid>`\ (\ ) |const|                                                                                               |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone3D_method_get_simulate_physics>`\ (\ )                                                                                         |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone3D_method_is_simulating_physics>`\ (\ )                                                                                       |
@@ -531,6 +533,18 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 :ref:`int<class_int>` **get_bone_id**\ (\ ) |const| :ref:`🔗<class_PhysicalBone3D_method_get_bone_id>`
 
 Returns the unique identifier of the PhysicsBone3D.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicalBone3D_method_get_joint_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_joint_rid**\ (\ ) |const| :ref:`🔗<class_PhysicalBone3D_method_get_joint_rid>`
+
+Returns the joint's internal :ref:`RID<class_RID>` from the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
 .. rst-class:: classref-item-separator
 
