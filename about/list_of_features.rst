@@ -601,6 +601,7 @@ Import
    - WAV with optional :abbr:`QOA (Quite OK Audio)` or IMA-ADPCM compression.
    - Ogg Vorbis.
    - MP3.
+   - Opus.
 
 - *3D scenes:* See :ref:`doc_importing_3d_scenes`.
 
