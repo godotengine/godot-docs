@@ -320,19 +320,15 @@ is controlled to determine the blending:
 
 .. image:: img/animtree_blendspace2d.gif
 
-You may place these points anywhere on the graph by right clicking or using the **add point** button, whose icon is a pen and point.
-Wherever you place the points, the triangle between them will be generated automatically using Delaunay.
-You may also control and label the ranges in X and Y.
+You may insert these points anywhere on the graph by right-clicking or using the **add point** button in the toolbar. On creation, a point gets its name from the chosen animation
+or :ref:`AnimationRootNode<class_AnimationRootNode>` type. This point can then be renamed by clicking on its name, or repositioned by clicking and dragging the name or the point.
+If **Auto Triangles** is enabled, a blend triangle between inserted points will be automatically generated using `Delaunay triangulation <https://en.wikipedia.org/wiki/Delaunay_triangulation>`__.
 
-.. image:: img/animtree_blendspacepoints.gif
+.. image:: img/animtree_blendspacepoints.webp
 
-Finally, you may also change the blend mode. By default, blending happens by interpolating points inside the closest triangle. When dealing with 2D
-animations (frame by frame), you may want to switch to *Discrete* mode. Alternatively, if you want to keep the current play position when switching
-between discrete animations, there is a *Carry* mode. This mode can be changed in the *Blend* menu:
+This node's animation blend target can be manipulated in the editor by pressing Shift while dragging the left mouse button, or using the dedicated tool.
 
-.. image:: img/animtree_blendmode.png
-
-BlendSpace1D works just like BlendSpace2D, but in one dimension (a line). Triangles are not used.
+``BlendSpace1D`` works just like ``BlendSpace2D``, but in a single dimension (a horizontal line). Since triangles are not used, it is able to function with fewer than three blend points.
 
 .. image:: img/animtree_blendspace1d.webp
 
@@ -368,6 +364,16 @@ There are four modes available:
    :ref:`AnimationNodeTimeSeek <class_AnimationNodeTimeSeek>` to the output will break synchronization.
    In that case, use :ref:`AnimationNodeAnimation.use_custom_timeline <class_AnimationNodeAnimation_property_use_custom_timeline>`
    to normalize animation lengths before syncing.
+
+Blend mode
+~~~~~~~~~~
+
+By default, blending happens in the *Continuous* mode, by interpolating points inside the closest triangle in ``BlendSpace2D``, or in the line between points in ``BlendSpace1D``.
+However, this may not always be the best choice. For instance, when dealing with frame-by-frame 2D animations, you may want to switch to the *Discrete* mode,
+in which the intermediate states of the blend do not appear in the result. Alternatively, if you want to retain the current play position
+when switching between discrete animations, the *Carry* mode allows you to do so. These modes can be set with the *Blend* menu.
+
+.. image:: img/animtree_blendmode.webp
 
 For better blending
 -------------------
