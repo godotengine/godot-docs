@@ -44,7 +44,7 @@ The range and precision (minimum step between two exponent intervals) are
 determined by the floating-point number type. The *theoretical* range allows
 extremely high values to be stored in single-precision floats, but with very low
 precision. In practice, a floating-point type that cannot represent all integer
-values is not very useful. At extreme values, precision becomes so low that the
+values is not always useful. At extreme values, precision becomes so low that the
 number cannot even distinguish two separate *integer* values from each other.
 
 This is the range where individual integer values can be represented in a
@@ -152,8 +152,10 @@ Who are large world coordinates for?
 ------------------------------------
 
 Large world coordinates are typically required for 3D space or planetary-scale
-simulation games. This extends to games that require supporting *very* fast
-movement speeds, but also very slow *and* precise movements at times.
+simulation games when they involve both very large distances or object sizes
+*and* small and precise positions at the same time. This extends to games that
+require supporting *very* fast movement speeds, but also very slow *and* precise
+movements at times.
 
 On the other hand, it's important to only use large world coordinates when
 actually required (for performance reasons). Large world coordinates are usually
@@ -164,6 +166,12 @@ actually required (for performance reasons). Large world coordinates are usually
 - Games with large worlds, but split into different levels with loading
   sequences in between. You can center each level portion around the world
   origin to avoid precision issues without a performance penalty.
+- Games with large-scale worlds, involving only large objects and speeds.
+  As long as you don't need small-scale control over the world, you can stick to
+  single-precision coordinates. This also means that you can keep using real scale
+  physical distance and speed units, even in (very) large worlds.
+- Games with (very) far away geometry that the player can never reach. You can 
+  increase the Camera node's **Far** property enough to get that geometry rendered.
 - Open world games with a *playable on-foot area* not exceeding 8192×8192 meters
   (centered around the world origin). As shown in the above table, the level of
   precision remains acceptable within that range, even for a first-person game.

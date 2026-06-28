@@ -171,9 +171,10 @@ Large worlds
 If you are making large worlds, there are different considerations than what you
 may be familiar with from smaller games.
 
-Large worlds may need to be built in tiles that can be loaded on demand as you
-move around the world. This can prevent memory use from getting out of hand, and
-also limit the processing needed to the local area.
+Even though Godot has the ability to render any far away geometry, large worlds may
+need to be built in tiles that can be loaded on demand as you move around the world.
+This can prevent memory use from getting out of hand, and also limit the processing
+needed to the local area.
 
 There may also be rendering and physics glitches due to floating point error in
 large worlds. This can be resolved using :ref:`doc_large_world_coordinates`.
