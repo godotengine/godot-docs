@@ -749,15 +749,25 @@ Mobile
 XR support (AR and VR)
 ----------------------
 
-- Out of the box :ref:`support for OpenXR <doc_setting_up_xr>`.
+- Support for desktop headsets using :ref:`OpenXR <doc_setting_up_xr>`. If a headset
+  works with SteamVR, it should work with Godot.
 
-   - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
+   - Godot also supports Quest over Link, AndroidXR Direct Preview, and Pico
+     Connect.
 
-- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR.
+  Including support for the following standalone headsets:
+  
+   - Meta Quest 1/2/3 and Pro
+   - Pico 4/4 Ultra
+   - Magic Leap 2
+   - Lynx R1
+   - HTC Vive Focus Vision
+   - Android XR headsets
 
-  - Including support for popular standalone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
+- Support for the Linux-based standalone Steam Frame using OpenXR.
 
-- Out of the box limited support for visionOS Apple headsets.
+- Limited support for visionOS Apple headsets.
 
   - Currently only exporting an application for use on a flat plane within the
     headset is supported. Immersive experiences are not supported.
