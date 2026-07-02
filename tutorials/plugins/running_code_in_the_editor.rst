@@ -791,3 +791,72 @@ If you are using :ref:`EditorScript <class_EditorScript>`:
     write the code how you want it, and only then add the ``@tool`` annotation to
     the top. Also, make sure to separate code that runs in-editor from code that
     runs in-game. This way, you can find bugs more easily.
+
+
+Using ``[Tool]`` in C#
+-------------------------------------
+
+Using tools in C# can be challenging when recompiling scripts. During recompilation, Godot saves all variable values, 
+reconstructs the script instances, and then restores the variables to their previous values. However, if a variable cannot 
+be restored for any of the reasons listed below, its value will be cleared.
+
+.. warning::
+
+    In C#, if you are using the ``[Tool]`` attribute and your exported variables keep clearing themselves after a rebuild,
+    make sure the following are true for all exported variables:
+
+Arrays must be initialized when the field is declared
+
+.. tabs::
+    .. code-tab:: csharp
+
+        [Tool]
+        public partial class TileInfo : Resource
+        {
+            [Export]
+            private PackedScene[] _tileNode = []; // <--- Must me created
+        }
+
+Keep the constructor empty (if possible)
+
+If it is not possible to leave the constructor empty, make sure you are not loading, creating, or clearing resources from it.
+
+.. tabs::
+ .. code-tab:: csharp
+
+        [Tool]
+        public partial class TileInfo : Resource
+        {
+            public TileInfo()
+            {
+                // Keep this empty (if possible)
+            }
+        }
+
+Avoid destructive logic in property setters
+
+.. tabs::
+ .. code-tab:: csharp
+
+        [Tool]
+        public partial class TileInfo : Resource
+        {
+            private Node3D[] tiles;
+            public int NumberOfTiles 
+            {
+                get => _numberOfTiles;
+                set {
+                    ClearTiles(); // <--- Avoid this
+                    _numberOfTiles = value;
+                            
+                }
+            }
+        
+            private int _numberOfTiles;
+            public void ClearTiles()
+            {
+                foreach (var tile in tiles){
+                    tile.QueueFree();
+                }
+            }
+        }
