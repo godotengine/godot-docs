@@ -45,7 +45,8 @@ compared to the other two.
 OpenXR
 ------
 
-OpenXR is a new industry standard that allows different XR platforms to present themselves through a standardized API to XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godot's interests.
+OpenXR is the industry standard API that allows different XR platforms to interact with XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godot's interests.
+We are thus using this as the example in this introduction. Check the respective chapters for differences in other APIs.
 
 The Vulkan implementation of OpenXR is closely integrated with Vulkan, taking over part of the Vulkan system. This requires tight integration of certain core graphics features in the Vulkan renderer which are needed before the XR system is setup. This was one of the main deciding factors to include OpenXR as a core interface.
 
@@ -101,10 +102,7 @@ Next we need to add a script to our root node. Add the following code into this 
         if xr_interface and xr_interface.is_initialized():
             print("OpenXR initialized successfully")
 
-            # Turn off v-sync!
-            DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-
-            # Change our main viewport to output to the HMD
+            # Change our main viewport to output to the HMD.
             get_viewport().use_xr = true
         else:
             print("OpenXR not initialized, please check if your headset is connected")
@@ -124,10 +122,7 @@ Next we need to add a script to our root node. Add the following code into this 
             {
                 GD.Print("OpenXR initialized successfully");
 
-                // Turn off v-sync!
-                DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
-
-                // Change our main viewport to output to the HMD
+                // Change our main viewport to output to the HMD.
                 GetViewport().UseXR = true;
             }
             else
@@ -137,18 +132,25 @@ Next we need to add a script to our root node. Add the following code into this 
         }
     }
 
-This code fragment assumes we are using OpenXR, if you wish to use any of the other interfaces you can change the ``find_interface`` call.
+
+.. note::
+
+    There is no restriction to where this code is executed from. It is common to add this script to the :ref:`XROrigin3D <class_xrorigin3d>` node or as a :ref:`Node3D <class_node3d>` child of the root node.
+
+    The OpenXR interface is unique in that we have to start it before the project loads, hence ``is_initialized`` is checked here. Most interfaces require a call to their ``initialize`` function instead.
+
+    If you wish to support multiple XR interfaces, say release a game both targeting OpenXR hardware and deploy over WebXR, you can check one after the other until a functioning interface is found.
+
 
 .. warning::
 
-    As you can see in the code snippet above, we turn off v-sync.
-    When using OpenXR you are outputting the rendering results to an HMD that often requires us to run at 90Hz or higher.
-    If your monitor is a 60hz monitor and v-sync is turned on, you will limit the output to 60 frames per second.
+    As OpenXR outputs the rendering result to an HMD, which often runs at a higher framerate than the monitor, Godot's V-Sync settings are ignored and V-sync will always be disabled.
 
-    XR interfaces like OpenXR perform their own sync.
+    Instead, OpenXR perform its own frame timing to ensure a consistent framerate.
 
     Also note that by default the physics engine runs at 60Hz as well and this can result in choppy physics.
     You should set ``Engine.physics_ticks_per_second`` to a higher value.
+
 
 If you run your project at this point in time, everything will work but you will be in a dark world. So to finish off our starting point add a :ref:`DirectionalLight3D <class_directionallight3d>` and a :ref:`WorldEnvironment <class_worldenvironment>` node to your scene.
 You may wish to also add a mesh instance as a child to each controller node just to temporarily visualise them.
