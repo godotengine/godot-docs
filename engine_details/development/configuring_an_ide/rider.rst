@@ -31,6 +31,15 @@ Provide scons with additional arguments to request a solution file generation:
 The ``vsproj`` parameter signals that you want Visual Studio solution generated.
 The ``dev_build`` parameter ensures the debug symbols are included, allowing to e.g. step through code using breakpoints.
 
+.. note:: Each SCons run only generates the ``.generated.props`` file for a single
+          Solution Configuration. Please run SCons once per target you plan to use:
+
+          .. code-block:: shell
+
+             scons vsproj=yes dev_build=yes target=editor
+             scons vsproj=yes dev_build=yes target=template_debug
+             scons vsproj=yes dev_build=yes target=template_release
+
 - Open the generated ``godot.sln`` in Rider.
 
 .. note:: Ensure that the appropriate Solution configuration is selected on the
@@ -54,8 +63,8 @@ if you want to debug the editor, you need to configure the debugger first.
 - Ensure the following values for the C++ Project Run Configuration:
 
     - Exe Path : ``$(LocalDebuggerCommand)``
-    - Program Arguments: ``-e --path <path to the Godot project>``
-    - Working Directory: ``$(LocalDebuggerWorkingDirectory)``
+    - Program Arguments: ``--editor``
+    - Working Directory: ``<path to the Godot project>``
     - Before Launch has a value of "Build Project"
 
 This will tell the executable to debug the specified project without opening the Project Manager.
@@ -83,10 +92,9 @@ Alternatively you can use **Run > Attach to Process** to attach the debugger to 
 Debug visualizers
 -----------------
 Debug visualizers customize how complex data structures are displayed during debugging.
-For Windows "natvis" (short for "Native Visualization") built-in with Godot are automatically used.
-For other operating systems, similar functionality can be setup manually.
+The "natvis" (short for "Native Visualization") files built-in with Godot are automatically used.
 
-Please follow `RIDER-123535 <https://youtrack.jetbrains.com/issue/RIDER-123535/nix-Debug-Godot-Cpp-from-Rider-pretty-printers-usability>`_.
+.. note:: On macOS and Linux, natvis support requires Rider 2026.2 or later.
 
 Unit testing
 ------------
