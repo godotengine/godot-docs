@@ -273,6 +273,25 @@ allows you to handle a node type, automatically focusing the main
 screen when the type is selected. This is similar to how clicking
 on a 3D node will automatically switch to the 3D viewport.
 
+Main screen icons
+-----------------
+
+You can either use one of the built-in icons from the editor, or provide your
+own icon for the main screen plugin. In both cases, this is done by overriding the
+``_get_plugin_icon()`` method in the plugin script.
+
+To use a built-in icon, copy an icon name from the
+`Godot editor icons <https://godotengine.github.io/editor-icons/>`__ website.
+Use the name copied from the website as the *first* parameter of
+``EditorInterface.get_editor_theme().get_icon()`` (the second parameter should
+remain ``"EditorIcons"``).
+
+You can use a custom icon by returning something such as
+``preload("res://addons/main_screen/icon.svg")``. When designing your own icon,
+you should follow the same guidelines as for node icons (SVG format recommended,
+16×16 size). See :ref:`doc_editor_icons` for information on how to create icons
+for your plugin.
+
 Try the plugin
 --------------
 
