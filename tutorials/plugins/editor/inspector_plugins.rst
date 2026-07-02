@@ -113,6 +113,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
  .. code-tab:: gdscript GDScript
 
     # my_inspector_plugin.gd
+    @tool
     extends EditorInspectorPlugin
 
     var RandomIntEditor = preload("res://addons/my_inspector_plugin/random_int_editor.gd")
@@ -141,6 +142,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
     #if TOOLS
     using Godot;
 
+    [Tool]
     public partial class MyInspectorPlugin : EditorInspectorPlugin
     {
         public override bool _CanHandle(GodotObject @object)
@@ -198,6 +200,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
  .. code-tab:: gdscript GDScript
 
     # random_int_editor.gd
+    @tool
     extends EditorProperty
 
 
@@ -251,6 +254,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
     #if TOOLS
     using Godot;
 
+    [Tool]
     public partial class RandomIntEditor : EditorProperty
     {
         // The main control for editing the property.
