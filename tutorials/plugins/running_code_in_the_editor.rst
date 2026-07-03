@@ -841,22 +841,24 @@ Avoid destructive logic in property setters
         [Tool]
         public partial class TileInfo : Resource
         {
-            private Node3D[] tiles;
+            private Node3D[] _tiles;
+
+            private int _numberOfTiles;
             public int NumberOfTiles 
             {
                 get => _numberOfTiles;
-                set {
+                set 
+                {
                     ClearTiles(); // <--- Avoid this
                     _numberOfTiles = value;
-                            
                 }
             }
-        
-            private int _numberOfTiles;
+
             public void ClearTiles()
             {
-                foreach (var tile in tiles){
-                    tile.QueueFree();
+                foreach (var _tile in _tiles)
+                {
+                    _tile.QueueFree();
                 }
             }
         }
