@@ -120,18 +120,131 @@ Returns the syntax highlighting data for the line at index ``line``. If the line
 
 Each entry is a column number containing a nested :ref:`Dictionary<class_Dictionary>`. The column number denotes the start of a region, the region will end if another region is found, or at the end of the line. The nested :ref:`Dictionary<class_Dictionary>` contains the data for that region. Currently only the key ``"color"`` is supported.
 
-\ **Example:** Possible return value. This means columns ``0`` to ``4`` should be red, and columns ``5`` to the end of the line should be green:
+\ **Example:** Possible return value. This means columns ``0`` to ``4`` should be red, and columns ``5`` to the end of the line should be green, Here is a simple example:
 
-::
 
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # {
+	#   0: {
+	#	    "color": Color(1, 0, 0)
+	#   },
+	#   5: {
+	#	    "color": Color(0, 1, 0)
+	#   }
+    #}
+
+    func _get_line_syntax_highlighting(line: int) -> Dictionary:
+	
+        var patternText = "Godot"
+        var result = Dictionary()
+        
+        var textEdit = get_text_edit()
+        
+        var lineText = textEdit.get_line(line)
+
+        for i in range(0, lineText.length()):
+            
+            var pos = textEdit.search(patternText, TextEdit.SearchFlags.SEARCH_MATCH_CASE, line , i)
+            
+            if(pos.x == -1 || pos.y == -1 || result.has(pos.x)):
+                continue
+            
+            result[pos.x] = { "color": Color(0.0, 0.0, 1.0)}
+            
+        for pos in Array(result.keys()):
+            
+            var patternEndIndex = pos + patternText.length()
+            
+            if(result.has(patternEndIndex)):
+                continue
+            result[patternEndIndex] = { "color" :Color(1.0, 1.0, 1.0)}
+            
+        if(!result.has(0)):
+            result[0] = { "color" :Color(1.0, 1.0, 1.0)}
+            
+        var needSortKeys = Array(result.keys())
+        
+        needSortKeys.sort()
+        
+        var sortResult = Dictionary();
+        
+        for sortkey in needSortKeys:
+            
+            sortResult[sortkey] = result[sortkey];
+            
+        return sortResult
+
+
+ .. code-tab:: csharp
+
+    //{
+    //   0: {
+	//	    "color": Color(1, 0, 0)
+	//   },
+	//   5: {
+	//	    "color": Color(0, 1, 0)
+	//   }
+    //}
+
+    public override Dictionary _GetLineSyntaxHighlighting(int line)
     {
-        0: {
-            "color": Color(1, 0, 0)
-        },
-        5: {
-            "color": Color(0, 1, 0)
+        string patternText = "Godot";
+        Dictionary result = new Dictionary();
+        TextEdit textEdit = GetTextEdit();
+
+        string lineText = textEdit.GetLine(line);
+        for (var i = 0; i < lineText.Length; i++)
+        {
+            Vector2I pos = textEdit.Search(patternText, (uint)SearchFlags.MatchCase, line, i);
+            if (pos.X == -1 || pos.Y == -1 || result.ContainsKey(pos.X))
+            {
+                continue;
+            }
+            result[pos.X] = new Dictionary()
+            { 
+                { "color",new Color(0.0f, 0.0f, 1.0f) } 
+            };
+
         }
+
+        foreach (int pos in result.Keys.ToList())
+        {
+            var patternEndIndex = pos + patternText.Length;
+
+            if(result.ContainsKey(patternEndIndex))
+            {
+                continue;
+            }
+            result[patternEndIndex] = new Dictionary()
+            {
+                { "color",new Color(1.0f, 1.0f, 1.0f) }
+            };
+
+        }
+
+        if (!result.ContainsKey(0))
+        { 
+            result[0] = new Dictionary()
+            {
+                { "color",new Color(1.0f, 1.0f, 1.0f) }
+            };
+        }
+
+        var NeedSortKeys = result.Keys.ToList();
+        NeedSortKeys.Sort((x1,x2) =>((int)x1).CompareTo((int)x2));
+
+        Dictionary sortResult = new Dictionary();
+        foreach (var key in NeedSortKeys) 
+        {
+            sortResult[key] = result[key];
+        }
+
+        return sortResult;
     }
+
 
 .. rst-class:: classref-item-separator
 
