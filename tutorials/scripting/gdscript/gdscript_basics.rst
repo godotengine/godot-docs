@@ -2542,10 +2542,10 @@ When setter/getter is not called
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a variable is initialized, the value of the initializer will be written directly to the variable.
-Including if the ``@onready`` annotation is applied to the variable.
+This occurs even if the ``@onready`` or ``@export`` annotation is applied to the variable.
 
-Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
-so it won't generate infinite recursion and saves you from explicitly declaring another variable:
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member.
+This prevents infinite recursion and saves you from explicitly declaring another variable:
 
 ::
 
