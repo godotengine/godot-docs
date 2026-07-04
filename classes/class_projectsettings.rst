@@ -491,6 +491,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/size/enable_toggle_fullscreen_shortcut<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/extend_to_title<class_ProjectSettings_property_display/window/size/extend_to_title>`                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                   | :ref:`display/window/size/initial_position<class_ProjectSettings_property_display/window/size/initial_position>`                                                                                           | ``Vector2i(0, 0)``                                                                               |
@@ -818,6 +820,10 @@ Properties
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_submit<class_ProjectSettings_property_input/ui_text_submit>`                                                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`                                                                                                   |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_toggle_fullscreen<class_ProjectSettings_property_input/ui_toggle_fullscreen>`                                                                                                               |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_toggle_fullscreen.macos<class_ProjectSettings_property_input/ui_toggle_fullscreen.macos>`                                                                                                   |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_undo<class_ProjectSettings_property_input/ui_undo>`                                                                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2622,9 +2628,9 @@ Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the 
 
 Specifies the audio driver to use. This setting is platform-dependent as each platform supports different audio drivers. If left empty, the default audio driver will be used.
 
-The ``Dummy`` audio driver disables all audio playback and recording, which is useful for non-game applications as it reduces CPU usage. It also prevents the engine from appearing as an application playing audio in the OS' audio mixer.
+The ``Dummy`` audio driver disables all audio playback and recording, which is useful for non-game applications as it reduces CPU usage. It also prevents the engine from appearing as an application playing audio in the OS's audio mixer.
 
-To query the value that is being used at run-time (which may be overridden by command-line arguments or headless mode), use :ref:`AudioServer.get_driver_name()<class_AudioServer_method_get_driver_name>`.
+To query the value that is being used at runtime (which may be overridden by command-line arguments or headless mode), use :ref:`AudioServer.get_driver_name()<class_AudioServer_method_get_driver_name>`.
 
 \ **Note:** The driver in use can be overridden at runtime via the ``--audio-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
@@ -2640,7 +2646,7 @@ To query the value that is being used at run-time (which may be overridden by co
 
 If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
 
-\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows, make sure that apps are allowed to access the microphone in the OS' privacy settings.
+\ **Note:** If the operating system blocks access to audio input devices (due to the user's privacy settings), audio capture will only return silence. On Windows, make sure that apps are allowed to access the microphone in the OS's privacy settings.
 
 .. rst-class:: classref-item-separator
 
@@ -3856,7 +3862,7 @@ When set to ``true``, produces a warning when a varying is never used.
 
 :ref:`Color<class_Color>` **debug/shapes/avoidance/2d/agents_radius_color** = ``Color(1, 1, 0, 0.25)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/2d/agents_radius_color>`
 
-Color of the avoidance agents radius, visible when "Visible Avoidance" is enabled in the Debug menu.
+Color of the avoidance agents' radius, visible when "Visible Avoidance" is enabled in the Debug menu.
 
 .. rst-class:: classref-item-separator
 
@@ -3868,7 +3874,7 @@ Color of the avoidance agents radius, visible when "Visible Avoidance" is enable
 
 :ref:`bool<class_bool>` **debug/shapes/avoidance/2d/enable_agents_radius** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/2d/enable_agents_radius>`
 
-If enabled, displays avoidance agents radius when "Visible Avoidance" is enabled in the Debug menu.
+If enabled, displays avoidance agents' radius when "Visible Avoidance" is enabled in the Debug menu.
 
 .. rst-class:: classref-item-separator
 
@@ -3964,7 +3970,7 @@ Color of the static avoidance obstacles faces when their vertices are winded in 
 
 :ref:`Color<class_Color>` **debug/shapes/avoidance/3d/agents_radius_color** = ``Color(1, 1, 0, 0.25)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/3d/agents_radius_color>`
 
-Color of the avoidance agents radius, visible when "Visible Avoidance" is enabled in the Debug menu.
+Color of the avoidance agents' radius, visible when "Visible Avoidance" is enabled in the Debug menu.
 
 .. rst-class:: classref-item-separator
 
@@ -3976,7 +3982,7 @@ Color of the avoidance agents radius, visible when "Visible Avoidance" is enable
 
 :ref:`bool<class_bool>` **debug/shapes/avoidance/3d/enable_agents_radius** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/3d/enable_agents_radius>`
 
-If enabled, displays avoidance agents radius when "Visible Avoidance" is enabled in the Debug menu.
+If enabled, displays avoidance agents' radius when "Visible Avoidance" is enabled in the Debug menu.
 
 .. rst-class:: classref-item-separator
 
@@ -4820,6 +4826,18 @@ Forces the main window to be borderless.
 
 ----
 
+.. _class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **display/window/size/enable_toggle_fullscreen_shortcut** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>`
+
+If ``true``, allows the user to toggle fullscreen mode by pressing the shortcut defined in :ref:`input/ui_toggle_fullscreen<class_ProjectSettings_property_input/ui_toggle_fullscreen>` (:kbd:`Alt + Enter` by default).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_display/window/size/extend_to_title:
 
 .. rst-class:: classref-property
@@ -5178,7 +5196,7 @@ Number of times to attempt assembly reloading after rebuilding .NET assemblies. 
 
 Directory that contains the ``.sln`` file. By default, the ``.sln`` files is in the root of the project directory, next to the ``project.godot`` and ``.csproj`` files.
 
-Changing this value allows setting up a multi-project scenario where there are multiple ``.csproj``. Keep in mind that the Godot project is considered one of the C# projects in the workspace and it's root directory should contain the ``project.godot`` and ``.csproj`` next to each other.
+Change this value to set up a multi-project scenario where there are multiple ``.csproj`` files. Keep in mind that the Godot project is considered one of the C# projects in the workspace and its root directory should contain the ``project.godot`` and ``.csproj`` files next to each other.
 
 .. rst-class:: classref-item-separator
 
@@ -7077,6 +7095,32 @@ Default :ref:`InputEventAction<class_InputEventAction>` to submit a text field.
 Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* in a text field. While in insert mode, inserting new text overrides the character after the cursor, unless the next character is a new line.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_toggle_fullscreen:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_toggle_fullscreen** :ref:`🔗<class_ProjectSettings_property_input/ui_toggle_fullscreen>`
+
+Default :ref:`InputEventAction<class_InputEventAction>` to toggle fullscreen mode on the main window. This input action is only effective if :ref:`display/window/size/enable_toggle_fullscreen_shortcut<class_ProjectSettings_property_display/window/size/enable_toggle_fullscreen_shortcut>` is ``true``. Game embedding currently does not make use of this shortcut, as it does not support fullscreen mode.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_toggle_fullscreen.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_toggle_fullscreen.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_toggle_fullscreen.macos>`
+
+macOS specific override for the shortcut to toggle fullscreen mode on the main window.
 
 .. rst-class:: classref-item-separator
 
@@ -12618,7 +12662,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/directional_shadow/siz
 
 Quality setting for shadows cast by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.
 
-\ **Note:** The Soft Very Low setting will automatically multiply *constant* shadow blur by 0.75x to reduce the amount of noise visible. This automatic blur change only affects the constant blur factor defined in :ref:`Light3D.shadow_blur<class_Light3D_property_shadow_blur>`, not the variable blur performed by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s' :ref:`Light3D.light_angular_distance<class_Light3D_property_light_angular_distance>`.
+\ **Note:** The **Soft Very Low** option will automatically multiply all *constant* shadow blur by ``0.75`` to reduce the amount of noticeable noise. This automatic blur change only affects the constant blur factor defined in :ref:`Light3D.shadow_blur<class_Light3D_property_shadow_blur>`, not the variable blur performed by :ref:`DirectionalLight3D<class_DirectionalLight3D>`'s :ref:`Light3D.light_angular_distance<class_Light3D_property_light_angular_distance>`.
 
 \ **Note:** The Soft High and Soft Ultra settings will automatically multiply *constant* shadow blur by 1.5× and 2× respectively to make better use of the increased sample count. This increased blur also improves stability of dynamic object shadows.
 
@@ -12730,7 +12774,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/positional_shadow/atla
 
 Quality setting for shadows cast by :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.
 
-\ **Note:** The Soft Very Low setting will automatically multiply *constant* shadow blur by 0.75x to reduce the amount of noise visible. This automatic blur change only affects the constant blur factor defined in :ref:`Light3D.shadow_blur<class_Light3D_property_shadow_blur>`, not the variable blur performed by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s' :ref:`Light3D.light_angular_distance<class_Light3D_property_light_angular_distance>`.
+\ **Note:** The **Soft Very Low** option will automatically multiply all *constant* shadow blur by ``0.75`` to reduce the amount of noticeable noise. This automatic blur change only affects the constant blur factor defined in :ref:`Light3D.shadow_blur<class_Light3D_property_shadow_blur>`, not the variable blur performed by :ref:`DirectionalLight3D<class_DirectionalLight3D>`'s :ref:`Light3D.light_angular_distance<class_Light3D_property_light_angular_distance>`.
 
 \ **Note:** The Soft High and Soft Ultra settings will automatically multiply shadow blur by 1.5× and 2× respectively to make better use of the increased sample count. This increased blur also improves stability of dynamic object shadows.
 
@@ -13702,7 +13746,7 @@ Specify the compression level for Basis Universal Zstandard supercompression, ra
 
 :ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_filter** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_filter>`
 
-The default texture filtering mode to use for :ref:`CanvasItem<class_CanvasItem>`\ s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
+The default texture filtering mode to use for :ref:`CanvasItem<class_CanvasItem>`'s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
 
 \ **Note:** For pixel art aesthetics, see also :ref:`rendering/2d/snap/snap_2d_vertices_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel>` and :ref:`rendering/2d/snap/snap_2d_transforms_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel>`.
 
@@ -13716,7 +13760,7 @@ The default texture filtering mode to use for :ref:`CanvasItem<class_CanvasItem>
 
 :ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_repeat** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_repeat>`
 
-The default texture repeating mode to use for :ref:`CanvasItem<class_CanvasItem>`\ s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
+The default texture repeating mode to use for :ref:`CanvasItem<class_CanvasItem>`'s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
 
 .. rst-class:: classref-item-separator
 
@@ -14369,7 +14413,7 @@ Applied foveation level if supported.
 
 If ``true`` and foveation is also enabled, subsampled images will be used on Vulkan. This can improve the performance gain from foveated rendering, especially when using high foveation levels.
 
-\ **Note:**: Using subsampled images is incompatible with many screen-space rendering features or post-processing effects like FXAA or glow. If any such effects are enabled, subsampled images will automatically be disabled and a warning shown in the log.
+\ **Note:** Using subsampled images is incompatible with many screen-space rendering features or post-processing effects like FXAA or glow. If any such effects are enabled, subsampled images will automatically be disabled and a warning shown in the log.
 
 .. rst-class:: classref-item-separator
 

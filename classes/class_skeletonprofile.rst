@@ -182,7 +182,7 @@ Property Descriptions
 
 The amount of bones in retargeting section's :ref:`BoneMap<class_BoneMap>` editor. For example, :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>` has 56 bones.
 
-The size of elements in :ref:`BoneMap<class_BoneMap>` updates when changing this property in it's assigned **SkeletonProfile**.
+The size of elements in :ref:`BoneMap<class_BoneMap>` updates when changing this property in its assigned **SkeletonProfile**.
 
 .. rst-class:: classref-item-separator
 

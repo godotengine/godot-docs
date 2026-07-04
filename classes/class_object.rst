@@ -568,7 +568,7 @@ Returns the current iterable value. ``iter`` stores the iteration state, but unl
 
 :ref:`bool<class_bool>` **_iter_init**\ (\ iter\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_Object_private_method__iter_init>`
 
-Initializes the iterator. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns ``true`` so long as the iterator has not reached the end.
+Initializes the iterator. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. This array should not be resized. Returns ``true`` so long as the iterator has not reached the end.
 
 ::
 
@@ -611,7 +611,7 @@ See also `online docs <../tutorials/scripting/gdscript/gdscript_advanced.html#cu
 
 :ref:`bool<class_bool>` **_iter_next**\ (\ iter\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_Object_private_method__iter_next>`
 
-Moves the iterator to the next iteration. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns ``true`` so long as the iterator has not reached the end.
+Moves the iterator to the next iteration. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. This array should not be resized. Returns ``true`` so long as the iterator has not reached the end.
 
 .. rst-class:: classref-item-separator
 
