@@ -2626,10 +2626,10 @@ for Nodes).
     If a :ref:`class_Node` is deleted via ``free()`` or ``queue_free()``,
     all of its children will also recursively be deleted.
 
-To avoid reference cycles that can't be freed, a :ref:`class_WeakRef`
-function is provided for creating weak references, which allow access
-to the object without preventing a :ref:`class_RefCounted` from freeing.
-Here is an example:
+To avoid reference cycles that can't be freed, a
+:ref:`weakref() <class_@GlobalScope_method_weakref>` function is provided for
+creating weak references, which allow access to the object without preventing a
+:ref:`class_RefCounted` from freeing. Here is an example:
 
 
 ::
