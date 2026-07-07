@@ -55,8 +55,8 @@ Desktop or laptop PC - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (up to 1.5 GB after installation, depending on the target platforms chosen).            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 10, macOS 11 (Compatibility, Forward+/Mobile with Vulkan), |
-|                      |   macOS 13 (Forward+/Mobile with Metal), Linux distribution released after 2018         |
+| **Operating system** | - **Native editor:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon Macs),  |
+|                      |   Linux distribution released after 2018                                                |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -241,8 +241,8 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 10, macOS 11 (Compatibility, Forward+/Mobile with     |
-|                      |   Vulkan), macOS 13 (Forward+/Mobile with Metal), Linux distribution released after 2018|
+| **Operating system** | - **For native exports:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon    |
+|                      |   Macs), Linux distribution released after 2018                                         |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -281,7 +281,7 @@ Mobile device (smartphone/tablet) - Minimum
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 7.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
-|                      |   iOS 14.1 (Forward+/Mobile with Vulkan), iOS 16.0 (Forward+/Mobile with Metal)         |
+|                      |   iOS 15.0 (Forward+/Mobile with Vulkan), iOS 16.0 (Forward+/Mobile with Metal)         |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
