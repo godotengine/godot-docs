@@ -272,6 +272,14 @@ GDScript
     requiring an explicit return statement in the override (`GH-115763`_).
     Add ``return null`` to the end of the method to fix the error.
 
+Platforms
+~~~~~~~~~
+
+.. note::
+
+    The minimum macOS version required to run Godot was increased from macOS 10.13
+    (High Sierra) to macOS 11 (Big Sur).
+
 Changed defaults
 ----------------
 
