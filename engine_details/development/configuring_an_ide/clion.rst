@@ -27,7 +27,7 @@ build the project and only exists for loading the project in JetBrains IDEs.
 
       For ``compile_commands.json`` to load correctly in CLion, you must first have the Visual Studio toolchain configured for CLion.
 
-      - Navigate to **Preferences > Build, Execution, Deployment > Toolchains**
+      - Navigate to **Settings > Build, Execution, Deployment > Toolchains**
       - Click the **+** button and select  ``Visual Studio``
       - CLion will attempt to detect your Visual Studio installation. If it is unsuccessful, use the file icon to the right of ``Toolset:`` to select the directory with your Visual Studio installation.
 
@@ -47,7 +47,7 @@ CLion does not support compiling and debugging Godot via SCons out of the box. T
 
 To add a custom build target that invokes SCons for compilation:
 
-- Open CLion and navigate to **Preferences > Build, Execution, Deployment > Custom Build Targets**
+- Open CLion and navigate to **Settings > Build, Execution, Deployment > Custom Build Targets**
 
 .. figure:: img/clion-preferences.png
    :align: center
@@ -111,7 +111,7 @@ After building Godot in CLion, you may see the object and library files showing 
 
 You can configure CLion to ignore those files:
 
-- Open CLion and navigate to **Preferences > Editor > File Types > Ignored Files and Folders**
+- Open CLion and navigate to **Settings > Editor > File Types > Ignored Files and Folders**
 - Click the **+** button to add ``*.o`` and ``*.a`` to the list. In Windows, you would add ``*.obj`` and ``*.dll``.
 
 .. figure:: img/clion-ignore-object-library-files.webp
