@@ -103,14 +103,20 @@ here's an example of how GDScript looks.
         super.something(p1, p2)
 
 
-    # Inner class
+    # Inner class (also called "subclass").
     class Something:
         var a = 10
 
+        # Constructor method for the Something inner class.
+        # This is called when the class is instantiated with `new()`.
+        # A constructor method may have parameters, optionally with default values
+        # and static type hints.
+        func _init():
+            print("Constructed!")
 
-    # Constructor
-    func _init():
-        print("Constructed!")
+
+    func construct():
+        # Create a new instance of the above subclass.
         var lv = Something.new()
         print(lv.a)
 
@@ -2353,9 +2359,13 @@ the function name with the attribute operator:
 Class constructor
 ~~~~~~~~~~~~~~~~~
 
-The class constructor, called on class instantiation, is named ``_init``. If you
-want to call the base class constructor, you can also use the ``super`` syntax.
-Note that every class has an implicit constructor that is always called
+The class constructor, called on class instantiation with ``new()``, is named
+``_init()``. Like methods, the class constructor may have one or more
+parameters, which can have default values. These parameters can be passed when
+calling ``new()``.
+
+If you want to call the base class constructor, you can also use the ``super``
+syntax. Note that every class has an implicit constructor that is always called
 (defining the default values of class variables). ``super`` is used to call the
 explicit constructor:
 
@@ -2408,6 +2418,14 @@ There are a few things to keep in mind here:
 
     func _init():
         super(5)
+
+.. warning::
+
+    When instancing nodes through ``class_name`` or other mechanisms, the
+    ``_init()`` constructor is called with no parameters. This means that for
+    constructors of classes that inherit Node, constructors must either have no
+    parameters, or have default values for **all** parameters. Otherwise, the
+    engine will print an error when instancing the node.
 
 Static constructor
 ~~~~~~~~~~~~~~~~~~
