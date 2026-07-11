@@ -366,9 +366,9 @@ The distance to the far culling boundary for this camera relative to its local Z
 - |void| **set_fov**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fov**\ (\ )
 
-The camera's field of view angle (in degrees). Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks one axis, :ref:`fov<class_Camera3D_property_fov>` sets the other axis' field of view angle.
+The camera's field of view (also known as FOV), as an angle in degrees. Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks one axis, this property sets the field of view on the other axis.
 
-For reference, the default vertical field of view value (``75.0``) is equivalent to a horizontal FOV of:
+For reference, the default angle for the vertical FOV (``75.0``) is equivalent to a horizontal FOV of:
 
 - ~91.31 degrees in a 4:3 viewport
 

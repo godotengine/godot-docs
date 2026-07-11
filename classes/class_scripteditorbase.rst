@@ -134,7 +134,7 @@ Emitted when the user requests to view a specific line of a script, similar to :
 
 **request_save_history**\ (\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_history>`
 
-Emitted when the user contextual goto and the item is in the same script.
+Emitted when the editor requests to save a new history navigation point.
 
 .. rst-class:: classref-item-separator
 
@@ -146,7 +146,7 @@ Emitted when the user contextual goto and the item is in the same script.
 
 **request_save_previous_state**\ (\ state\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_previous_state>`
 
-Emitted when the user changes current script or moves caret by 10 or more columns within the same script.
+Emitted when the editor requests an update to its navigation point.
 
 .. rst-class:: classref-item-separator
 

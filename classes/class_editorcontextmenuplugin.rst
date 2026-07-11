@@ -109,7 +109,7 @@ Context menu of Script editor's code editor. :ref:`_popup_menu()<class_EditorCon
 ::
 
     func _popup_menu(paths):
-        var code_edit = Engine.get_main_loop().root.get_node(paths[0]);
+        var code_edit = Engine.get_main_loop().root.get_node(paths[0])
 
 The option callback will receive reference to that node. You can use :ref:`CodeEdit<class_CodeEdit>` methods to perform symbol lookups etc.
 
@@ -132,7 +132,7 @@ Context menu of 2D editor's basic right-click menu. :ref:`_popup_menu()<class_Ed
 ::
 
     func _popup_menu(paths):
-        var canvas_item = Engine.get_main_loop().root.get_node(paths[0]); # Replace 0 with the desired index.
+        var canvas_item = Engine.get_main_loop().root.get_node(paths[0]) # Replace 0 with the desired index.
 
 The paths array is empty if there weren't any nodes under cursor. The option callback will receive a typed array of :ref:`CanvasItem<class_CanvasItem>` nodes.
 
@@ -142,7 +142,7 @@ The paths array is empty if there weren't any nodes under cursor. The option cal
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_INSPECTOR_PROPERTY** = ``7``
 
-Context menu of the inspectors right-click menu. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with an array of two items: The first will be the object's ID, the second will be the property name. An object can be retrieved from it's ID via :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` after converting it to an int. The option callback will receive the EditorProperty directly.
+Context menu of the inspectors right-click menu. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with an array of two items: The first will be the object's ID, the second will be the property name. An object can be retrieved from its ID via :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` after converting it to an int. The option callback will receive the EditorProperty directly.
 
 .. rst-class:: classref-section-separator
 

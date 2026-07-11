@@ -75,6 +75,18 @@ Methods
    | |void|                                    | :ref:`set_pressed_no_signal<class_BaseButton_method_set_pressed_no_signal>`\ (\ pressed\: :ref:`bool<class_bool>`\ ) |
    +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+-------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`click_margin<class_BaseButton_theme_constant_click_margin>` | ``0`` |
+   +-----------------------+-------------------------------------------------------------------+-------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -464,6 +476,23 @@ Returns ``true`` if the mouse has entered the button and has not left it yet.
 Changes the :ref:`button_pressed<class_BaseButton_property_button_pressed>` state of the button, without emitting :ref:`toggled<class_BaseButton_signal_toggled>`. Use when you just want to change the state of the button without sending the pressed event (e.g. when initializing scene). Only works if :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``true``.
 
 \ **Note:** This method doesn't unpress other buttons in :ref:`button_group<class_BaseButton_property_button_group>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_BaseButton_theme_constant_click_margin:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **click_margin** = ``0`` :ref:`🔗<class_BaseButton_theme_constant_click_margin>`
+
+Defines the margin around the button's area that still counts as a valid click. This is useful to make it easier to click small buttons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

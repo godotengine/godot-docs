@@ -659,7 +659,9 @@ The color applied to this **CanvasItem**. This property does affect child **Canv
 - |void| **set_oversampling_with_scale**\ (\ value\: :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>`\ )
 - :ref:`OversamplingWithScale<enum_CanvasItem_OversamplingWithScale>` **get_oversampling_with_scale**\ (\ )
 
-If enabled, oversampling for this **CanvasItem** is automatically adjusted with scale.
+If enabled, oversampling for this **CanvasItem** is automatically adjusted with scale. This makes fonts and :ref:`DPITexture<class_DPITexture>` images automatically re-render to match the actual scale they are drawn at, for crisper visuals. This has a performance impact on the CPU every time the node's scale changes, so it is disabled by default.
+
+\ **Note:** For :ref:`Control<class_Control>` nodes with :ref:`Control.offset_transform_enabled<class_Control_property_offset_transform_enabled>` set to ``true``, scale-based oversampling is only effective if :ref:`Control.offset_transform_visual_only<class_Control_property_offset_transform_visual_only>` is ``false``. This ensures there is no performance overhead when using visual-only offset transforms (as often used in animations).
 
 .. rst-class:: classref-item-separator
 
@@ -826,6 +828,8 @@ With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B')
 
 Nodes sort relative to each other only if they are on the same :ref:`z_index<class_CanvasItem_property_z_index>`.
 
+\ **Note:** Y-sorting does **not** affect the order in which **CanvasItem** nodes are processed, or the way input events are handled. This is especially important to keep in mind for :ref:`Control<class_Control>` nodes.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -862,7 +866,7 @@ For example, if :ref:`z_index<class_CanvasItem_property_z_index>` is ``2`` and i
 
 The order in which this node is drawn. A node with a higher Z index will display in front of others. Must be between :ref:`RenderingServer.CANVAS_ITEM_Z_MIN<class_RenderingServer_constant_CANVAS_ITEM_Z_MIN>` and :ref:`RenderingServer.CANVAS_ITEM_Z_MAX<class_RenderingServer_constant_CANVAS_ITEM_Z_MAX>` (inclusive).
 
-\ **Note:** The Z index does **not** affect the order in which **CanvasItem** nodes are processed or the way input events are handled. This is especially important to keep in mind for :ref:`Control<class_Control>` nodes.
+\ **Note:** The Z index does **not** affect the order in which **CanvasItem** nodes are processed, or the way input events are handled. This is especially important to keep in mind for :ref:`Control<class_Control>` nodes.
 
 .. rst-class:: classref-section-separator
 
@@ -1477,7 +1481,7 @@ Returns the global transform matrix of this item, i.e. the combined transform up
 
 :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_transform_with_canvas>`
 
-Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
+Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`'s coordinate system.
 
 .. rst-class:: classref-item-separator
 
