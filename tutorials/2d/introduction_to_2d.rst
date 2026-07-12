@@ -157,8 +157,8 @@ Use the three-dot menu for this:
   They can easily be identified by a padlock next to their node names in the scene tree. 
   Clicking on this padlock also unlocks the nodes.
 - **Group selected nodes** (:kbd:`Ctrl + G`). This allows selection of the root node if any 
-  of the children are selected. Using :kbd:`Ctrl + G` ungroups them. Additionally, clicking 
-  the ungroup button in the scene tree performs the same action.
+  of the children are selected. Using :kbd:`Ctrl + Shift + G` ungroups them. Additionally,
+  clicking the ungroup button in the scene tree performs the same action.
 - **Skeleton Options**: Provides options to work with Skeleton2D and Bone2D.
 
   - Show Bones: Toggles the visibility of bones for the selected node.
