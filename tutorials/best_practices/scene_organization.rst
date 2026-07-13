@@ -416,8 +416,8 @@ own place in the hierarchy as a sibling or some other relation.
 
   In some cases, you need these separated nodes to *also* position themselves
   relative to each other. You can use the
-  :ref:`RemoteTransform <class_RemoteTransform3D>` /
-  :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
+  :ref:`RemoteTransform2D <class_RemoteTransform2D>` /
+  :ref:`RemoteTransform3D <class_RemoteTransform3D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
   :ref:`NodePath <class_NodePath>`, use one of the following:
