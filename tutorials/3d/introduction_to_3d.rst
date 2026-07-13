@@ -20,7 +20,7 @@ which are almost identical to their 2D counterparts.
    :ref:`Asset Library <doc_project_manager_downloading_demos>`.
 
 In 3D, math is a little more complex than in 2D. For an introduction to the
-relevant math written for game developers, not mathemeticians or engineers,
+relevant math written for game developers, not mathematicians or engineers,
 check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
 3D workspace
