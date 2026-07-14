@@ -346,7 +346,7 @@ The script could look like this:
 
         public override void _EnterTree()
         {
-            var _dock_scene = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
+            var dock_scene = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
 
             // Create the dock and add the loaded scene to it.
             _dock = new EditorDock();
