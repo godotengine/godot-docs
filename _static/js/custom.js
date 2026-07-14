@@ -1,3 +1,5 @@
+const CURRENT_STABLE_VERSION = "4.7";
+
 // Handle page scroll and adjust sidebar accordingly.
 
 // Each page has two scrolls: the main scroll, which is moving the content of the page;
@@ -296,6 +298,62 @@ const registerGiscus = function () {
   giscusContainer.append(scriptElement);
 };
 
+const suppressStableVersionOutdatedNotification = () => {
+  const docVersionMeta = document.head.querySelector("meta[name='doc_version']");
+  if (docVersionMeta == null) {
+    return;
+  }
+  const docVersion = docVersionMeta.content;
+  if (docVersion !== CURRENT_STABLE_VERSION) {
+    return;
+  }
+
+  // Without search params.
+  const currentHref = window.location.origin + window.location.pathname;
+  const stableHref = currentHref.replace(CURRENT_STABLE_VERSION, "stable");
+
+  let observerActive = true;
+  const observer = new MutationObserver((pRecords, pObserver) => {
+    for (const record of pRecords) {
+      for (const addedNode of record.addedNodes) {
+        if (!(addedNode instanceof HTMLElement)) {
+          continue;
+        }
+        if (addedNode.nodeName !== "READTHEDOCS-NOTIFICATION") {
+          continue;
+        }
+
+        window.requestAnimationFrame(() => {
+          if (!observerActive) {
+            return;
+          }
+          const shadowRoot = addedNode.shadowRoot;
+
+          let found = false;
+          for (const anchorElement of Array.from(shadowRoot.querySelectorAll(".content > a"))) {
+            if (anchorElement.href === stableHref) {
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            return;
+          }
+
+          addedNode.remove();
+          observer.disconnect();
+          observerActive = false;
+        });
+      }
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  });
+}
+
 $(document).ready(() => {
   // Remove the search match highlights from the page, and adjust the URL in the
   // navigation history.
@@ -497,6 +555,8 @@ $(document).ready(() => {
       }
     }
   }
+
+  suppressStableVersionOutdatedNotification();
 });
 
 // Override the default implementation from doctools.js to avoid this behavior.
