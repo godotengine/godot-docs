@@ -500,3 +500,26 @@ Then you can set or read them:
 
 .. note:: Advance Expressions from a StateMachine will not be found under the parameters. This is because they are held in another script rather than the
          AnimationTree itself. Advance `Conditions` will be found under parameters.
+
+Signals and Animation Node Observers
+------------------------------------
+
+Certain animation node types support an :ref:`AnimationNodeObserver <class_AnimationNodeObserver>` parameter which relays animation events through signals.
+For example, :ref:`AnimationNodeTransition <class_AnimationNodeTransition>` can be configured with an :ref:`AnimationNodeObserverTransition <class_AnimationNodeObserverTransition>`
+which emits signals when a transition state starts and finishes:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var observer := tree.get("parameters/Transition/observer") as AnimationNodeObserverTransition
+    if observer:
+        observer.state_started.connect(on_state_started)
+        observer.state_finished.connect(on_state_finished)
+
+ .. code-tab:: csharp
+
+    if (tree.Get("parameters/Transition/observer").Obj is AnimationNodeObserverTransition observer)
+    {
+        observer.StateStarted += OnStateStarted;
+        observer.StateFinished += OnStateFinished;
+    }
