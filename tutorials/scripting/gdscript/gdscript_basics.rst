@@ -1491,7 +1491,7 @@ callable. This can be used to pass functions as arguments.
         return result
 
     func add1(value: int) -> int:
-        return value + 1;
+        return value + 1
 
     func _ready() -> void:
         var my_array = [1, 2, 3]
