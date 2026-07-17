@@ -84,7 +84,30 @@ This is done by adding a column named ``?plural`` anywhere in the table
 (except on the first column, which is reserved for translation keys).
 By convention, it's recommended to place it on the second column.
 Note that in the example below, the key column is the one that contains English
-localization.
+localization (``en``).
+
+Godot provides :ref:`built-in plural rules <doc_plural_rules>`
+for most languages. In most cases, you don't need to provide a row that
+defines custom plural rules:
+
+.. code-block:: none
+
+    en,?plural,fr,ru,ja,zh
+    There is %d apple,There are %d apples,Il y a %d pomme,Есть %d яблоко,リンゴが%d個あります,那里有%d个苹果
+    ,,Il y a %d pommes,Есть %d яблока,,
+    ,,,Есть %d яблок,,
+
+Notice how the above CSV contains empty columns for some languages. This is
+because the number of plural forms differs between languages. In the example
+above, English has 2 plural forms, French has 2 plural forms, Russian has 3
+plural forms, and Japanese and Chinese have no plural forms. The CSV format
+allows you to specify only the plural forms that are needed for each language.
+
+If you need to specify a custom plural rule, you can do so by adding a row with
+the ``?pluralrule`` key. The value of this key should be the plural rule in the
+format used by gettext, for example: ``nplurals=2; plural=(n != 1);``.
+Certain languages can have their plural rule omitted to use the built-in plural rule.
+The column for the ``?plural`` hint should be left empty in the ``?pluralrule`` row.
 
 .. code-block:: none
 
@@ -97,7 +120,7 @@ localization.
 .. note::
 
     Automatic Control translation is not supported when using plural forms. You must
-    translate the string manually using :ref:`tr_n()<class_Object_method_tr_n>`.
+    translate the string manually using :ref:`tr_n() <class_Object_method_tr_n>`.
 
 Specifying translation contexts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
