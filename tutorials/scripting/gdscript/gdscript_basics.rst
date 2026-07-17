@@ -2070,6 +2070,10 @@ you can specify a pattern guard after the list of patterns with the ``when`` key
             print("Point on line y = -x")
         [var x, var y]:
             print("Point (%s, %s)" % [x, y])
+        _ when point > 0:
+            print("Point greater than 0")
+        _ when point > 1:
+            print("This wouldn't execute because of the pattern guard above")
 
 - If there is no matching pattern for the current branch, the pattern guard
   is **not** evaluated and the patterns of the next branch are checked.
