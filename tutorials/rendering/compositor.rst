@@ -87,7 +87,7 @@ This is the boilerplate code that makes our compute shader work.
 
         vec4 color = imageLoad(color_image, uv);
 
-        COMPUTE_CODE
+        #COMPUTE_CODE
 
         imageStore(color_image, uv, color);
     }
