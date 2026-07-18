@@ -50,6 +50,8 @@ Signals
 
 **edited_script_changed**\ (\ ) :ref:`🔗<class_ScriptEditorBase_signal_edited_script_changed>`
 
+**Deprecated:** This signal should only be used internally.
+
 Emitted after script validation.
 
 .. rst-class:: classref-item-separator
@@ -61,6 +63,8 @@ Emitted after script validation.
 .. rst-class:: classref-signal
 
 **go_to_help**\ (\ what\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_go_to_help>`
+
+**Deprecated:** This signal should only be used internally. See :ref:`ScriptEditor.goto_help()<class_ScriptEditor_method_goto_help>` instead.
 
 Emitted when the user requests a specific documentation page.
 
@@ -74,6 +78,8 @@ Emitted when the user requests a specific documentation page.
 
 **go_to_method**\ (\ script\: :ref:`Object<class_Object>`, method\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_go_to_method>`
 
+**Deprecated:** This signal should only be used internally.
+
 Emitted when the user requests to view a specific method of a script, similar to :ref:`request_open_script_at_line<class_ScriptEditorBase_signal_request_open_script_at_line>`.
 
 .. rst-class:: classref-item-separator
@@ -85,6 +91,8 @@ Emitted when the user requests to view a specific method of a script, similar to
 .. rst-class:: classref-signal
 
 **name_changed**\ (\ ) :ref:`🔗<class_ScriptEditorBase_signal_name_changed>`
+
+**Deprecated:** This signal should only be used internally.
 
 Emitted after script validation or when the edited resource has changed.
 
@@ -98,6 +106,8 @@ Emitted after script validation or when the edited resource has changed.
 
 **replace_in_files_requested**\ (\ text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_replace_in_files_requested>`
 
+**Deprecated:** This signal should only be used internally.
+
 Emitted when the user request to find and replace text in the file system.
 
 .. rst-class:: classref-item-separator
@@ -109,6 +119,8 @@ Emitted when the user request to find and replace text in the file system.
 .. rst-class:: classref-signal
 
 **request_help**\ (\ topic\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_help>`
+
+**Deprecated:** This signal should only be used internally.
 
 Emitted when the user requests contextual help.
 
@@ -122,6 +134,8 @@ Emitted when the user requests contextual help.
 
 **request_open_script_at_line**\ (\ script\: :ref:`Object<class_Object>`, line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_open_script_at_line>`
 
+**Deprecated:** This signal should only be used internally. See :ref:`EditorInterface.edit_script()<class_EditorInterface_method_edit_script>` instead.
+
 Emitted when the user requests to view a specific line of a script, similar to :ref:`go_to_method<class_ScriptEditorBase_signal_go_to_method>`.
 
 .. rst-class:: classref-item-separator
@@ -134,7 +148,9 @@ Emitted when the user requests to view a specific line of a script, similar to :
 
 **request_save_history**\ (\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_history>`
 
-Emitted when the user contextual goto and the item is in the same script.
+**Deprecated:** This signal should only be used internally.
+
+Emitted when the editor requests to save a new history navigation point.
 
 .. rst-class:: classref-item-separator
 
@@ -146,7 +162,9 @@ Emitted when the user contextual goto and the item is in the same script.
 
 **request_save_previous_state**\ (\ state\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_previous_state>`
 
-Emitted when the user changes current script or moves caret by 10 or more columns within the same script.
+**Deprecated:** This signal should only be used internally.
+
+Emitted when the editor requests an update to its navigation point.
 
 .. rst-class:: classref-item-separator
 
@@ -157,6 +175,8 @@ Emitted when the user changes current script or moves caret by 10 or more column
 .. rst-class:: classref-signal
 
 **search_in_files_requested**\ (\ text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_search_in_files_requested>`
+
+**Deprecated:** This signal should only be used internally.
 
 Emitted when the user request to search text in the file system.
 

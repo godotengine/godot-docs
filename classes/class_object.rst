@@ -568,7 +568,7 @@ Returns the current iterable value. ``iter`` stores the iteration state, but unl
 
 :ref:`bool<class_bool>` **_iter_init**\ (\ iter\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_Object_private_method__iter_init>`
 
-Initializes the iterator. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns ``true`` so long as the iterator has not reached the end.
+Initializes the iterator. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. This array should not be resized. Returns ``true`` so long as the iterator has not reached the end.
 
 ::
 
@@ -611,7 +611,7 @@ See also `online docs <../tutorials/scripting/gdscript/gdscript_advanced.html#cu
 
 :ref:`bool<class_bool>` **_iter_next**\ (\ iter\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_Object_private_method__iter_next>`
 
-Moves the iterator to the next iteration. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. Returns ``true`` so long as the iterator has not reached the end.
+Moves the iterator to the next iteration. ``iter`` stores the iteration state. Since GDScript does not support passing arguments by reference, a single-element array is used as a wrapper. This array should not be resized. Returns ``true`` so long as the iterator has not reached the end.
 
 .. rst-class:: classref-item-separator
 
@@ -1204,7 +1204,7 @@ Returns the object's unique instance ID. This ID can be saved in :ref:`EncodedOb
 
 Returns the object's metadata value for the given entry ``name``. If the entry does not exist, returns ``default``. If ``default`` is ``null``, an error is also generated.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_unicode_identifier()<class_StringName_method_is_valid_unicode_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
@@ -1368,7 +1368,7 @@ Returns ``true`` if any connection exists on the given ``signal`` name.
 
 Returns ``true`` if a metadata entry is found with the given ``name``. See also :ref:`get_meta()<class_Object_method_get_meta>`, :ref:`set_meta()<class_Object_method_set_meta>` and :ref:`remove_meta()<class_Object_method_remove_meta>`.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_unicode_identifier()<class_StringName_method_is_valid_unicode_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
@@ -1578,7 +1578,7 @@ Returns the custom default value of the given ``property``. Use :ref:`property_c
 
 Removes the given entry ``name`` from the object's metadata. See also :ref:`has_meta()<class_Object_method_has_meta>`, :ref:`get_meta()<class_Object_method_get_meta>` and :ref:`set_meta()<class_Object_method_set_meta>`.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_unicode_identifier()<class_StringName_method_is_valid_unicode_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
@@ -1737,7 +1737,7 @@ Adds or changes the entry ``name`` inside the object's metadata. The metadata ``
 
 If ``value`` is ``null``, the entry is removed. This is the equivalent of using :ref:`remove_meta()<class_Object_method_remove_meta>`. See also :ref:`has_meta()<class_Object_method_has_meta>` and :ref:`get_meta()<class_Object_method_get_meta>`.
 
-\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier()<class_StringName_method_is_valid_identifier>` method.
+\ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_unicode_identifier()<class_StringName_method_is_valid_unicode_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
