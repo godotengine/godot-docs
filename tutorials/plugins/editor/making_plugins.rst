@@ -272,9 +272,45 @@ add the following content to it:
     version="1.0"
     script="CustomDock.cs"
 
-Then create the script ``custom_dock.gd`` in the same folder. Fill it with the
-:ref:`template we've seen before <doc_making_plugins_template_code>` to get a
-good start.
+Then create the script ``custom_dock.gd`` in the same folder. The following code
+will get you started.
+
+.. _doc_making_plugins_editor_template_code:
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    extends EditorDock
+
+
+    func _enter_tree():
+        # Initialization of the dock goes here.
+        pass
+
+
+    func _exit_tree():
+        # Clean-up of the dock goes here.
+        pass
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+
+    [Tool]
+    public partial class CustomNode : EditorDock
+    {
+        public override void _EnterTree()
+        {
+            // Initialization of the dock goes here.
+        }
+
+        public override void _ExitTree()
+        {
+            // Clean-up of the dock goes here.
+        }
+    }
+    #endif
 
 Since we're trying to add a new custom dock, we need to create the contents of
 the dock. This is nothing more than a standard Godot scene: just create
@@ -319,7 +355,7 @@ The script could look like this:
         dock.title = "My Dock"
 
         # Note that LEFT_UL means the left of the editor, upper-left dock.
-        dock.default_slot = DOCK_SLOT_LEFT_UL
+        dock.default_slot = EditorDock.DOCK_SLOT_LEFT_UL
 
         # Allow the dock to be on the left or right of the editor, and to be made floating.
         dock.available_layouts = EditorDock.DOCK_LAYOUT_VERTICAL | EditorDock.DOCK_LAYOUT_FLOATING
