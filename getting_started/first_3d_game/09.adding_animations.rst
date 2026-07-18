@@ -522,9 +522,9 @@ And the *Mob*'s script.
     extends CharacterBody3D
 
     # Minimum speed of the mob in meters per second.
-    @export var min_speed = 10
+    @export var min_speed = 10.0
     # Maximum speed of the mob in meters per second.
-    @export var max_speed = 18
+    @export var max_speed = 18.0
 
     # Emitted when the player jumped on the mob
     signal squashed
@@ -541,8 +541,8 @@ And the *Mob*'s script.
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
-        # We calculate a random speed (integer)
-        var random_speed = randi_range(min_speed, max_speed)
+        # We calculate a random speed (float)
+        var random_speed = randf_range(min_speed, max_speed)
         # We calculate a forward velocity that represents the speed.
         velocity = Vector3.FORWARD * random_speed
         # We then rotate the velocity vector based on the mob's Y rotation
@@ -570,10 +570,10 @@ And the *Mob*'s script.
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public int MinSpeed { get; set; } = 10;
+        public float MinSpeed { get; set; } = 10.0f;
         // Maximum speed of the mob in meters per second
         [Export]
-        public int MaxSpeed { get; set; } = 18;
+        public float MaxSpeed { get; set; } = 18.0f;
 
         public override void _PhysicsProcess(double delta)
         {
@@ -590,8 +590,8 @@ And the *Mob*'s script.
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
-            // We calculate a random speed (integer).
-            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            // We calculate a random speed (float).
+            float randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
             // We calculate a forward velocity that represents the speed.
             Velocity = Vector3.Forward * randomSpeed;
             // We then rotate the velocity vector based on the mob's Y rotation

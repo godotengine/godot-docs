@@ -1,1 +1,0 @@
-.. image:: img/expres.png

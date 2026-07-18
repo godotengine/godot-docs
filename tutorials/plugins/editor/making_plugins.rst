@@ -18,6 +18,8 @@ you can understand how they work and be able to develop your own. The first
 is a custom node that you can add to any scene in the project, and the
 other is a custom dock added to the editor.
 
+.. _doc_making_plugins_template:
+
 Creating a plugin
 -----------------
 
@@ -235,6 +237,8 @@ attached to it. Set a text to the button, save and run the scene. When you
 click the button, you can see some text in the console:
 
 .. image:: img/making_plugins-custom_node_console.webp
+
+.. _doc_making_plugins_custom_dock:
 
 A custom dock
 -------------

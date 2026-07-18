@@ -76,6 +76,9 @@ all you need to initialize your plugin.
                 return "scale"
             3:
                 return "time"
+            _:
+                push_error("Unknown port name: %d" % port)
+                return ""
 
 
     func _get_input_port_type(port):
@@ -88,21 +91,24 @@ all you need to initialize your plugin.
                 return VisualShaderNode.PORT_TYPE_SCALAR
             3:
                 return VisualShaderNode.PORT_TYPE_SCALAR
+            _:
+                push_error("Unknown port type: %d" % port)
+                return VisualShaderNode.PORT_TYPE_MAX
 
 
     func _get_output_port_count():
         return 1
 
 
-    func _get_output_port_name(port):
+    func _get_output_port_name(_port):
         return "result"
 
 
-    func _get_output_port_type(port):
+    func _get_output_port_type(_port):
         return VisualShaderNode.PORT_TYPE_SCALAR
 
 
-    func _get_global_code(mode):
+    func _get_global_code(_mode):
         return """
             vec3 mod289_3(vec3 x) {
                 return x - floor(x * (1.0 / 289.0)) * 289.0;
@@ -195,7 +201,7 @@ all you need to initialize your plugin.
         """
 
 
-    func _get_code(input_vars, output_vars, mode, type):
+    func _get_code(input_vars, output_vars, _mode, _type):
         return output_vars[0] + " = cnoise(vec3((%s.xy + %s.xy) * %s, %s)) * 0.5 + 0.5;" % [input_vars[0], input_vars[1], input_vars[2], input_vars[3]]
 
 Save it and open the Visual Shader. You should see your new node type within the member's dialog under the Addons category (if you can't see your new node, try restarting the editor):

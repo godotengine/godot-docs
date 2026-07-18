@@ -1364,7 +1364,8 @@ want to assign consecutive integers to some constant.
 
 If you pass a name to the enum, it will put all the keys inside a constant
 :ref:`Dictionary <class_Dictionary>` of that name. This means all constant methods of
-a dictionary can also be used with a named enum.
+a dictionary can also be used with a named enum. This only works for
+GDScript enums, not for enums from built-in classes.
 
 .. important:: Keys in a named enum are not registered
                as global constants. They should be accessed prefixed
@@ -1490,7 +1491,7 @@ callable. This can be used to pass functions as arguments.
         return result
 
     func add1(value: int) -> int:
-        return value + 1;
+        return value + 1
 
     func _ready() -> void:
         var my_array = [1, 2, 3]
@@ -2541,10 +2542,10 @@ When setter/getter is not called
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a variable is initialized, the value of the initializer will be written directly to the variable.
-Including if the ``@onready`` annotation is applied to the variable.
+This occurs even if the ``@onready`` or ``@export`` annotation is applied to the variable.
 
-Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
-so it won't generate infinite recursion and saves you from explicitly declaring another variable:
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member.
+This prevents infinite recursion and saves you from explicitly declaring another variable:
 
 ::
 
@@ -2625,10 +2626,10 @@ for Nodes).
     If a :ref:`class_Node` is deleted via ``free()`` or ``queue_free()``,
     all of its children will also recursively be deleted.
 
-To avoid reference cycles that can't be freed, a :ref:`class_WeakRef`
-function is provided for creating weak references, which allow access
-to the object without preventing a :ref:`class_RefCounted` from freeing.
-Here is an example:
+To avoid reference cycles that can't be freed, a
+:ref:`weakref() <class_@GlobalScope_method_weakref>` function is provided for
+creating weak references, which allow access to the object without preventing a
+:ref:`class_RefCounted` from freeing. Here is an example:
 
 
 ::

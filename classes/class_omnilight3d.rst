@@ -33,7 +33,7 @@ An Omnidirectional light is a type of :ref:`Light3D<class_Light3D>` that emits l
 Tutorials
 ---------
 
-- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
+- `3D lights and shadows <../tutorials/3d/lights_and_shadows.html#omni-light>`__
 
 - :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
 

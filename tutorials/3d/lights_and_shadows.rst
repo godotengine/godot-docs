@@ -170,6 +170,8 @@ rendering approach so lights with shadows are rendered in sRGB space instead of 
 This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar
 appearance to an unshadowed light, you may need to adjust the light's energy setting.
 
+.. _doc_lights_and_shadows_directional_light:
+
 Directional light
 -----------------
 
@@ -260,6 +262,8 @@ shadows when using large objects with unsubdivided meshes. Only change this
 value if you notice missing shadows that are not related to shadow biasing
 issues.
 
+.. _doc_lights_and_shadows_omni_light:
+
 Omni light
 ----------
 
@@ -328,6 +332,8 @@ With the projector texture below, the following result is obtained:
     `this web-based conversion tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__
     to convert them to a single panorama image.
 
+.. _doc_lights_and_shadows_spot_light:
+
 Spot light
 ----------
 
@@ -373,25 +379,46 @@ With the projector texture below, the following result is obtained:
     working entirely. If you need shadows for wider lights, use an omni light
     instead.
 
+.. _doc_lights_and_shadows_area_light:
+
 Area light
 ----------
 
 Sometimes, you want lighting to come from a large area instead of a single
 point. Area lights are useful for simulating soft, diffuse lighting, such as
-light coming from a window or a lit billboard. This type of light is expensive
-to render in real-time, so it should be used sparingly, especially when shadows
-are enabled.
+light coming from a window or a lit billboard.
 
 Godot provides the :ref:`class_AreaLight3D` node for this purpose, which emits
 light from a rectangular area. The node only emits light and has no other visual
 representation in the scene. The screenshots below use a :ref:`class_Sprite3D`
 node as a child of the area light for visualization purposes.
 
+.. warning::
+
+    This type of light is the most expensive to render in real-time. It should
+    be used sparingly, especially when shadows are enabled.
+    Consider using them only for cinematics or when targeting high-end devices.
+
+    In Forward+, as soon as one area light is visible in the view frustum, it
+    incurs an additional performance cost on **all** rendered objects in the
+    scene, even those that are not reached by an area light. This tradeoff
+    allows for a greater number of area lights to be rendered (clustered
+    lighting).
+
+    In Mobile and Compatibility, only objects that are reached by an area light
+    incur an additional performance cost.
+
 Area lights can also cast shadows, with variable penumbra simulated using
 :ref:`PCSS <doc_lights_and_shadows_pcss_recommendations>` by default. The size
 of this penumbra can be controlled with the Light3D **Size** property. This
 effect can be quite demanding, so it can be turned off by setting **Size** to
 ``0.0``.
+
+.. note::
+
+    Shadows cast by an area light may look incorrect if the object casting shadows
+    doesn't have enough subdivisions and it's very close to the area light.
+    This is the same limitation as Dual Paraboloid shadow mode on an omni light.
 
 .. image:: img/lights_and_shadows_area_example.webp
 

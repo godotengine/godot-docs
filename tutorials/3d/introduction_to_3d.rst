@@ -20,7 +20,7 @@ which are almost identical to their 2D counterparts.
    :ref:`Asset Library <doc_project_manager_downloading_demos>`.
 
 In 3D, math is a little more complex than in 2D. For an introduction to the
-relevant math written for game developers, not mathemeticians or engineers,
+relevant math written for game developers, not mathematicians or engineers,
 check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
 3D workspace
@@ -282,9 +282,6 @@ To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
 - Bind **Begin Scale Transformation** to :kbd:`S`.
 - Finally, unbind **Scale Mode** so that its shortcut won't conflict with
   **Begin Rotate Transformation**.
-
-.. tip:: More shortcuts can be found on the 
-  :ref:`doc_default_key_mapping_shortcuts_spatial_editor` page.
 
 Node3D node
 -----------

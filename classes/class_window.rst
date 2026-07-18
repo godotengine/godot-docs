@@ -32,6 +32,8 @@ Tutorials
 
 - :doc:`HDR output <../tutorials/rendering/hdr_output>`
 
+- `Multiple Windows demo <https://github.com/godotengine/godot-demo-projects/tree/master/misc/multiple_windows>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -634,6 +636,8 @@ enum **Flags**: :ref:`🔗<enum_Window_Flags>`
 
 The window can't be resized by dragging its resize grip. It's still possible to resize the window using :ref:`size<class_Window_property_size>`. This flag is ignored for full screen windows. Set with :ref:`unresizable<class_Window_property_unresizable>`.
 
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_BORDERLESS:
 
 .. rst-class:: classref-enumeration-constant
@@ -642,6 +646,8 @@ The window can't be resized by dragging its resize grip. It's still possible to 
 
 The window do not have native title bar and other decorations. This flag is ignored for full-screen windows. Set with :ref:`borderless<class_Window_property_borderless>`.
 
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_ALWAYS_ON_TOP:
 
 .. rst-class:: classref-enumeration-constant
@@ -649,6 +655,8 @@ The window do not have native title bar and other decorations. This flag is igno
 :ref:`Flags<enum_Window_Flags>` **FLAG_ALWAYS_ON_TOP** = ``2``
 
 The window is floating on top of all other windows. This flag is ignored for full-screen windows. Set with :ref:`always_on_top<class_Window_property_always_on_top>`.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
 
 .. _class_Window_constant_FLAG_TRANSPARENT:
 
@@ -660,6 +668,8 @@ The window background can be transparent. Set with :ref:`transparent<class_Windo
 
 \ **Note:** This flag has no effect if either :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`, or the window's :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is set to ``false``.
 
+\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, Windows, and embedded windows.
+
 .. _class_Window_constant_FLAG_NO_FOCUS:
 
 .. rst-class:: classref-enumeration-constant
@@ -667,6 +677,8 @@ The window background can be transparent. Set with :ref:`transparent<class_Windo
 :ref:`Flags<enum_Window_Flags>` **FLAG_NO_FOCUS** = ``4``
 
 The window can't be focused. No-focus window will ignore all input, except mouse clicks. Set with :ref:`unfocusable<class_Window_property_unfocusable>`.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows, and embedded windows.
 
 .. _class_Window_constant_FLAG_POPUP:
 
@@ -676,7 +688,7 @@ The window can't be focused. No-focus window will ignore all input, except mouse
 
 Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`transient<class_Window_property_transient>`).
 
-\ **Note:** This flag has no effect in embedded windows (unless said window is a :ref:`Popup<class_Popup>`).
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, Windows, and embedded :ref:`Popup<class_Popup>` windows.
 
 .. _class_Window_constant_FLAG_EXTEND_TO_TITLE:
 
@@ -686,9 +698,9 @@ Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This
 
 Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons. Set with :ref:`extend_to_title<class_Window_property_extend_to_title>`.
 
-\ **Note:** This flag is implemented only on macOS.
-
 \ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented only on macOS.
 
 .. _class_Window_constant_FLAG_MOUSE_PASSTHROUGH:
 
@@ -699,6 +711,8 @@ Window content is expanded to the full size of the window. Unlike borderless win
 All mouse events are passed to the underlying window of the same application.
 
 \ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, Windows.
 
 .. _class_Window_constant_FLAG_SHARP_CORNERS:
 
@@ -734,6 +748,10 @@ Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_ima
 
 Signals the window manager that this window is supposed to be an implementation-defined "popup" (usually a floating, borderless, untileable and immovable child window).
 
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (Wayland).
+
 .. _class_Window_constant_FLAG_MINIMIZE_DISABLED:
 
 .. rst-class:: classref-enumeration-constant
@@ -742,7 +760,9 @@ Signals the window manager that this window is supposed to be an implementation-
 
 Window minimize button is disabled.
 
-\ **Note:** This flag is implemented on macOS and Windows.
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, and Windows.
 
 .. _class_Window_constant_FLAG_MAXIMIZE_DISABLED:
 
@@ -752,7 +772,9 @@ Window minimize button is disabled.
 
 Window maximize button is disabled.
 
-\ **Note:** This flag is implemented on macOS and Windows.
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented on Linux (X11), macOS, and Windows.
 
 .. _class_Window_constant_FLAG_MAX:
 

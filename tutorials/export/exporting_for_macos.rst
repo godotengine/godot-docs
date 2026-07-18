@@ -60,7 +60,7 @@ To sign exported app
 To notarize exported app
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Select ``Xcode altool`` in the ``Notarization > Notarization`` option.
+- Select ``Xcode notarytool`` in the ``Notarization > Notarization`` option.
 - Disable the ``Debugging`` entitlement.
 - Set valid Apple ID login / app. specific password or `App Store Connect <https://developer.apple.com/documentation/appstoreconnectapi>`__ API UUID / Key in the ``Notarization`` section.
 
@@ -73,18 +73,18 @@ After notarization is completed, `staple the ticket <https://developer.apple.com
 If you have an Apple Developer ID Certificate and exporting from Linux or Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install `PyOxidizer rcodesign <https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign``.
+Install `rcodesign <https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign`` option.
 
 To sign exported app
 ^^^^^^^^^^^^^^^^^^^^
 
-- Select ``PyOxidizer rcodesign`` in the ``Code Signing > Codesign`` option.
+- Select ``rcodesign`` in the ``Code Signing > Codesign`` option.
 - Set valid Apple ID PKCS #12 certificate file and password in the ``Code Signing`` section.
 
 To notarize exported app
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Select ``PyOxidizer rcodesign`` in the ``Notarization > Notarization`` option.
+- Select ``rcodesign`` in the ``Notarization > Notarization`` option.
 - Disable the ``Debugging`` entitlement.
 - Set valid `App Store Connect <https://developer.apple.com/documentation/appstoreconnectapi>`__ API UUID / Key in the ``Notarization`` section.
 
@@ -119,7 +119,7 @@ Signing Options
 +------------------------------+---------------------------------------------------------------------------------------------------+
 
 .. [1] This option is visible only when signing with Xcode codesign.
-.. [2] These options are visible only when signing with PyOxidizer rcodesign.
+.. [2] These options are visible only when signing with rcodesign.
 
 Notarization Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +144,7 @@ Notarization Options
 
     You should set either Apple ID Name/Password or App Store Connect API UUID/Key.
 
-.. [3] These options are visible only when notarizing with Xcode altool.
+.. [3] These options are visible only when notarizing with Xcode notarytool.
 
 See `Notarizing macOS Software Before Distribution <https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution?language=objc>`__ for more info.
 

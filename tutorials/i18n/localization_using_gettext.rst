@@ -311,7 +311,7 @@ In a gettext PO file, a string with a context can be defined as follows:
 Updating PO files
 -----------------
 
-Some time or later, you'll add new content to our game, and there will
+Some time or later, you'll add new content to your game, and there will
 be new strings that need to be translated. When this happens, you'll
 need to update the existing PO files to include the new strings.
 
@@ -336,7 +336,7 @@ POT generation custom plugin
 ----------------------------
 
 If you have any extra file format to deal with, you could write a custom plugin
-to parse and and extract the strings from the custom file. This custom plugin
+to parse and extract the strings from the custom file. This custom plugin
 will extract the strings and write into the POT file when you hit **Generate POT**.
 To learn more about how to create the translation parser plugin, see
 :ref:`EditorTranslationParserPlugin <class_EditorTranslationParserPlugin>`.

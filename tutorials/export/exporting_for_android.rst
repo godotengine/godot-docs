@@ -18,8 +18,23 @@ The following steps detail what is needed to set up the Android SDK and the engi
     Projects written in C# can be exported to Android as of Godot 4.2, but support
     is experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
+Setup on Android
+----------------
+
+When exporting to Android from the Android editor, you do **not** need to
+install OpenJDK or the Android SDK when exporting to Android, regardless of the
+export method used (pre-built APK or Gradle build).
+
+However, if you are performing a Gradle build, you will need to follow some
+steps described in :ref:`doc_android_gradle_build`.
+
+You can then skip to :ref:`doc_exporting_for_android_providing_launcher_icons`.
+
+Setup on Windows, macOS, and Linux
+----------------------------------
+
 Install OpenJDK 17
-------------------
+^^^^^^^^^^^^^^^^^^
 
 Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17&version=17&os=any&arch=any>`__.
 
@@ -28,7 +43,7 @@ Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant
     Higher versions of the JDK are also supported, but we recommend using JDK 17 for optimal compatibility and stability.
 
 Download the Android SDK
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download and install the Android SDK.
 
@@ -61,15 +76,14 @@ Download and install the Android SDK.
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
-
 Setting it up in Godot
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 Enter the Editor Settings screen (under the Godot tab for macOS, or the Editor tab
 for other platforms). This screen contains the editor settings for the user
 account in the computer (it's independent of the project).
 
-.. image:: img/editorsettings.png
+.. image:: img/editorsettings.webp
 
 Scroll down to the section where the Android settings are located:
 
@@ -94,6 +108,8 @@ Once that is configured, everything is ready to export to Android!
     different signing key already installed on the device, you **must** remove
     the application in question from the Android device before exporting to
     Android again.
+
+.. _doc_exporting_for_android_providing_launcher_icons:
 
 Providing launcher icons
 ------------------------
@@ -123,7 +139,7 @@ Exporting for Google Play Store
 -------------------------------
 
 All new apps uploaded to Google Play after August 2021 must be an AAB (Android App Bundle)
-file.
+file. To export an AAB file you need to set up :ref:`doc_android_gradle_build`.
 
 Uploading an AAB or APK to Google's Play Store requires you to sign using a non-debug
 keystore file; such a file can be generated like this:
@@ -138,7 +154,7 @@ Use Google's Android Developer guides to learn more about `app signing <https://
 
 Now fill in the following forms in your Android Export Presets:
 
-.. image:: img/editor-export-presets-android.png
+.. image:: img/editor-export-presets-android.webp
 
 - **Release:** Enter the path to the keystore file you just generated.
 - **Release User:** Replace with the key alias.
@@ -146,23 +162,25 @@ Now fill in the following forms in your Android Export Presets:
 
 Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
-.. image:: img/export-with-debug-button.png
+.. image:: img/export-with-debug-button.webp
 
 Optimizing the file size
 ------------------------
 
-If you're working with APKs and not AABs, by default, the APK will contain native
-libraries for both ARMv7 and ARMv8 architectures. This increases its size significantly.
-To create a smaller file, uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in
-your project's Android export preset. This will create an APK that only contains
-a library for a single architecture. Note that applications targeting ARMv7 can
-also run on ARMv8 devices, but the opposite is not true. The reason you don't do
-this to save space with AABs is that Google automatically splits up the AAB on their
-backend, so the user only downloads what they need.
+You can optimize the size of your application by compiling an Android export
+template with only the features you need. See :ref:`doc_optimizing_for_size` for
+more information.
 
-You can optimize the size further by compiling an Android export template with
-only the features you need. See :ref:`doc_optimizing_for_size` for more
-information.
+Performing a custom Gradle build
+--------------------------------
+
+If you need to modify the template's Java code or integrate with third-party
+Android SDKs, you may want to use a custom Gradle build instead of the default
+pre-built APK template. This allows you to have more control over the build
+process and the generated project, and you can use it as a base for further
+customization.
+
+See :ref:`doc_android_gradle_build` for guidance on setting up a custom Gradle build.
 
 Environment variables
 ---------------------

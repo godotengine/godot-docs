@@ -30,7 +30,7 @@ compiling the engine's source code, making it easier to distribute your work.
 It gives you access to most of the API available to GDScript and C#, allowing
 you to code game logic with full control regarding performance. It's ideal if
 you need high-performance code you'd like to distribute as an add-on in the
-:ref:`asset library <doc_what_is_assetlib>`.
+:ref:`Asset Store <doc_what_is_asset_store>`.
 
 Also:
 

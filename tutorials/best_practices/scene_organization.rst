@@ -17,7 +17,7 @@ They create their first scene and fill it with content only to eventually end
 up saving branches of their scene into separate scenes as the nagging feeling
 that they should split things up starts to accumulate. However, they then
 notice that the hard references they were able to rely on before are no longer
-possible. Re-using the scene in multiple places creates issues because the
+possible. Reusing the scene in multiple places creates issues because the
 node paths do not find their targets and signal connections established in the
 editor break.
 
@@ -337,11 +337,13 @@ Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...
 
 - `SOLID: <https://en.wikipedia.org/wiki/SOLID>`_
-    - `Single responsibility <https://en.wikipedia.org/wiki/Single-responsibility_principle>`_
-    - `Open for extension, closed for modification <https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle>`_
-    - `Liskov substitution <https://en.wikipedia.org/wiki/Liskov_substitution_principle>`_
-    - `Interface segregation <https://en.wikipedia.org/wiki/Interface_segregation_principle>`_
-    - `Dependency inversion <https://en.wikipedia.org/wiki/Dependency_inversion_principle>`_
+
+  - `Single responsibility <https://en.wikipedia.org/wiki/Single-responsibility_principle>`_
+  - `Open for extension, closed for modification <https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle>`_
+  - `Liskov substitution <https://en.wikipedia.org/wiki/Liskov_substitution_principle>`_
+  - `Interface segregation <https://en.wikipedia.org/wiki/Interface_segregation_principle>`_
+  - `Dependency inversion <https://en.wikipedia.org/wiki/Dependency_inversion_principle>`_
+
 - `DRY: Don't Repeat Yourself <https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>`_
 - `KISS: Keep It Simple Stupid <https://en.wikipedia.org/wiki/KISS_principle>`_
 - `YAGNI: You Aren't Gonna Need It <https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>`_
@@ -362,7 +364,7 @@ elsewhere. It also serves as a bird's eye view of all other data and logic
 in the program. For traditional applications, this is normally a "main"
 function. In Godot, it's a Main node.
 
-    - Node "Main" (main.gd)
+- Node "Main" (main.gd)
 
 The ``main.gd`` script will serve as the primary controller of your game.
 
@@ -370,9 +372,10 @@ Then you have an in-game "World" (a 2D or 3D one). This can be a child
 of Main. In addition, you will need a primary GUI for your game that manages
 the various menus and widgets the project needs.
 
-    - Node "Main" (main.gd)
-        - Node2D/Node3D "World" (game_world.gd)
-        - Control "GUI" (gui.gd)
+- Node "Main" (main.gd)
+
+  - Node2D/Node3D "World" (game_world.gd)
+  - Control "GUI" (gui.gd)
 
 When changing levels, you can then swap out the children of the "World" node.
 :ref:`Changing scenes manually <doc_change_scenes_manually>` gives you full
@@ -413,8 +416,8 @@ own place in the hierarchy as a sibling or some other relation.
 
   In some cases, you need these separated nodes to *also* position themselves
   relative to each other. You can use the
-  :ref:`RemoteTransform <class_RemoteTransform3D>` /
-  :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
+  :ref:`RemoteTransform2D <class_RemoteTransform2D>` /
+  :ref:`RemoteTransform3D <class_RemoteTransform3D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
   :ref:`NodePath <class_NodePath>`, use one of the following:

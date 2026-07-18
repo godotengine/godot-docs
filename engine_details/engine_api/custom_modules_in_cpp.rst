@@ -41,6 +41,8 @@ instead. Adding C++ modules can be useful in the following scenarios:
     C++ modules are mainly needed when GDExtension doesn't suffice and deeper engine
     integration is required.
 
+.. _doc_creating_custom_modules_in_cpp:
+
 Creating a new module
 ---------------------
 
@@ -83,6 +85,8 @@ And then the cpp file.
     :caption: godot/modules/summator/summator.cpp
 
     #include "summator.h"
+
+    #include "core/object/class_db.h"
 
     void Summator::add(int p_value) {
         count += p_value;

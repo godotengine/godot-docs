@@ -41,8 +41,8 @@ You can read more about gradle builds here: :ref:`doc_android_gradle_build`.
 Installing the vendors plugin
 -----------------------------
 
-The vendors plugin can be downloaded from the asset library, search for "OpenXR vendors"
-and install the one named "Godot OpenXR Vendors plugin v4".
+The vendors plugin can be downloaded from the Asset Store, search for "OpenXR
+vendors".
 
 .. image:: img/openxr_loader_asset_lib.webp
 

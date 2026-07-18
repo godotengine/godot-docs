@@ -17,3 +17,4 @@ Shading reference
    particle_shader
    sky_shader
    fog_shader
+   texture_blit_shader

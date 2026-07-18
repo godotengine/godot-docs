@@ -5,7 +5,7 @@ Tutorials and resources
 
 This is a list of third-party tutorials and resources created by the Godot
 community. For resources, remember that there is the official
-`Godot Asset Library <https://godotengine.org/asset-library/asset>`_ full of
+`Godot Asset Store <https://store.godotengine.org/>`_ full of
 official and community resources too!
 
 Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
@@ -32,7 +32,6 @@ Text tutorials
 - `Catlike Coding by Jasper Flick <https://catlikecoding.com/godot/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
-- `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
 - `GameDev Academy by Zenva <https://gamedevacademy.org/category/godot-tutorials/godot-4/>`__
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 
@@ -40,5 +39,5 @@ Resources
 ---------
 
 - `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
-- `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
+- `Godot Asset Store <https://store.godotengine.org/>`_
 - `Godot Shaders: A community-driven shader library <https://godotshaders.com/>`_

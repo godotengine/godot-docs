@@ -19,8 +19,8 @@ Desktop or laptop PC - Minimum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. When adjusting specifications, make sure to only mention hardware that can run the required OS version.
-.. For example, the x86 CPU requirement for macOS is set after the MacBook Air 11" (late 2010 model),
-.. which can run up to macOS 10.13.
+.. For example, the oldest Mac model that can run macOS 13 is the 2017 iMac,
+.. so the x86 CPU requirement for macOS should not be set earlier than that.
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Windows:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support, ARMv8 CPU  |
@@ -29,7 +29,7 @@ Desktop or laptop PC - Minimum
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo SU9400, Apple M1*                                        |
+|                      |   - *Example: Intel 7th Gen (Kaby Lake) CPU, Apple M1*                                  |
 |                      |                                                                                         |
 |                      | - **Linux:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support, ARMv7 or     |
 |                      |   ARMv8 CPU                                                                             |
@@ -53,10 +53,10 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 200 MB (used for the executable, project files and cache).                              |
 |                      | Exporting projects requires downloading export templates separately                     |
-|                      | (1.3 GB after installation).                                                            |
+|                      | (up to 1.5 GB after installation, depending on the target platforms chosen).            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 10, macOS 10.13 (Compatibility) or                         |
-|                      |   macOS 10.15 (Forward+/Mobile), Linux distribution released after 2018                 |
+| **Operating system** | - **Native editor:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon Macs),  |
+|                      |   Linux distribution released after 2018                                                |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -99,7 +99,7 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 200 MB (used for the executable, project files and cache)                               |
 |                      | Exporting projects requires downloading export templates separately                     |
-|                      | (1.3 GB after installation)                                                             |
+|                      | (up to 1.5 GB after installation, depending on the target platforms chosen).            |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **Native editor:** Android 7.0 (Compatibility) or Android 9.0 (Forward+/Mobile)       |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
@@ -140,10 +140,9 @@ Desktop or laptop PC - Recommended
 | **RAM**              | - **Native editor:** 8 GB                                                                   |
 |                      | - **Web editor:** 12 GB                                                                     |
 +----------------------+---------------------------------------------------------------------------------------------+
-| **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)             |
+| **Storage**          | 2 GB (used for the executable, project files, all export templates and cache)               |
 +----------------------+---------------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 10, macOS 10.15,                                               |
-|                      |   Linux distribution released after 2020                                                    |
+| **Operating system** | - **Native editor:** Windows 11, macOS 13, Linux distribution released after 2020           |
 |                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera                    |
 +----------------------+---------------------------------------------------------------------------------------------+
 
@@ -172,7 +171,7 @@ Mobile device (smartphone/tablet) - Recommended
 | **RAM**              | - **Native editor:** 6 GB                                                               |
 |                      | - **Web editor:** 8 GB                                                                  |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)         |
+| **Storage**          | 2 GB (used for the executable, project files, all export templates and cache)           |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **Native editor:** Android 11.0                                                       |
 |                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera,               |
@@ -204,8 +203,8 @@ Desktop or laptop PC - Minimum
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. When adjusting specifications, make sure to only mention hardware that can run the required OS version.
-.. For example, the x86 CPU requirement for macOS is set after the MacBook Air 11" (late 2010 model),
-.. which can run up to macOS 10.13.
+.. For example, the oldest Mac model that can run macOS 13 is the 2017 iMac,
+.. so the x86 CPU requirement for macOS should not be set earlier than that.
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Windows:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support,            |
@@ -215,7 +214,7 @@ Desktop or laptop PC - Minimum
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo SU9400, Apple M1*                                        |
+|                      |   - *Example: Intel 7th Gen (Kaby Lake) CPU, Apple M1*                                  |
 |                      |                                                                                         |
 |                      | - **Linux:** x86_32 CPU with SSE2 support, x86_64 CPU with SSE4.2 support,              |
 |                      |   ARMv7 or ARMv8 CPU                                                                    |
@@ -242,9 +241,8 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 10, macOS 10.13 (Compatibility), macOS 10.15          |
-|                      |   (Forward+/Mobile, Vulkan), macOS 13.0 (Forward+/Mobile, Metal), Linux distribution    |
-|                      |   released after 2018                                                                   |
+| **Operating system** | - **For native exports:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon    |
+|                      |   Macs), Linux distribution released after 2018                                         |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -283,7 +281,7 @@ Mobile device (smartphone/tablet) - Minimum
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 7.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
-|                      |   iOS 12.0 (Forward+/Mobile, Vulkan), iOS 16.0 (Forward+/Mobile, Metal)                 |
+|                      |   iOS 15.0 (Forward+/Mobile with Vulkan), iOS 16.0 (Forward+/Mobile with Metal)         |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -327,8 +325,7 @@ Desktop or laptop PC - Recommended
 +----------------------+----------------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                                    |
 +----------------------+----------------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 10, macOS 10.15 (Forward+/Mobile, Vulkan), macOS 13.0      |
-|                      |   (Forward+/Mobile, Metal), Linux distribution released after 2020                           |
+| **Operating system** | - **For native exports:** Windows 11, macOS 13, Linux distribution released after 2020       |
 |                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera                |
 +----------------------+----------------------------------------------------------------------------------------------+
 
@@ -363,8 +360,7 @@ Mobile device (smartphone/tablet) - Recommended
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Android 9.0, iOS 14.1 (Forward+/Mobile, Vulkan), iOS 16.0     |
-|                      |   (Forward+/Mobile, Metal)                                                              |
+| **Operating system** | - **For native exports:** Android 9.0, iOS 16.0                                         |
 |                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera,          |
 |                      |   Samsung Internet                                                                      |
 +----------------------+-----------------------------------------------------------------------------------------+

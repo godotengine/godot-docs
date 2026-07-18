@@ -29,6 +29,8 @@ All physical simulation, such as lighting calculations, and colorimetry transfor
 
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it is equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
+\ **Note:** In C#, color constants are defined in the ``Colors`` static class instead of ``Color``. Additionally, named colors use ``PascalCase`` syntax instead of ``UPPER_SNAKE_CASE``. For example, ``Color.ALICE_BLUE`` in GDScript is ``Colors.AliceBlue`` in C#.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.

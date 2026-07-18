@@ -67,39 +67,58 @@ Editor
 **Features:**
 
 - Scene tree editor.
-- Built-in script editor.
+- Built-in script editor. Also supports editing text files and using custom
+  syntax highlighters.
 - Support for :ref:`external script editors <doc_external_editor>` such as
   Visual Studio Code or Vim.
 - GDScript :ref:`debugger <doc_debugger_panel>`.
 
-   - Support for debugging in threads is available since 4.2.
+   - Supports debugging in threads.
+
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
 - Performance monitoring tools, including
   :ref:`custom performance monitors <doc_custom_performance_monitors>`.
+- Supports :ref:`tracing profilers <doc_tracing_profilers>` like
+  :ref:`doc_profiler_tracy` and :ref:`doc_profiler_perfetto` for deeper optimization tasks.
+- Any script can be :ref:`run in the editor <doc_running_code_in_the_editor>`
+  and provide custom functionality such as clickable buttons in the inspector,
+  without needing to create an editor plugin.
 - Live script reloading.
 - Live scene editing.
 
-   - Changes will reflect in the editor and will be kept after closing the running project.
+   - Changes *will* reflect in the editor and *will* be kept after closing the running project.
 
-- Remote inspector.
-
-   - Changes won't reflect in the editor and won't be kept after closing the running project.
-
-- Live camera replication.
+- Live camera replication (disabled by default).
 
    - Move the in-editor camera and see the result in the running project.
 
+- Remote inspector.
+
+   - Changes *won't* reflect in the editor and *won't* be kept after closing the running project.
+
+- Run multiple simultaneous project instances from a single editor instance
+  (useful for client/server testing).
+- Optional :ref:`game embedding <doc_game_embedding>` to run the project in a panel within the editor.
+
+  - Select 2D and 3D nodes in the project's viewport to inspect them in the editor.
+  - Move the camera within the project using the 2D and 3D camera overrides.
+  - Supports time scale adjustments, pausing, and frame advance.
+  - Supports muting the project.
+
+- Ruler tool to measure distances in 2D and 3D.
+- Vertex snapping support in 3D.
+- Support for following the selection as it moves in 3D by using Focus Selection twice.
 - Built-in offline class reference documentation.
 - Use the editor in dozens of languages contributed by the community.
 
 **Plugins:**
 
 - Editor plugins can be downloaded from the
-  :ref:`asset library <doc_what_is_assetlib>` to extend editor functionality.
+  :ref:`Asset Store <doc_what_is_asset_store>` to extend editor functionality.
 - :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
   features or speed up your workflow.
-- :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
+- :ref:`Download projects from the Asset Store <doc_using_asset_store_editor>`
   in the Project Manager and import them directly.
 
 Rendering
@@ -118,7 +137,9 @@ Godot 4 includes three renderers:
   renderer, suited for low-end desktop and mobile platforms. Used by default on
   the web platform. This renderer uses **OpenGL** as the rendering driver.
 
-See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
+.. seealso::
+
+    See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 2D graphics
 -----------
@@ -159,11 +180,20 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
      requiring re-rasterization. Multi-channel usage makes SDF fonts scale down
      to lower sizes better compared to monochrome SDF fonts.
 
+- :ref:`Oversampling <doc_multiple_resolutions_font_and_image_oversampling>` for SVG images
+  using the :ref:`class_DPITexture` import type. This allows for sharper results when scaling
+  up the texture by re-rasterizing the SVG source image to a new resolution at run-time.
+
+  - Oversampling can optionally take individual :ref:`class_CanvasItem` scales into
+    account for crisper rendering when scaling nodes.
+
 - GPU-based :ref:`particles <doc_particle_systems_2d>` with support for
   :ref:`custom particle shaders <doc_particle_shader>`.
 - CPU-based particles.
 - Optional :ref:`2D HDR rendering <doc_environment_and_post_processing_using_glow_in_2d>`
   for better glow capabilities.
+- Optional debanding to reduce banding artifacts in gradients.
+- :ref:`HDR output <doc_hdr_output>` on supported platforms and renderers.
 
 2D tools
 --------
@@ -188,6 +218,7 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Character bodies.
 - Joints.
 - Areas to detect bodies entering or leaving it.
+- :ref:`Physics interpolation <doc_physics_interpolation>`.
 
 **Collision detection:**
 
@@ -197,7 +228,9 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 3D graphics
 -----------
 
-- HDR rendering with sRGB.
+- Linear HDR internal lighting calculations.
+- Optional debanding to reduce banding artifacts in gradients.
+- :ref:`HDR output <doc_hdr_output>` on supported platforms and renderers.
 - Perspective, orthographic and frustum-offset cameras.
 - When using the Forward+ renderer, a depth prepass is used to improve
   performance in complex scenes by reducing the cost of overdraw.
@@ -222,30 +255,36 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 **Real-time lighting:**
 
-- Directional lights (sun/moon). Up to 4 per scene.
-- Omnidirectional lights.
-- Spot lights with adjustable cone angle and attenuation.
+- :ref:`Directional lights <doc_lights_and_shadows_directional_light>` (sun/moon).
+- :ref:`Omnidirectional lights <doc_lights_and_shadows_omni_light>`.
+- :ref:`Spot lights <doc_lights_and_shadows_spot_light>` with adjustable cone angle and attenuation.
+- :ref:`Rectangular area lights <doc_lights_and_shadows_area_light>` with an optional texture
+  to determine the shape and color.
 - Specular, indirect light, and volumetric fog energy can be adjusted on a per-light basis.
-- Adjustable light "size" for fake area lights (will also make shadows blurrier).
+- Adjustable light "size" for spherical omni and disc spot lights (will also make shadows
+  blurrier with variable penumbra).
 - Optional distance fade system to fade distant lights and their shadows, improving performance.
 - When using the Forward+ renderer (default on desktop), lights are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of lights that can be used on a mesh.
-- When using the Mobile renderer, up to 8 omni lights and 8 spot lights can
+- When using the Mobile renderer, up to 8 omni lights, 8 spot lights, and 8 area lights can
   be displayed per mesh resource. Baked lighting can be used to overcome this limit
   if needed.
 
 **Shadow mapping:**
 
-- *DirectionalLight:* Orthogonal (fastest), PSSM 2-split and 4-split.
+- *DirectionalLight3D:* Orthogonal (fastest), PSSM 2-split and 4-split.
   Supports blending between splits.
-- *OmniLight:* Dual paraboloid (fast) or cubemap (slower but more accurate).
+- *OmniLight3D:* Dual paraboloid (fast) or cubemap (slower but more accurate).
   Supports colored projector textures in the form of panoramas.
-- *SpotLight:* Single texture. Supports colored projector textures.
+- *SpotLight3D:* Single texture. Supports colored projector textures.
+- *AreaLight3D:* Single texture with dual paraboloid distortion to approximate
+  the light's shape.
 - Shadow normal offset bias and shadow pancaking to decrease the amount of
   visible shadow acne and peter-panning.
 - :abbr:`PCSS (Percentage Closer Soft Shadows)`-like shadow blur based on the
-  light size and distance from the surface the shadow is cast on.
+  light size and distance from the surface the shadow is cast on. Supported for
+  all light types.
 - Adjustable shadow blur on a per-light basis.
 
 **Global illumination with indirect lighting:**
@@ -256,13 +295,17 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
      baking setups.
    - Supports lighting dynamic objects using automatic and manually placed probes.
-   - Optionally supports directional lighting and rough reflections based on spherical
-     harmonics.
-   - Lightmaps are baked on the GPU using compute shaders (much faster compared
-     to CPU lightmapping). Baking can only be performed from the editor,
-     not in exported projects.
+   - Optionally supports directional lighting based on spherical harmonics.
+   - Optionally supports baking a shadowmask for distant static directional shadows.
+   - Optional supersampling at bake-time to improve quality and reduce light leaking
+     at the cost of increased bake times and memory usage during baking.
+   - Lightmaps are baked on the GPU using compute shaders (much faster than
+     CPU lightmapping). Baking can only be performed from the editor, not in
+     exported projects.
    - Supports GPU-based :ref:`denoising <doc_using_lightmap_gi_denoising>`
-     with JNLM, or CPU/GPU-based denoising with OIDN.
+     with JNLM out of the box, or higher-quality CPU/GPU-based denoising with
+     OIDN (requires downloading OIDN separately).
+   - Lightmaps are rendered with bicubic filtering to reduce scaling artifacts.
 
 - :ref:`Voxel-based GI probes <doc_using_voxel_gi>`. Supports
   dynamic lights *and* dynamic occluders, while also supporting reflections.
@@ -289,7 +332,8 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Reflection techniques can be mixed together for greater accuracy or scalability.
 - When using the Forward+ renderer (default on desktop), reflection probes are
   rendered with clustered forward optimizations to decrease their individual cost.
-  Clustered rendering also lifts any limits on the number of reflection probes that can be used on a mesh.
+  Clustered rendering also lifts any limits on the number of reflection probes
+  that can be used on a mesh.
 - When using the Mobile renderer, up to 8 reflection probes can be displayed per mesh
   resource. When using the Compatibility renderer, up to 2 reflection probes can
   be displayed per mesh resource.
@@ -373,12 +417,13 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Nearest, bilinear, trilinear or anisotropic filtering.
 - Filtering options are defined on a per-use basis, not a per-texture basis.
 
-**Texture compression:**
+**Texture VRAM compression:**
 
-- Basis Universal (slow, but results in smaller files).
-- BPTC for high-quality compression (not supported on macOS).
-- ETC2 (not supported on macOS).
-- S3TC (not supported on mobile/Web platforms).
+- BPTC (for high-quality compression targeting desktop platforms).
+- ASTC (for high-quality compression targeting mobile platforms).
+- ETC2 (for fast compression targeting mobile platforms).
+- S3TC (for fast compression targeting desktop platforms).
+- Basis Universal (slow, but only requires one encoding for all platforms).
 
 **Antialiasing:**
 
@@ -395,8 +440,9 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Support for :ref:`rendering 3D at a lower resolution <doc_resolution_scaling>`
   while keeping 2D rendering at the original scale. This can be used to improve
   performance on low-end systems or improve visuals on high-end systems.
-- Resolution scaling uses bilinear filtering, AMD FidelityFX Super Resolution
-  1.0 (FSR1) or AMD FidelityFX Super Resolution 2.2 (FSR2).
+- Resolution scaling uses nearest-neighbor filtering, bilinear filtering,
+  AMD FidelityFX Super Resolution 1.0 (FSR1), or AMD FidelityFX Super Resolution 2.2.1
+  (FSR2).
 - Texture mipmap LOD bias is adjusted automatically to improve quality at lower
   resolution scales. It can also be modified with a manual offset.
 
@@ -434,6 +480,7 @@ improve quality. This can be helpful when
 - :ref:`Soft bodies <doc_soft_body>`.
 - :ref:`Ragdolls <doc_ragdoll_system>`.
 - Areas to detect bodies entering or leaving it.
+- :ref:`Physics interpolation <doc_physics_interpolation>`.
 
 **Collision detection:**
 
@@ -445,8 +492,12 @@ Shaders
 -------
 
 - *2D:* Custom vertex, fragment, and light shaders.
-- *3D:* Custom vertex, fragment, light, and sky shaders.
+- *3D:* Custom vertex, fragment, light, sky, and fog shaders.
+- Custom shaders can procedurally generate and modify textures in real-time using
+  :ref:`class_DrawableTexture2D`.
 - Text-based shaders using a :ref:`shader language inspired by GLSL <doc_shading_language>`.
+- Syntax highlighting is provided on GitHub by using ``gdshader``
+  as the language name in a Markdown code block.
 - Visual shader editor.
 
    - Support for :ref:`visual shader plugins <doc_visual_shader_plugins>`.
@@ -466,7 +517,8 @@ Scripting
 - :ref:`High-level interpreted language <doc_gdscript_reference>` with
   :ref:`optional static typing <doc_gdscript_static_typing>`.
 - Syntax inspired by Python. However, GDScript is **not** based on Python.
-- Syntax highlighting is provided on GitHub.
+- Syntax highlighting is provided on GitHub by using ``gdscript``
+  as the language name in a Markdown code block.
 - :ref:`Use threads <doc_using_multiple_threads>` to perform asynchronous actions
   or make use of multiple processor cores.
 
@@ -477,7 +529,8 @@ Scripting
 
    - Full support for the C# 12.0 syntax and features.
 
-- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for Android and iOS is also available.
+- Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for
+  Android and iOS is also available.
 
    - On the iOS platform only some architectures are supported: ``arm64``.
    - The web platform is currently unsupported. To use C# on that platform,
@@ -487,7 +540,8 @@ Scripting
 
 **GDExtension (C, C++, Rust, D, ...):**
 
-- When you need it, link to native libraries for higher performance and third-party integrations.
+- When you need it, link to native libraries for higher performance and third-party
+  integrations.
 
    - For scripting game logic, GDScript or C# are recommended if their
      performance is suitable.
@@ -513,12 +567,14 @@ Audio
 
 - Support for re-routable :ref:`audio buses <doc_audio_buses>` and effects
   with dozens of effects included.
-- Support for polyphony (playing several sounds from a single AudioStreamPlayer node).
+- Support for polyphony (playing several sounds from a single :ref:`class_AudioStreamPlayer`
+  node).
 - Support for random volume and pitch.
 - Support for real-time pitch scaling.
 - Support for sequential/random sample selection, including repetition prevention
   when using random sample selection.
-- Listener2D and Listener3D nodes to listen from a position different than the camera.
+- :ref:`class_AudioListener2D` and :ref:`class_AudioListener3D` nodes to listen from a position
+  different from the camera.
 - Support for :ref:`procedural audio generation <class_AudioStreamGenerator>`.
 - Audio input to record microphones.
 - :ref:`Text to speech <doc_text_to_speech>` using platform-provided TTS engines.
@@ -542,7 +598,7 @@ Import
 - *Images:* See :ref:`doc_importing_images`.
 - *Audio:*
 
-   - WAV with optional IMA-ADPCM compression.
+   - WAV with optional :abbr:`QOA (Quite OK Audio)` or IMA-ADPCM compression.
    - Ogg Vorbis.
    - MP3.
 
@@ -574,11 +630,20 @@ Input
 - Mouse input.
 
    - The mouse cursor can be visible, hidden, captured or confined within the window.
-   - When captured, raw input will be used on Windows and Linux to
-     sidestep the OS' mouse acceleration settings.
+   - The mouse cursor's appearance can be changed to a custom image or one of the
+     system cursors.
+   - When captured, raw input is used on Windows and Linux to sidestep the OS'
+     mouse acceleration settings.
 
-- Gamepad input (up to 8 simultaneous controllers).
-- Pen/tablet input with pressure support.
+- :ref:`Gamepad input <doc_controllers_gamepads_joysticks>`
+  (up to 8 simultaneous controllers).
+
+  - Support for :ref:`changing the LED color <doc_controller_features_led_color>`
+    on supported controllers.
+  - Support for :ref:`reading motion sensors <doc_controller_features_motion_sensors>`
+    on supported controllers (used to implement gyro aiming).
+
+- Pen/tablet input with pressure and tilt support.
 
 Navigation
 ----------
@@ -629,7 +694,8 @@ Internationalization
 - Support for :ref:`bidirectional typesetting <doc_internationalizing_games_bidi>`,
   text shaping and OpenType localized forms.
 - Automatic UI mirroring for right-to-left locales.
-- Support for pseudolocalization to test your project for i18n-friendliness.
+- Support for :ref:`pseudolocalization <doc_pseudolocalization>` to test your project
+  for i18n-friendliness.
 
 Windowing and OS integration
 ----------------------------
@@ -671,24 +737,37 @@ Windowing and OS integration
 Mobile
 ------
 
+- :ref:`Virtual joystick <class_VirtualJoystick>` and :ref:`buttons <class_TouchScreenButton>`
+  for touch input.
 - In-app purchases on :ref:`Android <doc_android_in_app_purchases>`
   and `iOS <https://github.com/godot-sdk-integrations/godot-storekit2>`_.
 - Support for advertisements using third-party modules.
+- Support for picture-in-picture mode on Android.
 
 .. _doc_xr_support:
 
 XR support (AR and VR)
 ----------------------
 
-- Out of the box :ref:`support for OpenXR <doc_setting_up_xr>`.
+- Support for desktop headsets using :ref:`OpenXR <doc_setting_up_xr>`. If a headset
+  works with SteamVR, it should work with Godot.
 
-   - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
+   - Godot also supports Quest over Link, AndroidXR Direct Preview, and Pico
+     Connect.
 
-- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR.
+  Including support for the following standalone headsets:
+  
+   - Meta Quest 1/2/3 and Pro
+   - Pico 4/4 Ultra
+   - Magic Leap 2
+   - Lynx R1
+   - HTC Vive Focus Vision
+   - Android XR headsets
 
-  - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
+- Support for the Linux-based standalone Steam Frame using OpenXR.
 
-- Out of the box limited support for visionOS Apple headsets.
+- Limited support for visionOS Apple headsets.
 
   - Currently only exporting an application for use on a flat plane within the
     headset is supported. Immersive experiences are not supported.
@@ -706,17 +785,19 @@ The editor UI can easily be extended in many ways using add-ons.
 
 - Buttons.
 - Checkboxes, check buttons, radio buttons.
-- Text entry using :ref:`class_LineEdit` (single line) and :ref:`class_TextEdit` (multiple lines).
-  TextEdit also supports code editing features such as displaying line numbers
-  and syntax highlighting.
-- Dropdown menus using :ref:`class_PopupMenu` and :ref:`class_OptionButton`.
+- Text entry using :ref:`class_LineEdit` (single line), :ref:`class_TextEdit`
+  (multiple lines), and :ref:`class_CodeEdit` (supports syntax highlighting,
+  line numbers, and more).
+- Dropdown menus using :ref:`class_PopupMenu` and :ref:`class_OptionButton`
+  with support for an optional search bar.
 - Scrollbars.
 - Labels.
 - RichTextLabel for :ref:`text formatted using BBCode <doc_bbcode_in_richtextlabel>`,
   with support for animated custom effects.
 - Trees (can also be used to represent tables).
-- Color picker with RGB and HSV modes.
+- Color picker with RGB, HSV, and OKHSL modes, as well as custom color palettes.
 - Controls can be rotated and scaled.
+- Drag-and-drop support.
 
 **Sizing:**
 
@@ -729,6 +810,7 @@ The editor UI can easily be extended in many ways using add-ons.
    - :ref:`Margin <class_MarginContainer>`, :ref:`centered <class_CenterContainer>`
      and :ref:`aspect ratio <class_AspectRatioContainer>` layouts.
    - :ref:`Draggable splitter <class_SplitContainer>` layouts.
+   - :ref:`Foldable section <class_FoldableContainer>` layouts.
 
 - Scale to :ref:`multiple resolutions <doc_multiple_resolutions>` using the
   ``canvas_items`` or ``viewport`` stretch modes.

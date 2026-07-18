@@ -8,36 +8,51 @@ Supported image formats
 
 Godot can import the following image formats:
 
-- BMP (``.bmp``)
-  - No support for 16-bit per pixel images. Only 1-bit, 4-bit, 8-bit, 24-bit, and 32-bit per pixel images are supported.
-- DirectDraw Surface (``.dds``)
-  - If mipmaps are present in the texture, they will be loaded directly.
-  This can be used to achieve effects using custom mipmaps.
-- Khronos Texture (``.ktx``)
-  - Decoding is done using `libktx <https://github.com/KhronosGroup/KTX-Software>`__.
-  Only supports 2D images. Cubemaps, texture arrays and de-padding are not supported.
-- OpenEXR (``.exr``)
-  - Supports HDR (highly recommended for panorama skies).
-- Radiance HDR (``.hdr``)
-  - Supports HDR (highly recommended for panorama skies).
-- JPEG (``.jpg``, ``.jpeg``)
-  - Doesn't support transparency per the format's limitations.
-- PNG (``.png``)
-  - Precision is limited to 8 bits per channel upon importing (no HDR images).
+**Raster:**
+
+- BMP (``.bmp``) - All pixel formats are supported, but :abbr:`RLE (Run-Length Encoding)`
+  compression is not supported.
+
+- DirectDraw Surface (``.dds``) - If mipmaps are present in the texture, they will be
+  loaded directly. This can be used to achieve effects using custom mipmaps.
+
+- Khronos Texture (``.ktx``) - Decoding is done using
+  `libktx <https://github.com/KhronosGroup/KTX-Software>`__. Only supports 2D images.
+  Cubemaps, texture arrays, and de-padding are not supported.
+
+- OpenEXR (``.exr``) - Supports HDR (highly recommended for panorama skies).
+
+- Radiance HDR (``.hdr``) - Supports HDR (highly recommended for panorama skies).
+
+- JPEG (``.jpg``, ``.jpeg``) - Doesn't support transparency per the format's limitations.
+
+- PNG (``.png``) - Precision is limited to 8 bits per channel upon importing (no HDR images).
+
 - Truevision Targa (``.tga``)
-- SVG (``.svg``)
-  - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
-  when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=certain%20features%20remain%20unsupported%20within%20the%20current%20framework>`__;
-  complex vectors may not render correctly. :ref:`Text must be converted to paths <doc_importing_images_svg_text>`;
-  otherwise, it won't appear in the rasterized image.
-  You can check whether ThorVG can render a certain vector correctly using its
-  `web-based viewer <https://www.thorvg.org/viewer>`__.
-  For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
-  is often a better solution. This can be automated thanks to its
-  `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
-- WebP (``.webp``)
-  - WebP files support transparency and can be compressed lossily or losslessly.
+
+- WebP (``.webp``) - WebP files support transparency and can be compressed lossily or losslessly.
   The precision is limited to 8 bits per channel.
+
+**Vector:**
+
+- SVG (``.svg``)
+
+  - By default, SVGs are rasterized at import-time.
+
+  - SVG is the only image format that can be imported as DPITexture, which allows
+    for run-time rasterization to match the current oversampling factor.
+    See :ref:`doc_importing_images_changing_import_type` for details.
+
+  - Godot uses the `ThorVG <https://www.thorvg.org/>`__ library for SVG rendering.
+    `SVG feature support is limited <https://www.thorvg.org/about#:~:text=certain%20features%20remain%20unsupported%20within%20the%20current%20framework>`__;
+    complex vectors may not render correctly. :ref:`Text must be converted to paths <doc_importing_images_svg_text>`;
+    otherwise, it won't appear in the rasterized image. For complex vectors, rendering them
+    to PNGs using `Inkscape <https://inkscape.org/>`__ is often a better solution.
+    This can be automated thanks to its
+    `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
+
+  - You can check whether ThorVG can render a certain vector correctly using its
+    `web-based viewer <https://www.thorvg.org/viewer>`__.
 
 .. note::
 
@@ -81,6 +96,10 @@ It is possible to choose other types of imported resources in the Import dock:
   which can be sampled in custom shaders. This resource type can only be
   displayed when using the Forward+ or Mobile renderers, not the Compatibility
   renderer.
+- **DPITexture:** Only available for SVG images. Similar to Texture2D, but can be
+  re-rasterized at different scales in the editor and at runtime without needing
+  to be reimported.
+  See :ref:`doc_multiple_resolutions_font_and_image_oversampling` for details.
 - **Font Data (Monospace Image Font):** Import the image as a bitmap font where
   all characters have the same width. See :ref:`doc_gui_using_fonts`.
 - **Image:** Import the image as-is. This resource type cannot be displayed

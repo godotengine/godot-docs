@@ -395,6 +395,8 @@ Combined with :ref:`_set()<class_Object_private_method__set>` and :ref:`_get_pro
 
 \ **Note:** Unlike other virtual methods, this method is called automatically for every script that overrides it. This means that the base implementation should not be called via ``super`` in GDScript or its equivalents in other languages. The bottom-most sub-class will be called first, with subsequent calls ascending the class hierarchy. The call chain will stop on the first class that returns a non-``null`` value.
 
+\ **Warning:** This method must be :doc:`thread-safe <../tutorials/performance/thread_safe_apis>` if overridden. Otherwise, the engine may crash when trying to save a resource containing the object.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -525,6 +527,8 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
 \ **Note:** If the object's script is not :ref:`@GDScript.@tool<class_@GDScript_annotation_@tool>`, this method will not be called in the editor.
 
 \ **Note:** Unlike other virtual methods, this method is called automatically for every script that overrides it. This means that the base implementation should not be called via ``super`` in GDScript or its equivalents in other languages. The bottom-most sub-class will be called first, with subsequent calls ascending the class hierarchy.
+
+\ **Warning:** This method must be :doc:`thread-safe <../tutorials/performance/thread_safe_apis>` if overridden. Otherwise, the engine may crash when trying to save a resource containing the object.
 
 .. rst-class:: classref-item-separator
 
