@@ -275,7 +275,6 @@ add the following content to it:
 Then create the script ``custom_dock.gd`` in the same folder. The following code
 will get you started.
 
-.. _doc_making_plugins_editor_template_code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
