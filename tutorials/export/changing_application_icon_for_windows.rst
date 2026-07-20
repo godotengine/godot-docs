@@ -28,9 +28,9 @@ using this `ImageMagick <https://www.imagemagick.org/>`_ command:
 
 .. code-block:: none
 
-    magick convert icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
+    magick icon.png -define icon:auto-resize=256,128,64,48,32,16 icon.ico
 
-Depending on which version of ImageMagick you installed, you might need to leave out the ``magick`` and run this command instead:
+Depending on which version of ImageMagick you installed, you might need to use this command instead:
 
 .. code-block:: none
 
