@@ -95,7 +95,7 @@ in the script.
 
     var blitMaterial = new BlitMaterial
     {
-        BlendMode = BlitMaterial.BlendModeEnum.Disabled
+        BlendMode = BlitMaterial.BlendModeEnum.Disabled,
     };
     texture.BlitRect(new Rect2I(0, 0, 200, 200), GD.Load<Texture2D>("res://icon.svg"), Colors.White, 0, blitMaterial);
 
@@ -170,14 +170,14 @@ texture to a new DrawableTexture.
 
  .. code-tab:: csharp
     
-    public DrawableTexture2D texture = new DrawableTexture2D();
+    private DrawableTexture2D _texture = new DrawableTexture2D();
 
     public override void _Ready()
     {
         // Be careful; if the dimensions of the node are not equal to the size set here,
         // our draw call later will seem to happen at the wrong spot.
-        texture.Setup(500, 500, DrawableTexture2D.DrawableFormat.Rgba8, null, false);
-        Texture = texture;
+        _texture.Setup(500, 500, DrawableTexture2D.DrawableFormat.Rgba8, null, false);
+        Texture = _texture;
     }
 
 Next, we need the TextureRect to respond to the player clicking and dragging as
@@ -219,8 +219,7 @@ InputMouseMotion events:
                 (int)(eventMouseMotion.Position.X - 10),  
                 (int)(eventMouseMotion.Position.Y - 10), 
                 20, 20);
-            texture.BlitRect(rect, null);
-            Texture = texture;
+            _texture.BlitRect(rect, null);
         }
     }
 
@@ -252,8 +251,7 @@ and use a red color as the ``modulate`` parameter.
             (int)(eventMouseMotion.Position.X - 10), 
             (int)(eventMouseMotion.Position.Y - 10),
             20, 20);
-        texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), Colors.Red);
-        Texture = texture;
+        _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), Colors.Red);
     }
 
 The drawing now looks much more natural and colorful. To further customize this,
@@ -288,37 +286,36 @@ smaller strokes.
 
  .. code-tab:: csharp
 
-    public bool drawing = false;
-    public Color myColor = Colors.Red;
-    public int mySize = 20;
+    private bool _drawing = false;
+    private Color _myColor = Colors.Red;
+    private int _mySize = 20;
 
     public override void _GuiInput(InputEvent @event)
     {
         if (@event is InputEventMouseButton)
         {
             // Mouse click/unclick - start/stop drawing.
-            drawing = !drawing;
+            _drawing = !_drawing;
         }
-        if (@event is InputEventMouseMotion eventMouseMotion && drawing)
+        if (@event is InputEventMouseMotion eventMouseMotion && _drawing)
         {
             // Calculate rect to center our drawn rectangle on mouse position
             // instead of mouse at top left.
             var rect = new Rect2I(
-                (int)(eventMouseMotion.Position.X - mySize / 2), 
-                (int)(eventMouseMotion.Position.Y - mySize / 2),
-                mySize, mySize);
-            texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), Colors.Red);
-            Texture = texture;
+                (int)(eventMouseMotion.Position.X - _mySize / 2), 
+                (int)(eventMouseMotion.Position.Y - _mySize / 2),
+                _mySize, _mySize);
+            _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), _myColor);
         }
     }
 
     public void OnColorPickerButtonColorChanged(Color color)
     {
-        myColor = color;
+        _myColor = color;
     }
 
     public void OnHSliderValueChanged(float value)
     {
-        mySize = (int)value;
+        _mySize = (int)value;
     }
     

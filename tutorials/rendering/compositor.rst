@@ -53,7 +53,7 @@ We must also give our script a class name.
 
  .. code-tab:: csharp
 
-    [Tool][GlobalClass]
+    [GlobalClass, Tool]
     public partial class PostProcessShader : CompositorEffect
 
 Next we're going to define a constant for our shader template code.
@@ -95,8 +95,8 @@ This is the boilerplate code that makes our compute shader work.
 
  .. code-tab:: csharp
 
-    public const string templateShader = "#"+"""
-    version 450
+    private const string _templateShader = @"
+    #version 450
     
     // Invocations in the (x, y, z) dimension
     layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
@@ -124,7 +124,7 @@ This is the boilerplate code that makes our compute shader work.
 
 	    imageStore(color_image, uv, color);
     }
-    """;
+    ";
 
 For more information on how compute shaders work,
 please check :ref:`Using compute shaders <doc_compute_shaders>`.
@@ -165,19 +165,19 @@ We'll also define a few script variables we'll be using:
         get { return _shaderCode; }
         set
         {
-            mutex.Lock();
+            _mutex.Lock();
             _shaderCode = value;
             shaderIsDirty = true;
-            mutex.Unlock();
+            _mutex.Unlock();
         }
     }
 
-    public RenderingDevice rd;
-    public Rid shader;
-    public Rid pipeline;
+    private RenderingDevice _rd;
+    private Rid _shader;
+    private Rid _pipeline;
 
-    public Godot.Mutex mutex = new Godot.Mutex();
-    public bool shaderIsDirty = true;
+    private Godot.Mutex _mutex = new Godot.Mutex();
+    private bool _shaderIsDirty = true;
 
 
 Note the use of a :ref:`Mutex <class_Mutex>` in our code.
@@ -204,7 +204,7 @@ Next we initialize our effect.
     public PostProcessShader()
     {
         EffectCallbackType = EffectCallbackTypeEnum.PostTransparent;
-        rd = RenderingServer.GetRenderingDevice();
+        _rd = RenderingServer.GetRenderingDevice();
     }
 
 The main thing here is setting our ``effect_callback_type`` which tells
@@ -238,10 +238,10 @@ We also need to clean up after ourselves, for this we react to the
     {
         if (what == NotificationPredelete)
         {
-            if (shader.IsValid)
+            if (_shader.IsValid)
             {
                 // Freeing our shader will also free any dependents such as the pipeline!
-                rd.FreeRid(shader);
+                _rd.FreeRid(_shader);
             }
         }
     }
@@ -283,7 +283,7 @@ code was changed.
             return pipeline.is_valid()
 
         # Apply template.
-        new_shader_code = template_shader.replace("#COMPUTE_CODE", new_shader_code);
+        new_shader_code = _templateShader.replace("#COMPUTE_CODE", new_shader_code);
 
         # Out with the old.
         if shader.is_valid():
@@ -314,44 +314,55 @@ code was changed.
     // Check if our shader has changed and needs to be recompiled.
     public bool CheckShader()
     {
-        if (rd is null)
+        if (_rd is null)
         {
             return false;
         }
 
         var newShaderCode = "";
 
+<<<<<<< HEAD
         // Check if our shader is dirty.
         mutex.Lock();
         if (shaderIsDirty)
+=======
+        // Check if our shader is dirty
+        _mutex.Lock();
+        if (_shaderIsDirty)
+>>>>>>> 6a8958e56 (Fixed multiline and private field formatting issues)
         {
             newShaderCode = _shaderCode;
-            shaderIsDirty = false;
+            _shaderIsDirty = false;
         }
-        mutex.Unlock();
+        _mutex.Unlock();
 
         // We don't have a (new) shader?
         if (newShaderCode == "")
         {
-            return pipeline.IsValid;
+            return _pipeline.IsValid;
         }
 
+<<<<<<< HEAD
         // Apply template.
         newShaderCode = templateShader.Replace("#COMPUTE_CODE", newShaderCode);
+=======
+        // Apply template
+        newShaderCode = _templateShader.Replace("#COMPUTE_CODE", newShaderCode);
+>>>>>>> 6a8958e56 (Fixed multiline and private field formatting issues)
 
         // Out with the old.
-        if (shader.IsValid)
+        if (_shader.IsValid)
         {
-            rd.FreeRid(shader);
-            shader = new Rid();
-            pipeline = new Rid();
+            _rd.FreeRid(_shader);
+            _shader = new Rid();
+            _pipeline = new Rid();
         }
 
         // In with the new.
         RDShaderSource shaderSource = new RDShaderSource();
         shaderSource.Language = RenderingDevice.ShaderLanguage.Glsl;
         shaderSource.SourceCompute = newShaderCode;
-        RDShaderSpirV shaderSpirV = rd.ShaderCompileSpirVFromSource(shaderSource);
+        RDShaderSpirV shaderSpirV = _rd.ShaderCompileSpirVFromSource(shaderSource);
 
         if (shaderSpirV.CompileErrorCompute != "")
         {
@@ -359,14 +370,14 @@ code was changed.
             GD.PushError("In: " + newShaderCode);
             return false;
         }
-        shader = rd.ShaderCreateFromSpirV(shaderSpirV);
-        if (!shader.IsValid)
+        _shader = _rd.ShaderCreateFromSpirV(shaderSpirV);
+        if (!_shader.IsValid)
         {
             return false;
         }
         
-        pipeline = rd.ComputePipelineCreate(shader);
-        return pipeline.IsValid;
+        _pipeline = _rd.ComputePipelineCreate(_shader);
+        return _pipeline.IsValid;
     }
 
 At the top of this method we again use our mutex to protect accessing our
@@ -447,17 +458,20 @@ this at the right stage of rendering.
     // Called by the rendering thread every frame.
     public override void _RenderCallback(int effectCallbackType, RenderData renderData)
     {
-        if (rd is not null && effectCallbackType == (int)EffectCallbackTypeEnum.PostTransparent && CheckShader())
+        if (_rd is not null && effectCallbackType == (int)EffectCallbackTypeEnum.PostTransparent && CheckShader())
         {
             // Get our render scene buffers object, this gives us access to our render buffers.
             // Note that implementation differs per renderer hence the need for the cast.
 
-            RenderSceneBuffersRD renderSceneBuffers = (RenderSceneBuffersRD)renderData.GetRenderSceneBuffers();
+            RenderSceneBuffersRD renderSceneBuffers = renderData.GetRenderSceneBuffers() as RenderSceneBuffersRD;
             if (renderSceneBuffers is not null)
             {
                 // Get our render size, this is the 3D resolution!
                 var size = renderSceneBuffers.GetInternalSize();
-                if (size.X == 0 && size.Y == 0) return;
+                if (size.X == 0 && size.Y == 0) 
+                {
+                    return;
+                }
 
                 // We can use a compute shader here.
                 uint xGroups = (uint)((size.X - 1) / 8 + 1);
@@ -465,8 +479,8 @@ this at the right stage of rendering.
                 uint zGroups = 1;
 
                 // Push Constant.
-                float[] tempPushConstant = [ size.X, size.Y, 0, 0 ];
-                byte[] pushConstant = new byte[ tempPushConstant.Length * sizeof(float) ];
+                float[] tempPushConstant = [size.X, size.Y, 0, 0];
+                byte[] pushConstant = new byte[tempPushConstant.Length * sizeof(float)];
                 Buffer.BlockCopy(tempPushConstant, 0, pushConstant, 0, pushConstant.Length);
 
                 // Loop through views just in case we're doing stereo rendering. No extra cost if this is mono.
@@ -484,16 +498,15 @@ this at the right stage of rendering.
                         Binding = 0,
                     };
                     uniform.AddId(inputImage);
-                    var uniformSet = UniformSetCacheRD.GetCache(shader, 0, [uniform]);
+                    var uniformSet = UniformSetCacheRD.GetCache(_shader, 0, [uniform]);
 
                     // Run our compute shader.
-                    var computeList = rd.ComputeListBegin();
-                    rd.ComputeListBindComputePipeline(computeList, pipeline);
-                    rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
-                    rd.ComputeListSetPushConstant(computeList, pushConstant, (uint)pushConstant.Length);
-                    rd.ComputeListDispatch(computeList, xGroups, yGroups, zGroups);
-                    rd.ComputeListEnd();
-
+                    var computeList = _rd.ComputeListBegin();
+                    _rd.ComputeListBindComputePipeline(computeList, _pipeline);
+                    _rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
+                    _rd.ComputeListSetPushConstant(computeList, pushConstant, (uint)pushConstant.Length);
+                    _rd.ComputeListDispatch(computeList, xGroups, yGroups, zGroups);
+                    _rd.ComputeListEnd();
             }
         }
     }
