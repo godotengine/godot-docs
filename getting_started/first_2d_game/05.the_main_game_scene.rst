@@ -159,7 +159,7 @@ signal connection dialog. The default settings in this dialog should be fine, so
 select **Connect** to create a new signal connection.
 
 Once all three timers have this set up, you should be able to see each timer
-have a Signal connection for their respective ``timeout()`` signal, showing in
+has a Signal connection for their respective ``timeout()`` signal, showing in
 green, within their respective Signals tabs:
 
 - (For MobTimer): ``_on_mob_timer_timeout()``
