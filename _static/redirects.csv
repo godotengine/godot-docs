@@ -37,7 +37,6 @@ source,destination
 /development/cpp/configuring_an_ide/xcode.html,/engine_details/development/configuring_an_ide/xcode.html
 /development/cpp/core_types.html,/engine_details/architecture/core_types.html
 /development/cpp/custom_audiostreams.html,/engine_details/engine_api/custom_audiostreams.html
-/development/cpp/custom_godot_servers.html,/engine_details/engine_api/custom_godot_servers.html
 /development/cpp/custom_modules_in_cpp.html,/engine_details/engine_api/custom_modules_in_cpp.html
 /development/cpp/custom_resource_format_loaders.html,/engine_details/engine_api/custom_resource_format_loaders.html
 /development/cpp/index.html,/engine_details/architecture/index.html
@@ -434,7 +433,6 @@ source,destination
 /contributing/development/core_and_modules/common_engine_methods_and_macros.html,/engine_details/architecture/common_engine_methods_and_macros.html
 /contributing/development/core_and_modules/core_types.html,/engine_details/architecture/core_types.html
 /contributing/development/core_and_modules/custom_audiostreams.html,/engine_details/engine_api/custom_audiostreams.html
-/contributing/development/core_and_modules/custom_godot_servers.html,/engine_details/engine_api/custom_godot_servers.html
 /contributing/development/core_and_modules/custom_modules_in_cpp.html,/engine_details/engine_api/custom_modules_in_cpp.html
 /contributing/development/core_and_modules/custom_platform_ports.html,/engine_details/engine_api/custom_platform_ports.html
 /contributing/development/core_and_modules/custom_resource_format_loaders.html,/engine_details/engine_api/custom_resource_format_loaders.html
@@ -489,7 +487,6 @@ source,destination
 /engine_details/architecture/scripting_development.html,https://contributing.godotengine.org/en/latest/engine/guidelines/gdscript_language_guidelines.html
 /engine_details/architecture/custom_modules_in_cpp.html,/engine_details/engine_api/custom_modules_in_cpp.html
 /engine_details/architecture/binding_to_external_libraries.html,/engine_details/engine_api/binding_to_external_libraries.html
-/engine_details/architecture/custom_godot_servers.html,/engine_details/engine_api/custom_godot_servers.html
 /engine_details/architecture/custom_resource_format_loaders.html,/engine_details/engine_api/custom_resource_format_loaders.html
 /engine_details/architecture/custom_audiostreams.html,/engine_details/engine_api/custom_audiostreams.html
 /engine_details/architecture/custom_platform_ports.html,/engine_details/engine_api/custom_platform_ports.html
