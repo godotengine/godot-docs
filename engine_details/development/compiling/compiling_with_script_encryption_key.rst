@@ -77,6 +77,11 @@ Step by step
 
    .. image:: img/encryption_key.png
 
+   If performing an export from the :ref:`command line <doc_command_line_tutorial>`,
+   before exporting, set the ``GODOT_SCRIPT_ENCRYPTION_KEY`` environment variable
+   to the same value as the one used to compile the export templates
+   (``SCRIPT_AES256_ENCRYPTION_KEY``).
+
 5. Add filters for the files/folders to encrypt. **By default**, include filters
    are empty and **nothing will be encrypted**.
 
