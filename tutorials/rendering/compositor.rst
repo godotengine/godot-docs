@@ -311,7 +311,7 @@ code was changed.
 
  .. code-tab:: csharp
 
-    //Check if our shader has changed and needs to be recompiled
+    // Check if our shader has changed and needs to be recompiled.
     public bool CheckShader()
     {
         if (rd is null)
@@ -321,7 +321,7 @@ code was changed.
 
         var newShaderCode = "";
 
-        // Check if our shader is dirty
+        // Check if our shader is dirty.
         mutex.Lock();
         if (shaderIsDirty)
         {
@@ -336,7 +336,7 @@ code was changed.
             return pipeline.IsValid;
         }
 
-        // Apply template
+        // Apply template.
         newShaderCode = templateShader.Replace("#COMPUTE_CODE", newShaderCode);
 
         // Out with the old.
@@ -455,14 +455,14 @@ this at the right stage of rendering.
             RenderSceneBuffersRD renderSceneBuffers = (RenderSceneBuffersRD)renderData.GetRenderSceneBuffers();
             if (renderSceneBuffers is not null)
             {
-                //Get our render size, this is the 3D resolution!
+                // Get our render size, this is the 3D resolution!
                 var size = renderSceneBuffers.GetInternalSize();
                 if (size.X == 0 && size.Y == 0) return;
 
                 // We can use a compute shader here.
                 uint xGroups = (uint)((size.X - 1) / 8 + 1);
                 uint yGroups = (uint)((size.Y - 1) / 8 + 1);
-                uint zGroups = (uint)((size.Z - 1) / 8 + 1);
+                uint zGroups = 1;
 
                 // Push Constant.
                 float[] tempPushConstant = [ size.X, size.Y, 0, 0 ];
