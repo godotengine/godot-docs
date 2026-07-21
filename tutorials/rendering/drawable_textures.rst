@@ -22,8 +22,8 @@ Blitting (copying) the whole of one texture into the given rectangle on the ``Dr
 
  .. code-tab:: csharp
 
-    texture.BlitRect(new Rect2I(20, 50, 60, 60),GD.Load<Texture2D>("res://circle.svg"));
-    texture.BlitRect(new Rect2I(20, 50, 60, 60),GD.Load<Texture2D>("res://circle.svg"), Colors.White, 0);
+    texture.BlitRect(new Rect2I(20, 50, 60, 60), GD.Load<Texture2D>("res://circle.svg"));
+    texture.BlitRect(new Rect2I(20, 50, 60, 60), GD.Load<Texture2D>("res://circle.svg"), Colors.White, 0);
 
 
 The code above blits the circle texture into the rectangle ``(20, 50, 60, 60)``
@@ -97,7 +97,7 @@ in the script.
     {
         BlendMode = BlitMaterial.BlendModeEnum.Disabled
     };
-    texture.BlitRect(new Rect2I(0,0,200,200), GD.Load<Texture2D>("res://icon.svg"), Colors.White, 0, blitMaterial);
+    texture.BlitRect(new Rect2I(0, 0, 200, 200), GD.Load<Texture2D>("res://icon.svg"), Colors.White, 0, blitMaterial);
 
 
 If you want more complex behavior, you can write your own texture blit shader.
@@ -128,7 +128,7 @@ method, which allows for up to 4 inputs and outputs in the same step.
  .. code-tab:: csharp
 
     texture.BlitRectMulti(
-        new Rect2I(0,0,200,200),
+        new Rect2I(0, 0, 200, 200),
         [GD.Load<Texture2D>("res://icon.svg"),
         GD.Load<Texture2D>("res://circle.svg")],
         [otherDrawableTexture]);
@@ -206,12 +206,12 @@ InputMouseMotion events:
 
     public override void _GuiInput(InputEvent @event)
     {
-        if(@event is InputEventMouseButton)
+        if (@event is InputEventMouseButton)
         {
             // Mouse click/unclick - start/stop drawing.
             drawing = !drawing;
         }
-        if(@event is InputEventMouseMotion eventMouseMotion && drawing)
+        if (@event is InputEventMouseMotion eventMouseMotion && drawing)
         {
             // Calculate rect to center our drawn rectangle on mouse position
             // instead of mouse at top left.
@@ -244,7 +244,7 @@ and use a red color as the ``modulate`` parameter.
 
  .. code-tab:: csharp
 
-    if(@event is InputEventMouseMotion eventMouseMotion && drawing)
+    if (@event is InputEventMouseMotion eventMouseMotion && drawing)
     {
         // Calculate rect to center our drawn rectangle on mouse position
         // instead of mouse at top left.
@@ -294,12 +294,12 @@ smaller strokes.
 
     public override void _GuiInput(InputEvent @event)
     {
-        if(@event is InputEventMouseButton)
+        if (@event is InputEventMouseButton)
         {
             // Mouse click/unclick - start/stop drawing.
             drawing = !drawing;
         }
-        if(@event is InputEventMouseMotion eventMouseMotion && drawing)
+        if (@event is InputEventMouseMotion eventMouseMotion && drawing)
         {
             // Calculate rect to center our drawn rectangle on mouse position
             // instead of mouse at top left.

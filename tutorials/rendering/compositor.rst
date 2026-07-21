@@ -120,7 +120,7 @@ This is the boilerplate code that makes our compute shader work.
 
 	    vec4 color = imageLoad(color_image, uv);
 
-	    COMPUTE_CODE
+	    #COMPUTE_CODE
 
 	    imageStore(color_image, uv, color);
     }
@@ -200,7 +200,7 @@ Next we initialize our effect.
 
  .. code-tab:: csharp
 
-    // Called when this resource is constructed
+    // Called when this resource is constructed.
     public PostProcessShader()
     {
         EffectCallbackType = EffectCallbackTypeEnum.PostTransparent;
@@ -236,7 +236,7 @@ We also need to clean up after ourselves, for this we react to the
     // alerts us we are about to be destroyed.
     public override void _Notification(int what)
     {
-        if(what == NotificationPredelete)
+        if (what == NotificationPredelete)
         {
             if (shader.IsValid)
             {
@@ -283,7 +283,7 @@ code was changed.
             return pipeline.is_valid()
 
         # Apply template.
-        new_shader_code = template_shader.replace("COMPUTE_CODE", new_shader_code);
+        new_shader_code = template_shader.replace("#COMPUTE_CODE", new_shader_code);
 
         # Out with the old.
         if shader.is_valid():
@@ -348,7 +348,7 @@ code was changed.
         }
 
         // In with the new.
-        RDShaderSource shaderSource =new RDShaderSource();
+        RDShaderSource shaderSource = new RDShaderSource();
         shaderSource.Language = RenderingDevice.ShaderLanguage.Glsl;
         shaderSource.SourceCompute = newShaderCode;
         RDShaderSpirV shaderSpirV = rd.ShaderCompileSpirVFromSource(shaderSource);
@@ -447,21 +447,22 @@ this at the right stage of rendering.
     // Called by the rendering thread every frame.
     public override void _RenderCallback(int effectCallbackType, RenderData renderData)
     {
-        if(rd is not null && effectCallbackType == (int)EffectCallbackTypeEnum.PostTransparent && CheckShader())
+        if (rd is not null && effectCallbackType == (int)EffectCallbackTypeEnum.PostTransparent && CheckShader())
         {
             // Get our render scene buffers object, this gives us access to our render buffers.
             // Note that implementation differs per renderer hence the need for the cast.
 
             RenderSceneBuffersRD renderSceneBuffers = (RenderSceneBuffersRD)renderData.GetRenderSceneBuffers();
-            if(renderSceneBuffers is not null)
+            if (renderSceneBuffers is not null)
             {
                 //Get our render size, this is the 3D resolution!
                 var size = renderSceneBuffers.GetInternalSize();
-                if(size.X == 0 && size.Y == 0) return;
+                if (size.X == 0 && size.Y == 0) return;
 
                 // We can use a compute shader here.
                 uint xGroups = (uint)((size.X - 1) / 8 + 1);
-                uint yGroups = (uint)((size.X - 1) / 8 + 1);
+                uint yGroups = (uint)((size.Y - 1) / 8 + 1);
+                uint zGroups = (uint)((size.Z - 1) / 8 + 1);
 
                 // Push Constant.
                 float[] tempPushConstant = [ size.X, size.Y, 0, 0 ];
@@ -488,11 +489,10 @@ this at the right stage of rendering.
                     // Run our compute shader.
                     var computeList = rd.ComputeListBegin();
                     rd.ComputeListBindComputePipeline(computeList, pipeline);
-                    rd.ComputeListBindUniformSet(computeList, uniformSet,0);
+                    rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
                     rd.ComputeListSetPushConstant(computeList, pushConstant, (uint)pushConstant.Length);
-                    rd.ComputeListDispatch(computeList, xGroups, yGroups, 1);
+                    rd.ComputeListDispatch(computeList, xGroups, yGroups, zGroups);
                     rd.ComputeListEnd();
-                }
 
             }
         }
