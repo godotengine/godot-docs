@@ -148,7 +148,9 @@ Add the following code to your script:
 
  .. code-tab:: csharp C#
 
-    public MySprite2D()
+//public partial class MySprite2d : Sprite2D  
+//{
+    public void MySprite2D()     // class constructor, runs when this class is created as an object
     {
         GD.Print("Hello, world!");
     }
