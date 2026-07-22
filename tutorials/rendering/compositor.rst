@@ -321,7 +321,7 @@ code was changed.
 
         var newShaderCode = "";
 
-        // Check if our shader is dirty
+        // Check if our shader is dirty.
         _mutex.Lock();
         if (_shaderIsDirty)
         {
@@ -336,7 +336,7 @@ code was changed.
             return _pipeline.IsValid;
         }
 
-        // Apply template
+        // Apply template.
         newShaderCode = _templateShader.Replace("#COMPUTE_CODE", newShaderCode);
 
         // Out with the old.
