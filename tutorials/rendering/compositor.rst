@@ -160,7 +160,7 @@ We'll also define a few script variables we'll be using:
 
     private string _shaderCode = "";
     [Export(PropertyHint.MultilineText)]
-    public string shaderCode
+    public string ShaderCode
     {
         get { return _shaderCode; }
         set
