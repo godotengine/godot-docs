@@ -321,15 +321,9 @@ code was changed.
 
         var newShaderCode = "";
 
-<<<<<<< HEAD
-        // Check if our shader is dirty.
-        mutex.Lock();
-        if (shaderIsDirty)
-=======
         // Check if our shader is dirty
         _mutex.Lock();
         if (_shaderIsDirty)
->>>>>>> 6a8958e56 (Fixed multiline and private field formatting issues)
         {
             newShaderCode = _shaderCode;
             _shaderIsDirty = false;
@@ -342,13 +336,8 @@ code was changed.
             return _pipeline.IsValid;
         }
 
-<<<<<<< HEAD
-        // Apply template.
-        newShaderCode = templateShader.Replace("#COMPUTE_CODE", newShaderCode);
-=======
         // Apply template
         newShaderCode = _templateShader.Replace("#COMPUTE_CODE", newShaderCode);
->>>>>>> 6a8958e56 (Fixed multiline and private field formatting issues)
 
         // Out with the old.
         if (_shader.IsValid)
