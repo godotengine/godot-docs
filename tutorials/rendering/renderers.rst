@@ -44,7 +44,7 @@ The *rendering driver* tells the GPU what to do, using a graphics API. Godot can
 use the **OpenGL**, **Vulkan**, **Direct3D 12**, and **Metal** rendering drivers.
 Not every GPU supports every rendering driver, and therefore not every GPU supports
 all renderers. Vulkan, Direct3D 12, and Metal are modern, low-level graphics APIs,
-and requires newer hardware. OpenGL is an older graphics API that runs on most hardware.
+and require newer hardware. OpenGL is an older graphics API that runs on most hardware.
 
 RenderingDevice is a *rendering backend*, an abstraction layer between the renderer
 and the rendering driver. It is used by the Forward+ and Mobile renderers, and
