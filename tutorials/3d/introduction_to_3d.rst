@@ -58,7 +58,7 @@ left to right:
 - **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in different 
   axes for the selected nodes. See :ref:`doc_introduction_to_3d_space_and_manipulation` 
   for more details.
-- **Select Mode** (:kbd:`Q`): Allows selection of nodes in the viewport. Left clicking
+- **Select Mode** (:kbd:`V`): Allows selection of nodes in the viewport. Left clicking
   on a node to select one. Left clicking and dragging a rectangle selects all 
   nodes within the rectangle's boundaries, once released.
   Holding :kbd:`Shift` while selecting adds more nodes to the selection.
