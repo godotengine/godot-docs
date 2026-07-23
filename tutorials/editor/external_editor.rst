@@ -39,25 +39,33 @@ the flags string:
 
 Some example **Exec Flags** for various editors include:
 
-+---------------------+-----------------------------------------------------+
-| Editor              | Exec Flags                                          |
-+=====================+=====================================================+
-| Geany/Kate          | ``{file} --line {line} --column {col}``             |
-+---------------------+-----------------------------------------------------+
-| Atom                | ``{file}:{line}``                                   |
-+---------------------+-----------------------------------------------------+
-| JetBrains Rider     | ``{project} --line {line} {file}``                  |
-+---------------------+-----------------------------------------------------+
-| Visual Studio Code  | ``{project} --goto {file}:{line}:{col}``            |
-+---------------------+-----------------------------------------------------+
-| Vim (gVim)          | ``"+call cursor({line}, {col})" {file}``            |
-+---------------------+-----------------------------------------------------+
-| Emacs               | ``emacs +{line}:{col} {file}``                      |
-+---------------------+-----------------------------------------------------+
-| Sublime Text/Zed    | ``{project} {file}:{line}:{col}``                   |
-+---------------------+-----------------------------------------------------+
-| Visual Studio*      | ``/edit "{file}"``                                  |
-+---------------------+-----------------------------------------------------+
++---------------------+--------------------------------------------------------------------+
+| Editor              | Exec Flags                                                         |
++=====================+====================================================================+
+| Geany/Kate          | ``{file} --line {line} --column {col}``                            |
++---------------------+--------------------------------------------------------------------+
+| Atom                | ``{file}:{line}``                                                  |
++---------------------+--------------------------------------------------------------------+
+| JetBrains Rider     | ``{project} --line {line} {file}``                                 |
++---------------------+--------------------------------------------------------------------+
+| Visual Studio Code  | ``--reuse-window {project} --goto {file}:{line}:{col}``            |
++---------------------+--------------------------------------------------------------------+
+| Vim (gVim)          | ``"+call cursor({line}, {col})" {file}``                           |
++---------------------+--------------------------------------------------------------------+
+| Emacs               | ``emacs +{line}:{col} {file}``                                     |
++---------------------+--------------------------------------------------------------------+
+| Sublime Text/Zed    | ``{project} {file}:{line}:{col}``                                  |
++---------------------+--------------------------------------------------------------------+
+| Visual Studio*      | ``/edit "{file}"``                                                 |
++---------------------+--------------------------------------------------------------------+
+
+Some examples of **Exec Path** include:
+
++-----------------+---------------------+---------------------------------------------+
+| Godot version   | Exec Path           | Exec Flags                                  |
++=================+=====================+=============================================+
+| Flatpak         | ``flatpak-spawn``   | ``--host <Editor Path> <Exec Flags>``       |
++-----------------+---------------------+---------------------------------------------+
 
 \*: Arguments are not automatically detected, so you must fill them in manually.
 
@@ -110,7 +118,15 @@ Visual Studio Code
 
 You need to install the official `Visual Studio Code plugin <https://github.com/godotengine/godot-vscode-plugin>`_.
 
-For **LSP**, follow `these instructions <https://github.com/godotengine/godot-vscode-plugin#gdscript_lsp_server_port>`_ to change the default LSP port. The connection status can be checked on the status bar:
+By default, the path to the editor executable is ``godot`` but you can assign a different path to the Setting ID ``godotTools.editorPath.godot4``. Some examples include:
+
++-----------------+-----------------------------------------+
+| Godot version   | Editor Path                             |
++=================+=========================================+
+| Flatpak         | ``flatpak run org.godotengine.Godot``   |
++-----------------+-----------------------------------------+
+
+For **LSP**, set both Godot's Editor Setting ``network/language_server/remote_port`` and VSCode Setting ID ``godotTools.lsp.serverPort`` to change the default LSP port. The connection status can be checked on the status bar:
 
 .. image:: img/lsp_vscode_status.png
 
