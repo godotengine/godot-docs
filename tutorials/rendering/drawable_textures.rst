@@ -142,7 +142,7 @@ texture to a new DrawableTexture.
         texture.setup(500, 500, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, false)
 
 Next, we need the TextureRect to respond to the player clicking and dragging as
-if they are painting. To do this, we can override the ``_on_gui_input()`` method
+if they are painting. To do this, we can override the ``_gui_input()`` method
 from the TextureRect in our script, and parse InputMouseButton and
 InputMouseMotion events:
 
@@ -150,7 +150,7 @@ InputMouseMotion events:
 
     var drawing = false
 
-    func _on_gui_input(event):
+    func _gui_input(event):
         if event is InputEventMouseButton:
             # Mouse click/unclick - start/stop drawing.
             drawing = not drawing
@@ -190,7 +190,7 @@ smaller strokes.
     var my_color = Color.RED
     var my_size = 20.0
 
-    func _on_gui_input(event):
+    func _gui_input(event):
         if event is InputEventMouseButton:
             # Mouse click/unclick - start/stop drawing.
             drawing = not drawing
