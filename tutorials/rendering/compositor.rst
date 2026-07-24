@@ -247,7 +247,7 @@ this at the right stage of rendering.
 
     # Called by the rendering thread every frame.
     func _render_callback(p_effect_callback_type, p_render_data):
-        if rd and p_effect_callback_type == EFFECT_CALLBACK_TYPE_POST_TRANSPARENT and _check_shader():
+        if rd and p_effect_callback_type == effect_callback_type and _check_shader():
             # Get our render scene buffers object, this gives us access to our render buffers.
             # Note that implementation differs per renderer hence the need for the cast.
             var render_scene_buffers: RenderSceneBuffersRD = p_render_data.get_render_scene_buffers()
