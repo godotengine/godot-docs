@@ -14,10 +14,17 @@ The most basic operation on a drawable texture is
 :ref:`blit_rect() <class_DrawableTexture2D_method_blit_rect>`.
 Blitting (copying) the whole of one texture into the given rectangle on the ``DrawableTexture``.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     texture.blit_rect(Rect2(20, 50, 60, 60), preload("res://circle.svg"))
     texture.blit_rect(Rect2(20, 50, 60, 60), preload("res://circle.svg"), Color.WHITE, 0)
+
+ .. code-tab:: csharp
+
+    texture.BlitRect(new Rect2I(20, 50, 60, 60), GD.Load<Texture2D>("res://circle.svg"));
+    texture.BlitRect(new Rect2I(20, 50, 60, 60), GD.Load<Texture2D>("res://circle.svg"), Colors.White, 0);
+
 
 The code above blits the circle texture into the rectangle ``(20, 50, 60, 60)``
 on the ``DrawableTexture``. ``(20, 50)`` is the top left corner of the rectangle
@@ -77,11 +84,21 @@ It is also possible to use a different blend mode than the one specified in the 
 To do so, you can instantiate and pass in a new :ref:`class_BlitMaterial`
 in the script.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var blit_material = BlitMaterial.new()
     blit_material.blend_mode = BlitMaterial.BLEND_MODE_DISABLED
     texture.blit_rect(Rect2(0, 0, 200, 200), load("res://icon.svg"), Color.WHITE, 0, blit_material)
+
+ .. code-tab:: csharp
+
+    var blitMaterial = new BlitMaterial
+    {
+        BlendMode = BlitMaterial.BlendModeEnum.Disabled,
+    };
+    texture.BlitRect(new Rect2I(0, 0, 200, 200), GD.Load<Texture2D>("res://icon.svg"), Colors.White, 0, blitMaterial);
+
 
 If you want more complex behavior, you can write your own texture blit shader.
 Create a new shader with the ``texture_blit`` shader type, write your shader
@@ -99,13 +116,22 @@ Using multiple blits in a single texture
 DrawableTextures also have a :ref:`blit_rect_multi() <class_DrawableTexture2D_method_blit_rect_multi>`
 method, which allows for up to 4 inputs and outputs in the same step.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     texture.blit_rect_multi(
             Rect2(0, 0, 200, 200),
             [preload("res://icon.svg"), preload("res://circle.svg")],
             [other_drawable_texture]
         )
+
+ .. code-tab:: csharp
+
+    texture.BlitRectMulti(
+        new Rect2I(0, 0, 200, 200),
+        [GD.Load<Texture2D>("res://icon.svg"),
+        GD.Load<Texture2D>("res://circle.svg")],
+        [otherDrawableTexture]);
 
 The default behavior of this is to just match each input and output in order.
 For example, this can be useful for drawing to an albedo, normal, and height
@@ -131,7 +157,8 @@ be our user's canvas. Size it appropriately for your screen, and then attach a
 new script to it. The start of this script should initialize the TextureRect's
 texture to a new DrawableTexture.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends TextureRect
 
@@ -141,12 +168,25 @@ texture to a new DrawableTexture.
         # our draw call later will seem to happen at the wrong spot.
         texture.setup(500, 500, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, false)
 
+ .. code-tab:: csharp
+    
+    private DrawableTexture2D _texture = new DrawableTexture2D();
+
+    public override void _Ready()
+    {
+        // Be careful; if the dimensions of the node are not equal to the size set here,
+        // our draw call later will seem to happen at the wrong spot.
+        _texture.Setup(500, 500, DrawableTexture2D.DrawableFormat.Rgba8, null, false);
+        Texture = _texture;
+    }
+
 Next, we need the TextureRect to respond to the player clicking and dragging as
 if they are painting. To do this, we can override the ``_gui_input()`` method
 from the TextureRect in our script, and parse InputMouseButton and
 InputMouseMotion events:
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var drawing = false
 
@@ -160,6 +200,29 @@ InputMouseMotion events:
             var rect = Rect2(event.position.x - 10, event.position.y - 10, 20, 20)
             texture.blit_rect(rect, null)
 
+ .. code-tab:: csharp
+
+    public bool drawing = false;
+
+    public override void _GuiInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton)
+        {
+            // Mouse click/unclick - start/stop drawing.
+            drawing = !drawing;
+        }
+        if (@event is InputEventMouseMotion eventMouseMotion && drawing)
+        {
+            // Calculate rect to center our drawn rectangle on mouse position
+            // instead of mouse at top left.
+            var rect = new Rect2I(
+                (int)(eventMouseMotion.Position.X - 10),  
+                (int)(eventMouseMotion.Position.Y - 10), 
+                20, 20);
+            _texture.BlitRect(rect, null);
+        }
+    }
+
 This should now draw black squares as you click and drag around the TextureRect.
 For more natural drawing, we probably want to be drawing a circle shape, and
 actually coloring it.
@@ -169,13 +232,27 @@ modulate parameter. We will use this :download:`plain white circle texture <img/
 which we load as the ``texture`` parameter in ``blit_rect()``,
 and use a red color as the ``modulate`` parameter.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript
 
     if event is InputEventMouseMotion and drawing:
         # Calculate rect to center our drawn rectangle on mouse position
         # instead of mouse at top left.
         var rect = Rect2(event.position.x - 10, event.position.y - 10, 20, 20)
         texture.blit_rect(rect, preload("res://circle.svg"), Color.RED)
+
+ .. code-tab:: csharp
+
+    if (@event is InputEventMouseMotion eventMouseMotion && drawing)
+    {
+        // Calculate rect to center our drawn rectangle on mouse position
+        // instead of mouse at top left.
+        var rect = new Rect2I(
+            (int)(eventMouseMotion.Position.X - 10), 
+            (int)(eventMouseMotion.Position.Y - 10),
+            20, 20);
+        _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), Colors.Red);
+    }
 
 The drawing now looks much more natural and colorful. To further customize this,
 you could connect a :ref:`class_ColorPickerButton` node to the script to store
@@ -184,7 +261,8 @@ could also store a brush size variable, give the user a way to adjust it, and
 incorporate it into the rectangle calculation so the user can draw larger or
 smaller strokes.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var drawing = false
     var my_color = Color.RED
@@ -205,3 +283,39 @@ smaller strokes.
 
     func _on_h_slider_value_changed(value):
         my_size = value
+
+ .. code-tab:: csharp
+
+    private bool _drawing = false;
+    private Color _myColor = Colors.Red;
+    private int _mySize = 20;
+
+    public override void _GuiInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton)
+        {
+            // Mouse click/unclick - start/stop drawing.
+            _drawing = !_drawing;
+        }
+        if (@event is InputEventMouseMotion eventMouseMotion && _drawing)
+        {
+            // Calculate rect to center our drawn rectangle on mouse position
+            // instead of mouse at top left.
+            var rect = new Rect2I(
+                (int)(eventMouseMotion.Position.X - _mySize / 2), 
+                (int)(eventMouseMotion.Position.Y - _mySize / 2),
+                _mySize, _mySize);
+            _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), _myColor);
+        }
+    }
+
+    public void OnColorPickerButtonColorChanged(Color color)
+    {
+        _myColor = color;
+    }
+
+    public void OnHSliderValueChanged(float value)
+    {
+        _mySize = (int)value;
+    }
+    

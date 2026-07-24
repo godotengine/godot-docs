@@ -44,18 +44,24 @@ We'll make this a tool script so we can see the compositor effect work in the ed
 We need to extend our node from :ref:`CompositorEffect <class_CompositorEffect>`.
 We must also give our script a class name.
 
-.. code-block:: gdscript
-    :caption: post_process_shader.gd
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends CompositorEffect
     class_name PostProcessShader
 
+ .. code-tab:: csharp
+
+    [GlobalClass, Tool]
+    public partial class PostProcessShader : CompositorEffect
+
 Next we're going to define a constant for our shader template code.
 This is the boilerplate code that makes our compute shader work.
 
-.. code-block:: gdscript
-
+.. tabs::
+ .. code-tab:: gdscript GDScript
+ 
     const template_shader: String = """
     #version 450
 
@@ -87,6 +93,39 @@ This is the boilerplate code that makes our compute shader work.
     }
     """
 
+ .. code-tab:: csharp
+
+    private const string _templateShader = @"
+    #version 450
+    
+    // Invocations in the (x, y, z) dimension
+    layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+    
+    layout(rgba16f, set = 0, binding = 0) uniform image2D color_image;
+    
+    // Our push constant
+    layout(push_constant, std430) uniform Params {
+	    vec2 raster_size;
+	    vec2 reserved;
+    } params;
+    
+    // The code we want to execute in each invocation
+    void main() {
+	    ivec2 uv = ivec2(gl_GlobalInvocationID.xy);
+	    ivec2 size = ivec2(params.raster_size);
+    
+	    if (uv.x >= size.x || uv.y >= size.y) {
+		    return;
+	    }
+
+	    vec4 color = imageLoad(color_image, uv);
+
+	    #COMPUTE_CODE
+
+	    imageStore(color_image, uv, color);
+    }
+    ";
+
 For more information on how compute shaders work,
 please check :ref:`Using compute shaders <doc_compute_shaders>`.
 
@@ -100,8 +139,9 @@ and write our modified color back to our color image.
 In order to set our user code, we need an export variable.
 We'll also define a few script variables we'll be using:
 
-.. code-block:: gdscript
-
+.. tabs::
+ .. code-tab:: gdscript GDScript
+ 
     @export_multiline var shader_code: String = "":
         set(value):
             mutex.lock()
@@ -116,6 +156,29 @@ We'll also define a few script variables we'll be using:
     var mutex: Mutex = Mutex.new()
     var shader_is_dirty: bool = true
 
+ .. code-tab:: csharp
+
+    private string _shaderCode = "";
+    [Export(PropertyHint.MultilineText)]
+    public string ShaderCode
+    {
+        get { return _shaderCode; }
+        set
+        {
+            _mutex.Lock();
+            _shaderCode = value;
+            shaderIsDirty = true;
+            _mutex.Unlock();
+        }
+    }
+
+    private RenderingDevice _rd;
+    private Rid _shader;
+    private Rid _pipeline;
+
+    private Godot.Mutex _mutex = new Godot.Mutex();
+    private bool _shaderIsDirty = true;
+
 
 Note the use of a :ref:`Mutex <class_Mutex>` in our code.
 Most of our implementation gets called from the rendering engine
@@ -127,13 +190,22 @@ data at the same time.
 
 Next we initialize our effect.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Called when this resource is constructed.
     func _init():
         effect_callback_type = EFFECT_CALLBACK_TYPE_POST_TRANSPARENT
         rd = RenderingServer.get_rendering_device()
 
+ .. code-tab:: csharp
+
+    // Called when this resource is constructed.
+    public PostProcessShader()
+    {
+        EffectCallbackType = EffectCallbackTypeEnum.PostTransparent;
+        _rd = RenderingServer.GetRenderingDevice();
+    }
 
 The main thing here is setting our ``effect_callback_type`` which tells
 the rendering engine at what stage of the render pipeline to call our code.
@@ -147,7 +219,8 @@ We also get a reference to our rendering device, which will come in very handy.
 We also need to clean up after ourselves, for this we react to the
 ``NOTIFICATION_PREDELETE`` notification:
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # System notifications, we want to react on the notification that
     # alerts us we are about to be destroyed.
@@ -156,6 +229,22 @@ We also need to clean up after ourselves, for this we react to the
             if shader.is_valid():
                 # Freeing our shader will also free any dependents such as the pipeline!
                 rd.free_rid(shader)
+
+ .. code-tab:: csharp
+
+    // System notifications, we want to react on the notification that
+    // alerts us we are about to be destroyed.
+    public override void _Notification(int what)
+    {
+        if (what == NotificationPredelete)
+        {
+            if (_shader.IsValid)
+            {
+                // Freeing our shader will also free any dependents such as the pipeline!
+                _rd.FreeRid(_shader);
+            }
+        }
+    }
 
 Note that we do not use our mutex here even though we create our shader inside
 of our render thread.
@@ -172,7 +261,8 @@ From this point onwards our code will run on the rendering thread.
 Our next step is a helper function that will recompile the shader if the user
 code was changed.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Check if our shader has changed and needs to be recompiled.
     func _check_shader() -> bool:
@@ -193,7 +283,7 @@ code was changed.
             return pipeline.is_valid()
 
         # Apply template.
-        new_shader_code = template_shader.replace("#COMPUTE_CODE", new_shader_code);
+        new_shader_code = _templateShader.replace("#COMPUTE_CODE", new_shader_code);
 
         # Out with the old.
         if shader.is_valid():
@@ -219,6 +309,66 @@ code was changed.
         pipeline = rd.compute_pipeline_create(shader)
         return pipeline.is_valid()
 
+ .. code-tab:: csharp
+
+    // Check if our shader has changed and needs to be recompiled.
+    public bool CheckShader()
+    {
+        if (_rd is null)
+        {
+            return false;
+        }
+
+        var newShaderCode = "";
+
+        // Check if our shader is dirty.
+        _mutex.Lock();
+        if (_shaderIsDirty)
+        {
+            newShaderCode = _shaderCode;
+            _shaderIsDirty = false;
+        }
+        _mutex.Unlock();
+
+        // We don't have a (new) shader?
+        if (newShaderCode == "")
+        {
+            return _pipeline.IsValid;
+        }
+
+        // Apply template.
+        newShaderCode = _templateShader.Replace("#COMPUTE_CODE", newShaderCode);
+
+        // Out with the old.
+        if (_shader.IsValid)
+        {
+            _rd.FreeRid(_shader);
+            _shader = new Rid();
+            _pipeline = new Rid();
+        }
+
+        // In with the new.
+        RDShaderSource shaderSource = new RDShaderSource();
+        shaderSource.Language = RenderingDevice.ShaderLanguage.Glsl;
+        shaderSource.SourceCompute = newShaderCode;
+        RDShaderSpirV shaderSpirV = _rd.ShaderCompileSpirVFromSource(shaderSource);
+
+        if (shaderSpirV.CompileErrorCompute != "")
+        {
+            GD.PushError(shaderSpirV.CompileErrorCompute);
+            GD.PushError("In: " + newShaderCode);
+            return false;
+        }
+        _shader = _rd.ShaderCreateFromSpirV(shaderSpirV);
+        if (!_shader.IsValid)
+        {
+            return false;
+        }
+        
+        _pipeline = _rd.ComputePipelineCreate(_shader);
+        return _pipeline.IsValid;
+    }
+
 At the top of this method we again use our mutex to protect accessing our
 user shader code and our is dirty flag.
 We make a local copy of the user shader code if our user shader code is dirty.
@@ -243,7 +393,8 @@ compile it.
 Finally we need to implement our effect callback, the rendering engine will call
 this at the right stage of rendering.
 
-.. code-block:: gdscript
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Called by the rendering thread every frame.
     func _render_callback(p_effect_callback_type, p_render_data):
@@ -290,6 +441,64 @@ this at the right stage of rendering.
                     rd.compute_list_set_push_constant(compute_list, push_constant.to_byte_array(), push_constant.size() * 4)
                     rd.compute_list_dispatch(compute_list, x_groups, y_groups, z_groups)
                     rd.compute_list_end()
+
+ .. code-tab:: csharp
+    
+    // Called by the rendering thread every frame.
+    public override void _RenderCallback(int effectCallbackType, RenderData renderData)
+    {
+        if (_rd is not null && effectCallbackType == (int)EffectCallbackTypeEnum.PostTransparent && CheckShader())
+        {
+            // Get our render scene buffers object, this gives us access to our render buffers.
+            // Note that implementation differs per renderer hence the need for the cast.
+
+            RenderSceneBuffersRD renderSceneBuffers = renderData.GetRenderSceneBuffers() as RenderSceneBuffersRD;
+            if (renderSceneBuffers is not null)
+            {
+                // Get our render size, this is the 3D resolution!
+                var size = renderSceneBuffers.GetInternalSize();
+                if (size.X == 0 && size.Y == 0) 
+                {
+                    return;
+                }
+
+                // We can use a compute shader here.
+                uint xGroups = (uint)((size.X - 1) / 8 + 1);
+                uint yGroups = (uint)((size.Y - 1) / 8 + 1);
+                uint zGroups = 1;
+
+                // Push Constant.
+                float[] tempPushConstant = [size.X, size.Y, 0, 0];
+                byte[] pushConstant = new byte[tempPushConstant.Length * sizeof(float)];
+                Buffer.BlockCopy(tempPushConstant, 0, pushConstant, 0, pushConstant.Length);
+
+                // Loop through views just in case we're doing stereo rendering. No extra cost if this is mono.
+                var viewCount = renderSceneBuffers.GetViewCount();
+                for (uint view = 0; view < viewCount; view++)
+                {
+                    // Get the RID for our color image, we will be reading from and writing to it.
+                    var inputImage = renderSceneBuffers.GetColorLayer(view);
+
+                    // Create a uniform set.
+                    // This will be cached; the cache will be cleared if our viewport's configuration is changed.
+                    RDUniform uniform = new RDUniform()
+                    {
+                        UniformType = RenderingDevice.UniformType.Image,
+                        Binding = 0,
+                    };
+                    uniform.AddId(inputImage);
+                    var uniformSet = UniformSetCacheRD.GetCache(_shader, 0, [uniform]);
+
+                    // Run our compute shader.
+                    var computeList = _rd.ComputeListBegin();
+                    _rd.ComputeListBindComputePipeline(computeList, _pipeline);
+                    _rd.ComputeListBindUniformSet(computeList, uniformSet, 0);
+                    _rd.ComputeListSetPushConstant(computeList, pushConstant, (uint)pushConstant.Length);
+                    _rd.ComputeListDispatch(computeList, xGroups, yGroups, zGroups);
+                    _rd.ComputeListEnd();
+            }
+        }
+    }
 
 At the start of this method we check if we have a rendering device,
 if our callback type is the correct one, and check if we have our shader.
