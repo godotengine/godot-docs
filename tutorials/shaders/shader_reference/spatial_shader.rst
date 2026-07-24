@@ -547,6 +547,9 @@ the ``unshaded`` render mode. If no light function is written, Godot will use th
 written to in the ``fragment()`` function to calculate the lighting for you (subject to the render mode).
 
 The ``light()`` function is called for every light in every pixel. It is called within a loop for each light type.
+Keep in mind the ``light()`` function only runs for pixels that are affected by at least one light source, and is
+completely skipped for pixels that are not hit by any light and shadow. You can use this to create different behavior for
+lit and unlit pixels in your shader.
 
 Below is an example of a custom ``light()`` function using a Lambertian lighting model:
 
