@@ -19,3 +19,4 @@ Rendering
    compositor
    drawable_textures
    hdr_output
+   premultiplied_alpha_blending
