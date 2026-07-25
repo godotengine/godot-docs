@@ -187,7 +187,9 @@ Sets the avoidance radius for the obstacle.
 - |void| **set_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_velocity**\ (\ )
 
-Sets the wanted velocity for the obstacle so other agent's can better predict the obstacle if it is moved with a velocity regularly (every frame) instead of warped to a new position. Does only affect avoidance for the obstacles :ref:`radius<class_NavigationObstacle2D_property_radius>`. Does nothing for the obstacles static vertices.
+The wanted velocity for the obstacle, used by other agents to better predict the obstacle if it is moved with a velocity regularly (every frame), instead of warped to a new position.
+
+\ **Note:** This property only affects avoidance for the obstacle's :ref:`radius<class_NavigationObstacle2D_property_radius>`. Does nothing for the obstacle's static vertices.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +206,7 @@ Sets the wanted velocity for the obstacle so other agent's can better predict th
 - |void| **set_vertices**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_vertices**\ (\ )
 
-The outline vertices of the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out. Outlines can not be crossed or overlap. Should the vertices using obstacle be warped to a new position agent's can not predict this movement and may get trapped inside the obstacle.
+The outline vertices of the obstacle. If the vertices are winded in clockwise order, agents will be pushed in by the obstacle, otherwise they will be pushed out. Outlines cannot be crossed or overlap. If the obstacle is warped to a new position, agents cannot predict this movement and may get trapped inside the obstacle.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 

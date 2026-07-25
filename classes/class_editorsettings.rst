@@ -109,6 +109,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/scene_tree/center_node_on_reparent<class_EditorSettings_property_docks/scene_tree/center_node_on_reparent>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`docks/scene_tree/derive_script_globals_by_name<class_EditorSettings_property_docks/scene_tree/derive_script_globals_by_name>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/scene_tree/hide_filtered_out_parents<class_EditorSettings_property_docks/scene_tree/hide_filtered_out_parents>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/scene_tree/start_create_dialog_fully_expanded<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`                                                                     |
@@ -501,6 +503,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/expand_to_title<class_EditorSettings_property_interface/editor/appearance/expand_to_title>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/max_sticky_tree_items<class_EditorSettings_property_interface/editor/appearance/max_sticky_tree_items>`                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/appearance/project_manager_screen<class_EditorSettings_property_interface/editor/appearance/project_manager_screen>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/appearance/show_renderer_selector<class_EditorSettings_property_interface/editor/appearance/show_renderer_selector>`                                                                       |
@@ -578,8 +582,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`interface/editor/timers/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/timers/low_processor_mode_sleep_usec>`                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/timers/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/timers/unfocused_low_processor_mode_sleep_usec>`                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editors/derive_script_globals_by_name<class_EditorSettings_property_interface/editors/derive_script_globals_by_name>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/auto_unfold_foreign_scenes<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -806,6 +808,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/behavior/files/trim_trailing_whitespace_on_save>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/general/empty_selection_clipboard<class_EditorSettings_property_text_editor/behavior/general/empty_selection_clipboard>`                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`text_editor/behavior/general/find_in_file_extensions<class_EditorSettings_property_text_editor/behavior/general/find_in_file_extensions>`                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/indent/auto_indent<class_EditorSettings_property_text_editor/behavior/indent/auto_indent>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1394,6 +1398,18 @@ If ``true``, the scene tree dock will automatically unfold nodes when a node tha
 :ref:`bool<class_bool>` **docks/scene_tree/center_node_on_reparent** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/center_node_on_reparent>`
 
 If ``true``, new node created when reparenting node(s) will be positioned at the average position of the selected node(s).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_docks/scene_tree/derive_script_globals_by_name:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/scene_tree/derive_script_globals_by_name** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/derive_script_globals_by_name>`
+
+If ``true``, when extending a script, the global class name of the script is inserted in the script creation dialog, if it exists. If ``false``, the script's file path is always inserted.
 
 .. rst-class:: classref-item-separator
 
@@ -3910,6 +3926,18 @@ Specific to the macOS platform.
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/appearance/max_sticky_tree_items:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/appearance/max_sticky_tree_items** :ref:`🔗<class_EditorSettings_property_interface/editor/appearance/max_sticky_tree_items>`
+
+The maximum number of tree items allowed to stick to the top while its children are in view. A value of ``0`` disables sticking.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/appearance/project_manager_screen:
 
 .. rst-class:: classref-property
@@ -4427,18 +4455,6 @@ The amount of sleeping between frames in the editor (in microseconds). Higher va
 When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 10 FPS when the editor window is unfocused. See also :ref:`interface/editor/timers/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/timers/low_processor_mode_sleep_usec>`.
 
 \ **Note:** This setting is ignored if :ref:`interface/editor/display/update_continuously<class_EditorSettings_property_interface/editor/display/update_continuously>` is ``true``, as enabling that setting disables low-processor mode.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_interface/editors/derive_script_globals_by_name:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editors/derive_script_globals_by_name** :ref:`🔗<class_EditorSettings_property_interface/editors/derive_script_globals_by_name>`
-
-If ``true``, when extending a script, the global class name of the script is inserted in the script creation dialog, if it exists. If ``false``, the script's file path is always inserted.
 
 .. rst-class:: classref-item-separator
 
@@ -5908,6 +5924,20 @@ If ``true``, trims trailing whitespace when saving a script. Trailing whitespace
 :ref:`bool<class_bool>` **text_editor/behavior/general/empty_selection_clipboard** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/general/empty_selection_clipboard>`
 
 If ``true``, copying or cutting without a selection is performed on all lines with a caret. Otherwise, copy and cut require a selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/general/find_in_file_extensions:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **text_editor/behavior/general/find_in_file_extensions** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/general/find_in_file_extensions>`
+
+Text-based file extensions to include in the editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

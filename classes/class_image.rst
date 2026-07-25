@@ -71,9 +71,9 @@ Methods
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                        | :ref:`clear_mipmaps<class_Image_method_clear_mipmaps>`\ (\ )                                                                                                                                                                                                                       |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress<class_Image_method_compress>`\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ )                                                 |
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress<class_Image_method_compress>`\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, profile\: :ref:`CompressProfile<enum_Image_CompressProfile>` = 0\ )                                           |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress_from_channels<class_Image_method_compress_from_channels>`\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ )                           |
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`compress_from_channels<class_Image_method_compress_from_channels>`\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, profile\: :ref:`CompressProfile<enum_Image_CompressProfile>` = 0\ )                     |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`           | :ref:`compute_image_metrics<class_Image_method_compute_image_metrics>`\ (\ compared_image\: :ref:`Image<class_Image>`, use_luma\: :ref:`bool<class_bool>`\ )                                                                                                                       |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -643,11 +643,27 @@ OpenGL texture format ``GL_RGBA16UI`` where there are four components, each a 16
 
 \ **Note:** When sampling using :ref:`get_pixel()<class_Image_method_get_pixel>`, returned :ref:`Color<class_Color>`\ s have to be divided by ``65535`` to get the correct color value.
 
+.. _class_Image_constant_FORMAT_ASTC_6x6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_ASTC_6x6** = ``47``
+
+`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 6×6 (medium quality) mode.
+
+.. _class_Image_constant_FORMAT_ASTC_6x6_HDR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_Image_Format>` **FORMAT_ASTC_6x6_HDR** = ``48``
+
+Same format as :ref:`FORMAT_ASTC_6x6<class_Image_constant_FORMAT_ASTC_6x6>`, but with the hint to let the GPU know it is used for HDR.
+
 .. _class_Image_constant_FORMAT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Format<enum_Image_Format>` **FORMAT_MAX** = ``47``
+:ref:`Format<enum_Image_Format>` **FORMAT_MAX** = ``49``
 
 Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
@@ -697,7 +713,7 @@ It's slower than :ref:`INTERPOLATE_BILINEAR<class_Image_constant_INTERPOLATE_BIL
 
 If the image does not have mipmaps, they will be generated and used internally, but no mipmaps will be generated on the resulting image.
 
-\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>`] on it in advance, to avoid wasting processing power in generating them again and again.
+\ **Note:** If you intend to scale multiple copies of the original image, it's better to call :ref:`generate_mipmaps()<class_Image_method_generate_mipmaps>` on it in advance, to avoid wasting processing power in generating them again and again.
 
 On the other hand, if the image already has mipmaps, they will be used, and a new set will be generated for the resulting image.
 
@@ -897,6 +913,56 @@ Source texture (before compression) is a normal texture (e.g. it can be compress
 
 ----
 
+.. _enum_Image_CompressProfile:
+
+.. rst-class:: classref-enumeration
+
+enum **CompressProfile**: :ref:`🔗<enum_Image_CompressProfile>`
+
+.. _class_Image_constant_COMPRESS_PROFILE_AUTOMATIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressProfile<enum_Image_CompressProfile>` **COMPRESS_PROFILE_AUTOMATIC** = ``0``
+
+Automatically adjusts the quality level based on the number of unique color channels present in the image. For ASTC, this corresponds to picking 8x8 when only one channel is detected (R, L), 6x6 when two channels are detected (RG, LA), and 4x4 in all other cases.
+
+.. _class_Image_constant_COMPRESS_PROFILE_MAX_QUALITY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressProfile<enum_Image_CompressProfile>` **COMPRESS_PROFILE_MAX_QUALITY** = ``1``
+
+Prioritizes highest quality over compression. For ASTC, this corresponds to using a 4x4 block size.
+
+.. _class_Image_constant_COMPRESS_PROFILE_COMPRESSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressProfile<enum_Image_CompressProfile>` **COMPRESS_PROFILE_COMPRESSED** = ``2``
+
+Prioritizes some compression over quality. For ASTC, this corresponds to using a 6x6 block size.
+
+.. _class_Image_constant_COMPRESS_PROFILE_MAX_COMPRESSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressProfile<enum_Image_CompressProfile>` **COMPRESS_PROFILE_MAX_COMPRESSION** = ``3``
+
+Prioritizes highest compression over quality. For ASTC, this corresponds to using an 8x8 block size.
+
+.. _class_Image_constant_COMPRESS_PROFILE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressProfile<enum_Image_CompressProfile>` **COMPRESS_PROFILE_MAX** = ``4``
+
+Represents the size of the :ref:`CompressProfile<enum_Image_CompressProfile>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_Image_ASTCFormat:
 
 .. rst-class:: classref-enumeration
@@ -1060,13 +1126,13 @@ Removes the image's mipmaps.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compress**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ ) :ref:`🔗<class_Image_method_compress>`
+:ref:`Error<enum_@GlobalScope_Error>` **compress**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, profile\: :ref:`CompressProfile<enum_Image_CompressProfile>` = 0\ ) :ref:`🔗<class_Image_method_compress>`
 
 Compresses the image with a VRAM-compressed format to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
 The ``source`` parameter helps to pick the best compression method for DXT and ETC2 formats. It is ignored for ASTC compression.
 
-The ``astc_format`` parameter is only taken into account when using ASTC compression; it is ignored for all other formats.
+The ``profile`` lets the user pick whether the compression should prioritize quality or a smaller size. Only ASTC compression uses this currently.
 
 \ **Note:** :ref:`compress()<class_Image_method_compress>` is only supported in editor builds. When run in an exported project, this method always returns :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`.
 
@@ -1078,13 +1144,13 @@ The ``astc_format`` parameter is only taken into account when using ASTC compres
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ ) :ref:`🔗<class_Image_method_compress_from_channels>`
+:ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, profile\: :ref:`CompressProfile<enum_Image_CompressProfile>` = 0\ ) :ref:`🔗<class_Image_method_compress_from_channels>`
 
 Compresses the image with a VRAM-compressed format to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
-This is an alternative to :ref:`compress()<class_Image_method_compress>` that lets the user supply the channels used in order for the compressor to pick the best DXT and ETC2 formats. For other formats (non DXT or ETC2), this argument is ignored.
+This is an alternative to :ref:`compress()<class_Image_method_compress>` that lets the user supply the channels used in order for the compressor to pick the best DXT, ETC2, and ASTC formats. For other formats (non DXT, ETC2, or ASTC), this argument is ignored.
 
-The ``astc_format`` parameter is only taken into account when using ASTC compression; it is ignored for all other formats.
+The ``profile`` lets the user pick whether the compression should prioritize quality or a smaller size. Only ASTC compression uses this currently.
 
 \ **Note:** :ref:`compress_from_channels()<class_Image_method_compress_from_channels>` is only supported in editor builds. When run in an exported project, this method always returns :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`.
 
