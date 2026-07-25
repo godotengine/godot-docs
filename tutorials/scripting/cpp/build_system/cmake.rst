@@ -17,8 +17,8 @@ SCons build system. This means it may lack some features that are available to
 projects using SCons.
 
 .. _CMakeLists.txt: https://github.com/godotengine/godot-cpp/blob/master/CMakeLists.txt
-.. _CMake: http://scons.org
-.. _Scons: http://cmake.org
+.. _CMake: http://cmake.org
+.. _Scons: http://scons.org
 
 Introduction
 ------------
