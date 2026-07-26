@@ -112,8 +112,8 @@ Important information
 
 The general rule is that **any other GDScript that your tool script uses must
 *also* be a tool**. The editor is not able to construct instances from GDScript
-files without ``@tool``, which means you cannot call methods or reference member
-variables from them otherwise. However, since static methods, constants and
+files without ``@tool``, which means you cannot call methods or reference properties
+from them otherwise. However, since static methods, constants, and
 enums can be used without creating an instance, it is possible to call them or
 reference them from a ``@tool`` script onto other non-tool scripts. One exception to
 this are :ref:`static variables <doc_gdscript_basics_static_variables>`.

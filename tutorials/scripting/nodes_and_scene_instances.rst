@@ -101,7 +101,7 @@ Syntactic sugar
 ~~~~~~~~~~~~~~~
 
 You can use two shorthands to shorten your code in GDScript. Firstly, putting the
-``@onready`` annotation before a member variable makes it initialize right before
+``@onready`` annotation before a property makes it initialize right before
 the ``_ready()`` callback.
 
 .. code-block:: gdscript

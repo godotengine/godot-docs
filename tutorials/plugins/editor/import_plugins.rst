@@ -69,7 +69,7 @@ when needed:
 When this plugin is activated, it will create a new instance of the import
 plugin (which we'll soon make) and add it to the editor using the
 :ref:`add_import_plugin() <class_EditorPlugin_method_add_import_plugin>` method. We store
-a reference to it in a class member ``import_plugin`` so we can refer to it
+a reference to it in a ``import_plugin`` property so we can refer to it
 later when removing it. The
 :ref:`remove_import_plugin() <class_EditorPlugin_method_remove_import_plugin>` method is
 called when the plugin is deactivated to clean up the memory and let the editor

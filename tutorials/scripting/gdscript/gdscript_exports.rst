@@ -3,23 +3,23 @@
 GDScript exported properties
 ============================
 
-In Godot, class members can be exported. This means their value gets saved along
+In Godot, properties can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
 attached to, and get transferred over when using :ref:`RPCs <doc_high_level_multiplayer_rpcs>`.
-They will also be available for editing in the property editor. Exporting is done by using
+They will also be available for editing in the Inspector. Exporting is done by using
 the ``@export`` annotation.
 
 ::
 
     @export var number: int = 5
 
-In that example the value ``5`` will be saved and visible in the property editor.
+In that example the value ``5`` will be saved and visible in the Inspector.
 
-An exported variable must be initialized to a constant expression or have a type specifier
-in the variable. Some of the export annotations have a specific type and don't need the variable to be typed (see the
+An exported property must be initialized to a constant expression or have a type specifier
+in the property. Some of the export annotations have a specific type and don't need the property to be typed (see the
 *Examples* section below).
 
-One of the fundamental benefits of exporting member variables is to have
+One of the fundamental benefits of exporting properties is to have
 them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided. Additionally, :ref:`documentation comments <doc_gdscript_documentation_comments>` can be

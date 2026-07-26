@@ -458,7 +458,7 @@ And it can be used like any other iterator:
     for i in itr:
         print(i) # Will print 0, 2, and 4.
 
-It is possible but discouraged to store the state in a member variable.
+It is possible but discouraged to store the state in a property.
 Multiple states are necessary in cases such as nested loops where the same
 iterator instance is used simultaneously. The ``iter`` parameter in
 ``_iter_init()`` and ``_iter_next()`` is a single-element array so that updates
@@ -511,7 +511,7 @@ and that's it. No need to consider inheritance, base classes, etc.
 And that's it. If the object that hit the big rock has a smash() method,
 it will be called. No need for inheritance or polymorphism. Dynamically
 typed languages only care about the instance having the desired method
-or member, not what it inherits or the class type. The definition of
+or property, not what it inherits or the class type. The definition of
 Duck Typing should make this clearer:
 
 *"When I see a bird that walks like a duck and swims like a duck and

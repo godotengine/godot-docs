@@ -135,13 +135,13 @@ instance such as ``self``, another script instance or even a singleton:
 Associating a base instance allows doing the following:
 
 - Reference the instance's constants (``const``) in the expression.
-- Reference the instance's member variables (``var``) in the expression.
+- Reference the instance's properties (``var``) in the expression.
 - Call methods defined in the instance and use their return values in the expression.
 
 .. warning::
 
     Setting a base instance to a value other than ``null`` allows referencing
-    constants, member variables, and calling all methods defined in the script
+    constants, properties, and calling all methods defined in the script
     attached to the instance. Allowing users to enter expressions may allow
     cheating in your game, or may even introduce security vulnerabilities if you
     allow arbitrary clients to run expressions on other players' devices.

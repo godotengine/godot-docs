@@ -177,7 +177,7 @@ Turning around
 --------------
 
 It's time to make our node move and rotate. To do so, we're going to add two
-member variables to our script: the movement speed in pixels per second and the
+properties to our script: the movement speed in pixels per second and the
 angular speed in radians per second. Add the following after the ``extends Sprite2D`` line.
 
 .. tabs::
@@ -191,7 +191,7 @@ angular speed in radians per second. Add the following after the ``extends Sprit
     private int _speed = 400;
     private float _angularSpeed = Mathf.Pi;
 
-Member variables sit near the top of the script, after any "extends" lines,
+Properties sit near the top of the script, after any "extends" lines,
 but before functions. Every node
 instance with this script attached to it will have its own copy of the ``speed``
 and ``angular_speed`` properties.
