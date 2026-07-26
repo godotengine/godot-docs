@@ -310,11 +310,11 @@ The script could look like this:
     func _enter_tree():
         # Initialization of the plugin goes here.
         # Load the dock scene and instantiate it.
-        var dockScene = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
+        var dock_scene = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
 
         # Create the dock and add the loaded scene to it.
         dock = EditorDock.new()
-        dock.add_child(dockScene)
+        dock.add_child(dock_scene)
 
         dock.title = "My Dock"
 
