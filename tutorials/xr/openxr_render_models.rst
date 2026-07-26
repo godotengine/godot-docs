@@ -231,7 +231,7 @@ models are added or removed.
 The core methods for working with this API are listed
 below:
 
-.. list-table:: Render modele extension functions
+.. list-table:: Render model extension functions
    :header-rows: 1
 
    * - Function

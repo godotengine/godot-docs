@@ -530,7 +530,7 @@ include them in ``gdexample.h`` since they're specific to the custom class:
     void gdexample_class_free_instance(void *p_class_userdata, GDExtensionClassInstancePtr p_instance);
     ...
 
-Before we can implement those function, we'll need a few more things in our API.
+Before we can implement those functions, we'll need a few more things in our API.
 We need a way to allocate and free memory. While we could do this with good ol'
 ``malloc()``, we can instead make use of Godot's memory management functions.
 We'll also need a way to create a Godot object and set it with our custom

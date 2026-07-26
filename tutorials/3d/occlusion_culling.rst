@@ -99,7 +99,7 @@ Setting up occlusion culling
 ----------------------------
 
 The first step to using occlusion culling is to enable the
-**Rendering > **Occlusion Culling > Use Occlusion Culling** project setting.
+**Rendering > Occlusion Culling > Use Occlusion Culling** project setting.
 (Make sure the **Advanced** toggle is enabled in the Project Settings dialog to
 be able to see it.)
 

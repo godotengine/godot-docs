@@ -363,7 +363,7 @@ Code should be something like this:
         }
 
 As you can see, planes are quite useful, and this is the tip of the
-iceberg. You might be wondering what happens with non convex polygons.
+iceberg. You might be wondering what happens with non-convex polygons.
 This is usually just handled by splitting the concave polygon into
 smaller convex polygons, or using a technique such as BSP (which is not
 used much nowadays).

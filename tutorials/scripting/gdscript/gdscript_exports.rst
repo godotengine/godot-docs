@@ -511,7 +511,7 @@ drag-and-dropping multiple files from the FileSystem dock.
     @export var textures: Array[Texture] = []
     @export var scenes: Array[PackedScene] = []
 
-Packed type arrays also work, but only initialized empty:
+Packed arrays also work, but only if initialized empty:
 
 ::
 

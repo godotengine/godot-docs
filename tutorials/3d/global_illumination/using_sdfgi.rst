@@ -114,7 +114,7 @@ SDFGI appearance and quality:
 SDFGI interaction with lights and objects
 -----------------------------------------
 
-The amount of indirect energy emitted by a light is governed by its color,
+The amount of indirect energy emitted by a light is defined by its color,
 energy *and* indirect energy properties. To make a specific light emit more
 or less indirect energy without affecting the amount of direct light emitted
 by the light, adjust the **Indirect Energy** property in the Light3D inspector.

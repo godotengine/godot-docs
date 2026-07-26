@@ -341,7 +341,7 @@ underscore (\_) to separate words:
 Preprocessor directives
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`doc_shader_preprocessor` directives should be written in CONSTANT__CASE.
+:ref:`doc_shader_preprocessor` directives should be written in CONSTANT_CASE.
 Directives should be written without any indentation before them, even if
 nested within a function.
 

@@ -106,7 +106,7 @@ Method ``get_root_motion_rotation_accumulator`` moved to base class ``AnimationM
 Method ``get_root_motion_scale`` moved to base class ``AnimationMixer``                                                   |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Method ``get_root_motion_scale_accumulator`` moved to base class ``AnimationMixer``                                       |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Property ``process_callback`` renamed to ``callback_mode_process`` and moved to base class ``AnimationMixer``             |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-80813`_
-Property ``root_motion_track``  moved to base class ``AnimationMixer``                                                    |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
+Property ``root_motion_track`` moved to base class ``AnimationMixer``                                                     |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Property ``tree_root`` changes type from ``AnimationNode`` to ``AnimationRootNode``                                       |✔️|                 |❌|                  |❌|                  `GH-80813`_
 ========================================================================================================================  ===================  ====================  ====================  ===========
 

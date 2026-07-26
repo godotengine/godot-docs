@@ -42,8 +42,8 @@ string.
 The ``%s`` seen in the example above is the simplest placeholder and works for
 most use cases: it converts the value by the same method by which an implicit
 String conversion or :ref:`str() <class_@GlobalScope_method_str>` would convert
-it. Strings remain unchanged, booleans turn into either ``"True"`` or ``"False"``,
-an ``int`` or ``float`` becomes a decimal, and other types usually return their data
+it. Strings remain unchanged, booleans turn into either ``"true"`` or ``"false"``,
+``int`` and ``float`` types become decimals, and other types usually return their data
 in a human-readable string.
 
 There are other `format specifiers`_.

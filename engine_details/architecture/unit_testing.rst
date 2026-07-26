@@ -93,7 +93,7 @@ for instance:
 
 Specific tests can be skipped with corresponding ``-exclude`` options. As of
 now, some tests include random stress tests which take a while to execute. In
-order to skip those kind of tests, run the following command:
+order to skip those kinds of tests, run the following command:
 
 .. code-block:: shell
 

@@ -153,7 +153,7 @@ to find what the actual values should be:
 
 .. image:: img/matrices_and_transforms/rotate3.png
 
-Here's how that would be done in code (place the script on a Node2D):
+Here's how that would be done in code (attach the script to a Node2D):
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -195,7 +195,7 @@ has three :ref:`class_Vector2` values: ``x``, ``y``, and ``origin``.
 The ``origin`` value is not part of the basis, but it is part of the
 transform, and we need it to represent position. From now on we'll
 keep track of the origin vector in all examples. You can think of
-origin as another column, but it's often better to think of it as
+``origin`` as another column, but it's often better to think of it as
 completely separate.
 
 Note that in 3D, Godot has a separate :ref:`class_Basis` structure
@@ -207,7 +207,7 @@ it from :ref:`class_Transform3D` (which is composed of one
 Translating the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Changing the ``origin`` vector is called *translating* the transformation
+Changing the origin vector is called *translating* the transformation
 matrix. Translating is basically a technical term for "moving" the
 object, but it explicitly does not involve any rotation.
 
@@ -218,7 +218,7 @@ of the origin vector this time.
 .. image:: img/matrices_and_transforms/identity-origin.png
 
 If we want to move the object to a position of (1, 2), we need
-to set its ``origin`` vector to (1, 2):
+to set its origin vector to (1, 2):
 
 .. image:: img/matrices_and_transforms/translate.png
 
@@ -226,7 +226,7 @@ There is also a ``translated_local()`` method, which performs a different
 operation to adding or changing ``origin`` directly. The ``translated_local()``
 method will translate the object *relative to its own rotation*.
 For example, an object rotated 90 degrees clockwise will move to
-the right when ``translated_local()`` with ``Vector2.UP``. To translate
+the right when ``translated_local()`` is called with ``Vector2.UP``. To translate
 *relative to the global/parent frame* use ``translated()`` instead.
 
 .. note:: Godot's 2D uses coordinates based on pixels, so in actual
@@ -543,7 +543,7 @@ https://www.youtube.com/watch?v=XkY2DOUCWMU
 Inverting a transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The "affine_inverse" function returns a transform that "undoes" the
+The ``affine_inverse`` function returns a transform that "undoes" the
 previous transform. This can be useful in some situations.
 Let's take a look at a few examples.
 

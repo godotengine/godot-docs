@@ -16,7 +16,7 @@ and while you can manually download it via the website, in general you want to
 do it via the ``git`` version control system.
 
 If you are compiling in order to make contributions or pull requests, you should
-follow the instructions from the `Pull Request workflow <https://contributing.godotengine.org/en/latest/organization/pull_requests/creating_pull_requests.html>`__.
+follow the instructions from the `Pull request workflow <https://contributing.godotengine.org/en/latest/organization/pull_requests/creating_pull_requests.html>`__ page.
 
 If you don't know much about ``git`` yet, there are a great number of
 `tutorials <https://git-scm.com/book>`__ available on various websites.

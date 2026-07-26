@@ -970,7 +970,7 @@ Named colors
 ~~~~~~~~~~~~
 
 For tags that allow specifying a color by name, you can use names of the constants from
-the built-in :ref:`class_Color` class. Named classes can be specified in a number of
+the built-in :ref:`class_Color` class. Named colors can be specified in a number of
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
 

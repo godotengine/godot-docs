@@ -35,7 +35,7 @@ To make it easier to see that we're actually moving around our world, a white fl
 isn't going to do it. Create a texture using `Wahooneys excellent free texture generator <https://wahooney.itch.io/texture-grid-generator>`_.
 Once you've created the texture add it to your project. Then create a new material
 for the MeshInstance3D node, add your texture as the albedo, and enable
-**Triplaner** under **UV1** in the material properties.
+**Triplanar** under **UV1** in the material properties.
 
 .. image:: img/godot_xr_tools_floor.webp
 

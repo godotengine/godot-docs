@@ -616,7 +616,7 @@ The most notable examples of this are:
   `original pull request <https://github.com/godotengine/godot/pull/41794>`__
   for details.
 - ``randomize()`` is now automatically called on project load, so deterministic
-  randomness with the global RandomNumberGenerate instance requires manually
+  randomness with the global RandomNumberGenerator instance requires manually
   setting a seed in a script's ``_ready()`` function.
 - ``call_group()``, ``set_group()`` and ``notify_group()`` are now immediate by
   default. If calling an expensive function, this may result in stuttering when
@@ -694,7 +694,7 @@ converter doesn't support updating existing setups:
 +---------------------+-----------------------+                                                                            |
 | DynamicFontData     | FontFile              |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
-| ClippedCamera       | Camera2D or Camera3D  | Camera's pyramid shape was moved to :ref:'class_Camera3D'.                 |
+| ClippedCamera       | Camera2D or Camera3D  | Camera's pyramid shape was moved to :ref:`class_Camera3D`.                 |
 +---------------------+-----------------------+                                                                            |
 | InterpolatedCamera  | Camera2D or Camera3D  |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+

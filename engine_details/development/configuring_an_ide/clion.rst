@@ -28,7 +28,7 @@ build the project and only exists for loading the project in JetBrains IDEs.
       For ``compile_commands.json`` to load correctly in CLion, you must first have the Visual Studio toolchain configured for CLion.
 
       - Navigate to **Settings > Build, Execution, Deployment > Toolchains**
-      - Click the **+** button and select  ``Visual Studio``
+      - Click the **+** button and select ``Visual Studio``
       - CLion will attempt to detect your Visual Studio installation. If it is unsuccessful, use the file icon to the right of ``Toolset:`` to select the directory with your Visual Studio installation.
 
       You may exit and reload CLion and it will reload ``compile_commands.json``
