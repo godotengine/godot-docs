@@ -783,7 +783,7 @@ in a 3D grid.
 :ref:`Transform2D <class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3×2 matrix used for 2D transforms.
+2×3 matrix used for 2D transforms.
 
 :ref:`Plane <class_Plane>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
