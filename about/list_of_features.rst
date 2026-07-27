@@ -384,7 +384,7 @@ Godot 4 includes three renderers:
 
 **Particles:**
 
-- GPU-based particles with support for subemitters (2D + 3D), trails (2D + 3D),
+- GPU-based particles with support for sub-emitters (2D + 3D), trails (2D + 3D),
   attractors (3D only) and collision (2D + 3D).
 
   - 3D particle attractor shapes supported: box, sphere and 3D vector fields.
