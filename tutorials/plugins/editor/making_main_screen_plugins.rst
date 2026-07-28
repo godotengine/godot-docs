@@ -268,7 +268,7 @@ user clicks on the main viewport buttons at the top of the editor.
 The ``_get_plugin_name()`` and ``_get_plugin_icon()`` functions control
 the displayed name and icon for the plugin's main viewport button.
 
-Another function you can add is the ``handles()`` function, which
+Another function you can add is the ``_handles()`` function, which
 allows you to handle a node type, automatically focusing the main
 screen when the type is selected. This is similar to how clicking
 on a 3D node will automatically switch to the 3D viewport.
