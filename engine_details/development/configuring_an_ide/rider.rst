@@ -63,8 +63,8 @@ if you want to debug the editor, you need to configure the debugger first.
 - Ensure the following values for the C++ Project Run Configuration:
 
     - Exe Path : ``$(LocalDebuggerCommand)``
-    - Program Arguments: ``--editor``
-    - Working Directory: ``<path to the Godot project>``
+    - Program Arguments: ``-e --path <path to the Godot project>``
+    - Working Directory: ``$(LocalDebuggerWorkingDirectory)``
     - Before Launch has a value of "Build Project"
 
 This will tell the executable to debug the specified project without opening the Project Manager.
