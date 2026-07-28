@@ -140,7 +140,7 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     surface_array[Mesh.ARRAY_INDEX] = indices
 
     # No blendshapes, lods, or compression used.
-    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array)
+    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, surface_array)
 
  .. code-tab:: csharp C#
 
@@ -153,10 +153,10 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     if (arrMesh != null)
     {
         // No blendshapes, lods, or compression used.
-        arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); 
+        arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.TriangleStrip, surfaceArray); 
     }
 
-.. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
+.. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLE_STRIP``, but you can use any primitive type
           available from mesh.
 
 Put together, the full code looks like:
@@ -188,7 +188,7 @@ Put together, the full code looks like:
 
         # Create mesh surface from mesh array.
         # No blendshapes, lods, or compression used.
-        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array)
+        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, surface_array)
 
  .. code-tab:: csharp C#
 
@@ -220,7 +220,7 @@ Put together, the full code looks like:
             {
                 // Create mesh surface from mesh array
                 // No blendshapes, lods, or compression used.
-                arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray);
+                arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.TriangleStrip, surfaceArray);
             }
         }
     }
@@ -232,7 +232,7 @@ example code for generating shapes, starting with a rectangle.
 Generating a rectangle
 ----------------------
 
-Since we are using ``Mesh.PRIMITIVE_TRIANGLES`` to render, we will construct a rectangle
+Since we are using ``Mesh.PRIMITIVE_TRIANGLE_STRIP`` to render, we will construct a rectangle
 with triangles.
 
 A rectangle is formed by two triangles sharing four vertices. For our example, we will create
