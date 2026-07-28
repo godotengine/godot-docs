@@ -99,8 +99,7 @@ updates the XML automatically.
           files in the ``modules/<module_name>/doc_classes/`` directory instead.
 
 Edit it using your favorite text editor. If you use a code editor, make sure
-that it doesn't change the indent style: you should use tabs for the XML and
-four spaces inside BBCode-style blocks. More on that below.
+that tabs are used for the indentation.
 
 To check that the modifications you've made are correct in the generated
 documentation, navigate to the ``doc/`` folder and run the command ``make rst``.
@@ -240,11 +239,6 @@ the ``lang`` attribute. Currently supported options are:
 .. note::
 
     ``[codeblock]`` disables BBCode until the parser encounters ``[/codeblock]``.
-
-.. warning::
-
-    Use ``[codeblock]`` for pre-formatted code blocks. Since Godot 4.5,
-    **tabs** should be used for indentation.
 
 For example:
 
