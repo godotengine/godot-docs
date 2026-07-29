@@ -178,7 +178,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | in         | Tests whether a value is within a string, array, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing. |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| as         | Cast the value to a given type if possible.                                                                                                       |
+| as         | Casts the value to a given type if possible.                                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance. See `self`_.                                                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,7 +186,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | signal     | Defines a signal. See `Signals`_.                                                                                                                 |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| func       | Defines a function.  See `Functions`_.                                                                                                            |
+| func       | Defines a function. See `Functions`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | static     | Defines a static function or a static member variable.                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,9 +213,9 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | TAU        | TAU constant.                                                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| INF        | Infinity constant. Used for comparisons and as result of calculations.                                                                            |
+| INF        | Infinity constant. Used for comparisons and as a result from calculations.                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| NAN        | NAN (not a number) constant. Used as impossible result from calculations.                                                                         |
+| NAN        | NaN (Not a Number) constant. Used as an impossible result from calculations.                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
@@ -2121,7 +2121,7 @@ class will then appear with its new icon in the editor:
 .. tip::
 
     SVG images that are used as custom node icons should have the
-    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    **Editor > Scale With Editor Scale** and **Editor > Convert Colors With Editor Theme**
     :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
     icons to follow the editor's scale and theming settings if the icons are designed with
     the same color palette as Godot's own icons.
@@ -2687,7 +2687,7 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_character_health_depleted`` is called:
+signal, the ``Game`` node's ``_on_character_health_depleted`` is called:
 
 ::
 

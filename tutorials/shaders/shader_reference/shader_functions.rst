@@ -617,7 +617,7 @@ Exponential and math function descriptions
 
     Raises ``x`` to the power of ``y``.
 
-    The result is undefined if ``x < 0`` or  if ``x == 0`` and ``y <= 0``.
+    The result is undefined if ``x < 0``, or if ``x == 0`` and ``y <= 0``.
 
     :param x:
         The value to be raised to the power ``y``.
@@ -643,7 +643,7 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Raises ``e`` to the power of ``x``, or the the natural exponentiation.
+    Raises ``e`` to the power of ``x``. Also known as the natural exponentiation.
 
     Equivalent to ``pow(e, x)``.
 
@@ -671,7 +671,6 @@ Exponential and math function descriptions
     Raises ``2`` to the power of ``x``.
 
     Equivalent to ``pow(2.0, x)``.
-
 
     :param x:
         The value of the power to which ``2`` will be raised.
@@ -1274,7 +1273,7 @@ Exponential and math function descriptions
      - The precision of ``fma()`` can differ from the precision of the expression ``a * b + c``.
 
      - ``fma()`` will be computed with the same precision as any other ``fma()`` consumed by a precise variable,
-       giving invariant results for the same input values of a, b and c.
+       giving invariant results for the same input values of ``a``, ``b``, and ``c``.
 
     Otherwise, in the absence of precise consumption, there are no special constraints on the number of operations
     or difference in precision between ``fma()`` and the expression ``a * b + c``.
@@ -1310,10 +1309,10 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Generates a step function by comparing b to a.
+    Generates a step function by comparing ``b`` to ``a``.
 
     Equivalent to ``if (b < a) { return 0.0; } else { return 1.0; }``.
-    For element i of the return value, 0.0 is returned if b[i] < a[i], and 1.0 is returned otherwise.
+    For element ``i`` of the return value, ``0.0`` is returned if ``b[i] < a[i]``, and ``1.0`` is returned otherwise.
 
     :param a:
         The location of the edge of the step function.
@@ -1383,11 +1382,11 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    For each element i of the result, returns ``true`` if x[i] is positive
-    or negative floating-point NaN (Not a Number) and false otherwise.
+    For each element ``i`` of the result, returns ``true`` if ``x[i]`` is a positive
+    or negative floating-point ``NaN`` (Not a Number) and ``false`` otherwise.
 
     :param x:
-        The value to test for NaN.
+        The value to test for ``NaN``.
 
     :return:
         ``true`` or ``false``.
@@ -1957,17 +1956,17 @@ Comparison functions
     :widths: auto
 
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`lessThan<shader_func_lessThan>`\ (\ |vec_type| x, |vec_type| y)                   | Bool vector comparison on < int/uint/float vectors.           |
+    | |vec_bool_type| | :ref:`lessThan<shader_func_lessThan>`\ (\ |vec_type| x, |vec_type| y)                   | Bool vector > comparison on int/uint/float vectors.           |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`greaterThan<shader_func_greaterThan>`\ (\ |vec_type| x, |vec_type| y)             | Bool vector comparison on > int/uint/float vectors.           |
+    | |vec_bool_type| | :ref:`greaterThan<shader_func_greaterThan>`\ (\ |vec_type| x, |vec_type| y)             | Bool vector < comparison on int/uint/float vectors.           |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`lessThanEqual<shader_func_lessThanEqual>`\ (\ |vec_type| x, |vec_type| y)         | Bool vector comparison on <= int/uint/float vectors.          |
+    | |vec_bool_type| | :ref:`lessThanEqual<shader_func_lessThanEqual>`\ (\ |vec_type| x, |vec_type| y)         | Bool vector <= comparison on int/uint/float vectors.          |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`greaterThanEqual<shader_func_greaterThanEqual>`\ (\  |vec_type| x, |vec_type| y)  | Bool vector comparison on >= int/uint/float vectors.          |
+    | |vec_bool_type| | :ref:`greaterThanEqual<shader_func_greaterThanEqual>`\ (\  |vec_type| x, |vec_type| y)  | Bool vector >= comparison on int/uint/float vectors.          |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`equal<shader_func_equal>`\ (\ |vec_type| x, |vec_type| y)                         | Bool vector comparison on == int/uint/float vectors.          |
+    | |vec_bool_type| | :ref:`equal<shader_func_equal>`\ (\ |vec_type| x, |vec_type| y)                         | Bool vector <= comparison on int/uint/float vectors.          |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
-    | |vec_bool_type| | :ref:`notEqual<shader_func_notEqual>`\ (\ |vec_type| x, |vec_type| y)                   | Bool vector comparison on != int/uint/float vectors.          |
+    | |vec_bool_type| | :ref:`notEqual<shader_func_notEqual>`\ (\ |vec_type| x, |vec_type| y)                   | Bool vector != comparison on int/uint/float vectors.          |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
     | bool            | :ref:`any<shader_func_any>`\ (\ |vec_bool_type| x)                                      | ``true`` if any component is ``true``, ``false`` otherwise.   |
     +-----------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -2122,10 +2121,10 @@ Comparison function descriptions
     Performs a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The second vector for comparison.
+        The second vector to compare.
 
     :return:
         A boolean vector in which each element ``i`` is computed as ``x[i] != y[i]``.
@@ -2217,13 +2216,13 @@ bool **all**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_all>`
 
 |vec_bool_type| **not**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_not>`
 
-    Logically invert a boolean vector.
+    Logically inverts a boolean vector.
 
     :param x:
         The vector to be inverted.
 
     :return:
-        A new boolean vector for which each element i is computed as !x[i].
+        A boolean vector in which each element ``i`` is computed as ``!x[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/not.xhtml
 
@@ -2251,18 +2250,18 @@ Texture functions
     :widths: auto
 
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | ivec2          | | :ref:`textureSize<shader_func_textureSize>`\ (\ |gsampler2D| s, int lod)                              | Get the size of a texture.                                          |
+    | | ivec2          | | :ref:`textureSize<shader_func_textureSize>`\ (\ |gsampler2D| s, int lod)                              | Gets the size of a texture.                                         |
     | | ivec2          | | :ref:`textureSize<shader_func_textureSize>`\ (\ samplerCube s, int lod)                               |                                                                     |
     | | ivec2          | | :ref:`textureSize<shader_func_textureSize>`\ (\ samplerCubeArray s, int lod)                          | For performance reasons, this function should be avoided as it      |
     | | ivec3          | | :ref:`textureSize<shader_func_textureSize>`\ (\ |gsampler2DArray| s, int lod)                         | always performs a full texture read. When possible, you should pass |
     | | ivec3          | | :ref:`textureSize<shader_func_textureSize>`\ (\ |gsampler3D| s, int lod)                              | the texture size as a uniform instead.                              |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | vec2           | | :ref:`textureQueryLod<shader_func_textureQueryLod>`\ (\ |gsampler2D| s, vec2 p)                       | Compute the level-of-detail that would be used to sample from a     |
+    | | vec2           | | :ref:`textureQueryLod<shader_func_textureQueryLod>`\ (\ |gsampler2D| s, vec2 p)                       | Computes the level of detail that would be used to sample from a    |
     | | vec3           | | :ref:`textureQueryLod<shader_func_textureQueryLod>`\ (\ |gsampler2DArray| s, vec2 p)                  | texture.                                                            |
     | | vec2           | | :ref:`textureQueryLod<shader_func_textureQueryLod>`\ (\ |gsampler3D| s, vec3 p)                       |                                                                     |
     | | vec2           | | :ref:`textureQueryLod<shader_func_textureQueryLod>`\ (\ samplerCube s, vec3 p)                        |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ |gsampler2D| s)                         | Get the number of accessible mipmap levels of a texture.            |
+    | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ |gsampler2D| s)                         | Gets the number of accessible mipmap levels of a texture.           |
     | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ |gsampler2DArray| s)                    |                                                                     |
     | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ |gsampler3D| s)                         |                                                                     |
     | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ samplerCube s)                          |                                                                     |
@@ -2295,7 +2294,7 @@ Texture functions
     | | vec4           | | :ref:`textureGrad<shader_func_textureGrad>`\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)     |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | | |gvec4_type|   | | :ref:`textureProjGrad<shader_func_textureProjGrad>`\ (\ |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy) | Performs a texture read with projection/LOD and with explicit       |
-    | | |gvec4_type|   | | :ref:`textureProjGrad<shader_func_textureProjGrad>`\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy) |                                                                     |
+    | | |gvec4_type|   | | :ref:`textureProjGrad<shader_func_textureProjGrad>`\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy) | gradients.                                                          |
     | | |gvec4_type|   | | :ref:`textureProjGrad<shader_func_textureProjGrad>`\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy) |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | | |gvec4_type|   | | :ref:`texelFetch<shader_func_texelFetch>`\ (\ |gsampler2D| s, ivec2 p, int lod)                       | Fetches a single texel using integer coordinates.                   |
@@ -2551,11 +2550,12 @@ vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] ) :ref:`🔗<sh
 
 |gvec4_type| **textureProj**\ (\ |gsampler3D| s, vec4 p [, float bias] ) :ref:`🔗<shader_func_textureProj>`
 
-    Perform a texture lookup with projection.
+    Performs a texture lookup with projection.
 
     The texture coordinates consumed from ``p``, not including the last component of ``p``, are
     divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
-    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
+    `texture<shader_func_texture>`.
 
     :param s:
         The sampler to which the texture from which texels will be retrieved is bound.
@@ -2646,7 +2646,7 @@ vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod) :ref:`🔗<shader
 
     Performs a texture lookup with projection from an explicitly specified level-of-detail.
 
-    The texture coordinates consumed from P, not including the last component of ``p``, are
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
     divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
     forms is used as Dref. After these values are computed, the texture lookup proceeds as in
     `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
@@ -2743,10 +2743,11 @@ vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:
 
 |gvec4_type| **textureProjGrad**\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy) :ref:`🔗<shader_func_textureProjGrad>`
 
-    Perform a texture lookup with projection and explicit gradients.
+    Performs a texture lookup with projection and explicit gradients.
 
-    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
-    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
+    divided by the last component of ``p``. After these values are computed, the texture lookup proceeds as in
+    `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
         The sampler to which the texture from which texels will be retrieved is bound.
@@ -3883,10 +3884,8 @@ Bitwise function descriptions
 
     |componentwise|
 
-    Add unsigned integers and generate carry.
-
-    adds two 32-bit unsigned integer variables (scalars or vectors) and generates a 32-bit unsigned integer result, along with a carry output.
-    The value carry is .
+    Adds two 32-bit unsigned integer values (scalars or vectors)
+    and returns a 32-bit unsigned integer, along with a carry output stored in ``carry``.
 
     :param x:
         The first operand.
@@ -3895,7 +3894,7 @@ Bitwise function descriptions
         The second operand.
 
     :param carry:
-        0 if the sum is less than 2\ :sup:`32`, otherwise 1.
+        ``0`` if the sum is less than 2\ :sup:`32`, otherwise ``1``.
 
     :return:
         ``(x + y) % 2^32``.
@@ -3980,9 +3979,11 @@ Bitwise function descriptions
 
         x = significand * 2 ^ exponent
 
-    For a floating-point value of zero, the significand and exponent are both zero.
+    For a floating-point value of ``0.0``, the significand and exponent are both ``0.0``.
 
-    .. warning:: For a floating-point value that is an infinity or a floating-point NaN, the results are undefined.
+    .. warning::
+
+        For a floating-point value that is an infinity or a floating-point ``NaN``, the results are undefined.
 
     :param x:
         The value from which significand and exponent are to be extracted.

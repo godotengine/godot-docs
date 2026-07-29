@@ -107,7 +107,7 @@ This will convert the XML files to the online documentation's format and output
 errors if anything's wrong.
 
 Alternatively, you can build Godot and open the modified page in the built-in
-code reference. To learn how to compile the engine, read the :ref:`compilation
+class reference. To learn how to compile the engine, read the :ref:`compilation
 guide <toc-devel-compiling>`.
 
 We recommend using a code editor that supports XML files like Vim, Atom, Visual Studio Code,

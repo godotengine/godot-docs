@@ -39,7 +39,7 @@ are a few requirements your asset needs to meet to be approved.
   asset needs the contents of the submodule, your asset won't work.
 
 * The **license** needs to be correct. The license listed on the asset
-  library must match the license in the repository. The repo MUST
+  library must match the license in the repository. The repository **must**
   have a license file, called either "LICENSE" or "LICENSE.md".
   This file must contain the license text itself and a copyright
   statement that includes the year(s) and copyright holder.
@@ -70,10 +70,10 @@ library a better place for all users.
 
 * Make your code conform to the official **style guides**. Having a
   consistent style helps other people read your code, and it also helps
-  if other people wish to contribute to your asset. See: the
+  if other people wish to contribute to your asset. See the
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
 
-* If you have screenshots in your repo, place them in their own subfolder
+* If you have screenshots in your repository, place them in their own subfolder
   and add an empty **.gdignore** file in the same folder (note: **gd**, not **git**).
   This prevents Godot from importing your screenshots.
   On Windows, open a command prompt in the project folder and run
@@ -82,7 +82,7 @@ library a better place for all users.
 * If your asset is a library for working with other files,
   consider including **example files** in the asset.
 
-* Consider adding a **.gitattributes** file to your repo. This file allows
+* Consider adding a **.gitattributes** file to your repository. This file allows
   giving extra instructions to Git, such as specifying line endings and listing
   files not required for your asset to function with the ``export-ignore``
   directive. This directive removes such files from the resulting ZIP file,

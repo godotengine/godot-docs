@@ -55,16 +55,16 @@ Extract the archive on your computer. To import it, you need the Project Manager
 The Project Manager is accessed by opening Godot, or if you already have Godot
 opened, click on :menu:`Project > Quit to Project List` (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + Q` on macOS)
 
-In the Project Manager, click the :button:`Import` button to import the project.
+In the Project Manager, click the :button:`Import` button.
 
 .. image:: img/instancing_import_button.webp
 
-In the pop-up that appears navigate to the folder you extracted.
-Double-click the ``project.godot`` file to open it.
+In the file dialog that appears, navigate to the folder you extracted.
+Double-click the ``project.godot`` file to select it.
 
 .. image:: img/instancing_import_project_file.webp
 
-Finally, click the :button:`Import` button.
+Finally, click the :button:`Import` button to import the project.
 
 .. image:: img/instancing_import_and_edit_button.webp
 
@@ -72,7 +72,7 @@ A window notifying you that the project was last opened in an older Godot versio
 may appear. That's not an issue. Click :button:`OK` to open the project.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
-which the ball collides, and ``ball.tscn``. The Main scene should open
+which the ball collides, and ``ball.tscn``. The main scene should open
 automatically. If you're seeing an empty 3D scene instead of the main scene, click the 2D button at the top of the screen.
 
 .. image:: img/instancing_2d_scene_select.webp
@@ -100,8 +100,8 @@ Click on it and drag it towards the center of the view.
 Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
 Now, we want to create more instances of the Ball node. With the ball still
-selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to call the duplicate
-command. Click and drag to move the new ball to a different location.
+selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to duplicate it.
+Click and drag the new ball to a different location.
 
 .. image:: img/instancing_ball_duplicated.webp
 
@@ -145,7 +145,7 @@ Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS) and notice how all
 more. As the Ball scene is a template for all instances, modifying it and saving
 causes all instances to update accordingly.
 
-Let's now adjust an individual instance. Head back to the Main scene by clicking
+Let's now adjust an individual instance. Head back to the main scene by clicking
 on the corresponding tab above the viewport.
 
 .. image:: img/instancing_scene_tabs.webp

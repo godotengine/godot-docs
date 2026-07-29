@@ -52,7 +52,7 @@ value, and can optionally be written to. Samplers cannot be written to so they a
 Global built-ins
 ----------------
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 +-------------------+-------------------------------------------------------------------------------------------------+
 | Built-in          | Description                                                                                     |
@@ -93,7 +93,7 @@ These properties can be accessed from both the ``start()`` and ``process()`` fun
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in mat4 **EMISSION_TRANSFORM**     | Emitter transform (used for non-local systems).                                                                                         |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **RANDOM_SEED**            | Random seed used as base for random.                                                                                                    |
+| in uint **RANDOM_SEED**            | Random seed used as a base for randomness.                                                                                              |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | inout bool **ACTIVE**              | ``true`` when the particle is active, can be set to ``false``.                                                                          |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+

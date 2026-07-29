@@ -64,7 +64,7 @@ Save the scene.
 Enemy script
 ------------
 
-Add a script to the ``Mob`` like this:
+Attach a script to the ``Mob`` node like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

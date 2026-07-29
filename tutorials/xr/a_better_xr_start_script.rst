@@ -91,7 +91,7 @@ We introduce a few new variables to our script as well:
 Our updated ready function
 --------------------------
 
-We add a few things to the ready function.
+We add a few things to the ``_ready`` function.
 
 If we're using the mobile or forward+ renderer we set the viewport's ``vrs_mode`` to ``VRS_XR``.
 On platforms that support this, this will enable foveated rendering.

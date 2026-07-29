@@ -77,7 +77,7 @@ Debugging the project
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
   e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
   ``platform=editor`` and ``dev_build=yes``.
-  You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/godot.linuxbsd.editor.dev.x86_64``.
+  You can use ``%{buildDir}`` to reference the project root, e.g., ``%{buildDir}/bin/godot.linuxbsd.editor.dev.x86_64``.
 - If you want to run a specific project, specify its root folder under **Working directory**.
 - If you want to run the editor, add ``-e`` to the **Command line arguments** field.
 

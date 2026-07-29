@@ -371,10 +371,10 @@ Inspector tab to see the list of signals the player can emit:
 
 Notice our custom "hit" signal is there as well! Since our enemies are going to
 be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. This
-signal will be emitted when a body contacts the player. Click "Connect.." and
-the "Connect a Signal" window appears.
+signal will be emitted when a body touches the player. Click :button:`Connect...` and
+the :ui:`Connect a Signal` window appears.
 
-Godot will create a function with that exact name directly in script
+Godot will create a function with that exact name directly in the script
 for you. You don't need to change the default settings right now.
 
 .. warning::
