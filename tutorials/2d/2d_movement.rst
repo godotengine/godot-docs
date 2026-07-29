@@ -42,7 +42,7 @@ fact that the player can move diagonally by pressing two keys at the same time.
     :align: default
     :width: 100%
 
-Add a script to the character body and add the following code:
+Attach a script to the character body and add the following code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

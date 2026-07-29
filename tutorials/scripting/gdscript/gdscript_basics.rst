@@ -1675,7 +1675,7 @@ Statements and control flow
 ---------------------------
 
 Statements are standard and can be assignments, function calls, control
-flow structures, etc (see below). ``;`` as a statement separator is
+flow structures, etc. (see below). ``;`` as a statement separator is
 entirely optional.
 
 Expressions
@@ -2860,7 +2860,7 @@ make the current function a coroutine:
         wait_confirmation()
         print("This will be printed immediately, before the user press the button.")
 
-If you use await with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
+If you use ``await`` with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
 function won't give the control back to the caller:
 
 ::

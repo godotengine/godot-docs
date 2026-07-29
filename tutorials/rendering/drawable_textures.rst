@@ -48,7 +48,7 @@ all the mipmap layers, you should draw to the texture, then call
 Blend modes and texture blit shaders
 ------------------------------------
 
-The drawing process for ``blit_rect()`` and DrawableTextures is governed by a
+The drawing process for ``blit_rect()`` and DrawableTextures is controlled by a
 :ref:`texture blit shader <doc_texture_blit_shader>`. Even when the user does
 not supply one, the engine has a default texture blit shader it uses.
 

@@ -18,7 +18,7 @@ You can get a reference to a node by calling the :ref:`Node.get_node()
 present in the scene tree. Getting it in the parent node's ``_ready()`` function
 guarantees that.
 
-If, for example,  you have a scene tree like this, and you want to get a reference to the
+If, for example, you have a scene tree like this, and you want to get a reference to the
 Sprite2D and Camera2D nodes to access them in your script.
 
 .. image:: img/nodes_and_scene_instances_player_scene_example.webp
@@ -171,7 +171,7 @@ sprite anymore.
 .. image:: img/nodes_and_scene_instances_remote_tree_no_sprite.webp
 
 You can alternatively call ``free()`` to immediately destroy the node. You
-should do this with care as any reference to it will instantly become ``null``.
+should do this with care as any reference to it will instantly become invalid.
 We recommend using ``queue_free()`` unless you know what you're doing.
 
 When you free a node, it also frees all its children. Thanks to this, to delete

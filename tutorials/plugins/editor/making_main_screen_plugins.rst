@@ -96,7 +96,7 @@ Add four extra methods such that the script looks like this:
     #endif
 
 The important part in this script is the ``_has_main_screen()`` function,
-which is overloaded so it returns ``true``. This function is automatically
+which is overridden to return ``true``. This function is automatically
 called by the editor on plugin activation, to tell it that this plugin
 adds a new center view to the editor. For now, we'll leave this script
 as-is and we'll come back to it later.

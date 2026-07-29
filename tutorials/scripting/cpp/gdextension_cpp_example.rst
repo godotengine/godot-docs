@@ -296,7 +296,7 @@ Compiling the plugin
 
 To compile the project we need to define how SCons using should compile it
 using an ``SConstruct`` file which references the one in ``godot-cpp``.
-Writing it from scratch is outside the scope of this tutorial, but you can
+Writing it from scratch is outside the scope of this tutorial, but you can download
 :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
 We'll cover a more customizable, detailed example on how to use these
 build files in a subsequent tutorial.

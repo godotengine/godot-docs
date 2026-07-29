@@ -221,8 +221,8 @@ Setting up physical camera units
 Physical camera units can be enabled separately from physical light units.
 
 After adding a :ref:`class_CameraAttributesPhysical` resource to the **Camera
-Attributes** property of a Camera3D nodes, some properties such as **FOV** will
-no longer be editable. Instead, these properties are now governed by the
+Attributes** property of a Camera3D node, some properties such as **FOV** will
+no longer be editable. Instead, these properties are now controlled by the
 CameraAttributesPhysical's properties, such as focal length and aperture.
 
 CameraAttributesPhysical offers the following properties in its **Frustum** section:

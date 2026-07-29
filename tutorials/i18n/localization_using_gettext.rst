@@ -39,7 +39,7 @@ Disadvantages
   on their system. However, as Godot supports using text-based message files
   (``.po``), translators can test their work without having to install gettext tools.
 - gettext PO files usually use English as the base language. Translators will use
-  this base language to translate to other languages. You could still user other
+  this base language to translate to other languages. You could still use other
   languages as the base language, but this is not common.
 
 Installing gettext tools

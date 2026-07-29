@@ -59,7 +59,7 @@ Variables for our script
 
 We introduce a few new variables to our script as well:
 
-- ``maximum_refresh_rate`` will control the headsets refresh rate if this is supported by the headset.
+- ``maximum_refresh_rate`` will control the headset's refresh rate if this is supported by the headset.
 - ``xr_interface`` holds a reference to our XR interface, this already existed but we now type it to get full access to our :ref:`XRInterface <class_xrinterface>` API.
 - ``xr_is_focussed`` will be set to true whenever our game has focus.
 
@@ -371,8 +371,8 @@ If you haven't, you can connect a method to the signal that performs additional 
 
     ...
 
-On focussed state
------------------
+On focused state
+----------------
 
 This signal is emitted by OpenXR when our game gets focus.
 This is done at the completion of our startup,

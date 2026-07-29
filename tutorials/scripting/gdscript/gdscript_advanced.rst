@@ -358,7 +358,7 @@ Iterating with indices is also possible:
     for i in range(strings.size()):
         print(strings[i])
 
-The range() function can take 3 arguments:
+The ``range()`` function can take 3 arguments:
 
 ::
 

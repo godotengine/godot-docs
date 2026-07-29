@@ -88,7 +88,8 @@ Navigation
     After designing the TileMap consider baking it to a more optimized navigation mesh (and disabling the TileMap NavigationLayer) using a :ref:`NavigationRegion2D <class_NavigationRegion2D>` or the :ref:`NavigationServer2D <class_NavigationServer2D>`. See :ref:`doc_navigation_using_navigationmeshes` for additional information.
 
 .. warning::
-    2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
+
+    2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physics shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
 
 Reordering layers
 ~~~~~~~~~~~~~~~~~

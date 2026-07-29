@@ -677,7 +677,7 @@ Exponential and math function descriptions
         The value of the power to which ``2`` will be raised.
 
     :return:
-        ``2`` raised to the power of x.
+        ``2`` raised to the power of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
@@ -872,7 +872,7 @@ Exponential and math function descriptions
     .. note::
         Rounding of values with a fractional part of ``0.5`` is implementation-dependent.
         This includes the possibility that ``round(x)`` returns the same value as
-        ``roundEven(x)``for all values of ``x``.
+        ``roundEven(x)`` for all values of ``x``.
 
     :param x:
         The value to round.
@@ -1237,7 +1237,7 @@ Exponential and math function descriptions
     Components of ``a`` and ``b`` that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
     If ``a``, ``b``, and ``c`` are vector types the operation is performed :ref:`component-wise <shading_componentwise>`.
-    ie. ``mix(vec2(42, 314), vec2(9.8, 6e23), bvec2(true, false)))`` will return ``vec2(9.8, 314)``.
+    For example, ``mix(vec2(42, 314), vec2(9.8, 6e23), bvec2(true, false)))`` will return ``vec2(9.8, 314)``.
 
     :param a:
         Value returned when ``c`` is false.
@@ -1556,33 +1556,33 @@ Geometric functions
     :class: nowrap-col2
     :widths: auto
 
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | float      | :ref:`length<shader_func_length>`\ (\ |vec_type| x)                                           | Vector length.                                           |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | float      | :ref:`distance<shader_func_distance>`\ (\ |vec_type| a, |vec_type| b)                         | Distance between vectors i.e ``length(a - b)``.          |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | float      | :ref:`dot<shader_func_dot>`\ (\ |vec_type| a, |vec_type| b)                                   | Dot product.                                             |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | vec3       | :ref:`cross<shader_func_cross>`\ (\ vec3 a, vec3 b)                                           | Cross product.                                           |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |vec_type| | :ref:`normalize<shader_func_normalize>`\ (\ |vec_type| x)                                     | Normalize to unit length.                                |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | vec3       | :ref:`reflect<shader_func_reflect>`\ (\ vec3 I, vec3 N)                                       | Reflect.                                                 |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | vec3       | :ref:`refract<shader_func_refract>`\ (\ vec3 I, vec3 N, float eta)                            | Refract.                                                 |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |vec_type| | :ref:`faceforward<shader_func_faceforward>`\ (\ |vec_type| N, |vec_type| I, |vec_type| Nref)  | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``. |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>`\ (\ |mat_type| x, |mat_type| y)             | Matrix component multiplication.                         |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |mat_type| | :ref:`outerProduct<shader_func_outerProduct>`\ (\ |vec_type| column, |vec_type| row)          | Matrix outer product.                                    |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |mat_type| | :ref:`transpose<shader_func_transpose>`\ (\ |mat_type| m)                                     | Transpose matrix.                                        |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | float      | :ref:`determinant<shader_func_determinant>`\ (\ |mat_type| m)                                 | Matrix determinant.                                      |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
-    | |mat_type| | :ref:`inverse<shader_func_inverse>`\ (\ |mat_type| m)                                         | Inverse matrix.                                          |
-    +------------+-----------------------------------------------------------------------------------------------+----------------------------------------------------------+
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | float      | :ref:`length<shader_func_length>`\ (\ |vec_type| x)                                           | Vector length.                                            |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | float      | :ref:`distance<shader_func_distance>`\ (\ |vec_type| a, |vec_type| b)                         | Distance between vectors i.e ``length(a - b)``.           |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | float      | :ref:`dot<shader_func_dot>`\ (\ |vec_type| a, |vec_type| b)                                   | Dot product.                                              |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | vec3       | :ref:`cross<shader_func_cross>`\ (\ vec3 a, vec3 b)                                           | Cross product.                                            |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |vec_type| | :ref:`normalize<shader_func_normalize>`\ (\ |vec_type| x)                                     | Normalize to unit length.                                 |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | vec3       | :ref:`reflect<shader_func_reflect>`\ (\ vec3 I, vec3 N)                                       | Reflect.                                                  |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | vec3       | :ref:`refract<shader_func_refract>`\ (\ vec3 I, vec3 N, float eta)                            | Refract.                                                  |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |vec_type| | :ref:`faceforward<shader_func_faceforward>`\ (\ |vec_type| N, |vec_type| I, |vec_type| Nref)  | If ``dot(Nref, I) < 0``, returns ``N``, otherwise ``-N``. |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>`\ (\ |mat_type| x, |mat_type| y)             | Matrix component multiplication.                          |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |mat_type| | :ref:`outerProduct<shader_func_outerProduct>`\ (\ |vec_type| column, |vec_type| row)          | Matrix outer product.                                     |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |mat_type| | :ref:`transpose<shader_func_transpose>`\ (\ |mat_type| m)                                     | Transpose matrix.                                         |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | float      | :ref:`determinant<shader_func_determinant>`\ (\ |mat_type| m)                                 | Matrix determinant.                                       |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+    | |mat_type| | :ref:`inverse<shader_func_inverse>`\ (\ |mat_type| m)                                         | Inverse matrix.                                           |
+    +------------+-----------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 
 .. rst-class:: classref-descriptions-group
@@ -1597,8 +1597,8 @@ Geometric function descriptions
 
 float **length**\ (\ |vec_type| x) :ref:`🔗<shader_func_length>`
 
-    Returns the length of the vector.
-    ie. ``sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])``
+    Returns the length of the vector, i.e.,
+    ``sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])``
 
     :param x:
         The vector
@@ -1619,9 +1619,8 @@ float **length**\ (\ |vec_type| x) :ref:`🔗<shader_func_length>`
 
 float **distance**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_distance>`
 
-    Returns the distance between the two points a and b.
-
-    i.e., ``length(b - a);``
+    Returns the distance between the two points ``a`` and ``b``, i.e.,
+    ``length(b - a);``
 
     :param a:
         The first point.
@@ -1645,8 +1644,8 @@ float **distance**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_distan
 
 float **dot**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_dot>`
 
-    Returns the dot product of two vectors, ``a`` and ``b``.
-    i.e., ``a.x * b.x + a.y * b.y + ...``
+    Returns the dot product of two vectors, ``a`` and ``b``, i.e.,
+    ``a.x * b.x + a.y * b.y + ...``
 
     :param a:
         The first vector.
@@ -1670,7 +1669,7 @@ float **dot**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_dot>`
 
 vec3 **cross**\ (\ vec3 a, vec3 b) :ref:`🔗<shader_func_cross>`
 
-    Returns the cross product of two vectors. i.e.:
+    Returns the cross product of two vectors, i.e.:
 
     .. code-block:: glsl
 
@@ -2165,7 +2164,7 @@ bool **any**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_any>`
         The vector to be tested for truth.
 
     :return:
-        True if any element of x is true and false otherwise.
+        ``true`` if any element of ``x`` is ``true`` and ``false`` otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
 
@@ -2696,13 +2695,13 @@ vec4 **textureGrad**\ (\ samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:`🔗
 
 vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradients as specified in ``dPdx`` and ``dPdy``. Set:
      - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
      - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
      - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
      - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
      - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
-     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+     - ``δr/δy=0.0`` for a 1D or 2D texture, ``δp.p/δy`` otherwise
 
     For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
@@ -3111,7 +3110,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shad
 
     Uses local differencing for the input argument p.
 
-    Equivalent  to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
+    Equivalent to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
 
     :param p:
         The expression of which to take the partial derivative.
