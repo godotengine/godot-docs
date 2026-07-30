@@ -258,10 +258,9 @@ If you double-click an Ogg Vorbis or MP3 file in the FileSystem dock (or choose
    Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
-in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.
-These 3 settings are currently unused, but they will be used in the future for
-interactive music support (which allows smoothly transitioning between different
-music tracks).
+in addition to the :abbr:`BPM (Beats Per Minute)`, beat count, and bar beats.
+These 3 settings are used for interactive music, to smoothly transition between
+different music tracks.
 
 .. note::
 
