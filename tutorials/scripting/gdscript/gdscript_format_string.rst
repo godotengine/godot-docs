@@ -41,7 +41,7 @@ string.
 
 The ``%s`` seen in the example above is the simplest placeholder and works for
 most use cases: it converts the value by the same method by which an implicit
-String conversion or :ref:`str() <class_@GlobalScope_method_str>` would convert
+string conversion or :ref:`str() <class_@GlobalScope_method_str>` would convert
 it. Strings remain unchanged, booleans turn into either ``"true"`` or ``"false"``,
 ``int`` and ``float`` types become decimals, and other types usually return their data
 in a human-readable string.
@@ -52,8 +52,8 @@ Multiple placeholders
 ---------------------
 
 Format strings may contain multiple placeholders. In such a case, the values
-are handed in the form of an array, one value per placeholder (unless using a
-format specifier with ``*``, see `dynamic padding`_):
+are handed in the form of an array, one value per placeholder (unless
+the format specifier includes ``*``, see `dynamic padding`_):
 
 ::
 
@@ -63,7 +63,7 @@ format specifier with ``*``, see `dynamic padding`_):
     print(actual_string)
     # Output: "Estragon was reluctant to learn GDScript, but now he enjoys it."
 
-Note the values are inserted in order. Remember all placeholders must be
+Note that the values are inserted in order. Remember, all placeholders must be
 replaced at once, so there must be an appropriate number of values.
 
 
@@ -80,33 +80,36 @@ Placeholder types
 ~~~~~~~~~~~~~~~~~
 
 One and only one of these must always appear as the last character in a format
-specifier. Apart from ``s``, these require certain types of parameters.
+specifier. Apart from ``s``, these expect certain types of parameters.
 
 +-------+---------------------------------------------------------------------+
-| ``s`` | **Simple** conversion to String by the same method as implicit      |
-|       | String conversion.                                                  |
+| ``s`` | **Simple** conversion to string by the same method as implicit      |
+|       | string conversion or :ref:`str() <class_@GlobalScope_method_str>`.  |
 +-------+---------------------------------------------------------------------+
-| ``c`` | A single **Unicode character**. Accepts a Unicode code point        |
-|       | (integer) or a single-character string. Supports values beyond 255. |
+| ``c`` | A single **Unicode character**. Expects a Unicode code point        |
+|       | (integer) or a single-character string.                             |
 +-------+---------------------------------------------------------------------+
-| ``d`` | A **decimal integer**. Expects an integer or a real number          |
-|       | (will be floored).                                                  |
+| ``d`` | A **decimal integer**.                                              |
+|       | Expects an integer or a floating-point number (will be floored).    |
 +-------+---------------------------------------------------------------------+
-| ``o`` | An **octal integer**. Expects an integer or a real number           |
-|       | (will be floored).                                                  |
+| ``o`` | An **octal integer**.                                               |
+|       | Expects an integer or a floating-point number (will be floored).    |
 +-------+---------------------------------------------------------------------+
-| ``x`` | A **hexadecimal integer** with **lower-case** letters.              |
-|       | Expects an integer or a real number (will be floored).              |
+| ``x`` | A **hexadecimal integer** with **lowercase** letters.               |
+|       | Expects an integer or a floating-point number (will be floored).    |
 +-------+---------------------------------------------------------------------+
-| ``X`` | A **hexadecimal integer** with **upper-case** letters.              |
-|       | Expects an integer or a real number (will be floored).              |
+| ``X`` | A **hexadecimal integer** with **uppercase** letters.               |
+|       | Expects an integer or a floating-point number (will be floored).    |
 +-------+---------------------------------------------------------------------+
-| ``f`` | A **decimal real** number. Expects an integer or a real number.     |
+| ``f`` | A **decimal real** number.                                          |
+|       | Expects an integer or a floating-point number.                      |
 +-------+---------------------------------------------------------------------+
-| ``v`` | A **vector**. Expects any float or int-based vector object (        |
-|       | ``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i`` or|
-|       | ``Vector4i``). Will display the vector coordinates in parentheses,  |
-|       | formatting each coordinate as if it was an ``%f``, and using the    |
+| ``v`` | A **vector**.                                                       |
+| ``v`` | Expects any float- or int-based vector type                         |
+|       | (``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i``, |
+|       | or ``Vector4i``).                                                   |
+|       | Arranges the vector's components in parentheses,                    |                                  |
+|       | formatting each component as if it was a ``%f`` and using the       |
 |       | same modifiers.                                                     |
 +-------+---------------------------------------------------------------------+
 
@@ -114,8 +117,8 @@ specifier. Apart from ``s``, these require certain types of parameters.
 Placeholder modifiers
 ~~~~~~~~~~~~~~~~~~~~~
 
-These characters appear before the above. Some of them work only under certain
-conditions.
+Additional characters can be inserted before the type.
+Some of them work only under certain conditions.
 
 +---------+-------------------------------------------------------------------+
 | ``+``   | In number specifiers, **show + sign** if positive.                |
@@ -130,7 +133,8 @@ conditions.
 +---------+-------------------------------------------------------------------+
 | ``-``   | **Pad to the right** rather than the left.                        |
 +---------+-------------------------------------------------------------------+
-| ``*``   | **Dynamic padding**, expects additional integer parameter to set  |
+| ``*``   | **Dynamic padding**. expects additional integer parameter to set  |
+| ``*``   | **Dynamic padding**.                                              |
 |         | padding or precision after ``.``, see `dynamic padding`_.         |
 +---------+-------------------------------------------------------------------+
 
@@ -138,7 +142,7 @@ conditions.
 Padding
 -------
 
-The ``.`` (*dot*), ``*`` (*asterisk*), ``-`` (*minus sign*) and digit
+The ``.`` (*dot*), ``*`` (*asterisk*), ``-`` (*minus sign*), and digit
 (``0``-``9``) characters are used for padding. This allows printing several
 values aligned vertically as if in a column, provided a fixed-width font is
 used.
@@ -148,8 +152,8 @@ To pad a string to a minimum length, add an integer to the specifier:
 ::
 
     print("%10d" % 12345)
-    # output: "     12345"
-    # 5 leading spaces for a total length of 10
+    # Output: "     12345"
+    # 5 leading spaces, for a total length of 10.
 
 If the integer starts with ``0``, integer values are padded with zeroes
 instead of white space:
@@ -157,7 +161,7 @@ instead of white space:
 ::
 
     print("%010d" % 12345)
-    # output: "0000012345"
+    # Output: "0000012345"
 
 Precision can be specified for real numbers by adding a ``.`` (*dot*) with an
 integer following it. With no integer after ``.``, a precision of 0 is used,
@@ -169,7 +173,7 @@ the dot.
     # Pad to minimum length of 10, round to 3 decimal places
     print("%10.3f" % 10000.5555)
     # Output: " 10000.556"
-    # 1 leading space
+    # 1 leading space.
 
 The ``-`` character will cause padding to the right rather than the left,
 useful for right text alignment:
@@ -178,7 +182,7 @@ useful for right text alignment:
 
     print("%-10d" % 12345678)
     # Output: "12345678  "
-    # 2 trailing spaces
+    # 2 trailing spaces.
 
 
 Dynamic padding
@@ -195,7 +199,7 @@ formatting:
     # Pad to length of 7, round to 3 decimal places:
     print(format_string % [7, 3, 8.8888])
     # Output: "  8.889"
-    # 2 leading spaces
+    # 2 leading spaces.
 
 It is still possible to pad with zeroes in integer placeholders by adding ``0``
 before ``*``:
@@ -209,8 +213,10 @@ before ``*``:
 Escape sequence
 ---------------
 
+.. To avoid parsing the ``%`` character as a placeholder, it must be escaped
+.. by doubling the character (``%%``):
 To insert a literal ``%`` character into a format string, it must be escaped to
-avoid reading it as a placeholder. This is done by doubling the character:
+avoid parsing it as a placeholder. This is done by doubling the character:
 
 ::
 
@@ -222,7 +228,7 @@ avoid reading it as a placeholder. This is done by doubling the character:
 String format method
 --------------------
 
-There is also another way to format text in GDScript, namely the 
+There is also another way to format text in GDScript, namely the
 :ref:`String.format() <class_String_method_format>`
 method. It replaces all occurrences of a key in the string with the corresponding
 value. The method can handle arrays or dictionaries for the key/value pairs.
@@ -237,10 +243,10 @@ A quick example in GDScript:
     # Define a format string
     var format_string = "We're waiting for {str}"
 
-    # Using the 'format' method, replace the 'str' placeholder
-    var actual_string = format_string.format({"str": "Godot"})
+    # Replace the "str" placeholder with "Godot".
+    var final_string = format_string.format({"str": "Godot"})
 
-    print(actual_string)
+    print(final_string)
     # Output: "We're waiting for Godot"
 
 
@@ -268,8 +274,8 @@ The following are some examples of how to use the various invocations of the
 | Array      | no index  | ``"Hi, {} v{}!".format(["Godette", "3.0"], "{}")``                           | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 
-Placeholders can also be customized when using ``String.format``, here's some
-examples of that functionality.
+Placeholders can also be customized when using ``String.format``.
+Here's some examples of that functionality.
 
 
 +-----------------+------------------------------------------------------+------------------+
@@ -299,13 +305,13 @@ operator.
 
 ::
 
-    # Define a base string
+    # Define a base string.
     var base_string = "We're waiting for "
 
-    # Concatenate the string
-    var actual_string = base_string + "Godot"
+    # Concatenate the string.
+    var final_string = base_string + "Godot"
 
-    print(actual_string)
+    print(final_string)
     # Output: "We're waiting for Godot"
 
 When using string concatenation, values that are not strings must be converted using
