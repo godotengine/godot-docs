@@ -693,6 +693,30 @@ The exceptions are ``Object``, ``Array``, ``Dictionary``, and packed arrays
 All arrays, ``Dictionary``, and some objects (``Node``, ``Resource``)
 have a ``duplicate()`` method that allows you to make a copy.
 
+.. warning::
+
+    ``Array``, ``Dictionary`` and packed arrays are reference-counted. That is,
+    instead of having a ``free()`` method, they are automatically freed when
+    there are no more references to them. This means, however, that creating a
+    cyclic reference can cause a memory leak. As an example, an array containing
+    itself as its first element creates a cyclic reference:
+
+    ::
+
+        # The array creates a cyclic reference to itself.
+        # If the array is not removed from itself before the variable
+        # goes out of scope, then it will never be freed.
+        var array: Array = []
+        array[0] = array
+
+    This caution also applies to dictionaries.
+
+.. note::
+
+    Even though ``Array``, ``Dictionary`` and packed array classes are
+    reference-counted, they do not extend the ``RefCounted`` class. Instead,
+    reference counting is directly handled by these classes internally.
+
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1105,7 +1129,8 @@ Member variables are initialized in the following order:
 
 1. Depending on the variable's static type, the variable is either ``null``
    (untyped variables and objects) or has a default value of the type
-   (``0`` for ``int``, ``false`` for ``bool``, etc.).
+   (``0`` for ``int``, ``false`` for ``bool``, ``[]`` for ``Array``, ``{}``
+   for ``Dictionary``, etc.).
 2. The specified values are assigned in the order of the variables in the script,
    from top to bottom.
 
