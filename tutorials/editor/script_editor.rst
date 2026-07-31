@@ -147,7 +147,7 @@ Right-clicking on a file provides several options to save or close files, or to
 copy the relative path of the file. On this menu:
 
 You can also use **Move Up** and **Move Down** to change the order of the file, or use **Sort**
-to sort all files alphabetically. **Toggle Scripts Panel** hides the panel, which
+to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
 can be displayed again using the right arrow on the status bar.
 **Close Docs** closes all opened in-class reference documents leaving only
 script files open. **Show in FileSystem** finds and highlights the file in the
@@ -223,7 +223,7 @@ The **File** menu provides the following options:
 - **Run**: If the script extends :ref:`EditorScript <class_EditorScript>` and
   intended to be executed without running the project, this option runs the script.
   See :ref:`doc_running_code_in_the_editor_editorscript` for more.
-- **Toggle Scripts Panel**: Shows or hides the script panel located on the left side
+- **Toggle Files Panel**: Shows or hides the script panel located on the left side
   of the text editor, allowing you to expand the available coding area. More on the
   `Scripts Panel` is explained :ref:`above <doc_script_editor_script_panel>`.
 
