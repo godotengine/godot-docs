@@ -81,7 +81,7 @@ set in multiple ones. Otherwise, you are safer just using the servers API
 Rendering
 ---------
 
-Instancing nodes that render anything in 2D or 3D (such as :ref:`class_Sprite2D`
+Instantiating nodes that render anything in 2D or 3D (such as :ref:`class_Sprite2D`
 or :ref:`class_MeshInstance3D`) is *not* thread-safe by default. To run the
 rendering driver on a separate thread, set the
 :ref:`Rendering > Driver > Thread Model <class_ProjectSettings_property_rendering/driver/threads/thread_model>`

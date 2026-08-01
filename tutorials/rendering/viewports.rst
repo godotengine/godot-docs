@@ -133,7 +133,7 @@ the game (like in StarCraft).
 As a helper for situations where you want to create :ref:`Viewports <class_Viewport>` that
 display single objects and don't want to create a :ref:`World3D <class_World3D>`, Viewport has
 the option to use its :ref:`Own World3D <class_Viewport_property_own_world_3d>`. This is useful when you want to
-instance 3D characters or objects in :ref:`World2D <class_World2D>`.
+instantiate 3D characters or objects in :ref:`World2D <class_World2D>`.
 
 For 2D, each :ref:`Viewport <class_Viewport>` always contains its own :ref:`World2D <class_World2D>`.
 This suffices in most cases, but in case sharing them may be desired, it

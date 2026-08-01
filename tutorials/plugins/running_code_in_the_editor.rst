@@ -662,11 +662,11 @@ doubles the range of all OmniLight3D nodes:
 
         func _run():
             for node in EditorInterface.get_edited_scene_root().find_children("", "OmniLight3D"):
-                # Don't operate on instanced subscene children, as changes are lost
+                # Don't operate on instantiated subscene children, as changes are lost
                 # when reloading the scene.
-                # See the "Instancing scenes" section below for a description of `owner`.
-                var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
-                if not is_instanced_subscene_child:
+                # See the "Instantiating scenes" section below for a description of `owner`.
+                var is_instantiated_subscene_child = node != get_scene() and node.owner != get_scene()
+                if not is_instantiated_subscene_child:
                     node.omni_range *= 2.0
                     EditorInterface.mark_scene_as_unsaved()
 
@@ -685,11 +685,11 @@ doubles the range of all OmniLight3D nodes:
             
                 foreach (OmniLight3D node in sceneNode.FindChildren("", "OmniLight3D"))
                 {
-                    // Don't operate on instanced subscene children, as changes are lost
+                    // Don't operate on instantiated subscene children, as changes are lost
                     // when reloading the scene.
-                    // See the "Instancing scenes" section below for a description of `owner`.
-                    var isInstancedSubsceneChild = node != sceneNode && node.Owner != sceneNode;
-                    if (!isInstancedSubsceneChild)
+                    // See the "Instantiating scenes" section below for a description of `owner`.
+                    var isInstantiatedSubsceneChild = node != sceneNode && node.Owner != sceneNode;
+                    if (!isInstantiatedSubsceneChild)
                     {
                         node.OmniRange *= 2.0f;
                         EditorInterface.Singleton.MarkSceneAsUnsaved();
@@ -712,8 +712,8 @@ you also get a confirmation when trying to close the scene with unsaved changes.
     so make sure you've selected the scene you intend to iterate upon before
     running the script.
 
-Instancing scenes
------------------
+Instantiating scenes
+--------------------
 
 You can instantiate packed scenes normally and add them to the scene currently
 opened in the editor. By default, nodes or scenes added with

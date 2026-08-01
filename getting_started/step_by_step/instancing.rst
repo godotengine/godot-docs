@@ -5,10 +5,10 @@ Creating instances
 
 .. note::
 
-   This tutorial refers to instancing scenes in the editor. To learn how
-   to instance scenes from code, see :ref:`doc_nodes_and_scene_instances`.
+   This tutorial refers to instantiating scenes in the editor. To learn how
+   to instantiate scenes from code, see :ref:`doc_nodes_and_scene_instances`.
 
-   Godot's approach to *instancing* described below should not be confused with
+   Godot's approach to *instantiation* described below should not be confused with
    hardware instancing that can be used to render large amounts of similar
    objects quickly. See :ref:`doc_using_multimesh` instead.
 
@@ -31,12 +31,12 @@ and bounce on walls, a :ref:`Sprite2D <class_Sprite2D>` node, and a
 
 Once you have saved a scene, it works as a blueprint: you can reproduce it in other
 scenes as many times as you'd like. Replicating an object from a template like
-this is called **instancing**.
+this is called **instantiation**.
 
 .. image:: img/instancing_ball_instances_example.webp
 
-As we mentioned in the previous part, instanced scenes behave like a node: the
-editor hides their content by default. When you instance the Ball, you only see
+As we mentioned in the previous part, instantiated scenes behave like a node: the
+editor hides their content by default. When you instantiate the Ball, you only see
 the Ball node. Notice also how each duplicate has a unique name.
 
 Every instance of the Ball scene starts with the same structure and properties
@@ -47,7 +47,7 @@ scene.
 In practice
 -----------
 
-Let's use instancing in practice to see how it works in Godot. We invite
+Let's use instantiation in practice to see how it works in Godot. We invite
 you to download the ball's sample project we prepared for you:
 `instancing_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/instancing_starter.zip>`_.
 
@@ -85,7 +85,7 @@ you to add an instance of a scene as a child of the currently selected node.
 
 .. image:: img/instancing_scene_link_button.webp
 
-Double-click the ball scene to instance it.
+Double-click the ball scene to instantiate it.
 
 .. image:: img/instancing_instance_child_window.webp
 
@@ -150,7 +150,7 @@ on the corresponding tab above the viewport.
 
 .. image:: img/instancing_scene_tabs.webp
 
-Select one of the instanced Ball nodes and, in the :ui:`Inspector`, set its
+Select one of the instantiated Ball nodes and, in the :ui:`Inspector`, set its
 :inspector:`Gravity Scale` value to ``10``.
 
 .. image:: img/instancing_property_gravity_scale.webp
@@ -199,7 +199,7 @@ rectangle represents an entity that's visible in the game from the player's
 perspective. The arrows point towards the instantiator of each scene.
 
 Once you have a diagram, we recommend creating a scene for each element listed
-in it to develop your game. You'll use instancing, either by code or directly in
+in it to develop your game. You'll use instantiation, either by code or directly in
 the editor, to build your tree of scenes.
 
 Programmers tend to spend a lot of time designing abstract architectures and
@@ -216,8 +216,8 @@ and nested elements:
 Imagine we started by creating the room. We could make a couple of different
 room scenes, with unique arrangements of furniture in them. Later, we could make
 a house scene that uses multiple room instances for the interior. We would
-create a citadel out of many instanced houses and a large terrain on which we
-would place the citadel. Each of these would be a scene instancing one or more sub-scenes.
+create a citadel out of many instantiated houses and a large terrain on which we
+would place the citadel. Each of these would be a scene instantiating one or more sub-scenes.
 
 Later, we could create scenes representing guards and add them to the citadel.
 They would be indirectly added to the overall game world.
@@ -231,7 +231,7 @@ all working with the Godot editor.
 Summary
 -------
 
-Instancing, the process of producing an object from a blueprint, has many handy
+Instantiation, the process of producing an object from a blueprint, has many handy
 uses. With scenes, it gives you:
 
 - The ability to divide your game into reusable components.

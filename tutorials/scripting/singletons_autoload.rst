@@ -38,7 +38,7 @@ Autoloading nodes and scripts can give us these characteristics.
 .. note::
 
     Godot won't make an Autoload a "true" singleton as per the singleton design
-    pattern. It may still be instanced more than once by the user if desired.
+    pattern. It may still be instantiated more than once by the user if desired.
 
 .. tip::
 
@@ -219,7 +219,7 @@ current scene and replace it with the requested one.
         # Load the new scene.
         var s = ResourceLoader.load(path)
 
-        # Instance the new scene.
+        # Instantiate the new scene.
         current_scene = s.instantiate()
 
         # Add it to the active scene, as child of root.
@@ -252,7 +252,7 @@ current scene and replace it with the requested one.
         // Load a new scene.
         var nextScene = GD.Load<PackedScene>(path);
 
-        // Instance the new scene.
+        // Instantiate the new scene.
         CurrentScene = nextScene.Instantiate();
 
         // Add it to the active scene, as child of root.

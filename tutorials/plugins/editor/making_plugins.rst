@@ -148,7 +148,7 @@ A custom node
 -------------
 
 Sometimes you want a certain behavior in many nodes, such as a custom scene
-or control that can be reused. Instancing is helpful in a lot of cases, but
+or control that can be reused. Instantiation is helpful in a lot of cases, but
 sometimes it can be cumbersome, especially if you're using it in many
 projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.

@@ -67,7 +67,7 @@ save, Godot will save the image inside the ``.tscn`` scene file.
 
 .. note::
 
-    Even if you save a built-in resource, when you instance a scene multiple
+    Even if you save a built-in resource, when you instantiate a scene multiple
     times, the engine will only load one copy of it.
 
 Loading resources from code

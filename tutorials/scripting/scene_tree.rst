@@ -40,7 +40,7 @@ and servers are the low-level API.
 
 The scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
-This is automatically instanced and set when running a scene, no need
+This is automatically instantiated and set when running a scene, no need
 to do any extra work.
 
 It's important to know that this class exists because it has a few
