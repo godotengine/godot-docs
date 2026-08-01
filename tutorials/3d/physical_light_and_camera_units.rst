@@ -166,12 +166,12 @@ After enabling physical light units, 2 new properties become available in Light3
 
 - **Intensity:** The light's intensity in `lux
   <https://en.wikipedia.org/wiki/Lux>`__ (DirectionalLight3D) or
-  `lumens <https://en.wikipedia.org/wiki/Lumen_(unit)>`__ (OmniLight3D/SpotLight3D).
+  `lumens <https://en.wikipedia.org/wiki/Lumen_(unit)>`__ (OmniLight3D/SpotLight3D/AreaLight3D).
   If a custom **Energy** is set, this energy is multiplied by the intensity.
 - **Temperature:** The light's *color temperature* defined in Kelvin.
   If a custom **Color** is set, this color is multiplied by the color temperature.
 
-**OmniLight3D/SpotLight3D intensity**
+**OmniLight3D/SpotLight3D/AreaLight3D intensity**
 
 Lumens are a measure of luminous flux, which is the total amount of visible
 light emitted by a light source per unit of time.
