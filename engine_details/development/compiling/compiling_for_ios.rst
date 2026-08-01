@@ -64,14 +64,16 @@ To compile a release build:
     scons platform=ios target=template_release generate_bundle=yes
 
 To create an Xcode project like in the official builds, you need to use the
-template located in ``misc/dist/ios_xcode``. The release and debug libraries
+template located in ``misc/dist/apple_embedded_xcode``. The release and debug libraries
 should be placed in ``libgodot.ios.debug.xcframework`` and
-``libgodot.ios.release.xcframework`` respectively. This process can be automated
+``libgodot.ios.release.xcframework`` respectively. Camera module libraries
+should be placed in ``libgodot_camera.ios.debug.xcframework`` and 
+``libgodot_camera.ios.release.xcframework``. This process can be automated
 by using the ``generate_bundle=yes`` option on the *last* SCons command used to
 build export templates (so that all binaries can be included).
 
 The MoltenVK static ``.xcframework`` folder must also be placed in the
-``ios_xcode`` folder once it has been created. MoltenVK is always statically
+``apple_embedded_xcode`` folder once it has been created. MoltenVK is always statically
 linked on iOS; there is no dynamic linking option available, unlike macOS.
 
 .. warning::
