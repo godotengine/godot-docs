@@ -44,7 +44,7 @@ access and integrity.
 1. **Delete the existing scene.**
    :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>` and
    :ref:`SceneTree.change_scene_to_packed() <class_SceneTree_method_change_scene_to_packed>`
-   will delete the current scene immediately. You can also delete the
+   will queue the current scene for deletion. You can also delete the
    main scene. Assuming the root node's name is "Main", you could do
    ``get_node("/root/Main").free()`` to delete the whole scene.
 
