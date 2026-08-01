@@ -451,3 +451,12 @@ If no errors are printed and everything goes well, you're done!
     function present inside the script file,
     you can disable the runtime section of the test by naming the script file so that it matches the pattern ``*.notest.gd``.
     For example, "test_empty_file.notest.gd".
+
+.. note::
+
+    By default, GDScript tests suppress the ``UNTYPED_DECLARATION`` and ``INFERRED_DECLARATION``
+    warnings. Add the comments ``# enable UNTYPED_DECLARATION`` or ``# enable INFERRED_DECLARATION``
+    to the GDScript test file to enable the corresponding warning for that test.
+
+    In general, GDScript tests should not use statically typed variables.
+    Only enable static typing warnings if you are specifically testing them.
