@@ -74,6 +74,9 @@ specified scene and GDScript files. This POT generation also supports translatio
 contexts and pluralization if used in a script, with the optional second
 argument of ``tr()`` and the ``tr_n()`` method.
 
+For configuration, extraction behavior, and customizing generated strings, see
+:ref:`generating translation templates <doc_translation_template_generation>`.
+
 Open :menu:`Project > Project Settings > Localization > Template Generation`, then use the
 :button:`Add…` button to specify the path to your project's scenes and scripts that
 contain localizable strings:
