@@ -761,11 +761,22 @@ If ``parallel`` is ``true``, the :ref:`Tweener<class_Tweener>`\ s appended after
 
 \ **Note:** Just like with :ref:`parallel()<class_Tween_method_parallel>`, the tweener added right before this method will also be part of the parallel step.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     tween.tween_property(self, "position", Vector2(300, 0), 0.5)
     tween.set_parallel()
     tween.tween_property(self, "modulate", Color.GREEN, 0.5) # Runs together with the position tweener.
+
+ .. code-tab:: csharp
+
+    tween.TweenProperty(this, "position", new Vector2(300, 0), 0.5f);
+    tween.SetParallel();
+    tween.TweenProperty(this, "modulate", Colors.Green, 0.5f); // Runs together with the position tweener.
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -821,12 +832,24 @@ Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener
 
 Before this method is called, the default transition type is :ref:`TRANS_LINEAR<class_Tween_constant_TRANS_LINEAR>`.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_property(self, "position", Vector2(300, 0), 0.5) # Uses TRANS_LINEAR.
     tween.set_trans(Tween.TRANS_SINE)
     tween.tween_property(self, "rotation_degrees", 45.0, 0.5) # Uses TRANS_SINE.
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(this, "position", new Vector2(300, 0), 0.5f); // Uses TransitionType.Linear.
+    tween.SetTrans(Tween.TransitionType.Sine);
+    tween.TweenProperty(this, "rotation_degrees", 45.0f, 0.5f); // Uses TransitionType.Sine.
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -842,7 +865,10 @@ Stops the tweening and resets the **Tween** to its initial state. This will not 
 
 \ **Note:** This does *not* reset targets of :ref:`PropertyTweener<class_PropertyTweener>`\ s to their values when the **Tween** first started.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
 
@@ -857,6 +883,24 @@ Stops the tweening and resets the **Tween** to its initial state. This will not 
     # thus at half the speed as before.
     tween.stop()
     tween.play()
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+
+    // Will move from 0 to 500 over 1 second.
+    Position = Position with { X = 0.0f };
+    tween.TweenProperty(this, "position:x", 500.0f, 1.0f);
+
+    // Will be at (about) 250 when the timer finishes.
+    await ToSignal(GetTree().CreateTimer(0.5f), Timer.SignalName.Timeout);
+
+    // Will now move from (about) 250 to 500 over 1 second,
+    // thus at half the speed as before.
+    tween.Stop();
+    tween.Play();
+
+
 
 \ **Note:** If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens()<class_SceneTree_method_get_processed_tweens>`.
 
@@ -878,16 +922,31 @@ The animation will not progress to the next step until the awaited signal is emi
 
 \ **Example:** An object launches itself and explodes upon collision or after 4 seconds.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_callback(launch)
     tween.tween_await(collided).set_timeout(4.0)
     tween.tween_callback(explode)
 
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenCallback(Callable.From(Launch));
+    tween.TweenAwait(new Signal(this, SignalName.Collided)).SetTimeout(4.0f);
+    tween.TweenCallback(Callable.From(Explode));
+
+
+
 \ **Example:** A character walks to a specific point, says some lines and walks back when the player closes the message box.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_callback(walk_to.bind(600.0))
@@ -896,13 +955,35 @@ The animation will not progress to the next step until the awaited signal is emi
     tween.tween_await(dialogue_closed)
     tween.tween_callback(walk_to.bind(0.0))
 
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenCallback(Callable.From(() => WalkTo(600.0f)));
+    tween.TweenAwait(new Signal(this, SignalName.DestinationReached));
+    tween.TweenCallback(Callable.From(() => SayDialogue("Good day, sir!")));
+    tween.TweenAwait(new Signal(this, SignalName.DialogueClosed));
+    tween.TweenCallback(Callable.From(() => WalkTo(0.0f)));
+
+
+
 \ **Note:** If you are awaiting a signal from a callback called in the same **Tween**, make sure the signal is emitted *after* the await starts. If it can't be reasonably guaranteed, you can await and emit in the same step:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = create_tween()
     tween.tween_await(signal)
     tween.parallel().tween_callback(method_that_emits_signal)
+
+ .. code-tab:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenAwait(new Signal(this, SignalName.Signal));
+    tween.Parallel().TweenCallback(Callable.From(MethodThatEmitsSignal));
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1135,7 +1216,10 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 
 Creates and appends a :ref:`SubtweenTweener<class_SubtweenTweener>`. This method can be used to nest ``subtween`` within this **Tween**, allowing for the creation of more complex and composable sequences.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     # Subtween will rotate the object.
     var subtween = create_tween()
@@ -1147,6 +1231,21 @@ Creates and appends a :ref:`SubtweenTweener<class_SubtweenTweener>`. This method
     tween.tween_property(self, "position:x", 500, 3.0)
     tween.tween_subtween(subtween)
     tween.tween_property(self, "position:x", 300, 2.0)
+
+ .. code-tab:: csharp
+
+    // Subtween will rotate the object.
+    Tween subtween = CreateTween();
+    subtween.TweenProperty(this, "rotation_degrees", 45.0f, 1.0f);
+    subtween.TweenProperty(this, "rotation_degrees", 0.0f, 1.0f);
+
+    // Parent tween will execute the subtween as one of its steps.
+    Tween tween = CreateTween();
+    tween.TweenProperty(this, "position:x", 500.0f, 3.0f);
+    tween.TweenSubtween(subtween);
+    tween.TweenProperty(this, "position:x", 300.0f, 2.0f);
+
+
 
 \ **Note:** The methods :ref:`pause()<class_Tween_method_pause>`, :ref:`stop()<class_Tween_method_stop>`, and :ref:`set_loops()<class_Tween_method_set_loops>` can cause the parent **Tween** to get stuck on the subtween step; see the documentation for those methods for more information.
 

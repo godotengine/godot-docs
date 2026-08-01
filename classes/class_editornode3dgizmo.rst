@@ -74,6 +74,8 @@ Methods
    +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`               | :ref:`get_subgizmo_selection<class_EditorNode3DGizmo_method_get_subgizmo_selection>`\ (\ ) |const|                                                                                                                                                                                                                               |
    +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                       | :ref:`is_selected<class_EditorNode3DGizmo_method_is_selected>`\ (\ ) |const|                                                                                                                                                                                                                                                     |
+   +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                       | :ref:`is_subgizmo_selected<class_EditorNode3DGizmo_method_is_subgizmo_selected>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                       |
    +---------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                        | :ref:`set_hidden<class_EditorNode3DGizmo_method_set_hidden>`\ (\ hidden\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                             |
@@ -369,6 +371,18 @@ Returns the :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` that o
 :ref:`PackedInt32Array<class_PackedInt32Array>` **get_subgizmo_selection**\ (\ ) |const| :ref:`🔗<class_EditorNode3DGizmo_method_get_subgizmo_selection>`
 
 Returns a list of the currently selected subgizmos. Can be used to highlight selected elements during :ref:`_redraw()<class_EditorNode3DGizmo_private_method__redraw>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorNode3DGizmo_method_is_selected:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_selected**\ (\ ) |const| :ref:`🔗<class_EditorNode3DGizmo_method_is_selected>`
+
+Returns ``true`` if this gizmo is currently selected. Can be used to write custom visualization logic during :ref:`_redraw()<class_EditorNode3DGizmo_private_method__redraw>`.
 
 .. rst-class:: classref-item-separator
 

@@ -215,7 +215,7 @@ Property Descriptions
 
 The extra HTTP headers to be sent during the WebSocket handshake.
 
-\ **Note:** Not supported in Web exports due to browsers' restrictions.
+\ **Note:** Not supported in Web exports due to browser restrictions.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
@@ -325,7 +325,7 @@ Method Descriptions
 
 Accepts a peer connection performing the HTTP handshake as a WebSocket server. The ``stream`` must be a valid TCP stream retrieved via :ref:`TCPServer.take_connection()<class_TCPServer_method_take_connection>`, or a TLS stream accepted via :ref:`StreamPeerTLS.accept_stream()<class_StreamPeerTLS_method_accept_stream>`.
 
-\ **Note:** Not supported in Web exports due to browsers' restrictions.
+\ **Note:** Not supported in Web exports due to browser restrictions.
 
 .. rst-class:: classref-item-separator
 
