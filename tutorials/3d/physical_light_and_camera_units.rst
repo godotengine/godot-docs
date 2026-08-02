@@ -185,9 +185,9 @@ A candle is about 13 lumens, while a streetlight can be approximately 60000 lume
 
 **DirectionalLight3D intensity**
 
-Lux is a measure pf luminous flux per unit area, it is equal to one lumen per
-square metre. Lux is the measure of how much light hits a surface at a given
-time.
+Lux is a measure pf luminous flux per unit area
+and it is the measure of how much light hits a surface at a given time.
+It is equal to one lumen per square meter.
 
 With DirectionalLight3D, on a clear sunny day, a surface in direct sunlight may
 receive approximately 100000 lux. A typical room in a home may receive

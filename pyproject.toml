@@ -2,8 +2,12 @@
 line-length = 120
 
 [tool.codespell]
+enable-colors = true
+write-changes = true
+check-hidden = true
+quiet-level = 3
 dictionary = ["_tools/codespell-dict.txt", "-"]
-ignore-words = "_tools/codespell-ignore.txt"
+builtin = ["clear", "rare", "en-GB_to_en-US"]
 skip = [
     "_build/*",
     "_static/*",
@@ -14,3 +18,17 @@ skip = [
     "AUTHORS.md",
     "LICENSE.txt",
 ]
+ignore-words-list = [
+    "dialogue",     # Common even in US spelling.
+    "doubleclick",
+    "findn",        # Our case-insensitive `find` function.
+    "implementors",
+    "inout",        # Shader attribute.
+    "lod",          # "Level of Detail".
+    "marshalled",   # Common spelling in IT.
+    "marshalling",  # Common spelling in IT.
+    "thirdparty",   # Prefer as one word.
+    "uint",         # "Unsigned integer".
+    "writeable",    # Part of a Python error message.
+]
+ignore-multiline-regex = "codespell:ignore-begin.*?codespell:ignore-end"

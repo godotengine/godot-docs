@@ -186,7 +186,9 @@ to make the planet. We will be using this noise function directly from a `Shader
                          dot(hash(i + vec3(1.0, 1.0, 1.0)), f - vec3(1.0, 1.0, 1.0)), u.x), u.y), u.z );
     }
 
-.. note:: All credit goes to the author, Inigo Quilez. It is published under the ``MIT`` licence.
+.. note::
+
+    All credit goes to the author, Inigo Quilez. It is published under the ``MIT`` license.
 
 Now to use ``noise``, add the following to the    ``fragment`` function:
 

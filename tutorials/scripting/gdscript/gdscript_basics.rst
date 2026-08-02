@@ -2844,7 +2844,7 @@ In this case, the ``wait_confirmation`` becomes a coroutine, which means that th
         if confirmed:
             print("User confirmed")
         else:
-            print("User cancelled")
+            print("User canceled")
 
 Note that requesting a coroutine's return value without ``await`` will trigger an error:
 

@@ -611,7 +611,7 @@ Spatial entity core
 The core spatial entity functionality is exposed through the
 :ref:`OpenXRSpatialEntityExtension<class_OpenXRSpatialEntityExtension>` singleton.
 
-Specific logic is exposed through capabilities that introduce specialised component types,
+Specific logic is exposed through capabilities that introduce specialized component types,
 and give access to specific types of entities, however they all use the same mechanisms
 for accessing the entity data managed by the spatial entity system.
 

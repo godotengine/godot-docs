@@ -246,7 +246,7 @@ Godot 4 includes three renderers:
 - Normal mapping.
 - Parallax/relief mapping with automatic level of detail based on distance.
 - Detail mapping for the albedo and normal maps.
-- Sub-surface scattering and transmittance.
+- Subsurface scattering and transmittance.
 - Screen-space refraction with support for material roughness (resulting in blurry refraction).
 - Proximity fade (soft particles) and distance fade.
 - Distance fade can use alpha blending or dithering to avoid going through
