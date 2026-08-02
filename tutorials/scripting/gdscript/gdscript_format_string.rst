@@ -222,13 +222,11 @@ avoid reading it as a placeholder. This is done by doubling the character:
 String format method
 --------------------
 
-There is also another way to format text in GDScript, namely the 
-:ref:`String.format() <class_String_method_format>`
-method. It replaces all occurrences of a key in the string with the corresponding
-value. The method can handle arrays or dictionaries for the key/value pairs.
-
-Arrays can be used as key, index, or mixed style (see below examples). Order only
-matters when the index or mixed style of Array is used.
+There is also another way to format text in GDScript, and that would be the
+:ref:`String.format() <class_String_method_format>` method.
+It replaces all occurrences of a key in the string with the corresponding
+value. The method can handle dictionaries or arrays.
+If arrays are used, the index of each element is used as the key.
 
 A quick example in GDScript:
 
@@ -259,11 +257,7 @@ The following are some examples of how to use the various invocations of the
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 | Dictionary | mix       | ``"Hi, {0} v{version}!".format({"0":"Godette", "version":"3.0"})``           | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
-| Array      | key       | ``"Hi, {name} v{version}!".format([["version","3.0"], ["name","Godette"]])`` | Hi, Godette v3.0! |
-+------------+-----------+------------------------------------------------------------------------------+-------------------+
 | Array      | index     | ``"Hi, {0} v{1}!".format(["Godette","3.0"])``                                | Hi, Godette v3.0! |
-+------------+-----------+------------------------------------------------------------------------------+-------------------+
-| Array      | mix       | ``"Hi, {name} v{0}!".format(["3.0", ["name","Godette"]])``                   | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
 | Array      | no index  | ``"Hi, {} v{}!".format(["Godette", "3.0"], "{}")``                           | Hi, Godette v3.0! |
 +------------+-----------+------------------------------------------------------------------------------+-------------------+
