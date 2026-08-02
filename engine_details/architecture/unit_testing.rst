@@ -458,5 +458,5 @@ If no errors are printed and everything goes well, you're done!
     warnings. Add the comments ``# enable UNTYPED_DECLARATION`` or ``# enable INFERRED_DECLARATION``
     to the GDScript test file to enable the corresponding warning for that test.
 
-    In general, GDScript tests should not use statically typed variables.
+    In general, GDScript tests should not use statically-typed variables.
     Only enable static typing warnings if you are specifically testing them.
