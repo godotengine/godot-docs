@@ -133,7 +133,7 @@ Video decoding conditions and recommended resolutions
 
 Video decoding is performed on the CPU, as GPUs don't have hardware acceleration
 for decoding Theora videos. Modern desktop CPUs can decode Ogg Theora videos at
-1440p @ 60 FPS or more, but low-end mobile CPUs will likely struggle with
+1440p @ 60 FPS or more, but low-end mobile CPUs will likely struggle with
 high-resolution videos.
 
 To ensure your videos decode smoothly on varied hardware:
