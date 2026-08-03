@@ -2580,6 +2580,26 @@ This also applies to the alternative syntax:
         func set_my_prop(value):
             my_prop = value # Infinite recursion, since `set_my_prop()` is not the setter.
 
+Setters are also not called when editing or instantiating a key in a dictionary variable
+
+::
+
+        var my_dict: Dictionary:
+            set(value):
+                my_dict = value
+
+        my_dict["key"] = "value" # this will not call the setter
+
+Only if you supplant the variable with another dictionary will the setter be called
+
+::
+
+        var my_dict: Dictionary:
+            set(value):
+                my_dict = value
+
+        my_dict = {} # this replaces the dictionary and calls the setter
+
 .. _doc_gdscript_tool_mode:
 
 Tool mode
