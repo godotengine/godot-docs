@@ -2580,7 +2580,7 @@ This also applies to the alternative syntax:
         func set_my_prop(value):
             my_prop = value # Infinite recursion, since `set_my_prop()` is not the setter.
 
-Setters are also not called when editing or instantiating a key in a dictionary variable
+Setters are also not called when editing or instantiating a key in a dictionary variable:
 
 ::
 
