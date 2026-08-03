@@ -50,7 +50,7 @@ after the ``--branch`` (or just ``-b``) argument:
     # Clone the `4.7-stable` tag. This is a fixed revision that will never change.
     git clone https://github.com/godotengine/godot.git -b 4.7-stable
 
-    # After cloning, optionally go to a specific commit.
+    # After cloning, optionally go to a specific commit.
     # This can be used to access the source code at a specific point in time,
     # e.g. for development snapshots, betas and release candidates.
     cd godot

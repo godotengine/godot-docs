@@ -99,7 +99,7 @@ may be able to create clickable links to phishing sites or similar).
 
 Using RichTextLabel's ``[lb]`` and/or ``[rb]`` tags, we can replace the opening and/or
 closing brackets of any BBCode tag in a message with those escaped tags. This
-prevents users from using BBCode that will be parsed as tags – instead, the
+prevents users from using BBCode that will be parsed as tags – instead, the
 BBCode will be displayed as text.
 
 .. figure:: img/bbcode_in_richtextlabel_escaping_user_input.webp

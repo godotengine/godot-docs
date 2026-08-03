@@ -1646,7 +1646,7 @@ as a static type of the rest parameter:
 .. note::
 
     Although you can declare functions as variadic using the rest parameter, unpacking parameters
-    when calling a function using *spread syntax* that exists in some languages ​​(JavaScript, PHP)
+    when calling a function using *spread syntax* that exists in some languages (JavaScript, PHP)
     is currently not supported in GDScript. However, you can use ``callv()`` to call a function
     with an array of arguments:
 
