@@ -592,6 +592,8 @@ of a file. Dedicated formatting options are also available. See
     ## This comment will appear in the inspector tooltip, and in the documentation.
     @export var exported_value
 
+.. _doc_gdscript_code_regions:
+
 Code regions
 ------------
 
