@@ -2590,7 +2590,7 @@ Setters are also not called when editing or instantiating a key in a dictionary 
 
         my_dict["key"] = "value" # This will not call the setter.
 
-Only if you supplant the variable with another dictionary will the setter be called
+Only overwriting the variable will call the setter.
 
 ::
 
@@ -2598,7 +2598,7 @@ Only if you supplant the variable with another dictionary will the setter be cal
             set(value):
                 my_dict = value
 
-        my_dict = {} # this replaces the dictionary and calls the setter
+        my_dict = {} # This replaces the dictionary and calls the setter.
 
 .. _doc_gdscript_tool_mode:
 
