@@ -133,8 +133,6 @@ If you click the button in the upper right of the window, you can install templa
 from a TPZ file (essentially a ZIP archive). You can download a TPZ file of all
 export templates from the `download page of the website <https://www.godotengine.org/download>`_.
 
-There is no inherent advantage to using the TPZ file for all platforms,
-functionality is identical, and it will take up more space compared to only
 There is no inherent advantage to using the TPZ file for all platforms. It is functionally identical, and it will take up more space compared to only
 selecting what you need.
 
