@@ -270,7 +270,7 @@ The **Edit** menu provides several options for line operations:
   - **Fold All Lines**: Folds all code blocks or code regions in the open document.
   - **Unfold All Lines**: Unfolds all code blocks and code regions in the open document.
   - **Create Code Region***: Wraps the selected text in a foldable code region to improve
-    the readability of larger scripts. See :ref:`doc_gdscript_builtin_types` for more.
+    the readability of larger scripts. See :ref:`doc_gdscript_code_regions` for more.
 
 - **Completion Query**: Suggests from built-in or user created symbols to auto-complete the
   partially written code. :kbd:`Up` and :kbd:`Down` arrows navigate up and down, pressing
