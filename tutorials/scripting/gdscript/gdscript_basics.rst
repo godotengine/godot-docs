@@ -2588,7 +2588,7 @@ Setters are also not called when editing or instantiating a key in a dictionary 
             set(value):
                 my_dict = value
 
-        my_dict["key"] = "value" # this will not call the setter
+        my_dict["key"] = "value" # This will not call the setter.
 
 Only if you supplant the variable with another dictionary will the setter be called
 
