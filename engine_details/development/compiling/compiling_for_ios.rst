@@ -68,9 +68,17 @@ template located in ``misc/dist/apple_embedded_xcode``. The release and debug li
 should be placed in ``libgodot.ios.debug.xcframework`` and
 ``libgodot.ios.release.xcframework`` respectively. Camera module libraries
 should be placed in ``libgodot_camera.ios.debug.xcframework`` and 
-``libgodot_camera.ios.release.xcframework``. This process can be automated
-by using the ``generate_bundle=yes`` option on the *last* SCons command used to
-build export templates (so that all binaries can be included).
+``libgodot_camera.ios.release.xcframework``. 
+
+.. note::
+
+    This process can be automated by using the ``generate_bundle=yes`` option on the *last* SCons command used to build export templates (so that all binaries can be included).
+
+    Additionally, you can collect ``godot_ios.zip`` in the ``bin/`` folder, rename it to ``ios.zip``, and use it as an export template by moving it to the system export templates directory for your Godot version:
+
+    * **Windows:** ``%APPDATA%\Godot\export_templates\<version>\``
+    * **Linux:** ``$HOME/.local/share/godot/export_templates/<version>/``
+    * **macOS:** ``$HOME/Library/Application Support/Godot/export_templates/<version>/``
 
 The MoltenVK static ``.xcframework`` folder must also be placed in the
 ``apple_embedded_xcode`` folder once it has been created. MoltenVK is always statically
