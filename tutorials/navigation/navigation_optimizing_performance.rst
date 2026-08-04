@@ -21,7 +21,7 @@ Performance problems with parsing scene tree nodes
 .. tip::
 
     Prefer using simple shapes with as few edges as possible e.g. nothing rounded like a circle, sphere or torus.
-    
+
     Prefer using physics collision shapes over complex visual meshes as source geometry as meshes need to be copied from the GPU and are commonly much more detailed than necessary.
 
 In general avoid using very complex geometry as source geometry for baking navigation meshes.
@@ -40,9 +40,9 @@ Performance problems with navigation mesh baking
 .. tip::
 
     At runtime, always prefer to use a background thread for baking navigation meshes.
-    
+
     Increase NavigationMesh ``cell_size`` and ``cell_height`` to create less voxels.
-    
+
     Change the ``SamplePartitionType`` from watershed to monotone or layers to gain baking performance.
 
 .. warning::
@@ -66,7 +66,7 @@ Performance problems with NavigationAgent path queries
 .. tip::
 
     Avoid unnecessary path resets and queries every frame in NavigationAgent scripts.
-    
+
     Avoid updating all NavigationAgent paths in the same frame.
 
 Logical errors and wasteful operations in the custom NavigationAgent scripts are very common causes of performance issues, e.g. watch out for resetting the path every single frame.

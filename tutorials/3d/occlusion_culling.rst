@@ -66,7 +66,7 @@ performance gains.
 
     The greatest performance benefits can be observed when using the Mobile
     renderer, as it does not feature a depth prepass for performance reasons. As
-    a result, occlusion culling will actively decrease shading overdraw with 
+    a result, occlusion culling will actively decrease shading overdraw with
     that renderer.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable

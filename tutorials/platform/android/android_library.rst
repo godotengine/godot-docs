@@ -95,7 +95,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 - If using ``gradle``, include the following ``aaptOptions`` configuration under the ``android > defaultConfig`` section of the app's gradle build file. Doing so allows ``gradle`` to include Godot's hidden directories when building the app binary.
 
   - If your build system does not support including hidden directories, you can
-    configure the Godot project to not use hidden directories by deselecting 
+    configure the Godot project to not use hidden directories by deselecting
     :ref:`Application > Config > Use Hidden Project Data Directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`
     in the Project Settings.
 
@@ -182,7 +182,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
   Example:
 
   .. code-block:: java
-  
+
     @Override
     public List<String> getCommandLine(){
         List<String> results = new ArrayList<>();

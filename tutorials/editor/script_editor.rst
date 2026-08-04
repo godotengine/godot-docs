@@ -59,34 +59,34 @@ the user interface can also be modified directly through code.
   also be customized by changing its settings to your liking. You can access
   these settings by opening **Editor > Editor Settings** and going to the **Text Editor**
   group.
-  
+
 .. image:: img/editor_ui_script_editor_open.webp
 
 You can open the Script Editor using the **Script** button in the workspace selector,
 located at the top center of Godot's interface.
 Alternatively, you can use the **Open Script** button next to a node in the
-Scene Tree dock, or double-click on a ``.gd`` file or a recognized text file in 
+Scene Tree dock, or double-click on a ``.gd`` file or a recognized text file in
 the FileSystem dock to open it directly in the Script Editor.
 
 .. image:: img/editor_ui_script_editor_menu.webp
 
-Once it is open, you will see the text editor menus at the top, below the scene 
-switcher. Next to the menus, you'll find buttons to open the online documentation 
-or search within the built-in class reference. To the right of these buttons are 
+Once it is open, you will see the text editor menus at the top, below the scene
+switcher. Next to the menus, you'll find buttons to open the online documentation
+or search within the built-in class reference. To the right of these buttons are
 two navigation arrows that allow you to navigate through your viewing history.
-Finally, you can use the float button to 
-separate the text editor from Godot's window, which is useful if you are working 
+Finally, you can use the float button to
+separate the text editor from Godot's window, which is useful if you are working
 with multiple monitors.
 
-Underneath the menus on the left, you will see the script panel. In the center, 
-adjacent to the script panel, is the coding area. Beneath the coding area is the 
-status bar, which displays the error and warning count in the code. 
-Clicking on the error or warning icons will show the list of errors with 
+Underneath the menus on the left, you will see the script panel. In the center,
+adjacent to the script panel, is the coding area. Beneath the coding area is the
+status bar, which displays the error and warning count in the code.
+Clicking on the error or warning icons will show the list of errors with
 the line numbers. Clicking on one will jump to that line.
-You can also choose to ignore warnings by opening the list and 
+You can also choose to ignore warnings by opening the list and
 clicking ``Ignore``.
-The status bar also lets you change the zoom level of the code by clicking 
-the percentage value. You can also use :kbd:`Ctrl + Mouse Wheel` 
+The status bar also lets you change the zoom level of the code by clicking
+the percentage value. You can also use :kbd:`Ctrl + Mouse Wheel`
 (:kbd:`Cmd + Mouse Wheel` on Mac) to achieve the same effect.
 The status bar also shows the current position of the caret in terms of line and
 column, and whether the indentation is done using tabs, or spaces.
@@ -113,15 +113,15 @@ Script Panel
 .. |scriptcsharp| image:: img/script_editor_icons/ScriptCSharp.webp
 .. |documentation| image:: img/script_editor_icons/Documentation.webp
 .. |toolscript| image:: img/script_editor_icons/ToolScript.webp
-	
+
 .. image:: img/editor_ui_script_editor_script_panel.webp
 
 Below the menus, on the left panel, you will see a list of opened files and documentation
 pages. Depending on the file type, this list will have an icon next
 to the file name. For example, the |script| icon means that it is a GDScript.
-the |scriptcsharp| means it is a C# script. The |documentation| means that this is a 
-built-in class reference. Finally, the |toolscript| means it is a currently running 
-script (See :ref:`tool annotation <doc_running_code_in_the_editor>` for more on this). 
+the |scriptcsharp| means it is a C# script. The |documentation| means that this is a
+built-in class reference. Finally, the |toolscript| means it is a currently running
+script (See :ref:`tool annotation <doc_running_code_in_the_editor>` for more on this).
 Hovering a file will show a tooltip with its relative location in the project folder.
 
 On the status bar, clicking the left arrow hides the script panel, clicking
@@ -135,7 +135,7 @@ properties in the **Text Editor** section.
 The filter bar above the file names introduces a handy case-insensitive search to
 find a specific file. Even if you just type the letters of a file name into the
 bar, files containing these letters in order will also appear. Assume that there
-is a file named ``button.gd`` in the list. If you type ``btn`` into the filter bar, 
+is a file named ``button.gd`` in the list. If you type ``btn`` into the filter bar,
 this file will appear in the results. To reset the filter, clear the filter bar.
 
 An asterisk (*) next to a file name indicates that the file has unsaved changes.
@@ -143,7 +143,7 @@ An asterisk (*) next to a file name indicates that the file has unsaved changes.
 .. tip:: If you just enter "*" in the filter bar, you can display all unsaved files.
 
 You can drag a file to change the ordering. Middle-clicking on a file closes it.
-Right-clicking on a file provides several options to save or close files, or to 
+Right-clicking on a file provides several options to save or close files, or to
 copy the relative path of the file. On this menu:
 
 You can also use **Move Up** and **Move Down** to change the order of the file, or use **Sort**
@@ -210,10 +210,10 @@ The **File** menu provides the following options:
   10 lines, you will first move it to its previous location in the same file.
 - **History Next**: After using `History Previous` to go back to an earlier script,
   this feature allows you to move forward through the script history, switching to
-  scripts that were previously accessed. Similar to above, if you also changed the 
-  caret position more than 10 lines, you will first move it to its next location in 
+  scripts that were previously accessed. Similar to above, if you also changed the
+  caret position more than 10 lines, you will first move it to its next location in
   the same file.
-- **Theme**: Provides options to import an existing theme, save, or reload it. Changing 
+- **Theme**: Provides options to import an existing theme, save, or reload it. Changing
   theme settings is performed via `Editor Settings`.
 - **Close**: Closes the active script.
 - **Close All**: Closes all open scripts and prompts to save if there are unsaved changes.
@@ -305,20 +305,20 @@ The **Search** menu provides the following options:
 - **Find Previous**: Similar to the up arrow, shows the previous occurrence.
 
 
-- **Replace...**: Opens the find and replace bar under the status bar to find text and replace it in the open file.  You can choose to replace them one 
-  at a time or all at once. Additionally, you can limit the replacement to the selected 
-  text by checking the **Selection Only** checkbox in the find and replace bar. You can also use :kbd:`Ctrl + D` to 
+- **Replace...**: Opens the find and replace bar under the status bar to find text and replace it in the open file.  You can choose to replace them one
+  at a time or all at once. Additionally, you can limit the replacement to the selected
+  text by checking the **Selection Only** checkbox in the find and replace bar. You can also use :kbd:`Ctrl + D` to
   additionally select the next instance of the currently selected text, allowing you to perform an in-line replacement on multiple occurrences.
-- **Find in Files...**: Opens a window to search for text within the files in the project 
-  folder. Selecting "Find..." starts with the chosen folder, and includes the file extensions 
-  checked in the filters. The results are shown in the bottom panel with the number of matches 
-  and total number of files found, in the **Search Results** tab. Clicking on a result opens 
+- **Find in Files...**: Opens a window to search for text within the files in the project
+  folder. Selecting "Find..." starts with the chosen folder, and includes the file extensions
+  checked in the filters. The results are shown in the bottom panel with the number of matches
+  and total number of files found, in the **Search Results** tab. Clicking on a result opens
   the file and jumps to the respective line.
-- **Replace in Files...**: Opens a window to search and replace text with different text within the 
-  found files in the project folder. After clicking **Replace...**, you can select in which files to 
-  replace using the **Search Results** tab in the bottom panel by (un)checking them and using 
+- **Replace in Files...**: Opens a window to search and replace text with different text within the
+  found files in the project folder. After clicking **Replace...**, you can select in which files to
+  replace using the **Search Results** tab in the bottom panel by (un)checking them and using
   **Replace All** button.
-  
+
 .. image:: img/editor_ui_script_editor_replaceinfiles.webp
 
 .. warning:: Note that "Replace in Files" operation cannot be undone!
@@ -391,11 +391,11 @@ display of the line can be toggled in the "Appearance" settings of the text edit
 .. |foldable| image:: img/script_editor_icons/Foldable.webp
 
 In the script, to the left of function definitions, you might see additional icons. The |override|
-icon indicates that this function is an :ref:`override <doc_overridable_functions>` of an existing 
-function. Clicking it opens the documentation of the original function. The |receiver| icon means 
-that it is a receiving method of a signal. Clicking it shows where the signal is coming 
-from. A |foldable| icon to the left of the line denotes a foldable block. You can 
-click to collapse or expand it. 
+icon indicates that this function is an :ref:`override <doc_overridable_functions>` of an existing
+function. Clicking it opens the documentation of the original function. The |receiver| icon means
+that it is a receiving method of a signal. Clicking it shows where the signal is coming
+from. A |foldable| icon to the left of the line denotes a foldable block. You can
+click to collapse or expand it.
 Alternatively, the ellipsis (...) icon can also be clicked to expand a folded block.
 
 The example below summarizes the paragraph above. Lines 52, 56, and 58 are foldable blocks,

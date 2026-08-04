@@ -11,7 +11,7 @@ Virtual Reality and Augmented Reality).
    :name: xr-overview
 
    xr_terminology
-   
+
 Getting Started
 ---------------
 

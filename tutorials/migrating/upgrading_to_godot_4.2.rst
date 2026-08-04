@@ -223,7 +223,7 @@ Property ``environment_blend_mode`` added                                       
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 .. note::
-    
+
     This change breaks compatibility in C# because the new property conflicts with the name of an existing enum
     and the C# bindings generator gives priority to properties, so the enum type was renamed from
     ``EnvironmentBlendMode`` to ``EnvironmentBlendModeEnum``.

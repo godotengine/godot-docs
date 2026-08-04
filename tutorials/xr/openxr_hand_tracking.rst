@@ -97,7 +97,7 @@ Hand tracking node
 ~~~~~~~~~~~~~~~~~~
 
 The hand tracking system uses separate hand trackers to track the position of the player's hands
-within our tracking space. 
+within our tracking space.
 
 This information has been separated out for the following use cases:
 
@@ -117,7 +117,7 @@ For this you need to add an :ref:`XRNode3D <class_xrnode3d>` node to your ``XROr
     for the left or right hand respectively.
  *  The ``pose`` should remain set to ``default``, no other option will work here.
  *  The checkbox ``Show When Tracked`` will automatically hide this node if no tracking data is available,
-    or make this node visible if tracking data is available. 
+    or make this node visible if tracking data is available.
 
 Rigged hand mesh
 ~~~~~~~~~~~~~~~~
@@ -150,7 +150,7 @@ You can also set the ``Bone Update`` mode on this node.
  *  ``Rotation Only`` will only apply rotation to the bones of the hands and keep the bone length as is.
     In this mode the size of the hand mesh doesn't change.
 
-With this added, when we run the project we should see the hand correctly displayed if hand tracking is supported. 
+With this added, when we run the project we should see the hand correctly displayed if hand tracking is supported.
 
 The hand tracking data source
 -----------------------------
@@ -274,7 +274,7 @@ Note that in this profile the ``aim pose`` is redefined as a pose between thumb
 and index finger, oriented so a ray cast can be used to identify a target.
 
 Grasp support is exposed through the ``squeeze`` input, the value of which
-is 0.0 when the hand is open, and 1.0 when a fist is made. 
+is 0.0 when the hand is open, and 1.0 when a fist is made.
 
 With this setup the normal ``left_hand`` and ``right_hand`` trackers are used and you can
 thus seamlessly switch between controller and hand tracking input.

@@ -24,13 +24,13 @@ an entire subscene.
 .. figure:: img/physics_interpolation_mode.webp
 
 It is worth noting that, both in 2D and 3D, physics interpolation is performed
-on the **local transform** of each instance. During rendering, interpolated local 
+on the **local transform** of each instance. During rendering, interpolated local
 transforms are passed down to children.
 
-This means that if a parent has ``physics_interpolation_mode`` set to ``On``, 
+This means that if a parent has ``physics_interpolation_mode`` set to ``On``,
 but the child is set to ``Off``, the child will still be interpolated if the parent
 is moving. *Only the child's local transform is uninterpolated.*
-Controlling the on / off behavior of nodes therefore requires some 
+Controlling the on / off behavior of nodes therefore requires some
 thought and planning.
 
 The most common situation where you may want to perform your own interpolation is
@@ -111,29 +111,29 @@ Here is an example of a simple fixed camera which follows an interpolated target
 .. code-block:: gdscript
 
     extends Camera3D
-        
+
     # Node that the camera will follow
     var _target
-        
+
     # We will smoothly lerp to follow the target
     # rather than follow exactly
     var _target_pos : Vector3 = Vector3()
-        
+
     func _ready() -> void:
         # Find the target node
         _target = get_node("../Player")
-        
+
         # Turn off automatic physics interpolation for the Camera3D,
         # we will be doing this manually
         set_physics_interpolation_mode(Node.PHYSICS_INTERPOLATION_MODE_OFF)
-        
+
     func _process(delta: float) -> void:
         # Find the current interpolated transform of the target
         var tr : Transform = _target.get_global_transform_interpolated()
-        
-        # Provide some delayed smoothed lerping towards the target position 
+
+        # Provide some delayed smoothed lerping towards the target position
         _target_pos = lerp(_target_pos, tr.origin, min(delta, 1.0))
-        
+
         # Fixed camera position, but it will follow the target
         look_at(_target_pos, Vector3(0, 1, 0))
 

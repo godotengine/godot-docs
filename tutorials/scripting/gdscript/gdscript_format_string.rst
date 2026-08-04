@@ -222,7 +222,7 @@ avoid reading it as a placeholder. This is done by doubling the character:
 String format method
 --------------------
 
-There is also another way to format text in GDScript, namely the 
+There is also another way to format text in GDScript, namely the
 :ref:`String.format() <class_String_method_format>`
 method. It replaces all occurrences of a key in the string with the corresponding
 value. The method can handle arrays or dictionaries for the key/value pairs.
