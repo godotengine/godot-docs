@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_custom_gui_controls:
 
 Custom GUI controls
@@ -11,7 +9,7 @@ So many controls...
 Yet there are never enough. Creating your own custom controls that act
 just the way you want them to is an obsession of almost every GUI
 programmer. Godot provides plenty of them, but they may not work exactly
-the way you want. Before contacting the developers with a pull-request
+the way you want. Before contacting the developers with a pull request
 to support diagonal scrollbars, at least it will be good to know how to
 create these controls easily from script.
 
@@ -22,8 +20,8 @@ For drawing, it is recommended to check the :ref:`doc_custom_drawing_in_2d` tuto
 The same applies. Some functions are worth mentioning due to their
 usefulness when drawing, so they will be detailed next:
 
-Checking control size
-~~~~~~~~~~~~~~~~~~~~~
+Checking the control size
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
@@ -159,7 +157,8 @@ Notifications
 ~~~~~~~~~~~~~
 
 Controls also have many useful notifications for which no dedicated callback
-exists, but which can be checked with the _notification callback:
+exists, but which can be checked with the :ref:`_notification() <class_Object_private_method__notification>`
+virtual method:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -167,25 +166,35 @@ exists, but which can be checked with the _notification callback:
     func _notification(what):
         match what:
             NOTIFICATION_MOUSE_ENTER:
-                pass # Mouse entered the area of this control.
+                pass # Mouse entered the area of this control (or any child control).
             NOTIFICATION_MOUSE_EXIT:
-                pass # Mouse exited the area of this control.
+                pass # Mouse exited the area of this control (or any child control).
+            NOTIFICATION_MOUSE_ENTER_SELF:
+                pass # Mouse entered the area of this control (excluding child controls).
+            NOTIFICATION_MOUSE_EXIT_SELF:
+                pass # Mouse exited the area of this control (excluding child controls).
             NOTIFICATION_FOCUS_ENTER:
                 pass # Control gained focus.
             NOTIFICATION_FOCUS_EXIT:
                 pass # Control lost focus.
+            NOTIFICATION_SCROLL_BEGIN:
+                pass # Control is in a ScrollContainer that has started scrolling with a touch event.
+                # Interacting with the scroll bar, using the mouse wheel or keyboard to scroll
+                # do not send this notification.
+            NOTIFICATION_SCROLL_END:
+                pass # Control is in a ScrollContainer that has stopped scrolling with a touch event.
+                # Interacting with the scroll bar, using the mouse wheel or keyboard to scroll
+                # do not send this notification.
             NOTIFICATION_THEME_CHANGED:
                 pass # Theme used to draw the control changed;
                 # update and redraw is recommended if using a theme.
             NOTIFICATION_VISIBILITY_CHANGED:
-                pass # Control became visible/invisible;
-                # check new status with is_visible().
+                pass # Control became visible/invisible; check new status with the `visible` property.
             NOTIFICATION_RESIZED:
-                pass # Control changed size; check new size
-                # with get_size().
-            NOTIFICATION_MODAL_CLOSE:
-                pass # For modal pop-ups, notification
-                # that the pop-up was closed.
+                pass # Control changed size; check new size with the `size` property.
+            NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
+                pass # Control changed layout direction from left-to-right to right-to-left or vice versa;
+                # check new layout direction with the `layout_direction` property.
 
  .. code-tab:: csharp
 
@@ -201,12 +210,32 @@ exists, but which can be checked with the _notification callback:
                 // Mouse exited the area of this control.
                 break;
 
+            case NotificationMouseEnterSelf:
+                // Mouse entered the area of this control (excluding child controls).
+                break;
+
+            case NotificationMouseExitSelf:
+                // Mouse exited the area of this control (excluding child controls).
+                break;
+
             case NotificationFocusEnter:
                 // Control gained focus.
                 break;
 
             case NotificationFocusExit:
                 // Control lost focus.
+                break;
+
+            case NotificationScrollBegin:
+                // Control is in a ScrollContainer that has started scrolling with a touch event.
+                // Interacting with the scroll bar, using the mouse wheel or keyboard to scroll
+                // do not send this notification.
+                break;
+
+            case NotificationScrollEnd:
+                // Control is in a ScrollContainer that has stopped scrolling with a touch event.
+                // Interacting with the scroll bar, using the mouse wheel or keyboard to scroll
+                // do not send this notification.
                 break;
 
             case NotificationThemeChanged:
@@ -220,11 +249,12 @@ exists, but which can be checked with the _notification callback:
                 break;
 
             case NotificationResized:
-                // Control changed size; check new size with get_size().
+                // Control changed size; check new size with the `size` property.
                 break;
 
-            case NotificationModalClose:
-                // For modal pop-ups, notification that the pop-up was closed.
+            case NotificationLayoutDirectionChanged:
+                // Control changed layout direction from left-to-right to right-to-left or vice versa;
+                // check new layout direction with the `layout_direction` property.
                 break;
         }
     }
