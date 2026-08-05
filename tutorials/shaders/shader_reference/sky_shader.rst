@@ -139,8 +139,8 @@ a lower resolution than the rest of the sky:
 Built-ins
 ---------
 
-Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
-be written to and will not necessarily contain sensible values. Samplers cannot 
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally
+be written to and will not necessarily contain sensible values. Samplers cannot
 be written to so they are not marked.
 
 Global built-ins

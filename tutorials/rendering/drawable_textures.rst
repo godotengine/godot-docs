@@ -169,7 +169,7 @@ texture to a new DrawableTexture.
         texture.setup(500, 500, DrawableTexture2D.DRAWABLE_FORMAT_RGBA8, false)
 
  .. code-tab:: csharp
-    
+
     private DrawableTexture2D _texture = new DrawableTexture2D();
 
     public override void _Ready()
@@ -216,8 +216,8 @@ InputMouseMotion events:
             // Calculate rect to center our drawn rectangle on mouse position
             // instead of mouse at top left.
             var rect = new Rect2I(
-                (int)(eventMouseMotion.Position.X - 10),  
-                (int)(eventMouseMotion.Position.Y - 10), 
+                (int)(eventMouseMotion.Position.X - 10),
+                (int)(eventMouseMotion.Position.Y - 10),
                 20, 20);
             _texture.BlitRect(rect, null);
         }
@@ -248,7 +248,7 @@ and use a red color as the ``modulate`` parameter.
         // Calculate rect to center our drawn rectangle on mouse position
         // instead of mouse at top left.
         var rect = new Rect2I(
-            (int)(eventMouseMotion.Position.X - 10), 
+            (int)(eventMouseMotion.Position.X - 10),
             (int)(eventMouseMotion.Position.Y - 10),
             20, 20);
         _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), Colors.Red);
@@ -302,7 +302,7 @@ smaller strokes.
             // Calculate rect to center our drawn rectangle on mouse position
             // instead of mouse at top left.
             var rect = new Rect2I(
-                (int)(eventMouseMotion.Position.X - _mySize / 2), 
+                (int)(eventMouseMotion.Position.X - _mySize / 2),
                 (int)(eventMouseMotion.Position.Y - _mySize / 2),
                 _mySize, _mySize);
             _texture.BlitRect(rect, GD.Load<Texture2D>("res://circle.svg"), _myColor);
@@ -318,4 +318,4 @@ smaller strokes.
     {
         _mySize = (int)value;
     }
-    
+

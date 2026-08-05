@@ -757,7 +757,7 @@ XR support (AR and VR)
 
 - Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR.
   Including support for the following standalone headsets:
-  
+
    - Meta Quest 1/2/3 and Pro
    - Pico 4/4 Ultra
    - Magic Leap 2

@@ -38,7 +38,7 @@ The Project Manager's settings can be opened using the **Settings** menu:
 
 .. image:: img/editor_intro_settings.webp
 
-From here, you can change the editor's language (default is the system language), interface theme, display 
+From here, you can change the editor's language (default is the system language), interface theme, display
 scale, network mode, and also the directory naming convention.
 
 .. seealso:: To learn the Project Manager's ins and outs, read
@@ -53,7 +53,7 @@ Let's look at its main areas:
 
 .. image:: img/editor_intro_editor_empty.webp
 
-By default, along the window's top edge, it features **main menu** on the left, **workspace** switching 
+By default, along the window's top edge, it features **main menu** on the left, **workspace** switching
 buttons in the center (active workspace is highlighted), and **playtest** buttons and the
 **Movie Maker Mode** toggle on the right:
 
@@ -61,7 +61,7 @@ buttons in the center (active workspace is highlighted), and **playtest** button
 
 Just below the workspace buttons, the opened :ref:`scenes <doc_key_concepts_overview_scenes>`
 as tabs are seen. The plus (+) button right next to the tabs will add a new scene to the project.
-With the button on the far right, distraction-free mode can be toggled, which maximizes or restores 
+With the button on the far right, distraction-free mode can be toggled, which maximizes or restores
 the **viewport**'s size by hiding **docks** in the interface:
 
 .. image:: img/editor_intro_scene_selector.webp
@@ -113,7 +113,7 @@ When you click on one, it expands vertically. Below, you can see the animation e
 
 .. image:: img/editor_intro_bottom_panel_animation.webp
 
-Bottom panels can also be shown or hidden using the shortcuts defined in 
+Bottom panels can also be shown or hidden using the shortcuts defined in
 **Editor Settings > Shortcuts**, under the **Bottom Panels** category.
 
 .. _doc_intro_to_the_editor_interface_five_screens:
@@ -167,11 +167,11 @@ Godot comes with a built-in class reference.
 You can search for information about a class, method, property, constant, or
 signal by any one of the following methods:
 
-* Pressing :kbd:`F1` (or :kbd:`Opt + Space` on macOS, or :kbd:`Fn + F1` for laptops 
+* Pressing :kbd:`F1` (or :kbd:`Opt + Space` on macOS, or :kbd:`Fn + F1` for laptops
   with a :kbd:`Fn` key) anywhere in the editor.
 * Clicking the "Search Help" button in the top-right of the Script main screen.
 * Clicking on the Help menu and Search Help.
-* :kbd:`Ctrl + Click` (:kbd:`Cmd + Click` on macOS) on a class name, function name, 
+* :kbd:`Ctrl + Click` (:kbd:`Cmd + Click` on macOS) on a class name, function name,
   or built-in variable in the script editor.
 
 .. image:: img/editor_intro_search_help_button.webp

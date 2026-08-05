@@ -51,7 +51,7 @@ If the device on which you run your game does not match the selection here, Open
 .. note::
   OpenXR has additional view configurations for very specific devices that Godot doesn't support yet.
   For instance, Varjo headsets have a quad view configuration that outputs two sets of stereo images.
-  These may be supported in the near future. 
+  These may be supported in the near future.
 
 Reference Space
 ~~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ The :ref:`OpenXRInterface <class_openxrinterface>` will also emit the ``pose_rec
 so your game can react accordingly.
 
 .. Note::
-  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly. 
+  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly.
 
 .. Warning::
   You should **not** call ``center_on_hmd`` when using this reference space.
@@ -111,7 +111,7 @@ In Godot you can do this by calling the ``center_on_hmd`` function on the :ref:`
   above the :ref:`XROrigin3D <class_xrorigin3d>` node keeping the player's height, similar to the ``Local Floor`` reference space.
 
 .. Note::
-  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly. 
+  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly.
 
 Local Floor
 ^^^^^^^^^^^
@@ -143,7 +143,7 @@ so your game can react accordingly.
   It is better to use the Stage mode in this scenario and limit resetting to orientation only when a ``pose_recentered`` signal is received.
 
 .. Note::
-  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly. 
+  Any other XR tracked elements such as controllers or anchors will also be adjusted accordingly.
 
 .. Warning::
   You should **not** call ``center_on_hmd`` when using this reference space.
@@ -253,10 +253,10 @@ Hand Tracking
 
 This enables the hand tracking extension when supported by the device used. This is on by default for legacy reasons.
 The hand tracking extension provides access to data that allows you to visualise the user's hands with correct finger positions.
-Depending on platform capabilities the hand tracking data can be inferred from controller inputs, come from data gloves, 
+Depending on platform capabilities the hand tracking data can be inferred from controller inputs, come from data gloves,
 come from optical hand tracking sensors or any other applicable source.
 
-If your game only supports controllers this should be turned off. 
+If your game only supports controllers this should be turned off.
 
 See the page on :ref:`hand tracking <doc_openxr_hand_tracking>` for additional details.
 

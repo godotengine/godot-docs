@@ -72,7 +72,7 @@ in future Godot releases:
   enable the project setting :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
   to perform 2D rendering in HDR. See also :ref:`doc_environment_and_post_processing_using_glow_in_2d`.
 - While rendering still happens in HDR in 3D when using the Forward+ or Mobile
-  renderers, Viewports cannot return HDR data anymore. This is planned to be 
+  renderers, Viewports cannot return HDR data anymore. This is planned to be
   restored at some point in the future.
 - Mono was replaced by .NET 6. This means exporting C# projects to Android, iOS
   and HTML5 is no longer supported for now. Exporting C# projects to desktop
@@ -409,7 +409,7 @@ table to find its new name.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
 - AnimationNode's ``process()`` is now ``_process()``
   (note the leading underscore, which denotes a virtual method).
-- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses an :ref:`class_AnimationLibrary`. 
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses an :ref:`class_AnimationLibrary`.
 - AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
 - Array's ``empty()`` is now ``is_empty()``.
 - Array's ``invert()`` is now ``reverse()``.
@@ -549,7 +549,7 @@ environment effect and its visual knobs remain within the Environment resource.
 Updating shaders
 ~~~~~~~~~~~~~~~~
 
-There have been some changes to shaders that aren't covered by the upgrade tool. 
+There have been some changes to shaders that aren't covered by the upgrade tool.
 You will need to make some manual changes, especially if your shader uses coordinate
 space transformations or a custom ``light()`` function.
 
@@ -567,19 +567,19 @@ Some notable changes you will need to perform in shaders are:
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
 - In the Forward+ and Mobile renderers, normalized device coordinates now have a Z-range of ``[0.0,1.0]``
-  instead of ``[-1.0,1.0]``. When reconstructing NDC from ``SCREEN_UV`` and depth, use 
-  ``vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);`` instead of 
+  instead of ``[-1.0,1.0]``. When reconstructing NDC from ``SCREEN_UV`` and depth, use
+  ``vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);`` instead of
   ``vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;``. The Compatibility renderer is unchanged,
   using the same NDC Z-range as 3.x.
 - The lighting model changed. If your shader has a custom ``light()`` function,
   you may need to make changes to get the same visual result.
-- In 4.3 and up, the reverse Z depth buffer technique is now implemented, which 
-  may break advanced shaders. See 
+- In 4.3 and up, the reverse Z depth buffer technique is now implemented, which
+  may break advanced shaders. See
   `Introducing Reverse Z (AKA I'm sorry for breaking your shader) <https://godotengine.org/article/introducing-reverse-z/>`__.
 
 See :ref:`doc_shading_language` for more information.
 
-This list is not exhaustive. If you made all the changes mentioned here and your 
+This list is not exhaustive. If you made all the changes mentioned here and your
 shader still doesn't work, try asking for help in one of the `community channels <https://godotengine.org/community/>`__.
 
 Updating scripts to take backwards-incompatible changes into account

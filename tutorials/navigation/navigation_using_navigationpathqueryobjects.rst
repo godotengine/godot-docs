@@ -6,9 +6,9 @@ Using NavigationPathQueryObjects
 .. tip::
 
     Path query parameters expose various options to improve pathfinding performance or lower memory consumption.
-    
+
     They cater to more advanced pathfinding needs that the high-level nodes can not always cover.
-    
+
     See the respective option sections below.
 
 ``NavigationPathQueryObjects`` can be used together with ``NavigationServer.query_path()``
@@ -117,19 +117,19 @@ E.g. the closest edge point on a navigation mesh polygon might cause a huge deto
 In order to improve the quality of paths returned by the query various ``path_postprocessing`` options exist.
 
 - The ``PATH_POSTPROCESSING_CORRIDORFUNNEL`` post-processing shortens paths by funneling paths around corners **inside the available polygon corridor**.
-  
+
   This is the default post-processing and usually also the most useful as it gives the shortest path result **inside the available polygon corridor**.
   If the polygon corridor is already suboptimal, e.g. due to a suboptimal navigation mesh layout,
   the funnel can snap to unexpected polygon corners causing detours.
 
 - The ``PATH_POSTPROCESSING_EDGECENTERED`` post-processing forces all path points to be placed in the middle of the crossed polygon edges  **inside the available polygon corridor**.
-  
+
   This post-processing is usually only useful when used with strictly tile-like navigation mesh polygons that are all
   evenly sized and where the expected path following is also constrained to cell centers,
   e.g. typical grid game with movement constrained to grid cell centers.
 
 - The ``PATH_POSTPROCESSING_NONE`` post-processing returns the path as is how the pathfinding traveled **inside the available polygon corridor**.
-  
+
   This post-processing is very useful for debug as it shows how the path search traveled from closest edge point to closet edge point and what polygons it picked.
   A lot of unexpected or suboptimal path results can be immediately explained by looking at this raw path and polygon corridor.
 
@@ -253,7 +253,7 @@ This is not a full working example.
         # ...
 
         var regions_around_start_position: Array[RID] = []
-        
+
         var chunk_rings: int = 1 # Increase for very small regions or more quality.
         var start_chunk_id: Vector3i = floor(p_start_position / float(chunk_size))
         var y: int = 0 # Assume a planar navigation map for simplicity.
@@ -266,7 +266,7 @@ This is not a full working example.
                     regions_around_start_position.push_back(region)
 
         query_parameters.included_regions = regions_around_start_position
-        
+
         # ...
 
 Path clipping and limits

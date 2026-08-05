@@ -32,7 +32,7 @@ build the project and only exists for loading the project in JetBrains IDEs.
       - CLion will attempt to detect your Visual Studio installation. If it is unsuccessful, use the file icon to the right of ``Toolset:`` to select the directory with your Visual Studio installation.
 
       You may exit and reload CLion and it will reload ``compile_commands.json``
-  
+
 .. figure:: img/clion_visual_studio_toolchain.webp
    :align: center
 

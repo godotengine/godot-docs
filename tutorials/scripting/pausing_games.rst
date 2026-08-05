@@ -57,7 +57,7 @@ You can also alter the property with code:
         ProcessMode = Node.ProcessModeEnum.Pausable;
     }
 
-This is what each mode tells a node to do:  
+This is what each mode tells a node to do:
 
 -  **Inherit**: Process depending on the state of the parent,
    grandparent, etc. The first parent that has a non-Inherit state.

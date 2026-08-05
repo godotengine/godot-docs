@@ -5,7 +5,7 @@ Using decals
 
 .. note::
 
-    Decals are only supported in the Forward+ and Mobile renderers, not the 
+    Decals are only supported in the Forward+ and Mobile renderers, not the
     Compatibility renderer.
 
     If using the Compatibility renderer, consider using Sprite3D as an alternative

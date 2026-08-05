@@ -10,7 +10,7 @@ or Spatial, depending on whether they are 2D or 3D.
 
 Particle shaders are unique because they are not used to draw the object itself;
 they are used to calculate particle properties, which are then used by a
-:ref:`CanvasItem<doc_canvas_item_shader>` or :ref:`Spatial<doc_spatial_shader>` 
+:ref:`CanvasItem<doc_canvas_item_shader>` or :ref:`Spatial<doc_spatial_shader>`
 shader. They contain two processor functions: ``start()`` and ``process()``.
 
 Unlike other shader types, particle shaders keep the data that was output the
