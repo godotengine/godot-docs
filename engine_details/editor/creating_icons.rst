@@ -72,6 +72,16 @@ Colors with Editor Theme** option in the Import dock and click
 :button:`Reimport`. Note that this option is only available for icons in SVG
 format, as it requires the use of a vector format to work.
 
+.. note::
+
+	To simplify the design process, you can use tools from this
+	`unofficial project <https://github.com/OS-of-S/Inkscape-Tools-for-Godot-Editor-Designing>`__,
+	that provides Godot palettes, which can be imported into Inkscape,
+	and an Inkscape extension to check its look for different themes.
+	
+	But priority for relevance remains with official
+	`color mappings file <https://github.com/godotengine/godot/blob/master/editor/themes/editor_color_map.cpp>`__.
+
 Icon optimization
 ~~~~~~~~~~~~~~~~~
 
