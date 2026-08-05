@@ -631,7 +631,7 @@ Scripts that extend EditorScript **must** be ``@tool`` scripts to function.
     an external editor, use one of the last two approaches to run the script.
 
 .. note::
-    
+
     C# EditorScripts cannot be run from the script editor as it only supports
     GDScript. Please refer to the above alternative approaches to run custom C#
     EditorScripts.
@@ -682,7 +682,7 @@ doubles the range of all OmniLight3D nodes:
             public override void _Run()
             {
                 var sceneNode = EditorInterface.Singleton.GetEditedSceneRoot();
-            
+
                 foreach (OmniLight3D node in sceneNode.FindChildren("", "OmniLight3D"))
                 {
                     // Don't operate on instanced subscene children, as changes are lost

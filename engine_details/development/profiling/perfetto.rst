@@ -11,26 +11,26 @@ service has been built into the platform since Android 9.
 Using official Perfetto templates
 ---------------------------------
 
-Starting with Godot 4.7, Perfetto export templates are provided for every stable Godot release and can be 
+Starting with Godot 4.7, Perfetto export templates are provided for every stable Godot release and can be
 downloaded from the `GitHub Releases page <https://github.com/godotengine/godot/releases/>`_.
 
 Using the Gradle build template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Navigate to the release page and download the ``Godot_v<godot_version>_android_source.perfetto.zip`` 
+- Navigate to the release page and download the ``Godot_v<godot_version>_android_source.perfetto.zip``
   release artifact where ``godot_version`` corresponds to the version of the engine being used.
 - In the **Project > Export** dialog, **Advanced Options** and **Use Gradle Build** must be enabled.
 - Point **Android Source Template** to the downloaded export template.
 
 .. image:: img/cpp_profiler_perfetto_gradle_build_config.webp
 
-Follow the instructions in the :ref:`Configuration section <doc_profiler_perfetto_configuration>` to 
+Follow the instructions in the :ref:`Configuration section <doc_profiler_perfetto_configuration>` to
 learn how to configure and create a trace.
 
 Using non-gradle build templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Navigate to the release page and download the following release artifacts 
+- Navigate to the release page and download the following release artifacts
   where ``godot_version`` corresponds to the version of the engine being used:
 
   - ``Godot_v<godot_version>_android_debug.perfetto.apk`` (for debug builds)
@@ -45,13 +45,13 @@ Using non-gradle build templates
 
 .. image:: img/cpp_profiler_perfetto_non_gradle_build_config.webp
 
-Follow the instructions in the :ref:`Configuration section <doc_profiler_perfetto_configuration>` to 
+Follow the instructions in the :ref:`Configuration section <doc_profiler_perfetto_configuration>` to
 learn how to configure and create a trace.
 
 Custom Godot builds with Perfetto support
 -----------------------------------------
 
-From the ``godot`` root directory, run the following python script to install 
+From the ``godot`` root directory, run the following python script to install
 the latest version of the Perfetto SDK under ``thirdparty/perfetto``:
 
 .. code-block:: shell
@@ -113,12 +113,12 @@ Create a file called ``godot.config`` with this content:
 
     Godot records two categories of track events:
 
-    - **godot**: Used to record Godot engine events. This is used for performance analysis. 
-      Event tracing overhead should not significantly impact performance. 
+    - **godot**: Used to record Godot engine events. This is used for performance analysis.
+      Event tracing overhead should not significantly impact performance.
       This should be the typical tracing mode for most developers.
-    - **godot_scripting**: Used to record Godot scripting events. 
-      This is a slow category as it profiles the entire game scripting logic. 
-      This is used for code understanding / debugging / finding what caused a frame hitch. 
+    - **godot_scripting**: Used to record Godot scripting events.
+      This is a slow category as it profiles the entire game scripting logic.
+      This is used for code understanding / debugging / finding what caused a frame hitch.
       Performance is much slower, but it helps to find that one problematic function call that was otherwise hidden.
 
 Record a trace
@@ -128,7 +128,7 @@ Finally, launch your game on an Android device using the export templates you
 built earlier.
 
 When you're ready to record a trace (for example, when you've hit the part of
-your game that is exhibiting performance issues), you can 
+your game that is exhibiting performance issues), you can
 use `this script from the Perfetto GitHub repository <https://github.com/google/perfetto/blob/main/tools/record_android_trace>`_.
 
 .. code-block:: shell

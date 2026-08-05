@@ -137,7 +137,9 @@ Bezier Curve Track
 A bezier curve track is similar to a property track, except it allows you to
 animate a property's value using a bezier curve.
 
-.. note:: Bezier curve track and property track cannot be blended in :ref:`AnimationPlayer <class_AnimationPlayer>` and :ref:`AnimationTree <class_AnimationTree>`.
+.. note::
+
+    Bezier curve tracks and property tracks cannot be blended in :ref:`AnimationPlayer <class_AnimationPlayer>` and :ref:`AnimationTree <class_AnimationTree>`.
 
 To create one, click "Add Track -> Bezier Curve Track". As with property tracks,
 you need to select a node and a property to animate. To open the bezier curve

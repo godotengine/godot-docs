@@ -135,7 +135,7 @@ a scene's data between scene changes (adding the scene to the root node).
 
 Another case may be displaying multiple scenes at the same time using
 :ref:`SubViewportContainers <class_SubViewportContainer>`. This is optimal for
-rendering different content in different parts of the screen (e.g. minimaps, 
+rendering different content in different parts of the screen (e.g. minimaps,
 split-screen multiplayer).
 
 Each option will have cases where it is best appropriate, so you must examine

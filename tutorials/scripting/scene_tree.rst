@@ -13,10 +13,10 @@ they enter the *scene tree*.
 MainLoop
 --------
 
-The way Godot works internally is as follows. There is the
+The way Godot works internally is as follows: There is the
 :ref:`OS <class_OS>` class,
 which is the only instance that runs at the beginning. Afterwards, all
-drivers, servers, scripting languages, scene system, etc are loaded.
+drivers, servers, scripting languages, scene system, etc. are loaded.
 
 When initialization is complete, :ref:`OS <class_OS>` needs to be
 supplied a :ref:`MainLoop <class_MainLoop>`

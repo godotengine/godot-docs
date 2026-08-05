@@ -54,18 +54,18 @@ procedure:
 On mobile devices
 -----------------
 
-There is no direct equivalent to ``NOTIFICATION_WM_CLOSE_REQUEST`` on mobile 
-platforms. Due to the nature of mobile operating systems, the only place 
-that you can run code prior to quitting is when the app is being suspended to 
-the background. On both Android and iOS, the app can be killed while suspended 
-at any time by either the user or the OS. A way to plan ahead for this 
-possibility is to utilize ``NOTIFICATION_APPLICATION_PAUSED`` in order to 
+There is no direct equivalent to ``NOTIFICATION_WM_CLOSE_REQUEST`` on mobile
+platforms. Due to the nature of mobile operating systems, the only place
+that you can run code prior to quitting is when the app is being suspended to
+the background. On both Android and iOS, the app can be killed while suspended
+at any time by either the user or the OS. A way to plan ahead for this
+possibility is to utilize ``NOTIFICATION_APPLICATION_PAUSED`` in order to
 perform any needed actions as the app is being suspended.
 
 .. note:: On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
 
-On Android, pressing the Back button will exit the application if 
-**Application > Config > Quit On Go Back** is checked in the Project Settings 
+On Android, pressing the Back button will exit the application if
+**Application > Config > Quit On Go Back** is checked in the Project Settings
 (which is the default). This will fire ``NOTIFICATION_WM_GO_BACK_REQUEST``.
 
 

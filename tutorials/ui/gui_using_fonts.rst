@@ -1001,6 +1001,6 @@ how the default font should be rendered:
     These project settings *only* affect the default project font (the one that
     is hardcoded in the engine binary).
 
-    Custom fonts' properties are governed by their respective import options
+    Custom fonts' properties are controlled by their respective import options
     instead. You can use the **Import Defaults** section of the Project Settings
     dialog to override default import options for custom fonts.

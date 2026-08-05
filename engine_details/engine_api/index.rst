@@ -24,7 +24,6 @@ that some aspects of the code or directory structures may be different in GDExte
    vendor_runtime_module
    gdextension/index
    binding_to_external_libraries
-   custom_godot_servers
    custom_resource_format_loaders
    custom_audiostreams
    custom_platform_ports

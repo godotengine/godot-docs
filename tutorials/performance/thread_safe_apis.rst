@@ -141,7 +141,7 @@ Resources
 
 Modifying a unique resource from multiple threads is not supported. However,
 handling references on multiple threads *is* supported. Hence loading resources
-on a thread is as well - scenes, textures, meshes, etc - can be loaded and manipulated
+on a thread is, as well. Scenes, textures, meshes, etc. can be loaded and manipulated
 on a thread and then added to the active scene on the main thread. The limitation here
 is as described above: one must be careful not to load the same resource from
 multiple threads at once. Therefore, it's easiest to use **one** thread for loading

@@ -59,7 +59,7 @@ Variables for our script
 
 We introduce a few new variables to our script as well:
 
-- ``maximum_refresh_rate`` will control the headsets refresh rate if this is supported by the headset.
+- ``maximum_refresh_rate`` will control the headset's refresh rate if this is supported by the headset.
 - ``xr_interface`` holds a reference to our XR interface, this already existed but we now type it to get full access to our :ref:`XRInterface <class_xrinterface>` API.
 - ``xr_is_focussed`` will be set to true whenever our game has focus.
 
@@ -246,7 +246,7 @@ Not matching the physics update rate will cause stuttering as frames are rendere
 
         # Now match our physics rate
         Engine.physics_ticks_per_second = current_refresh_rate
- 
+
     ...
 
   .. code-tab:: csharp
@@ -342,7 +342,7 @@ If you haven't, you can connect a method to the signal that performs additional 
             get_tree().paused = true
 
             emit_signal("focus_lost")
- 
+
     ...
 
   .. code-tab:: csharp
@@ -371,8 +371,8 @@ If you haven't, you can connect a method to the signal that performs additional 
 
     ...
 
-On focussed state
------------------
+On focused state
+----------------
 
 This signal is emitted by OpenXR when our game gets focus.
 This is done at the completion of our startup,
@@ -506,6 +506,6 @@ Often it is enough to call :ref:`center_on_hmd() <class_XRServer_method_center_o
         }
     }
 
-And that finished our script. It was written so that it can be re-used over multiple projects.
+And that finished our script. It was written so that it can be reused over multiple projects.
 Just add it as the script on your main node (and extend it if needed)
 or add it on a child node specific for this script.

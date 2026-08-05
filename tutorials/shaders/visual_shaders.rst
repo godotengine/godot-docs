@@ -153,7 +153,7 @@ These ports are colored to differentiate type of port:
      - A texture sampler. It can be used to sample textures.
      - |sampler|
 
-All of the types are used in the calculations of vertices, fragments, and lights in the shader. For example: matrix multiplication, 
+All of the types are used in the calculations of vertices, fragments, and lights in the shader. For example: matrix multiplication,
 vector addition, or scalar division.
 
 There are other types but these are the main ones.

@@ -15,12 +15,12 @@ which are almost identical to their 2D counterparts.
    :align: center
    :alt: An example 3D game demo created using Godot
 
-   Godot Third Person Shooter (TPS) Demo, available on the 
-   `Github repository <https://github.com/godotengine/tps-demo>`__ or the 
+   Godot Third Person Shooter (TPS) Demo, available on the
+   `Github repository <https://github.com/godotengine/tps-demo>`__ or the
    :ref:`Asset Library <doc_project_manager_downloading_demos>`.
 
 In 3D, math is a little more complex than in 2D. For an introduction to the
-relevant math written for game developers, not mathemeticians or engineers,
+relevant math written for game developers, not mathematicians or engineers,
 check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
 3D workspace
@@ -43,23 +43,23 @@ Main toolbar
 ~~~~~~~~~~~~
 
 Some buttons in the main toolbar are the same as those in the 2D workspace. A brief explanation
-is given with the shortcut if the mouse cursor is hovered over a button for one second. 
-Some buttons may have additional functionality if another keypress is performed. A recap 
-of main functionality of each button with its default shortcut is provided below from 
+is given with the shortcut if the mouse cursor is hovered over a button for one second.
+Some buttons may have additional functionality if another keypress is performed. A recap
+of main functionality of each button with its default shortcut is provided below from
 left to right:
 
 .. image:: img/3d_toolbar.webp
 
-- **Transform Mode** (:kbd:`Q`): Enables a combined move + rotation mode for the selected nodes. 
-- **Move Mode** (:kbd:`W`): Enables move (or translate) mode for the selected nodes. 
+- **Transform Mode** (:kbd:`Q`): Enables a combined move + rotation mode for the selected nodes.
+- **Move Mode** (:kbd:`W`): Enables move (or translate) mode for the selected nodes.
   See :ref:`doc_introduction_to_3d_space_and_manipulation` for more details.
-- **Rotate Mode** (:kbd:`E`): Enables rotation mode for the selected nodes. See 
+- **Rotate Mode** (:kbd:`E`): Enables rotation mode for the selected nodes. See
   :ref:`doc_introduction_to_3d_space_and_manipulation` for more details.
-- **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in different 
-  axes for the selected nodes. See :ref:`doc_introduction_to_3d_space_and_manipulation` 
+- **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in different
+  axes for the selected nodes. See :ref:`doc_introduction_to_3d_space_and_manipulation`
   for more details.
-- **Select Mode** (:kbd:`Q`): Allows selection of nodes in the viewport. Left clicking
-  on a node to select one. Left clicking and dragging a rectangle selects all 
+- **Select Mode** (:kbd:`V`): Allows selection of nodes in the viewport. Left clicking
+  on a node to select one. Left clicking and dragging a rectangle selects all
   nodes within the rectangle's boundaries, once released.
   Holding :kbd:`Shift` while selecting adds more nodes to the selection.
   Clicking on a selected node while holding :kbd:`Shift` deselects the node.
@@ -68,41 +68,41 @@ left to right:
   this provides a list of selectable nodes at the clicked position as a context menu,
   if there is more than one node in the clicked area.
 - **Lock** (:kbd:`Ctrl + L`) the selected nodes, preventing selection and movement in the viewport.
-  Clicking the button again (or using :kbd:`Ctrl + Shift + L`) unlocks the selected nodes. 
+  Clicking the button again (or using :kbd:`Ctrl + Shift + L`) unlocks the selected nodes.
   Locked nodes can only be selected in the scene tree.
-  They can easily be identified with a padlock next to their node names in the scene tree. 
+  They can easily be identified with a padlock next to their node names in the scene tree.
   Clicking on this padlock also unlocks the nodes.
-- **Group selected nodes** (:kbd:`Ctrl + G`). This allows selection of the root node if 
+- **Group selected nodes** (:kbd:`Ctrl + G`). This allows selection of the root node if
   any of the children are selected.
-  Using :kbd:`Ctrl + G` ungroups them. Additionally, clicking the ungroup button in 
+  Using :kbd:`Ctrl + G` ungroups them. Additionally, clicking the ungroup button in
   the scene tree performs the same action.
 - **Ruler Mode** (:kbd:`M`): When enabled you can click and drag to measure distance in the scene
   in meters.
-- **Use Local Space** (:kbd:`T`): If enabled, gizmos of a node are drawn using the current node's 
+- **Use Local Space** (:kbd:`T`): If enabled, gizmos of a node are drawn using the current node's
   rotation angle instead of the :ref:`global viewport axes <doc_introduction_to_3d_coordinate_system>`.
-- **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also 
+- **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also
   temporarily be activated using :kbd:`Ctrl` while performing the action.
   The settings for changing snap options are explained below.
 - **Use Trackball** (:kbd:`U`): When enabled, dragging the center of a node (represented by a
   subtle ray disc highlight) will rotate the node like a physical trackball.
 - **Preserve Children Transform** (:kbd:`P`): When enabled, transforming a node will preserve the
   global transform of its children.
-- **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview 
-  of sunlight can be used as a light source. See 
+- **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview
+  of sunlight can be used as a light source. See
   :ref:`doc_introduction_to_3d_preview_environment_light` for more details.
-- **Toggle preview environment**: If no WorldEnvironment exists in the scene, a preview of the 
-  environment can be used as a placeholder. See 
+- **Toggle preview environment**: If no WorldEnvironment exists in the scene, a preview of the
+  environment can be used as a placeholder. See
   :ref:`doc_introduction_to_3d_preview_environment_light` for more details.
-- **Edit Sun and Environment Settings (three dots)**: Opens the menu to configure preview 
-  sunlight and environment settings. See :ref:`doc_introduction_to_3d_preview_environment_light` 
+- **Edit Sun and Environment Settings (three dots)**: Opens the menu to configure preview
+  sunlight and environment settings. See :ref:`doc_introduction_to_3d_preview_environment_light`
   for more details.
 
 - **Transform menu**: It has three options:
 
    - *Snap Object to Floor*: Snaps an object to a solid floor.
-   - *Transform Dialog*: Opens a dialog to adjust transform parameters (translate, rotate, scale, 
+   - *Transform Dialog*: Opens a dialog to adjust transform parameters (translate, rotate, scale,
      and transform) manually.
-   - *Snap Settings*: Allows you to change transform, rotate snap (in degrees), and scale snap 
+   - *Snap Settings*: Allows you to change transform, rotate snap (in degrees), and scale snap
      (in percent) settings.
 
 - **View menu**: Controls the view options and enables additional viewports:
@@ -118,7 +118,7 @@ Moreover, specific types of gizmos can be toggled in this menu.
 An open eye means that the gizmo is visible, a closed eye means it is hidden.
 A half-open eye means that it is also visible through opaque surfaces.
 
-Clicking on *Settings* in this view menu opens a window to change the 
+Clicking on *Settings* in this view menu opens a window to change the
 *Vertical Field of View (VFOV)* parameter
 (in degrees), *Z-Near*, and *Z-Far* values.
 
@@ -137,8 +137,8 @@ this menu:
 
 .. image:: img/tuto_3d6_1.webp
 
-This menu also displays the current view type and enables quick adjustment of the 
-viewport's viewing angle. Additionally, it offers options to modify the appearance of 
+This menu also displays the current view type and enables quick adjustment of the
+viewport's viewing angle. Additionally, it offers options to modify the appearance of
 nodes within the viewport.
 
 .. _doc_introduction_to_3d_coordinate_system:
@@ -201,7 +201,7 @@ The arcs can be clicked and held to rotate the object.
 To lock one axis and move the object freely in the other two axes, the colored rectangles
 can be clicked, held, and dragged.
 
-If the transform mode is changed from *Select Mode* to *Scale Mode*, the arrows will be 
+If the transform mode is changed from *Select Mode* to *Scale Mode*, the arrows will be
 replaced by cubes, which can be dragged to scale an object as if the object is being moved.
 
 Navigating the 3D environment
@@ -224,7 +224,7 @@ Then, under *Navigation*, search for *Navigation Scheme*.
 Using the default settings, the following shortcuts control how one can
 navigate in the viewport:
 
-Pressing the middle mouse button and dragging the mouse allows you to orbit around 
+Pressing the middle mouse button and dragging the mouse allows you to orbit around
 the center of what is on the screen.
 
 It is also possible to left-click and hold the manipulator gizmo located
@@ -241,7 +241,7 @@ If the *Perspective* view is enabled on the viewport (can be seen on the viewpor
 not the View menu on the main toolbar), holding down the right mouse button on the viewport
 or pressing :kbd:`Shift + F` switches to "free-look" mode.
 In this mode you can move the mouse to look around, use the :kbd:`W` :kbd:`A`
-:kbd:`S` :kbd:`D` keys to fly around the view, :kbd:`E` to go up, and :kbd:`Q` to 
+:kbd:`S` :kbd:`D` keys to fly around the view, :kbd:`E` to go up, and :kbd:`Q` to
 go down. To disable this mode, release the right mouse button or press
 :kbd:`Shift + F` again.
 
@@ -318,7 +318,7 @@ Manually authored models (using 3D modeling software)
    (used to reference a non existing doc_importing_3d_meshes importer).
 
 It is possible to import 3D models in Godot created in external tools.
-Depending on the format, you can import entire scenes (exactly as they look in 
+Depending on the format, you can import entire scenes (exactly as they look in
 the 3D modeling software), including animation, skeletal rigs, blend shapes, or
 as simple resources.
 
@@ -393,8 +393,8 @@ by clicking on their respective icon.
 
 .. image:: img/tuto_3d8.webp
 
- 
-The three dots dropdown menu next to those icons can be used to adjust the properties 
+
+The three dots dropdown menu next to those icons can be used to adjust the properties
 of the preview environment and light if they are enabled.
 
 .. image:: img/tuto_3d9.webp

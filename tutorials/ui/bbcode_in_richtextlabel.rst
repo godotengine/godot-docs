@@ -99,7 +99,7 @@ may be able to create clickable links to phishing sites or similar).
 
 Using RichTextLabel's ``[lb]`` and/or ``[rb]`` tags, we can replace the opening and/or
 closing brackets of any BBCode tag in a message with those escaped tags. This
-prevents users from using BBCode that will be parsed as tags – instead, the
+prevents users from using BBCode that will be parsed as tags – instead, the
 BBCode will be displayed as text.
 
 .. figure:: img/bbcode_in_richtextlabel_escaping_user_input.webp
@@ -970,7 +970,7 @@ Named colors
 ~~~~~~~~~~~~
 
 For tags that allow specifying a color by name, you can use names of the constants from
-the built-in :ref:`class_Color` class. Named classes can be specified in a number of
+the built-in :ref:`class_Color` class. Named colors can be specified in a number of
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
 

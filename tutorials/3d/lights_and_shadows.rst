@@ -11,7 +11,7 @@ result. Light can come from several types of sources in a scene:
 
 - From the material itself, in the form of the emission color (though it does
   not affect nearby objects unless baked or screen-space indirect lighting is enabled).
-- Light nodes: DirectionalLight3D, OmniLight3D and SpotLight3D.
+- Light nodes: DirectionalLight3D, OmniLight3D, SpotLight3D, and AreaLight3D.
 - Ambient light in the :ref:`Environment <class_Environment>` or
   :ref:`doc_reflection_probes`.
 - Global illumination (:ref:`LightmapGI <doc_using_lightmap_gi>`,
@@ -28,8 +28,8 @@ in the :ref:`doc_standard_material_3d` tutorial.
 Light nodes
 -----------
 
-There are three types of light nodes: :ref:`class_DirectionalLight3D`,
-:ref:`class_OmniLight3D` and :ref:`class_SpotLight3D`. Let's take a look at the common
+There are four types of light nodes: :ref:`class_DirectionalLight3D`,
+:ref:`class_OmniLight3D`, :ref:`class_SpotLight3D`, and :ref:`class_AreaLight3D`. Let's take a look at the common
 parameters for lights:
 
 .. image:: img/light_params.png
@@ -60,7 +60,7 @@ When using the Forward+ renderer, Godot uses a *clustering* approach for
 real-time lighting. As many lights as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
-an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
+an omni light, a spot light, an area light, a :ref:`decal <doc_using_decals>`, or a
 :ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
 :ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
 in **Project Settings > Rendering > Limits > Cluster Builder**.
@@ -486,7 +486,7 @@ smoothly.
 Shadow atlas
 ------------
 
-Unlike Directional lights, which have their own shadow texture, omni and spot
+Unlike Directional lights, which have their own shadow texture, omni, spot, and area
 lights are assigned to slots of a shadow atlas. This atlas can be configured in
 the advanced Project Settings (**Rendering > Lights And Shadows > Positional Shadow**).
 
@@ -543,7 +543,7 @@ to make the right choices here to avoid creating bottlenecks.
 Directional shadow quality settings can be changed at runtime by calling the
 appropriate :ref:`class_RenderingServer` methods.
 
-Positional (omni/spot) shadow quality settings can be changed at runtime on the
+Positional (omni/spot/area) shadow quality settings can be changed at runtime on the
 root :ref:`class_Viewport`.
 
 Shadow map size
@@ -596,7 +596,7 @@ significant performance cost.
 Light/shadow distance fade
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-OmniLight3D and SpotLight3D offer several properties to hide distant lights.
+OmniLight3D, SpotLight3D, and AreaLight3D offer several properties to hide distant lights.
 This can improve performance significantly in large scenes with dozens of lights
 or more.
 

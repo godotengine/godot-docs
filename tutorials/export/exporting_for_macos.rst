@@ -14,8 +14,8 @@ This bundle can be exported as is, packed in a ZIP archive, or packed in a DMG d
 `Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple Silicon) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
 
 .. warning::
-    Due to file system limitations, ``.app`` bundles exported from Windows lack the 
-    ``executable`` flag and won't run on macOS. Projects exported as ``.zip`` are not 
+    Due to file system limitations, ``.app`` bundles exported from Windows lack the
+    ``executable`` flag and won't run on macOS. Projects exported as ``.zip`` are not
     affected by this issue. To run ``.app`` bundles exported from Windows on macOS,
     transfer the ``.app`` to a device running macOS or Linux and use the
     ``chmod +x {executable_name}`` terminal command to add the ``executable`` permission.
@@ -164,7 +164,7 @@ See `Hardened Runtime <https://developer.apple.com/documentation/security/harden
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Allow Unsigned Executable Memory [4]_ | Allows creating writable and executable memory without JIT restrictions. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Allow DYLD Environment Variables [4]_ | Allows app to uss dynamic linker environment variables to inject code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
+| Allow DYLD Environment Variables [4]_ | Allows app to use dynamic linker environment variables to inject code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Disable Library Validation            | Allows app to load arbitrary libraries and frameworks. Enable it if you are using GDExtension add-ons or ad-hoc signing, or want to support user-provided external add-ons.                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

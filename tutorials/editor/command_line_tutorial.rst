@@ -70,8 +70,8 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-p``, ``--project-manager``            | |editor| Start the Project Manager, even if a project is auto-detected.                                                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--recovery-mode``                      | |editor| "Start the editor in recovery mode, which disables features that can typically cause startup crashes, such as tool scripts, editor plugins,         |
-|                                          | GDExtension addons, and others.                                                                                                                              |
+| ``--recovery-mode``                      | |editor| Start the editor in recovery mode, which disables features that can typically cause startup crashes, such as tool scripts, editor plugins, and      |
+|                                          | GDExtension addons.                                                                                                                                          |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--debug-server <uri>``                 | |editor| Start the editor debug server (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``)                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,8 +152,8 @@ given build type.
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--wid <window_id>``              | |release| Request parented to window.                                      |
 +------------------------------------+----------------------------------------------------------------------------+
-| ``--accessibility <mode>``         | |release| Select accessibility mode ['auto" (when screen reader is running,|
-|                                    | default), "always", "disabled'].                                           |
+| ``--accessibility <mode>``         | |release| Select accessibility mode ["auto" (when screen reader is running,|
+|                                    | default), "always", "disabled"].                                           |
 +------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**

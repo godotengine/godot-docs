@@ -178,6 +178,21 @@ Method ``_commit`` adds new ``amend`` parameter                                 
 Behavior changes
 ----------------
 
+Animation
+~~~~~~~~~
+
+.. note::
+
+    AnimationNodeBlendSpace1D and AnimationNodeBlendSpace2D have a new SyncMode
+    enum that replaces the previous boolean ``sync`` property. If you are using
+    an AnimationTree and your animations aren't transitioning correctly after
+    upgrading, you may need to set that value in each of your blend spaces to
+    get the desired behavior back.
+
+    The new sync modes are documented in
+    :ref:`AnimationNodeBlendSpace1D.sync_mode <class_AnimationNodeBlendSpace1D_property_sync_mode>`
+    and :ref:`AnimationNodeBlendSpace2D.sync_mode <class_AnimationNodeBlendSpace2D_property_sync_mode>`.
+
 Rendering
 ~~~~~~~~~
 
@@ -256,6 +271,14 @@ GDScript
     Methods that inherit from a method with a typed return now inherit the return type as well,
     requiring an explicit return statement in the override (`GH-115763`_).
     Add ``return null`` to the end of the method to fix the error.
+
+Platforms
+~~~~~~~~~
+
+.. note::
+
+    The minimum macOS version required to run Godot was increased from macOS 10.13
+    (High Sierra) to macOS 11 (Big Sur).
 
 Changed defaults
 ----------------

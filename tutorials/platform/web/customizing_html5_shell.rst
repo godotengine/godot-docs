@@ -118,7 +118,7 @@ optionally overriding any :js:attr:`EngineConfig` parameters.
 
     const engine = new Engine($GODOT_CONFIG);
     engine.startGame({
-        /* optional override configuration, eg. */
+        // Optional override configuration, for example:
         // unloadAfterInit: false,
         // canvasResizePolicy: 0,
         // ...

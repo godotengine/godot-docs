@@ -130,9 +130,9 @@ and SubViewports.
 .. note::
 
    This order doesn't apply to :ref:`Control._gui_input() <class_Control_private_method__gui_input>`, which uses
-   a different method based on event location or focused Control. GUI **mouse** events also travel 
+   a different method based on event location or focused Control. GUI **mouse** events also travel
    up the scene tree, subject to the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
-   restrictions described above. However, since these events target specific Controls, only direct ancestors of 
+   restrictions described above. However, since these events target specific Controls, only direct ancestors of
    the targeted Control node receive the event. GUI **keyboard and joypad** events *do not* travel
    up the scene tree, and can only be handled by the Control that received them. Otherwise, they will be
    propagated as non-GUI events through :ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>`.

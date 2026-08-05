@@ -86,7 +86,11 @@ def is_dry_run(args):
     return args.dry_run or args.validate
 
 def validate(destination):
-    p = BUILD_PATH + destination
+    if destination.startswith("https://"):
+        # Skip; external targets cannot be validated here.
+        return
+
+    p = BUILD_PATH + destination.split("#", 1)[0]
     if not os.path.exists(p):
         print("Invalid destination: " + destination + " (" + p + ")")
 
@@ -224,11 +228,21 @@ def has_suffix(s, suffixes):
     return False
 
 
-def is_valid_redirect_url(url):
-    if len(url) < len("/a"):
+def is_valid_source_url(url):
+    if len(url) < len("/a") or not url.startswith("/"):
         return False
 
     if not has_suffix(url.lower(), REDIRECT_SUFFIXES):
+        return False
+
+    return True
+
+
+def is_valid_destination_url(url):
+    if not (url.startswith("/") or url.startswith("https://")):
+        return False
+
+    if not has_suffix(url.lower().split("#", 1)[0], REDIRECT_SUFFIXES):
         return False
 
     return True
@@ -291,12 +305,12 @@ def main():
             print("Invalid redirect:", redirect, "- redirects to itself!")
             continue
 
-        if not is_valid_redirect_url(redirect[0]) or not is_valid_redirect_url(redirect[1]):
-            print("Invalid redirect:", redirect, "- invalid URL!")
+        if not is_valid_source_url(redirect[0]):
+            print("Invalid redirect:", redirect, "- invalid source URL!")
             continue
 
-        if not redirect[0].startswith("/") or not redirect[1].startswith("/"):
-            print("Invalid redirect:", redirect, "- invalid URL: should start with slash!")
+        if not is_valid_destination_url(redirect[1]):
+            print("Invalid redirect:", redirect, "- invalid destination URL!")
             continue
 
         if redirect[0] in sources:

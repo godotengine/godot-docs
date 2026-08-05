@@ -253,15 +253,42 @@ If your monitor supports it, consider enabling variable refresh rate
 (G-Sync/FreeSync) while leaving V-Sync enabled, then cap the framerate in the
 project settings to a slightly lower value than your monitor's maximum refresh
 rate as per `this page <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
-For example, on a 144 Hz monitor, you can set the project's framerate cap to
-``141``. This may be counterintuitive at first, but capping the FPS below the
+
+This may be counterintuitive at first, but capping the FPS below the
 maximum refresh rate range ensures that the OS never has to wait for vertical
 blanking to finish. This leads to *similar* input lag as V-Sync disabled with
 the same framerate cap (usually less than 1 ms greater), but without any
 tearing.
 
-This can be done by changing the **Application > Run > Max FPS** project
-setting or assigning ``Engine.max_fps`` at runtime in a script.
+The formula used to determine the framerate cap is ``refresh - (refresh * refresh / 3600.0)``
+where ``refresh`` is the monitor's refresh rate in Hz.
+This table shows the framerate cap to use for common refresh rates
+(the cap is rounded down to the nearest integer):
+
++--------------+---------------+
+| Refresh rate | Framerate cap |
++==============+===============+
+| 60 Hz        | 58 FPS        |
++--------------+---------------+
+| 75 Hz        | 73 FPS        |
++--------------+---------------+
+| 120 Hz       | 115 FPS       |
++--------------+---------------+
+| 144 Hz       | 138 FPS       |
++--------------+---------------+
+| 165 Hz       | 157 FPS       |
++--------------+---------------+
+| 240 Hz       | 224 FPS       |
++--------------+---------------+
+| 360 Hz       | 324 FPS       |
++--------------+---------------+
+| 480 Hz       | 416 FPS       |
++--------------+---------------+
+
+This framerate cap can be set by changing the **Application > Run > Max FPS**
+project setting or assigning ``Engine.max_fps`` at runtime in a script. At
+higher refresh rates, a lower cap is needed to ensure timing inaccuracies don't
+cause the display to engage V-Sync (which would increase input lag).
 
 On some platforms, you can also opt into a low-latency mode in the graphics
 driver options (such as the NVIDIA Control Panel on Windows). The **Ultra**

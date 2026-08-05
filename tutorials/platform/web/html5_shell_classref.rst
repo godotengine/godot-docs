@@ -271,7 +271,7 @@ Properties
       The canvas resize policy determines how the canvas should be resized by Godot.
 
       ``0`` means Godot won't do any resizing. This is useful if you want to control the canvas size from
-      javascript code in your template.
+      JavaScript code in your template.
 
       ``1`` means Godot will resize the canvas on start, and when changing window size via engine functions.
 

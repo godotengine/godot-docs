@@ -116,7 +116,7 @@ The options are as follows:
 
 - **Save to File:** Saves the :ref:`class_Mesh` *resource* to an external file
   (this isn't a scene file). You generally don't need to use this for placing
-  the mesh in a 3D scene – instead, you should instance the 3D scene directly.
+  the mesh in a 3D scene – instead, you should instance the 3D scene directly.
   However, having direct access to the Mesh resource is useful for specific
   nodes, such as :ref:`class_MeshInstance3D`, :ref:`class_MultiMeshInstance3D`,
   :ref:`class_GPUParticles3D` or :ref:`class_CPUParticles3D`.

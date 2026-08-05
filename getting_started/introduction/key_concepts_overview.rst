@@ -21,7 +21,7 @@ series, you will get to use them in practice.
 Scenes
 ------
 
-In Godot, you break down your game in reusable scenes. A scene can be a character,
+In Godot, you break down your game into reusable scenes. A scene can be a character,
 a weapon, a menu in the user interface, a single house, an entire level, or
 anything you can think of. Godot's scenes are flexible; they fill the role of
 both prefabs and scenes in some other game engines.
@@ -103,4 +103,4 @@ that you then combine and nest into the scene tree. You can then use signals to
 make nodes react to events in other nodes or different scene tree branches.
 
 After this short breakdown, you probably have many questions. Bear with us as
-you will get many answers throughout the getting started series.
+you will get many answers throughout the Getting Started series.

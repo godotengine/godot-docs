@@ -117,9 +117,9 @@ Here's an image of the axes mapping for more clarity:
 
 The controller's gyroscope values show rotation around their respective axes:
 
-- the X value of the gyroscope data shows the rotation around the X axis (roll).
+- the X value of the gyroscope data shows the rotation around the X axis (pitch).
 - the Y value of the gyroscope data shows the rotation around the Y axis (yaw).
-- the Z value of the gyroscope data shows the rotation around the Z axis (pitch).
+- the Z value of the gyroscope data shows the rotation around the Z axis (roll).
 
 The controller's accelerometer will provide values in the following ways, respectively:
 

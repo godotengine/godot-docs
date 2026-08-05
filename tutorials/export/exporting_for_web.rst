@@ -66,7 +66,7 @@ parent directory, usually hiding the name of that file.
 
 .. attention::
 
-    The Godot 4 Web export expects some files to be named the same name as the one set in the
+    The Godot 4 Web export expects some files to be named the same name as the one set in the
     initial export. Some issues could occur if some exported files are renamed, including the
     main HTML file.
 
@@ -288,7 +288,7 @@ player to click, tap or press a key/button to enable audio, for instance when di
 
 .. warning::
 
-        Since Godot 4.3, by default Web exports will use samples instead of streams
+        Since Godot 4.3, by default Web exports will use samples instead of streams
         to play audio.
 
         This is due to the way browsers prefer to play audio and the lack of processing power
@@ -352,7 +352,7 @@ used, see :ref:`doc_customizing_html5_shell`.
 .. warning::
 
     Only when exporting with **Use Threads**, to ensure low audio latency and the
-    ability to use :ref:`class_Thread` in web exports, Godot 4 web exports use
+    ability to use :ref:`class_Thread` in web exports, Godot 4 web exports use
     `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
     This requires a :ref:`secure context <doc_javascript_secure_contexts>`,
     while also requiring the following CORS headers to be set when serving the files:

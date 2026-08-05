@@ -496,7 +496,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **CLEARCOAT**                | Small specular blob added on top of the existing one. If used, Godot calculates clearcoat.       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **CLEARCOAT_GLOSS**          | Gloss of clearcoat. If used, Godot calculates clearcoat.                                         |
+| out float **CLEARCOAT_ROUGHNESS**      | The roughness of the clearcoat. If used, Godot calculates clearcoat.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ANISOTROPY**               | For distorting the specular blob according to tangent space.                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+

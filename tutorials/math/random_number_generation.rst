@@ -41,11 +41,12 @@ the RandomNumberGenerator class.
 Random seed and internal state
 ------------------------------
 
-By default, Godot uses a randomly generated random seed. This means that results
-will be different on every run. To get deterministic results, you can set a
-fixed seed using the :ref:`seed() <class_@GlobalScope_method_seed>` method. The
-*seed* is an integer that initializes the random number generator's state. If
-you use the same seed, you'll get the same sequence of random numbers every run.
+By default, Godot uses a random seed set according to the device's local time.
+This means that results will be different on every run. To get deterministic
+results, you can set a fixed seed using the
+:ref:`seed() <class_@GlobalScope_method_seed>` method. The *seed* is an integer
+that initializes the random number generator's state. If you use the same seed,
+you'll get the same sequence of random numbers every run.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

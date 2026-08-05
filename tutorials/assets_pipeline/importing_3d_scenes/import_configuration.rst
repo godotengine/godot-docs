@@ -41,7 +41,7 @@ This import process is customizable using 3 separate interfaces, depending on yo
 - The **Advanced Import Settings** dialog, which can be accessed by double-clicking
   the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
   the Import dock. This allows you to customize per-object options in Godot, and
-  preview models and animations. please see the :ref:`doc_advanced_import_settings`
+  preview models and animations. Please see the :ref:`doc_advanced_import_settings`
   page for more information.
 - :ref:`Import hints <doc_importing_3d_scenes_node_type_customization>`, which are special
   suffixes added to object names in the 3D modeling software. This allows you to
