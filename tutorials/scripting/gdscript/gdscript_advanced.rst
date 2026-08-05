@@ -358,7 +358,7 @@ Iterating with indices is also possible:
     for i in range(strings.size()):
         print(strings[i])
 
-The range() function can take 3 arguments:
+The ``range()`` function can take 3 arguments:
 
 ::
 
@@ -458,9 +458,9 @@ And it can be used like any other iterator:
     for i in itr:
         print(i) # Will print 0, 2, and 4.
 
-It is possible but discouraged to store the state in a member variable. 
+It is possible but discouraged to store the state in a member variable.
 Multiple states are necessary in cases such as nested loops where the same
-iterator instance is used simultaneously. The ``iter`` parameter in 
+iterator instance is used simultaneously. The ``iter`` parameter in
 ``_iter_init()`` and ``_iter_next()`` is a single-element array so that updates
 can persist. Whereas in ``_iter_get()``, the state is is not wrapped because it
 is supposed to be read-only.

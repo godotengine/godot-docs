@@ -8,7 +8,7 @@ community. For resources, remember that there is the official
 `Godot Asset Store <https://store.godotengine.org/>`_ full of
 official and community resources too!
 
-Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
+Think there is something missing here? Feel free to submit a `pull request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
 
 Where to start
 --------------

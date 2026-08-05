@@ -266,10 +266,10 @@ Here's the list of available tags:
 | | ``[method Class.name]``      | ``Call [method Node3D.hide].``               | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
 | | Link to method               |                                              |                                                              |
 +--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``           | Use  :ref:`Color.Color <class_Color_constructor_Color>`.     |
+| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``           | Use :ref:`Color.Color <class_Color_constructor_Color>`.      |
 | | Link to built-in constructor |                                              |                                                              |
 +--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``         | Use  :ref:`Color.operator * <class_Color_operator_mul_int>`. |
+| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``         | Use :ref:`Color.operator * <class_Color_operator_mul_int>`.  |
 | | Link to built-in operator    |                                              |                                                              |
 +--------------------------------+----------------------------------------------+--------------------------------------------------------------+
 | | ``[signal Class.name]``      | ``Emit [signal Node.renamed].``              | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.        |

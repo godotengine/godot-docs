@@ -4,5 +4,13 @@ line-length = 120
 [tool.codespell]
 dictionary = ["_tools/codespell-dict.txt", "-"]
 ignore-words = "_tools/codespell-ignore.txt"
-exclude-file = "_tools/codespell-ignore-lines.txt"
-skip = "tutorials/i18n/locales.rst"
+skip = [
+    "_build/*",
+    "_static/*",
+    "_styleguides/*",
+    "classes/*",
+    ".github/*",
+    "tutorials/i18n/locales.rst",
+    "AUTHORS.md",
+    "LICENSE.txt",
+]

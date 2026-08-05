@@ -106,7 +106,7 @@ Method ``get_root_motion_rotation_accumulator`` moved to base class ``AnimationM
 Method ``get_root_motion_scale`` moved to base class ``AnimationMixer``                                                   |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Method ``get_root_motion_scale_accumulator`` moved to base class ``AnimationMixer``                                       |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Property ``process_callback`` renamed to ``callback_mode_process`` and moved to base class ``AnimationMixer``             |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-80813`_
-Property ``root_motion_track``  moved to base class ``AnimationMixer``                                                    |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
+Property ``root_motion_track`` moved to base class ``AnimationMixer``                                                     |✔️|                 |✔️|                  |✔️|                  `GH-80813`_
 Property ``tree_root`` changes type from ``AnimationNode`` to ``AnimationRootNode``                                       |✔️|                 |❌|                  |❌|                  `GH-80813`_
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
@@ -223,7 +223,7 @@ Property ``environment_blend_mode`` added                                       
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 .. note::
-    
+
     This change breaks compatibility in C# because the new property conflicts with the name of an existing enum
     and the C# bindings generator gives priority to properties, so the enum type was renamed from
     ``EnvironmentBlendMode`` to ``EnvironmentBlendModeEnum``.

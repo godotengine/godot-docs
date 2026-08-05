@@ -338,7 +338,7 @@ return the array's size.
 Global arrays
 ~~~~~~~~~~~~~
 
-You can declare arrays in global space as either ``const`` or ``uniform``:
+You can declare arrays in global scope as either ``const`` or ``uniform``:
 
 .. code-block:: glsl
 

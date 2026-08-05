@@ -99,8 +99,7 @@ updates the XML automatically.
           files in the ``modules/<module_name>/doc_classes/`` directory instead.
 
 Edit it using your favorite text editor. If you use a code editor, make sure
-that it doesn't change the indent style: you should use tabs for the XML and
-four spaces inside BBCode-style blocks. More on that below.
+that tabs are used for the indentation.
 
 To check that the modifications you've made are correct in the generated
 documentation, navigate to the ``doc/`` folder and run the command ``make rst``.
@@ -156,10 +155,10 @@ For links to the same class, the class name is optional and can be omitted.
 | | ``[method Class.name]``      | ``Call [method Node3D.hide].``          | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
 | | Link to method               |                                         |                                                              |
 +--------------------------------+-----------------------------------------+--------------------------------------------------------------+
-| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``      | Use  :ref:`Color.Color <class_Color_constructor_Color>`.     |
+| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``      | Use :ref:`Color.Color <class_Color_constructor_Color>`.      |
 | | Link to built-in constructor |                                         |                                                              |
 +--------------------------------+-----------------------------------------+--------------------------------------------------------------+
-| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``    | Use  :ref:`Color.operator * <class_Color_operator_mul_int>`. |
+| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``    | Use :ref:`Color.operator * <class_Color_operator_mul_int>`.  |
 | | Link to built-in operator    |                                         |                                                              |
 +--------------------------------+-----------------------------------------+--------------------------------------------------------------+
 | | ``[signal Class.name]``      | ``Emit [signal Node.renamed].``         | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.        |
@@ -240,11 +239,6 @@ the ``lang`` attribute. Currently supported options are:
 .. note::
 
     ``[codeblock]`` disables BBCode until the parser encounters ``[/codeblock]``.
-
-.. warning::
-
-    Use ``[codeblock]`` for pre-formatted code blocks. Since Godot 4.5,
-    **tabs** should be used for indentation.
 
 For example:
 

@@ -462,7 +462,7 @@ Additionally, you can adjust the quality of SSAO in the project settings'
 **Rendering > Environment > SSAO** section:
 
 - **Quality:** Sets the quality of the screen-space ambient occlusion effect.
-  Higher values take more samples and so will result in better quality at the
+  Higher values take more samples and so will result in better quality, at the
   cost of performance. Setting this to Ultra will use the **Adaptive Target** setting
   (see below).
 - **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
@@ -539,14 +539,14 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
 Additionally, you can adjust the quality of SSIL in the project settings'
 **Rendering > Environment > SSIL** section:
 
-- **Quality:** Sets the quality of the screen-space ambient occlusion effect.
+- **Quality:** Sets the quality of the screen-space indirect lighting effect.
   Higher values take more samples and so will result in better quality, at the
-  cost of performance. Setting to Ultra will use the **Adaptive Target** setting
+  cost of performance. Setting this to Ultra will use the **Adaptive Target** setting
   (see below).
-- **Half Size:** If ``true``, screen-space ambient occlusion will be rendered at
+- **Half Size:** If ``true``, screen-space indirect lighting will be rendered at
   half size and then upscaled before being added to the scene. This is
   significantly faster but may miss small details. If ``false``, screen-space
-  ambient occlusion will be rendered at full size.
+  indirect lighting will be rendered at full size.
 - **Adaptive Target:** Quality target to use when **Quality** is set to
   **Ultra**. A value of ``0.0`` provides a quality and speed similar to Medium
   while a value of ``1.0`` provides much higher quality than any of the other

@@ -133,7 +133,7 @@ viewport tells you how much you're translating the node.
     Ensure you move the *Ground* node, **not** the *MeshInstance3D* or the
     *CollisionShape3D*.
 
-Ultimately, ``Ground``'s transform.position.y should be -1
+Ultimately, ``Ground``'s Y position should be ``-1``.
 
 .. image:: img/01.game_setup/ground_down1meter.webp
 

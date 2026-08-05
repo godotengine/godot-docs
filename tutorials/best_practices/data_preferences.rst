@@ -361,5 +361,5 @@ animation sequences for a game, it can also be useful to combine animations
 for blending, i.e. enabling smooth transitions between these animations. There
 may also be a hierarchical structure between animations that one plans out for
 their object. These are the cases where the :ref:`AnimationTree <class_AnimationTree>`
-shines. One can find an in-depth guide on using the AnimationTree
-:ref:`here <doc_animation_tree>`.
+shines. See the :ref:`in-depth guide on using the AnimationTree <doc_animation_tree>`
+for more details.

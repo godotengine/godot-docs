@@ -143,7 +143,7 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
    The advanced view lets you connect to any node and any built-in
    function, add arguments to the callback, and set options. You can
-   toggle the mode in the window's bottom-right by clicking the :button:`Advanced`
+   toggle the mode in the window's bottom-left by clicking the :button:`Advanced`
    button.
 
 .. note::

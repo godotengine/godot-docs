@@ -106,8 +106,8 @@ This is especially important if you wish to bind the same input on a controller
 to a different action.
 For instance:
 
-  * in your ``Character control`` set you may have an action ``Jump``, 
-  * in your ``Vehicle control`` set you may have an action ``Accelerate``, 
+  * in your ``Character control`` set you may have an action ``Jump``,
+  * in your ``Vehicle control`` set you may have an action ``Accelerate``,
   * in your ``Menu`` set you may have an action ``Select``.
 
 All are bound to the trigger on your controller.
@@ -245,11 +245,11 @@ for controllers.
 There are no rules for which poses are supported for different controllers.
 The poses OpenXR currently defines are:
 
-  * The aim pose on most controllers is positioned slightly in front of the controller 
+  * The aim pose on most controllers is positioned slightly in front of the controller
     and aims forward.
     This is a great pose to use for laser pointers or to align the muzzle of a weapon
     with.
-  * The grip pose on most controllers is positioned where the grip button is placed on 
+  * The grip pose on most controllers is positioned where the grip button is placed on
     the controller.
     The orientation of this pose differs between controllers and can differ for the same
     controller on different XR runtimes.
@@ -295,7 +295,7 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
   You can bind the same action to multiple inputs for the same controller on the same
   profile.
   In this case the XR runtime will attempt to combine the inputs.
-  
+
   * For ``Bool`` inputs, this will perform an ``OR`` operation between the buttons.
   * For ``Float`` inputs, this will take the highest value of the bound inputs.
   * The behavior for ``Pose`` inputs is undefined, but the first bound input is likely to
@@ -309,7 +309,7 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
 
   We are still investigating the restrictions around binding multiple actions to the same
   output as this scenario makes sense.
-  The OpenXR specification seems to not allow this.  
+  The OpenXR specification seems to not allow this.
 
 Now that we have our basic actions defined, it's time to hook them up.
 
@@ -424,23 +424,23 @@ given on that subject earlier in this document.
 
 .. note::
   Some of the inputs seem to appear in our list multiple times.
-  
+
   For instance we can find the ``X`` button twice, once as ``X click`` and then
   as ``X touch``.
   This is due to the Touch controller having a capacitive sensor.
-  
+
   * ``X touch`` will be true if the user is merely touching the X button.
   * ``X click`` will be true when the user is actually pressing down on the button.
 
   Similarly for the thumbstick we have:
-  
+
   * ``Thumbstick touch`` which will be true if the user is touching the thumbstick.
   * ``Thumbstick`` which gives a value for the direction the thumbstick is pushed to.
   * ``Thumbstick click`` which is true when the user is pressing down on the thumbstick.
 
   It is important to note that only a select number of XR controllers support
   touch sensors or have click features on thumbsticks.
-  Keep that in mind when designing your game/application. 
+  Keep that in mind when designing your game/application.
   Make sure these are used for optional features of your game/application.
 
 .. _doc_xr_action_map_simple:

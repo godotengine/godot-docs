@@ -592,6 +592,8 @@ of a file. Dedicated formatting options are also available. See
     ## This comment will appear in the inspector tooltip, and in the documentation.
     @export var exported_value
 
+.. _doc_gdscript_code_regions:
+
 Code regions
 ------------
 
@@ -1491,7 +1493,7 @@ callable. This can be used to pass functions as arguments.
         return result
 
     func add1(value: int) -> int:
-        return value + 1;
+        return value + 1
 
     func _ready() -> void:
         var my_array = [1, 2, 3]
@@ -1646,7 +1648,7 @@ as a static type of the rest parameter:
 .. note::
 
     Although you can declare functions as variadic using the rest parameter, unpacking parameters
-    when calling a function using *spread syntax* that exists in some languages ​​(JavaScript, PHP)
+    when calling a function using *spread syntax* that exists in some languages (JavaScript, PHP)
     is currently not supported in GDScript. However, you can use ``callv()`` to call a function
     with an array of arguments:
 
@@ -1675,7 +1677,7 @@ Statements and control flow
 ---------------------------
 
 Statements are standard and can be assignments, function calls, control
-flow structures, etc (see below). ``;`` as a statement separator is
+flow structures, etc. (see below). ``;`` as a statement separator is
 entirely optional.
 
 Expressions
@@ -2542,10 +2544,10 @@ When setter/getter is not called
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a variable is initialized, the value of the initializer will be written directly to the variable.
-Including if the ``@onready`` annotation is applied to the variable.
+This occurs even if the ``@onready`` or ``@export`` annotation is applied to the variable.
 
-Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
-so it won't generate infinite recursion and saves you from explicitly declaring another variable:
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member.
+This prevents infinite recursion and saves you from explicitly declaring another variable:
 
 ::
 
@@ -2626,10 +2628,10 @@ for Nodes).
     If a :ref:`class_Node` is deleted via ``free()`` or ``queue_free()``,
     all of its children will also recursively be deleted.
 
-To avoid reference cycles that can't be freed, a :ref:`class_WeakRef`
-function is provided for creating weak references, which allow access
-to the object without preventing a :ref:`class_RefCounted` from freeing.
-Here is an example:
+To avoid reference cycles that can't be freed, a
+:ref:`weakref() <class_@GlobalScope_method_weakref>` function is provided for
+creating weak references, which allow access to the object without preventing a
+:ref:`class_RefCounted` from freeing. Here is an example:
 
 
 ::
@@ -2860,7 +2862,7 @@ make the current function a coroutine:
         wait_confirmation()
         print("This will be printed immediately, before the user press the button.")
 
-If you use await with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
+If you use ``await`` with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
 function won't give the control back to the caller:
 
 ::

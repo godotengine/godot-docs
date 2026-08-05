@@ -20,7 +20,7 @@ which provides an interface to access and use Android APIs or third-party librar
     }
 
 
-Writing an Android plugin however requires knowledge of Java or Kotlin code, which most Godot developers do not have. 
+Writing an Android plugin however requires knowledge of Java or Kotlin code, which most Godot developers do not have.
 As such there are many Android APIs and third-party libraries that don't have a Godot plugin that developers can interface with.
 In fact, this is one of the main reasons that developers cite for not being able to switch to Godot from other game engines.
 
@@ -78,7 +78,7 @@ This is **huge** for the adoption of Godot for Android development:
     For exports using ``gradle``, Godot will automatically include ``.jar`` or ``.aar`` files it find in the project ``addons`` directory.
     So to use a third-party library, you can just drop its ``.jar`` or ``.aar`` file in the ``addons`` directory, and call its method directly from GDScript using ``JavaClassWrapper``.
 
-Example: Show an Android toast 
+Example: Show an Android toast
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: gdscript
@@ -109,7 +109,7 @@ Example: Vibrate the device
         # Retrieve the Android Vibrator system service and check if the device supports it.
         var vibrator_service = android_runtime.getApplicationContext().getSystemService("vibrator")
         if vibrator_service and vibrator_service.hasVibrator():
-            # Configure and run a VibrationEffect. 
+            # Configure and run a VibrationEffect.
             var VibrationEffect = JavaClassWrapper.wrap("android.os.VibrationEffect")
             var effect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE)
             vibrator_service.vibrate(effect)
@@ -155,7 +155,7 @@ Example: Saving an image to the Android gallery
 .. code-block:: gdscript
 
     # Retrieve the AndroidRuntime singleton.
-    var android_runtime = Engine.get_singleton("AndroidRuntime")	
+    var android_runtime = Engine.get_singleton("AndroidRuntime")
     if android_runtime:
         var Intent = JavaClassWrapper.wrap("android.content.Intent")
         var activity = android_runtime.getActivity()

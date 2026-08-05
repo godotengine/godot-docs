@@ -114,7 +114,7 @@ SDFGI appearance and quality:
 SDFGI interaction with lights and objects
 -----------------------------------------
 
-The amount of indirect energy emitted by a light is governed by its color,
+The amount of indirect energy emitted by a light is defined by its color,
 energy *and* indirect energy properties. To make a specific light emit more
 or less indirect energy without affecting the amount of direct light emitted
 by the light, adjust the **Indirect Energy** property in the Light3D inspector.
@@ -137,18 +137,18 @@ There are 3 global illumination modes available for meshes:
 - **Dynamic (not supported with SDFGI):** The mesh won't be taken into account in SDFGI generation.
   The mesh will receive indirect lighting from the scene, but it will not
   contribute indirect lighting to the scene.
-  *This acts identical to the **Disabled** bake mode when using SDFGI.*
+  This acts identical to the **Disabled** bake mode when using SDFGI.
 
 Additionally, there are 3 bake modes available for lights
-(DirectionalLight3D, OmniLight3D and SpotLight3D):
+(DirectionalLight3D, OmniLight3D, SpotLight3D, and AreaLight3D):
 
 - **Disabled:** The light won't be taken into account for SDFGI baking.
   The light won't contribute indirect lighting to the scene.
 - **Static:** The light will be taken into account for SDFGI baking. The light
   will contribute indirect lighting to the scene. If the light is changed in any
   way after baking, indirect lighting will look incorrect until the camera moves
-  away from the light and back (which causes SDFGI to be baked again). will look
-  incorrect. If in doubt, use this mode for level lighting.
+  away from the light and back (which causes SDFGI to be baked again).
+  If in doubt, use this mode for level lighting.
 - **Dynamic (default):** The light won't be taken into account for SDFGI baking,
   but it will still contribute indirect lighting to the scene in real-time.
   This option is slower compared to **Static**. Only use the **Dynamic** global
@@ -216,7 +216,7 @@ This can be fixed in two ways:
   to be moved at a high speed, then enabling SDFGI once the camera speed slows down.
 
 When SDFGI is enabled, it will also take some time for global illumination
-to be fully converged (25 frames by default). This can create a noticeable transition
+to be fully converged (30 frames by default). This can create a noticeable transition
 effect while GI is still converging. To hide this, you can use a ColorRect node
 that spans the whole viewport and fade it out when switching scenes using an
 AnimationPlayer node.

@@ -16,7 +16,7 @@ The vendor plugin isn't just for :ref:`deploying to Android <doc_deploying_to_an
 In the vendor plugin, we implement many OpenXR vendor extensions that unlock unique features on certain devices,
 or features that are new enough that a standardized implementation is not available yet.
 
-Together with the OpenXR working group we maintain a 
+Together with the OpenXR working group we maintain a
 `client support matrix <https://github.khronos.org/OpenXR-Inventory/extension_support.html#client_matrix>`_ that lists
 all the OpenXR extensions Godot supports and whether they require the vendor plugin.
 

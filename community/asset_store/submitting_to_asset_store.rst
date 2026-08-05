@@ -60,8 +60,8 @@ if you follow these recommendations, you can help make the asset
 store a better place for all users.
 
 * When creating non-project assets, it is common practice to place your files
-  inside of an **addons/asset_name/** folder. Do this to avoid having your files 
-  clash with other assets, or with the files of users installing your asset. 
+  inside of an **addons/asset_name/** folder. Do this to avoid having your files
+  clash with other assets, or with the files of users installing your asset.
   This folder will **not** be automatically generated when a user installs your asset.
 
 * Fix or suppress all script **warnings**. The warning system is there to
@@ -201,7 +201,7 @@ Pricing
 While paid assets can't be uploaded yet, there are some settings relevant to free
 assets. You can link to another website where you accept donations, such as Patreon
 or Ko-Fi. You can also disable reviews if you want (in the future paid assets will
-**not** have this option). 
+**not** have this option).
 
 Submitting for review
 ---------------------

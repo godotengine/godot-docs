@@ -101,16 +101,16 @@ or set in code.
 
 - ``floor_stop_on_slope`` - *default value:* ``true``
 
-    This parameter prevents a body from sliding down slopes when standing still.
+    This property prevents a body from sliding down slopes when standing still.
 
 - ``wall_min_slide_angle`` - *default value:* ``0.261799`` (in radians, equivalent to ``15`` degrees)
 
-    This is the minimum angle where the body is allowed to slide when it hits a
+    This property is the minimum angle where the body is allowed to slide when it hits a
     slope.
 
 - ``floor_max_angle`` - *default value:* ``0.785398`` (in radians, equivalent to ``45`` degrees)
 
-    This parameter is the maximum angle before a surface is no longer considered a "floor."
+    This property is the maximum angle before a surface is no longer considered a "floor."
 
 There are many other properties that can be used to modify the body's behavior under
 specific circumstances. See the :ref:`CharacterBody2D <class_CharacterBody2D>` docs
