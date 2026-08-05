@@ -466,10 +466,10 @@ bitmap images (including SVGs which are rasterized on import by Godot),
 true vector data can be resized to any size without losing quality.
 
 After downloading the generated font file, load it in your Godot project then
-specify it as a custom font for a Label, RichTextLabel or Label3D node. Switch
-over to the Fontello web interface, then copy the character by selecting it then
-pressing :kbd:`Ctrl + C` (:kbd:`Cmd + C` on macOS). Paste the character in the
-**Text** property of your Label node. The character will appear as a placeholder
+specify it as a custom font for a Label, RichTextLabel or Label3D node. Extract the
+contents of the zip created by fontello, open the demo.html and select the icon you
+want to use and hit :kbd:`Ctrl + C` (:kbd:`Cmd + C` on macOS). Paste the character in 
+the **Text** property of your Label node. The character will appear as a placeholder
 glyph in the inspector, but it should appear correctly in the 2D/3D viewport.
 
 To use an icon font alongside a traditional font in the same Control, you can
