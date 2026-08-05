@@ -20,6 +20,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinxcontrib.video",
     "gdscript",
+    "classref_admonitions",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
