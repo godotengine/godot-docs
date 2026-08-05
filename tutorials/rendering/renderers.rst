@@ -53,8 +53,8 @@ these renderers are sometimes called "RenderingDevice-based renderers".
 Choosing a renderer
 -------------------
 
-Choosing a renderer is a complex question, and depends on your hardware and the
-which platforms you are developing for. As a starting point:
+Choosing a renderer is a complex question, and depends on your hardware and which
+platforms you are developing for. As a starting point:
 
 Choose **Forward+** if:
 
