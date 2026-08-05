@@ -83,7 +83,7 @@ object is instantiated and registered with the :ref:`XRServer<class_XRServer>`.
 Each type of spatial entity will implement its own subclass and we can thus react differently to
 each type of entity.
 
-Generally speaking we will instance different subscenes for each type of entity.
+Generally speaking we will instantiate different subscenes for each type of entity.
 As the tracker objects can be used with :ref:`XRAnchor3D<class_XRAnchor3D>` nodes, these subscenes
 should have such a node as their root node.
 
@@ -212,7 +212,7 @@ Below is the basis of the script that implements our manager logic:
     # A tracked managed by XRServer was changed.
     func _on_tracker_updated(_tracker_name: StringName, _type: int):
         # For now we ignore this, there aren't any changes here we need to react
-        # to and the instanced scene can react to this itself if needed.
+        # to and the instantiated scene can react to this itself if needed.
         pass
 
 

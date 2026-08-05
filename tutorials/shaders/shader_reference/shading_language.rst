@@ -455,7 +455,7 @@ Or use struct constructor for same purpose:
 
     PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
 
-Structs may contain other struct or array, you can also instance them as global
+Structs may contain other struct or array, you can also instantiate them as global
 constant:
 
 .. code-block:: glsl

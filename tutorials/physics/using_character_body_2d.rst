@@ -301,7 +301,7 @@ in the sample project), we have a character shooting bullets and we want the bul
 bounce off the walls.
 
 This example uses three scenes. The main scene contains the Player and Walls.
-The Bullet and Wall are separate scenes so that they can be instanced.
+The Bullet and Wall are separate scenes so that they can be instantiated.
 
 The Player is controlled by the ``w`` and ``s`` keys for forward and back. Aiming
 uses the mouse pointer. Here is the code for the Player, using ``move_and_slide()``:

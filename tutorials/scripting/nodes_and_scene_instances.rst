@@ -8,7 +8,7 @@ instantiate scenes from code.
 
 .. seealso::
 
-    Check the :ref:`doc_instancing` tutorial to learn about Godot's approach to scene instancing.
+    Check the :ref:`doc_instancing` tutorial to learn about Godot's approach to scene instantiation.
 
 Getting nodes
 -------------
@@ -178,11 +178,11 @@ When you free a node, it also frees all its children. Thanks to this, to delete
 an entire branch of the scene tree, you only have to free the topmost parent
 node.
 
-Instancing scenes
------------------
+Instantiating scenes
+--------------------
 
 Scenes are templates from which you can create as many reproductions as you'd
-like. This operation is called instancing, and doing it from code happens in two
+like. This operation is called instantiation, and doing it from code happens in two
 steps:
 
 1. Loading the scene from the local drive.
@@ -224,5 +224,5 @@ as a child of your current node.
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and
-create new instances on the fly. For example, to quickly instance several
+create new instances on the fly. For example, to quickly instantiate several
 enemies or bullets.

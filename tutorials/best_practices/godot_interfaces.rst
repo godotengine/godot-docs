@@ -76,7 +76,7 @@ access.
     [Tool]
     public MyType
     {
-        // Property initializations load during Script instancing, i.e. .new().
+        // Property initializations load during Script instantiation, i.e. .new().
         // No "preload" loads during scene load exists in C#.
 
         // Initialize with a value. Editable at runtime.

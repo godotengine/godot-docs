@@ -148,7 +148,7 @@ Update the plugin script
 ------------------------
 
 We need to update the ``main_screen_plugin.gd`` script so the plugin
-instances our main panel scene and places it where it needs to be.
+instantiates our main panel scene and places it where it needs to be.
 Here is the full plugin script:
 
 .. tabs::
@@ -248,10 +248,10 @@ Here is the full plugin script:
     #endif
 
 A couple of specific lines were added. ``MainPanel`` is a constant that holds
-a reference to the scene, and we instance it into `main_panel_instance`.
+a reference to the scene, and we instantiate it into `main_panel_instance`.
 
 The ``_enter_tree()`` function is called before ``_ready()``. This is where
-we instance the main panel scene, and add them as children of specific parts
+we instantiate the main panel scene, and add them as children of specific parts
 of the editor. We use ``EditorInterface.get_editor_main_screen()`` to
 obtain the main editor screen and add our main panel instance as a child to it.
 We call the ``_make_visible(false)`` function to hide the main panel so
