@@ -712,7 +712,7 @@ Use snake\_case to name functions and variables:
     var particle_effect
     func load_level():
 
-Prepend a single underscore (\_) to virtual methods functions the user must
+Prepend a single underscore (\_) to virtual methods/functions the user must
 override, private functions, and private variables:
 
 ::
