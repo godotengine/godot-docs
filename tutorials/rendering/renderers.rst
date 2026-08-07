@@ -29,7 +29,8 @@ Renderers, rendering drivers, and RenderingDevice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: img/renderers_rendering_layers.webp
-  :alt: Diagram of rendering layers. The Compatibility renderer runs on the OpenGL
+  :alt:
+    Diagram of rendering layers. The Compatibility renderer runs on the OpenGL
     driver. The Forward+ and Mobile renderers run on RenderingDevice, which can use
     Vulkan, Direct3D 12, or Metal as a rendering driver.
   :align: center

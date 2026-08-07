@@ -6,17 +6,17 @@ Godot interfaces
 Often one needs scripts that rely on other objects for features. There
 are 2 parts to this process:
 
-1. Acquiring a reference to the object that presumably has the features.
+1. Obtaining a reference to the object that presumably has the features.
 
 2. Accessing the data or logic from the object.
 
 The rest of this tutorial outlines the various ways of doing all this.
 
-Acquiring object references
+Obtaining object references
 ---------------------------
 
 For all :ref:`Object <class_Object>`\s, the most basic way of referencing them
-is to get a reference to an existing object from another acquired instance.
+is to get a reference to an existing object from another obtained instance.
 
 .. tabs::
   .. code-tab:: gdscript GDScript

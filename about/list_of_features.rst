@@ -706,11 +706,7 @@ Windowing and OS integration
 - Create transparent windows to use as overlays, with polygon-based
   mouse passthrough support.
 - Request attention (will cause the title bar to blink on most platforms).
-- Fullscreen mode.
-
-   - Uses borderless fullscreen by default on Windows for fast alt-tabbing,
-     but can optionally use exclusive fullscreen to reduce input lag.
-
+- Fullscreen mode (borderless and exclusive).
 - Borderless windows (fullscreen or non-fullscreen).
 - Keep a window always on top.
 - Make a window ignore focus (useful for overlays).

@@ -375,7 +375,7 @@ declaration.
     b = a; // valid
 
 Constants cannot be modified and additionally cannot have hints, but multiple of
-them (if they have the same type) can be declared in a single expression e.g
+them (if they have the same type) can be declared in a single expression.
 
 .. code-block:: glsl
 

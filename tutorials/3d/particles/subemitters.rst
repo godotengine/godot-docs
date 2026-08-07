@@ -32,8 +32,8 @@ parent and one will be set as the child. Find the ``Sub Emitter`` property on th
 and click the box next to it to assign the sub-emitter. You will see a list of available particle
 systems in the scene. Select one and click the confirmation button.
 
-Particle systems from instantiated scenes can be set as sub-emitters too, as long as the
-``Editable Children`` property is enabled on the instantiated scene. This also works the other
+Particle systems from instantiated scenes can be set as sub-emitters too, as long
+as ``Editable Children`` is enabled on the instantiated scene. This also works the other
 way around: You can assign a sub-emitter to a particle system in an instantiated scene,
 even one coming from a different instantiated scene.
 

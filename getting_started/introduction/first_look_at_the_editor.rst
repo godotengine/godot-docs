@@ -145,7 +145,7 @@ work, any changes made here are not saved when the game stops running.
 .. image:: img/editor_intro_workspace_game.webp
 
 The **Script screen** is a complete code editor with a debugger, rich
-auto-completion, and built-in code reference.
+auto-completion, and built-in class reference.
 
 .. image:: img/editor_intro_workspace_script.webp
 

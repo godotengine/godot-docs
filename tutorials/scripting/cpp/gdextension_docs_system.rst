@@ -87,4 +87,4 @@ you will need a bit of personal insight to make it work.
 3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``godot-docs`` subfolder, as well as strings to reflect it's your project rather than Godot you're building the docs for.
 4. Create an account on `readthedocs.org <http://readthedocs.org>`_. Import your project, and modify its base ``.readthedocs.yaml`` file path to ``/docs/.readthedocs.yaml``.
 
-Once you have completed all these steps, your documentation should be available at ``<repo-name>.readthedocs.io``.
+Once you have completed all these steps, your documentation should be available at ``<repository-name>.readthedocs.io``.

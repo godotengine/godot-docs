@@ -8,7 +8,7 @@ Learning new features
 =====================
 
 Godot is a feature-rich game engine. There is a lot to learn about it. This page
-explains how you can use the online manual, built-in code reference, and join
+explains how you can use the online manual, built-in class reference, and join
 online communities to learn new features and techniques.
 
 Making the most of this manual
