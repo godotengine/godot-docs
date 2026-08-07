@@ -155,7 +155,7 @@ Select one of the instantiated Ball nodes and, in the :ui:`Inspector`, set its
 
 .. image:: img/instancing_property_gravity_scale.webp
 
-A grey "revert" button appears next to the adjusted property.
+A gray "revert" button appears next to the adjusted property.
 
 .. image:: img/instancing_property_revert_icon.webp
 

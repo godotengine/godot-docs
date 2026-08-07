@@ -36,7 +36,7 @@ This specifies whether your game is designed for:
 - ``Head Mounted`` devices such as a Meta Quest, Valve Index, or Magic Leap,
 - ``Handheld`` devices such as phones.
 
-If the device on which you run your game does not match the selection here, OpenXR will fail to initialise.
+If the device on which you run your game does not match the selection here, OpenXR will fail to initialize.
 
 View Configuration
 ~~~~~~~~~~~~~~~~~~
@@ -46,7 +46,7 @@ This specifies the view configuration your game is designed for:
 - ``Mono``, your game provides a single image output. E.g. phone based AR;
 - ``Stereo``, your game provides stereo image output. E.g. head mounted devices.
 
-If the device on which you run your game does not match the selection here, OpenXR will fail to initialise.
+If the device on which you run your game does not match the selection here, OpenXR will fail to initialize.
 
 .. note::
   OpenXR has additional view configurations for very specific devices that Godot doesn't support yet.
@@ -252,7 +252,7 @@ Hand Tracking
 ~~~~~~~~~~~~~
 
 This enables the hand tracking extension when supported by the device used. This is on by default for legacy reasons.
-The hand tracking extension provides access to data that allows you to visualise the user's hands with correct finger positions.
+The hand tracking extension provides access to data that allows you to visualize the user's hands with correct finger positions.
 Depending on platform capabilities the hand tracking data can be inferred from controller inputs, come from data gloves,
 come from optical hand tracking sensors or any other applicable source.
 

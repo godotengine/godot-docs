@@ -147,9 +147,9 @@ Understanding caching is also crucial to CPU optimization. If you have an
 algorithm (routine) that loads small bits of data from randomly spread out areas
 of main memory, this can result in a lot of cache misses, a lot of the time, the
 CPU will be waiting around for data instead of doing any work. Instead, if you
-can make your data accesses localised, or even better, access memory in a linear
-fashion (like a continuous list), then the cache will work optimally and the CPU
-will be able to work as fast as possible.
+can make your data accesses localized, or even better, access memory in a linear
+fashion (like a continuous list), then the cache, and therefore the CPU,
+will be able to work as efficiently as possible.
 
 Godot usually takes care of such low-level details for you. For example, the
 Server APIs make sure data is optimized for caching already for things like

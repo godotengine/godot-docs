@@ -79,7 +79,7 @@ Pathfollowing common problems
 There are some common user problems and important caveats to consider when writing agent movement scripts.
 
 - The path is returned empty
-    If an agent queries a path before the navigation map synchronisation, e.g. in a ``_ready()`` function, the path might return empty. In this case the ``get_next_path_position()`` function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
+    If an agent queries a path before the navigation map synchronization, e.g. in a ``_ready()`` function, the path might return empty. In this case the ``get_next_path_position()`` function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
 
 - The agent is stuck dancing between two positions
     This is usually caused by very frequent path updates every single frame, either deliberate or by accident (e.g. max path distance set too short). The pathfinding needs to find the closest position that are valid on navigation mesh. If a new path is requested every single frame the first path positions might end up switching constantly in front and behind the agent's current position, causing it to dance between the two positions.

@@ -320,7 +320,7 @@ See :ref:`doc_standard_material_3d` for more information.
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Feature                 | Compatibility            | Mobile                   | Forward+                 |
 +=========================+==========================+==========================+==========================+
-| Sub-surface scattering  | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Subsurface scattering   | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 |                         |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 
