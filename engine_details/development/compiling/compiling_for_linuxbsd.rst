@@ -111,7 +111,8 @@ Distro-specific one-liners
               pkgconfig \
               gcc-c++ \
               libstdc++-static \
-              wayland-devel
+              wayland-devel \
+              libX11-devel 
 
     .. tab:: FreeBSD
 
