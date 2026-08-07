@@ -2069,3 +2069,24 @@ p + .classref-constant {
     border: 0px solid #7fbbe3;
     background: var(--role-button-background-color);
 }
+
+
+/* New stuff */
+.comparison-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* background-color: #00009c; */
+}
+.comparison-box > * {
+    flex: 1 1 16em;
+    min-width: 0;
+    /* overflow: auto; */
+    overflow-wrap: break-word;
+}
+.comparison-box p {
+    margin: 12px;
+}
+/* .comparison-box div.highlight {
+    overflow: auto;
+} */
