@@ -217,10 +217,10 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +---------------------------------------------+---------------------------------------------------------------+
 | Built-in                                    | Description                                                   |
 +=============================================+===============================================================+
-| in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
+| in vec4 **FRAGCOORD**                       | Coordinate of pixel center, in pixels. ``xy`` specifies       |
 |                                             | position in viewport. Upper-left of the viewport is the       |
-|                                             | origin, ``(0.0, 0.0)``. Bottom-right of the viewport is       |
-|                                             | ``(1.0, 1.0)``.                                               |
+|                                             | origin, ``(0, 0)``. Multiply by ``SCREEN_PIXEL_SIZE`` for     |
+|                                             | values from ``0.0`` to ``1.0``.                               |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to the inverse of resolution.|
 +---------------------------------------------+---------------------------------------------------------------+

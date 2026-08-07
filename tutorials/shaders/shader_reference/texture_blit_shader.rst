@@ -85,9 +85,8 @@ accessed with a ``sampler2D`` using ``hint_blit_source0``,
 +---------------------------------------------+---------------------------------------------------------------+
 | Built-in                                    | Description                                                   |
 +=============================================+===============================================================+
-| in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
-|                                             | position in viewport. Upper-left of the viewport is the       |
-|                                             | origin, ``(0.0, 0.0)``.                                       |
+| in vec4 **FRAGCOORD**                       | Coordinate of pixel center, in screen space. ``xy`` specifies |
+|                                             | position in viewport in pixels from the upper-left.           |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **UV**                              | UV from the ``vertex()`` function.                            |
 |                                             | This is set to sample all of a source texture.                |
