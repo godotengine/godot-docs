@@ -16,8 +16,7 @@ which are almost identical to their 2D counterparts.
    :alt: An example 3D game demo created using Godot
 
    Godot Third Person Shooter (TPS) Demo, available on the
-   `Github repository <https://github.com/godotengine/tps-demo>`__ or the
-   :ref:`Asset Library <doc_project_manager_downloading_demos>`.
+   `Github repository <https://github.com/godotengine/tps-demo>`__.
 
 In 3D, math is a little more complex than in 2D. For an introduction to the
 relevant math written for game developers, not mathematicians or engineers,
@@ -118,13 +117,13 @@ Moreover, specific types of gizmos can be toggled in this menu.
 An open eye means that the gizmo is visible, a closed eye means it is hidden.
 A half-open eye means that it is also visible through opaque surfaces.
 
-Clicking on *Settings* in this view menu opens a window to change the
+Clicking on :button:`Settings...` in this view menu opens a window to change the
 *Vertical Field of View (VFOV)* parameter
 (in degrees), *Z-Near*, and *Z-Far* values.
 
 Next to the View menu, additional buttons may be visible. In the toolbar image
-at the beginning of this chapter, an additional *Mesh* button appears because a
-MeshInstance3D is selected. This menu provides some quick actions or tools to
+at the beginning of this chapter, an additional :button:`Mesh` button appears
+because a :ref:`class_MeshInstance3D` is selected. This menu provides some quick actions or tools to
 work on a specific node or selection.
 
 View menu of viewport
@@ -216,7 +215,7 @@ The default 3D scene navigation controls are similar to Blender (aiming to
 have some sort of consistency in the free software pipeline), but
 options are included to customize mouse buttons and behavior to be
 similar to other tools in the Editor Settings. To change the controls
-to Maya or Modo controls, you can navigate to **Editor Settings > Editors > 3D**.
+to Maya or Modo controls, you can navigate to :menu:`Editor Settings > Editors > 3D`.
 Then, under *Navigation*, search for *Navigation Scheme*.
 
 .. image:: img/tuto_3d4.webp
@@ -256,8 +255,8 @@ Use :kbd:`Keypad 5` to toggle between perspective and orthogonal view.
 Using Blender-style transform shortcuts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Since Godot 4.2, you can enable Blender-style shortcuts for translating,
-rotating and scaling nodes. In Blender, these shortcuts are:
+You can enable Blender-style shortcuts for translating, rotating and scaling nodes.
+In Blender, these shortcuts are:
 
 - :kbd:`G` for translating
 - :kbd:`R` for rotating
@@ -275,7 +274,7 @@ following sequence in order (Y+ is upwards in Godot):
 :kbd:`G`-:kbd:`Y`-:kbd:`2`-:kbd:`.`-:kbd:`5`-:kbd:`Enter`
 
 To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
-**Shortcuts** tab, then in the Spatial Editor section:
+:button:`Shortcuts` tab, then in the Spatial Editor section:
 
 - Bind **Begin Translate Transformation** to :kbd:`G`.
 - Bind **Begin Rotate Transformation** to :kbd:`R`.
@@ -286,9 +285,9 @@ To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
 Node3D node
 -----------
 
-:ref:`Node2D <class_Node2D>` is the base node for 2D.
-:ref:`Control <class_Control>` is the base node for everything GUI.
-Following this reasoning, the 3D engine uses the :ref:`Node3D <class_Node3D>`
+:ref:`class_Node2D` is the base node for 2D.
+:ref:`class_Control` is the base node for everything GUI.
+Following this reasoning, the 3D engine uses the :ref:`class_Node3D`
 node for everything 3D.
 
 .. image:: img/tuto_3d1.webp
@@ -296,7 +295,7 @@ node for everything 3D.
 Node3Ds have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
 Node3D). This transform can be accessed as a 3×4
-:ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
+:ref:`class_Transform3D`, or as 3 :ref:`class_Vector3`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
@@ -328,9 +327,9 @@ Generated geometry
 ~~~~~~~~~~~~~~~~~~
 
 It is possible to create custom geometry by using the
-:ref:`ArrayMesh <class_ArrayMesh>` resource directly. Simply create your arrays
+:ref:`class_ArrayMesh` resource directly. Simply create your arrays
 and use the :ref:`ArrayMesh.add_surface_from_arrays() <class_ArrayMesh_method_add_surface_from_arrays>`
-function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
+function. A helper class is also available, :ref:`class_SurfaceTool`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.
 
@@ -346,8 +345,8 @@ Immediate geometry
 ~~~~~~~~~~~~~~~~~~
 
 If, instead, you need to generate simple geometry that will be updated often,
-Godot provides a special :ref:`ImmediateMesh <class_ImmediateMesh>` resource
-that can be used in a :ref:`MeshInstance3D <class_MeshInstance3D>` node.
+Godot provides a special :ref:`class_ImmediateMesh` resource
+that can be used in a :ref:`class_MeshInstance3D` node.
 This provides an OpenGL 1.x-style immediate-mode API to create points, lines,
 triangles, etc.
 
@@ -357,8 +356,8 @@ triangles, etc.
 While Godot packs a powerful 2D engine, many types of games use 2D in a
 3D environment. By using a fixed camera (either orthogonal or
 perspective) that does not rotate, nodes such as
-:ref:`Sprite3D <class_Sprite3D>` and
-:ref:`AnimatedSprite3D <class_AnimatedSprite3D>`
+:ref:`class_Sprite3D` and
+:ref:`class_AnimatedSprite3D`
 can be used to create 2D games that take advantage of mixing with 3D
 backgrounds, more realistic parallax, lighting/shadow effects, etc.
 
@@ -370,7 +369,7 @@ Environment
 -----------
 
 Besides editing a scene, it is often common to edit the environment.
-Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>`
+Godot provides a :ref:`class_WorldEnvironment`
 node that allows changing the background color, mode (as in, put a
 skybox), and applying several types of built-in post-processing effects.
 Environments can also be overridden in the Camera.
@@ -380,8 +379,8 @@ Environments can also be overridden in the Camera.
 Preview environment and light
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, any 3D scene that doesn't have a :ref:`WorldEnvironment <class_WorldEnvironment>`
-node, or a :ref:`DirectionalLight3D <class_DirectionalLight3D>`, will have
+By default, any 3D scene that doesn't have a :ref:`class_WorldEnvironment`
+node, or a :ref:`class_DirectionalLight3D`, will have
 a preview turned on for what it's missing to light the scene.
 
 The preview light and environment will only be visible in the scene while
@@ -408,7 +407,7 @@ Cameras
 ~~~~~~~
 
 No matter how many objects are placed in the 3D space, nothing will be
-displayed unless a :ref:`Camera3D <class_Camera3D>` is
+displayed unless a :ref:`class_Camera3D` is
 also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 
