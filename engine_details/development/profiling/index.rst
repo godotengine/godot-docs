@@ -113,3 +113,99 @@ All recommended profilers
    perfetto
    tracy
    very_sleepy
+
+Microbenchmarks
+---------------
+
+While not technically profiling, microbenchmarks are a related concept: after you've identified
+your hotspot, you'll want a simple and isolatable way to test whether what you're doing has an impact.
+While re-profiling can be an option, sometimes a microbenchmark can be simpler.
+
+You can see example benchmark setups in the subsections below. Between C++ and GDScript, GDScript
+benchmarks are usually the more appropriate choice. Because they involve the GDScript language and
+its overhead, GDScript benchmarks are truthful to how most people will experience your changes.
+C++ benchmarks are more versatile and can measure smaller performance differences. However, they
+are also more difficult to get right.
+In practice, it can often be good to benchmark both.
+
+.. note::
+
+    To benchmark effectively can be difficult. Benchmarks can easily lead you astray, for example
+    by not representing the situation faithfully, by failing to account for compiler optimizations
+    and other nuances, or by measuring in an unreliable way such that you record noise instead of
+    an actual performance change. Before you start benchmarking, please read up on benchmarking
+    guides and best practices. A good place to start is Gregg's `"Active Benchmarking" <https://www.brendangregg.com/activebenchmarking.html>`__,
+    which provides a high level overview and quick checklist for benchmarking.
+
+GDScript benchmarks
+~~~~~~~~~~~~~~~~~~~
+
+To run a GDScript benchmark, start by creating a ``benchmark.gd`` file with the following
+contents:
+
+.. code-block:: gdscript
+
+    extends SceneTree
+
+    func _init():
+        const N = 1_000_000
+
+        var t0 := Time.get_ticks_usec()
+        for i in N:
+            pass  # Do the thing you want to benchmark here.
+        var t1 := Time.get_ticks_usec()
+
+        var ns_per_op := (t1 - t0) * 1000.0 / N
+        print("Benchmark result: %.1f ns/op" % ns_per_op)
+        quit()
+
+Edit the file to add your benchmark.
+You can run the benchmark using ``godot --headless -s benchmark.gd``.
+
+.. note::
+
+    At the time of writing, GDScript performs few code optimization. Dead code elimination,
+    for example, is generally not performed. Therefore, it is easier to write a decently
+    representative benchmark in GDScript than in C++. This might change in the future.
+
+C++ benchmarks
+~~~~~~~~~~~~~~
+
+To run a C++ benchmark, create the file ``tests/core/test_user_bench.cpp`` with the following contents:
+
+.. code-block:: cpp
+
+    #include "tests/test_macros.h"
+
+    TEST_FORCE_LINK(test_user_bench)
+
+    #include <chrono>
+    #include <cstdio>
+
+    static void user_bench() {
+        const int N = 1'000'000;
+        static uintptr_t sink = 0; // Defeats dead-code elimination.
+
+        auto t0 = std::chrono::steady_clock::now();
+        for (int i = 0; i < N; i++) {
+            // Do the thing you want to benchmark here.
+            // sink += (uintptr_t)something; // Update the sink from the result somehow.
+        }
+        auto t1 = std::chrono::steady_clock::now();
+
+        double ns_per_op = std::chrono::duration<double, std::nano>(t1 - t0).count() / N;
+        printf("Benchmark result: %.1f ns/op (sink %zu)\n", ns_per_op, (size_t)sink);
+    }
+
+    REGISTER_TEST_COMMAND("user-bench", &user_bench)
+
+Edit the file to add your benchmark.
+Compile Godot with ``tests=yes``, and run the benchmark using ``godot --test user-bench``.
+
+.. note::
+
+    C++ benchmarks can be fickle and can easily lead you astray unless you have a strong
+    foundation of knowledge about C++ and compilers. Before you start benchmarking, read
+    up on guides and best practices about how to benchmark C++.  You
+    can find free in-depth guides in Bakhvalov's `"Performance Analysis and Tuning on Modern CPUs" <https://github.com/dendibakh/perf-book>`__,
+    and Agner Fog's `"Software Optimization Resources" <https://www.agner.org/optimize/>`__.
