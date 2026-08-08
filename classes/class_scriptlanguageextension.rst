@@ -1222,6 +1222,8 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 Reloads all ``scripts`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
 
+\ ``soft_reload`` is always ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1233,6 +1235,8 @@ Reloads all ``scripts`` from disk and the specifics of how that happens is **Scr
 |void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| |required| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_tool_script>`
 
 Reloads the given ``script`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
+
+\ ``soft_reload`` is always ``true``.
 
 .. rst-class:: classref-item-separator
 

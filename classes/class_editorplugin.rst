@@ -1159,7 +1159,7 @@ Adds a control to the bottom panel (together with Output, Debug, Animation, etc.
 
 \ ``shortcut`` is a shortcut that, when activated, will toggle the bottom panel's visibility. The shortcut object is only set when this control is added to the bottom panel.
 
-\ **Note** See the default editor bottom panel shortcuts in the Editor Settings for inspiration. By convention, they all use :kbd:`Alt` modifier.
+\ **Note:** See the default editor bottom panel shortcuts in the Editor Settings for inspiration. By convention, they all use the :kbd:`Alt` modifier.
 
 .. rst-class:: classref-item-separator
 

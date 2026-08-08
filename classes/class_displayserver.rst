@@ -228,9 +228,9 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                                               | :ref:`get_base_color<class_DisplayServer_method_get_base_color>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\]                  | :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   | :ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\]                  | :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Rect2i<class_Rect2i>`                                             | :ref:`get_display_safe_area<class_DisplayServer_method_get_display_safe_area>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   | :ref:`Rect2i<class_Rect2i>`                                             | :ref:`get_display_safe_area<class_DisplayServer_method_get_display_safe_area>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`get_keyboard_focus_screen<class_DisplayServer_method_get_keyboard_focus_screen>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4591,11 +4591,15 @@ Returns the OS theme base color (default control background). Returns ``Color(0,
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\] **get_display_cutouts**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_cutouts>`
+:ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\] **get_display_cutouts**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_cutouts>`
 
 Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which is the bounding rectangle for a display cutout or notch. These are non-functional areas on edge-to-edge screens used by cameras and sensors. Returns an empty array if the device does not have cutouts. See also :ref:`get_display_safe_area()<class_DisplayServer_method_get_display_safe_area>`.
 
-\ **Note:** Currently only implemented on Android. Other platforms will return an empty array even if they do have display cutouts or notches.
+\ **Note:** The returned rectangles are relative to the physical screen and not the virtual desktop.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** Currently only implemented on Android and macOS. Other platforms will return an empty array even if they do have display cutouts or notches.
 
 .. rst-class:: classref-item-separator
 
@@ -4605,11 +4609,15 @@ Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_safe_area>`
+:ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_safe_area>`
 
 Returns the unobscured area of the display where interactive controls should be rendered. See also :ref:`get_display_cutouts()<class_DisplayServer_method_get_display_cutouts>`.
 
-\ **Note:** Currently only implemented on Android and iOS. On other platforms, ``screen_get_usable_rect(SCREEN_OF_MAIN_WINDOW)`` will be returned as a fallback. See also :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`.
+\ **Note:** The returned rectangle is relative to the physical screen and not the virtual desktop.
+
+\ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
+
+\ **Note:** Currently only implemented on Android, iOS, and macOS. On other platforms, ``screen_get_usable_rect(SCREEN_OF_MAIN_WINDOW)`` will be returned as a fallback. See also :ref:`screen_get_usable_rect()<class_DisplayServer_method_screen_get_usable_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6119,11 +6127,9 @@ Returns a screenshot of the screen region defined by ``rect``. Returns ``null`` 
 
 :ref:`float<class_float>` **screen_get_max_scale**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_max_scale>`
 
-Returns the greatest scale factor of all screens.
+Returns the greatest scale factor of all screens. See also :ref:`screen_get_scale()<class_DisplayServer_method_screen_get_scale>`.
 
-\ **Note:** On macOS returned value is ``2.0`` if there is at least one hiDPI (Retina) screen in the system, and ``1.0`` in all other cases.
-
-\ **Note:** This method is implemented only on macOS.
+\ **Note:** On macOS, the returned value is ``2.0`` if there is at least one hiDPI (Retina) screen in the system, and ``1.0`` in all other cases.
 
 .. rst-class:: classref-item-separator
 
@@ -6216,7 +6222,7 @@ To fallback to a default refresh rate if the method fails, try:
 
 :ref:`float<class_float>` **screen_get_scale**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_scale>`
 
-Returns the scale factor of the specified screen by index. Returns ``1.0`` if ``screen`` is invalid.
+Returns the scale factor of the specified screen by index. Returns ``1.0`` if ``screen`` is invalid. See also :ref:`screen_get_max_scale()<class_DisplayServer_method_screen_get_max_scale>`.
 
 \ **Note:** One of the following constants can be used as ``screen``: :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`, :ref:`SCREEN_PRIMARY<class_DisplayServer_constant_SCREEN_PRIMARY>`, :ref:`SCREEN_WITH_MOUSE_FOCUS<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`, or :ref:`SCREEN_WITH_KEYBOARD_FOCUS<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`.
 
@@ -6224,7 +6230,7 @@ Returns the scale factor of the specified screen by index. Returns ``1.0`` if ``
 
 \ **Note:** On Linux (Wayland), the returned value is accurate only when ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`. Due to API limitations, passing a direct index will return a rounded-up integer, if the screen has a fractional scale (e.g. ``1.25`` would get rounded up to ``2.0``).
 
-\ **Note:** This method is implemented on Android, iOS, Web, macOS, and Linux (Wayland). On other platforms, this method always returns ``1.0``.
+\ **Note:** This method is implemented on Android, iOS, Web, macOS, Linux, and Windows. On other platforms, this method always returns ``1.0``.
 
 .. rst-class:: classref-item-separator
 

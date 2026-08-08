@@ -137,6 +137,10 @@ Methods
    +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Basis<class_Basis>`                                | :ref:`get_inverse_inertia_tensor<class_RigidBody3D_method_get_inverse_inertia_tensor>`\ (\ ) |const|                                                                             |
    +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                            | :ref:`get_velocity_at_local_position<class_RigidBody3D_method_get_velocity_at_local_position>`\ (\ local_position\: :ref:`Vector3<class_Vector3>`\ ) |const|                     |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                            | :ref:`get_velocity_at_position<class_RigidBody3D_method_get_velocity_at_position>`\ (\ global_point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                   |
+   +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                   | :ref:`set_axis_velocity<class_RigidBody3D_method_set_axis_velocity>`\ (\ axis_velocity\: :ref:`Vector3<class_Vector3>`\ )                                                        |
    +----------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -948,6 +952,38 @@ Returns the number of contacts this body has with other bodies. By default, this
 :ref:`Basis<class_Basis>` **get_inverse_inertia_tensor**\ (\ ) |const| :ref:`🔗<class_RigidBody3D_method_get_inverse_inertia_tensor>`
 
 Returns the inverse inertia tensor basis. This is used to calculate the angular acceleration resulting from a torque applied to the **RigidBody3D**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RigidBody3D_method_get_velocity_at_local_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_RigidBody3D_method_get_velocity_at_local_position>`
+
+Returns the body's velocity at the given relative position.
+
+\ ``local_position`` is the offset from the body origin in global coordinates.
+
+See also :ref:`get_velocity_at_position()<class_RigidBody3D_method_get_velocity_at_position>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RigidBody3D_method_get_velocity_at_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_velocity_at_position**\ (\ global_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_RigidBody3D_method_get_velocity_at_position>`
+
+Returns the body's velocity at the given global position.
+
+This is equivalent to ``get_velocity_at_local_position(global_point - global_position)``.
+
+See also :ref:`get_velocity_at_local_position()<class_RigidBody3D_method_get_velocity_at_local_position>`.
 
 .. rst-class:: classref-item-separator
 

@@ -238,6 +238,7 @@ Nodes
     class_rigidbody2d
     class_rigidbody3d
     class_rootmotionview
+    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase
@@ -824,6 +825,8 @@ Other objects
     class_expression
     class_fileaccess
     class_framebuffercacherd
+    class_fuzzysearch
+    class_fuzzysearchmatch
     class_gdextensionmanager
     class_gdscriptlanguageprotocol
     class_gdscripttextdocument
@@ -1059,6 +1062,7 @@ Other objects
     class_uniformsetcacherd
     class_upnp
     class_upnpdevice
+    class_visionosxrinterface
     class_weakref
     class_webrtcdatachannel
     class_webrtcdatachannelextension
@@ -1170,6 +1174,7 @@ Editor-only
     class_resourceimportertexture
     class_resourceimportertextureatlas
     class_resourceimporterwav
+    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase

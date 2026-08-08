@@ -4840,6 +4840,14 @@ Support for raytracing pipeline extension.
 
 Support for high dynamic range (HDR) output.
 
+.. _class_RenderingDevice_constant_SUPPORTS_RASTERIZATION_RATE_MAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_RASTERIZATION_RATE_MAP** = ``14``
+
+Support for rasterization rate maps. The current implementation targets Metal on Apple platforms. This allows for foveated rendering, which is used by the visionOS XR module.
+
 .. rst-class:: classref-item-separator
 
 ----

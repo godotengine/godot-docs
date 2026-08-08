@@ -40,61 +40,63 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_subresources<class_ResourceImporterScene_property__subresources>`                                                         | ``{}``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`           | :ref:`animation/fps<class_ResourceImporterScene_property_animation/fps>`                                                         | ``30``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/import<class_ResourceImporterScene_property_animation/import>`                                                   | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/import_rest_as_RESET<class_ResourceImporterScene_property_animation/import_rest_as_RESET>`                       | ``false`` |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/remove_immutable_tracks<class_ResourceImporterScene_property_animation/remove_immutable_tracks>`                 | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/trimming<class_ResourceImporterScene_property_animation/trimming>`                                               | ``false`` |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`array_mesh/deduplicate_surfaces<class_ResourceImporterScene_property_array_mesh/deduplicate_surfaces>`                     | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`         | :ref:`import_script/path<class_ResourceImporterScene_property_import_script/path>`                                               | ``""``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`               | :ref:`materials/extract<class_ResourceImporterScene_property_materials/extract>`                                                 | ``0``     |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`               | :ref:`materials/extract_format<class_ResourceImporterScene_property_materials/extract_format>`                                   | ``0``     |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`         | :ref:`materials/extract_path<class_ResourceImporterScene_property_materials/extract_path>`                                       | ``""``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`mesh_library/use_node_names_as_mesh_names<class_ResourceImporterScene_property_mesh_library/use_node_names_as_mesh_names>` | ``false`` |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/create_shadow_meshes<class_ResourceImporterScene_property_meshes/create_shadow_meshes>`                             | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                                       | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/force_disable_compression<class_ResourceImporterScene_property_meshes/force_disable_compression>`                   | ``false`` |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/generate_lods<class_ResourceImporterScene_property_meshes/generate_lods>`                                           | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`               | :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>`                                             | ``1``     |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`           | :ref:`meshes/lightmap_texel_size<class_ResourceImporterScene_property_meshes/lightmap_texel_size>`                               | ``0.2``   |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>`                                       | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`nodes/import_as_skeleton_bones<class_ResourceImporterScene_property_nodes/import_as_skeleton_bones>`                       | ``false`` |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`         | :ref:`nodes/root_name<class_ResourceImporterScene_property_nodes/root_name>`                                                     | ``""``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`           | :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>`                                                   | ``1.0``   |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`Script<class_Script>`         | :ref:`nodes/root_script<class_ResourceImporterScene_property_nodes/root_script>`                                                 | ``null``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                                     | ``""``    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`nodes/use_name_suffixes<class_ResourceImporterScene_property_nodes/use_name_suffixes>`                                     | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`nodes/use_node_type_suffixes<class_ResourceImporterScene_property_nodes/use_node_type_suffixes>`                           | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>`                                         | ``true``  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+-----------+
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`_subresources<class_ResourceImporterScene_property__subresources>`                                                                 | ``{}``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`animation/fps<class_ResourceImporterScene_property_animation/fps>`                                                                 | ``30``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/import<class_ResourceImporterScene_property_animation/import>`                                                           | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/import_rest_as_RESET<class_ResourceImporterScene_property_animation/import_rest_as_RESET>`                               | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/remove_immutable_tracks<class_ResourceImporterScene_property_animation/remove_immutable_tracks>`                         | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/trimming<class_ResourceImporterScene_property_animation/trimming>`                                                       | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`array_mesh/deduplicate_surfaces<class_ResourceImporterScene_property_array_mesh/deduplicate_surfaces>`                             | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`import_script/path<class_ResourceImporterScene_property_import_script/path>`                                                       | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`materials/extract<class_ResourceImporterScene_property_materials/extract>`                                                         | ``0``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`materials/extract_format<class_ResourceImporterScene_property_materials/extract_format>`                                           | ``0``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`materials/extract_path<class_ResourceImporterScene_property_materials/extract_path>`                                               | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`mesh_library/create_categories_from_hierarchy<class_ResourceImporterScene_property_mesh_library/create_categories_from_hierarchy>` | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`mesh_library/use_node_names_as_mesh_names<class_ResourceImporterScene_property_mesh_library/use_node_names_as_mesh_names>`         | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/create_shadow_meshes<class_ResourceImporterScene_property_meshes/create_shadow_meshes>`                                     | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                                               | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/force_disable_compression<class_ResourceImporterScene_property_meshes/force_disable_compression>`                           | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/generate_lods<class_ResourceImporterScene_property_meshes/generate_lods>`                                                   | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>`                                                     | ``1``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`meshes/lightmap_texel_size<class_ResourceImporterScene_property_meshes/lightmap_texel_size>`                                       | ``0.2``   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>`                                               | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/import_as_skeleton_bones<class_ResourceImporterScene_property_nodes/import_as_skeleton_bones>`                               | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`nodes/root_name<class_ResourceImporterScene_property_nodes/root_name>`                                                             | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>`                                                           | ``1.0``   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Script<class_Script>`         | :ref:`nodes/root_script<class_ResourceImporterScene_property_nodes/root_script>`                                                         | ``null``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                                             | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/use_name_suffixes<class_ResourceImporterScene_property_nodes/use_name_suffixes>`                                             | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/use_node_type_suffixes<class_ResourceImporterScene_property_nodes/use_node_type_suffixes>`                                   | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>`                                                 | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -244,6 +246,18 @@ Extracted material file format.
 :ref:`String<class_String>` **materials/extract_path** = ``""`` :ref:`🔗<class_ResourceImporterScene_property_materials/extract_path>`
 
 Path extracted materials are saved to. If empty, source scene path is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_mesh_library/create_categories_from_hierarchy:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **mesh_library/create_categories_from_hierarchy** = ``false`` :ref:`🔗<class_ResourceImporterScene_property_mesh_library/create_categories_from_hierarchy>`
+
+If ``true``, categories will be automatically set according to the node hierarchy, using the names of the parent nodes.
 
 .. rst-class:: classref-item-separator
 
