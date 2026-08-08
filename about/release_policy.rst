@@ -261,7 +261,7 @@ The following changes are acceptable in minor releases, but not patch releases:
 - Significant new features.
 - Renaming a method parameter. In C#, method parameters can be passed by name
   (but not in GDScript). As a result, this can break some projects that use C#.
-- Deprecating a method, member variable, or class. This is done by adding a
+- Deprecating a method, property, or class. This is done by adding a
   deprecated flag to its class reference, which will show up in the editor. When
   a method is marked as deprecated, it's slated to be removed in the next
   *major* release.
@@ -275,7 +275,7 @@ The following changes are acceptable in minor releases, but not patch releases:
 The following changes are considered **compatibility-breaking** and can only be
 performed in a new major release:
 
-- Renaming or removing a method, member variable, or class.
+- Renaming or removing a method, property, or class.
 - Modifying a node's inheritance tree by making it inherit from a different class.
 - Changing the default value of a project setting value in a way that affects existing
   projects. To only affect new projects, the project manager should write a

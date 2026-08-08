@@ -169,11 +169,11 @@ unsigned:
     uint a = 2; // invalid
     uint a = uint(2); // valid
 
-Members
-~~~~~~~
+Components
+~~~~~~~~~~
 
-Individual scalar members of vector types are accessed via the "x", "y", "z" and
-"w" members. Alternatively, using "r", "g", "b" and "a" also works and is
+Individual scalar components of vector types are accessed via the "x", "y", "z", and
+"w" components. Alternatively, using "r", "g", "b", and "a" also works and is
 equivalent. Use whatever fits best for your needs.
 
 For matrices, use the ``m[column][row]`` indexing syntax to access each scalar,

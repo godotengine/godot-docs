@@ -290,10 +290,10 @@ distinguishing numbers greater than 1 from those lower than 1.
         ALBEDO.rgb = vec3(5., .1, .2);
     }
 
-Accessing vector members
-------------------------
+Accessing vector components
+---------------------------
 
-Use ``r``, ``g``, ``b``, and ``a`` when accessing a vector's members if it
+Use ``r``, ``g``, ``b``, and ``a`` when accessing a vector's components if it
 contains a color. If the vector contains anything else than a color, use ``x``,
 ``y``, ``z``, and ``w``. This allows those reading your code to better
 understand what the underlying data represents.
