@@ -76,6 +76,9 @@ scripting API.
 | |string_name| 📜      | ``std::string``          | Uses string interning for fast comparisons. Use this for static strings that are      |
 |                       |                          | referenced frequently and used in multiple locations in the engine.                   |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
+| |char_string|,        | ``std::u8string``        | ``String``-likes that use ``char`` and ``char16_t``, respectively.                    |
+| |char16_string|       | ``std::u16string``       | These are aliases of ``CharStringT<T>``; ``wchar_t`` and others are also supported.   |
++-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |local_vector|        | ``std::vector``          | Closer to ``std::vector`` in semantics, doesn't use copy-on-write (COW) thus it's     |
 |                       |                          | faster than ``Vector``. Prefer it over ``Vector`` when copying it cheaply             |
 |                       |                          | is not needed.                                                                        |
@@ -135,6 +138,8 @@ scripting API.
 .. |hash_set| replace:: `HashSet <https://github.com/godotengine/godot/blob/master/core/templates/hash_set.h>`__
 .. |hash_map| replace:: `HashMap <https://github.com/godotengine/godot/blob/master/core/templates/hash_map.h>`__
 .. |string_name| replace:: `StringName <https://github.com/godotengine/godot/blob/master/core/string/string_name.h>`__
+.. |char_string| replace:: `CharString <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
+.. |char16_string| replace:: `Char16String <https://github.com/godotengine/godot/blob/master/core/string/ustring.h>`__
 .. |local_vector| replace:: `LocalVector <https://github.com/godotengine/godot/blob/master/core/templates/local_vector.h>`__
 .. |array| replace:: `Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h>`__
 .. |typed_array| replace:: `TypedArray <https://github.com/godotengine/godot/blob/master/core/variant/typed_array.h>`__
