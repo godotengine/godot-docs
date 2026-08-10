@@ -161,7 +161,7 @@ by the name "Global":
 Now whenever we run any scene in the project, this script will always be loaded.
 
 Returning to the script, it needs to fetch the current scene in the
-`_ready()` function. Both the current scene (the one with the button) and
+``_ready()`` function. Both the current scene (the one with the button) and
 ``global.gd`` are children of root, but autoloaded nodes are always first. This
 means that the last child of root is always the loaded scene.
 

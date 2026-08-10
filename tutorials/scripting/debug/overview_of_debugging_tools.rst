@@ -184,17 +184,18 @@ project when you Run Project. They will be **combined with** the "Main Feature
 Tags" unless you select "Enabled" under "Override Main Tags".
 
 .. warning::
+
     If you want to pass "User" arguments, that can be accessed with
     :ref:`get_cmdline_user_args<class_OS_method_get_cmdline_user_args>` then you
-    must prefix them with two dashes **and a space** like `-- one two three`.
+    must prefix them with two dashes **and a space** like ``-- one two three``.
 
     Be aware that these dashes will apply to arguments added later in the
     "Launch Arguments" on a per instance basis, which can cause some confusion
-    when combining the `Main Run Args` and `Launch Arguments`.
+    when combining the "Main Run Args" and "Launch Arguments".
 
-    If you place `-- one two three` in the "Main Run Args" and `-- four five
-    six` in the "Launch Arguments" then the final command line arguments will be
-    `one two three -- four five six`. This is because the `--` is repeated in
+    If you place ``-- one two three`` in the "Main Run Args" and ``-- four five
+    six`` in the "Launch Arguments" then the final command line arguments will be
+    ``one two three -- four five six``. This is because the ``--`` is repeated in
     the "Launch Arguments".
 
 

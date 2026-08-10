@@ -85,7 +85,9 @@ Distro-specific one-liners
 Troubleshooting
 ---------------
 
-If you get the error `Invalid get index '0' (on base: 'PackedStringArray').` for the line `var voice_id = voices[0]`, check if there are any items in `voices`. If not:
+If you get the error ``Invalid get index '0' (on base: 'PackedStringArray').``
+for the line ``var voice_id = voices[0]``, check if there are any items in ``voices``.
+If not:
 
 - All users: make sure you enabled **Text to Speech** in project settings
 - Linux users: ensure you installed the system-specific libraries for text to speech
@@ -106,10 +108,16 @@ This provides your blind players with the most flexibility and comfort available
 Caveats and Other Information
 -----------------------------
 
-- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications. This is especially critical on Android and Web, where some of the voices depend on web services, and the actual time to playback depends on server load, network latency, and other factors.
+- Expect delays when you call :ref:`tts_speak() <class_displayserver_method_tts_speak>` and
+  :ref:`tts_stop() <class_displayserver_method_tts_speak>`.
+  The actual delay time varies depending on both the OS and on your machine's specifications.
+  This is especially critical on Android and Web, where some of the voices depend on web services,
+  and the actual time to playback depends on server load, network latency, and other factors.
 - Non-English text works if the correct voices are installed and used. On Windows, you can consult the instructions in `this article`_ to enable additional language voices on Windows.
 - Non-ASCII characters, such as umlaut, are pronounced correctly if you select the correct voice.
 - Blind players use a number of screen readers, including JAWS, NVDA, VoiceOver, Narrator, and more.
-- Windows text-to-speech APIs generally perform better than their equivalents on other systems (e.g. `tts_stop` followed by `tts_speak` immediately speaks the new message).
+- Windows text-to-speech APIs generally perform better than their equivalents on other systems
+  (e.g. :ref:`tts_stop() <class_displayserver_method_tts_speak>` followed by
+  :ref:`tts_speak() <class_displayserver_method_tts_speak>` immediately speaks the new message).
 
 .. _this article: https://www.ghacks.net/2018/08/11/unlock-all-windows-10-tts-voices-system-wide-to-get-more-of-them/

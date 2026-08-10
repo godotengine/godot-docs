@@ -175,8 +175,8 @@ environment's paths:
     env.Append(LIBS=['Festival', 'estools', 'estbase', 'eststring'])
 
 If you want to add custom compiler flags when building your module, you need to clone
-`env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCsub` with custom flags:
+``env`` first, so it won't add those flags to whole Godot build (which can cause errors).
+Example ``SCsub`` with custom flags:
 
 .. code-block:: python
     :caption: godot/modules/tts/SCsub

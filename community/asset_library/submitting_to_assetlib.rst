@@ -160,15 +160,15 @@ is required in the submission form here as well.
     your asset uses, so the site can compute the final download link.
 * **Repository URL**:
     The URL to your asset's files/webpage. This will vary
-    based on your choice of provider, but it should look similar to `https://github.com/<user>/<project>`.
+    based on your choice of provider, but it should look similar to ``https://github.com/<user>/<project>``.
 * **Issues URL**:
     The URL to your asset's issue tracker. Again, this will differ
     from repository host to repository host, but will likely look similar to
-    `https://github.com/<user>/<project>/issues`. You may leave this field empty
+    ``https://github.com/<user>/<project>/issues``. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
 * **Download Commit**:
     The commit of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1`. The site computes
+    ``b1d3172f89b86e52465a74f63a74ac84c491d3e1``. The site computes
     the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail
@@ -180,7 +180,7 @@ is required in the submission form here as well.
 
 .. note::
 
-    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+    For icons hosted on GitHub, URLs must be provided in the form of ``https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png``.
 
 * **License**:
     The license under which you are distributing the asset. The list

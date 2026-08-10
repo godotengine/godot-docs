@@ -62,15 +62,17 @@ For compiling under Windows, the following is required:
               scoop install python mingw
 
           Scons will still need to be installed via pip
-.. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
-          install MinGW and other dependencies using the following command:
+.. note::
 
-          ::
+    If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
+    install MinGW and other dependencies using the following command:
 
-              pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
+    ::
 
-          For each MSYS2 MinGW subsystem, you should then run
-          `pip3 install scons` in its shell.
+        pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
+
+    For each MSYS2 MinGW subsystem, you should then run
+    ``pip3 install scons`` in its shell.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.

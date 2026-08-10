@@ -102,7 +102,7 @@ scripting API.
 |                       |                          | Note that ``Span`` is designed to be a high performance API: It does not perform      |
 |                       |                          | parameter correctness checks in the same way you might be used to with other Godot    |
 |                       |                          | containers. Use with care.                                                            |
-|                       |                          | `Span` can be constructed from most array-like containers (e.g. ``vector.span()``).   |
+|                       |                          | ``Span`` can be constructed from most array-like containers (e.g. ``vector.span()``). |
 +-----------------------+--------------------------+---------------------------------------------------------------------------------------+
 | |rb_set|              | ``std::set``             | Uses a `red-black tree <https://en.wikipedia.org/wiki/Red-black_tree>`__              |
 |                       |                          | for faster access.                                                                    |

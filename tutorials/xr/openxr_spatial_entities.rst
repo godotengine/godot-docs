@@ -973,8 +973,8 @@ In the core of OpenXR two types of persistence scopes are supported:
        entities across spatial contexts and device reboots.
    * - PERSISTENCE_SCOPE_LOCAL_ANCHORS
      - Persistence operations and data access is limited to spatial anchors, on the same device,
-       for the same user and app (using `persist_anchor` and
-       `unpersist_anchor` functions)
+       for the same user and app (using :ref:`persist_anchor() <class_openxrspatialanchorcapability_method_persist_anchor>` and
+       :ref:`unpersist_anchor() <class_openxrspatialanchorcapability_method_persist_anchor>` functions)
 
 We'll start with a new script that handles our spatial anchors. It will be similar to the
 script presented earlier but with a few differences.

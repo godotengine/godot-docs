@@ -222,4 +222,4 @@ This will print something similar to this:
 Remote signaling with WebSocket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>` is available in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under `networking/webrtc_signaling`.
+A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>` is available in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under ``networking/webrtc_signaling``.

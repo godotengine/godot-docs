@@ -613,7 +613,7 @@ Drawing text
 ~~~~~~~~~~~~
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
-text to your application, the low-level `_draw` function includes functionality
+text to your application, the low-level ``_draw`` function includes functionality
 to add text to your custom Node drawing. We will use it to add the name "GODOT"
 under the robot head.
 

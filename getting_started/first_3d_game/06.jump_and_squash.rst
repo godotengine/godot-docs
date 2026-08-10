@@ -362,7 +362,7 @@ destroy the mob.
 
 .. note::
 
-    When using C#, Godot will create the appropriate events automatically for all Signals ending with `EventHandler`, see :ref:`C# Signals <doc_c_sharp_signals>`.
+    When using C#, Godot will create the appropriate events automatically for all Signals ending with ``EventHandler``, see :ref:`C# Signals <doc_c_sharp_signals>`.
 
 We will use the signal to add points to the score in the next lesson.
 

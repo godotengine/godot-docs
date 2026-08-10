@@ -68,7 +68,7 @@ scene in the FileSystem dock:
   match the filename in this case.
 - **Apply Root Scale:** If enabled, **Root Scale** will be *applied* on the
   meshes and animations directly, while keeping the root node's scale to the
-  default `(1, 1, 1)`. This means that if you add a child node later on within
+  default ``(1, 1, 1)``. This means that if you add a child node later on within
   the imported scene, it won't be scaled. If disabled, **Root Scale** will
   multiply the scale of the root node instead.
 

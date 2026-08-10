@@ -248,7 +248,7 @@ Here is the full plugin script:
     #endif
 
 A couple of specific lines were added. ``MainPanel`` is a constant that holds
-a reference to the scene, and we instantiate it into `main_panel_instance`.
+a reference to the scene, and we instantiate it into ``main_panel_instance``.
 
 The ``_enter_tree()`` function is called before ``_ready()``. This is where
 we instantiate the main panel scene, and add them as children of specific parts

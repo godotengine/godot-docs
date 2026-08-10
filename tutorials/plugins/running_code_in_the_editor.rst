@@ -138,7 +138,7 @@ Debugging
 
 While the debugger and breakpoints cannot be used directly with tool scripts, it is possible
 to launch a new instance of the editor and debug from there. To do this, navigate to
-**Debug > Customize Run Instances...** and specify `--editor` in **Main Run Args**.
+:menu:`Debug > Customize Run Instances...` and specify ``--editor`` in :ui:`Main Run Args`.
 
 See :ref:`doc_overview_of_debugging_tools` for more information.
 

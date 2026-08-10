@@ -186,7 +186,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     Due to sporadic performance issues, it is recommended to use LLDB over GDB on Unix-based systems.
     Make sure that the `CodeLLDB extension <https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb>`_
-    is installed for configurations using `lldb`.
+    is installed for configurations using ``lldb``.
 
     If you encounter issues with lldb, you may consider using gdb (see the LinuxBSD_gdb configuration).
 

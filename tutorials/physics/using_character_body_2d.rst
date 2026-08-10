@@ -33,9 +33,11 @@ platforms or complex projectiles.
           bodies. Please read :ref:`doc_physics_introduction` first, for an overview
           of the physics options.
 
-.. tip:: A `CharacterBody2D` can be affected by gravity and other forces,
-        but you must calculate the movement in code. The physics engine will
-        not move a `CharacterBody2D`.
+.. tip::
+
+    A ``CharacterBody2D`` can be affected by gravity and other forces,
+    but you must calculate the movement in code. The physics engine will
+    not move a ``CharacterBody2D``.
 
 Movement and collision
 ----------------------
@@ -157,7 +159,10 @@ and ``get_slide_collision()``:
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
     }
 
-.. note:: `get_slide_collision_count()` only counts times the body has collided and changed direction.
+.. note::
+
+    ``get_slide_collision_count()`` only counts the times the body
+    has collided *and* changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
