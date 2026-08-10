@@ -1741,7 +1741,7 @@ provided using :ref:`_set() <class_Object_private_method__set>` and/or
     considered a bad practice, because this blurs the area of responsibility of
     any given piece of code, making the overall relationship between parts of
     your game harder to reason about. Besides that, one can simply forget that
-    the parent class had some expectations about it's descendants.
+    the parent class had some expectations about its descendants.
 
 if/else/elif
 ~~~~~~~~~~~~
