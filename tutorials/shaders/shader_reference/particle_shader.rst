@@ -80,6 +80,11 @@ Start and Process built-ins
 
 These properties can be accessed from both the ``start()`` and ``process()`` functions.
 
+When using the built-in :ref:`class_ParticleProcessMaterial`, ``USERDATA1`` is defined
+with the following value in the built-in:
+
+* **w**: Accumulated angle from angular velocity in radians, as applied by the angular velocity texture.
+
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | Function                           | Description                                                                                                                             |
 +====================================+=========================================================================================================================================+
