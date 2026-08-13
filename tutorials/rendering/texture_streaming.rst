@@ -5,7 +5,7 @@ Texture streaming
 
 .. warning::
 
-    Texture streaming is **experimental**. Its project settings, import options
+    Texture streaming is **experimental**. Its project settings, import options,
     and API may change in future Godot releases.
 
 Texture streaming lets Godot keep only the mipmap levels a texture actually
@@ -23,8 +23,7 @@ not gain anything from it and should leave it disabled.
 
 .. figure:: img/texture_streaming_comparison.webp
    :align: center
-   :alt: The same scene with texture streaming forced to max quality and to an
-   aggressive Min LOD
+   :alt: The same scene with texture streaming forced to max quality and to an aggressive Min LOD
 
    The same scene with texture streaming forced to max quality (left) and
    an aggressive Min LOD (right), with the ``video/streaming_texture_mem_used``
@@ -62,7 +61,7 @@ distance heuristics or manually authored LOD levels:
 
 Because feedback is gathered per material, all streamed textures used by one
 material share the same decision. This works well for the usual case where a
-material's albedo, normal and roughness maps have the same UV scale.
+material's albedo, normal, and roughness maps have the same UV scale.
 
 LOD levels
 ----------
@@ -106,10 +105,10 @@ the gap, the more levels a texture climbs through and the more noticeable the
 sharpening becomes. A gap just big enough for your textures to fit keeps
 transitions short and subtle.
 
-Setting **Min LOD** equal to **Max LOD** pins every streamed texture to that
-level: quality stays constant and no streaming transitions occur, while the
-sharper mipmap levels are still never loaded. This can be used to implement
-a "texture quality" setting.
+Setting **Min LOD** and **Max LOD** to the same value pins every streamed
+texture to that level: quality stays constant and no streaming transitions
+occur, while the sharper mipmap levels are never loaded. This can be used
+to implement a "texture quality" setting.
 
 Some textures may require a **Max LOD** setting that prevents it from losing
 important detail like alpha channels used for alpha scissors or other fine
@@ -118,7 +117,7 @@ details like an atlas.
 Enabling streaming
 ------------------
 
-Streaming has two requirements that are needed: streaming has to be enabled
+Streaming has two requirements: streaming has to be enabled
 in the project, and textures have to be imported into a streamable format.
 
 1. Enable
@@ -135,8 +134,8 @@ largest textures in the project.
 Importing streamed textures
 ---------------------------
 
-Select one or more images in the FileSystem dock, open the **Import** dock,
-and set **Importer** to **Texture2D Streamed**, then click **Reimport**. The
+Select one or more images in the :ui:`FileSystem` dock, open the :ui:`Import` dock,
+and set **Importer** to **Texture2D Streamed**, then click :button:`Reimport`. The
 images are imported to Godot's ``.stex`` format, which stores each mipmap
 level so that individual levels can be read on demand, and loading them
 produces a
@@ -174,7 +173,7 @@ which can be changed from a script.
 
 .. note::
 
-    Only 2D textures are streamable. Texture arrays, cubemaps and 3D textures
+    Only 2D textures are streamable. Texture arrays, cubemaps, and 3D textures
     (:ref:`ResourceImporterLayeredTexture<class_ResourceImporterLayeredTexture>`)
     are not part of the streaming system.
 
@@ -206,13 +205,13 @@ The memory budget
 ~~~~~~~~~~~~~~~~~
 
 When a memory budget is set and enabled, the streaming system will not simply
-give every texture the resolution it asked for.  If the total exceeds the
+give every texture the resolution it asked for. If the total exceeds the
 budget, it starts reducing textures until the total fits, preferring, in order,
 textures that currently have *more* resolution than they asked for, textures that
 have not been requested for the longest, and textures that would free the most
 memory.
 
-The budget only covers streamed textures. Render targets, meshes, shadow atlases
+The budget only covers streamed textures. Render targets, meshes, shadow atlases,
 and non-streamed textures are not counted, so the budget must be set well below
 the total VRAM you expect to have available.
 
@@ -223,9 +222,9 @@ full-resolution mipmaps around for distant or off-screen surfaces.
 Tuning streaming in the editor
 ------------------------------
 
-When streaming is enabled, the 3D viewport toolbar enables a **Textures** button.
-It opens a panel with quality presets (**Very Low** to **Max**), sliders for
-**Min LOD** and **Max LOD**, and a **Limit Maximum Texture Memory Budget**
+When streaming is enabled, the 3D viewport toolbar enables a :button:`Textures`
+button. It opens a panel with quality presets (**Very Low** to **Max**), sliders
+for **Min LOD** and **Max LOD**, and a **Limit Maximum Texture Memory Budget**
 checkbox with a budget slider.
 
 .. figure:: img/texture_streaming_editor_panel.webp
@@ -236,8 +235,8 @@ checkbox with a budget slider.
 
 Changes are applied immediately as runtime overrides so you can see their
 effect in the viewport. This provides a good way to find the LOD range
-and budget your project can live with. Press **Save to Project Settings**
-to save the current values to project settings.
+and budget your project can live with. Press :button:`Save to Project Settings`
+to save the current values to the project settings.
 
 Controlling streaming at runtime
 --------------------------------
