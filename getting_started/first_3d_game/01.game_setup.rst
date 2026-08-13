@@ -101,8 +101,8 @@ resource and set its *Size* to ``60``, ``2``, and ``60``.
 
 .. image:: img/01.game_setup/12.cube_resized.webp
 
-You should see a wide grey slab that covers the grid and blue and red axes in
-the viewport.
+You should see a wide gray slab that covers the grid,
+as well as blue and red axes in the viewport.
 
 We're going to move the ground down so we can see the floor grid. To do this, the grid snapping feature can be used.
 Grid snapping can be activated 2 ways in the 3D editor.
@@ -137,7 +137,7 @@ Ultimately, ``Ground``'s Y position should be ``-1``.
 
 .. image:: img/01.game_setup/ground_down1meter.webp
 
-Let's add a directional light so our scene isn't all grey. Select the ``Main``
+Let's add a directional light so our scene isn't all gray. Select the ``Main``
 node and add a child node :ref:`DirectionalLight3D <class_DirectionalLight3D>`.
 
 .. image:: img/01.game_setup/create_directional_light3d.webp

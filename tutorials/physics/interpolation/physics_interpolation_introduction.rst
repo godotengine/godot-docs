@@ -113,10 +113,11 @@ Let us consider only the position, and a situation where we know that the previo
 physics tick X coordinate was 10 units, and the current physics tick X coordinate
 is 30 units.
 
-.. note:: Although the maths is explained here, you do not have to worry about the
-          details, as this step will be performed for you. Under the hood, Godot
-          may use more complex forms of interpolation, but linear interpolation is
-          the easiest in terms of explanation.
+.. note::
+
+    Do not worry too much about the math, as the engine can mostly take care of it.
+    Although linear interpolation is described here for simplicity,
+    Godot itself may use different, more complex forms of interpolation.
 
 The physics interpolation fraction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -200,7 +201,7 @@ Why look into the past? Why not predict the future?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is an alternative to this scheme, which is: instead of interpolating between
-the previous and current tick, we use maths to *extrapolate* into the future. We
+the previous and current tick, we use math to *extrapolate* into the future. We
 try to predict where the object *will be*, rather than show it where it was. This
 can be done and may be offered as an option in future, but there are some
 significant downsides:
