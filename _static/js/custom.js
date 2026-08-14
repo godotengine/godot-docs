@@ -457,10 +457,10 @@ $(document).ready(() => {
           }
 
           // Hide other sections.
-          menuHeaders.forEach(ot => {
-            if (ot !== it && ot.classList.contains('active')) {
-              ot.nextElementSibling.classList.remove('active');
-              ot.classList.remove('active');
+          menuHeaders.forEach(other => {
+            if (other !== it && other.classList.contains('active')) {
+              other.nextElementSibling.classList.remove('active');
+              other.classList.remove('active');
             }
           });
 

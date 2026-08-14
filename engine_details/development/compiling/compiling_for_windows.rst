@@ -89,11 +89,15 @@ To install SCons, open the command prompt and run the following command:
 
     python -m pip install scons
 
+.. codespell:ignore-begin writeable
+
 If you are prompted with the message
 ``Defaulting to user installation because normal site-packages is not
 writeable``, you may have to run that command again using elevated
 permissions. Open a new command prompt as an Administrator then run the command
 again to ensure that SCons is available from the ``PATH``.
+
+.. codespell:ignore-end
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
