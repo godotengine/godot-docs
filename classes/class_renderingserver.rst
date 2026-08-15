@@ -641,6 +641,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                        | :ref:`mesh_surface_get_arrays<class_RenderingServer_method_mesh_surface_get_arrays>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_attribute_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]                           | :ref:`mesh_surface_get_blend_shape_arrays<class_RenderingServer_method_mesh_surface_get_blend_shape_arrays>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_attribute_stride<class_RenderingServer_method_mesh_surface_get_format_attribute_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -655,7 +657,13 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_vertex_stride<class_RenderingServer_method_mesh_surface_get_format_vertex_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_index_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_material<class_RenderingServer_method_mesh_surface_get_material>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_skin_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_vertex_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_remove<class_RenderingServer_method_mesh_surface_remove>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1831,6 +1839,14 @@ Flag used to mark that the mesh does not have a vertex array and instead will in
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_COMPRESS_ATTRIBUTES** = ``536870912``
 
 Flag used to mark that a mesh is using compressed attributes (vertices, normals, tangents, UVs). When this form of compression is enabled, vertex positions will be packed into an RGBA16UNORM attribute and scaled in the vertex shader. The normal and tangent will be packed into an RG16UNORM representing an axis, and a 16-bit float stored in the A-channel of the vertex. UVs will use 16-bit normalized floats instead of full 32-bit signed floats. When using this compression mode you must use either vertices, normals, and tangents or only vertices. You cannot use normals without tangents. Importers will automatically enable this compression if they can.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_STORAGE_BUFFER** = ``1073741824``
+
+Flag used to mark that the surface's vertex, attribute, skin, and index buffers must be created with the storage-buffer usage bit so they can be bound as storage buffers in compute shaders. This is required to write into them from a compute pipeline through the :ref:`RID<class_RID>`\ s returned by :ref:`mesh_surface_get_vertex_buffer_rd_rid()<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>` and the matching methods for the attribute, skin, and index buffers. Has no effect on the OpenGL backend, which does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_BASE:
 
@@ -10010,6 +10026,22 @@ Returns a mesh's surface's buffer arrays.
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_attribute_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the attribute buffer of the given mesh surface (Color, UV, UV2, Custom0-3). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the surface attributes can be read or written from a compute shader without a CPU round-trip.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no attribute buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_get_blend_shape_arrays:
 
 .. rst-class:: classref-method
@@ -10094,6 +10126,22 @@ Returns the stride of the vertex positions for a mesh with given ``format``. Not
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_index_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the index buffer of the given mesh surface. The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the indices can be read or written from a compute shader without a CPU round-trip.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface is not indexed or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_get_material:
 
 .. rst-class:: classref-method
@@ -10101,6 +10149,38 @@ Returns the stride of the vertex positions for a mesh with given ``format``. Not
 :ref:`RID<class_RID>` **mesh_surface_get_material**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_material>`
 
 Returns a mesh's surface's material.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_skin_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the skin buffer of the given mesh surface (Bones, Weights). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the skin data can be read or written from a compute shader without a CPU round-trip.
+
+This buffer is created with the storage-buffer usage bit whenever the surface has skinning data, so it can be bound as a storage buffer in compute even without :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>`.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no skin buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_vertex_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the vertex buffer of the given mesh surface (Vertex, Normal, Tangent). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the surface vertices can be read or written from a compute shader without a CPU round-trip. This is the :ref:`Mesh<class_Mesh>` equivalent of :ref:`multimesh_get_buffer_rd_rid()<class_RenderingServer_method_multimesh_get_buffer_rd_rid>` and is intended for GPU-driven mesh workflows (procedural meshes, ribbon trails, cloth, hair, grass) implemented from a :ref:`GDExtension<class_GDExtension>`.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no vertex buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
 
 .. rst-class:: classref-item-separator
 

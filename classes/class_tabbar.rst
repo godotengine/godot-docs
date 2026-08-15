@@ -58,6 +58,8 @@ Properties
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                 | :ref:`tab_count<class_TabBar_property_tab_count>`                                 | ``0``                                                               |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`SizingMode<enum_TabBar_SizingMode>`                             | :ref:`tab_sizing<class_TabBar_property_tab_sizing>`                               | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`tab_{index}/disabled<class_TabBar_property_tab_{index}/disabled>`           | ``false``                                                           |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                     | :ref:`tab_{index}/icon<class_TabBar_property_tab_{index}/icon>`                   |                                                                     |
@@ -380,6 +382,56 @@ Represents the size of the :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` enum.
 
 ----
 
+.. _enum_TabBar_SizingMode:
+
+.. rst-class:: classref-enumeration
+
+enum **SizingMode**: :ref:`🔗<enum_TabBar_SizingMode>`
+
+.. _class_TabBar_constant_TAB_SIZING_FIT_CONTENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **TAB_SIZING_FIT_CONTENT** = ``0``
+
+Size tabs individually according to the size of their content.
+
+.. _class_TabBar_constant_TAB_SIZING_UNIFORM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **TAB_SIZING_UNIFORM** = ``1``
+
+Size tabs uniformly, with the widest tab determining the size of all tabs. This may trigger clipping sooner than other sizing modes due to increased tab sizes.
+
+.. _class_TabBar_constant_TAB_SIZING_JUSTIFY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **TAB_SIZING_JUSTIFY** = ``2``
+
+Size tabs individually according to their content, expanding to the full width of the tab bar.
+
+.. _class_TabBar_constant_TAB_SIZING_EXPAND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **TAB_SIZING_EXPAND** = ``3``
+
+Size tabs equally, expanding to the full width of the tab bar if there is room, otherwise fall back to :ref:`TAB_SIZING_FIT_CONTENT<class_TabBar_constant_TAB_SIZING_FIT_CONTENT>`.
+
+.. _class_TabBar_constant_TAB_SIZING_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **TAB_SIZING_MAX** = ``4``
+
+Represents the size of the :ref:`SizingMode<enum_TabBar_SizingMode>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_TabBar_CloseButtonDisplayPolicy:
 
 .. rst-class:: classref-enumeration
@@ -643,6 +695,23 @@ When the close button will appear on the tabs.
 - :ref:`int<class_int>` **get_tab_count**\ (\ )
 
 The number of tabs currently in the bar.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_property_tab_sizing:
+
+.. rst-class:: classref-property
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **tab_sizing** = ``0`` :ref:`🔗<class_TabBar_property_tab_sizing>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tab_sizing**\ (\ value\: :ref:`SizingMode<enum_TabBar_SizingMode>`\ )
+- :ref:`SizingMode<enum_TabBar_SizingMode>` **get_tab_sizing**\ (\ )
+
+The sizing strategy used to determine tab widths.
 
 .. rst-class:: classref-item-separator
 

@@ -99,15 +99,19 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ ) |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
-   +-------------------------+-----------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )   |
-   +-------------------------+-----------------------------------------------------------------------------------------+
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )   |
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<=<class_bool_operator_lte_bool>`\ (\ right\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )   |
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )    |
+   +-------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator >=<class_bool_operator_gte_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
+   +-------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -189,6 +193,18 @@ Returns ``true`` if the left **bool** is ``false`` and ``right`` is ``true``.
 
 ----
 
+.. _class_bool_operator_lte_bool:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_lte_bool>`
+
+Returns ``true`` if the left **bool** is ``false``, or if both **bool**\ s are ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_bool_operator_eq_bool:
 
 .. rst-class:: classref-operator
@@ -208,6 +224,18 @@ Returns ``true`` if both **bool**\ s are ``true``, or if both **bool**\ s are ``
 :ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_gt_bool>`
 
 Returns ``true`` if the left **bool** is ``true`` and ``right`` is ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_bool_operator_gte_bool:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_gte_bool>`
+
+Returns ``true`` if the left **bool** is ``true``, or if both **bool**\ s are ``false``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

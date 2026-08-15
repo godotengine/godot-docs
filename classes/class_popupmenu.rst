@@ -64,6 +64,8 @@ Properties
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                               | :ref:`item_{index}/id<class_PopupMenu_property_item_{index}/id>`                                       | ``0``                                                                                         |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                             | :ref:`item_{index}/indeterminate<class_PopupMenu_property_item_{index}/indeterminate>`                 | ``false``                                                                                     |
+   +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                             | :ref:`item_{index}/separator<class_PopupMenu_property_item_{index}/separator>`                         | ``false``                                                                                     |
    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                         | :ref:`item_{index}/text<class_PopupMenu_property_item_{index}/text>`                                   | ``""``                                                                                        |
@@ -180,6 +182,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_item_disabled<class_PopupMenu_method_is_item_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                              |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`is_item_indeterminate<class_PopupMenu_method_is_item_indeterminate>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                    |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_item_radio_checkable<class_PopupMenu_method_is_item_radio_checkable>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_item_separator<class_PopupMenu_method_is_item_separator>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                            |
@@ -219,6 +223,8 @@ Methods
    | |void|                                                | :ref:`set_item_id<class_PopupMenu_method_set_item_id>`\ (\ index\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ )                                                                                                                                                                    |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_item_indent<class_PopupMenu_method_set_item_indent>`\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ )                                                                                                                                                        |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`set_item_indeterminate<class_PopupMenu_method_set_item_indeterminate>`\ (\ index\: :ref:`int<class_int>`, indeterminate\: :ref:`bool<class_bool>`\ )                                                                                                                                 |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_item_index<class_PopupMenu_method_set_item_index>`\ (\ index\: :ref:`int<class_int>`, target_index\: :ref:`int<class_int>`\ )                                                                                                                                                    |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -303,6 +309,10 @@ Theme Properties
    | :ref:`Texture2D<class_Texture2D>` | :ref:`checked<class_PopupMenu_theme_icon_checked>`                                            |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`checked_disabled<class_PopupMenu_theme_icon_checked_disabled>`                          |                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`indeterminate<class_PopupMenu_theme_icon_indeterminate>`                                |                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`indeterminate_disabled<class_PopupMenu_theme_icon_indeterminate_disabled>`              |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`radio_checked<class_PopupMenu_theme_icon_radio_checked>`                                |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -545,6 +555,20 @@ The icon of the item at ``index``.
 :ref:`int<class_int>` **item_{index}/id** = ``0`` :ref:`🔗<class_PopupMenu_property_item_{index}/id>`
 
 The ID of the item at ``index``.
+
+\ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_item_{index}/indeterminate:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **item_{index}/indeterminate** = ``false`` :ref:`🔗<class_PopupMenu_property_item_{index}/indeterminate>`
+
+If ``true``, the item at ``index`` is in an indeterminate state.
 
 \ **Note:** ``index`` is a value in the ``0 .. item_count - 1`` range.
 
@@ -1306,6 +1330,22 @@ See :ref:`set_item_disabled()<class_PopupMenu_method_set_item_disabled>` for mor
 
 ----
 
+.. _class_PopupMenu_method_is_item_indeterminate:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_item_indeterminate**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_indeterminate>`
+
+Returns ``true`` if the item at the given ``index`` is in an indeterminate state. This only applies to checkable items and is represented visually by a horizontal line instead of a checkmark or radio button.
+
+See :ref:`set_item_indeterminate()<class_PopupMenu_method_set_item_indeterminate>` for more info on how to set an item as indeterminate.
+
+\ **Note:** Indeterminate items just display a horizontal line, but don't have any built-in behavior and must be set as indeterminate manually.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PopupMenu_method_is_item_radio_checkable:
 
 .. rst-class:: classref-method
@@ -1553,6 +1593,20 @@ The ``id`` is used in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :
 |void| **set_item_indent**\ (\ index\: :ref:`int<class_int>`, indent\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_indent>`
 
 Sets the horizontal offset of the item at the given ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_set_item_indeterminate:
+
+.. rst-class:: classref-method
+
+|void| **set_item_indeterminate**\ (\ index\: :ref:`int<class_int>`, indeterminate\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PopupMenu_method_set_item_indeterminate>`
+
+Sets the indeterminate status of the item at the given ``index``. This only applies to checkable items and is represented visually by a horizontal line instead of a checkmark or radio button.
+
+\ **Note:** Indeterminate items just display a horizontal line, but don't have any built-in behavior and must be set as indeterminate manually.
 
 .. rst-class:: classref-item-separator
 
@@ -2008,6 +2062,30 @@ Font size of the menu items.
 :ref:`Texture2D<class_Texture2D>` **checked_disabled** :ref:`🔗<class_PopupMenu_theme_icon_checked_disabled>`
 
 :ref:`Texture2D<class_Texture2D>` icon for the checked checkbox items when they are disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_icon_indeterminate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **indeterminate** :ref:`🔗<class_PopupMenu_theme_icon_indeterminate>`
+
+:ref:`Texture2D<class_Texture2D>` icon for the indeterminate checkbox items.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_icon_indeterminate_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **indeterminate_disabled** :ref:`🔗<class_PopupMenu_theme_icon_indeterminate_disabled>`
+
+:ref:`Texture2D<class_Texture2D>` icon for the indeterminate checkbox items when they are disabled.
 
 .. rst-class:: classref-item-separator
 
