@@ -48,6 +48,9 @@ With the Skeleton node selected, first set up a new :ref:`class_bonemap` and :re
 Godot has a preset called :ref:`class_skeletonprofilehumanoid` for humanoid models.
 This tutorial proceeds with the assumption that you are using :ref:`class_skeletonprofilehumanoid`.
 
+.. note:: You cannot load a bone_map with import scripts. :ref:`class_bonemap` is not accessible outside of the UI. In order to
+          map the bones with an import script, you must load the bone map file into an array and assign the bones one at a time.
+
 .. note:: If you need a profile that is different from :ref:`class_skeletonprofilehumanoid`, you can export
           a :ref:`class_skeletonprofile` from the editor by selecting a Skeleton3D and using the **Skeleton3D** menu in the 3D viewport's toolbar.
 
