@@ -268,7 +268,7 @@ Navigation
     If a project had navigation map synchronization errors before, it might now have shifted
     affected edges, making already existing errors in a layout more noticeable in the pathfinding.
     The ``navigation/2d_or_3d/merge_rasterizer_cell_scale`` project setting can be set to a lower value
-    to increase the detail of the rasterization grid (with `0.01` being the smallest cell size possible).
+    to increase the detail of the rasterization grid (with ``0.01`` being the smallest cell size possible).
     If edge merge errors still persist with the lowest possible rasterization scale value,
     the error may be caused by overlap: two navmeshes are stacked on top of each other, causing geometry conflict.
 

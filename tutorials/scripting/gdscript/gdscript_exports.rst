@@ -248,7 +248,7 @@ inspector. For example, to define a value that is meant to be configured as
     @export_range(0, 100, 1, "suffix:m") var m: int
 
 For angles that are stored in radians but displayed as degrees to the user, use
-the `"radians_as_degrees"` hint:
+the ``"radians_as_degrees"`` hint:
 
 ::
 
@@ -256,9 +256,9 @@ the `"radians_as_degrees"` hint:
 
 This performs automatic conversion when the value is displayed or modified in
 the inspector and also displays a degree (``°``) suffix. This approach is used
-by Godot's own `rotation` properties throughout the editor.
+by Godot's own ``rotation`` properties throughout the editor.
 
-If the angle is stored in degrees instead, use the `"degrees"` hint to display
+If the angle is stored in degrees instead, use the ``"degrees"`` hint to display
 the degree symbol while disabling the automatic degrees-to-radians conversion
 when the value is modified from the inspector.
 

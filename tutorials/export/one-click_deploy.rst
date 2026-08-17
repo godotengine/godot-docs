@@ -78,18 +78,18 @@ Using one-click deploy
    - Install Xcode, accept Xcode license and login with your Apple Developer
      account.
    - If you are using Xcode 14 or earlier, install `ios-deploy <https://github.com/ios-control/ios-deploy>`__
-     and set path to `ios-deploy` in the Editor Settings (see `Export ⇾ iOS ⇾ iOS Deploy`).
+     and set path to ``ios-deploy`` in the Editor Settings (see :menu:`Export > iOS > iOS Deploy`).
    - For running on device:
       - Pair your mobile device with a Mac.
       - Enable developer mode on your device.
       - Device can be connected via USB or local network.
       - Make sure the device is on the same local network and a correct network
-        interface is selected in the editor settings (see `Network ⇾ Debug ⇾ Remote Host`).
-        By default, the editor is listening for `localhost` connections only.
+        interface is selected in the Editor Settings (see :menu:`Network > Debug > Remote Host`).
+        By default, the editor is listening for ``localhost`` connections only.
    - Device screen should be unlocked.
 
 - **Desktop platforms:**
-   - Enable `SSH Remote Deploy` and configure connection settings in the project
+   - Enable :ui:`SSH Remote Deploy` and configure connection settings in the project
      export setting.
 
 - Make sure there is an export preset marked as **Runnable** for the target

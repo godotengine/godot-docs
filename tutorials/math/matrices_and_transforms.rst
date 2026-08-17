@@ -136,10 +136,12 @@ hardest thing you need to know.
 
 .. image:: img/matrices_and_transforms/rotate2.png
 
-.. note:: Godot represents all rotations with radians, not degrees.
-          A full turn is `TAU` or `PI*2` radians, and a quarter
-          turn of 90 degrees is `TAU/4` or `PI/2` radians. Working
-          with `TAU` usually results in more readable code.
+.. note::
+
+   Godot represents all rotations with radians, not degrees.
+   A full turn is ``TAU`` or ``PI*2`` radians, and a quarter
+   turn of 90 degrees is ``TAU/4`` or ``PI/2`` radians. Working
+   with ``TAU`` usually results in more readable code.
 
 .. note:: Fun fact: In addition to Y being *down* in Godot, rotation
           is represented clockwise. This means that all the math and

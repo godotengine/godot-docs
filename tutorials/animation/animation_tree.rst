@@ -124,7 +124,7 @@ This node will execute an animation once and return when it finishes. You can cu
 TimeSeek
 ~~~~~~~~
 
-This node allows you to seek to a time in the animation connected to its `in` input. Use this node to play an ``Animation`` starting from a certain playback position.
+This node allows you to seek to a time in the animation connected to its ``in`` input. Use this node to play an ``Animation`` starting from a certain playback position.
 Note that the seek request value is measured in seconds, so if you would like to play an animation from the beginning, set the value to ``0.0``, or if you would like
 to play an animation from 3 seconds in, set the value to ``3.0``.
 
@@ -154,8 +154,10 @@ to play an animation from 3 seconds in, set the value to ``3.0``.
 TimeScale
 ~~~~~~~~~
 
-This node allows you to scale the speed of the animation connected to its `in` input. The speed of the animation will be multiplied by the number in the `scale`
-parameter. Setting the scale to 0 will pause the animation. Setting the scale to a negative number will play the animation backwards.
+This node allows you to scale the speed of the animation connected to its ``in`` input.
+The speed of the animation will be multiplied by the number in the ``scale`` parameter.
+Setting the scale to ``0.0`` will pause the animation.
+Setting the scale to a negative number will play the animation backwards.
 
 .. image:: img/animtree_timescale.webp
 
@@ -498,5 +500,8 @@ Then you can set or read them:
 
     animationTree.Set("parameters/eye_blend/blend_amount", 1.0);
 
-.. note:: Advance Expressions from a StateMachine will not be found under the parameters. This is because they are held in another script rather than the
-         AnimationTree itself. Advance `Conditions` will be found under parameters.
+.. note::
+
+   Advance Expressions from a StateMachine will not be found under the parameters.
+   This is because they are held in another script rather than the AnimationTree itself.
+   Advance :ui:`Conditions` will be found under parameters.

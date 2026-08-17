@@ -177,9 +177,10 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--generate-spirv-debug-info``| |debug| Generate SPIR-V debug information. This allows source-level shader debugging with RenderDoc.            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see class reference for                                             |
-|                                | `RenderingDevice.get_driver_and_device_memory_report()` and linked methods). Currently only implemented for     |
-|                                | Vulkan. Enabling this feature may cause crashes on some systems due to buggy drivers or bugs in the Vulkan      |
+| ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see :ref:`RenderingDevice.get_driver_and_device_memory_report()     |
+|                                | <class_RenderingDevice_method_get_driver_and_device_memory_report>` and linked methods).                        |
+|                                | Currently only implemented for Vulkan.                                                                          |
+|                                | Enabling this feature may cause crashes on some systems due to buggy drivers or bugs in the Vulkan              |
 |                                | Loader. See https://github.com/godotengine/godot/issues/95967                                                   |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--accurate-breadcrumbs``     | |debug| Force barriers between breadcrumbs. Useful for narrowing down a command causing GPU resets. Currently   |

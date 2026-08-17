@@ -70,14 +70,14 @@ member variables, constants, and signals in separate XML nodes.
 For each, you want to learn how they work in Godot's source code. Then, fill
 their documentation by completing or improving the text in these tags:
 
-- `<brief_description>`
-- `<description>`
-- `<constant>`
-- `<method>` (in its `<description>` tag; return types and arguments don't take separate
+- ``<brief_description>``
+- ``<description>``
+- ``<constant>``
+- ``<method>`` (in its ``<description>`` tag; return types and arguments don't take separate
   documentation strings)
-- `<member>`
-- `<signal>` (in its `<description>` tag; arguments don't take separate documentation strings)
-- `<constant>`
+- ``<member>``
+- ``<signal>`` (in its ``<description>`` tag; arguments don't take separate documentation strings)
+- ``<constant>``
 
 Write in a clear and simple language. Always follow the `writing guidelines
 <https://contributing.godotengine.org/en/latest/documentation/guidelines/docs_writing_guidelines.html>`__

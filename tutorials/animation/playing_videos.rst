@@ -272,12 +272,12 @@ Chroma key, commonly known as the "green screen" or "blue screen" effect, allows
 
    .. image:: img/chroma_key_video.webp
 
-We will achieve the chroma key effect by writing a custom shader in GDScript and using a `VideoStreamPlayer` node to display the video content.
+We will achieve the chroma key effect by writing a custom shader in GDScript and using a ``VideoStreamPlayer`` node to display the video content.
 
 Scene Setup
 ~~~~~~~~~~~
 
-Ensure that the scene contains a `VideoStreamPlayer` node to play the video and a `Control` node to hold the UI elements for controlling the chroma key effect.
+Ensure that the scene contains a ``VideoStreamPlayer`` node to play the video and a ``Control`` node to hold the UI elements for controlling the chroma key effect.
 
    .. image:: img/chroma_key_scene.webp
 
@@ -286,7 +286,7 @@ Writing the Custom Shader
 
 To implement the chroma key effect, follow these steps:
 
-1. Select the `VideoStreamPlayer` node in the scene and go to its properties. Under `CanvasItem > Material`, create a new shader named "ChromaKeyShader.gdshader."
+1. Select the ``VideoStreamPlayer`` node in the scene and go to its properties. Under :menu:`CanvasItem > Material`, create a new shader named "ChromaKeyShader.gdshader."
 
 2. In the "ChromaKeyShader.gdshader" file, write the custom shader code as shown below:
 
@@ -331,7 +331,7 @@ and users can customize it according to their specific requirements.
 UI Controls
 ~~~~~~~~~~~
 
-To allow users to manipulate the chroma key effect in real-time, we created sliders in the `Control` node. The `Control` node's script contains the following functions:
+To allow users to manipulate the chroma key effect in real-time, we created sliders in the ``Control`` node. The ``Control`` node's script contains the following functions:
 
 .. tabs::
  .. code-tab:: gdscript
@@ -399,8 +399,8 @@ also make sure that the range of the sliders are appropriate, our settings are :
 Signal Handling
 ~~~~~~~~~~~~~~~
 
-Connect the appropriate signal from the UI elements to the `Control` node's script.
-you created in the `Control` node's script to control the chroma key effect.
+Connect the appropriate signal from the UI elements to the ``Control`` node's script.
+you created in the ``Control`` node's script to control the chroma key effect.
 These signal handlers will update the shader's uniform variables
 in response to user input.
 

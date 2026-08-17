@@ -2555,7 +2555,7 @@ vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] ) :ref:`🔗<sh
     The texture coordinates consumed from ``p``, not including the last component of ``p``, are
     divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
     forms is used as Dref. After these values are computed, the texture lookup proceeds as in
-    `texture<shader_func_texture>`.
+    :ref:`texture<shader_func_texture>`.
 
     :param s:
         The sampler to which the texture from which texels will be retrieved is bound.
@@ -2649,7 +2649,7 @@ vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod) :ref:`🔗<shader
     The texture coordinates consumed from ``p``, not including the last component of ``p``, are
     divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
     forms is used as Dref. After these values are computed, the texture lookup proceeds as in
-    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
+    :ref:`textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
     which the texture will be sampled.
 
     :param s:
@@ -2747,7 +2747,7 @@ vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:
 
     The texture coordinates consumed from ``p``, not including the last component of ``p``, are
     divided by the last component of ``p``. After these values are computed, the texture lookup proceeds as in
-    `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
+    :ref:`textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
         The sampler to which the texture from which texels will be retrieved is bound.

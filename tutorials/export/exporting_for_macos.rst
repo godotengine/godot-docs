@@ -168,17 +168,17 @@ See `Hardened Runtime <https://developer.apple.com/documentation/security/harden
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Disable Library Validation            | Allows app to load arbitrary libraries and frameworks. Enable it if you are using GDExtension add-ons or ad-hoc signing, or want to support user-provided external add-ons.                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Audio Input                           | Enable if you need to use the microphone or other audio input sources, if it's enabled you should also provide usage message in the `privacy/microphone_usage_description` option.               |
+| Audio Input                           | Enable if you need to use the microphone or other audio input sources, if it's enabled you should also provide usage message in the ``privacy/microphone_usage_description`` option.             |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Camera                                | Enable if you need to use the camera, if it's enabled you should also provide usage message in the `privacy/camera_usage_description` option.                                                    |
+| Camera                                | Enable if you need to use the camera, if it's enabled you should also provide usage message in the ``privacy/camera_usage_description`` option.                                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Location                              | Enable if you need to use location information from Location Services, if it's enabled you should also provide usage message in the `privacy/location_usage_description` option.                 |
+| Location                              | Enable if you need to use location information from Location Services, if it's enabled you should also provide usage message in the ``privacy/location_usage_description`` option.               |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Address Book                          | [5]_ Enable to allow access contacts in the user's address book, if it's enabled you should also provide usage message in the `privacy/address_book_usage_description` option.                   |
+| Address Book                          | [5]_ Enable to allow access contacts in the user's address book, if it's enabled you should also provide usage message in the ``privacy/address_book_usage_description`` option.                 |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Calendars                             | [5]_ Enable to allow access to the user's calendar, if it's enabled you should also provide usage message in the `privacy/calendar_usage_description` option.                                    |
+| Calendars                             | [5]_ Enable to allow access to the user's calendar, if it's enabled you should also provide usage message in the ``privacy/calendar_usage_description`` option.                                  |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Photo Library                         | [5]_ Enable to allow access to the user's Photos library, if it's enabled you should also provide usage message in the `privacy/photos_library_usage_description` option.                        |
+| Photo Library                         | [5]_ Enable to allow access to the user's Photos library, if it's enabled you should also provide usage message in the ``privacy/photos_library_usage_description`` option.                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Apple Events                          | [5]_ Enable to allow app to send Apple events to other apps.                                                                                                                                     |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,7 +226,7 @@ See `App Sandbox <https://developer.apple.com/documentation/security/app_sandbox
 | Helper Executable                 | List of helper executables to embedded to the app bundle. Sandboxed app are limited to execute only these executable.                |
 +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. [7] You can optionally provide usage messages for various folders in the `privacy/*_folder_usage_description` options.
+.. [7] You can optionally provide usage messages for various folders in the ``privacy/*_folder_usage_description`` options.
 
 .. note::
 

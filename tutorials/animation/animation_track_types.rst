@@ -211,7 +211,7 @@ key you just created to select an animation in the inspector dock.
 .. image:: img/animation_player_animation.webp
 
 If an animation is already playing and you want to stop it early, you can create
-a key and have it set to `[STOP]` in the inspector.
+a key and have it set to ``[STOP]`` in the inspector.
 
 .. note:: If you instantiate a scene that contains an animation player into your
           scene, you need to enable "Editable Children" in the scene tree to
