@@ -220,4 +220,4 @@ on a GridMap, relative to the camera position (in meters).
 Using GridMap in code
 ---------------------
 
-See :ref:`class_GridMap` for details on the node's methods and member variables.
+See :ref:`class_GridMap` for details on the node's methods and properties.

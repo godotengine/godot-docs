@@ -256,7 +256,7 @@ and moves a :ref:`class_CanvasItem` when the body moves.
     func _body_moved(state, index):
         # Created your own canvas item; use it here.
         # `ci_rid` from the sprite example above needs to be moved to a
-        # member variable (instead of within `_ready()`) so it can be referenced here.
+        # property (instead of within `_ready()`) so it can be referenced here.
         RenderingServer.canvas_item_set_transform(ci_rid, state.transform)
 
 
@@ -295,7 +295,7 @@ and moves a :ref:`class_CanvasItem` when the body moves.
         {
             // Created your own canvas item; use it here.
             // `ciRid` from the sprite example above needs to be moved to a
-            // member variable (instead of within `_Ready()`) so it can be referenced here.
+            // property (instead of within `_Ready()`) so it can be referenced here.
             RenderingServer.CanvasItemSetTransform(_canvasItem, state.Transform);
         }
 

@@ -874,14 +874,14 @@ For inner classes, use single-line declarations:
 Signals and properties
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Write signal declarations, followed by properties, that is to say, member
-variables, after the docstring.
+Write signal declarations, followed by properties (also known as member
+variables), after the docstring.
 
 Enums should come after signals, as you can use them as export hints for other
 properties.
 
-Then, write constants, exported variables, public, private, and onready
-variables, in that order.
+Then, write constants, exported properties, public, private, and onready
+properties, in that order.
 
 ::
 

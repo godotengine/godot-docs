@@ -321,7 +321,7 @@ See also: :ref:`doc_c_sharp_signals`.
 `@onready` annotation
 ---------------------
 
-GDScript has the ability to defer the initialization of a member variable until the ready function
+GDScript has the ability to defer the initialization of a property until the ready function
 is called with `@onready` (cf. :ref:`doc_gdscript_onready_annotation`).
 For example:
 

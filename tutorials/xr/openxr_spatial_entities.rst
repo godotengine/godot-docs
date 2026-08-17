@@ -1299,7 +1299,7 @@ Plane tracking gives access to two components that are guaranteed to be supporte
      - Provides us with a type identification of each plane
 
 Our plane tracking configuration object already enables all supported components, but we'll need to interrogate
-it so we'll store our instance in a member variable.
+it so we'll store our instance in a property.
 We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker object to store our component data.
 
 .. code-block:: gdscript

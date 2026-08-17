@@ -3,9 +3,9 @@
 C# exported properties
 ======================
 
-In Godot, class members can be exported. This means their value gets saved along
+In Godot, member variables can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
-attached to. They will also be available for editing in the property editor.
+attached to. They will also be available for editing in the Inspector.
 Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
@@ -19,7 +19,7 @@ Exporting is done by using the ``[Export]`` attribute.
     }
 
 In that example the value ``5`` will be saved, and after building the current project
-it will be visible in the property editor.
+it will be visible in the Inspector.
 
 One of the fundamental benefits of exporting member variables is to have
 them visible and editable in the editor. This way, artists and game designers
@@ -46,7 +46,7 @@ Exporting works with fields and properties. They can have any access modifier.
     [Export]
     public int Number { get; set; }
 
-Exported members can specify a default value; otherwise, the `default value of the type <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values>`_ is used instead.
+Exported member variables can specify a default value; otherwise, the `default value of the type <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values>`_ is used instead.
 
 An ``int`` like ``Number`` defaults to ``0``. ``Text`` defaults to null because
 ``string`` is a reference type.
@@ -368,12 +368,12 @@ in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 Exporting bit flags
 -------------------
 
-Members whose type is an enum with the ``[Flags]`` attribute can be exported and
+Member variables whose type is an enum with the ``[Flags]`` attribute can be exported and
 their values are limited to the members of the enum type.
 The editor will create a widget in the Inspector, allowing to select none, one,
 or multiple of the enum members. The value will be stored as an integer.
 
-A flags enum uses powers of 2 for the values of the enum members. Members that
+A flags enum uses powers of 2 for the values of the enum members. Member variables that
 combine multiple flags using logical OR (``|``) are also possible.
 
 .. code-block:: csharp
@@ -441,7 +441,7 @@ If in doubt, use boolean variables instead.
 Exporting enums
 ---------------
 
-Members whose type is an enum can be exported and their values are limited to the members
+Member variables whose type is an enum can be exported and their values are limited to the members
 of the enum type. The editor will create a widget in the Inspector, enumerating the
 following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as an integer.
 
@@ -457,7 +457,7 @@ following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as 
     [Export]
     public MyEnum MyEnumCurrent { get; set; }
 
-Integer and string members can also be limited to a specific list of values using the
+Integer and string member variables can also be limited to a specific list of values using the
 ``[Export]`` annotation with the ``PropertyHint.Enum`` hint.
 The editor will create a widget in the Inspector, enumerating the following as Warrior,
 Magician, Thief. The value will be stored as an integer, corresponding to the index

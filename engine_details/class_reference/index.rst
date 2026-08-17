@@ -64,8 +64,8 @@ The reference for each class is contained in an XML file like the one below:
 
 It starts with brief and long descriptions. In the generated docs, the brief
 description is always at the top of the page, while the long description lies
-below the list of methods, variables, and constants. You can find methods,
-member variables, constants, and signals in separate XML nodes.
+below the list of methods, properties, and constants. You can find methods,
+properties, constants, and signals in separate XML nodes.
 
 For each, you want to learn how they work in Godot's source code. Then, fill
 their documentation by completing or improving the text in these tags:
@@ -150,7 +150,7 @@ For links to the same class, the class name is optional and can be omitted.
 | | Link to enum                 |                                         |                                                              |
 +--------------------------------+-----------------------------------------+--------------------------------------------------------------+
 | | ``[member Class.name]``      | ``Get [member Node2D.scale].``          | Get :ref:`Node2D.scale <class_Node2D_property_scale>`.       |
-| | Link to member               |                                         |                                                              |
+| | Link to property             |                                         |                                                              |
 +--------------------------------+-----------------------------------------+--------------------------------------------------------------+
 | | ``[method Class.name]``      | ``Call [method Node3D.hide].``          | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
 | | Link to method               |                                         |                                                              |

@@ -1217,9 +1217,9 @@ the Inspector by adding it to the **Markup > Custom Effects** array, or in code 
     tag will be left as-is.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
-Optionally, you can also provide a custom BBCode identifier by adding a member
-name ``bbcode``. The code will check the ``bbcode`` property automatically or will
-use the name of the file to determine what the BBCode tag should be.
+Optionally, you can also provide a custom BBCode identifier by adding a property
+named ``bbcode``. The code will either check the ``bbcode`` property or fall back to
+the name of the file to determine what the BBCode tag should be.
 
 ``_process_custom_fx``
 ~~~~~~~~~~~~~~~~~~~~~~

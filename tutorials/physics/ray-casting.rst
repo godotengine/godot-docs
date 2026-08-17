@@ -242,7 +242,7 @@ this case, it is much more efficient to use the collision layer/mask system.
 
 The ``intersect_ray()`` parameters object can also be supplied a collision mask.
 For example, to use the same mask as the parent body, use the ``collision_mask``
-member variable. The array of exceptions can be supplied as the last argument as well:
+property. The array of exceptions can be supplied as the last argument as well:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -43,7 +43,7 @@ here's an example of how GDScript looks.
     extends BaseClass
 
 
-    # Member variables.
+    # Properties.
     var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
@@ -188,7 +188,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | func       | Defines a function. See `Functions`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| static     | Defines a static function or a static member variable.                                                                                            |
+| static     | Defines a static function or a static variable.                                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant. See `Constants`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -510,7 +510,7 @@ be obtained when a call to ``Node._ready()`` is made.
 
 This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``@onready`` annotation, that
-defers initialization of a member variable until ``_ready()`` is called. It
+defers initialization of a property until ``_ready()`` is called. It
 can replace the above code with a single line:
 
 ::
@@ -580,7 +580,7 @@ considered a comment.
 Use two hash symbols (``##``) instead of one (``#``) to add a *documentation
 comment*, which will appear in the script documentation and in the inspector
 description of an exported variable. Documentation comments must be placed
-directly *above* a documentable item (such as a member variable), or at the top
+directly *above* a documentable member (such as a property), or at the top
 of a file. Dedicated formatting options are also available. See
 :ref:`doc_gdscript_documentation_comments` for details.
 
@@ -1038,7 +1038,7 @@ Signals are better used by getting them from actual objects, e.g. ``$Button.butt
 Contains an object and a function, which is useful for passing functions as
 values (e.g. when connecting to signals).
 
-Getting a method as a member returns a callable. ``var x = $Sprite2D.rotate``
+Getting a method as a variable returns a callable. ``var x = $Sprite2D.rotate``
 will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
 ``rotate`` as the method.
 
@@ -1047,7 +1047,7 @@ You can call it using the ``call`` method: ``x.call(PI)``.
 Variables
 ---------
 
-Variables can exist as class members or local to functions. They are
+Variables can exist as members of a class or local to functions. They are
 created with the ``var`` keyword and may, optionally, be assigned a
 value upon initialization.
 
@@ -1103,7 +1103,7 @@ Valid types are:
 Initialization order
 ~~~~~~~~~~~~~~~~~~~~
 
-Member variables are initialized in the following order:
+Properties are initialized in the following order:
 
 1. Depending on the variable's static type, the variable is either ``null``
    (untyped variables and objects) or has a default value of the type
@@ -1155,7 +1155,7 @@ Member variables are initialized in the following order:
 Static variables
 ~~~~~~~~~~~~~~~~
 
-A class member variable can be declared static:
+A member variable can be declared static:
 
 ::
 
@@ -1401,7 +1401,7 @@ Functions
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
-always available and is provided as an option for accessing class members
+always available and is provided as an option for accessing member variables
 (see `self`_), but is not always required (and should *not* be sent as the
 function's first argument, unlike Python).
 
@@ -1598,7 +1598,7 @@ Lambda functions capture the local environment:
 Static functions
 ~~~~~~~~~~~~~~~~
 
-A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
+A function can be declared static. When a function is static, it has no access to the instance's member variables or ``self``.
 A static function has access to static variables. Also static functions are useful to make libraries of helper functions:
 
 ::
@@ -2358,7 +2358,7 @@ Class constructor
 The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
 Note that every class has an implicit constructor that is always called
-(defining the default values of class variables). ``super`` is used to call the
+(defining the default values of member variables). ``super`` is used to call the
 explicit constructor:
 
 ::
@@ -2489,7 +2489,7 @@ Exports
 Properties (setters and getters)
 --------------------------------
 
-Sometimes, you want a class' member variable to do more than just hold data and actually perform
+Sometimes, you want a class's member variable to do more than just hold data and actually perform
 some validation or computation whenever its value changes. It may also be desired to
 encapsulate its access in some way.
 
@@ -2518,7 +2518,7 @@ Example:
 Alternative syntax
 ~~~~~~~~~~~~~~~~~~
 
-Also there is another notation to use existing class functions if you want to split the code from the variable declaration
+Also there is another notation to use existing class functions if you want to split the code from the property declaration
 or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for):
 
 ::
@@ -2532,22 +2532,22 @@ This can also be done in the same line:
 
     var my_prop: get = get_my_prop, set = set_my_prop
 
-The setter and getter must use the same notation, mixing styles for the same variable is not allowed.
+The setter and getter must use the same notation, mixing styles for the same property is not allowed.
 
 .. note::
 
     You cannot specify type hints for *inline* setters and getters. This is done on purpose to reduce the boilerplate.
-    If the variable is typed, then the setter's argument is automatically of the same type, and the getter's return value must match it.
-    Separated setter/getter functions can have type hints, and the type must match the variable's type or be a wider type.
+    If the property is typed, then the setter's argument is automatically of the same type, and the getter's return value must match it.
+    Separated setter/getter functions can have type hints, and the type must match the property's type or be a wider type.
 
 When setter/getter is not called
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a variable is initialized, the value of the initializer will be written directly to the variable.
-This occurs even if the ``@onready`` or ``@export`` annotation is applied to the variable.
+When a property is initialized, the value of the initializer will be written directly to the property.
+This occurs even if the ``@onready`` or ``@export`` annotation is applied to the property.
 
-Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member.
-This prevents infinite recursion and saves you from explicitly declaring another variable:
+When accessing a property in its own setter/getter, the underlying variable will be accessed directly.
+This prevents infinite recursion and saves you from explicitly declaring another property:
 
 ::
 

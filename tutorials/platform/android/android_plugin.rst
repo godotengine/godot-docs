@@ -165,7 +165,7 @@ As mentioned, a v2 Android plugin is now provided to the Godot Editor as an ``Ed
         @tool
         extends EditorPlugin
 
-        # A class member to hold the editor export plugin during its lifecycle.
+        # A property to hold the editor export plugin during its lifecycle.
         var export_plugin : AndroidExportPlugin
 
         func _enter_tree():

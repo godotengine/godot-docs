@@ -67,7 +67,7 @@ Using our base editor plugin template code above, an example implementation look
     @tool
     extends EditorPlugin
 
-    # A class member to hold the editor export plugin during its lifecycle.
+    # A property to hold the editor export plugin during its lifecycle.
     var export_plugin: VRMExportPlugin
 
     func _enter_tree():
