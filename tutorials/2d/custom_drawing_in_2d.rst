@@ -23,6 +23,11 @@ Custom drawing in a 2D node is *really* useful. Here are some use cases:
    but when you have unusual needs, you will likely need a custom
    control.
 
+.. seealso::
+
+    You can find an example of these methods in action in the
+    `Custom Drawing in 2D demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/custom_drawing>`__.
+
 Drawing
 -------
 
@@ -609,6 +614,9 @@ Note that if multiple unconnected lines are going to be drawn at the same time,
 you may get additional performance by drawing all of them in a single call, using
 the :ref:`draw_multiline <class_CanvasItem_method_draw_multiline>` method.
 
+To draw an ellipse (oval shape), you can use the
+:ref:`draw_ellipse <class_CanvasItem_method_draw_ellipse>` method.
+
 Drawing text
 ~~~~~~~~~~~~
 
@@ -1058,3 +1066,6 @@ Feel free to play with the parameters in the inspector to obtain different
 results: change the color, the width, the antialiasing, and increase the
 number of segments to increase the curve smoothness, at the cost of extra
 performance.
+
+To draw an ellipse arc (oval shape), you can use the
+:ref:`draw_ellipse_arc <class_CanvasItem_method_draw_ellipse_arc>` method.
