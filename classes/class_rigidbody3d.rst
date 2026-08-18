@@ -42,7 +42,7 @@ Tutorials
 
 - :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
+- `3D Truck Town Demo <https://store.godotengine.org/asset/godot-foundation/truck-town-demo/>`__
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
