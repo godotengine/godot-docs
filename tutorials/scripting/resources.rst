@@ -97,6 +97,11 @@ You can also ``preload`` resources. Unlike ``load``, this function will read the
 file from disk and load it at compile-time. As a result, you cannot call ``preload``
 with a variable path: you need to use a constant string.
 
+.. warning::
+
+    Preloaded resources will never be freed. This behaviour may change in the
+    near future and should not be taken into consideration for your software.
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
