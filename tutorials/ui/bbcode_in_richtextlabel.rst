@@ -807,7 +807,7 @@ Image and table vertical alignment
 
 When a vertical alignment value is provided with the ``[img]`` or ``[table]`` tag
 the image/table will try to align itself against the surrounding text. Alignment is
-performed using a vertical point of the image and a vertical point of the text.
+performed using a vertical point of the image and a vertical point of the specified part of the text.
 There are 3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
 possible points on the text and table (``top``, ``center``, ``baseline``, and ``bottom``),
 which can be used in any combination.
@@ -820,6 +820,22 @@ To specify both points, use their full or short names as a value of the image/ta
     text [img=center,center]...[/img] text
 
 .. image:: img/bbcode_in_richtextlabel_image_align.webp
+
+To specify part of the text, add one of the following values:
+
+  - ``p`` (``prev``) - align to the height of text span directly before the image/table.
+  - ``n`` (``next``) - align to the height of text span directly after the image/table.
+  - ``a`` (``adjacent``) - align to the maximum height text spans directly before and after the image/table (default for images).
+  - ``l`` (``line``) - align to the height of the line (default for tables).
+
+.. code-block:: none
+
+    prev[img=center,center,prev]...[/img][font_size=50]text[img=center,center,prev]...[/img][/font_size][font_size=80]text[img=center,center,prev]...[/img][/font_size]text
+    next[img=center,center,next]...[/img][font_size=50]text[img=center,center,next]...[/img][/font_size][font_size=80]text[img=tcenter,center,next]...[/img][/font_size]text
+    adj[img=center,center,adjacent]...[/img][font_size=50]text[img=center,center,adjacent]...[/img][/font_size][font_size=80]text[img=center,center,adjacent]...[/img][/font_size]text
+    line[img=center,center,line]...[/img][font_size=50]text[img=center,center,line]...[/img][/font_size][font_size=80]text[img=center,center,line]...[/img][/font_size]text
+
+.. image:: img/bbcode_in_richtextlabel_image_align_scope.webp
 
 .. code-block:: none
 
