@@ -1317,5 +1317,4 @@ This will add a few new BBCode commands, which can be used like so:
 
 .. code-block:: none
 
-    [center][ghost]This is a custom [matrix]effect[/matrix][/ghost] made in
-    [pulse freq=5.0 height=2.0][pulse color=#00FFAA freq=2.0]GDScript[/pulse][/pulse].[/center]
+    [center][ghost]This is a custom effect[/ghost] made in [matrix]GDScript[/matrix][/center]
