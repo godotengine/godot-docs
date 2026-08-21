@@ -243,6 +243,11 @@ rst_prolog = """
 
 """
 
+# This is the Sphinx role used for text formatted `like this`.
+# Many docs mistakenly use single backticks, instead of double backticks.
+# Default GDScript is the least intrusive, and happens to look quite nice.
+default_role = "gdscript"
+
 # -- I18n settings --------------------------------------------------------
 
 # Godot localization is handled via https://github.com/godotengine/godot-docs-l10n
