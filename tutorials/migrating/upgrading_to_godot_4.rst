@@ -469,6 +469,8 @@ table to find its new name.
     and PathFollow3D's ``set_offset()`` and ``get_offset()`` must be renamed to
     ``set_progress()`` and ``get_progress()`` respectively.
 
+.. codespell:ignore-begin doubleclick
+
 - AudioServer's ``device`` is now ``output_device``.
 - BaseButton's ``group`` is now ``button_group``.
 - Camera3D's ``zfar`` is now ``far``.
@@ -500,6 +502,7 @@ table to find its new name.
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
   properties in Godot are not used for read-only values.
 
+.. codespell:ignore-end
 
 **Enums**
 

@@ -9,26 +9,21 @@ quiet-level = 3
 dictionary = ["_tools/codespell-dict.txt", "-"]
 builtin = ["clear", "rare", "en-GB_to_en-US"]
 skip = [
-    "_build/*",
-    "_static/*",
+    "_static/css/*",
     "_styleguides/*",
     "classes/*",
-    ".github/*",
     "tutorials/i18n/locales.rst",
     "AUTHORS.md",
     "LICENSE.txt",
 ]
 ignore-words-list = [
     "dialogue",     # Common even in US spelling.
-    "doubleclick",
     "findn",        # Our case-insensitive `find` function.
-    "implementors",
     "inout",        # Shader attribute.
     "lod",          # "Level of Detail".
     "marshalled",   # Common spelling in IT.
     "marshalling",  # Common spelling in IT.
     "thirdparty",   # Prefer as one word.
     "uint",         # "Unsigned integer".
-    "writeable",    # Part of a Python error message.
 ]
 ignore-multiline-regex = "codespell:ignore-begin.*?codespell:ignore-end"
