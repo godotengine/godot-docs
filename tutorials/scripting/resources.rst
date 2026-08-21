@@ -29,8 +29,8 @@ or a ``.scn`` file), an image, a script... Here are some :ref:`Resource <class_R
 
 When the engine loads a resource from disk, **it only loads it once**. If a copy
 of that resource is already in memory, trying to load the resource again will
-return the same copy every time. As resources only contain data, there is no need
-to duplicate them.
+return the same copy every time until it's freed from memory. As resources only contain
+data, there is no need to duplicate them.
 
 Every object, be it a Node or a Resource, can export properties. There are many
 types of Properties, like String, integer, Vector2, etc., and any of these types
@@ -153,6 +153,25 @@ Freeing resources
 When a :ref:`Resource <class_Resource>` is no longer in use, it will automatically free itself.
 Since, in most cases, Resources are contained in Nodes, when you free a node,
 the engine frees all the resources it owns as well if no other node uses them.
+
+If the resource is referenced in a static variable, you will need to set
+the variable to null manually when you don't need the resource anymore.
+Or it will never be freed automatically.
+
+.. note::
+
+    In C#, resources will not be freed instantly when they are no longer in
+    use. Instead, garbage collection will run periodically and will free
+    resources that are no longer in use. This means that unused resources will
+    remain in memory for a while before being removed.
+
+Resource cache
+--------------
+
+Once you load a resource, a cache entry will be created and subsequent loads of it
+will get the resource from the cache instead and not from disk. The cache lasts
+until the resource is freed from memory. When the resource gets loaded again,
+it will be loaded from disk instead and a new cache entry will be created.
 
 Creating your own resources
 ---------------------------
