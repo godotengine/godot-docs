@@ -371,7 +371,7 @@ The script could look like this:
 
  .. code-tab:: csharp
 
-#if TOOLS
+    #if TOOLS
     using Godot;
 
     [Tool]
