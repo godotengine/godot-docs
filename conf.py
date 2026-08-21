@@ -21,6 +21,7 @@ extensions = [
     "sphinxcontrib.video",
     "gdscript",
     "classref_admonitions",
+    "classref_links",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
