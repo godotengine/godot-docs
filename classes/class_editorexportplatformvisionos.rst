@@ -34,6 +34,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/additional_plist_content<class_EditorExportPlatformVisionOS_property_application/additional_plist_content>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/app_role<class_EditorExportPlatformVisionOS_property_application/app_role>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/app_store_team_id<class_EditorExportPlatformVisionOS_property_application/app_store_team_id>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/bundle_identifier<class_EditorExportPlatformVisionOS_property_application/bundle_identifier>`                                                                           |
@@ -51,6 +53,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`application/export_project_only<class_EditorExportPlatformVisionOS_property_application/export_project_only>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformVisionOS_property_application/icon_interpolation>`                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/immersion_style<class_EditorExportPlatformVisionOS_property_application/immersion_style>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/min_visionos_version<class_EditorExportPlatformVisionOS_property_application/min_visionos_version>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,7 +100,17 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`icons/icon_1024x1024_tinted<class_EditorExportPlatformVisionOS_property_icons/icon_1024x1024_tinted>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/icon_back_layer_1024x1024<class_EditorExportPlatformVisionOS_property_icons/icon_back_layer_1024x1024>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/icon_front_layer_1024x1024<class_EditorExportPlatformVisionOS_property_icons/icon_front_layer_1024x1024>`                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/icon_middle_layer_1024x1024<class_EditorExportPlatformVisionOS_property_icons/icon_middle_layer_1024x1024>`                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`modules/camera<class_EditorExportPlatformVisionOS_property_modules/camera>`                                                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`privacy/accessory_tracking_usage_description<class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description>`                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/accessory_tracking_usage_description_localized<class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description_localized>`                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`privacy/active_keyboard_access_reasons<class_EditorExportPlatformVisionOS_property_privacy/active_keyboard_access_reasons>`                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -388,6 +402,10 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`privacy/file_timestamp_access_reasons<class_EditorExportPlatformVisionOS_property_privacy/file_timestamp_access_reasons>`                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`privacy/hand_tracking_usage_description<class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/hand_tracking_usage_description_localized<class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description_localized>`                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`privacy/microphone_usage_description<class_EditorExportPlatformVisionOS_property_privacy/microphone_usage_description>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/microphone_usage_description_localized<class_EditorExportPlatformVisionOS_property_privacy/microphone_usage_description_localized>`                                         |
@@ -432,6 +450,18 @@ Additional data added to the root ``<dict>`` section of the `Info.plist <https:/
 
     <key>key_name</key>
     <string>value</string>
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_application/app_role:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **application/app_role** :ref:`🔗<class_EditorExportPlatformVisionOS_property_application/app_role>`
+
+The application role on the visionOS platform. It can be ``Window`` for running a 3D game on a 2D window, or ``Immersive`` for an XR experience.
 
 .. rst-class:: classref-item-separator
 
@@ -545,6 +575,18 @@ Interpolation method used to resize application icon.
 
 ----
 
+.. _class_EditorExportPlatformVisionOS_property_application/immersion_style:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **application/immersion_style** :ref:`🔗<class_EditorExportPlatformVisionOS_property_application/immersion_style>`
+
+The immersion style, only applicable if you have chosen the ``Immersive`` app role. It can be ``Full`` for a VR experience, or ``Mixed`` for a mixed reality experience where the rendered content is display along with the real environment.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformVisionOS_property_application/min_visionos_version:
 
 .. rst-class:: classref-property
@@ -565,7 +607,7 @@ Interpolation method used to resize application icon.
 
 :ref:`String<class_String>` **application/provisioning_profile_specifier_debug** :ref:`🔗<class_EditorExportPlatformVisionOS_property_application/provisioning_profile_specifier_debug>`
 
-Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
 
 Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_DEBUG``.
 
@@ -579,7 +621,7 @@ Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROFILE_S
 
 :ref:`String<class_String>` **application/provisioning_profile_specifier_release** :ref:`🔗<class_EditorExportPlatformVisionOS_property_application/provisioning_profile_specifier_release>`
 
-Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+Name of the provisioning profile. Sets Xcode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
 
 Can be overridden with the environment variable ``GODOT_APPLE_PLATFORM_PROFILE_SPECIFIER_RELEASE``.
 
@@ -687,7 +729,11 @@ If ``true``, networking features related to Wi-Fi access are enabled. See `Requi
 
 Additional data added to the ``UIRequiredDeviceCapabilities`` array of the ``Info.plist`` file.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -834,6 +880,42 @@ Base application icon used to generate other icons, tinted version. See `App ico
 
 ----
 
+.. _class_EditorExportPlatformVisionOS_property_icons/icon_back_layer_1024x1024:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **icons/icon_back_layer_1024x1024** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_back_layer_1024x1024>`
+
+Back layer of the visionOS app icon. visionOS app icons are composed of three stacked layers (front/middle/back) rendered with parallax. Should be a 1024x1024 image. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_icons/icon_front_layer_1024x1024:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **icons/icon_front_layer_1024x1024** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_front_layer_1024x1024>`
+
+Front layer of the visionOS app icon. Should be a 1024x1024 image. Falls back to :ref:`icons/icon_1024x1024<class_EditorExportPlatformVisionOS_property_icons/icon_1024x1024>`, then :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>` when empty. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_icons/icon_middle_layer_1024x1024:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **icons/icon_middle_layer_1024x1024** :ref:`🔗<class_EditorExportPlatformVisionOS_property_icons/icon_middle_layer_1024x1024>`
+
+Middle layer of the visionOS app icon. Should be a 1024x1024 image. See `App icons <https://developer.apple.com/design/human-interface-guidelines/app-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformVisionOS_property_modules/camera:
 
 .. rst-class:: classref-property
@@ -841,6 +923,30 @@ Base application icon used to generate other icons, tinted version. See `App ico
 :ref:`bool<class_bool>` **modules/camera** :ref:`🔗<class_EditorExportPlatformVisionOS_property_modules/camera>`
 
 If ``true``, :ref:`CameraServer<class_CameraServer>` module is added to the exported project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **privacy/accessory_tracking_usage_description** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description>`
+
+A message displayed when requesting access to controller tracking on visionOS (in English).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description_localized:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **privacy/accessory_tracking_usage_description_localized** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/accessory_tracking_usage_description_localized>`
+
+A message displayed when requesting access to controller tracking on visionOS (localized).
 
 .. rst-class:: classref-item-separator
 
@@ -2586,6 +2692,30 @@ The reasons your app use file timestamp/metadata API. See `Describing use of req
 
 ----
 
+.. _class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **privacy/hand_tracking_usage_description** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description>`
+
+A message displayed when requesting access to hand tracking on visionOS (in English).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description_localized:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **privacy/hand_tracking_usage_description_localized** :ref:`🔗<class_EditorExportPlatformVisionOS_property_privacy/hand_tracking_usage_description_localized>`
+
+A message displayed when requesting access to hand tracking on visionOS (localized).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformVisionOS_property_privacy/microphone_usage_description:
 
 .. rst-class:: classref-property
@@ -2654,7 +2784,11 @@ The reasons your app use system boot time / absolute time API. See `Describing u
 
 The list of internet domains your app connects to that engage in tracking. See `Privacy manifest files <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

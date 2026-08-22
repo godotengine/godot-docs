@@ -196,7 +196,11 @@ Property Descriptions
 
 	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -212,7 +216,11 @@ Property Descriptions
 
 Array containing each :ref:`Color<class_Color>` used by all instances of this mesh.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -245,7 +253,11 @@ Custom AABB for this MultiMesh resource. Setting this manually prevents costly r
 
 Array containing each custom data value used by all instances of this mesh, as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -320,7 +332,11 @@ When using low physics tick rates (typically below 20) or high rates of object r
 
 Array containing each :ref:`Transform2D<class_Transform2D>` value used by all instances of this mesh, as a :ref:`PackedVector2Array<class_PackedVector2Array>`. Each transform is divided into 3 :ref:`Vector2<class_Vector2>` values corresponding to the transforms' ``x``, ``y``, and ``origin``.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -336,7 +352,11 @@ Array containing each :ref:`Transform2D<class_Transform2D>` value used by all in
 
 Array containing each :ref:`Transform3D<class_Transform3D>` value used by all instances of this mesh, as a :ref:`PackedVector3Array<class_PackedVector3Array>`. Each transform is divided into 4 :ref:`Vector3<class_Vector3>` values corresponding to the transforms' ``x``, ``y``, ``z``, and ``origin``.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

@@ -55,6 +55,8 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`FocusMode<enum_Control_FocusMode>`          | :ref:`tab_focus_mode<class_TabContainer_property_tab_focus_mode>`                             | ``2``     |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`SizingMode<enum_TabBar_SizingMode>`         | :ref:`tab_sizing<class_TabContainer_property_tab_sizing>`                                     | ``0``     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`tab_{index}/disabled<class_TabContainer_property_tab_{index}/disabled>`                 | ``false`` |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`tab_{index}/hidden<class_TabContainer_property_tab_{index}/hidden>`                     | ``false`` |
@@ -482,6 +484,23 @@ The position at which tabs will be placed.
 - :ref:`FocusMode<enum_Control_FocusMode>` **get_tab_focus_mode**\ (\ )
 
 The focus access mode for the internal :ref:`TabBar<class_TabBar>` node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_tab_sizing:
+
+.. rst-class:: classref-property
+
+:ref:`SizingMode<enum_TabBar_SizingMode>` **tab_sizing** = ``0`` :ref:`🔗<class_TabContainer_property_tab_sizing>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tab_sizing**\ (\ value\: :ref:`SizingMode<enum_TabBar_SizingMode>`\ )
+- :ref:`SizingMode<enum_TabBar_SizingMode>` **get_tab_sizing**\ (\ )
+
+The sizing strategy used to determine tab widths.
 
 .. rst-class:: classref-item-separator
 

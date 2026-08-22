@@ -314,6 +314,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_name<class_TextServerExtension_private_method__get_name>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                                                                                                          |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_get_short_name<class_TextServerExtension_private_method__get_short_name>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                    | :ref:`_get_support_data<class_TextServerExtension_private_method__get_support_data>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_support_data_filename<class_TextServerExtension_private_method__get_support_data_filename>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                   |
@@ -2233,6 +2235,18 @@ Returns size of the replacement character (box with character hexadecimal code t
 :ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_TextServerExtension_private_method__get_name>`
 
 Returns the name of the server interface.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__get_short_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_short_name**\ (\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__get_short_name>`
+
+Returns the short name of the server interface. By convention, this should return a lowercase string that follows the ``snake_case`` naming scheme.
 
 .. rst-class:: classref-item-separator
 

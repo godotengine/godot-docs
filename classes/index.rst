@@ -162,6 +162,7 @@ Nodes
     class_lightoccluder2d
     class_limitangularvelocitymodifier3d
     class_line2d
+    class_line3d
     class_lineedit
     class_linkbutton
     class_lookatmodifier3d
@@ -238,6 +239,7 @@ Nodes
     class_rigidbody2d
     class_rigidbody3d
     class_rootmotionview
+    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase
@@ -282,6 +284,7 @@ Nodes
     class_tilemaplayer
     class_timer
     class_touchscreenbutton
+    class_trail3d
     class_tree
     class_twoboneik3d
     class_vboxcontainer
@@ -824,6 +827,8 @@ Other objects
     class_expression
     class_fileaccess
     class_framebuffercacherd
+    class_fuzzysearch
+    class_fuzzysearchmatch
     class_gdextensionmanager
     class_gdscriptlanguageprotocol
     class_gdscripttextdocument
@@ -1059,6 +1064,7 @@ Other objects
     class_uniformsetcacherd
     class_upnp
     class_upnpdevice
+    class_visionosxrinterface
     class_weakref
     class_webrtcdatachannel
     class_webrtcdatachannelextension
@@ -1170,6 +1176,7 @@ Editor-only
     class_resourceimportertexture
     class_resourceimportertextureatlas
     class_resourceimporterwav
+    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase
