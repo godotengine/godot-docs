@@ -114,6 +114,8 @@ the value from the runtime equivalent property or method:
         int maxFps = Engine.MaxFps;
         DisplayServer.WindowMode windowMode = DisplayServer.WindowGetMode();
 
+.. _doc_project_settings_manually_editing:
+
 Manually editing project.godot
 ------------------------------
 
@@ -122,6 +124,17 @@ change project settings. Note that if the ``project.godot`` file does not have a
 stored value for a particular setting, it is implicitly the default value of
 that setting. This means that if you are manually editing the file, you may
 have to write in both the setting name *and* the value.
+
+.. warning::
+
+    While a project is open, the editor keeps its own copy of
+    ``project.godot`` in memory and writes it back to disk whenever the
+    project settings are saved. Changes made to the file from outside the
+    editor are not reloaded automatically: the editor may warn that the file
+    changed on disk, but any save from the editor (including choosing
+    "Ignore external changes" in that warning) writes the in-memory copy,
+    discarding the external changes. Close the editor before editing
+    ``project.godot`` with a text editor.
 
 In general, it is recommended to use the Project Settings window rather than
 manually edit ``project.godot``.

@@ -31,6 +31,11 @@ Global classes are registered with the ``[GlobalClass]`` attribute.
     For example, a global class named "MyNode" must have a file name of
     ``MyNode.cs``, not ``myNode.cs``.
 
+    This rule also applies to any C# script attached to a node or used as an
+    autoload: a script whose file name doesn't match its class name is
+    silently ignored. See :ref:`doc_c_sharp_troubleshooting_script_file_name`
+    for details.
+
 The ``MyNode`` type will be registered as a global class with the same name as the type's name.
 
 .. image:: img/globalclasses_addnode.webp

@@ -306,6 +306,12 @@ take a look over the official
   Prefer using the exposed ``StringName`` in the ``PropertyName``, ``MethodName`` and
   ``SignalName`` to avoid extra ``StringName`` allocations and worrying about snake_case naming.
 
+.. seealso::
+
+    See :ref:`doc_c_sharp_troubleshooting` for solutions to common C# build
+    and workflow issues, such as scripts being silently ignored or builds
+    failing with duplicate attributes.
+
 
 As of Godot 4.0, exporting .NET projects is supported for desktop platforms
 (Linux, Windows and macOS). Other platforms will gain support in future 4.x

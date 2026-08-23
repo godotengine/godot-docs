@@ -20,6 +20,7 @@ of the editor from the Godot website.
    c_sharp_basics
    c_sharp_features
    c_sharp_style_guide
+   c_sharp_troubleshooting
    diagnostics/index
 
 Godot API for C#
