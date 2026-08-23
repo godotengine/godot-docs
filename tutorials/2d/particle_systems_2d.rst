@@ -231,7 +231,7 @@ simulated every rendered frame.
     with the **Interpolate** property on GPUParticles2D.
 
     As a workaround, disable physics interpolation for the particles node by
-    setting **Node > Physics Interpolation > Mode** at the bottom of the
+    setting :menu:`Node > Physics Interpolation > Mode` at the bottom of the
     inspector, or convert the node to CPUParticles2D which supports
     physics interpolation.
 
