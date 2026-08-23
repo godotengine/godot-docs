@@ -228,7 +228,7 @@ simulated every rendered frame.
     Godot currently does not support
     :ref:`physics interpolation <doc_physics_interpolation_introduction>`
     for GPUParticles2D. Note that physics interpolation should not be confused
-    with the **Interpolate** property on GPUParticles2D.
+    with the :inspector:`Interpolate` property on GPUParticles2D.
 
     As a workaround, disable physics interpolation for the particles node by
     setting :menu:`Node > Physics Interpolation > Mode` at the bottom of the
