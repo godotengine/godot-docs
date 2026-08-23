@@ -220,7 +220,7 @@ between each fixed FPS tick (see above). This results in smoother visuals. Only
 particle motion is interpolated; scale and color curves are currently not
 interpolated.
 
-This property has no effect if **Fixed FPS** is ``0``, as particles will be
+This property has no effect if :inspector:`Fixed FPS` is ``0``, as particles will be
 simulated every rendered frame.
 
 .. note::
