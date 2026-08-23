@@ -390,10 +390,10 @@ The script could look like this:
             _dock.Title = "My Dock";
 
             // Note that LeftUl means the left of the editor, upper-left dock.
-            _dock.DefaultSlot = DockSlot.LeftUl;
+            _dock.DefaultSlot = EditorDock.DockSlot.LeftUl;
 
             // Allow the dock to be on the left or right of the editor, and to be made floating.
-            _dock.AvailableLayouts = DockLayout.Horizontal | DockLayout.Floating;
+            _dock.AvailableLayouts = EditorDock.DockLayout.Horizontal | EditorDock.DockLayout.Floating;
 
             AddDock(_dock);
         }
