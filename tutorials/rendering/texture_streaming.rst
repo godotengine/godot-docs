@@ -117,18 +117,18 @@ details like an atlas.
 Enabling streaming
 ------------------
 
-Streaming has two requirements: streaming has to be enabled
-in the project, and textures have to be imported into a streamable format.
+Streaming has two requirements: it has to be enabled in the project settings,
+and textures have to be imported into a streamable format.
 
 1. Enable
-   :ref:`Rendering > Textures > Streaming > Enabled<class_ProjectSettings_property_rendering/textures/streaming/enabled>`
+   :ref:`Rendering > Textures > Streaming > Enabled <class_ProjectSettings_property_rendering/textures/streaming/enabled>`
    in the Project Settings (advanced settings must be turned on to see it).
    This setting requires a restart to take effect.
 2. Import the textures you want to stream with the **Texture2D Streamed**
    importer, as described below.
 
 Textures that are not imported as streamed textures behave as before: they
-stay present in VRAM. Streaming can be adopted gradually, starting with the
+stay in VRAM. Streaming can be adopted gradually, starting with the
 largest textures in the project.
 
 Importing streamed textures
@@ -139,8 +139,8 @@ and set **Importer** to **Texture2D Streamed**, then click :button:`Reimport`. T
 images are imported to Godot's ``.stex`` format, which stores each mipmap
 level so that individual levels can be read on demand, and loading them
 produces a
-:ref:`StreamedTexture2D<class_StreamedTexture2D>` instead of a
-:ref:`CompressedTexture2D<class_CompressedTexture2D>`.
+:ref:`class_StreamedTexture2D` instead of a
+:ref:`class_CompressedTexture2D`.
 
 .. figure:: img/texture_streaming_import_dock.webp
    :align: center
@@ -150,10 +150,10 @@ produces a
 
 The compression options (**High Quality**, **HDR Compression**, **Normal Map**,
 **Channel Pack**) and the roughness options behave the same as in the regular
-:ref:`Texture2D importer<class_ResourceImporterTexture>`. One of the
-:ref:`Import S3TC BPTC<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`
+Texture2D importer. One of the
+:ref:`Import S3TC BPTC <class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`
 or
-:ref:`Import ETC2 ASTC<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`
+:ref:`Import ETC2 ASTC <class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`
 project settings should be enabled.
 
 Two options are specific to streaming: **Streaming > Min Lod Override** and
@@ -164,9 +164,9 @@ sharper than the project default (a hero asset seen up close) or that never need
 to be sharp (a large ground texture only seen from far away).
 
 The same two limits are also exposed on the loaded resource as
-:ref:`StreamedTexture2D.min_lod_override<class_StreamedTexture2D_property_min_lod_override>`
+:ref:`StreamedTexture2D.min_lod_override <class_StreamedTexture2D_property_min_lod_override>`
 and
-:ref:`StreamedTexture2D.max_lod_override<class_StreamedTexture2D_property_max_lod_override>`,
+:ref:`StreamedTexture2D.max_lod_override <class_StreamedTexture2D_property_max_lod_override>`,
 which can be changed from a script.
 
 ``.dds`` files cannot currently be imported as streamed textures.
@@ -174,7 +174,7 @@ which can be changed from a script.
 .. note::
 
     Only 2D textures are streamable. Texture arrays, cubemaps, and 3D textures
-    (:ref:`ResourceImporterLayeredTexture<class_ResourceImporterLayeredTexture>`)
+    (:ref:`class_ResourceImporterLayeredTexture`)
     are not part of the streaming system.
 
 Project settings
@@ -183,21 +183,21 @@ Project settings
 All settings live under **Rendering > Textures > Streaming** and are visible
 with advanced settings enabled:
 
-- :ref:`Enabled<class_ProjectSettings_property_rendering/textures/streaming/enabled>`
+- :ref:`Enabled <class_ProjectSettings_property_rendering/textures/streaming/enabled>`
   (default ``false``) — feature enable setting. Requires a restart.
-- :ref:`Min Lod<class_ProjectSettings_property_rendering/textures/streaming/min_lod>`
+- :ref:`Min Lod <class_ProjectSettings_property_rendering/textures/streaming/min_lod>`
   (default ``0``) — best quality any streamed texture may reach.
-- :ref:`Max Lod<class_ProjectSettings_property_rendering/textures/streaming/max_lod>`
+- :ref:`Max Lod <class_ProjectSettings_property_rendering/textures/streaming/max_lod>`
   (default ``3``) — worst quality a streamed texture may fall back to, and the
   level textures are first loaded at.
-- :ref:`Memory Budget Enabled<class_ProjectSettings_property_rendering/textures/streaming/memory_budget_enabled>`
+- :ref:`Memory Budget Enabled <class_ProjectSettings_property_rendering/textures/streaming/memory_budget_enabled>`
   (default ``false``) — enables the VRAM budget below.
-- :ref:`Memory Budget Mb<class_ProjectSettings_property_rendering/textures/streaming/memory_budget_mb>`
+- :ref:`Memory Budget Mb <class_ProjectSettings_property_rendering/textures/streaming/memory_budget_mb>`
   (default ``512``) — VRAM budget for all streamed textures together, in MB.
-- :ref:`Max Ops Per Second<class_ProjectSettings_property_rendering/textures/streaming/max_ops_per_second>`
+- :ref:`Max Ops Per Second <class_ProjectSettings_property_rendering/textures/streaming/max_ops_per_second>`
   (default ``200``) — throttle on mipmap operations. Higher values adapt faster
   but do more I/O and texture work per frame.
-- :ref:`Inactivity Decay Rate Ms<class_ProjectSettings_property_rendering/textures/streaming/inactivity_decay_rate_ms>`
+- :ref:`Inactivity Decay Rate Ms <class_ProjectSettings_property_rendering/textures/streaming/inactivity_decay_rate_ms>`
   (default ``5000``) — time per LOD level of quality decay for textures that
   stop being requested.
 
@@ -241,7 +241,7 @@ to save the current values to the project settings.
 Controlling streaming at runtime
 --------------------------------
 
-The :ref:`TextureStreaming<class_TextureStreaming>` singleton exposes the same
+The :ref:`class_TextureStreaming` singleton exposes the same
 options to scripts, which can be used to implement a graphics quality option in
 your game:
 
@@ -265,9 +265,9 @@ Hiding streaming during loading screens
 Streaming reacts to what has already been rendered, so right after a scene load
 or a teleport within a scene, textures are still at low resolution and increase
 in quality over the next frames. To minimize visual disruptions you can call
-:ref:`flush_texture_streaming()<class_TextureStreaming_method_flush_texture_streaming>`
+:ref:`flush_texture_streaming() <class_TextureStreaming_method_flush_texture_streaming>`
 to complete all pending streaming work immediately, ignoring any throttling. It then
-emits :ref:`flush_completed<class_TextureStreaming_signal_flush_completed>` when
+emits :ref:`flush_completed <class_TextureStreaming_signal_flush_completed>` when
 every texture has reached its target resolution.
 
 .. tabs::
@@ -286,18 +286,18 @@ every texture has reached its target resolution.
 Monitoring VRAM usage
 ~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`TextureStreaming.get_memory_budget_bytes_used()<class_TextureStreaming_method_get_memory_budget_bytes_used>`
+:ref:`TextureStreaming.get_memory_budget_bytes_used() <class_TextureStreaming_method_get_memory_budget_bytes_used>`
 returns how much VRAM the streamed textures currently take. The same value is available as the
 ``video/streaming_texture_mem_used`` monitor in the editor's **Debugger >
 Monitors** tab, and through
-:ref:`Performance.get_monitor()<class_Performance_method_get_monitor>` with
-:ref:`Performance.RENDER_STREAMING_TEXTURE_MEM_USED<class_Performance_constant_RENDER_STREAMING_TEXTURE_MEM_USED>`.
+:ref:`Performance.get_monitor() <class_Performance_method_get_monitor>` with
+:ref:`Performance.RENDER_STREAMING_TEXTURE_MEM_USED <class_Performance_constant_RENDER_STREAMING_TEXTURE_MEM_USED>`.
 
 Custom shaders
 --------------
 
 Feedback is generated automatically for spatial shaders that use ``UV``, which
-covers :ref:`BaseMaterial3D<class_BaseMaterial3D>` and most custom shaders. If a
+covers :ref:`class_BaseMaterial3D` and most custom shaders. If a
 shader samples its streamed textures with coordinates that are not ``UV`` — for
 instance a triplanar or world-space projection — write the coordinates the
 textures are actually sampled with to the ``STREAMING_UV`` built-in in
@@ -334,9 +334,9 @@ Limitations
 - Feedback is per material, not per texture, so textures used by the same
   material with very different UV scales all follow the same decision.
 - A texture always reports its full dimensions
-  (:ref:`Texture2D.get_width()<class_Texture2D_method_get_width>` and
+  (:ref:`Texture2D.get_width() <class_Texture2D_method_get_width>` and
   friends) even while a lower mipmap is resident, and
-  :ref:`Texture2D.get_image()<class_Texture2D_method_get_image>` always reads
+  :ref:`Texture2D.get_image() <class_Texture2D_method_get_image>` always reads
   the full-resolution image from disk.
 - Streaming reads from the imported ``.stex`` files during gameplay, so it trades
   VRAM for disk I/O. On storage with high latency, expect textures to take
