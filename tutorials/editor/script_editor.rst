@@ -119,7 +119,7 @@ Script Panel
 Below the menus, on the left panel, you will see a list of opened files and documentation
 pages. Depending on the file type, this list will have an icon next
 to the file name. For example, the |script| icon means that it is a GDScript.
-the |scriptcsharp| means it is a C# script. The |documentation| means that this is a
+The |scriptcsharp| means it is a C# script. The |documentation| means that this is a
 built-in class reference. Finally, the |toolscript| means it is a currently running
 script (See :ref:`tool annotation <doc_running_code_in_the_editor>` for more on this).
 Hovering a file will show a tooltip with its relative location in the project folder.
