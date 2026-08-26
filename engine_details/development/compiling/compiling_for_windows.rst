@@ -564,6 +564,8 @@ And for 32-bit:
 Creating Windows export templates
 ---------------------------------
 
+.. TODO: Add details about debugsymbols here.
+
 Windows export templates are created by compiling Godot without the editor,
 with the following flags:
 
