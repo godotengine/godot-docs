@@ -144,10 +144,10 @@ An asterisk (*) next to a file name indicates that the file has unsaved changes.
 
 You can drag a file to change the ordering. Middle-clicking on a file closes it.
 Right-clicking on a file provides several options to save or close files, or to
-copy the relative path of the file. On this menu:
+copy the relative path of the file.
 
-You can also use **Move Up** and **Move Down** to change the order of the file, or use **Sort**
-to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
+On this menu, you can also use **Move Up** and **Move Down** to change the order of the file,
+or use **Sort** to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
 can be displayed again using the right arrow on the status bar.
 **Close Docs** closes all opened in-class reference documents leaving only
 script files open. **Show in FileSystem** finds and highlights the file in the
