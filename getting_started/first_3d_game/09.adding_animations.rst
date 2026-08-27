@@ -281,7 +281,7 @@ the *Mob*'s script and at the end of the ``initialize()`` function, add the foll
 
    func initialize(start_position, player_position):
        #...
-       $AnimationPlayer.speed_scale = random_speed / min_speed
+       $AnimationPlayer.speed_scale = float(random_speed) / min_speed
 
  .. code-tab:: csharp
 
