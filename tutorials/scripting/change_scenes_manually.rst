@@ -8,6 +8,13 @@ A :ref:`Viewport <class_Viewport>`'s child nodes will render to the image
 it generates. This holds true even for nodes outside of the "current"
 scene. Autoloads fall into this category, and also scenes which you
 instantiate and add to the tree at runtime:
+.. tip::
+
+    If you only need to change the current scene, use
+    :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>`.
+    See :ref:`SceneTree <doc_scene_tree>` for an overview of how scenes are
+    managed by the scene tree.
+
 
 .. tabs::
  .. code-tab:: gdscript GDScript
