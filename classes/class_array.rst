@@ -702,6 +702,17 @@ Duplicates this array, deeply, like :ref:`duplicate()<class_Array_method_duplica
 |void| **erase**\ (\ value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Array_method_erase>`
 
 Finds and removes the first occurrence of ``value`` from the array. If ``value`` does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove_at()<class_Array_method_remove_at>` instead.
+If you need to remove elements while iterating, iterate over a copy of the array
+instead:
+
+::
+
+    var numbers = [1, 2, 3, 4]
+    for number in numbers.duplicate():
+        if number % 2 == 0:
+            numbers.erase(number)
+    print(numbers) # Prints [1, 3]
+
 
 \ **Note:** This method shifts every element's index after the removed ``value`` back, which may have a noticeable performance cost, especially on larger arrays.
 
