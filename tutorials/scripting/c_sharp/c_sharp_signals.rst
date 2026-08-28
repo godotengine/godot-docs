@@ -88,6 +88,18 @@ your custom signal names are listed under the nested ``SignalName`` class.
         EmitSignal(SignalName.MySignal);
         EmitSignal(SignalName.MySignalWithArgument, "World");
     }
+For custom signals, Godot also generates a strongly typed method named
+``EmitSignal`` followed by the signal name. These methods use the signal's
+declared argument types:
+
+.. code-block:: csharp
+
+    public void MyMethodEmittingSignals()
+    {
+        EmitSignalMySignal();
+        EmitSignalMySignalWithArgument("World");
+    }
+
 
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
