@@ -168,7 +168,7 @@ Example of loading an image and displaying it in a :ref:`class_TextureRect` node
 Audio/video files
 -----------------
 
-Godot supports loading Ogg Vorbis, MP3, and WAV audio at runtime. Note that not *all*
+Godot supports loading Ogg Vorbis, MP3, Opus, and WAV audio at runtime. Note that not *all*
 files with a ``.ogg`` extension are Ogg Vorbis files. Some may be Ogg Theora
 videos, or contain Opus audio within an Ogg container. These files will **not**
 load correctly as audio files in Godot.
