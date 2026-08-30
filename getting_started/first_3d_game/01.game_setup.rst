@@ -77,7 +77,7 @@ and click the *<empty>* field next to the *Shape* property. Create a new *BoxSha
 The box shape is perfect for flat ground and walls. Its thickness makes it
 reliable to block even fast-moving objects.
 
-A box's wireframe appears in the viewport with three orange dots. You can click
+A box's wireframe appears in the viewport with orange dots at the center of each face. You can click
 and drag these to edit the shape's extents interactively. We can also precisely
 set the size in the inspector. Click on the :ref:`BoxShape3D <class_BoxShape3D>` to expand the resource.
 Set its *Size* to ``60`` on the X-axis, ``2`` for the Y-axis, and ``60`` for

@@ -699,7 +699,7 @@ doubles the range of all OmniLight3D nodes:
         }
 
 In the above example, we also call
-:ref:`EditorScript.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`
+:ref:`EditorInterface.mark_scene_as_unsaved() <class_EditorInterface_method_mark_scene_as_unsaved>`
 after any modification that affects the scene's state. This allows the editor to
 display the scene as "unsaved" (i.e. with an asterisk next to the name). This way,
 you also get a confirmation when trying to close the scene with unsaved changes.

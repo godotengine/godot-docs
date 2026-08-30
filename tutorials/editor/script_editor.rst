@@ -119,7 +119,7 @@ Script Panel
 Below the menus, on the left panel, you will see a list of opened files and documentation
 pages. Depending on the file type, this list will have an icon next
 to the file name. For example, the |script| icon means that it is a GDScript.
-the |scriptcsharp| means it is a C# script. The |documentation| means that this is a
+The |scriptcsharp| means it is a C# script. The |documentation| means that this is a
 built-in class reference. Finally, the |toolscript| means it is a currently running
 script (See :ref:`tool annotation <doc_running_code_in_the_editor>` for more on this).
 Hovering a file will show a tooltip with its relative location in the project folder.
@@ -144,10 +144,10 @@ An asterisk (*) next to a file name indicates that the file has unsaved changes.
 
 You can drag a file to change the ordering. Middle-clicking on a file closes it.
 Right-clicking on a file provides several options to save or close files, or to
-copy the relative path of the file. On this menu:
+copy the relative path of the file.
 
-You can also use **Move Up** and **Move Down** to change the order of the file, or use **Sort**
-to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
+On this menu, you can also use **Move Up** and **Move Down** to change the order of the file,
+or use **Sort** to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
 can be displayed again using the right arrow on the status bar.
 **Close Docs** closes all opened in-class reference documents leaving only
 script files open. **Show in FileSystem** finds and highlights the file in the
