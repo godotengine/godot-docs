@@ -477,7 +477,7 @@ own place in the hierarchy as a sibling or some other relation.
 
   If building a networked game, keep in mind which nodes and gameplay systems
   are relevant to all players versus those just pertinent to the authoritative
-  server. For example, users do not all need to have a copy of every players'
+  server. For example, users do not all need to have a copy of every player's
   "PlayerController" logic - they only need their own. Keeping them in a
   separate branch from the "world" can help simplify the management of game
   connections and the like.
