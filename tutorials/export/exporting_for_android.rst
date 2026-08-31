@@ -30,8 +30,28 @@ steps described in :ref:`doc_android_gradle_build`.
 
 You can then skip to :ref:`doc_exporting_for_android_providing_launcher_icons`.
 
-Setup on Windows, macOS, and Linux
-----------------------------------
+Automatic Build Setup on Windows, macOS, and Linux
+--------------------------------------------------
+
+Starting with Godot 4.8, the editor provides support for automatically setting up the Android and Java SDKs.
+The manual setup instructions are still provided in :ref:`doc_exporting_for_android_manual_android_build_setup` for those that may need it.
+
+The feature can be enabled from two locations:
+
+- From the Project menu, select :menu:`Setup Android Build...`.
+
+.. image:: img/setup_android_build_screenshot.webp
+
+- Alternatively, from the **Export Presets** window a warning and clickable link will show when an Android preset is added and the Android and/or Java SDKs are not set up.
+
+.. image:: img/setup_android_build_from_export_presets_screenshot.webp
+
+Clicking on either will launch several dialogs that will prompt for, download, and install the Android and Java SDKs in a location specific to the Godot editor.
+
+.. _doc_exporting_for_android_manual_android_build_setup:
+
+Manual Build Setup on Windows, macOS, and Linux
+-----------------------------------------------
 
 Install OpenJDK 17
 ^^^^^^^^^^^^^^^^^^
