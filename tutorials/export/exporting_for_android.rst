@@ -45,31 +45,13 @@ Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant
 Download the Android SDK
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download and install the Android SDK.
+Download and install the Android SDK using `the Android CLI <https://developer.android.com/tools/agents/android-cli#install>`__.
 
-- You can install the Android SDK using `Android Studio Iguana (version 2023.2.1) or later <https://developer.android.com/studio/>`__.
-
-  - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
-  - Ensure that the `required packages <https://developer.android.com/studio/intro/update#required>`__ are installed as well.
-
-    - Android SDK Platform-Tools version 35.0.0 or later
-    - Android SDK Build-Tools version 35.0.1
-    - Android SDK Platform 35
-    - Android SDK Command-line Tools (latest)
-
-  - Ensure that the `NDK and CMake are installed and configured <https://developer.android.com/studio/projects/install-ndk>`__.
-
-    - CMake version 3.10.2.4988404
-    - NDK version r28b (28.1.13356709)
-
-- Alternatively, you can install the Android SDK with the ``sdkmanager`` command line tool.
-
-  - Install the command line tools package using these `instructions <https://developer.android.com/tools/sdkmanager>`__.
-  - Once the command line tools are installed, run the following ``sdkmanager`` command to complete the setup process:
+- Once the Android CLI is installed, run the following command from a terminal to complete the setup process:
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;35.0.1" "platforms;android-35" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;28.1.13356709"
+    android sdk install platform-tools build-tools/36.1.0 platforms/android-36 cmdline-tools/latest ndk/29.0.14206865 cmake/3.22.1
 
 .. note::
 
