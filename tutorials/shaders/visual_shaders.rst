@@ -115,7 +115,7 @@ Visual shader nodes have input and output ports. The input ports are located on 
 
 .. figure:: img/vs_node.webp
 
-These ports are colored to differentiate type of port:
+These ports are colored to differentiate the type of port:
 
 .. |scalar| image:: img/vs_scalar.webp
 .. |vector| image:: img/vs_vector.webp
@@ -203,7 +203,7 @@ Fresnel node
 
 The ``Fresnel`` node is designed to accept normal and view vectors and produces
 a scalar which is the saturated dot product between them. Additionally, you can
-setup the inversion and the power of equation. The ``Fresnel`` node is great for
+set up the inversion and the power of equation. The ``Fresnel`` node is great for
 adding a rim-like lighting effect to objects.
 
 .. image:: img/vs_fresnel.webp
@@ -220,7 +220,7 @@ can be used to enable or disable some effect parts with one click.
 If node
 ~~~~~~~
 
-The ``If`` node allows you to setup a vector which will be returned the result
+The ``If`` node allows you to set up a vector which will be returned the result
 of the comparison between ``a`` and ``b``. There are three vectors which can be
 returned: ``a == b`` (in that case the tolerance parameter is provided as a
 comparison threshold – by default it is equal to the minimal value, i.e.
@@ -243,7 +243,7 @@ Mesh Emitter
 The ``Mesh Emitter`` node is used for emitting particles from mesh vertices. This is
 only available for shaders that are in ``Particles`` mode.
 
-Keep in mind that not all 3D objects are mesh files. a glTF file can't be dragged
+Keep in mind that not all 3D objects are mesh files. A glTF file can't be dragged
 and dropped into the graph. However, you can create an inherited scene from it,
 save the mesh in that scene as its own file, and use that.
 
