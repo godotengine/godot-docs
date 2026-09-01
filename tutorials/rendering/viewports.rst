@@ -23,7 +23,8 @@ skybox.
 
 - Rendering 3D objects within a 2D game
 - Rendering 2D elements in a 3D game
-- Rendering dynamic textures
+- Rendering dynamic textures (more flexible than
+  :ref:`drawable textures <doc_drawable_textures>`, but with higher overhead)
 - Generating procedural textures at runtime
 - Rendering multiple cameras in the same scene
 
@@ -61,16 +62,25 @@ Cameras (2D & 3D)
 
 When using a :ref:`Camera3D <class_Camera3D>` or
 :ref:`Camera2D <class_Camera2D>`, it will always display on the
-closest parent :ref:`Viewport <class_Viewport>` (going towards the root). For example, in the
-following hierarchy:
+closest parent :ref:`Viewport <class_Viewport>` (going towards the root).
+For example, in the following hierarchy:
 
 .. image:: img/cameras.webp
 
-``CameraA`` will display on the Root :ref:`Viewport <class_Viewport>` and it will draw ``MeshA``. ``CameraB``
-will be captured by the :ref:`SubViewport <class_SubViewport>` along with ``MeshB``. Even though ``MeshB`` is in the scene
-hierarchy, it will still not be drawn to the Root Viewport. Similarly, ``MeshA`` will not
-be visible from the SubViewport because SubViewports only
-capture nodes below them in the hierarchy.
+By default, SubViewports use the same *world* as the root Viewport. This means
+that if you have multiple cameras in the same world, they will all render the
+same objects. You can adjust this behavior by using a separate
+:ref:`world <doc_viewports_worlds>` for the SubViewport, which will
+prevent it from rendering objects in the root Viewport's world (and vice versa).
+
+In the above example, ``CameraA`` will display on the Root
+:ref:`Viewport <class_Viewport>` and it will draw ``MeshA``. ``CameraB``
+will be captured by the :ref:`SubViewport <class_SubViewport>` along with ``MeshB``.
+Since ``MeshB`` is part of the scene hierarchy, it will still be drawn to the
+Root Viewport. Similarly, ``MeshA`` will be visible from the SubViewport as it
+uses the same world as the root Viewport. If we made the SubViewport use its
+own world, then ``MeshA`` would be hidden in the SubViewport and ``MeshB``
+would be hidden in the Root Viewport.
 
 There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if there is more
 than one, make sure that the desired one has the :ref:`current <class_Camera3D_property_current>` property set,
@@ -112,6 +122,8 @@ different from the one specified in size, by calling:
     subViewport.Size2DOverrideStretch = true; // Enable stretch for custom size.
 
 For information on scaling and stretching with the Root Viewport visit the :ref:`Multiple Resolutions Tutorial <doc_multiple_resolutions>`
+
+.. _doc_viewports_worlds:
 
 Worlds
 ------
