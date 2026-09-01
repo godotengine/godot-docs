@@ -406,6 +406,42 @@ If set to a value greater than ``-1``, limits the maximum number of mipmaps that
 can be generated. This can be decreased if you don't want textures to become too
 low-resolution at extreme distances, at the cost of some graininess.
 
+.. _doc_importing_images_mipmaps_preserve_alpha_test_coverage:
+
+Mipmaps > Preserve Alpha Test Coverage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mipmaps help improve texture quality when viewed at a distance, but they have
+limitations when used for alpha-tested materials (i.e. materials using the
+**Alpha Scissor** transparency mode). When a texture is mipmapped, the alpha
+channel is averaged with neighboring pixels to generate the mipmaps. This can
+result in a loss of coverage for alpha-tested materials, causing them to appear
+more transparent than intended at a distance.
+
+To resolve this, enable **Preserve Alpha Test Coverage** after enabling mipmaps
+in the Import dock. This option only has an effect on textures with an alpha
+channel, and it should only be enabled for textures used in alpha-tested
+materials. It should be left disabled for all other transparency modes including
+**Alpha Hash**.
+
+.. figure:: img/importing_images_mipmaps_preserve_alpha_test_coverage_near.webp
+   :align: center
+   :alt: Preserve Alpha Test Coverage disabled (left) and enabled (right) when viewed up close
+
+   Preserve Alpha Test Coverage disabled (left) and enabled (right) when viewed up close
+
+The effect depends on the texture resolution, viewport resolution, and viewing distance:
+
+.. figure:: img/importing_images_mipmaps_preserve_alpha_test_coverage_far.webp
+   :align: center
+   :alt: Preserve Alpha Test Coverage disabled (left) and enabled (right) when viewed from a distance
+
+   Preserve Alpha Test Coverage disabled (left) and enabled (right) when viewed from a distance
+
+When enabled, you should also adjust **Mipmaps > Alpha Test Threshold** to match
+the material's **Alpha Scissor Threshold** property (``0.5`` by default). While
+not strictly required, this will lead to a better result.
+
 Roughness > Mode
 ~~~~~~~~~~~~~~~~
 
