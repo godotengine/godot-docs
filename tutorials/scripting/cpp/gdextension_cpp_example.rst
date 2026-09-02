@@ -43,6 +43,7 @@ Note that this repository has different branches for different versions
 of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
 
 .. note::
+
     Since Godot version 4.6 it is no longer necessary to match the version of godot-cpp with the Godot
     version you are using. Instead you will specify during the scons build with a parameter ``api_version=4.x``
 
