@@ -143,6 +143,7 @@ Your folder structure should now look like this:
     +--src/                   # source code of the extension we are building
 
 .. warning::
+
     The godot-cpp module must be compiled and built in order to generate the necessary
     include files before moving on to crreating 
     moving on to creating the gdexample.h. targeting an earlier version of Godot should work in later
