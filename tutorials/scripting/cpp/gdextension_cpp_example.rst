@@ -97,6 +97,7 @@ you will be using for the plugin. Without it being built, for example, the ``spr
 file will not be available.
 
 .. code-block:: none
+
     cd godot-cpp
     scons platform=<platform> api_version=4.X # replace <platform> with the target platform e.g. linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for e.g. 4.7
 
