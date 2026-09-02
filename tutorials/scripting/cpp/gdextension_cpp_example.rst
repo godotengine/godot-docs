@@ -105,7 +105,7 @@ Now that godot-cpp is built, you will most likely also want to create a ``compil
 in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
 Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``
 You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
-into the gdextension_cpp_example project root folder
+into the gdextension_cpp_example project root folder.
 
 In the project's root folder run the following command to generate the ``compile_commands.json``
 ``scons compiledb=yes api_version=4.7 compile_commands.json``
