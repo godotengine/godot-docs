@@ -145,7 +145,7 @@ Your folder structure should now look like this:
 .. warning::
 
     The godot-cpp module must be compiled and built in order to generate the necessary
-    moving on to creating the gdexample.h. targeting an earlier version of Godot should work in later
+    moving on to creating the ``gdexample.h`` file targeting an earlier version of Godot should work in later
     minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
     should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
 
