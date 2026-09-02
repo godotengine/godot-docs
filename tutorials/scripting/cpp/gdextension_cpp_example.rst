@@ -108,7 +108,7 @@ You will need the example SConstruct file. Download :download:`the SConstruct fi
 into the gdextension_cpp_example project root folder.
 
 In the project's root folder run the following command to generate the ``compile_commands.json``
-``scons compiledb=yes api_version=4.7 compile_commands.json``
+``scons compiledb=yes api_version=4.7 compile_commands.json``.
 
 You should now be ready to move on to creating a simple plugin.
 
