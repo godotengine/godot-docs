@@ -69,7 +69,13 @@ Godot offers several transparency modes:
   opacity, these are drawn as opaque). This is faster to render than Alpha and
   doesn't exhibit transparency sorting issues. The downside is that this results
   in "all or nothing" transparency, with no intermediate values possible.
-  Materials using alpha scissor can cast shadows.
+  Materials using alpha scissor can cast shadows. When using this mode,
+  consider enabling
+  :ref:`Mipmaps > Preserve Alpha Test Coverage <doc_importing_images_mipmaps_preserve_alpha_test_coverage>`
+  on the albedo texture in the Import dock, and set
+  **Mipmaps > Alpha Test Threshold** to match the material's **Alpha Scissor Threshold**.
+  This improves the consistency of the material's opacity regardless of the distance
+  between the material and the camera.
 
   - **Alpha Scissor** is ideal for foliage and fences, since these have hard
     edges and require correct sorting to look good.
