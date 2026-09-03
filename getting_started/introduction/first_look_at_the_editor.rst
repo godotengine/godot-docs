@@ -156,7 +156,7 @@ tools, and other resources to use in your projects.
 
 .. seealso::
 
-    You can learn more about the Asset Store in ref:`doc_what_is_asset_store`.
+    You can learn more about the Asset Store in :ref:`doc_what_is_asset_store`.
 
 .. _doc_intro_to_the_editor_interface_integrated_class_reference:
 
