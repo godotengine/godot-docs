@@ -144,6 +144,8 @@ with the priorities "0, 1, 2, 3" would be called in that order from left to righ
    scene" notification ( ``_exit_tree()`` callback in GDScript) in
    bottom-to-top order (the exact reverse of top-to-bottom order).
 
+.. _doc_scene_tree_changing_current_scene:
+
 Changing current scene
 ----------------------
 
