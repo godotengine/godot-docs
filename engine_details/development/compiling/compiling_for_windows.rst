@@ -352,39 +352,6 @@ in the Godot source repository. After running this script, compile Godot as usua
 
               scons platform=windows accesskit_sdk_path=<...>
 
-Compiling with WinRT support
-----------------------------
-
-WinRT provides support for OneCore TTS (accessing Windows 10+ voices), HDR color information monitoring, and emoji picker.
-
-If you are building with MinGW, compiling with WinRT requires additional dependencies to be installed.
-If you wish to skip this step, you can use the ``winrt=no`` SCons option.
-
-You can install the required dependencies by running
-``python misc/scripts/install_winrt.py``
-in the Godot source repository. After running this script, compile Godot as usual.
-
-.. note:: You can optionally build the WinRT headers yourself with
-          the following steps:
-
-          1. Clone the `winrt-mingw <https://github.com/godotengine/winrt-mingw>`_
-             directory and navigate to it.
-          2. Run the following command:
-
-          ::
-
-              cmake -Bbuild -DCMAKE_BUILD_TYPE=Release -DCPPWINRT_BUILD_VERSION=2.0.250303.1 -DBUILD_TESTING=OFF cppwinrt/
-              echo "" > build/app.manifest.rc
-              cmake --build build
-              ./build/cppwinrt.exe -input windows-rs/crates/libs/bindgen/default/ -output include/
-
-          To compile Godot with a custom build of WinRT, add ``winrt_path={path}`` to
-          tell SCons where to look for the AccessKit headers:
-
-          ::
-
-              scons platform=windows winrt_path=<...>
-
 Compiling with ANGLE support
 ----------------------------
 
