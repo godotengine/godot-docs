@@ -25,6 +25,24 @@
 }
 
 @font-face {
+    font-family: "Vazirmatn";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: 0x0600-06FF, 0x0750-077F, 0x0870-089F, 0x08A0-08FF, 0xFB50-FDFF, 0xFE70-FEFF, 0x10EC0-10EFF;
+    src: url("fonts/Vazirmatn-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: 0x0600-06FF, 0x0750-077F, 0x0870-089F, 0x08A0-08FF, 0xFB50-FDFF, 0xFE70-FEFF, 0x10EC0-10EFF;
+    src: url("fonts/Vazirmatn-Bold.woff2");
+}
+
+@font-face {
     font-family: "Inter";
     font-weight: 400;
     font-style: normal;
@@ -202,8 +220,8 @@
     --footer-color: #808080;
 
     /* Use the same fonts as Godot's modern editor theme, with a system font fallback in case the web fonts fail to load. */
-    --sans-serif-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
+    --sans-serif-font-family: "Inter", "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --monospace-font-family: "JetBrains Mono", "Vazirmatn", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
 /* Dark theme colors */
