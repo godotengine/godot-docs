@@ -155,7 +155,7 @@ Limitations
   automatically take care of this, at the cost of less flexibility (can't set a
   minimum/maximum text size in pixels).
 - Handling resolution and aspect ratio changes must be taken into account in the
-  script can be challenging.
+  script, which can be challenging.
 
 Should I use Label3D, TextMesh or a projected Control?
 ------------------------------------------------------
