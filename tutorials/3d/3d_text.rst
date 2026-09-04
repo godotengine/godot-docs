@@ -123,7 +123,7 @@ There are some limitations to TextMesh:
 Projected Label node (or any other Control)
 -------------------------------------------
 
-There is a last solution that is more complex to set up, but provides the most
+There is a final approach that is more complex to set up, but provides the most
 flexibility: projecting a 2D node onto 3D space. This can be achieved using the
 return value of :ref:`unproject_position<class_Camera3D_method_unproject_position>`
 method on a Camera3D node in a script's ``_process()`` function. This return value
@@ -155,7 +155,7 @@ Limitations
   automatically take care of this, at the cost of less flexibility (can't set a
   minimum/maximum text size in pixels).
 - Handling resolution and aspect ratio changes must be taken into account in the
-  script, which can be challenging.
+  script can be challenging.
 
 Should I use Label3D, TextMesh or a projected Control?
 ------------------------------------------------------

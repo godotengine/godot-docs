@@ -314,7 +314,7 @@ There are two ways to apply a material to a CSG node:
 
 - Applying it to a CSGCombiner3D node as a material override
   (**Geometry > Material Override** in the Inspector). This will affect its
-  children automatically, but will make it impossible to change the material in
+  children automatically, but makes it impossible to change the material in
   individual children.
 - Applying a material to individual nodes (**Material** in the Inspector). This
   way, each CSG node can have its own appearance. Subtractive CSG nodes will

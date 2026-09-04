@@ -166,7 +166,7 @@ antialiasing transparency. However, since it lacks temporal information, it will
 not do much against specular aliasing.
 
 This technique is still sometimes used in mobile games. However, on desktop
-platforms, FXAA generally fell out of fashion in favor of temporal antialiasing,
+platforms, FXAA has generally fallen out of favor in favor of temporal antialiasing,
 which is much more effective against specular aliasing. Nonetheless, exposing FXAA
 as an in-game option may still be worthwhile for players with low-end GPUs.
 
@@ -217,7 +217,7 @@ times. This allows SSAA to antialias edges, transparency *and* specular aliasing
 at the same time, without introducing potential ghosting artifacts.
 
 The downside of SSAA is its *extremely* high cost. This cost generally makes
-SSAA difficult to use for game purposes, but you may still find supersampling
+SSAA difficult to use for gameplay purposes, but you may still find supersampling
 useful for :ref:`offline rendering <doc_creating_movies>`.
 
 Supersample antialiasing is performed by increasing the

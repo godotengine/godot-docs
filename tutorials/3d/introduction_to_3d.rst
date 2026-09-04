@@ -400,8 +400,8 @@ of the preview environment and light if they are enabled.
 .. image:: img/tuto_3d9.webp
 
 
-The same preview sun and environment is used for every scene in the same project,
-So only make adjustments that would apply to all of the scenes you will need a preview
+The same preview sun and environment are used for every scene in the same project,
+Therefore, only make adjustments that would apply to all of the scenes you will need a preview
 light and environment for.
 
 Cameras
