@@ -46,7 +46,7 @@ Two options are available to configure the game embedding mode:
 
 - **Embed Game on Next Play:** If enabled, game embedding is enabled and the
   Game bar is available for use on the running game.
-- **Make Window Floating on Next Play:** If enabled, the game runs in a floating window.
+- **Make Game Workspace Floating on Next Play:** If enabled, the game runs in a floating window.
   If disabled, the game runs in the main editor window.
 
 Embedded window sizing
