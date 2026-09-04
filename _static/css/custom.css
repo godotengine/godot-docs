@@ -500,6 +500,11 @@ a.btn:hover {
     padding-right: 20px;
 }
 
+/* Links to class reference using the :classref: role */
+.rst-content code.literal.classref {
+    background-color: transparent;
+}
+
 /* Distinguish class reference page links from "user manual" page links with a class reference badge. */
 
 /* Remove text wrapping so that the badge is always on the same line as the anchor's text. */
