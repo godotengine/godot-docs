@@ -1576,12 +1576,26 @@ class GDScriptLexer(RegexLexer):
         ],
     }
 
+from sphinx.application import Sphinx
+from sphinx.util.docutils import SphinxRole
+from sphinx.util.typing import ExtensionMetadata
 
-def setup(sphinx):
+
+def setup(sphinx: Sphinx) -> ExtensionMetadata:
     from sphinx.highlighting import lexers
+    from sphinx.roles import code_role
+    from docutils import nodes
 
     sphinx.add_lexer("gdscript", GDScriptLexer)
     lexers["gdscript"] = GDScriptLexer()
+
+    class GDScriptRole(SphinxRole):
+        def run(self) -> tuple[list[nodes.Node], list[nodes.system_message]]:
+            return code_role(self.name, self.rawtext, self.text,
+                             self.lineno, self.inliner,
+                             {"language": "gdscript"}, self.content)
+
+    sphinx.add_role("gdscript", GDScriptRole())
 
     return {
         "parallel_read_safe": True,
