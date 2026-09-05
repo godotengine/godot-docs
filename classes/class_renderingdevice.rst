@@ -275,7 +275,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared<class_RenderingDevice_method_texture_create_shared>`\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared_from_slice<class_RenderingDevice_method_texture_create_shared_from_slice>`\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   | :ref:`RID<class_RID>`                                      | :ref:`texture_create_shared_from_slice<class_RenderingDevice_method_texture_create_shared_from_slice>`\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0, layers\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`              | :ref:`texture_get_data<class_RenderingDevice_method_texture_get_data>`\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -395,13 +395,13 @@ enum **DriverResource**: :ref:`🔗<enum_RenderingDevice_DriverResource>`
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_LOGICAL_DEVICE** = ``0``
 
-Specific device object based on a physical device (``rid`` parameter is ignored).
+Specific device object based on a physical device (\ ``rid`` parameter is ignored).
 
-- Vulkan: Vulkan device driver resource (``VkDevice``).
+- Vulkan: Vulkan device driver resource (\ ``VkDevice``).
 
-- D3D12: D3D12 device driver resource (``ID3D12Device``).
+- D3D12: D3D12 device driver resource (\ ``ID3D12Device``).
 
-- Metal: Metal device driver resource (``MTLDevice``).
+- Metal: Metal device driver resource (\ ``MTLDevice``).
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE:
 
@@ -409,7 +409,7 @@ Specific device object based on a physical device (``rid`` parameter is ignored)
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_PHYSICAL_DEVICE** = ``1``
 
-Physical device the specific logical device is based on (``rid`` parameter is ignored).
+Physical device the specific logical device is based on (\ ``rid`` parameter is ignored).
 
 - Vulkan: ``VkPhysicalDevice``.
 
@@ -421,7 +421,7 @@ Physical device the specific logical device is based on (``rid`` parameter is ig
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TOPMOST_OBJECT** = ``2``
 
-Top-most graphics API entry object (``rid`` parameter is ignored).
+Top-most graphics API entry object (\ ``rid`` parameter is ignored).
 
 - Vulkan: ``VkInstance``.
 
@@ -431,7 +431,7 @@ Top-most graphics API entry object (``rid`` parameter is ignored).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_COMMAND_QUEUE** = ``3``
 
-The main graphics-compute command queue (``rid`` parameter is ignored).
+The main graphics-compute command queue (\ ``rid`` parameter is ignored).
 
 - Vulkan: ``VkQueue``.
 
@@ -445,7 +445,7 @@ The main graphics-compute command queue (``rid`` parameter is ignored).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_QUEUE_FAMILY** = ``4``
 
-The specific family the main queue belongs to (``rid`` parameter is ignored).
+The specific family the main queue belongs to (\ ``rid`` parameter is ignored).
 
 - Vulkan: The queue family index, a ``uint32_t``.
 
@@ -3013,6 +3013,14 @@ Cubemap texture slice.
 
 3-dimensional texture slice.
 
+.. _class_RenderingDevice_constant_TEXTURE_SLICE_2D_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` **TEXTURE_SLICE_2D_ARRAY** = ``3``
+
+2-dimensional texture array slice.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4240,7 +4248,7 @@ enum **BlendOperation**: :ref:`🔗<enum_RenderingDevice_BlendOperation>`
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_ADD** = ``0``
 
-Additive blending operation (``source + destination``).
+Additive blending operation (\ ``source + destination``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_SUBTRACT:
 
@@ -4248,7 +4256,7 @@ Additive blending operation (``source + destination``).
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_SUBTRACT** = ``1``
 
-Subtractive blending operation (``source - destination``).
+Subtractive blending operation (\ ``source - destination``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_REVERSE_SUBTRACT:
 
@@ -4256,7 +4264,7 @@ Subtractive blending operation (``source - destination``).
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_REVERSE_SUBTRACT** = ``2``
 
-Reverse subtractive blending operation (``destination - source``).
+Reverse subtractive blending operation (\ ``destination - source``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_MINIMUM:
 
@@ -4839,6 +4847,14 @@ Support for raytracing pipeline extension.
 :ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_HDR_OUTPUT** = ``13``
 
 Support for high dynamic range (HDR) output.
+
+.. _class_RenderingDevice_constant_SUPPORTS_RASTERIZATION_RATE_MAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Features<enum_RenderingDevice_Features>` **SUPPORTS_RASTERIZATION_RATE_MAP** = ``14``
+
+Support for rasterization rate maps. The current implementation targets Metal on Apple platforms. This allows for foveated rendering, which is used by the visionOS XR module.
 
 .. rst-class:: classref-item-separator
 
@@ -7324,7 +7340,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`RID<class_RID>` **texture_create_from_extension**\ (\ type\: :ref:`TextureType<enum_RenderingDevice_TextureType>`, format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\], image\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_from_extension>`
 
-Returns an RID for an existing ``image`` (``VkImage``) with the given ``type``, ``format``, ``samples``, ``usage_flags``, ``width``, ``height``, ``depth``, ``layers``, and ``mipmaps``. This can be used to allow Godot to render onto foreign images.
+Returns an RID for an existing ``image`` (\ ``VkImage``) with the given ``type``, ``format``, ``samples``, ``usage_flags``, ``width``, ``height``, ``depth``, ``layers``, and ``mipmaps``. This can be used to allow Godot to render onto foreign images.
 
 .. rst-class:: classref-item-separator
 
@@ -7348,13 +7364,11 @@ This will be freed automatically when the ``with_texture`` is freed.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_create_shared_from_slice**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_shared_from_slice>`
+:ref:`RID<class_RID>` **texture_create_shared_from_slice**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0, layers\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_shared_from_slice>`
 
-Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared()<class_RenderingDevice_method_texture_create_shared>`.
+Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. The ``layers`` parameter controls the number of included layers from the original texture for 2D texture arrays, and must be ``0`` for all other texture types. If ``layers`` is ``0`` for a 2D texture array, ``layer`` must also be ``0``, and all available layers will be included. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared()<class_RenderingDevice_method_texture_create_shared>`.
 
 For 2D textures (which only have one layer), ``layer`` must be ``0``.
-
-\ **Note:** Layer slicing is only supported for 2D texture arrays, not 3D textures or cubemaps.
 
 This will be freed automatically when the ``with_texture`` is freed.
 

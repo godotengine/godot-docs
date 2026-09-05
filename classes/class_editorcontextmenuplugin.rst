@@ -19,9 +19,9 @@ Plugin for adding custom context menus in the editor.
 Description
 -----------
 
-**EditorContextMenuPlugin** allows for the addition of custom options in the editor's context menu.
+**EditorContextMenuPlugin** allows for the addition of custom options in the editor's context menu. Register them with :ref:`EditorPlugin.add_context_menu_plugin()<class_EditorPlugin_method_add_context_menu_plugin>`.
 
-Currently, context menus are supported for three commonly used areas: the file system, scene tree, and editor script list panel.
+See :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` for the list of available areas where context menu plugins are supported.
 
 .. rst-class:: classref-reftable-group
 
@@ -31,6 +31,8 @@ Methods
 .. table::
    :widths: auto
 
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_get_menu_options<class_EditorContextMenuPlugin_private_method__get_menu_options>`\ (\ data\: :ref:`Dictionary<class_Dictionary>`\[:ref:`StringName<class_StringName>`, :ref:`Variant<class_Variant>`\]\ ) |virtual|                                  |
    +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void| | :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>`\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual|                                                                                                     |
    +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -64,7 +66,9 @@ enum **ContextMenuSlot**: :ref:`🔗<enum_EditorContextMenuPlugin_ContextMenuSlo
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCENE_TREE** = ``0``
 
-Context menu of Scene dock. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with a list of paths to currently selected nodes, while option callback will receive the list of currently selected nodes.
+Context menu of Scene dock. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"selected_nodes": Array[Node]`` - The list of currently selected nodes (same as :ref:`EditorSelection.get_top_selected_nodes()<class_EditorSelection_method_get_top_selected_nodes>`).
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_FILESYSTEM:
 
@@ -72,7 +76,9 @@ Context menu of Scene dock. :ref:`_popup_menu()<class_EditorContextMenuPlugin_pr
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM** = ``1``
 
-Context menu of FileSystem dock. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files.
+Context menu of FileSystem dock. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"selected_files": PackedStringArray`` - The list of selected files.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR:
 
@@ -80,7 +86,11 @@ Context menu of FileSystem dock. :ref:`_popup_menu()<class_EditorContextMenuPlug
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR** = ``2``
 
-Context menu of Script editor's script tabs. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the currently edited script, while option callback will receive reference to that script.
+Context menu of Script editor's script tabs and Shader editor's shader tabs. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"selected_resource": Resource`` - The currently selected resource. Can be a :ref:`Script<class_Script>`, a :ref:`Shader<class_Shader>`, a text file, or ``null`` in case of help pages.
+
+\ ``&"path": String`` - The path of the selected file. If a help page is selected, the path will be the name of the opened class, prefixed with ``help:``.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_FILESYSTEM_CREATE:
 
@@ -88,12 +98,16 @@ Context menu of Script editor's script tabs. :ref:`_popup_menu()<class_EditorCon
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM_CREATE** = ``3``
 
-The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with the path of the currently selected folder. When clicking the empty space, the list of paths for popup method will be empty.
+The "Create..." submenu of FileSystem dock's context menu, or the "New" section of the main context menu when empty space is clicked. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"base_directory": String`` - Path to the base directory where a file should be created.
+
+\ ``&"needs_prefix": bool`` - Whether the option needs a "New" prefix (for consistency with native options).
 
 ::
 
-    func _popup_menu(paths):
-        if paths.is_empty():
+    func _get_menu_options(data):
+        if data["needs_prefix"]:
             add_context_menu_item("New Image File...", create_image)
         else:
             add_context_menu_item("Image File...", create_image)
@@ -104,14 +118,11 @@ The "Create..." submenu of FileSystem dock's context menu, or the "New" section 
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR_CODE** = ``4``
 
-Context menu of Script editor's code editor. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the :ref:`CodeEdit<class_CodeEdit>` node. You can fetch it using this code:
+Context menu of Script editor's code editor. The data :ref:`Dictionary<class_Dictionary>` contains:
 
-::
+\ ``&"code_edit": CodeEdit`` - The code editor instance.
 
-    func _popup_menu(paths):
-        var code_edit = Engine.get_main_loop().root.get_node(paths[0]);
-
-The option callback will receive reference to that node. You can use :ref:`CodeEdit<class_CodeEdit>` methods to perform symbol lookups etc.
+\ ``&"file_path": String`` - Path to the currently edited file.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCENE_TABS:
 
@@ -119,7 +130,9 @@ The option callback will receive reference to that node. You can use :ref:`CodeE
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCENE_TABS** = ``5``
 
-Context menu of scene tabs. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path of the clicked scene, or empty :ref:`PackedStringArray<class_PackedStringArray>` if the menu was opened on empty space. The option callback will receive the path of the clicked scene, or empty :ref:`String<class_String>` if none was clicked.
+Context menu of scene tabs. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"selected_scene": String`` - Scene path of the selected/clicked scene tab. Empty if empty space was clicked.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_2D_EDITOR:
 
@@ -127,14 +140,11 @@ Context menu of scene tabs. :ref:`_popup_menu()<class_EditorContextMenuPlugin_pr
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_2D_EDITOR** = ``6``
 
-Context menu of 2D editor's basic right-click menu. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with paths to all :ref:`CanvasItem<class_CanvasItem>` nodes under the cursor. You can fetch them using this code:
+Context menu of the 2D editor's viewport. The data :ref:`Dictionary<class_Dictionary>` contains:
 
-::
+\ ``&"hovered_nodes": Array[CanvasItem]`` - The :ref:`CanvasItem<class_CanvasItem>` nodes under the cursor.
 
-    func _popup_menu(paths):
-        var canvas_item = Engine.get_main_loop().root.get_node(paths[0]); # Replace 0 with the desired index.
-
-The paths array is empty if there weren't any nodes under cursor. The option callback will receive a typed array of :ref:`CanvasItem<class_CanvasItem>` nodes.
+\ ``&"mouse_position": Vector2`` - The local mouse position in the 2D scene.
 
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_INSPECTOR_PROPERTY:
 
@@ -142,7 +152,13 @@ The paths array is empty if there weren't any nodes under cursor. The option cal
 
 :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_INSPECTOR_PROPERTY** = ``7``
 
-Context menu of the inspectors right-click menu. :ref:`_popup_menu()<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with an array of two items: The first will be the object's ID, the second will be the property name. An object can be retrieved from it's ID via :ref:`@GlobalScope.instance_from_id()<class_@GlobalScope_method_instance_from_id>` after converting it to an int. The option callback will receive the EditorProperty directly.
+Context menu of an editor property in the inspector. The data :ref:`Dictionary<class_Dictionary>` contains:
+
+\ ``&"property": EditorProperty`` - The clicked :ref:`EditorProperty<class_EditorProperty>` object.
+
+\ ``&"object": Object`` - The object edited by the inspector.
+
+\ ``&"property_name": StringName`` - The name of the object's property that was clicked.
 
 .. rst-class:: classref-section-separator
 
@@ -153,13 +169,27 @@ Context menu of the inspectors right-click menu. :ref:`_popup_menu()<class_Edito
 Method Descriptions
 -------------------
 
+.. _class_EditorContextMenuPlugin_private_method__get_menu_options:
+
+.. rst-class:: classref-method
+
+|void| **_get_menu_options**\ (\ data\: :ref:`Dictionary<class_Dictionary>`\[:ref:`StringName<class_StringName>`, :ref:`Variant<class_Variant>`\]\ ) |virtual| :ref:`🔗<class_EditorContextMenuPlugin_private_method__get_menu_options>`
+
+Called when creating a context menu, custom options can be added by using the :ref:`add_context_menu_item()<class_EditorContextMenuPlugin_method_add_context_menu_item>` or :ref:`add_context_menu_item_from_shortcut()<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>` functions. ``data`` contains the context data, which differs depending on the context menu slot. See the descriptions of :ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorContextMenuPlugin_private_method__popup_menu:
 
 .. rst-class:: classref-method
 
 |void| **_popup_menu**\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorContextMenuPlugin_private_method__popup_menu>`
 
-Called when creating a context menu, custom options can be added by using the :ref:`add_context_menu_item()<class_EditorContextMenuPlugin_method_add_context_menu_item>` or :ref:`add_context_menu_item_from_shortcut()<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>` functions. ``paths`` contains currently selected paths (depending on menu), which can be used to conditionally add options.
+**Deprecated:** Use :ref:`_get_menu_options()<class_EditorContextMenuPlugin_private_method__get_menu_options>` instead.
+
+**Note:** Implementing this method makes the shortcut callbacks receive legacy data (for compatibility reasons).
 
 .. rst-class:: classref-item-separator
 
@@ -171,11 +201,11 @@ Called when creating a context menu, custom options can be added by using the :r
 
 |void| **add_context_menu_item**\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`, icon\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_context_menu_item>`
 
-Add custom option to the context menu of the plugin's specified slot. When the option is activated, ``callback`` will be called. Callback should take single :ref:`Array<class_Array>` argument; array contents depend on context menu slot.
+Add custom option to the context menu of the plugin's specified slot. ``callback`` should be a method that takes a single argument of type :ref:`Dictionary<class_Dictionary>`. It will be called when the option is activated and the data received in the callback is the same as in :ref:`_get_menu_options()<class_EditorContextMenuPlugin_private_method__get_menu_options>`.
 
 ::
 
-    func _popup_menu(paths):
+    func _get_menu_options(data):
         add_context_menu_item("File Custom options", handle, ICON)
 
 If you want to assign shortcut to the menu item, use :ref:`add_context_menu_item_from_shortcut()<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>` instead.
@@ -197,7 +227,7 @@ Add custom option to the context menu of the plugin's specified slot. The option
     func _init():
         add_menu_shortcut(SHORTCUT, handle)
 
-    func _popup_menu(paths):
+    func _get_menu_options(paths):
         add_context_menu_item_from_shortcut("File Custom options", SHORTCUT, ICON)
 
 .. rst-class:: classref-item-separator
@@ -214,7 +244,7 @@ Add a submenu to the context menu of the plugin's specified slot. The submenu is
 
 ::
 
-    func _popup_menu(paths):
+    func _get_menu_options(data):
         var popup_menu = PopupMenu.new()
         popup_menu.add_item("Blue")
         popup_menu.add_item("White")
@@ -232,7 +262,7 @@ Add a submenu to the context menu of the plugin's specified slot. The submenu is
 
 |void| **add_menu_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_menu_shortcut>`
 
-Registers a shortcut associated with the plugin's context menu. This method should be called once (e.g. in plugin's :ref:`Object._init()<class_Object_private_method__init>`). ``callback`` will be called when user presses the specified ``shortcut`` while the menu's context is in effect (e.g. FileSystem dock is focused). Callback should take single :ref:`Array<class_Array>` argument; array contents depend on context menu slot.
+Registers a shortcut associated with the plugin's context menu. This method should be called once (e.g. in the plugin's :ref:`Object._init()<class_Object_private_method__init>`). ``callback`` will be called when user presses the specified ``shortcut`` while the menu's context is in effect (e.g. FileSystem dock is focused). Callback should take single data :ref:`Dictionary<class_Dictionary>`, same as in :ref:`add_context_menu_item()<class_EditorContextMenuPlugin_method_add_context_menu_item>`.
 
 ::
 

@@ -319,7 +319,7 @@ Returns ``true`` if the array contains ``value``.
 
 :ref:`int<class_int>` **insert**\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PackedFloat64Array_method_insert>`
 
-Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (\ ``idx == size()``).
 
 .. rst-class:: classref-item-separator
 
@@ -355,7 +355,7 @@ Appends an element at the end of the array.
 
 |void| **remove_at**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PackedFloat64Array_method_remove_at>`
 
-Removes an element from the array by index.
+Removes an element from the array by index. If ``index`` is out-of-bounds or negative, this method fails.
 
 .. rst-class:: classref-item-separator
 

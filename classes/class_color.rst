@@ -1871,7 +1871,7 @@ Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclus
 
 Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel). This method is the inverse of :ref:`to_rgba32()<class_Color_method_to_rgba32>`.
 
-In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRGGBBAA"``).
+In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (\ ``"0x"`` prefix, making it ``"0xRRGGBBAA"``).
 
 
 .. tabs::
@@ -1904,7 +1904,7 @@ If you want to use hex notation in a constant expression, use the equivalent con
 
 Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel). This method is the inverse of :ref:`to_rgba64()<class_Color_method_to_rgba64>`.
 
-In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRRRGGGGBBBBAAAA"``).
+In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (\ ``"0x"`` prefix, making it ``"0xRRRRGGGGBBBBAAAA"``).
 
 .. rst-class:: classref-item-separator
 
@@ -1916,7 +1916,7 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
 
 :ref:`Color<class_Color>` **html**\ (\ rgba\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_Color_method_html>`
 
-Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is not case-sensitive, and may be prefixed by a hash sign (``#``).
+Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is not case-sensitive, and may be prefixed by a hash sign (\ ``#``).
 
 \ ``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied. If ``rgba`` is invalid, returns an empty color.
 
@@ -1947,7 +1947,7 @@ Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is
 
 :ref:`bool<class_bool>` **html_is_valid**\ (\ color\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_Color_method_html_is_valid>`
 
-Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The string must be a hexadecimal value (case-insensitive) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (``#``). This method is identical to :ref:`String.is_valid_html_color()<class_String_method_is_valid_html_color>`.
+Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The string must be a hexadecimal value (case-insensitive) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (\ ``#``). This method is identical to :ref:`String.is_valid_html_color()<class_String_method_is_valid_html_color>`.
 
 
 .. tabs::
@@ -1984,7 +1984,7 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
 
 :ref:`Color<class_Color>` **inverted**\ (\ ) |const| :ref:`🔗<class_Color_method_inverted>`
 
-Returns the color with its :ref:`r<class_Color_property_r>`, :ref:`g<class_Color_property_g>`, and :ref:`b<class_Color_property_b>` components inverted (``(1 - r, 1 - g, 1 - b, a)``).
+Returns the color with its :ref:`r<class_Color_property_r>`, :ref:`g<class_Color_property_g>`, and :ref:`b<class_Color_property_b>` components inverted (\ ``(1 - r, 1 - g, 1 - b, a)``).
 
 
 .. tabs::
@@ -2223,7 +2223,7 @@ Returns the color converted to a 64-bit integer in ARGB format (each component i
 
 :ref:`String<class_String>` **to_html**\ (\ with_alpha\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_Color_method_to_html>`
 
-Returns the color converted to an HTML hexadecimal color :ref:`String<class_String>` in RGBA format, without the hash (``#``) prefix.
+Returns the color converted to an HTML hexadecimal color :ref:`String<class_String>` in RGBA format, without the hash (\ ``#``) prefix.
 
 Setting ``with_alpha`` to ``false``, excludes alpha from the hexadecimal string, using RGB format instead of RGBA format.
 

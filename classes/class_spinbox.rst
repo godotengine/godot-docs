@@ -65,27 +65,33 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_SpinBox_property_alignment>`                           | ``0``                                                                        |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`custom_arrow_round<class_SpinBox_property_custom_arrow_round>`         | ``false``                                                                    |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                         | :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>`           | ``0.0``                                                                      |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`editable<class_SpinBox_property_editable>`                             | ``true``                                                                     |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`prefix<class_SpinBox_property_prefix>`                                 | ``""``                                                                       |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_SpinBox_property_select_all_on_focus>`       | ``false``                                                                    |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\]            | size_flags_vertical                                                          | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                         | step                                                                         | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`suffix<class_SpinBox_property_suffix>`                                 | ``""``                                                                       |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>` | ``false``                                                                    |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_SpinBox_property_alignment>`                                   | ``0``                                                                        |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`custom_arrow_round<class_SpinBox_property_custom_arrow_round>`                 | ``false``                                                                    |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                         | :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>`                   | ``0.0``                                                                      |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`editable<class_SpinBox_property_editable>`                                     | ``true``                                                                     |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`format<class_SpinBox_property_format>`                                         | ``""``                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`             | :ref:`format_auto_translate_mode<class_SpinBox_property_format_auto_translate_mode>` | ``2``                                                                        |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`plural_format<class_SpinBox_property_plural_format>`                           |                                                                              |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`prefix<class_SpinBox_property_prefix>`                                         | ``""``                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_SpinBox_property_select_all_on_focus>`               | ``false``                                                                    |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\]            | size_flags_vertical                                                                  | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                         | step                                                                                 | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`suffix<class_SpinBox_property_suffix>`                                         | ``""``                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`update_on_text_changed<class_SpinBox_property_update_on_text_changed>`         | ``false``                                                                    |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -252,6 +258,65 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 
 ----
 
+.. _class_SpinBox_property_format:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **format** = ``""`` :ref:`🔗<class_SpinBox_property_format>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_format**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_format**\ (\ )
+
+The formatting of the displayed numeric value, using the same rules as :ref:`String<class_String>`'s ``%`` operator (see :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>`). If empty, the value is displayed with no special formatting. If the format string is invalid, the **SpinBox** will display ``"ERROR"``, with the error message available as a configuration warning.
+
+The following format strings can be used as examples:
+
+- ``"(%s)"`` displays as a number in parentheses (e.g. ``(6.9)``).
+
+- ``"%d ms"`` displays as an integer with milliseconds unit (e.g. ``420 ms``).
+
+- ``"%0.2f%%"`` displays as a percentage, with 2 decimal places of precision (e.g. ``21.37%``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_property_format_auto_translate_mode:
+
+.. rst-class:: classref-property
+
+:ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>` **format_auto_translate_mode** = ``2`` :ref:`🔗<class_SpinBox_property_format_auto_translate_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_format_auto_translate_mode**\ (\ value\: :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`\ )
+- :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>` **get_format_auto_translate_mode**\ (\ )
+
+Auto-translation mode for the :ref:`format<class_SpinBox_property_format>`. Useful when the format has a word that can be translated.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_property_plural_format:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **plural_format** :ref:`🔗<class_SpinBox_property_plural_format>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_plural_format**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_plural_format**\ (\ )
+
+Plural version of :ref:`format<class_SpinBox_property_format>`. Used only if :ref:`format<class_SpinBox_property_format>` is not empty and :ref:`format_auto_translate_mode<class_SpinBox_property_format_auto_translate_mode>` is not disabled. See also :ref:`Object.tr_n()<class_Object_method_tr_n>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SpinBox_property_prefix:
 
 .. rst-class:: classref-property
@@ -263,7 +328,9 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 - |void| **set_prefix**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_prefix**\ (\ )
 
-Adds the specified prefix string before the numerical value of the **SpinBox**.
+**Deprecated:** Use :ref:`format<class_SpinBox_property_format>` instead.
+
+Adds the specified prefix string before the numerical value of the **SpinBox**. This is used only if :ref:`format<class_SpinBox_property_format>` is empty.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +364,9 @@ If ``true``, the **SpinBox** will select the whole text when the :ref:`LineEdit<
 - |void| **set_suffix**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_suffix**\ (\ )
 
-Adds the specified suffix string after the numerical value of the **SpinBox**.
+**Deprecated:** Use :ref:`format<class_SpinBox_property_format>` instead.
+
+Adds the specified suffix string after the numerical value of the **SpinBox**. This is used only if :ref:`format<class_SpinBox_property_format>` is empty.
 
 .. rst-class:: classref-item-separator
 

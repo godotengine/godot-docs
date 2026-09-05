@@ -33,13 +33,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | |bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\] | :ref:`enable<class_RetargetModifier3D_property_enable>`                   | ``7``     |
-   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`SkeletonProfile<class_SkeletonProfile>`                             | :ref:`profile<class_RetargetModifier3D_property_profile>`                 |           |
-   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                                   | :ref:`use_global_pose<class_RetargetModifier3D_property_use_global_pose>` | ``false`` |
-   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`copy_bone_skin_scale<class_RetargetModifier3D_property_copy_bone_skin_scale>` | ``true``  |
+   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
+   | |bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\] | :ref:`enable<class_RetargetModifier3D_property_enable>`                             | ``7``     |
+   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
+   | :ref:`SkeletonProfile<class_SkeletonProfile>`                             | :ref:`profile<class_RetargetModifier3D_property_profile>`                           |           |
+   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`use_global_pose<class_RetargetModifier3D_property_use_global_pose>`           | ``false`` |
+   +---------------------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -118,6 +120,27 @@ If set, allows to retarget the position/rotation/scale.
 
 Property Descriptions
 ---------------------
+
+.. _class_RetargetModifier3D_property_copy_bone_skin_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **copy_bone_skin_scale** = ``true`` :ref:`🔗<class_RetargetModifier3D_property_copy_bone_skin_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_copy_bone_skin_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_copying_bone_skin_scale**\ (\ )
+
+If ``true``, copies :ref:`Skeleton3D.get_bone_skin_scale()<class_Skeleton3D_method_get_bone_skin_scale>` of the source skeleton's bones to the child skeletons' mapped bones.
+
+If ``false``, the skin scale of the child skeletons' mapped bones are reset to ``Vector3(1, 1, 1)`` once and will not be overwritten after that.
+
+\ **Note:** If you want to use :ref:`Skeleton3D.set_bone_skin_scale()<class_Skeleton3D_method_set_bone_skin_scale>` on a child skeleton's mapped bone, set this to ``false``. Even if you are not using :ref:`Skeleton3D.set_bone_skin_scale()<class_Skeleton3D_method_set_bone_skin_scale>` with parent skeleton, ``Vector3(1, 1, 1)`` will always be set for the child skeletons' mapped bones.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_RetargetModifier3D_property_enable:
 

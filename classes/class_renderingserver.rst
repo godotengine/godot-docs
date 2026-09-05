@@ -641,6 +641,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                        | :ref:`mesh_surface_get_arrays<class_RenderingServer_method_mesh_surface_get_arrays>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_attribute_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]                           | :ref:`mesh_surface_get_blend_shape_arrays<class_RenderingServer_method_mesh_surface_get_blend_shape_arrays>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_attribute_stride<class_RenderingServer_method_mesh_surface_get_format_attribute_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -655,7 +657,13 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_vertex_stride<class_RenderingServer_method_mesh_surface_get_format_vertex_stride>`\ (\ format\: |bitfield|\[:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\], vertex_count\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_index_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_material<class_RenderingServer_method_mesh_surface_get_material>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_skin_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_vertex_buffer_rd_rid<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_remove<class_RenderingServer_method_mesh_surface_remove>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -978,6 +986,8 @@ Methods
    | :ref:`RID<class_RID>`                                                            | :ref:`texture_rd_create<class_RenderingServer_method_texture_rd_create>`\ (\ rd_texture\: :ref:`RID<class_RID>`, layer_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`texture_replace<class_RenderingServer_method_texture_replace>`\ (\ texture\: :ref:`RID<class_RID>`, by_texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`texture_replace_compatible<class_RenderingServer_method_texture_replace_compatible>`\ (\ texture\: :ref:`RID<class_RID>`, by_texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`texture_set_force_redraw_if_visible<class_RenderingServer_method_texture_set_force_redraw_if_visible>`\ (\ texture\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1831,6 +1841,14 @@ Flag used to mark that the mesh does not have a vertex array and instead will in
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_COMPRESS_ATTRIBUTES** = ``536870912``
 
 Flag used to mark that a mesh is using compressed attributes (vertices, normals, tangents, UVs). When this form of compression is enabled, vertex positions will be packed into an RGBA16UNORM attribute and scaled in the vertex shader. The normal and tangent will be packed into an RG16UNORM representing an axis, and a 16-bit float stored in the A-channel of the vertex. UVs will use 16-bit normalized floats instead of full 32-bit signed floats. When using this compression mode you must use either vertices, normals, and tangents or only vertices. You cannot use normals without tangents. Importers will automatically enable this compression if they can.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_STORAGE_BUFFER** = ``1073741824``
+
+Flag used to mark that the surface's vertex, attribute, skin, and index buffers must be created with the storage-buffer usage bit so they can be bound as storage buffers in compute shaders. This is required to write into them from a compute pipeline through the :ref:`RID<class_RID>`\ s returned by :ref:`mesh_surface_get_vertex_buffer_rd_rid()<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>` and the matching methods for the attribute, skin, and index buffers. Has no effect on the OpenGL backend, which does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_BASE:
 
@@ -5622,7 +5640,7 @@ enum **GlobalShaderParameterType**: :ref:`🔗<enum_RenderingServer_GlobalShader
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BOOL** = ``0``
 
-Boolean global shader parameter (``global uniform bool ...``).
+Boolean global shader parameter (\ ``global uniform bool ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC2:
 
@@ -5630,7 +5648,7 @@ Boolean global shader parameter (``global uniform bool ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC2** = ``1``
 
-2-dimensional boolean vector global shader parameter (``global uniform bvec2 ...``).
+2-dimensional boolean vector global shader parameter (\ ``global uniform bvec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC3:
 
@@ -5638,7 +5656,7 @@ Boolean global shader parameter (``global uniform bool ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC3** = ``2``
 
-3-dimensional boolean vector global shader parameter (``global uniform bvec3 ...``).
+3-dimensional boolean vector global shader parameter (\ ``global uniform bvec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC4:
 
@@ -5646,7 +5664,7 @@ Boolean global shader parameter (``global uniform bool ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC4** = ``3``
 
-4-dimensional boolean vector global shader parameter (``global uniform bvec4 ...``).
+4-dimensional boolean vector global shader parameter (\ ``global uniform bvec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_INT:
 
@@ -5654,7 +5672,7 @@ Boolean global shader parameter (``global uniform bool ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_INT** = ``4``
 
-Integer global shader parameter (``global uniform int ...``).
+Integer global shader parameter (\ ``global uniform int ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC2:
 
@@ -5662,7 +5680,7 @@ Integer global shader parameter (``global uniform int ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC2** = ``5``
 
-2-dimensional integer vector global shader parameter (``global uniform ivec2 ...``).
+2-dimensional integer vector global shader parameter (\ ``global uniform ivec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC3:
 
@@ -5670,7 +5688,7 @@ Integer global shader parameter (``global uniform int ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC3** = ``6``
 
-3-dimensional integer vector global shader parameter (``global uniform ivec3 ...``).
+3-dimensional integer vector global shader parameter (\ ``global uniform ivec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC4:
 
@@ -5678,7 +5696,7 @@ Integer global shader parameter (``global uniform int ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC4** = ``7``
 
-4-dimensional integer vector global shader parameter (``global uniform ivec4 ...``).
+4-dimensional integer vector global shader parameter (\ ``global uniform ivec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_RECT2I:
 
@@ -5686,7 +5704,7 @@ Integer global shader parameter (``global uniform int ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_RECT2I** = ``8``
 
-2-dimensional integer rectangle global shader parameter (``global uniform ivec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_IVEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC4>` in shader code, but exposed as a :ref:`Rect2i<class_Rect2i>` in the editor UI.
+2-dimensional integer rectangle global shader parameter (\ ``global uniform ivec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_IVEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC4>` in shader code, but exposed as a :ref:`Rect2i<class_Rect2i>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UINT:
 
@@ -5694,7 +5712,7 @@ Integer global shader parameter (``global uniform int ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UINT** = ``9``
 
-Unsigned integer global shader parameter (``global uniform uint ...``).
+Unsigned integer global shader parameter (\ ``global uniform uint ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC2:
 
@@ -5702,7 +5720,7 @@ Unsigned integer global shader parameter (``global uniform uint ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC2** = ``10``
 
-2-dimensional unsigned integer vector global shader parameter (``global uniform uvec2 ...``).
+2-dimensional unsigned integer vector global shader parameter (\ ``global uniform uvec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC3:
 
@@ -5710,7 +5728,7 @@ Unsigned integer global shader parameter (``global uniform uint ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC3** = ``11``
 
-3-dimensional unsigned integer vector global shader parameter (``global uniform uvec3 ...``).
+3-dimensional unsigned integer vector global shader parameter (\ ``global uniform uvec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC4:
 
@@ -5718,7 +5736,7 @@ Unsigned integer global shader parameter (``global uniform uint ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC4** = ``12``
 
-4-dimensional unsigned integer vector global shader parameter (``global uniform uvec4 ...``).
+4-dimensional unsigned integer vector global shader parameter (\ ``global uniform uvec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_FLOAT:
 
@@ -5726,7 +5744,7 @@ Unsigned integer global shader parameter (``global uniform uint ...``).
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_FLOAT** = ``13``
 
-Single-precision floating-point global shader parameter (``global uniform float ...``).
+Single-precision floating-point global shader parameter (\ ``global uniform float ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC2:
 
@@ -5734,7 +5752,7 @@ Single-precision floating-point global shader parameter (``global uniform float 
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC2** = ``14``
 
-2-dimensional floating-point vector global shader parameter (``global uniform vec2 ...``).
+2-dimensional floating-point vector global shader parameter (\ ``global uniform vec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC3:
 
@@ -5742,7 +5760,7 @@ Single-precision floating-point global shader parameter (``global uniform float 
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC3** = ``15``
 
-3-dimensional floating-point vector global shader parameter (``global uniform vec3 ...``).
+3-dimensional floating-point vector global shader parameter (\ ``global uniform vec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4:
 
@@ -5750,7 +5768,7 @@ Single-precision floating-point global shader parameter (``global uniform float 
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC4** = ``16``
 
-4-dimensional floating-point vector global shader parameter (``global uniform vec4 ...``).
+4-dimensional floating-point vector global shader parameter (\ ``global uniform vec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_COLOR:
 
@@ -5758,7 +5776,7 @@ Single-precision floating-point global shader parameter (``global uniform float 
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_COLOR** = ``17``
 
-Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Color<class_Color>` in the editor UI.
+Color global shader parameter (\ ``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Color<class_Color>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_RECT2:
 
@@ -5766,7 +5784,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_RECT2** = ``18``
 
-2-dimensional floating-point rectangle global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Rect2<class_Rect2>` in the editor UI.
+2-dimensional floating-point rectangle global shader parameter (\ ``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Rect2<class_Rect2>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT2:
 
@@ -5774,7 +5792,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT2** = ``19``
 
-2×2 matrix global shader parameter (``global uniform mat2 ...``). Exposed as a :ref:`PackedInt32Array<class_PackedInt32Array>` in the editor UI.
+2×2 matrix global shader parameter (\ ``global uniform mat2 ...``). Exposed as a :ref:`PackedInt32Array<class_PackedInt32Array>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT3:
 
@@ -5782,7 +5800,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT3** = ``20``
 
-3×3 matrix global shader parameter (``global uniform mat3 ...``). Exposed as a :ref:`Basis<class_Basis>` in the editor UI.
+3×3 matrix global shader parameter (\ ``global uniform mat3 ...``). Exposed as a :ref:`Basis<class_Basis>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT4:
 
@@ -5790,7 +5808,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT4** = ``21``
 
-4×4 matrix global shader parameter (``global uniform mat4 ...``). Exposed as a :ref:`Projection<class_Projection>` in the editor UI.
+4×4 matrix global shader parameter (\ ``global uniform mat4 ...``). Exposed as a :ref:`Projection<class_Projection>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_TRANSFORM_2D:
 
@@ -5798,7 +5816,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_TRANSFORM_2D** = ``22``
 
-2-dimensional transform global shader parameter (``global uniform mat2x3 ...``). Exposed as a :ref:`Transform2D<class_Transform2D>` in the editor UI.
+2-dimensional transform global shader parameter (\ ``global uniform mat2x3 ...``). Exposed as a :ref:`Transform2D<class_Transform2D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_TRANSFORM:
 
@@ -5806,7 +5824,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_TRANSFORM** = ``23``
 
-3-dimensional transform global shader parameter (``global uniform mat3x4 ...``). Exposed as a :ref:`Transform3D<class_Transform3D>` in the editor UI.
+3-dimensional transform global shader parameter (\ ``global uniform mat3x4 ...``). Exposed as a :ref:`Transform3D<class_Transform3D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER2D:
 
@@ -5814,7 +5832,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER2D** = ``24``
 
-2D sampler global shader parameter (``global uniform sampler2D ...``). Exposed as a :ref:`Texture2D<class_Texture2D>` in the editor UI.
+2D sampler global shader parameter (\ ``global uniform sampler2D ...``). Exposed as a :ref:`Texture2D<class_Texture2D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER2DARRAY:
 
@@ -5822,7 +5840,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER2DARRAY** = ``25``
 
-2D sampler array global shader parameter (``global uniform sampler2DArray ...``). Exposed as a :ref:`Texture2DArray<class_Texture2DArray>` in the editor UI.
+2D sampler array global shader parameter (\ ``global uniform sampler2DArray ...``). Exposed as a :ref:`Texture2DArray<class_Texture2DArray>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER3D:
 
@@ -5830,7 +5848,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER3D** = ``26``
 
-3D sampler global shader parameter (``global uniform sampler3D ...``). Exposed as a :ref:`Texture3D<class_Texture3D>` in the editor UI.
+3D sampler global shader parameter (\ ``global uniform sampler3D ...``). Exposed as a :ref:`Texture3D<class_Texture3D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLERCUBE:
 
@@ -5838,7 +5856,7 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLERCUBE** = ``27``
 
-Cubemap sampler global shader parameter (``global uniform samplerCube ...``). Exposed as a :ref:`Cubemap<class_Cubemap>` in the editor UI.
+Cubemap sampler global shader parameter (\ ``global uniform samplerCube ...``). Exposed as a :ref:`Cubemap<class_Cubemap>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLEREXT:
 
@@ -5846,7 +5864,7 @@ Cubemap sampler global shader parameter (``global uniform samplerCube ...``). Ex
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLEREXT** = ``28``
 
-External sampler global shader parameter (``global uniform samplerExternalOES ...``). Exposed as an :ref:`ExternalTexture<class_ExternalTexture>` in the editor UI.
+External sampler global shader parameter (\ ``global uniform samplerExternalOES ...``). Exposed as an :ref:`ExternalTexture<class_ExternalTexture>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAX:
 
@@ -8890,7 +8908,7 @@ This method does nothing and always returns ``false``.
 
 :ref:`bool<class_bool>` **has_os_feature**\ (\ feature\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_RenderingServer_method_has_os_feature>`
 
-Returns ``true`` if the OS supports a certain ``feature``. Features might be ``s3tc``, ``etc``, and ``etc2``.
+Returns ``true`` if the OS supports a certain ``feature``. Features might be ``s3tc``, ``rgtc``, ``bptc``, ``etc``, ``etc2``, ``astc``, and ``astc_hdr``.
 
 .. rst-class:: classref-item-separator
 
@@ -10010,6 +10028,22 @@ Returns a mesh's surface's buffer arrays.
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_attribute_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_attribute_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the attribute buffer of the given mesh surface (Color, UV, UV2, Custom0-3). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the surface attributes can be read or written from a compute shader without a CPU round-trip.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no attribute buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_get_blend_shape_arrays:
 
 .. rst-class:: classref-method
@@ -10094,6 +10128,22 @@ Returns the stride of the vertex positions for a mesh with given ``format``. Not
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_index_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_index_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the index buffer of the given mesh surface. The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the indices can be read or written from a compute shader without a CPU round-trip.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface is not indexed or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_get_material:
 
 .. rst-class:: classref-method
@@ -10101,6 +10151,38 @@ Returns the stride of the vertex positions for a mesh with given ``format``. Not
 :ref:`RID<class_RID>` **mesh_surface_get_material**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_material>`
 
 Returns a mesh's surface's material.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_skin_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_skin_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the skin buffer of the given mesh surface (Bones, Weights). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the skin data can be read or written from a compute shader without a CPU round-trip.
+
+This buffer is created with the storage-buffer usage bit whenever the surface has skinning data, so it can be bound as a storage buffer in compute even without :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>`.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no skin buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **mesh_surface_get_vertex_buffer_rd_rid**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingServer_method_mesh_surface_get_vertex_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the vertex buffer of the given mesh surface (Vertex, Normal, Tangent). The returned :ref:`RID<class_RID>` can be used like any other buffer on the :ref:`RenderingDevice<class_RenderingDevice>`, so the surface vertices can be read or written from a compute shader without a CPU round-trip. This is the :ref:`Mesh<class_Mesh>` equivalent of :ref:`multimesh_get_buffer_rd_rid()<class_RenderingServer_method_multimesh_get_buffer_rd_rid>` and is intended for GPU-driven mesh workflows (procedural meshes, ribbon trails, cloth, hair, grass) implemented from a :ref:`GDExtension<class_GDExtension>`.
+
+To bind the buffer as a storage buffer in compute, the surface must have been created with the :ref:`ARRAY_FLAG_USE_STORAGE_BUFFER<class_RenderingServer_constant_ARRAY_FLAG_USE_STORAGE_BUFFER>` flag set in its format.
+
+Returns an invalid :ref:`RID<class_RID>` if the surface has no vertex buffer or if the rendering backend does not expose :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>`\ s (such as the OpenGL backend).
 
 .. rst-class:: classref-item-separator
 
@@ -12215,6 +12297,22 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 |void| **texture_replace**\ (\ texture\: :ref:`RID<class_RID>`, by_texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_texture_replace>`
 
 Replaces ``texture``'s texture data by the texture specified by the ``by_texture`` RID, without changing ``texture``'s RID.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_replace_compatible:
+
+.. rst-class:: classref-method
+
+|void| **texture_replace_compatible**\ (\ texture\: :ref:`RID<class_RID>`, by_texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_texture_replace_compatible>`
+
+Replaces ``texture``'s texture data by the texture specified by the ``by_texture`` RID, without changing ``texture``'s RID.
+
+Unlike :ref:`texture_replace()<class_RenderingServer_method_texture_replace>`, this method automatically patches any uniform sets that reference ``texture`` so they point to the new underlying resource. This makes it suitable for replacing textures that are already bound in materials or shaders without invalidating existing draw state. The new texture may have different dimensions (e.g. for texture streaming mip level changes).
+
+Textures that are not compatible will likely cause rendering errors, so it's recommended to only use this method on textures that are compatible with each other (e.g. same format and usage flags).
 
 .. rst-class:: classref-item-separator
 

@@ -228,7 +228,7 @@ To enforce a certain type for keys and values, you can create a *typed dictionar
 
 \ **Note:** Erasing elements while iterating over dictionaries is **not** supported and will result in unpredictable behavior.
 
-\ **Note:** In a boolean context, a dictionary will evaluate to ``false`` if it's empty (``{}``). Otherwise, a dictionary will always evaluate to ``true``.
+\ **Note:** In a boolean context, a dictionary will evaluate to ``false`` if it's empty (\ ``{}``). Otherwise, a dictionary will always evaluate to ``true``.
 
 .. note::
 
@@ -905,7 +905,7 @@ Returns ``true`` if the two dictionaries contain the same keys and values, inner
 
 :ref:`bool<class_bool>` **set**\ (\ key\: :ref:`Variant<class_Variant>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_method_set>`
 
-Sets the value of the element at the given ``key`` to the given ``value``. Returns ``true`` if the value is set successfully. Fails and returns ``false`` if the dictionary is read-only, or if ``key`` and ``value`` don't match the dictionary's types. This is the same as using the ``[]`` operator (``dict[key] = value``).
+Sets the value of the element at the given ``key`` to the given ``value``. Returns ``true`` if the value is set successfully. Fails and returns ``false`` if the dictionary is read-only, or if ``key`` and ``value`` don't match the dictionary's types. This is the same as using the ``[]`` operator (\ ``dict[key] = value``).
 
 .. rst-class:: classref-item-separator
 
@@ -917,7 +917,7 @@ Sets the value of the element at the given ``key`` to the given ``value``. Retur
 
 :ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_size>`
 
-Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) always return ``0``. See also :ref:`is_empty()<class_Dictionary_method_is_empty>`.
+Returns the number of entries in the dictionary. Empty dictionaries (\ ``{ }``) always return ``0``. See also :ref:`is_empty()<class_Dictionary_method_is_empty>`.
 
 .. rst-class:: classref-item-separator
 
@@ -929,7 +929,7 @@ Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) al
 
 |void| **sort**\ (\ ) :ref:`🔗<class_Dictionary_method_sort>`
 
-Sorts the dictionary in ascending order, by key. The final order is dependent on the "less than" (``<``) comparison between keys.
+Sorts the dictionary in ascending order, by key. The final order is dependent on the "less than" (\ ``<``) comparison between keys.
 
 
 .. tabs::

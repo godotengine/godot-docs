@@ -353,7 +353,7 @@ Returns the inverted version of this transform. Unlike :ref:`inverse()<class_Tra
 
 :ref:`Vector2<class_Vector2>` **basis_xform**\ (\ v\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Transform2D_method_basis_xform>`
 
-Returns a copy of the ``v`` vector, transformed (multiplied) by the transform basis's matrix. Unlike the multiplication operator (``*``), this method ignores the :ref:`origin<class_Transform2D_property_origin>`.
+Returns a copy of the ``v`` vector, transformed (multiplied) by the transform basis's matrix. Unlike the multiplication operator (\ ``*``), this method ignores the :ref:`origin<class_Transform2D_property_origin>`.
 
 .. rst-class:: classref-item-separator
 

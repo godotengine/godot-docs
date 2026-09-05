@@ -281,7 +281,7 @@ If ``true``, the camera only moves when reaching the horizontal (left and right)
 - |void| **set_drag_horizontal_offset**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_drag_horizontal_offset**\ (\ )
 
-The relative horizontal drag offset of the camera between the right (``-1``) and left (``1``) drag margins.
+The relative horizontal drag offset of the camera between the right (\ ``-1``) and left (\ ``1``) drag margins.
 
 \ **Note:** Used to set the initial horizontal drag offset; determine the current offset; or force the current offset. It's not automatically updated when :ref:`drag_horizontal_enabled<class_Camera2D_property_drag_horizontal_enabled>` is ``true`` or the drag margins are changed.
 
@@ -368,7 +368,7 @@ If ``true``, the camera only moves when reaching the vertical (top and bottom) d
 - |void| **set_drag_vertical_offset**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_drag_vertical_offset**\ (\ )
 
-The relative vertical drag offset of the camera between the bottom (``-1``) and top (``1``) drag margins.
+The relative vertical drag offset of the camera between the bottom (\ ``-1``) and top (\ ``1``) drag margins.
 
 \ **Note:** Used to set the initial vertical drag offset; determine the current offset; or force the current offset. It's not automatically updated when :ref:`drag_vertical_enabled<class_Camera2D_property_drag_vertical_enabled>` is ``true`` or the drag margins are changed.
 

@@ -12,7 +12,7 @@ XRInterface
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`MobileVRInterface<class_MobileVRInterface>`, :ref:`OpenXRInterface<class_OpenXRInterface>`, :ref:`WebXRInterface<class_WebXRInterface>`, :ref:`XRInterfaceExtension<class_XRInterfaceExtension>`
+**Inherited By:** :ref:`MobileVRInterface<class_MobileVRInterface>`, :ref:`OpenXRInterface<class_OpenXRInterface>`, :ref:`VisionOSXRInterface<class_VisionOSXRInterface>`, :ref:`WebXRInterface<class_WebXRInterface>`, :ref:`XRInterfaceExtension<class_XRInterfaceExtension>`
 
 Base class for an XR interface implementation.
 
@@ -368,6 +368,14 @@ The texture format is the same as expected by the Vulkan ``VK_KHR_fragment_shadi
 
 The texture format is the same as expected by the Vulkan ``VK_EXT_fragment_density_map`` extension.
 
+.. _class_XRInterface_constant_XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSTextureFormat<enum_XRInterface_VRSTextureFormat>` **XR_VRS_TEXTURE_FORMAT_RASTERIZATION_RATE_MAP** = ``3``
+
+The texture contains a Metal ``rasterizationRateMap``, used for foveated rendering on Apple platforms. It's not a real texture, but instead an opaque wrapper for an ``MTLRasterizationRateMap`` object.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -480,7 +488,7 @@ Returns a combination of :ref:`Capabilities<enum_XRInterface_Capabilities>` flag
 
 :ref:`StringName<class_StringName>` **get_name**\ (\ ) |const| :ref:`🔗<class_XRInterface_method_get_name>`
 
-Returns the name of this interface (``"OpenXR"``, ``"OpenVR"``, ``"OpenHMD"``, ``"ARKit"``, etc.).
+Returns the name of this interface (\ ``"OpenXR"``, ``"OpenVR"``, ``"OpenHMD"``, ``"ARKit"``, etc.).
 
 .. rst-class:: classref-item-separator
 
