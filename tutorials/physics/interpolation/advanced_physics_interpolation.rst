@@ -28,10 +28,20 @@ on the **local transform** of each instance. During rendering, interpolated loca
 transforms are passed down to children.
 
 This means that if a parent has ``physics_interpolation_mode`` set to ``On``,
-but the child is set to ``Off``, the child will still be interpolated if the parent
-is moving. *Only the child's local transform is uninterpolated.*
-Controlling the on / off behavior of nodes therefore requires some
+but the child is set to ``Off``, the child's inherited transform will still be
+interpolated if the parent is moving. *Only the child's local transform is
+uninterpolated.* Controlling the on/off behavior of nodes therefore requires some
 thought and planning.
+
+.. note::
+
+          Prior to Godot 4.5, parent nodes did not propagate physics-interpolated
+          transforms to children in the scene tree. This could result in "clunking"
+          in the first child with ``physics_interpolation_mode`` ``Off``.
+          Because of this, early tutorials often recommended specifying
+          non-interpolated cameras in global space (by e.g. setting
+          :ref:`Node3D.top_level<class_Node3D_property_top_level>`).
+          This behavior was fixed in Godot 4.5.
 
 The most common situation where you may want to perform your own interpolation is
 Cameras.
@@ -39,9 +49,9 @@ Cameras.
 Cameras
 ~~~~~~~
 
-In many cases, a :ref:`Camera3D<class_Camera3D>` can use automatic interpolation
-just like any other node. However, for best results, especially at low physics tick
-rates, it is recommended that you take a manual approach to camera interpolation.
+:ref:`class_Camera3D` can use automatic interpolation just like any other
+node. However, for best results, it is in many cases recommended that you take a
+manual approach to camera interpolation, especially at low physics tick rates.
 
 This is because viewers are very sensitive to camera movement. For instance, a
 Camera3D that realigns slightly every 1/10th of a second (at 10tps tick rate) will
@@ -50,23 +60,6 @@ frame in ``_process``, and following an interpolated target manually.
 
 Manual camera interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Ensure the camera is using global coordinate space
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The very first step when performing manual camera interpolation is to make sure the
-Camera3D transform is specified in *global space* rather than inheriting the
-transform of a moving parent. This is because feedback can occur between the
-movement of a parent node of a Camera3D and the movement of the camera Node itself,
-which can mess up the interpolation.
-
-There are two ways of doing this:
-
-1) Move the Camera3D so it is independent on its own branch, rather than being a child of a moving object.
-
-.. image:: img/fti_camera_worldspace.webp
-
-2) Call :ref:`Node3D.top_level<class_Node3D_property_top_level>` and set this to ``true``, which will make the Camera ignore the transform of its parent.
 
 Typical example
 ^^^^^^^^^^^^^^^
@@ -106,7 +99,7 @@ but it gives you the *interpolated* transform (during a ``_process()`` call).
 Example manual camera script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here is an example of a simple fixed camera which follows an interpolated target:
+Here is a basic example of a camera which follows an interpolated target:
 
 .. code-block:: gdscript
 
@@ -123,8 +116,8 @@ Here is an example of a simple fixed camera which follows an interpolated target
         # Find the target node
         _target = get_node("../Player")
 
-        # Turn off automatic physics interpolation for the Camera3D,
-        # we will be doing this manually
+        # Turn off automatic physics interpolation for the Camera3D, manually.
+        # This can alternatively be done in the Inspector.
         set_physics_interpolation_mode(Node.PHYSICS_INTERPOLATION_MODE_OFF)
 
     func _process(delta: float) -> void:
@@ -134,7 +127,7 @@ Here is an example of a simple fixed camera which follows an interpolated target
         # Provide some delayed smoothed lerping towards the target position
         _target_pos = lerp(_target_pos, tr.origin, min(delta, 1.0))
 
-        # Fixed camera position, but it will follow the target
+        # Our interpolated target, and a vector pointing up.
         look_at(_target_pos, Vector3(0, 1, 0))
 
 Mouse look
@@ -151,15 +144,28 @@ node (using :ref:`Node.physics_interpolation_mode<class_Node_property_physics_in
 and directly apply the mouse input to the camera rotation, rather than apply it in
 ``_physics_process``.
 
-Sometimes, especially with cameras, you will want to use a combination of
-interpolation and non-interpolation:
+Often, especially with cameras and camera rigs, you will want to use a combination of
+interpolation and non-interpolation, as in these examples:
 
-- A first person camera may position the camera at a player location (perhaps using
-  :ref:`Node3D.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`),
-  but control the Camera rotation from mouse look *without* interpolation.
-- A third person camera may similarly determine the look at (target location) of the camera using
-  :ref:`Node3D.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`,
-  but position the camera using mouse look *without* interpolation.
+- First person camera: inherit the physics-interpolated position of a parent physics
+  body, but perform rotation *without* interpolation, using a mouse.
+- Third person camera: determine the target position (where is it looking at) by calling
+  :ref:`Node3D.get_global_transform_interpolated <class_Node3D_method_get_global_transform_interpolated>`,
+  but move the camera with the mouse and *without* interpolation.
+
+Usually you can do this with a subscene arranged something like this:
+*(where ``physics_interpolation_mode`` is specified in square brackets)*
+
+.. code-block:: text
+
+   PhysicsBody3D ["On"] (or inheriting "On")
+   └── Node3D ["Off"] acting as a "rig" used to control yaw
+       ├── MeshInstance3D ["Inherit"] for visuals
+       └── Camera3D ["Inherit"] used to control pitch
+
+With this setup, all children of the "rig" node will therefore inherit the
+smoothed position from the parent ``PhysicsBody3D``, but can react immediately to
+mouse movement because local transforms will be uninterpolated.
 
 There are many permutations and variations of camera types, but it should be clear
 that in many cases, disabling automatic physics interpolation and handling this
@@ -171,9 +177,9 @@ Disabling interpolation on other nodes
 Although cameras are the most common example, there are a number of cases when you
 may wish other nodes to control their own interpolation, or be non-interpolated.
 Consider for example, a player in a top view game whose rotation is controlled by
-mouse look. Disabling physics rotation allows the player rotation to match the
-mouse in real-time.
-
+mouse look. Disabling physics interpolation allows the player rotation to match the
+mouse in real time. This would correspond to the "rig" in the earlier example, but
+without a camera as a child.
 
 MultiMeshes
 ~~~~~~~~~~~
