@@ -245,7 +245,7 @@ Desktop or laptop PC - Minimum
 | **Operating system** | - **For native exports:** Windows 10, macOS 11 (Intel Macs, Compatibility), macOS 12    |
 |                      |   (Intel Macs, Forward+/Mobile), macOS 13 (Apple Silicon Macs), Linux distribution      |
 |                      |   released after 2018                                                                   |
-|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      | - **For web exports:** Recent versions of mainstream browsers: Firefox and derivatives  |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
@@ -284,7 +284,7 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 7.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
 |                      |   iOS 15.0 (Forward+/Mobile with Vulkan), iOS 16.0 (Forward+/Mobile with Metal)         |
-|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
+|                      | - **For web exports:** Recent versions of mainstream browsers: Firefox and derivatives  |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
