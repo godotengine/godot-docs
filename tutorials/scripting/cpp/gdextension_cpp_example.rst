@@ -43,14 +43,9 @@ Note that this repository has different branches for different versions
 of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
 
 .. note::
-    To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
-    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
-    are targeting.
 
-    The ``master`` branch is the development branch which is updated regularly
-    to work with Godot's ``master`` branch.
+    Since Godot version 4.6 it is no longer necessary to match the version of godot-cpp with the Godot
+    version you are using. Instead you will specify during the scons build with a parameter ``api_version=4.x``.
 
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
@@ -68,7 +63,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.x https://github.com/godotengine/godot-cpp
+    git submodule add https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -78,7 +73,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.x https://github.com/godotengine/godot-cpp
+    git clone https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -96,6 +91,26 @@ following commands:
     git submodule update --init
 
 This will initialize the repository in your project folder.
+
+You must now build the godot-cpp module to generate the necessary include headers
+you will be using for the plugin. Without it being built, for example, the ``sprite2d.hpp``
+file will not be available.
+
+.. code-block:: none
+
+    cd godot-cpp
+    scons platform=<platform> api_version=4.X # replace <platform> with the target platform e.g. linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for e.g. 4.7
+
+Now that godot-cpp is built, you will most likely also want to create a ``compile_commands.json``
+in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
+Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``
+You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
+into the gdextension_cpp_example project root folder.
+
+In the project's root folder run the following command to generate the ``compile_commands.json``
+``scons compiledb=yes api_version=4.7 compile_commands.json``.
+
+You should now be ready to move on to creating a simple plugin.
 
 Creating a simple plugin
 ------------------------
@@ -126,6 +141,16 @@ Your folder structure should now look like this:
     +--godot-cpp/             # C++ bindings
     |
     +--src/                   # source code of the extension we are building
+
+.. warning::
+
+    The godot-cpp module must be compiled and built in order to generate the necessary
+    moving on to creating the ``gdexample.h`` file targeting an earlier version of Godot should work in later
+    minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
+    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
+
+    There is one exception to this: extensions targeting Godot 4.0 will **not** work with
+    Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
