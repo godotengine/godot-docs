@@ -214,7 +214,7 @@ Here is an example of using a Mutex:
 
     #pragma once
 
-    #include <godot_cpp/classes/mutex.hpp>
+    #include <godot_cpp/templates/mutex.hpp>
     #include <godot_cpp/classes/node.hpp>
     #include <godot_cpp/classes/thread.hpp>
 
@@ -381,7 +381,7 @@ ready to be processed:
 
     #pragma once
 
-    #include <godot_cpp/classes/mutex.hpp>
+    #include <godot_cpp/templates/mutex.hpp>
     #include <godot_cpp/classes/node.hpp>
     #include <godot_cpp/classes/semaphore.hpp>
     #include <godot_cpp/classes/thread.hpp>
