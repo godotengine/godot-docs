@@ -8,7 +8,7 @@ you create, remove, import, or play game projects:
 
 .. image:: img/editor_ui_intro_project_manager_01.webp
 
-To change the editors language click on the **Settings** Button in the top right
+To change the editor's language click on the **Settings** Button in the top right
 corner:
 
 .. image:: img/editor_ui_intro_project_manager_02.webp
@@ -105,7 +105,7 @@ The first time you open this tab you'll notice that it's asking you to go online
 For privacy reasons the project manager, and Godot editor, can't access the internet
 by default. To enable accessing the internet click the **Go Online** button. This will
 also allow project manager to notify you about updates. If you wish to turn this off
-in the future go into project manager settings and change **Network Mode** to "Offline"
+in the future go into project manager settings and change **Network Mode** to "Offline".
 
 Now that Godot is connected to the internet you can download a demo or template, to
 do this:
@@ -122,7 +122,7 @@ Managing projects with tags
 
 For users with a lot of projects on one PC it can be a lot to keep track of. To aid
 in this Godot allows you to create project tags. To add a tag to a project click on the
-project in the project manager, then click on the **Manage Tags** button
+project in the project manager, then click on the **Manage Tags** button.
 
 .. image:: img/editor_ui_intro_project_manager_11.webp
 
