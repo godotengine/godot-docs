@@ -486,7 +486,7 @@ This is currently supported on Windows, macOS, and Linux. Support for
 Android and iOS is planned for a future release.
 
 You can find sample applications that use Godot as a library in the
-`migeran/libgodot_project GitHub repository <https://github.com/migeran/libgodot_project>`__.
+`migeran/libgodot GitHub repository <https://github.com/migeran/libgodot>`__.
 
 What user interface toolkit does Godot use?
 -------------------------------------------
