@@ -137,7 +137,9 @@ Bezier Curve Track
 A bezier curve track is similar to a property track, except it allows you to
 animate a property's value using a bezier curve.
 
-.. note:: Bezier curve track and property track cannot be blended in :ref:`AnimationPlayer <class_AnimationPlayer>` and :ref:`AnimationTree <class_AnimationTree>`.
+.. note::
+
+    Bezier curve tracks and property tracks cannot be blended in :ref:`AnimationPlayer <class_AnimationPlayer>` and :ref:`AnimationTree <class_AnimationTree>`.
 
 To create one, click "Add Track -> Bezier Curve Track". As with property tracks,
 you need to select a node and a property to animate. To open the bezier curve
@@ -209,9 +211,9 @@ key you just created to select an animation in the inspector dock.
 .. image:: img/animation_player_animation.webp
 
 If an animation is already playing and you want to stop it early, you can create
-a key and have it set to `[STOP]` in the inspector.
+a key and have it set to ``[STOP]`` in the inspector.
 
-.. note:: If you instanced a scene that contains an animation player into your
+.. note:: If you instantiate a scene that contains an animation player into your
           scene, you need to enable "Editable Children" in the scene tree to
           access its animation player. Also, an animation player cannot
           reference itself.

@@ -207,11 +207,33 @@ This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
+Set this to ``0`` to make particles simulate every rendered frame. This can
+increase GPU requirements for complex particle setups, but ensures the particle
+simulation is as smooth as possible. For particles with collision enabled, this
+can also improve collision reliability.
+
+Interpolate
+~~~~~~~~~~~
+
+When enabled, the particle system will interpolate the position of particles
+between each fixed FPS tick (see above). This results in smoother visuals. Only
+particle motion is interpolated; scale and color curves are currently not
+interpolated.
+
+This property has no effect if :inspector:`Fixed FPS` is ``0``, as particles will be
+simulated every rendered frame.
+
 .. note::
 
-    Godot 4.3 does not currently support physics interpolation for 2D particles.
-    As a workaround, disable physics interpolation for the particles node by setting
-    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
+    Godot currently does not support
+    :ref:`physics interpolation <doc_physics_interpolation_introduction>`
+    for GPUParticles2D. Note that physics interpolation should not be confused
+    with the :inspector:`Interpolate` property on GPUParticles2D.
+
+    As a workaround, disable physics interpolation for the particles node by
+    setting :menu:`Node > Physics Interpolation > Mode` at the bottom of the
+    inspector, or convert the node to CPUParticles2D which supports
+    physics interpolation.
 
 Fract Delta
 ~~~~~~~~~~~

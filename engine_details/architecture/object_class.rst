@@ -304,7 +304,7 @@ dropped, the object automatically self-destructs.
 .. code-block:: cpp
 
     class MyRefCounted: public RefCounted {
-        GDCLASS(MyReference, RefCounted);
+        GDCLASS(MyRefCounted, RefCounted);
     };
 
     Ref<MyRefCounted> my_ref = memnew(MyRefCounted);

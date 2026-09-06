@@ -183,7 +183,7 @@ Self-contained mode
 ~~~~~~~~~~~~~~~~~~~
 
 If you create a file called ``._sc_`` or ``_sc_`` in the same directory as the
-editor binary (or in `MacOS/Contents/` for a macOS editor .app bundle), Godot
+editor binary (or in ``MacOS/Contents/`` for a macOS editor .app bundle), Godot
 will enable *self-contained mode*.
 This mode makes Godot write all editor data, settings, and cache to a directory
 named ``editor_data/`` in the same directory as the editor binary.

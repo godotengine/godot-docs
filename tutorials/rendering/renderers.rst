@@ -29,7 +29,8 @@ Renderers, rendering drivers, and RenderingDevice
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. figure:: img/renderers_rendering_layers.webp
-  :alt: Diagram of rendering layers. The Compatibility renderer runs on the OpenGL
+  :alt:
+    Diagram of rendering layers. The Compatibility renderer runs on the OpenGL
     driver. The Forward+ and Mobile renderers run on RenderingDevice, which can use
     Vulkan, Direct3D 12, or Metal as a rendering driver.
   :align: center
@@ -53,8 +54,8 @@ these renderers are sometimes called "RenderingDevice-based renderers".
 Choosing a renderer
 -------------------
 
-Choosing a renderer is a complex question, and depends on your hardware and the
-which platforms you are developing for. As a starting point:
+Choosing a renderer is a complex question, and depends on your hardware and which
+platforms you are developing for. As a starting point:
 
 Choose **Forward+** if:
 
@@ -319,7 +320,7 @@ See :ref:`doc_standard_material_3d` for more information.
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Feature                 | Compatibility            | Mobile                   | Forward+                 |
 +=========================+==========================+==========================+==========================+
-| Sub-surface scattering  | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
+| Subsurface scattering   | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
 |                         |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 

@@ -70,8 +70,8 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-p``, ``--project-manager``            | |editor| Start the Project Manager, even if a project is auto-detected.                                                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--recovery-mode``                      | |editor| "Start the editor in recovery mode, which disables features that can typically cause startup crashes, such as tool scripts, editor plugins,         |
-|                                          | GDExtension addons, and others.                                                                                                                              |
+| ``--recovery-mode``                      | |editor| Start the editor in recovery mode, which disables features that can typically cause startup crashes, such as tool scripts, editor plugins, and      |
+|                                          | GDExtension addons.                                                                                                                                          |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--debug-server <uri>``                 | |editor| Start the editor debug server (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``)                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,8 +152,8 @@ given build type.
 +------------------------------------+----------------------------------------------------------------------------+
 | ``--wid <window_id>``              | |release| Request parented to window.                                      |
 +------------------------------------+----------------------------------------------------------------------------+
-| ``--accessibility <mode>``         | |release| Select accessibility mode ['auto" (when screen reader is running,|
-|                                    | default), "always", "disabled'].                                           |
+| ``--accessibility <mode>``         | |release| Select accessibility mode ["auto" (when screen reader is running,|
+|                                    | default), "always", "disabled"].                                           |
 +------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
@@ -177,9 +177,10 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--generate-spirv-debug-info``| |debug| Generate SPIR-V debug information. This allows source-level shader debugging with RenderDoc.            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see class reference for                                             |
-|                                | `RenderingDevice.get_driver_and_device_memory_report()` and linked methods). Currently only implemented for     |
-|                                | Vulkan. Enabling this feature may cause crashes on some systems due to buggy drivers or bugs in the Vulkan      |
+| ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see :ref:`RenderingDevice.get_driver_and_device_memory_report()     |
+|                                | <class_RenderingDevice_method_get_driver_and_device_memory_report>` and linked methods).                        |
+|                                | Currently only implemented for Vulkan.                                                                          |
+|                                | Enabling this feature may cause crashes on some systems due to buggy drivers or bugs in the Vulkan              |
 |                                | Loader. See https://github.com/godotengine/godot/issues/95967                                                   |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--accurate-breadcrumbs``     | |debug| Force barriers between breadcrumbs. Useful for narrowing down a command causing GPU resets. Currently   |
@@ -283,9 +284,9 @@ given build type.
 | ``--validate-extension-api <path>``                              | |editor| Validate an extension API file dumped (with the option above) from a previous version of the engine to ensure API compatibility.               |
 |                                                                  | If incompatibilities or errors are detected, the return code will be non-zero.                                                                          |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--benchmark``                                                  | |editor| Benchmark the run time and print it to console.                                                                                                |
+| ``--benchmark``                                                  | |editor| Benchmark the runtime and print it to console.                                                                                                 |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--benchmark-file <path>``                                      | |editor| Benchmark the run time and save it to a given file in JSON format. The path should be absolute.                                                |
+| ``--benchmark-file <path>``                                      | |editor| Benchmark the runtime and save it to the given file path, in JSON format. ``<path>`` should be absolute.                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 |``--test [--help]``                                               | |editor| Run :ref:`unit tests <doc_unit_testing>` (requires compiling the engine with ``tests=yes``). Use ``--test --help`` for more information.       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+

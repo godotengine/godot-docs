@@ -250,7 +250,7 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
     this effect. Nearest filtering affects only how the engine samples textures — it
     does not change how the engine renders lighting and shadows.
 
-    To achieve pixelated lighting and shadows, use a custom shader to modify 
+    To achieve pixelated lighting and shadows, use a custom shader to modify
     ``LIGHT_VERTEX`` and ``SHADOW_VERTEX`` to snap light sampling to a pixel grid.
     The following shader snaps lighting to a grid using the ``floor()`` function:
 

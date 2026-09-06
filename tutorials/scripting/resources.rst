@@ -67,7 +67,7 @@ save, Godot will save the image inside the ``.tscn`` scene file.
 
 .. note::
 
-    Even if you save a built-in resource, when you instance a scene multiple
+    Even if you save a built-in resource, when you instantiate a scene multiple
     times, the engine will only load one copy of it.
 
 Loading resources from code
@@ -96,6 +96,11 @@ There are two ways to load resources from code. First, you can use the ``load()`
 You can also ``preload`` resources. Unlike ``load``, this function will read the
 file from disk and load it at compile-time. As a result, you cannot call ``preload``
 with a variable path: you need to use a constant string.
+
+.. warning::
+
+    Preloaded resources will only be freed on exit. However, users should not
+    rely on this behavior, as it may change in the near future.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

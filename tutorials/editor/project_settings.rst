@@ -6,7 +6,7 @@ Project Settings
 There are dozens of settings you can change to control a project's execution,
 including physics, rendering, and windowing settings. These settings can be
 changed from the **Project Settings** window, from code, or by manually editing
-the ``project.godot`` file. You can see a full list of settings in the 
+the ``project.godot`` file. You can see a full list of settings in the
 :ref:`ProjectSettings <class_ProjectSettings>` class.
 
 Internally, Godot stores the settings for a project in a ``project.godot`` file,
@@ -48,7 +48,7 @@ change a setting's value from code:
 
 .. tabs::
     .. code-tab:: gdscript GDScript
-        
+
         ProjectSettings.set_setting("application/run/max_fps", 60)
         ProjectSettings.set_setting("display/window/size/mode", DisplayServer.WINDOW_MODE_WINDOWED)
 
@@ -58,13 +58,13 @@ change a setting's value from code:
         ProjectSettings.SetSetting("display/window/size/mode", (int)DisplayServer.WindowMode.Windowed);
 
 However, many project settings are only read once when the game starts. After
-that, changing the setting with ``set_setting()`` will have no effect. Instead, 
+that, changing the setting with ``set_setting()`` will have no effect. Instead,
 most settings have a corresponding property or method on a runtime class like
 :ref:`Engine <class_Engine>` or :ref:`DisplayServer <class_DisplayServer>`:
 
 .. tabs::
     .. code-tab:: gdscript GDScript
-        
+
         Engine.max_fps = 60
         DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
@@ -76,7 +76,7 @@ most settings have a corresponding property or method on a runtime class like
 In general, project settings are duplicated at runtime in the
 :ref:`Engine <class_Engine>`, :ref:`PhysicsServer2D <class_PhysicsServer2D>`,
 :ref:`PhysicsServer3D <class_PhysicsServer3D>`,
-:ref:`RenderingServer <class_RenderingServer>`, 
+:ref:`RenderingServer <class_RenderingServer>`,
 :ref:`Viewport <class_Viewport>`, or :ref:`Window <class_Window>` classes. In the
 :ref:`ProjectSettings <class_ProjectSettings>` class reference, settings
 links to their equivalent runtime property or method.
@@ -90,7 +90,7 @@ You can read project settings with
 
 .. tabs::
     .. code-tab:: gdscript GDScript
-        
+
         var max_fps = ProjectSettings.get_setting("application/run/max_fps")
         var window_mode = ProjectSettings.get_setting("display/window/size/mode")
 
@@ -105,7 +105,7 @@ the value from the runtime equivalent property or method:
 
 .. tabs::
     .. code-tab:: gdscript GDScript
-        
+
         var max_fps = Engine.max_fps
         var window_mode = DisplayServer.window_get_mode()
 

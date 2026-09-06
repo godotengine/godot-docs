@@ -5,7 +5,7 @@ Using decals
 
 .. note::
 
-    Decals are only supported in the Forward+ and Mobile renderers, not the 
+    Decals are only supported in the Forward+ and Mobile renderers, not the
     Compatibility renderer.
 
     If using the Compatibility renderer, consider using Sprite3D as an alternative
@@ -262,7 +262,7 @@ When using the Forward+ renderer, Godot uses a *clustering* approach for
 decal rendering. As many decals as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
-an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
+an omni light, a spot light, an area light, a :ref:`decal <doc_using_decals>`, or a
 :ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
 :ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
 in **Project Settings > Rendering > Limits > Cluster Builder**.

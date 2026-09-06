@@ -363,7 +363,7 @@ Code should be something like this:
         }
 
 As you can see, planes are quite useful, and this is the tip of the
-iceberg. You might be wondering what happens with non convex polygons.
+iceberg. You might be wondering what happens with non-convex polygons.
 This is usually just handled by splitting the concave polygon into
 smaller convex polygons, or using a technique such as BSP (which is not
 used much nowadays).
@@ -590,5 +590,5 @@ For more information on using vector math in Godot, see the following article:
 - :ref:`doc_matrices_and_transforms`
 
 If you would like additional explanation, you should check out
-3Blue1Brown's excellent video series 
+3Blue1Brown's excellent video series
 `Essence of Linear Algebra <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`_.

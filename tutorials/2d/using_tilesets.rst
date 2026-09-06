@@ -166,7 +166,7 @@ sounds), particle effects, and more.
 .. warning::
 
    Scene tiles come with a greater performance overhead compared to atlases, as
-   every scene is instanced individually for every placed tile.
+   every scene is instantiated individually for every placed tile.
 
    It's recommended to only use scene tiles when necessary. To draw sprites in a
    tile without any kind of advanced manipulation,

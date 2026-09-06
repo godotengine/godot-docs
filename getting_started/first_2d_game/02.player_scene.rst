@@ -20,10 +20,10 @@ what the object *is*. In the upper-left corner, in the "Scene" tab, click the
 
 .. note::
 
-    Godot also provides the :ref:`CharacterBody2D <class_CharacterBody2D>` node, 
-    specifically designed for 2D characters, which includes built-in support for some 
-    of the processes explained in this tutorial. In many real world projects, CharacterBody2D 
-    would be a better choice for players and enemies. However, this tutorial focuses on 
+    Godot also provides the :ref:`CharacterBody2D <class_CharacterBody2D>` node,
+    specifically designed for 2D characters, which includes built-in support for some
+    of the processes explained in this tutorial. In many real world projects, CharacterBody2D
+    would be a better choice for players and enemies. However, this tutorial focuses on
     core concepts that apply to a wider range of nodes and use cases.
 
 .. image:: img/add_node.webp

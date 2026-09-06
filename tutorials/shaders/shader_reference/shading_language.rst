@@ -338,7 +338,7 @@ return the array's size.
 Global arrays
 ~~~~~~~~~~~~~
 
-You can declare arrays in global space as either ``const`` or ``uniform``:
+You can declare arrays in global scope as either ``const`` or ``uniform``:
 
 .. code-block:: glsl
 
@@ -375,7 +375,7 @@ declaration.
     b = a; // valid
 
 Constants cannot be modified and additionally cannot have hints, but multiple of
-them (if they have the same type) can be declared in a single expression e.g
+them (if they have the same type) can be declared in a single expression.
 
 .. code-block:: glsl
 
@@ -455,7 +455,7 @@ Or use struct constructor for same purpose:
 
     PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
 
-Structs may contain other struct or array, you can also instance them as global
+Structs may contain other struct or array, you can also instantiate them as global
 constant:
 
 .. code-block:: glsl

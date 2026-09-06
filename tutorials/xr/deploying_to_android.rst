@@ -46,10 +46,10 @@ vendors".
 
 .. image:: img/openxr_loader_asset_lib.webp
 
-You will find the installed files inside the **addons** folder. Alternatively you
+You will find the installed files inside the ``addons`` folder. Alternatively you
 can manually install the vendors plugin by downloading it `from the release page here <https://github.com/GodotVR/godot_openxr_vendors/releases>`__.
-You will need to copy the `assets/addons/godotopenxrvendors` folder from the zip
-file into your projects `addons` folder.
+You will need to copy the ``assets/addons/godotopenxrvendors`` folder from the zip
+file into your projects ``addons`` folder.
 
 You can find the main repository of the vendors plugin `here <https://github.com/GodotVR/godot_openxr_vendors>`__.
 

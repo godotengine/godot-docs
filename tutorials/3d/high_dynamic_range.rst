@@ -39,7 +39,7 @@ for display on a particular display type.
     Godot supports high dynamic range *output*. You can read more about this
     on the :ref:`doc_hdr_output` page.
 
-    For advanced users, it possible to get a non-tonemapped image
+    For advanced users, it is possible to get a non-tonemapped image
     of the viewport with full HDR data, which can then be saved to an OpenEXR file.
 
 Computer displays

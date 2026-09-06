@@ -17,7 +17,7 @@ Each format has different advantages:
 - Ogg Vorbis files use a stronger compression that results in much smaller file
   size, but require significantly more processing power to play back.
 - MP3 files use better compression than WAV with IMA ADPCM or Quite OK Audio, but
-  worse than Ogg Vorbis. This means that an MP3 file with roughly equal quality 
+  worse than Ogg Vorbis. This means that an MP3 file with roughly equal quality
   to Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
 
@@ -145,11 +145,11 @@ metadata, but you can choose to apply a specific loop mode:
 - **Detect from WAV:** Uses loop information from the WAV metadata.
 - **Disabled:** Don't loop audio, even if metadata indicates the file should be
   played back looping.
-- **Forward:** Standard audio looping. Plays the audio forward from the beginning 
+- **Forward:** Standard audio looping. Plays the audio forward from the beginning
   to the loop end, then returns to the loop beginning and repeats.
-- **Ping-Pong:** Plays the audio forward until the loop end, then backwards to 
+- **Ping-Pong:** Plays the audio forward until the loop end, then backwards to
   the loop beginning, repeating this cycle.
-- **Backward:** Plays the audio backwards from the loop end to the loop beginning, 
+- **Backward:** Plays the audio backwards from the loop end to the loop beginning,
   then repeats.
 
 When choosing one of the **Forward**, **Ping-Pong** or **Backward** loop modes,
@@ -258,10 +258,9 @@ If you double-click an Ogg Vorbis or MP3 file in the FileSystem dock (or choose
    Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
-in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.
-These 3 settings are currently unused, but they will be used in the future for
-interactive music support (which allows smoothly transitioning between different
-music tracks).
+in addition to the :abbr:`BPM (Beats Per Minute)`, beat count, and bar beats.
+These 3 settings are used for interactive music, to smoothly transition between
+different music tracks.
 
 .. note::
 

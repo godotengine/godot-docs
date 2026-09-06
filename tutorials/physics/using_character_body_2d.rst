@@ -33,9 +33,11 @@ platforms or complex projectiles.
           bodies. Please read :ref:`doc_physics_introduction` first, for an overview
           of the physics options.
 
-.. tip:: A `CharacterBody2D` can be affected by gravity and other forces,
-        but you must calculate the movement in code. The physics engine will
-        not move a `CharacterBody2D`.
+.. tip::
+
+    A ``CharacterBody2D`` can be affected by gravity and other forces,
+    but you must calculate the movement in code. The physics engine will
+    not move a ``CharacterBody2D``.
 
 Movement and collision
 ----------------------
@@ -101,16 +103,16 @@ or set in code.
 
 - ``floor_stop_on_slope`` - *default value:* ``true``
 
-    This parameter prevents a body from sliding down slopes when standing still.
+    This property prevents a body from sliding down slopes when standing still.
 
 - ``wall_min_slide_angle`` - *default value:* ``0.261799`` (in radians, equivalent to ``15`` degrees)
 
-    This is the minimum angle where the body is allowed to slide when it hits a
+    This property is the minimum angle where the body is allowed to slide when it hits a
     slope.
 
 - ``floor_max_angle`` - *default value:* ``0.785398`` (in radians, equivalent to ``45`` degrees)
 
-    This parameter is the maximum angle before a surface is no longer considered a "floor."
+    This property is the maximum angle before a surface is no longer considered a "floor."
 
 There are many other properties that can be used to modify the body's behavior under
 specific circumstances. See the :ref:`CharacterBody2D <class_CharacterBody2D>` docs
@@ -157,7 +159,10 @@ and ``get_slide_collision()``:
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
     }
 
-.. note:: `get_slide_collision_count()` only counts times the body has collided and changed direction.
+.. note::
+
+    ``get_slide_collision_count()`` only counts the times the body
+    has collided *and* changed direction.
 
 See :ref:`KinematicCollision2D <class_KinematicCollision2D>` for details on what
 collision data is returned.
@@ -301,7 +306,7 @@ in the sample project), we have a character shooting bullets and we want the bul
 bounce off the walls.
 
 This example uses three scenes. The main scene contains the Player and Walls.
-The Bullet and Wall are separate scenes so that they can be instanced.
+The Bullet and Wall are separate scenes so that they can be instantiated.
 
 The Player is controlled by the ``w`` and ``s`` keys for forward and back. Aiming
 uses the mouse pointer. Here is the code for the Player, using ``move_and_slide()``:

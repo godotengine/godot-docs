@@ -206,14 +206,14 @@ which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
 .. tabs::
- 
+
  .. code-tab:: gdscript
 
   var blue_value = 1.0
   material.set_shader_parameter("blue", blue_value)
 
  .. code-tab:: csharp
-  
+
   var blueValue = 1.0;
   ((ShaderMaterial)Material).SetShaderParameter("blue", blueValue);
 

@@ -721,10 +721,6 @@ Here are some project settings you can use to reduce CPU, GPU, and memory utiliz
   This may increase power usage and cause screen tearing, so it's recommended
   to provide an option for the user to toggle V-Sync as needed.
 
-Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
-`Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
-open source applications made with Godot.
-
 Mobile
 ^^^^^^
 

@@ -279,7 +279,7 @@ Supported values for the ``arch`` option are **auto**, **x86_32**, **x86_64**,
     scons platform=<platform> arch={auto|x86_32|x86_64|arm32|arm64|rv64|ppc32|ppc64|wasm32}
 
 This flag appends the value of ``arch`` to resulting binaries when
-relevant.  The default value ``arch=auto`` detects the architecture
+relevant. The default value ``arch=auto`` detects the architecture
 that matches the host platform.
 
 .. _doc_buildsystem_custom_modules:
@@ -422,7 +422,7 @@ files, which can dramatically decrease build times.
 
 To perform an SCU build, use the ``scu_build=yes`` SCons option.
 
-.. note:: When developing a Pull Request using SCU builds, be sure to make a
+.. note:: When developing a pull request using SCU builds, be sure to make a
           regular build prior to submitting the PR. This is because SCU builds
           by nature include headers from earlier ``.cpp`` files in the
           translation unit, therefore won't catch all the includes you will

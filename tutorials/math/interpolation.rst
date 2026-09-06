@@ -180,7 +180,7 @@ This is useful for smoothing camera movement, for allies following the player
                 float weight = 1f - Mathf.Exp(-FollowSpeed * (float)delta);
                 sprite.Position = sprite.Position.Lerp(mousePos, weight);
             }
-    
-    Deriving this formula is beyond the scope of this page. For an explanation, 
+
+    Deriving this formula is beyond the scope of this page. For an explanation,
     see `Improved Lerp Smoothing <https://www.gamedeveloper.com/programming/improved-lerp-smoothing->`__
     or watch `Lerp smoothing is broken <https://www.youtube.com/watch?v=LSNQuFEDOyQ>`__.

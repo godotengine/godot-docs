@@ -87,7 +87,7 @@ As a rough guide:
 
     "Better CPU performance","Good physics behavior in complex scenes","Good with fast physics"
     "Add some delay to input","Good for first person games","Good for racing games"
-    "Simple physics behaviour"
+    "Simple physics behavior"
 
 .. note:: You can always change the tick rate as you develop, it is as simple as
           changing the project setting.

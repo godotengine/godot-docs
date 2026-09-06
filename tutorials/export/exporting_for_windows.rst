@@ -89,8 +89,8 @@ Under options there is a code signing category.
 
 .. image:: img/windows_export_codesign.webp
 
-``Enabled`` must be set to true, and ``Identity`` must be set to the signing
-certificate. The other settings can be adjusted as needed. Once this is Done
+``Enabled`` must be set to ``true``, and ``Identity`` must be set to the signing
+certificate. The other settings can be adjusted as needed. Once this is done
 Godot will sign your project on export.
 
 Environment variables

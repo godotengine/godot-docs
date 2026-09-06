@@ -9,7 +9,7 @@ Create a new scene and add a :ref:`Node <class_Node>` named ``Main``.
 (The reason we are using Node instead of Node2D is because this node will
 be a container for handling game logic. It does not require 2D functionality itself.)
 
-Click the **Instance** button (represented by a chain link icon) and select your saved
+Click the **Instantiate** button (represented by a chain link icon) and select your saved
 ``player.tscn``.
 
 .. image:: img/instance_scene.webp
@@ -74,7 +74,7 @@ Main script
 
 Add a script to ``Main``. At the top of the script, we use
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
-to instance.
+to instantiate.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

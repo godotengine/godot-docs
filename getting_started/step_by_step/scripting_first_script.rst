@@ -21,7 +21,7 @@ Creating your first script
 In this lesson, you will code your first script to make the Godot icon turn in
 circles. As we mentioned :ref:`in the introduction
 <doc_introduction_learning_programming>`, we assume you have programming
-foundations. 
+foundations.
 
 This tutorial is written for GDScript, and the equivalent C# code is included in
 another tab of each codeblock for convenience.
@@ -105,7 +105,7 @@ the following line of code:
 
     using Godot;
     using System;
-    
+
     public partial class MySprite2D : Sprite2D
     {
     }
@@ -333,7 +333,7 @@ Here is the complete ``sprite_2d.gd`` file for reference.
 
     using Godot;
     using System;
-    
+
     public partial class MySprite2D : Sprite2D
     {
         private int _speed = 400;

@@ -200,7 +200,7 @@ Now, access the noise texture using the ``texture()`` function:
 :ref:`texture() <shader_func_texture>` takes a texture as the first argument and
 a ``vec2`` for the position on the texture as the second argument. We use the
 ``x`` and ``z`` channels of ``VERTEX`` to determine where on the texture to look
-up. 
+up.
 
 Since the PlaneMesh coordinates are within the ``[-1.0, 1.0]`` range (for a size
 of ``2.0``), while the texture coordinates are within ``[0.0, 1.0]``, to remap
@@ -290,7 +290,7 @@ the 3D scene toolbar, turn off preview sunlight.
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
-First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene, and 
+First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene, and
 drag it up so it is above the terrain.
 
 .. image:: img/light.webp

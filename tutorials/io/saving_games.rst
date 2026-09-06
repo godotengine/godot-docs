@@ -60,7 +60,7 @@ Serializing
 
 The next step is to serialize the data. This makes it much easier to
 read from and store to disk. In this case, we're assuming each member of
-group Persist is an instanced node and thus has a path. GDScript
+group Persist is an instantiated node and thus has a path. GDScript
 has the helper class :ref:`JSON<class_json>` to convert between dictionary and string.
 Our node needs to contain a save function that returns this data.
 The save function will look like this:
@@ -144,9 +144,9 @@ way to pull the data out of the file as well.
         var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
-            # Check the node is an instanced scene so it can be instanced again during load.
+            # Check the node is an instantiated scene so it can be instantiated again during load.
             if node.scene_file_path.is_empty():
-                print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+                print("persistent node '%s' is not an instantiated scene, skipped" % node.name)
                 continue
 
             # Check the node has a save function.
@@ -176,10 +176,10 @@ way to pull the data out of the file as well.
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
         {
-            // Check the node is an instanced scene so it can be instanced again during load.
+            // Check the node is an instantiated scene so it can be instantiated again during load.
             if (string.IsNullOrEmpty(saveNode.SceneFilePath))
             {
-                GD.Print($"persistent node '{saveNode.Name}' is not an instanced scene, skipped");
+                GD.Print($"persistent node '{saveNode.Name}' is not an instantiated scene, skipped");
                 continue;
             }
 

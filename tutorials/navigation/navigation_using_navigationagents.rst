@@ -74,7 +74,7 @@ Pathfollowing common problems
 There are some common user problems and important caveats to consider when writing agent movement scripts.
 
 - The path is returned empty
-    If an agent queries a path before the navigation map synchronisation, e.g. in a ``_ready()`` function, the path might return empty. In this case the ``get_next_path_position()`` function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
+    If an agent queries a path before the navigation map synchronization, e.g. in a ``_ready()`` function, the path might return empty. In this case the ``get_next_path_position()`` function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
 
 - The agent is stuck dancing between two positions
     This is usually caused by very frequent path updates every single frame, either deliberate or by accident (e.g. max path distance set too short). The pathfinding needs to find the closest position that are valid on navigation mesh. If a new path is requested every single frame the first path positions might end up switching constantly in front and behind the agent's current position, causing it to dance between the two positions.
@@ -120,7 +120,7 @@ The ``velocity_computed`` signal of the NavigationAgent node must be connected t
 The following NavigationAgent properties are relevant for avoidance:
 
   - The property ``height`` is available in 3D only. The height together with the current global y-axis position of the agent determines the vertical placement of the agent in the avoidance simulation. Agents using the 2D avoidance will automatically ignore other agents or obstacles that are below or above them.
-  - The property ``radius`` controls the size of the avoidance circle, or in case of 3D sphere, around the agent. This area describes the agents body and not the avoidance maneuver distance.
+  - The property ``radius`` controls the radius of the avoidance circle, or sphere in 3D, around the agent. This area describes the agents body and not the avoidance maneuver distance.
   - The property ``neighbor_distance`` controls the search radius of the agent when searching for other agents that should be avoided. A lower value reduces processing cost.
   - The property ``max_neighbors`` controls how many other agents are considered in the avoidance calculation if they all have overlapping radius.
     A lower value reduces processing cost but a too low value may result in agents ignoring the avoidance.

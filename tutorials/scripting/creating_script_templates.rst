@@ -66,7 +66,7 @@ where:
 * ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`),
   This is **case-sensitive**. If a script isn't in the proper ``node_type`` folder, it won't be detected.
 
-* ``file`` is the custom name you can chose for the template (for example, ``platformer_movement`` or ``smooth_camera``).
+* ``file`` is the custom name you can choose for the template (for example, ``platformer_movement`` or ``smooth_camera``).
 
 * ``extension`` indicates which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#).
 
@@ -203,7 +203,7 @@ Base placeholders
 +==========================+====================================================+
 | ``_BINDINGS_NAMESPACE_`` | The name of the Godot namespace (used in C# only). |
 +--------------------------+----------------------------------------------------+
-| ``_CLASS_``              | The name of the new class.                         |
+| ``_CLASS_``              | The name of the new class as ``PascalCase``.       |
 +--------------------------+----------------------------------------------------+
 | ``_CLASS_SNAKE_CASE_``   | The name of the new class as ``snake_case``        |
 |                          | (used in GDScript only).                           |

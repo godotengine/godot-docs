@@ -92,7 +92,7 @@ Custom meshes
 
 Custom meshes can be used for :ref:`CSGMesh3D <class_CSGMesh3D>` as long as the
 mesh is *manifold*. The mesh can be modeled in other software and imported into
-Godot. Multiple materials are supported. 
+Godot. Multiple materials are supported.
 
 For a mesh to be used as a CSG mesh, it is required to:
 

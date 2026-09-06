@@ -42,7 +42,7 @@ OpenXR Render models node
 -------------------------
 
 The :ref:`OpenXRRenderModelManager<class_OpenXRRenderModelManager>`
-node can be used to automate most of the render models functionality. 
+node can be used to automate most of the render models functionality.
 This node keeps track of the active render models currently made
 available by the XR runtime.
 
@@ -123,7 +123,7 @@ This node has a collision shape that encapsulates the hand.
 
 .. note::
 
-    It is important to set the physics priority so that this logic runs 
+    It is important to set the physics priority so that this logic runs
     after any physics logic that moves the XROrigin3D node or the hand
     will lag a frame behind.
 
@@ -184,7 +184,7 @@ transform that places the render model in the correct place and
 animates all the sub objects.
 
 The ``get_top_level_path`` function will return the top level path
-associated with this render model. This will point to either the 
+associated with this render model. This will point to either the
 left or right hand. As the top level path can be set or cleared
 depending on whether the user picks up, or puts down, the controller
 you can connect to the ``render_model_top_level_path_changes`` signal
@@ -222,16 +222,16 @@ in a GDExtension plugin. Such a plugin can call
 create the object that will provide access to that render
 model through the core render models API.
 
-You should not destroy a render model outside of this logic. 
+You should not destroy a render model outside of this logic.
 
-You can connect to the ``render_model_added`` and 
+You can connect to the ``render_model_added`` and
 ``render_model_removed`` signals to be informed when new render
 models are added or removed.
 
 The core methods for working with this API are listed
 below:
 
-.. list-table:: Render modele extension functions
+.. list-table:: Render model extension functions
    :header-rows: 1
 
    * - Function

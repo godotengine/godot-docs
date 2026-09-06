@@ -8,7 +8,7 @@ instantiate scenes from code.
 
 .. seealso::
 
-    Check the :ref:`doc_instancing` tutorial to learn about Godot's approach to scene instancing.
+    Check the :ref:`doc_instancing` tutorial to learn about Godot's approach to scene instantiation.
 
 Getting nodes
 -------------
@@ -18,7 +18,7 @@ You can get a reference to a node by calling the :ref:`Node.get_node()
 present in the scene tree. Getting it in the parent node's ``_ready()`` function
 guarantees that.
 
-If, for example,  you have a scene tree like this, and you want to get a reference to the
+If, for example, you have a scene tree like this, and you want to get a reference to the
 Sprite2D and Camera2D nodes to access them in your script.
 
 .. image:: img/nodes_and_scene_instances_player_scene_example.webp
@@ -171,18 +171,18 @@ sprite anymore.
 .. image:: img/nodes_and_scene_instances_remote_tree_no_sprite.webp
 
 You can alternatively call ``free()`` to immediately destroy the node. You
-should do this with care as any reference to it will instantly become ``null``.
+should do this with care as any reference to it will instantly become invalid.
 We recommend using ``queue_free()`` unless you know what you're doing.
 
 When you free a node, it also frees all its children. Thanks to this, to delete
 an entire branch of the scene tree, you only have to free the topmost parent
 node.
 
-Instancing scenes
------------------
+Instantiating scenes
+--------------------
 
 Scenes are templates from which you can create as many reproductions as you'd
-like. This operation is called instancing, and doing it from code happens in two
+like. This operation is called instantiation, and doing it from code happens in two
 steps:
 
 1. Loading the scene from the local drive.
@@ -224,5 +224,5 @@ as a child of your current node.
     AddChild(instance);
 
 The advantage of this two-step process is you can keep a packed scene loaded and
-create new instances on the fly. For example, to quickly instance several
+create new instances on the fly. For example, to quickly instantiate several
 enemies or bullets.

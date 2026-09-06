@@ -91,7 +91,7 @@ When not using GridMaps for level design, concave shapes are the best approach
 for a level's collision. That said, if your level has small details, you may
 want to exclude those from collision for performance and game feel. To do so,
 you can build a simplified collision mesh in a 3D modeler and have Godot
-generate a collision shape for it automatically. More on that below
+generate a collision shape for it automatically. More on that below.
 
 Note that unlike primitive and convex shapes, a concave collision shape doesn't
 have an actual "volume". You can place objects both *outside* of the shape as

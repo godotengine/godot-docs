@@ -269,8 +269,8 @@ Animation
 .. note::
 
     ``AnimationNode`` has a reworked process for retrieving the semantic time info. This ensures that time-related
-    behavior works as expected, but changes the blending behavior. Implementors of the ``_process`` virtual method
-    should also note that this method is now deprecated and will be replaced by a new one in the future (`GH-87171`_).
+    behavior works as expected, but changes the blending behavior. It's also worth noting that the ``_process`` virtual method
+    is now deprecated and will be replaced by a new one in the future (`GH-87171`_).
 
 More information about the changes to Animation can be found in the
 `Migrating Animations from Godot 4.0 to 4.3 <https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3>`__

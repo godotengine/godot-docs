@@ -88,7 +88,7 @@ The right-hand side of the theme editor provides a list of theme types available
 in the edited theme resource, and the contents of the selected type. The list of
 type's items is divided into several tabs, corresponding to each data type available
 in the theme (colors, constants, styles, etc.). If the **Show Default** option is
-enabled, then for each built-in type its default theme values are displayed, greyed
+enabled, then for each built-in type its default theme values are displayed, grayed
 out. If the option is disabled, only the items available in the edited theme itself
 are displayed.
 

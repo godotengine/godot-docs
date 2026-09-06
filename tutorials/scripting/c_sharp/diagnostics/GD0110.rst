@@ -21,7 +21,7 @@ A property of a type different from ``Callable`` is annotated with the
 Rule description
 ----------------
 
-The ``[ExportToolButton]`` attribute is used to create clickable buttons in the inspector so,
+The ``[ExportToolButton]`` attribute is used to create clickable buttons in the inspector, so
 the property must be a ``Callable`` that will be executed when clicking the button.
 
 How to fix violations

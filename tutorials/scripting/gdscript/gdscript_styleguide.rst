@@ -475,7 +475,7 @@ comments from disabled code.
 .. note::
 
     In the script editor, to toggle commenting of the selected code, press
-    :kbd:`Ctrl + K`. This feature adds/removes a single ``#`` sign before any
+    :kbd:`Ctrl + K`. This shortcut adds/removes a single ``#`` sign before any
     code on the selected lines.
 
 Prefer writing comments on their own line as opposed to inline comments
@@ -712,7 +712,7 @@ Use snake\_case to name functions and variables:
     var particle_effect
     func load_level():
 
-Prepend a single underscore (\_) to virtual methods functions the user must
+Prepend a single underscore (\_) to virtual methods/functions the user must
 override, private functions, and private variables:
 
 ::

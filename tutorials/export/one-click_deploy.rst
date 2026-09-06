@@ -69,7 +69,7 @@ Using one-click deploy
    - It's also possible to one-click deploy via wireless ADB instead of with a USB cable. In order to do this, it is necessary to:
         - Enable wireless debugging on the device: :menu:`Settings > Developer options > Debugging`
         - Connect to the same Wi-Fi network on your mobile device and PC.
-        - Click :button:`Pair device with pairing code: (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.`
+        - Click :button:`Pair device with pairing code` (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.
         - On your PC, enter the command ``adb pair <ip address>:<port>`` and provide the pairing code when prompted.
           If ``adb`` is not recognized, you may need to add the android-sdk's platform-tools folder to your ``PATH`` or execute this command from there.
         - You can verify the ADB device is successfully connected by entering ``adb devices`` in the terminal.
@@ -78,18 +78,18 @@ Using one-click deploy
    - Install Xcode, accept Xcode license and login with your Apple Developer
      account.
    - If you are using Xcode 14 or earlier, install `ios-deploy <https://github.com/ios-control/ios-deploy>`__
-     and set path to `ios-deploy` in the Editor Settings (see `Export ⇾ iOS ⇾ iOS Deploy`).
+     and set path to ``ios-deploy`` in the Editor Settings (see :menu:`Export > iOS > iOS Deploy`).
    - For running on device:
       - Pair your mobile device with a Mac.
       - Enable developer mode on your device.
       - Device can be connected via USB or local network.
       - Make sure the device is on the same local network and a correct network
-        interface is selected in the editor settings (see `Network ⇾ Debug ⇾ Remote Host`).
-        By default, the editor is listening for `localhost` connections only.
+        interface is selected in the Editor Settings (see :menu:`Network > Debug > Remote Host`).
+        By default, the editor is listening for ``localhost`` connections only.
    - Device screen should be unlocked.
 
 - **Desktop platforms:**
-   - Enable `SSH Remote Deploy` and configure connection settings in the project
+   - Enable :ui:`SSH Remote Deploy` and configure connection settings in the project
      export setting.
 
 - Make sure there is an export preset marked as **Runnable** for the target

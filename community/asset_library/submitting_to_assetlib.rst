@@ -39,7 +39,7 @@ are a few requirements your asset needs to meet to be approved.
   asset needs the contents of the submodule, your asset won't work.
 
 * The **license** needs to be correct. The license listed on the asset
-  library must match the license in the repository. The repo MUST
+  library must match the license in the repository. The repository **must**
   have a license file, called either "LICENSE" or "LICENSE.md".
   This file must contain the license text itself and a copyright
   statement that includes the year(s) and copyright holder.
@@ -60,8 +60,8 @@ if you follow these recommendations, you can help make the asset
 library a better place for all users.
 
 * When creating non-project assets, it is common practice to place your files
-  inside of an **addons/asset_name/** folder. Do this to avoid having your files 
-  clash with other assets, or with the files of users installing your asset. 
+  inside of an **addons/asset_name/** folder. Do this to avoid having your files
+  clash with other assets, or with the files of users installing your asset.
   This folder will **not** be automatically generated when a user installs your asset.
 
 * Fix or suppress all script **warnings**. The warning system is there to
@@ -70,10 +70,10 @@ library a better place for all users.
 
 * Make your code conform to the official **style guides**. Having a
   consistent style helps other people read your code, and it also helps
-  if other people wish to contribute to your asset. See: the
+  if other people wish to contribute to your asset. See the
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
 
-* If you have screenshots in your repo, place them in their own subfolder
+* If you have screenshots in your repository, place them in their own subfolder
   and add an empty **.gdignore** file in the same folder (note: **gd**, not **git**).
   This prevents Godot from importing your screenshots.
   On Windows, open a command prompt in the project folder and run
@@ -82,7 +82,7 @@ library a better place for all users.
 * If your asset is a library for working with other files,
   consider including **example files** in the asset.
 
-* Consider adding a **.gitattributes** file to your repo. This file allows
+* Consider adding a **.gitattributes** file to your repository. This file allows
   giving extra instructions to Git, such as specifying line endings and listing
   files not required for your asset to function with the ``export-ignore``
   directive. This directive removes such files from the resulting ZIP file,
@@ -160,15 +160,15 @@ is required in the submission form here as well.
     your asset uses, so the site can compute the final download link.
 * **Repository URL**:
     The URL to your asset's files/webpage. This will vary
-    based on your choice of provider, but it should look similar to `https://github.com/<user>/<project>`.
+    based on your choice of provider, but it should look similar to ``https://github.com/<user>/<project>``.
 * **Issues URL**:
     The URL to your asset's issue tracker. Again, this will differ
     from repository host to repository host, but will likely look similar to
-    `https://github.com/<user>/<project>/issues`. You may leave this field empty
+    ``https://github.com/<user>/<project>/issues``. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
 * **Download Commit**:
     The commit of the asset. For example,
-    `b1d3172f89b86e52465a74f63a74ac84c491d3e1`. The site computes
+    ``b1d3172f89b86e52465a74f63a74ac84c491d3e1``. The site computes
     the actual download URL from this.
 * **Icon URL**:
     The URL to your asset's icon (which will be used as a thumbnail
@@ -180,7 +180,7 @@ is required in the submission form here as well.
 
 .. note::
 
-    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+    For icons hosted on GitHub, URLs must be provided in the form of ``https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png``.
 
 * **License**:
     The license under which you are distributing the asset. The list

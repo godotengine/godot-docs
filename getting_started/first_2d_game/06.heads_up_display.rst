@@ -40,7 +40,7 @@ Under "Theme Overrides > Fonts", choose "Load" and select the "Xolonium-Regular.
 
 .. image:: img/custom_font_load_font.webp
 
-The font size is still too small, increase it to ``64`` under "Theme Overrides > Font Sizes". 
+The font size is still too small, increase it to ``64`` under "Theme Overrides > Font Sizes".
 Once you've done this with the ``ScoreLabel``, repeat the changes for the ``Message`` and ``StartButton`` nodes.
 
 .. image:: img/custom_font_size.webp
@@ -211,7 +211,7 @@ signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to th
 Connecting HUD to Main
 ----------------------
 
-Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
+Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instantiate
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
 should look like this, so make sure you didn't miss anything:
 

@@ -65,7 +65,7 @@ Godot has a node that detects when objects leave the screen,
 
 .. note::
 
-    When you keep instancing an object, there's a technique you can
+    When you keep instantiating an object, there's a technique you can
     use to avoid the cost of creating and destroying instances all the time
     called pooling. It consists of pre-creating an array of objects and reusing
     them over and over.

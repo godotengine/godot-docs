@@ -153,7 +153,7 @@ Next we need to add a script to our root node. Add the following code into this 
 
 
 If you run your project at this point in time, everything will work but you will be in a dark world. So to finish off our starting point add a :ref:`DirectionalLight3D <class_directionallight3d>` and a :ref:`WorldEnvironment <class_worldenvironment>` node to your scene.
-You may wish to also add a mesh instance as a child to each controller node just to temporarily visualise them.
+You may wish to also add a mesh instance as a child to each controller node just to temporarily visualize them.
 Make sure you configure a sky in your world environment.
 
 Now run your project, you should be floating somewhere in space and be able to look around.

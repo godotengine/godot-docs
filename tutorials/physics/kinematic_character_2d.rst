@@ -101,7 +101,7 @@ shape scale.**
 Now, create a script for the character, the one used as an example
 above should work as a base.
 
-Finally, instance that character scene in the tilemap, and make the
+Finally, instantiate that character scene in the tilemap, and make the
 map scene the main one, so it runs when pressing play.
 
 .. image:: img/kbinstance.webp

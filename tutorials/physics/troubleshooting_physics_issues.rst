@@ -46,8 +46,8 @@ of each other without moving.
 
 Increasing the physics simulation rate can help alleviate this issue. To do so,
 increase :ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
-in the advanced Project Settings. Note
-that increases CPU utilization and may not be viable for mobile/web platforms.
+in the advanced Project Settings. Note that doing this
+increases CPU utilization and may not be viable for mobile/web platforms.
 Multipliers of the default value of ``60`` (such as ``120``, ``180`` or ``240``)
 should be preferred for a smooth appearance on most displays.
 

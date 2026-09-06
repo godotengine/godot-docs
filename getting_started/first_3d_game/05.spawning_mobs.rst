@@ -120,7 +120,7 @@ the background, like a bright orange.
 |image14|
 
 We can now use the cylinders as guides. Fold them in the *Scene* dock by
-clicking the grey arrow next to them. Moving forward, you can also toggle their
+clicking the gray arrow next to them. Moving forward, you can also toggle their
 visibility by clicking the eye icon next to *Cylinders*.
 
 |image15|

@@ -112,7 +112,7 @@ With correct back-buffer copying, the two spheres blend correctly:
 
     In 3D, materials that use ``hint_screen_texture`` are considered transparent themselves and
     will not appear in the resulting screen texture of other materials.
-    If you plan to instance a scene that uses a material with ``hint_screen_texture``,
+    If you plan to instantiate a scene that uses a material with ``hint_screen_texture``,
     you will need to use a BackBufferCopy node.
 
 In 3D, there is less flexibility to solve this particular issue because the

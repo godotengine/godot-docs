@@ -160,7 +160,7 @@ The main reasons for creating a custom scripting language for Godot were:
 5. Garbage collector results in stalls or unnecessarily large memory
    usage (Lua, Python, JavaScript, ActionScript, etc.).
 6. Difficulty integrating with the code editor for providing code
-   completion, live editing, etc. (all of them).
+   completion, live editing, etc. (all languages).
 
 GDScript was designed to curtail the issues above, and more.
 
@@ -486,7 +486,7 @@ This is currently supported on Windows, macOS, and Linux. Support for
 Android and iOS is planned for a future release.
 
 You can find sample applications that use Godot as a library in the
-`migeran/libgodot_project GitHub repository <https://github.com/migeran/libgodot_project>`__.
+`migeran/libgodot GitHub repository <https://github.com/migeran/libgodot>`__.
 
 What user interface toolkit does Godot use?
 -------------------------------------------

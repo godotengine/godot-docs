@@ -514,7 +514,7 @@ Godot does not have built-in support for motion blur, but it can still be
 created in recorded videos.
 
 If you record the video at a multiple of the original framerate, you can blend
-the frames together then reduce the frameate to produce a video with
+the frames together then reduce the framerate to produce a video with
 *accumulation motion blur*. This motion blur can look very good, but it can take
 a long time to generate since you have to render many more frames per second (on
 top of the time spent on post-processing).

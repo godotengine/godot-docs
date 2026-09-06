@@ -45,7 +45,7 @@ Here is a custom ``look_at()`` method called ``look_follow()`` that will work wi
         var local_speed: float = clampf(speed, 0, acos(forward_dir.dot(target_dir)))
         if forward_dir.dot(target_dir) > 1e-4:
             state.angular_velocity = local_speed * forward_dir.cross(target_dir) / state.step
-    
+
     func _integrate_forces(state):
         var target_position = $my_target_node3d_node.global_transform.origin
         look_follow(state, global_transform, target_position)
@@ -77,9 +77,9 @@ Here is a custom ``look_at()`` method called ``look_follow()`` that will work wi
     }
 
 
-This method uses the rigid body's ``angular_velocity`` property to rotate the body. 
-The axis to rotate around is given by the cross product between the current forward direction and the direction one wants to look in. 
-The ``clamp`` is a simple method used to prevent the amount of rotation from going past the direction which is wanted to be looked in, 
-as the total amount of rotation needed is given by the arccosine of the dot product. 
-This method can be used with ``axis_lock_angular_*`` as well. If more precise control is needed, solutions such as ones relying on :ref:`class_Quaternion` may be required, 
+This method uses the rigid body's ``angular_velocity`` property to rotate the body.
+The axis to rotate around is given by the cross product between the current forward direction and the direction one wants to look in.
+The ``clamp`` is a simple method used to prevent the amount of rotation from going past the direction which is wanted to be looked in,
+as the total amount of rotation needed is given by the arccosine of the dot product.
+This method can be used with ``axis_lock_angular_*`` as well. If more precise control is needed, solutions such as ones relying on :ref:`class_Quaternion` may be required,
 as discussed in :ref:`doc_using_transforms`.

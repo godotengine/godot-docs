@@ -3,7 +3,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.3
     hooks:
       - id: codespell
         additional_dependencies: [tomli]
@@ -11,6 +11,8 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
+      - id: trailing-whitespace
+        exclude: '^classes'
       - id: fix-byte-order-marker
       - id: mixed-line-ending
         args: ['--fix=lf']

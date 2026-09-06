@@ -39,7 +39,7 @@ are a few requirements it needs to meet to be approved.
   asset needs the contents of the submodule, your asset won't work.
 
 * The **license** needs to be correct. The license listed on the Asset
-  Store must match the license in the repository. The repo **must**
+  Store must match the license in the repository. The repository **must**
   have a license file, called either "LICENSE" or "LICENSE.md".
   This file must contain the license text itself and a copyright
   statement that includes the year(s) and copyright holder.
@@ -60,8 +60,8 @@ if you follow these recommendations, you can help make the asset
 store a better place for all users.
 
 * When creating non-project assets, it is common practice to place your files
-  inside of an **addons/asset_name/** folder. Do this to avoid having your files 
-  clash with other assets, or with the files of users installing your asset. 
+  inside of an **addons/asset_name/** folder. Do this to avoid having your files
+  clash with other assets, or with the files of users installing your asset.
   This folder will **not** be automatically generated when a user installs your asset.
 
 * Fix or suppress all script **warnings**. The warning system is there to
@@ -73,7 +73,7 @@ store a better place for all users.
   if other people wish to contribute to your asset. See the
   :ref:`doc_gdscript_styleguide` or the :ref:`doc_c_sharp_styleguide`.
 
-* If you have screenshots in your repo, place them in their own subfolder
+* If you have screenshots in your repository, place them in their own subfolder
   and add an empty **.gdignore** file in the same folder (note: **gd**, not **git**).
   This prevents Godot from importing your screenshots.
   On Windows, open a command prompt in the project folder and run
@@ -82,7 +82,7 @@ store a better place for all users.
 * If your asset is a library for working with other files,
   consider including **example files** in the asset.
 
-* Consider adding a **.gitattributes** file to your repo. This file allows
+* Consider adding a **.gitattributes** file to your repository. This file allows
   giving extra instructions to Git, such as specifying line endings and listing
   files not required for your asset to function with the ``export-ignore``
   directive. This directive removes such files from the resulting ZIP file,
@@ -201,7 +201,7 @@ Pricing
 While paid assets can't be uploaded yet, there are some settings relevant to free
 assets. You can link to another website where you accept donations, such as Patreon
 or Ko-Fi. You can also disable reviews if you want (in the future paid assets will
-**not** have this option). 
+**not** have this option).
 
 Submitting for review
 ---------------------

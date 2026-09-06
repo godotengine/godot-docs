@@ -197,7 +197,7 @@ Core
 
     The changes are backwards-compatible and forwards-compatible, which means
     scenes saved in Godot 4.5 can still be loaded in Godot 4.6 and vice-versa
-    (notwithstanding other incompatible changes performed in the scene itself).
+    (regardless of other incompatible changes performed in the scene itself).
 
     As a result, when saving a scene that was last edited in Godot 4.5 in Godot
     4.6, significant diffs will occur in version control programs. These diffs are

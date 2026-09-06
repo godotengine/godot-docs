@@ -61,7 +61,7 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
 
     The behavior of ``@export_file`` changed in Godot 4.4. When assigning a new value
     from the Inspector, the path is now stored and returned as a ``uid://`` reference
-    instead of the traditional ``res://`` path(`GH-97912`_). This is a **breaking change** and may
+    instead of the traditional ``res://`` path (`GH-97912`_). This is a **breaking change** and may
     cause issues if you're expecting ``res://``-based paths in scripts or serialized
     files.
 
@@ -69,7 +69,7 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
     ``res://`` paths, especially if they were partially edited in the Inspector.
 
     In 4.4, the only way to retain the ``res://`` format is to **manually edit** the
-    `.tscn` or `.tres` files in a text editor. Starting in Godot 4.5, a new annotation
+    ``.tscn`` or ``.tres`` files in a text editor. Starting in Godot 4.5, a new annotation
     ``@export_file_path`` can be used to explicitly retain the old behavior and export
     raw ``res://`` paths.
 

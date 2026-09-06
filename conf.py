@@ -20,6 +20,8 @@ extensions = [
     "sphinx_copybutton",
     "sphinxcontrib.video",
     "gdscript",
+    "classref_admonitions",
+    "bbcode",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
@@ -239,6 +241,9 @@ rst_prolog = """
 
 .. role:: ui
     :class: role-ui
+
+.. role:: bbcode(code)
+    :language: bbcode
 
 """
 

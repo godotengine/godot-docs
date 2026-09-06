@@ -145,7 +145,8 @@ For example, to set a custom user agent (the HTTP ``User-Agent`` header) you cou
 
 .. danger::
 
-    Be aware that someone might analyse and decompile your released application and
-    thus may gain access to any embedded authorization information like tokens, usernames or passwords.
+    Be aware that someone might analyze and decompile your released application and
+    thus may gain access to any embedded authorization information like tokens, usernames, or passwords.
     That means it is usually not a good idea to embed things such as database
-    access credentials inside your game. Avoid providing information useful to an attacker whenever possible.
+    access credentials inside your game.
+    Avoid providing information useful to an attacker whenever possible.

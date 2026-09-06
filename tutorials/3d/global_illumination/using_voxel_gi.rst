@@ -139,7 +139,7 @@ There are 3 global illumination modes available for meshes:
     - **Emission > On UV2**
 
 Additionally, there are 3 bake modes available for lights
-(DirectionalLight3D, OmniLight3D and SpotLight3D):
+(DirectionalLight3D, OmniLight3D, SpotLight3D, and AreaLight3D):
 
 - **Disabled:** The light won't be taken into account for VoxelGI baking.
   The light won't contribute indirect lighting to the scene.

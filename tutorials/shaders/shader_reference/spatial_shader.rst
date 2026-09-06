@@ -166,7 +166,7 @@ The same applies for accessing fragment built-ins from the ``light()`` function.
 Global built-ins
 ----------------
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
 | Built-in                    | Description                                                                                         |
@@ -234,9 +234,9 @@ However, the value passed to the fragment shader still comes from ``VERTEX``.
 For instancing, the ``INSTANCE_CUSTOM`` variable contains the instance custom data. When using particles, this information
 is usually:
 
-* **x**: Rotation angle in radians.
-* **y**: Phase during lifetime (``0.0`` to ``1.0``).
-* **z**: Animation frame.
+* **x**: Current rotation angle in radians.
+* **z**: Current animation frame.
+* **y / w** (division): Lifetime fraction from ``0.0`` to ``1.0``.
 
 This allows you to easily adjust the shader to a particle system using default particle material. When writing a custom particle
 shader, this value can be used as desired.
@@ -511,7 +511,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 |                                        | into the object.                                                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **SSS_TRANSMITTANCE_BOOST**  | Boosts the subsurface scattering transmittance if set above ``0.0``. This makes the effect       |
-|                                        | show up even on directly lit surfaces                                                            |
+|                                        | show up even on directly lit surfaces.                                                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **BACKLIGHT**               | Color of backlighting (works like direct light, but it's received even if the normal             |
 |                                        | is slightly facing away from the light). If used, backlighting will be applied to the object.    |

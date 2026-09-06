@@ -26,7 +26,7 @@ Attributes are added before each vertex is added:
     st.set_normal() # Normal never added to a vertex.
 
  .. code-tab:: csharp
-    
+
     st.SetNormal(); // Overwritten by normal below.
     st.SetNormal(); // Added to next vertex.
     st.SetColor(); // Added to next vertex.
@@ -205,7 +205,7 @@ normals set already.
     st.commit(mesh)
 
  .. code-tab:: csharp
-    
+
     st.GenerateNormals();
     st.GenerateTangents();
 

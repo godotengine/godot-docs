@@ -21,7 +21,7 @@ the top of the screen, or maybe the right or left margins.
 
 .. image:: img/anchors.png
 
-This is done by editing the *anchor offsets* of controls, which behave similar
+This is done by editing the *anchor offsets* of controls, which behave similarly
 to a margin. To access these settings, you will first need to select the *Custom*
 anchor preset.
 

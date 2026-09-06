@@ -99,7 +99,7 @@ and go to :menu:`Project > Export`, select an export preset, and click on
 .. image:: img/export_pck.webp
 
 Another method would be to :ref:`export from the command line <doc_command_line_tutorial_exporting>`
-with ``--export-pack``. The output file must with a ``.pck`` or ``.zip``
+with ``--export-pack``. The output file must end with a ``.pck`` or ``.zip``
 file extension. The export process will build that type of file for the
 chosen platform.
 

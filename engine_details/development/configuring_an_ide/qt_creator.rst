@@ -61,7 +61,7 @@ Importing the project
   | Arguments | See :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments. |
   +-----------+------------------------------------------------------------------------------+
 
-.. figure:: img/qtcreator-set-scons-command.png
+.. figure:: img/qtcreator-set-scons-command.webp
    :figclass: figure-w480
    :align: center
 
@@ -77,7 +77,7 @@ Debugging the project
   the ``<Godot root directory>/bin`` folder. The name depends on your build configuration,
   e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
   ``platform=editor`` and ``dev_build=yes``.
-  You can use ``%{buildDir}`` to reference the project root, e.g: ``%{buildDir}/bin/godot.linuxbsd.editor.dev.x86_64``.
+  You can use ``%{buildDir}`` to reference the project root, e.g., ``%{buildDir}/bin/godot.linuxbsd.editor.dev.x86_64``.
 - If you want to run a specific project, specify its root folder under **Working directory**.
 - If you want to run the editor, add ``-e`` to the **Command line arguments** field.
 
@@ -92,21 +92,16 @@ Code style configuration
 ------------------------
 
 Developers must follow the project's `code style <https://contributing.godotengine.org/en/latest/engine/guidelines/code_style.html>`__
-and the IDE should help them follow it. By default, Qt Creator uses spaces
-for indentation which doesn't match the Godot code style guidelines. You can
-change this behavior by changing the **Code Style** in **Tools > Options > C++**.
+and the IDE should help them follow it.
 
-.. figure:: img/qtcreator-options-cpp.png
+- Open **Preferences > C++ > Code Style**.
+- Set the **Formatting mode** to **Full formatting** to instruct Qt Creator to use the ``.clang-format`` file supplied in Godot's root folder:
+
+.. figure:: img/qtcreator-options-cpp.webp
    :figclass: figure-w480
    :align: center
 
-Click on **Edit** to change the current settings, then click on
-**Copy Built-in Code Style** button to set a new code style. Set a name for it
-(e.g. Godot) and change the Tab policy to be **Tabs Only**.
-
-.. figure:: img/qtcreator-edit-codestyle.png
-   :figclass: figure-w480
-   :align: center
+- Specify when you want ``clang-format`` to run (either while typing or when you saving the file). It is recommended to enable formatting on save at least.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.

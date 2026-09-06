@@ -13,10 +13,10 @@ they enter the *scene tree*.
 MainLoop
 --------
 
-The way Godot works internally is as follows. There is the
+The way Godot works internally is as follows: There is the
 :ref:`OS <class_OS>` class,
 which is the only instance that runs at the beginning. Afterwards, all
-drivers, servers, scripting languages, scene system, etc are loaded.
+drivers, servers, scripting languages, scene system, etc. are loaded.
 
 When initialization is complete, :ref:`OS <class_OS>` needs to be
 supplied a :ref:`MainLoop <class_MainLoop>`
@@ -40,7 +40,7 @@ and servers are the low-level API.
 
 The scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
-This is automatically instanced and set when running a scene, no need
+This is automatically instantiated and set when running a scene, no need
 to do any extra work.
 
 It's important to know that this class exists because it has a few
@@ -143,6 +143,8 @@ with the priorities "0, 1, 2, 3" would be called in that order from left to righ
 #. When a scene (or part of it) is removed, they receive the "exit
    scene" notification ( ``_exit_tree()`` callback in GDScript) in
    bottom-to-top order (the exact reverse of top-to-bottom order).
+
+.. _doc_scene_tree_changing_current_scene:
 
 Changing current scene
 ----------------------

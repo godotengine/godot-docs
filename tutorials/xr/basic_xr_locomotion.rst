@@ -23,7 +23,7 @@ This node governs the in game movement of your character and will immediately re
 So to prevent our player from infinitely falling down we'll quickly add a floor to our scene.
 
 We start by adding a :ref:`StaticBody3D <class_staticbody3d>` node to our root node and we rename this to ``Floor``.
-We add a :ref:`MeshInstance3D <class_meshinstance3d>` node as a child node for our ``Floor``. 
+We add a :ref:`MeshInstance3D <class_meshinstance3d>` node as a child node for our ``Floor``.
 Then create a new :ref:`PlaneMesh <class_planemesh>` as its mesh.
 For now we set the size of the mesh to 100 x 100 meters.
 Next we add a :ref:`CollisionShape3D <class_collisionshape3d>` node as a child node for our ``Floor``.
@@ -35,7 +35,7 @@ To make it easier to see that we're actually moving around our world, a white fl
 isn't going to do it. Create a texture using `Wahooneys excellent free texture generator <https://wahooney.itch.io/texture-grid-generator>`_.
 Once you've created the texture add it to your project. Then create a new material
 for the MeshInstance3D node, add your texture as the albedo, and enable
-**Triplaner** under **UV1** in the material properties.
+**Triplanar** under **UV1** in the material properties.
 
 .. image:: img/godot_xr_tools_floor.webp
 
@@ -87,6 +87,6 @@ More advanced movement features
 
 Godot XR Tools adds many more movement features such as gliding, a grapple hook implementation, a jetpack, climbing mechanics, etc.
 
-Most work similarly to the basic movement features we've handled so far, simply add the relevant subscene from the plugin to the controller that implements it. 
+Most work similarly to the basic movement features we've handled so far, simply add the relevant subscene from the plugin to the controller that implements it.
 
 We'll look at some of these in more detail later on in this tutorial where additional setup is required (such as climbing) but for others please look at Godot XR Tools own help pages for details.

@@ -3,6 +3,12 @@
 Change scenes manually
 ======================
 
+.. seealso::
+
+    This page describes various strategies to optimize scene changes.
+    For a simpler description of how to switch between scenes, see the
+    :ref:`Using SceneTree documentation <doc_scene_tree_changing_current_scene>`.
+
 Sometimes it helps to have more control over how you swap scenes around.
 A :ref:`Viewport <class_Viewport>`'s child nodes will render to the image
 it generates. This holds true even for nodes outside of the "current"
@@ -83,7 +89,7 @@ access and integrity.
 
         - Pro: There's no need to move any more nodes around to save data.
 
-        - Con: More data is being kept in memory, which will be become a problem
+        - Con: More data is being kept in memory, which will become a problem
           on memory-sensitive platforms like web or mobile.
 
     - Processing continues.
@@ -135,7 +141,7 @@ a scene's data between scene changes (adding the scene to the root node).
 
 Another case may be displaying multiple scenes at the same time using
 :ref:`SubViewportContainers <class_SubViewportContainer>`. This is optimal for
-rendering different content in different parts of the screen (e.g. minimaps, 
+rendering different content in different parts of the screen (e.g. minimaps,
 split-screen multiplayer).
 
 Each option will have cases where it is best appropriate, so you must examine

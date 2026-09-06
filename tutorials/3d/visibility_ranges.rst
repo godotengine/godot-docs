@@ -164,7 +164,7 @@ nodes when viewed at a distance. *House1* to *House4* are smaller
 MeshInstance3Ds representing individual houses. To configure HLOD in this
 example, we only need to configure two things:
 
-- Set **Visibility Range Begin** to a number greater than `0.0` so that
+- Set **Visibility Range Begin** to a number greater than ``0.0`` so that
   *BatchOfHouses* only appears when far away enough from the camera. Below this
   distance, we want *House1* to *House4* to be displayed instead.
 - On *House1* to *House4*, assign the **Visibility Parent** property to *BatchOfHouses*.

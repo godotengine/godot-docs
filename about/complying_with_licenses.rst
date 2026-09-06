@@ -26,8 +26,8 @@ with the original one.
 .. note::
 
     This section covers compliance with licenses from a user perspective.
-    If you are interested in licence compliance as a contributor, you can find
-    guidelines `here <https://contributing.godotengine.org/en/latest/engine/guidelines/best_practices.html#don-t-use-complex-canned-solutions-for-simple-problems>`__.
+    If you are interested in license compliance as a contributor, you can find
+    guidelines in the `Best practices <https://contributing.godotengine.org/en/latest/engine/guidelines/best_practices.html#don-t-use-complex-canned-solutions-for-simple-problems>`__ page.
 
 .. tip::
 

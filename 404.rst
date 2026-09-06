@@ -57,6 +57,7 @@ Page not found
                 const newUrl = window.location.href.replace(window.location.pathname, currentBasePath + to);
                 window.location.replace(newUrl);
               }
+              break;
             }
           }
         }

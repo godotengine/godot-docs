@@ -41,7 +41,7 @@ This import process is customizable using 3 separate interfaces, depending on yo
 - The **Advanced Import Settings** dialog, which can be accessed by double-clicking
   the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
   the Import dock. This allows you to customize per-object options in Godot, and
-  preview models and animations. please see the :ref:`doc_advanced_import_settings`
+  preview models and animations. Please see the :ref:`doc_advanced_import_settings`
   page for more information.
 - :ref:`Import hints <doc_importing_3d_scenes_node_type_customization>`, which are special
   suffixes added to object names in the 3D modeling software. This allows you to
@@ -63,12 +63,12 @@ scene in the FileSystem dock:
   inherit from Node3D is recommended. Otherwise, you'll lose the ability to
   position the node directly in the 3D editor.
 - **Root Name:** The name of the root node in the imported scene. This is
-  generally not noticeable when instancing the scene in the editor (or
+  generally not noticeable when instantiating the scene in the editor (or
   drag-and-dropping from the FileSystem dock), as the root node is renamed to
   match the filename in this case.
 - **Apply Root Scale:** If enabled, **Root Scale** will be *applied* on the
   meshes and animations directly, while keeping the root node's scale to the
-  default `(1, 1, 1)`. This means that if you add a child node later on within
+  default ``(1, 1, 1)``. This means that if you add a child node later on within
   the imported scene, it won't be scaled. If disabled, **Root Scale** will
   multiply the scale of the root node instead.
 

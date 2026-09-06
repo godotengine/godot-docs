@@ -94,6 +94,6 @@ Create a Node and attach the following script.
 Cursor list
 -----------
 
-There are multiple mouse cursors you can define, documented in the 
+There are multiple mouse cursors you can define, documented in the
 :ref:`Input.CursorShape <enum_Input_CursorShape>` enum. Which ones you want to use
 depends on your use case.

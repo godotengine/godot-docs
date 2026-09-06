@@ -13,11 +13,11 @@ What for?
 ---------
 
 Vendor runtime modules provide developers with access to vendor-specific optimizations, features,
-and/or platforms for their running projects. 
+and/or platforms for their running projects.
 
 This provides benefits to vendors who are able to expose their technologies to all developers,
 and improve and refine them in a rapid, iterative, and frictionless manner.
-This also provides benefits to developers and users who are able to access and use a diverse range of vendor 
+This also provides benefits to developers and users who are able to access and use a diverse range of vendor
 technologies to improve their games.
 
 Creating a vendor runtime module
@@ -56,7 +56,7 @@ Follow :ref:`these instructions <doc_making_plugins_template>` to start creating
         pass
 
 
-The next step is to define and instantiate an :ref:`EditorExportPlugin<class_EditorExportPlugin>` instance. 
+The next step is to define and instantiate an :ref:`EditorExportPlugin<class_EditorExportPlugin>` instance.
 The :ref:`EditorExportPlugin<class_EditorExportPlugin>` instance is used to hook into the export flow and
 replace the default export templates with the ones generated from the vendor runtime module.
 
@@ -95,7 +95,7 @@ Using our base editor plugin template code above, an example implementation look
             var overrides = {}
             if not _supports_platform(platform):
                 return overrides
-            
+
             # Overrides Android export preset's "custom_template" options.
             overrides["custom_template/debug"] = _path_to_debug_export_template
             overrides["custom_template/release"] = _path_to_release_export_template
@@ -105,7 +105,7 @@ Using our base editor plugin template code above, an example implementation look
         # Optional: specify additional export preset options to customize the export template.
         func _get_export_options(platform):
             pass
-        
+
         func _get_name():
             return "VRM Plugin"
 
@@ -113,6 +113,6 @@ Using our base editor plugin template code above, an example implementation look
 .. tip::
 
     This section covers the basics to wrap and expose a vendor runtime module via an editor plugin, but
-    editor plugins have a lot more functionality that can be used to customize the editor further. 
+    editor plugins have a lot more functionality that can be used to customize the editor further.
     Feel free to :ref:`explore and leverage those functionalities <toc-tutorials-plugins>` to improve the
     user experience for your vendor runtime module.

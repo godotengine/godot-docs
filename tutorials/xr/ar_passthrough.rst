@@ -53,8 +53,8 @@ This mode determines how the (real world) environment is blended with the virtua
       On see-through devices that support this, the alpha will control the translucency
       of the optics.
       On video-passthrough devices alpha blending is applied with the video image.
-      passthrough will also be enabled if applicable. 
-        
+      passthrough will also be enabled if applicable.
+
 You can set the environment blend mode for your application through the ``environment_blend_mode``
 property of the :ref:`XRInterface <class_xrinterface>` instance.
 

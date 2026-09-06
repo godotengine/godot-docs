@@ -62,15 +62,17 @@ For compiling under Windows, the following is required:
               scoop install python mingw
 
           Scons will still need to be installed via pip
-.. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
-          install MinGW and other dependencies using the following command:
+.. note::
 
-          ::
+    If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
+    install MinGW and other dependencies using the following command:
 
-              pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
+    ::
 
-          For each MSYS2 MinGW subsystem, you should then run
-          `pip3 install scons` in its shell.
+        pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
+
+    For each MSYS2 MinGW subsystem, you should then run
+    ``pip3 install scons`` in its shell.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -87,11 +89,15 @@ To install SCons, open the command prompt and run the following command:
 
     python -m pip install scons
 
+.. codespell:ignore-begin writeable
+
 If you are prompted with the message
 ``Defaulting to user installation because normal site-packages is not
 writeable``, you may have to run that command again using elevated
 permissions. Open a new command prompt as an Administrator then run the command
 again to ensure that SCons is available from the ``PATH``.
+
+.. codespell:ignore-end
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt

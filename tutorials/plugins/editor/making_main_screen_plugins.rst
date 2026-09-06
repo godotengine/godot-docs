@@ -96,7 +96,7 @@ Add four extra methods such that the script looks like this:
     #endif
 
 The important part in this script is the ``_has_main_screen()`` function,
-which is overloaded so it returns ``true``. This function is automatically
+which is overridden to return ``true``. This function is automatically
 called by the editor on plugin activation, to tell it that this plugin
 adds a new center view to the editor. For now, we'll leave this script
 as-is and we'll come back to it later.
@@ -148,7 +148,7 @@ Update the plugin script
 ------------------------
 
 We need to update the ``main_screen_plugin.gd`` script so the plugin
-instances our main panel scene and places it where it needs to be.
+instantiates our main panel scene and places it where it needs to be.
 Here is the full plugin script:
 
 .. tabs::
@@ -248,10 +248,10 @@ Here is the full plugin script:
     #endif
 
 A couple of specific lines were added. ``MainPanel`` is a constant that holds
-a reference to the scene, and we instance it into `main_panel_instance`.
+a reference to the scene, and we instantiate it into ``main_panel_instance``.
 
 The ``_enter_tree()`` function is called before ``_ready()``. This is where
-we instance the main panel scene, and add them as children of specific parts
+we instantiate the main panel scene, and add them as children of specific parts
 of the editor. We use ``EditorInterface.get_editor_main_screen()`` to
 obtain the main editor screen and add our main panel instance as a child to it.
 We call the ``_make_visible(false)`` function to hide the main panel so
@@ -268,7 +268,7 @@ user clicks on the main viewport buttons at the top of the editor.
 The ``_get_plugin_name()`` and ``_get_plugin_icon()`` functions control
 the displayed name and icon for the plugin's main viewport button.
 
-Another function you can add is the ``handles()`` function, which
+Another function you can add is the ``_handles()`` function, which
 allows you to handle a node type, automatically focusing the main
 screen when the type is selected. This is similar to how clicking
 on a 3D node will automatically switch to the 3D viewport.

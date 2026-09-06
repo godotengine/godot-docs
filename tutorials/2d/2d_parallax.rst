@@ -91,7 +91,7 @@ do?
 Make the viewport smaller
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The simplest answer is to make the viewport the same size or smaller than your textures. 
+The simplest answer is to make the viewport the same size or smaller than your textures.
 In **Project Settings > Display > Window**, change the
 :ref:`Viewport Width<class_ProjectSettings_property_display/window/size/viewport_width>`
 and :ref:`Viewport Height<class_ProjectSettings_property_display/window/size/viewport_height>`
@@ -187,7 +187,7 @@ Repeat times
 ------------
 
 Ideally, following this guide, your parallax textures are large enough to cover the screen even when zoomed out.
-Until now, we have had a perfectly fitting 288x208 texture inside of a 288x208 viewport. However, problems 
+Until now, we have had a perfectly fitting 288x208 texture inside of a 288x208 viewport. However, problems
 occur when we zoom out by setting the :ref:`Camera2D.zoom<class_camera2d_property_zoom>` to ``(0.5, 0.5)``:
 
 .. image:: img/2d_parallax_zoom_single.webp

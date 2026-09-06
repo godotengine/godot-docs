@@ -100,9 +100,13 @@ information.
 Why locales exist can be illustrated through the USA and Great Britain.
 Both speak the same language (English), yet differ in many aspects:
 
+.. codespell:ignore-begin grey metres
+
 - Spelling: e.g. gray (USA), grey (GB)
 - Use of words: e.g. eggplant (USA), aubergine (GB)
 - Units or currencies: e.g. feet/inches (USA), metres/cm (GB)
+
+.. codespell:ignore-end
 
 It can get more complex however. Imagine you offer different content in Europe
 and in China (e.g. in an MMO). You will need to translate each of those content

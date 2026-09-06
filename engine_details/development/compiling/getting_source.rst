@@ -16,7 +16,7 @@ and while you can manually download it via the website, in general you want to
 do it via the ``git`` version control system.
 
 If you are compiling in order to make contributions or pull requests, you should
-follow the instructions from the `Pull Request workflow <https://contributing.godotengine.org/en/latest/organization/pull_requests/creating_pull_requests.html>`__.
+follow the instructions from the `Pull request workflow <https://contributing.godotengine.org/en/latest/organization/pull_requests/creating_pull_requests.html>`__ page.
 
 If you don't know much about ``git`` yet, there are a great number of
 `tutorials <https://git-scm.com/book>`__ available on various websites.
@@ -50,7 +50,7 @@ after the ``--branch`` (or just ``-b``) argument:
     # Clone the `4.7-stable` tag. This is a fixed revision that will never change.
     git clone https://github.com/godotengine/godot.git -b 4.7-stable
 
-    # After cloning, optionally go to a specific commit.
+    # After cloning, optionally go to a specific commit.
     # This can be used to access the source code at a specific point in time,
     # e.g. for development snapshots, betas and release candidates.
     cd godot

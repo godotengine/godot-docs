@@ -43,7 +43,7 @@ platform:android:
     - tutorials/editor/using_the_android_editor.rst
     - tutorials/export/android_gradle_build.rst
     - tutorials/export/exporting_for_android.rst
-    - tutorials/platofrm/android/**
+    - tutorials/platform/android/**
 
 platform:ios:
 - changed-files:

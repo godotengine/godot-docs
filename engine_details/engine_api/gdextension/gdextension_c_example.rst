@@ -530,7 +530,7 @@ include them in ``gdexample.h`` since they're specific to the custom class:
     void gdexample_class_free_instance(void *p_class_userdata, GDExtensionClassInstancePtr p_instance);
     ...
 
-Before we can implement those function, we'll need a few more things in our API.
+Before we can implement those functions, we'll need a few more things in our API.
 We need a way to allocate and free memory. While we could do this with good ol'
 ``malloc()``, we can instead make use of Godot's memory management functions.
 We'll also need a way to create a Godot object and set it with our custom
@@ -1788,8 +1788,8 @@ property. This is what will give the pattern effect. The ``math.h`` header is
 needed for the ``sin()`` and ``cos()`` functions used here.
 
 Then it sets up an array of arguments to construct a ``Vector2``, followed by
-calling the constructor. It sets up another array of arguments and use it to
-call the ``set_position()`` method via the bind we acquired previously.
+calling the constructor. It sets up another array of arguments and uses it to
+call the ``set_position()`` method via the bind we obtained previously.
 
 Since nothing here allocates any memory, there's not a need to cleanup.
 

@@ -19,7 +19,7 @@ But you will probably need to use at least some of the available options to conf
 the build to match your specific needs, be it a custom engine fork, a lightweight build
 stripped of extra modules, or an executable targeting engine development.
 
-The articles below should help you navigate configuration options available, as well as
+The articles below should help you navigate the configuration options available, as well as
 prerequisites required to compile Godot exactly the way you need.
 
 .. rubric:: Basics of building Godot

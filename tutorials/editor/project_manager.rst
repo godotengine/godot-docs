@@ -8,7 +8,7 @@ you create, remove, import, or play game projects:
 
 .. image:: img/editor_ui_intro_project_manager_01.webp
 
-To change the editors language click on the **Settings** Button in the top right
+To change the editor's language click on the **Settings** Button in the top right
 corner:
 
 .. image:: img/editor_ui_intro_project_manager_02.webp
@@ -17,11 +17,11 @@ In Project Manager Settings, you can change the interface **language** from the 
 dropdown menu, which is the system default language by default.
 
 You can also change the **theme** and **color preset** of the editor,
-the **display scale** for different interface 
+the **display scale** for different interface
 element sizes, and the availability of online functionality using **network mode**.
 If network mode is online, Godot will also check and inform you about new versions of Godot.
 
-The **directory naming convention** can also be changed to replace spaces according to the chosen format 
+The **directory naming convention** can also be changed to replace spaces according to the chosen format
 when creating folders automatically.
 
 .. image:: img/editor_ui_intro_project_manager_10.webp
@@ -44,8 +44,8 @@ To create a new project:
 
 .. image:: img/editor_ui_intro_project_manager_04.webp
 
-.. note:: You can optionally choose a version control system. Currently, only 
-	`git <https://git-scm.com>`__ is supported and it needs the Godot Git Plugin to be installed, 
+.. note:: You can optionally choose a version control system. Currently, only
+	`git <https://git-scm.com>`__ is supported and it needs the Godot Git Plugin to be installed,
 	either manually or using the :ref:`Asset Library <doc_using_assetlib>`. To learn more about the Godot Git Plugin, see its `wiki <https://github.com/godotengine/godot-git-plugin/wiki>`__.
 
 Using the file browser
@@ -105,7 +105,7 @@ The first time you open this tab you'll notice that it's asking you to go online
 For privacy reasons the project manager, and Godot editor, can't access the internet
 by default. To enable accessing the internet click the **Go Online** button. This will
 also allow project manager to notify you about updates. If you wish to turn this off
-in the future go into project manager settings and change **Network Mode** to "Offline"
+in the future go into project manager settings and change **Network Mode** to "Offline".
 
 Now that Godot is connected to the internet you can download a demo or template, to
 do this:
@@ -122,7 +122,7 @@ Managing projects with tags
 
 For users with a lot of projects on one PC it can be a lot to keep track of. To aid
 in this Godot allows you to create project tags. To add a tag to a project click on the
-project in the project manager, then click on the **Manage Tags** button
+project in the project manager, then click on the **Manage Tags** button.
 
 .. image:: img/editor_ui_intro_project_manager_11.webp
 
@@ -133,12 +133,12 @@ This will open up the manage project tags window. To add a tag click the plus bu
 Type out the tag name, and click **OK**. Your project will now have a tag added to it.
 These tags can be used for any other project in your project manager.
 
-To show projects with a specific tag only, you can click on the tags or write ``tag:`` 
-and type the tag you would like to search for in the filter bar. To limit the results 
-using multiple tags, you can click on another tag or add ``tag:`` after 
+To show projects with a specific tag only, you can click on the tags or write ``tag:``
+and type the tag you would like to search for in the filter bar. To limit the results
+using multiple tags, you can click on another tag or add ``tag:`` after
 a space and type another tag in the filter bar.
 
-In addition, tags will stay with projects. So if you tag your project, send it to 
+In addition, tags will stay with projects. So if you tag your project, send it to
 another machine, and import it into the project manager you will see the tags
 you created.
 

@@ -10,7 +10,7 @@ or Spatial, depending on whether they are 2D or 3D.
 
 Particle shaders are unique because they are not used to draw the object itself;
 they are used to calculate particle properties, which are then used by a
-:ref:`CanvasItem<doc_canvas_item_shader>` or :ref:`Spatial<doc_spatial_shader>` 
+:ref:`CanvasItem<doc_canvas_item_shader>` or :ref:`Spatial<doc_spatial_shader>`
 shader. They contain two processor functions: ``start()`` and ``process()``.
 
 Unlike other shader types, particle shaders keep the data that was output the
@@ -52,7 +52,7 @@ value, and can optionally be written to. Samplers cannot be written to so they a
 Global built-ins
 ----------------
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 +-------------------+-------------------------------------------------------------------------------------------------+
 | Built-in          | Description                                                                                     |
@@ -80,6 +80,11 @@ Start and Process built-ins
 
 These properties can be accessed from both the ``start()`` and ``process()`` functions.
 
+When using the built-in :ref:`class_ParticleProcessMaterial`, ``USERDATA1`` is defined
+with the following value in the built-in:
+
+* **w**: Accumulated angle from angular velocity in radians, as applied by the angular velocity texture.
+
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | Function                           | Description                                                                                                                             |
 +====================================+=========================================================================================================================================+
@@ -93,7 +98,7 @@ These properties can be accessed from both the ``start()`` and ``process()`` fun
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in mat4 **EMISSION_TRANSFORM**     | Emitter transform (used for non-local systems).                                                                                         |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| in uint **RANDOM_SEED**            | Random seed used as base for random.                                                                                                    |
+| in uint **RANDOM_SEED**            | Random seed used as a base for randomness.                                                                                              |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | inout bool **ACTIVE**              | ``true`` when the particle is active, can be set to ``false``.                                                                          |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+

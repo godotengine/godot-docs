@@ -26,7 +26,7 @@ If you are starting from the scratch, please follow :ref:`instructions<doc_compi
 
 Provide scons with additional arguments to request a solution file generation:
 
-- Add `vsproj=yes dev_build=yes` to the scons command
+- Add ``vsproj=yes dev_build=yes`` to the scons command
 
 The ``vsproj`` parameter signals that you want Visual Studio solution generated.
 The ``dev_build`` parameter ensures the debug symbols are included, allowing to e.g. step through code using breakpoints.
@@ -63,8 +63,8 @@ if you want to debug the editor, you need to configure the debugger first.
 - Ensure the following values for the C++ Project Run Configuration:
 
     - Exe Path : ``$(LocalDebuggerCommand)``
-    - Program Arguments: ``--editor``
-    - Working Directory: ``<path to the Godot project>``
+    - Program Arguments: ``-e --path <path to the Godot project>``
+    - Working Directory: ``$(LocalDebuggerWorkingDirectory)``
     - Before Launch has a value of "Build Project"
 
 This will tell the executable to debug the specified project without opening the Project Manager.

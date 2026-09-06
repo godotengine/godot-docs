@@ -3,7 +3,7 @@
 A better XR start script
 ========================
 
-In :ref:`doc_setting_up_xr` we introduced a startup script that initialises our setup which we used as our script on our main node.
+In :ref:`doc_setting_up_xr` we introduced a startup script that initializes our setup which we used as our script on our main node.
 This script performs the minimum steps required for any given interface.
 
 When using OpenXR there are a number of improvements we should do here.
@@ -59,7 +59,7 @@ Variables for our script
 
 We introduce a few new variables to our script as well:
 
-- ``maximum_refresh_rate`` will control the headsets refresh rate if this is supported by the headset.
+- ``maximum_refresh_rate`` will control the headset's refresh rate if this is supported by the headset.
 - ``xr_interface`` holds a reference to our XR interface, this already existed but we now type it to get full access to our :ref:`XRInterface <class_xrinterface>` API.
 - ``xr_is_focussed`` will be set to true whenever our game has focus.
 
@@ -91,7 +91,7 @@ We introduce a few new variables to our script as well:
 Our updated ready function
 --------------------------
 
-We add a few things to the ready function.
+We add a few things to the ``_ready`` function.
 
 If we're using the mobile or forward+ renderer we set the viewport's ``vrs_mode`` to ``VRS_XR``.
 On platforms that support this, this will enable foveated rendering.
@@ -103,7 +103,7 @@ See :ref:`OpenXR Settings <doc_openxr_settings>` for further details.
 We hook up a number of signals that will be emitted by the :ref:`XRInterface <class_xrinterface>`.
 We'll provide more detail about these signals as we implement them.
 
-We also quit our application if we couldn't successfully initialise OpenXR.
+We also quit our application if we couldn't successfully initialize OpenXR.
 Now this can be a choice.
 If you are making a mixed mode game you setup the VR mode of your game on success,
 and setup the non-VR mode of your game on failure.
@@ -371,8 +371,8 @@ If you haven't, you can connect a method to the signal that performs additional 
 
     ...
 
-On focussed state
------------------
+On focused state
+----------------
 
 This signal is emitted by OpenXR when our game gets focus.
 This is done at the completion of our startup,

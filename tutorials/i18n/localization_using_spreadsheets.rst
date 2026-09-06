@@ -97,7 +97,7 @@ localization.
 .. note::
 
     Automatic Control translation is not supported when using plural forms. You must
-    translate the string manually using :ref:`tr_n()<class_Object_method_tr_n>`.
+    translate the string manually using :ref:`tr_n() <class_Object_method_tr_n>`.
 
 Specifying translation contexts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
