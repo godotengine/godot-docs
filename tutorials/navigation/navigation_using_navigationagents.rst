@@ -88,22 +88,15 @@ There are some common user problems and important caveats to consider when writi
 NavigationAgent Avoidance
 -------------------------
 
-[Really, this should be its own separate doc, with information about RVO and how that is separate from the standard pathfinding system.]
-
 This section explains how to use the navigation avoidance specific to NavigationAgents.
 
-In order for NavigationAgents to either avoid or be avoided, the ``avoidance_enabled`` property must be set to ``true``. This will allow the NavigationAgent to avoid other agents on the same map and to be avoided by them in turn.
+In order for NavigationAgents to avoid collisions, the ``avoidance_enabled`` property must be set to ``true``. This will allow the NavigationAgent to avoid other agents on the same map and to be avoided by them in turn.
 
 .. image:: img/agent_avoidance_enabled.png
 
 Set the ``velocity`` of the NavigationAgent node as part of ``_physics_process()`` to inform the agent of the intended current velocity of the agent's parent node.
-[is this accurate? what is this used for?]
 
-Once per physics frame (if avoidance is enabled on an agent), the agent's ``velocity_computed`` signal will trigger, outputting the calculated safe speed and direction 
-in which the agent's parent node should move in order to avoid collisions with other avoidance-enabled agents or avoidance obstacles. This signal should be connected to
-a method that
-
-The ``velocity_computed`` signal of the NavigationAgent node must be connected to receive the safe velocity calculation result.
+Once per physics frame (if avoidance is enabled on an agent), the agent's ``velocity_computed`` signal will be triggered, outputting the calculated safe speed and direction in which the agent's parent node should move in order to avoid collisions with other avoidance-enabled agents or avoidance obstacles. This signal should be connected to a method that sets the parent's velocity to this output value.
 
 .. image:: img/agent_safevelocity_signal.png
 
@@ -114,7 +107,7 @@ The ``velocity_computed`` signal of the NavigationAgent node must be connected t
 .. note::
 
     The NavigationAgent **must** also be supplied with a ``target_position`` attribute,
-    even if you are only using the agent for avoidance. Otherwise, the ``safe_velocity``
+    even if you are only using the agent for collision avoidance. Otherwise, the ``safe_velocity``
     received from the ``velocity_computed`` signal will always be the zero vector.
 
 The following NavigationAgent properties are relevant for avoidance:

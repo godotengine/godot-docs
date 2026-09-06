@@ -23,14 +23,13 @@ The NavigationServer does not update its internal model immediately after change
 the end of the **physics frame** to synchronize all the changes together.
 
 This is done because some updates (like a recalculation of the entire navigation map) are computationally expensive and require updated data from all other objects.
-Also the NavigationServer uses a **threadpool** by default for some functionality like avoidance calculation between agents. [what does this mean?]
+Also the NavigationServer uses a **threadpool** by default for some functionality like avoidance calculation between agents.
 
 The NavigationServer is **thread-safe** as it places all API calls that want to make changes in a queue to be executed in the synchronization phase.
 Synchronization for the NavigationServer happens in the middle of the physics frame after scene input from scripts and nodes are all complete.
 
 Waiting for synchronization is required to apply changes to all maps, regions and agents.
-All setters and delete functions require synchronization.
-[again, what does this mean?]
+All setters and delete functions require synchronization before their changes will be reflected in the NavigationServer.
 
 Waiting for synchronization is *not* required for most ``get()`` functions that only request data from the NavigationServer without making changes, 
 but the data recieved may not account for changes made in the current frame.
@@ -38,7 +37,6 @@ For example, if an avoidance agent changed the navigation map in the current fra
 
 The exception to this are nodes that store their values internally before sending the update to the NavigationServer.
 When a getter on a node is used for a value that was updated in the same frame it will return the already updated value stored on the node.
-[Give an actual concrete example here.]
 
 .. note::
     The important takeaway is that most NavigationServer changes take effect after the next physics frame and not immediately.
@@ -174,12 +172,10 @@ The setup function first makes all the navigation changes, then awaits the next 
 
 Server Avoidance Callbacks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-[There's a question that this section is the answer to, which should be stated explicitly]
-
 If RVO avoidance agents are registered for avoidance callbacks, the NavigationServer dispatches
 their ``velocity_computed`` signals just before the PhysicsServer synchronization.
 
-To learn more about NavigationAgents see :ref:`doc_navigation_using_navigationagents`.
+To learn more about NavigationAgents, see :ref:`doc_navigation_using_navigationagents`.
 
 The simplified order of execution for NavigationAgents that use avoidance:
 
