@@ -8,7 +8,7 @@ Superluminal
              how to set up Godot to work with sampling profilers like Superluminal.
 
 Superluminal is a commercial profiler with many features and a special focus on game development. It has support for
-profiling on Windows, Linux, Xbox and Playstation.
+profiling on Windows, Linux, Xbox, and Playstation.
 
 While it does not have a free version, it has more advanced features that aren't available in the open source profilers.
 
