@@ -37,7 +37,7 @@ not gain anything from it and should leave it disabled.
     is enabled.
 
     Textures used only in 2D or in the UI produce no streaming feedback and
-    would remain at their lowest allowed quality — keep using the regular
+    would remain at their lowest allowed quality. Keep using the regular
     Texture2D importer for those.
 
 How it works
@@ -50,8 +50,8 @@ distance heuristics or manually authored LOD levels:
    material's textures would need. Each material using streamed textures
    writes the highest quality level it needs into a feedback buffer.
 2. The feedback buffer is read back periodically and processed. The requested
-   level is clamped to the allowed LOD range, and — if a memory budget is set
-   — adjusted so all streamed textures fit inside that budget.
+   level is clamped to the allowed LOD range. If a memory budget is set,
+   the level is adjusted so all streamed textures fit inside that budget.
 3. Textures that were not requested for a while slowly decay towards lower
    quality, so memory is reclaimed from things that went off-screen.
 4. Whenever a texture's target level differs from the level currently in VRAM,
@@ -67,8 +67,8 @@ LOD levels
 ----------
 
 Everything in the streaming system is expressed in mipmap levels, where **0 is
-the full-resolution image** and each level above that halves the resolution:
-
+the full-resolution image** and each level above that halves the resolution.
+For example, for a 4096x4096 texture:
 +-----------+---------------------------+
 | LOD level | Size of a 4096² texture   |
 +===========+===========================+
@@ -110,8 +110,10 @@ texture to that level: quality stays constant and no streaming transitions
 occur, while the sharper mipmap levels are never loaded. This can be used
 to implement a "texture quality" setting.
 
+Generally, the **Min LOD** and **Max LOD** are configured globally for all textures.
+However, these can also be overridden on a per-texture basis.
 Some textures may require a **Max LOD** setting that prevents it from losing
-important detail like alpha channels used for alpha scissors or other fine
+important detail like alpha channels used for alpha scissors, or other fine
 details like an atlas.
 
 Enabling streaming
@@ -169,7 +171,7 @@ and
 :ref:`StreamedTexture2D.max_lod_override <class_StreamedTexture2D_property_max_lod_override>`,
 which can be changed from a script.
 
-``.dds`` files cannot currently be imported as streamed textures.
+DDS and KTX files currently cannot be imported as streamed textures.
 
 .. note::
 
@@ -184,21 +186,21 @@ All settings live under **Rendering > Textures > Streaming** and are visible
 with advanced settings enabled:
 
 - :ref:`Enabled <class_ProjectSettings_property_rendering/textures/streaming/enabled>`
-  (default ``false``) — feature enable setting. Requires a restart.
+  (default ``false``): Global feature toggle. Requires a restart when changed.
 - :ref:`Min Lod <class_ProjectSettings_property_rendering/textures/streaming/min_lod>`
-  (default ``0``) — best quality any streamed texture may reach.
+  (default ``0``): The best quality any streamed texture may reach.
 - :ref:`Max Lod <class_ProjectSettings_property_rendering/textures/streaming/max_lod>`
-  (default ``3``) — worst quality a streamed texture may fall back to, and the
+  (default ``3``): The worst quality a streamed texture may fall back to, and the
   level textures are first loaded at.
 - :ref:`Memory Budget Enabled <class_ProjectSettings_property_rendering/textures/streaming/memory_budget_enabled>`
-  (default ``false``) — enables the VRAM budget below.
+  (default ``false``): Enables the video RAM budget setting below.
 - :ref:`Memory Budget Mb <class_ProjectSettings_property_rendering/textures/streaming/memory_budget_mb>`
-  (default ``512``) — VRAM budget for all streamed textures together, in MB.
+  (default ``512``): The video RAM budget for all streamed textures together, in MB.
 - :ref:`Max Ops Per Second <class_ProjectSettings_property_rendering/textures/streaming/max_ops_per_second>`
-  (default ``200``) — throttle on mipmap operations. Higher values adapt faster
+  (default ``200``): Throttle on mipmap operations. Higher values adapt faster
   but do more I/O and texture work per frame.
 - :ref:`Inactivity Decay Rate Ms <class_ProjectSettings_property_rendering/textures/streaming/inactivity_decay_rate_ms>`
-  (default ``5000``) — time per LOD level of quality decay for textures that
+  (default ``5000``): Time per LOD level of quality decay for textures that
   stop being requested.
 
 The memory budget
@@ -256,7 +258,7 @@ your game:
     TextureStreaming.memory_budget_mb_override = 256
 
 These overrides take precedence over the project settings. Setting an LOD
-override above ``13``, or the budget override to ``4294967295``, clears the
+override above ``13``, or the budget override to ``2**32 - 1``, clears the
 override and returns to the project setting.
 
 Hiding streaming during loading screens
@@ -264,7 +266,7 @@ Hiding streaming during loading screens
 
 Streaming reacts to what has already been rendered, so right after a scene load
 or a teleport within a scene, textures are still at low resolution and increase
-in quality over the next frames. To minimize visual disruptions you can call
+in quality over the next frames. To minimize visual disruptions, you can call
 :ref:`flush_texture_streaming() <class_TextureStreaming_method_flush_texture_streaming>`
 to complete all pending streaming work immediately, ignoring any throttling. It then
 emits :ref:`flush_completed <class_TextureStreaming_signal_flush_completed>` when
@@ -335,12 +337,13 @@ Limitations
   material with very different UV scales all follow the same decision.
 - A texture always reports its full dimensions
   (:ref:`Texture2D.get_width() <class_Texture2D_method_get_width>` and
-  friends) even while a lower mipmap is resident, and
+  :ref:`Texture2D.get_height() <class_Texture2D_method_get_height>`)
+  even while a lower mipmap is resident, and
   :ref:`Texture2D.get_image() <class_Texture2D_method_get_image>` always reads
   the full-resolution image from disk.
 - Streaming reads from the imported ``.stex`` files during gameplay, so it trades
-  VRAM for disk I/O. On storage with high latency, expect textures to take
-  longer to sharpen.
+  VRAM for disk I/O. On storage with high latency (such as mechanical hard drives),
+  expect textures to take longer to sharpen.
 
 .. seealso::
 
