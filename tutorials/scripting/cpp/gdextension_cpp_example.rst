@@ -93,7 +93,7 @@ following commands:
 This will initialize the repository in your project folder.
 
 You must now build the godot-cpp module to generate the necessary include headers
-you will be using for the plugin. Without it being built, for example, the ``sprite2d.hpp``
+you will be using for the plugin. Without it being built, the ``sprite2d.hpp``
 file will not be available.
 
 .. code-block:: none
