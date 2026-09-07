@@ -45,7 +45,7 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
 
     Since Godot version 4.6 it is no longer necessary to match the version of godot-cpp with the Godot
-    version you are using. Instead you will specify during the scons build with a parameter ``api_version=4.x``.
+    version you are using. Instead you will specify during the scons build with an argument ``api_version=4.x``.
 
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
@@ -101,7 +101,7 @@ file will not be available.
     cd godot-cpp
     scons platform=<platform> api_version=4.X # replace <platform> with the target platform e.g. linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for e.g. 4.7
 
-Now that godot-cpp is built, you will most likely also want to create a ``compile_commands.json``
+Now that godot-cpp is built, you may also need to create a ``compile_commands.json``
 in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
 Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``
 You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
@@ -144,13 +144,7 @@ Your folder structure should now look like this:
 
 .. warning::
 
-    The godot-cpp module must be compiled and built in order to generate the necessary
-    moving on to creating the ``gdexample.h`` file targeting an earlier version of Godot should work in later
-    minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
-    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
-
-    There is one exception to this: extensions targeting Godot 4.0 will **not** work with
-    Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
+    The godot-cpp module must be compiled and built before proceeding.
 
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
