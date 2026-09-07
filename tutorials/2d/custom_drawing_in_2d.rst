@@ -23,6 +23,11 @@ Custom drawing in a 2D node is *really* useful. Here are some use cases:
    but when you have unusual needs, you will likely need a custom
    control.
 
+.. seealso::
+
+    You can find an example of these methods in action in the
+    `Custom Drawing in 2D demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/custom_drawing>`__.
+
 Drawing
 -------
 
