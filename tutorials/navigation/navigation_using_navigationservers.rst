@@ -1,7 +1,7 @@
 .. _doc_navigation_using_navigationservers:
 
 Using NavigationServers
-======================
+=======================
 
 2D and 3D versions of the NavigationServer are available as
 :ref:`NavigationServer2D<class_NavigationServer2D>` and
@@ -31,8 +31,8 @@ Synchronization for the NavigationServer happens in the middle of the physics fr
 Waiting for synchronization is required to apply changes to all maps, regions and agents.
 All setters and delete functions require synchronization before their changes will be reflected in the NavigationServer.
 
-Waiting for synchronization is *not* required for most ``get()`` functions that only request data from the NavigationServer without making changes, 
-but the data recieved may not account for changes made in the current frame.
+Waiting for synchronization is *not* required for most ``get()`` functions that only request data from the NavigationServer without making changes,
+but the data received may not account for changes made in the current frame.
 For example, if an avoidance agent changed the navigation map in the current frame, calling the ``agent_get_map()`` function before the synchronization phase has finished will still return the old map.
 
 The exception to this are nodes that store their values internally before sending the update to the NavigationServer.
@@ -58,7 +58,7 @@ Waiting for initial synchronization
 At the start of the game, after loading a new scene, or after procedural navigation changes, any path query to a NavigationServer will return empty or a wrong value,
 as the navigation map is not updated until after the first physics frame.
 
-All nodes from the scene tree need to first upload their navigation related data to the NavigationServer, 
+All nodes from the scene tree need to first upload their navigation-related data to the NavigationServer,
 as each added or changed map, region or agent need to be registered with the NavigationServer.
 Finally, the NavigationServer requires a **physics frame** for synchronization to update the maps, regions and agents.
 
