@@ -461,7 +461,7 @@ with :ref:`doc_3d_text` and TextMesh.
     font generation tools remains scarce.
 
 Depending on your use cases, this may lead to better results compared to using
-the ``img`` tag in :ref:`RichTextLabel <doc_bbcode_in_richtextlabel>`. Unlike
+the :bbcode:`[img]` tag in :ref:`RichTextLabel <doc_bbcode_in_richtextlabel>`. Unlike
 bitmap images (including SVGs which are rasterized on import by Godot),
 true vector data can be resized to any size without losing quality.
 

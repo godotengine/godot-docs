@@ -45,7 +45,7 @@ after selecting a RichTextLabel node.
 
 .. image:: img/bbcode_in_richtextlabel_inspector.webp
 
-For example, :bbcode:`BBCode [color=green]test[/color]` would render the word "test" with
+For example, :bbcode:`[color=green]test[/color]` would render the word "test" with
 a green color.
 
 .. image:: img/bbcode_in_richtextlabel_basic_example.webp

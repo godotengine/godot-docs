@@ -69,7 +69,7 @@ For example:
 
     When the description spans multiple lines, the preceding and trailing white
     spaces will be stripped and joined with a single space. To preserve the line
-    break use ``[br]``. See also `BBCode and class reference`_ below.
+    break use :bbcode:`[br]`. See also `BBCode and class reference`_ below.
 
 Documenting script members
 --------------------------
@@ -245,97 +245,97 @@ For links to the same class, the class name is optional and can be omitted.
 
 Here's the list of available tags:
 
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| Tag and Description            | Example                                      | Result                                                       |
-+================================+==============================================+==============================================================+
-| | ``[Class]``                  | ``Move the [Sprite2D].``                     | Move the :ref:`class_Sprite2D`.                              |
-| | Link to class                |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[annotation Class.name]``  | ``See [annotation @GDScript.@rpc].``         | See :ref:`@GDScript.@rpc <class_@GDScript_annotation_@rpc>`. |
-| | Link to annotation           |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[constant Class.name]``    | ``See [constant Color.RED].``                | See :ref:`Color.RED <class_Color_constant_RED>`.             |
-| | Link to constant             |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[enum Class.name]``        | ``See [enum Mesh.ArrayType].``               | See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>`.             |
-| | Link to enum                 |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[member Class.name]``      | ``Get [member Node2D.scale].``               | Get :ref:`Node2D.scale <class_Node2D_property_scale>`.       |
-| | Link to member (property)    |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[method Class.name]``      | ``Call [method Node3D.hide].``               | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
-| | Link to method               |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[constructor Class.name]`` | ``Use [constructor Color.Color].``           | Use :ref:`Color.Color <class_Color_constructor_Color>`.      |
-| | Link to built-in constructor |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[operator Class.name]``    | ``Use [operator Color.operator *].``         | Use :ref:`Color.operator * <class_Color_operator_mul_int>`.  |
-| | Link to built-in operator    |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[signal Class.name]``      | ``Emit [signal Node.renamed].``              | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.        |
-| | Link to signal               |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[theme_item Class.name]``  | ``See [theme_item Label.font].``             | See :ref:`Label.font <class_Label_theme_font_font>`.         |
-| | Link to theme item           |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[param name]``             | ``Takes [param size] for the size.``         | Takes ``size`` for the size.                                 |
-| | Parameter name (as code)     |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[br]``                     | | ``Line 1.[br]``                            | | Line 1.                                                    |
-| | Line break                   | | ``Line 2.``                                | | Line 2.                                                    |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[lb]`` ``[rb]``            | ``[lb]b[rb]text[lb]/b[rb]``                  | [b]text[/b]                                                  |
-| | ``[`` and ``]`` respectively |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[b]`` ``[/b]``             | ``Do [b]not[/b] call this method.``          | Do **not** call this method.                                 |
-| | Bold                         |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[i]`` ``[/i]``             | ``Returns the [i]global[/i] position.``      | Returns the *global* position.                               |
-| | Italic                       |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[u]`` ``[/u]``             | ``[u]Always[/u] use this method.``           | .. raw:: html                                                |
-| | Underline                    |                                              |                                                              |
-|                                |                                              |     <u>Always</u> use this method.                           |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[s]`` ``[/s]``             | ``[s]Outdated information.[/s]``             | .. raw:: html                                                |
-| | Strikethrough                |                                              |                                                              |
-|                                |                                              |     <s>Outdated information.</s>                             |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[color]`` ``[/color]``     | ``[color=red]Error![/color]``                | .. raw:: html                                                |
-| | Color                        |                                              |                                                              |
-|                                |                                              |     <span style="color:red;">Error!</span>                   |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[font]`` ``[/font]``       | ``[font=res://mono.ttf]LICENSE[/font]``      | .. raw:: html                                                |
-| | Font                         |                                              |                                                              |
-|                                |                                              |     <span style="font-family:monospace;">LICENSE</span>      |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[img]`` ``[/img]``         | ``[img width=32]res://icon.svg[/img]``       | .. image:: img/icon.svg                                      |
-| | Image                        |                                              |    :width: 32 px                                             |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[url]`` ``[/url]``         | | ``[url]https://example.com[/url]``         | | https://example.com                                        |
-| | Hyperlink                    | | ``[url=https://example.com]Website[/url]`` | | `Website <https://example.com>`_                           |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[center]`` ``[/center]``   | ``[center]2 + 2 = 4[/center]``               | .. raw:: html                                                |
-| | Horizontal centering         |                                              |                                                              |
-|                                |                                              |     <center>2 + 2 = 4</center>                               |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[kbd]`` ``[/kbd]``         | ``Press [kbd]Ctrl + C[/kbd].``               | Press :kbd:`Ctrl + C`.                                       |
-| | Keyboard/mouse shortcut      |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[code]`` ``[/code]``       | ``Returns [code]true[/code].``               | Returns ``true``.                                            |
-| | Inline code fragment         |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
-| | ``[codeblock]``              | *See below.*                                 | *See below.*                                                 |
-| | ``[/codeblock]``             |                                              |                                                              |
-| | Multiline code block         |                                              |                                                              |
-+--------------------------------+----------------------------------------------+--------------------------------------------------------------+
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| Tag and Description                        | Example                                            | Result                                                       |
++============================================+====================================================+==============================================================+
+| | :bbcode:`[Class]`                        | :bbcode:`Move the [Sprite2D].`                     | Move the :ref:`class_Sprite2D`.                              |
+| | Link to class                            |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[annotation Class.name]`        | :bbcode:`See [annotation @GDScript.@rpc].`         | See :ref:`@GDScript.@rpc <class_@GDScript_annotation_@rpc>`. |
+| | Link to annotation                       |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[constant Class.name]`          | :bbcode:`See [constant Color.RED].`                | See :ref:`Color.RED <class_Color_constant_RED>`.             |
+| | Link to constant                         |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[enum Class.name]`              | :bbcode:`See [enum Mesh.ArrayType].`               | See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>`.             |
+| | Link to enum                             |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[member Class.name]`            | :bbcode:`Get [member Node2D.scale].`               | Get :ref:`Node2D.scale <class_Node2D_property_scale>`.       |
+| | Link to member (property)                |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[method Class.name]`            | :bbcode:`Call [method Node3D.hide].`               | Call :ref:`Node3D.hide() <class_Node3D_method_hide>`.        |
+| | Link to method                           |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[constructor Class.name]`       | :bbcode:`Use [constructor Color.Color].`           | Use :ref:`Color.Color <class_Color_constructor_Color>`.      |
+| | Link to built-in constructor             |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[operator Class.name]`          | :bbcode:`Use [operator Color.operator *].`         | Use :ref:`Color.operator * <class_Color_operator_mul_int>`.  |
+| | Link to built-in operator                |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[signal Class.name]`            | :bbcode:`Emit [signal Node.renamed].`              | Emit :ref:`Node.renamed <class_Node_signal_renamed>`.        |
+| | Link to signal                           |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[theme_item Class.name]`        | :bbcode:`See [theme_item Label.font].`             | See :ref:`Label.font <class_Label_theme_font_font>`.         |
+| | Link to theme item                       |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[param name]`                   | :bbcode:`Takes [param size] for the size.`         | Takes ``size`` for the size.                                 |
+| | Parameter name (as code)                 |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[br]`                           | | :bbcode:`Line 1.[br]`                            | | Line 1.                                                    |
+| | Line break                               | | :bbcode:`Line 2.`                                | | Line 2.                                                    |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[lb]` :bbcode:`[rb]`            | :bbcode:`[lb]b[rb]text[lb]/b[rb]`                  | [b]text[/b]                                                  |
+| | ``[`` and ``]`` respectively             |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[b]` :bbcode:`[/b]`             | :bbcode:`Do [b]not[/b] call this method.`          | Do **not** call this method.                                 |
+| | Bold                                     |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[i]` :bbcode:`[/i]`             | :bbcode:`Returns the [i]global[/i] position.`      | Returns the *global* position.                               |
+| | Italic                                   |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[u]` :bbcode:`[/u]`             | :bbcode:`[u]Always[/u] use this method.`           | .. raw:: html                                                |
+| | Underline                                |                                                    |                                                              |
+|                                            |                                                    |     <u>Always</u> use this method.                           |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[s]` :bbcode:`[/s]`             | :bbcode:`[s]Outdated information.[/s]`             | .. raw:: html                                                |
+| | Strikethrough                            |                                                    |                                                              |
+|                                            |                                                    |     <s>Outdated information.</s>                             |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[color]` :bbcode:`[/color]`     | :bbcode:`[color=red]Error![/color]`                | .. raw:: html                                                |
+| | Color                                    |                                                    |                                                              |
+|                                            |                                                    |     <span style="color:red;">Error!</span>                   |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[font]` :bbcode:`[/font]`       | :bbcode:`[font=res://mono.ttf]LICENSE[/font]`      | .. raw:: html                                                |
+| | Font                                     |                                                    |                                                              |
+|                                            |                                                    |     <span style="font-family:monospace;">LICENSE</span>      |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[img]` :bbcode:`[/img]`         | :bbcode:`[img width=32]res://icon.svg[/img]`       | .. image:: img/icon.svg                                      |
+| | Image                                    |                                                    |    :width: 32 px                                             |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[url]` :bbcode:`[/url]`         | | :bbcode:`[url]https://example.com[/url]`         | | https://example.com                                        |
+| | Hyperlink                                | | :bbcode:`[url=https://example.com]Website[/url]` | | `Website <https://example.com>`_                           |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[center]` :bbcode:`[/center]`   | :bbcode:`[center]2 + 2 = 4[/center]`               | .. raw:: html                                                |
+| | Horizontal centering                     |                                                    |                                                              |
+|                                            |                                                    |     <center>2 + 2 = 4</center>                               |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[kbd]` :bbcode:`[/kbd]`         | :bbcode:`Press [kbd]Ctrl + C[/kbd].`               | Press :kbd:`Ctrl + C`.                                       |
+| | Keyboard/mouse shortcut                  |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[code]` :bbcode:`[/code]`       | :bbcode:`Returns [code]true[/code].`               | Returns ``true``.                                            |
+| | Inline code fragment                     |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
+| | :bbcode:`[codeblock]`                    | *See below.*                                       | *See below.*                                                 |
+| | :bbcode:`[/codeblock]`                   |                                                    |                                                              |
+| | Multiline code block                     |                                                    |                                                              |
++--------------------------------------------+----------------------------------------------------+--------------------------------------------------------------+
 
 .. note::
 
     1. Currently only :ref:`class_@GDScript` has annotations.
-    2. ``[kbd]`` disables BBCode until the parser encounters ``[/kbd]``.
-    3. ``[code]`` disables BBCode until the parser encounters ``[/code]``.
-    4. ``[codeblock]`` disables BBCode until the parser encounters ``[/codeblock]``.
+    2. :bbcode:`[kbd]` disables BBCode until the parser encounters :bbcode:`[/kbd]`.
+    3. :bbcode:`[code]` disables BBCode until the parser encounters :bbcode:`[/code]`.
+    4. :bbcode:`[codeblock]` disables BBCode until the parser encounters :bbcode:`[/codeblock]`.
 
 .. warning::
 
@@ -357,9 +357,9 @@ Here's the list of available tags:
     func do_something():
         pass
 
-By default, ``[codeblock]`` highlights GDScript syntax. You can change it using
+By default, :bbcode:`[codeblock]` highlights GDScript syntax. You can change it using
 the ``lang`` attribute. Currently supported options are:
 
-- ``[codeblock lang=text]`` disables syntax highlighting;
-- ``[codeblock lang=gdscript]`` highlights GDScript syntax;
-- ``[codeblock lang=csharp]`` highlights C# syntax (only in .NET version).
+- :bbcode:`[codeblock lang=text]` disables syntax highlighting;
+- :bbcode:`[codeblock lang=gdscript]` highlights GDScript syntax;
+- :bbcode:`[codeblock lang=csharp]` highlights C# syntax (only in .NET version).
