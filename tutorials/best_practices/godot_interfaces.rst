@@ -15,7 +15,7 @@ The rest of this tutorial outlines the various ways of doing all this.
 Obtaining object references
 ---------------------------
 
-For all :ref:`Object <class_Object>`\s, the most basic way of referencing them
+For all :ref:`Objects <class_Object>`, the most basic way of referencing them
 is to get a reference to an existing object from another obtained instance.
 
 .. tabs::
