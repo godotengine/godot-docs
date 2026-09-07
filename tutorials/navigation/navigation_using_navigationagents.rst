@@ -4,7 +4,7 @@ Using NavigationAgents
 ======================
 
 NavigationAgents are nodes that help a Node2D/3D parent find and follow paths and avoid other agents.
-They provide a simpler way to interact with the NavigationServer API than alternatives like 
+They provide a simpler way to interact with the NavigationServer API than alternatives like
 :ref:`doc_navigation_using_navigationpathqueryobjects`.
 
 2D and 3D version of NavigationAgents are available as
@@ -136,7 +136,7 @@ NavigationObstacles can be used to add some environment constrains to the avoida
 
 .. note::
 
-    Reciprocal Velocity Obstacles (RVO) avoidance relies on some assumptions about natural agent behavior that may mean that simplified test scenarios will fail. 
+    Reciprocal Velocity Obstacles (RVO) avoidance relies on some assumptions about natural agent behavior that may mean that simplified test scenarios will fail.
     For example, agents moving directly towards each other with exactly opposite velocities will not be able to "deflect" to one side or another.
 
 Using the NavigationAgent ``avoidance_enabled`` property is the preferred option
