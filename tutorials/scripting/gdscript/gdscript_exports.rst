@@ -609,6 +609,34 @@ world!"``.
     func hello():
         print("Hello world!")
 
+.. note::
+
+    Avoid storing lambda callables in member variables of RefCounted-based
+    classes (e.g. resources), as this can lead to memory leaks. Use only method
+    callables and optionally :ref:`Callable.bind() <class_Callable_method_bind>`
+    or :ref:`Callable.unbind() <class_Callable_method_bind>`.
+
+    **Bad:**
+
+    ::
+
+        @tool
+        extends Resource
+
+        @export_tool_button("My Button", "Callable") var mybutton = func():
+            self.some_var = some_func()
+
+    **Good:**
+
+    ::
+
+        @tool
+        extends Resource
+
+        @export_tool_button("My Button", "Callable") var my_button:
+            get: return func():
+                self.some_var = some_func()
+
 Setting exported variables from a tool script
 ---------------------------------------------
 
