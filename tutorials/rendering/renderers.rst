@@ -364,7 +364,9 @@ Other features
 | Variable rate           | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 | shading                 |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
-| Decals                  | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
+| Decals                  | ✔️ Supported. 8 per      | ✔️ Supported. 8          | ✔️ Supported. No limit   |
+|                         | surface, 64 per view     | per surface.             | per surface (clustered). |
+|                         | (adjustable).            |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
 | Particle trails         | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 +-------------------------+--------------------------+--------------------------+--------------------------+
