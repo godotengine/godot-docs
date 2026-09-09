@@ -44,7 +44,7 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 
 .. note::
 
-    Since Godot version 4.6 it is no longer necessary to match the version of godot-cpp with the Godot
+    Since Godot version 4.6 it is no longer necessary to match the godot-cpp version with the Godot
     version you are using. Instead you will specify it in the scons build with the argument ``api_version=4.x``.
 
 .. warning::
