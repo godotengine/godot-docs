@@ -363,3 +363,40 @@ the ``lang`` attribute. Currently supported options are:
 - ``[codeblock lang=text]`` disables syntax highlighting;
 - ``[codeblock lang=gdscript]`` highlights GDScript syntax;
 - ``[codeblock lang=csharp]`` highlights C# syntax (only in .NET version).
+
+Admonitions
+-----------
+
+Since Godot 4.8, documentation comments can contain *admonitions*. These are
+displayed as separate paragraphs with their own highlighting. You
+can use admonitions to bring particular attention to a section of your
+documentation, such as warnings, tips, or notes.
+
++----------------------------------+-----------------------------------------------+------------------------------------------+
+| Tag                              | Example                                       | Result                                   |
++==================================+===============================================+==========================================+
+| ``[note]`` ``[/note]``           | ``[note]This is a note.[/note]``              | .. image:: img/admonition_note.webp      |
++----------------------------------+-----------------------------------------------+------------------------------------------+
+| ``[warning]`` ``[/warning]``     | ``[warning]This is a warning.[/warning]``     | .. image:: img/admonition_warning.webp   |
++----------------------------------+-----------------------------------------------+------------------------------------------+
+| ``[important]`` ``[/important]`` | ``[important]This is important.[/important]`` | .. image:: img/admonition_important.webp |
++----------------------------------+-----------------------------------------------+------------------------------------------+
+| ``[tip]`` ``[/tip]``             | ``[tip]This is a tip.[/tip]``                 | .. image:: img/admonition_tip.webp       |
++----------------------------------+-----------------------------------------------+------------------------------------------+
+
+By convention, admonitions should always be placed at the end of the
+description. Multiple admonitions can be used in a single description (including
+admonitions of the same type):
+
+::
+
+    ## Description of the example property.
+    ## [note]This is a note.[/note]
+    ## [warning]This is a warning.[/warning]
+    ## [important]This is important.[/important]
+    ## [tip]This is a tip.[/tip]
+    @export var example = ""
+
+Admonitions should be used sparingly, as they can make the documentation harder
+to read if overused. They are best used to highlight important information that
+the user shouldn't miss.
