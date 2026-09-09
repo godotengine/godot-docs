@@ -99,16 +99,19 @@ file will not be available.
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> api_version=4.X # replace <platform> with the target platform e.g. linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for e.g. 4.7
+    scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for, e.g., 4.7
 
 Now that godot-cpp is built, you may also need to create a ``compile_commands.json``
 in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
-Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``
+Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
 You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
 into the gdextension_cpp_example project root folder.
 
-In the project's root folder run the following command to generate the ``compile_commands.json``
-``scons compiledb=yes api_version=4.7 compile_commands.json``.
+In the project's root folder run the following command to generate the ``compile_commands.json``:
+
+.. code-block:: none
+    
+    scons compiledb=yes api_version=4.7 compile_commands.json
 
 You should now be ready to move on to creating a simple plugin.
 
