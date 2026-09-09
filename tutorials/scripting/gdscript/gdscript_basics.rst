@@ -685,168 +685,225 @@ A line can be continued multiple times like this:
 
 .. _doc_gdscript_builtin_types:
 
-Built-in types
---------------
+``Variant`` types
+-----------------
 
-Built-in types are stack-allocated. They are passed as values. This means a copy
-is created on each assignment or when passing them as arguments to functions.
-The exceptions are ``Object``, ``Array``, ``Dictionary``, and packed arrays
-(such as ``PackedByteArray``), which are passed by reference so they are shared.
-All arrays, ``Dictionary``, and some objects (``Node``, ``Resource``)
-have a ``duplicate()`` method that allows you to make a copy.
+:ref:`Variant types <doc_variant_class>` are stack-allocated in memory. They are passed
+as values, which means that a copy is created on each assignment or when passed as arguments
+to functions. The exceptions are ``Object``, ``Array``, ``Dictionary``, and packed arrays
+(such as ``PackedByteArray``), which are passed by reference, so every call to it points to
+the same value until assigned a new value. All array types, ``Dictionary``, and some ``Object``
+types (e.g. ``Node``, ``Resource``) have a ``duplicate()`` method that allow you to make a copy.
 
-Basic built-in types
-~~~~~~~~~~~~~~~~~~~~
+Every ``Variant`` type that is not ``null`` or ``Object`` is a built-in type.
 
-A variable in GDScript can be assigned to several built-in types.
+Base ``Variant`` types
+~~~~~~~~~~~~~~~~~~~~~~
 
-null
-^^^^
+``null``
+^^^^^^^^
 
-``null`` is an empty data type that contains no information and can not
-be assigned any other value.
+``null`` is an empty data type that cannot be assigned any other value.
 
-Only types that inherit from Object can have a ``null`` value
-(Object is therefore called a "nullable" type).
-:ref:`Variant types <doc_variant_class>` must have a valid value at all times,
-and therefore cannot have a ``null`` value.
+Only ``Variant`` types that inherit from ``Object`` can have a ``null`` value. ``Object``
+is therefore a "nullable" type. Built-in types must always have a valid value.
 
-:ref:`bool <class_bool>`
-^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_bool`
+^^^^^^^^^^^^^^^^^
 
-Short for "boolean", it can only contain ``true`` or ``false``.
+Short for "boolean", it can only represent ``true`` or ``false``.
 
-:ref:`int <class_int>`
-^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_int`
+^^^^^^^^^^^^^^^^
 
-Short for "integer", it stores whole numbers (positive and negative).
-It is stored as a 64-bit value, equivalent to ``int64_t`` in C++.
+Short for "integer", it represents whole numbers (positive and negative). It is stored as a
+signed 64-bit value, equivalent to ``int64_t`` in C++.
 
-:ref:`float <class_float>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_float`
+^^^^^^^^^^^^^^^^^^
 
-Stores real numbers, including decimals, using floating-point values.
-It is stored as a 64-bit value, equivalent to ``double`` in C++.
-Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
-``PackedFloat32Array`` store 32-bit single-precision ``float`` values.
+Represents real numbers, including decimals, using floating-point values. It is stored as a
+64-bit value, equivalent to ``double`` in C++.
 
-:ref:`String <class_String>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_String`
+^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
 
-:ref:`StringName <class_StringName>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_StringName`
+^^^^^^^^^^^^^^^^^^^^^^^
 
-An immutable string that allows only one instance of each name. They are slower to
-create and may result in waiting for locks when multithreading. In exchange, they're
-very fast to compare, which makes them good candidates for dictionary keys.
+An immutable string used for node names. Only one instance of a unique ``StringName`` string
+exists in memory at a time. Once created, all future ``StringName`` instances of the string
+point to it. It is automatically be converted to and from ``String`` when assigning a variable
+or passing a parameter.
 
-:ref:`NodePath <class_NodePath>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+They are slower to create and may result in waiting for locks when multithreading.
+In exchange, they are faster to compare than ``String``, which make them good candidates
+for dictionary keys.
 
-A pre-parsed path to a node or a node property.  It can be
-easily assigned to, and from, a String. They are useful to interact with
-the tree to get a node, or affecting properties like with :ref:`Tweens <class_Tween>`.
+:ref:`class_NodePath`
+^^^^^^^^^^^^^^^^^^^^^
 
-Vector built-in types
-~~~~~~~~~~~~~~~~~~~~~
+A pre-parsed path to a node or a node property. It is automatically be converted to and from
+``String`` when assigning a variable or passing a parameter. It is used to retrieve information
+from the :ref:`class_SceneTree`, like by using :ref:`Node.get_node() <class_Node_method_get_node>`,
+or to modify properties, such as with :ref:`Tweens <class_Tween>`.
 
-:ref:`Vector2 <class_Vector2>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Math ``Variant`` types
+~~~~~~~~~~~~~~~~~~~~~~
 
-2D vector type containing ``x`` and ``y`` fields. Can also be
+In official builds, these types store 32-bit single-precision values. On double-precision builds,
+they store 64-bit, except for the integer types.
+
+:ref:`class_Vector2`
+^^^^^^^^^^^^^^^^^^^^
+
+2D vector type that contains two float components: ``x`` and ``y``. It can also be
 accessed as an array.
 
-:ref:`Vector2i <class_Vector2i>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Vector2i`
+^^^^^^^^^^^^^^^^^^^^^
 
-Same as a Vector2 but the components are integers. Useful for representing
-items in a 2D grid.
+Like ``Vector2``, but the components are integers. Used to index values in a 2D grid.
 
-:ref:`Rect2 <class_Rect2>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Vector3`
+^^^^^^^^^^^^^^^^^^^^
 
-2D Rectangle type containing two vectors fields: ``position`` and ``size``.
-Also contains an ``end`` field which is ``position + size``.
+3D vector type that contains three float components: ``x``, ``y``, and ``z``. It can also be
+accessed as an array.
 
-:ref:`Vector3 <class_Vector3>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Vector3i`
+^^^^^^^^^^^^^^^^^^^^^
 
-3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
-be accessed as an array.
+Like ``Vector3``, but the components are integers. Used to index values in a 3D grid.
 
-:ref:`Vector3i <class_Vector3i>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Vector4`
+^^^^^^^^^^^^^^^^^^^^
 
-Same as Vector3 but the components are integers. Can be use for indexing items
-in a 3D grid.
+4D vector type that contains four float components: ``x``, ``y``, ``z``, and ``w``. It can also be
+accessed as an array.
 
-:ref:`Transform2D <class_Transform2D>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Vector4i`
+^^^^^^^^^^^^^^^^^^^^^
 
-3×2 matrix used for 2D transforms.
+Like ``Vector4``, but the components are integers. Used to index values in a 4D grid.
 
-:ref:`Plane <class_Plane>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Rect2`
+^^^^^^^^^^^^^^^^^^
 
-3D Plane type in normalized form that contains a ``normal`` vector field
-and a ``d`` scalar distance.
+2D rectangle type that contains two ``Vector2`` components: ``position`` and ``size``.
+Also has an ``end`` property that represents ``position + size``.
 
-:ref:`Quaternion <class_Quaternion>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Rect2i`
+^^^^^^^^^^^^^^^^^^^
 
-Quaternion is a datatype used for representing a 3D rotation. It's
-useful for interpolating rotations.
+Like ``Rect2``, but the components are ``Vector2i``. Used to represent 2D regions.
 
-:ref:`AABB <class_AABB>`
+:ref:`class_Transform2D`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Axis-aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
-and ``size``. Also contains an ``end`` field which is
-``position + size``.
+2×3 matrix used to represent 2D transformations, including translation, rotation, and scale.
+It contains three ``Vector2`` components: ``x``, ``y``, and ``origin``.
 
-:ref:`Basis <class_Basis>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Plane`
+^^^^^^^^^^^^^^^^^^
 
-3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
-(``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
-vectors.
+Normalized 3D plane type that contains a ``Vector3`` component ``normal`` and a float
+component ``d`` that represents scalar distance.
 
-:ref:`Transform3D <class_Transform3D>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Quaternion`
+^^^^^^^^^^^^^^^^^^^^^^^
 
-3D Transform contains a Basis field ``basis`` and a Vector3 field
-``origin``.
+Like ``Vector4``, but specifically used to represent 3D rotation and have specialized methods
+for this purpose. It is used to interpolate rotations.
 
-Engine built-in types
-~~~~~~~~~~~~~~~~~~~~~
+:ref:`class_AABB`
+^^^^^^^^^^^^^^^^^
 
-:ref:`Color <class_Color>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+3D axis-aligned bounding box that contains two ``Vector3`` components: ``position``
+and ``size``. Also has an ``end`` property that represents ``position + size``.
 
-Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
-also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
+:ref:`class_Basis`
+^^^^^^^^^^^^^^^^^^
 
-:ref:`RID <class_RID>`
-^^^^^^^^^^^^^^^^^^^^^^
+3x3 matrix used to represent 3D rotation and scale. It contains three ``Vector3`` components:
+``x``, ``y``, and ``z``. It can also be accessed as an array.
 
-Resource ID (RID). Servers use generic RIDs to reference opaque data.
+:ref:`class_Transform3D`
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Object <class_Object>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3x4 matrix used to represent 3D transformations, including translation, rotation, and scale.
+It contains a ``Basis`` component ``basis`` and a ``Vector3`` component ``origin``.
 
-Base class for anything that is not a built-in type.
+:ref:`class_Projection`
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Container built-in types
+4x4 matrix used to represent 3D perspective division. It contains four ``Vector4`` components:
+``x``, ``y``, ``z``, and ``w``. It can also be accessed as an array.
+
+Engine ``Variant`` types
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`Array <class_Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Color`
+^^^^^^^^^^^^^^^^^^
 
-Generic sequence of arbitrary object types, including other arrays or dictionaries (see below).
-The array can resize dynamically. Arrays are indexed starting from index ``0``.
-Negative indices count from the end.
+``RGBA`` color data type that contains 32-bit float components: ``r``, ``g``, ``b``, and ``a``,
+ranging from ``0.0`` to ``1.0``. It can also be accessed as ``h``, ``s``, and ``v`` for
+hue, saturation, and value respectively.
+
+:ref:`class_RID`
+^^^^^^^^^^^^^^^^
+
+Resource ID (``RID``), internally stored as a signed 64-bit integer. Servers such as
+:ref:`class_PhysicsServer2D` use RIDs to reference unique resources in its underlying data.
+
+:ref:`class_Object`
+^^^^^^^^^^^^^^^^^^^
+
+Base data type for every native and user-defined class in the engine used by GDScript,
+as they inherit from ``Object``.
+
+:ref:`class_Signal`
+^^^^^^^^^^^^^^^^^^^
+
+An event that can be emitted to any object that listens for it. The ``Signal`` type
+is used for passing the emitter around.
+
+Signals are better used by getting them from objects, e.g. ``$Button.button_up``.
+
+:ref:`class_Callable`
+^^^^^^^^^^^^^^^^^^^^^
+
+Represents a method of an object, which is used for passing functions as values,
+like when connecting to signals.
+
+Getting a method as a member returns a callable. ``var x = $Sprite2D.rotate``
+will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
+``rotate`` as the method.
+
+You can call it using the :ref:`call <class_Callable_method_call>` method: ``x.call(PI)``.
+
+Collection ``Variant`` types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Arrays and dictionaries can store any ``Variant`` type, including other arrays or
+dictionaries, native or user-defined classes, or even enums.
+
+They can also be typed, which means that they only allow a certain ``Variant`` type.
+Before adding a value, the engine will check if it matches the specified type. If it does not,
+it will throw an error and pause execution, so the collection will never contain invalid values.
+Unlike with untyped collections, the values of typed arrays and dictionaries will be inferred
+automatically, but methods like :ref:`Array.front() <class_Array_method_front>` and
+:ref:`Dictionary.get() <class_Dictionary_method_get>` still have the ``Variant`` return type.
+Operations on untyped arrays and dictionaries are considered type-unsafe. Nesting types
+(like ``Array[Array[int]]`` or ``Dictionary[String, Dictionary[String, int]]``) is not supported.
+
+:ref:`class_Array`
+^^^^^^^^^^^^^^^^^^
+
+Ordered sequence of ``Variant`` types. Arrays can resize dynamically and are indexed
+starting from index ``0``. Negative indices count from the end.
 
 ::
 
@@ -861,13 +918,9 @@ Negative indices count from the end.
 Typed arrays
 ^^^^^^^^^^^^
 
-Godot also features support for typed arrays. On write operations, Godot checks that
-element values match the specified type, so the array cannot contain invalid values.
-The GDScript static analyzer takes typed arrays into account, however array methods like
-``front()`` and ``back()`` still have the ``Variant`` return type.
+Typed arrays are usually faster to iterate on and modify than untyped arrays.
 
-Typed arrays have the syntax ``Array[Type]``, where ``Type`` can be any ``Variant`` type,
-native or user class, or enum. Nested array types (like ``Array[Array[int]]``) are not supported.
+They have the syntax ``Array[Type]``, where ``Type`` is a ``Variant`` type.
 
 ::
 
@@ -877,7 +930,7 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     var d: Array[MyEnum]
     var e: Array[Variant]
 
-``Array`` and ``Array[Variant]`` are the same thing.
+``Array[Variant]`` is the same as ``Array`` and is untyped.
 
 .. note::
 
@@ -903,50 +956,47 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
         # the `assign()` method copies the contents of the array, not the reference.
         b.assign(a)
 
-    The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
-    and compatibility with old code. However, operations on untyped arrays are considered unsafe.
+    Only the untyped ``Array`` type can be assigned a typed array without using the ``assign()``
+    method. When initializing a typed array variable with an untyped array, it will automatically
+    be converted for user convenience.
 
 .. _doc_gdscript_packed_arrays:
 
 Packed arrays
 ^^^^^^^^^^^^^
 
-PackedArrays are generally faster to iterate on and modify compared to a typed
-Array of the same type (e.g. PackedInt64Array versus Array[int]) and consume
-less memory. In the worst case, they are expected to be as fast as an untyped
-Array. Conversely, non-Packed Arrays (typed or not) have extra convenience
-methods such as :ref:`Array.map <class_Array_method_map>` that PackedArrays
-lack. Consult the :ref:`class reference <class_PackedFloat32Array>` for details
-on the methods available. Typed Arrays are generally faster to iterate on and
-modify than untyped Arrays.
+Packed arrays are usually faster to iterate on and modify compared to a typed
+array of the same type (e.g. ``PackedInt64Array`` versus ``Array[int]``) and consume
+less memory. At worst, they are expected to be as fast as an untyped array.
+Non-packed arrays (regardless of type) have extra convenience methods such as
+:ref:`Array.map <class_Array_method_map>` that packed arrays lack. Consult the
+:ref:`class reference <class_PackedFloat32Array>` for details on the methods available.
 
-While all Arrays can cause memory fragmentation when they become large enough,
+While all arrays can cause memory fragmentation when they become large enough,
 if memory usage and performance (iteration and modification speed) is a concern
-and the type of data you're storing is compatible with one of the ``Packed``
-Array types, then using those may yield improvements. However, if you do not
-have such concerns (e.g. the size of your array does not reach the tens of
-thousands of elements) it is likely more helpful to use regular or typed
-Arrays, as they provide convenience methods that can make your code easier to
-write and maintain (and potentially faster if your data requires such
-operations a lot). If the data you will store is of a known type (including
-your own defined classes), prefer to use a typed Array as it may yield better
-performance in iteration and modification compared to an untyped Array.
+and the type of data you're storing is compatible with one of the packed array types,
+then using those may yield improvements. If you do not have such concerns (e.g. the size
+of your array does not reach the tens of thousands of elements), it is likely more helpful
+to use ``Array``, as they provide convenience methods that can make your code easier to write
+and maintain (and potentially faster if your data requires such operations a lot). If the data
+you will store is of a known type, prefer to use a typed array as it may yield better performance
+in iteration and modification compared to an untyped array.
 
-- :ref:`PackedByteArray <class_PackedByteArray>`: An array of bytes (integers from 0 to 255).
-- :ref:`PackedInt32Array <class_PackedInt32Array>`: An array of 32-bit integers.
-- :ref:`PackedInt64Array <class_PackedInt64Array>`: An array of 64-bit integers.
-- :ref:`PackedFloat32Array <class_PackedFloat32Array>`: An array of 32-bit floats.
-- :ref:`PackedFloat64Array <class_PackedFloat64Array>`: An array of 64-bit floats.
-- :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
-- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
-- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
-- :ref:`PackedVector4Array <class_PackedVector4Array>`: An array of :ref:`Vector4 <class_Vector4>` values.
-- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
+- :ref:`class_PackedByteArray`: An array of unsigned 8-bit integers (ranging from 0 to 255).
+- :ref:`class_PackedInt32Array`: An array of signed 32-bit integers.
+- :ref:`class_PackedInt64Array`: An array of signed 64-bit integers.
+- :ref:`class_PackedFloat32Array`: An array of 32-bit floats.
+- :ref:`class_PackedFloat64Array`: An array of 64-bit floats.
+- :ref:`class_PackedStringArray`: An array of strings.
+- :ref:`class_PackedVector2Array`: An array of :ref:`class_Vector2` values.
+- :ref:`class_PackedVector3Array`: An array of :ref:`class_Vector3` values.
+- :ref:`class_PackedVector4Array`: An array of :ref:`class_Vector4` values.
+- :ref:`class_PackedColorArray`: An array of :ref:`class_Color` values.
 
-:ref:`Dictionary <class_Dictionary>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`class_Dictionary`
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Associative container which contains values referenced by unique keys.
+Collection type that uses unique keys to reference stored values.
 
 ::
 
@@ -961,8 +1011,8 @@ Associative container which contains values referenced by unique keys.
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
-However, keys written in this form can't start with a digit (like any GDScript
-identifier), and must be string literals.
+Keys written in this form can't start with a digit (like any GDScript identifier),
+and must be string literals.
 
 ::
 
@@ -973,8 +1023,7 @@ identifier), and must be string literals.
         more_key = "Hello"
     }
 
-To add a key to an existing dictionary, access it like an existing key and
-assign to it:
+To add a key to an existing dictionary, access it like an existing key and assign to it:
 
 ::
 
@@ -991,25 +1040,17 @@ assign to it:
 
 .. note::
 
-    The bracket syntax can be used to access properties of any
-    :ref:`class_Object`, not just Dictionaries. Keep in mind it will cause a
-    script error when attempting to index a non-existing property. To avoid
-    this, use the :ref:`Object.get() <class_Object_method_get>` and
-    :ref:`Object.set() <class_Object_method_set>` methods instead.
+    The bracket syntax can be used to access properties of any ``Object``, not only
+    ``Dictionary``. Keep in mind, attempting to index a non-existing property/key or assign the
+    wrong type, or for objects, attempting to assign to a non-existing property, will cause a
+    script error. To avoid this, use their respective ``get()`` and ``set()`` methods instead.
 
 Typed dictionaries
 ^^^^^^^^^^^^^^^^^^
 
-Godot 4.4 added support for typed dictionaries. On write operations, Godot checks that
-element keys and values match the specified type, so the dictionary cannot contain invalid
-keys or values. The GDScript static analyzer takes typed dictionaries into account. However,
-dictionary methods that return values still have the ``Variant`` return type.
-
-Typed dictionaries have the syntax ``Dictionary[KeyType, ValueType]``, where ``KeyType`` and ``ValueType``
-can be any ``Variant`` type, native or user class, or enum. Both the key and value type **must** be specified,
-but you can use ``Variant`` to make either of them untyped.
-Nested typed collections (like ``Dictionary[String, Dictionary[String, int]]``)
-are not supported.
+Typed dictionaries have the syntax ``Dictionary[KeyType, ValueType]``, where ``KeyType`` and
+``ValueType`` are ``Variant`` types. Both the key and value type **must** be specified, but
+you can use ``Variant`` to make either of them untyped.
 
 ::
 
@@ -1022,27 +1063,7 @@ are not supported.
     # Keys can be any type, boolean values.
     var f: Dictionary[Variant, bool]
 
-``Dictionary`` and ``Dictionary[Variant, Variant]`` are the same thing.
-
-:ref:`Signal <class_Signal>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A signal is a message that can be emitted by an object to those who want to
-listen to it. The Signal type can be used for passing the emitter around.
-
-Signals are better used by getting them from actual objects, e.g. ``$Button.button_up``.
-
-:ref:`Callable <class_Callable>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Contains an object and a function, which is useful for passing functions as
-values (e.g. when connecting to signals).
-
-Getting a method as a member returns a callable. ``var x = $Sprite2D.rotate``
-will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
-``rotate`` as the method.
-
-You can call it using the ``call`` method: ``x.call(PI)``.
+``Dictionary[Variant, Variant]`` is the same as ``Dictionary`` and is untyped.
 
 Variables
 ---------
