@@ -101,7 +101,7 @@ file will not be available.
     cd godot-cpp
     scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for, e.g., 4.7
 
-Now that godot-cpp is built, you may also need to create a ``compile_commands.json``
+Now that godot-cpp is built, you may also need to create a ``compile_commands.json`` file
 in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
 Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
 You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
