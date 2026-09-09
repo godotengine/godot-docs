@@ -13,3 +13,4 @@ When contributing to the Godot engine, you should also read the
 
    introduction_to_editor_development
    creating_icons
+   editor_theming
