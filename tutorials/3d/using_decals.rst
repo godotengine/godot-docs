@@ -3,14 +3,6 @@
 Using decals
 ============
 
-.. note::
-
-    Decals are only supported in the Forward+ and Mobile renderers, not the
-    Compatibility renderer.
-
-    If using the Compatibility renderer, consider using Sprite3D as an alternative
-    for projecting decals onto (mostly) flat surfaces.
-
 Decals are projected textures that apply on opaque or transparent surfaces in
 3D. This projection happens in real-time and doesn't rely on mesh generation.
 This allows you to move decals every frame with only a small performance impact,
@@ -270,3 +262,10 @@ in **Project Settings > Rendering > Limits > Cluster Builder**.
 When using the Mobile renderer, only 8 decals can be applied on each
 individual Mesh *resource*. If there are more decals affecting a single mesh,
 not all of them will be rendered on the mesh.
+
+When using the Compatibility renderer, only 8 decals can be applied on each
+individual Mesh *resource*. If there are more decals affecting a single mesh,
+not all of them will be rendered on the mesh. The maximum number of decals that
+can be rendered in a single view is 64. This limit can be changed by adjusting
+:ref:`Max Decals <class_ProjectSettings_property_rendering/limits/opengl/max_decals>`
+in **Project Settings > Rendering > Limits > OpenGL**.
