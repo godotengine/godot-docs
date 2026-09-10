@@ -107,6 +107,9 @@ It is possible to choose other types of imported resources in the Import dock:
   script using :ref:`get_pixel<class_Image_method_get_pixel>`.
 - **Texture2D:** Import the image as a 2-dimensional texture, suited for display
   on 2D and 3D surfaces. This is the default import mode.
+- **Texture2D Streamed:** Import the image as a 2-dimensional texture whose
+  mipmaps are loaded and unloaded at runtime depending on how the texture is
+  actually used on screen, to reduce VRAM usage. See :ref:`doc_texture_streaming`.
 - **Texture2DArray:** Import the image as a collection of 2-dimensional textures.
   Texture2DArray is similar to a 3-dimensional texture, but without
   interpolation between layers. Built-in 2D and 3D shaders cannot display
