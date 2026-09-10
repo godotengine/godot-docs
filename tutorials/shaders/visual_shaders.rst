@@ -164,6 +164,79 @@ Visual Shader nodes
 Below are some special nodes that are worth knowing about. The list is not
 exhaustive and might be expanded with more nodes and examples.
 
+Group node
+~~~~~~~~~~
+
+The ``Group`` node is used to create a group of nodes that is collapsed into a
+single node. You can see it as an equivalent of creating a function in a
+text-based shader.
+
+As an example, we'll create a group that accepts two input parameters (also
+called *input ports*): a color, and an ``invert`` boolean parameter that makes
+the color inverted if it's set to ``true``. There is one output parameter named
+``color2`` (output names can't be identical to input names). This parameter
+is our modified color that is returned by the node.
+
+Start editing the group by clicking the pencil icon in the Group node's title
+bar:
+
+.. image:: img/vs_node_group_edit.webp
+
+You can add input parameters using :button:`Edit Ports` in the :ui:`Group Input` node:
+
+.. image:: img/vs_node_group_input_ports.webp
+
+For this example, we'll add a ``vec4`` parameter for a color that accepts an
+alpha channel, as well as our ``invert`` boolean mentioned above:
+
+.. image:: img/vs_node_group_input_ports_dialog.webp
+
+Repeat this operation using the :button:`Edit Ports` button in the :ui:`Group
+Output` node this time. The dialog looks the same as the dialog used to edit the
+input ports.
+
+Now, add a ``ColorOp`` node between the input and output nodes. Set its mode to
+:ui:`Difference` and connect the input color to the ``a`` input of the
+``ColorOp`` node. Connect the ``inverted`` boolean parameter to the ``b`` input
+of the ``ColorOp`` node. The boolean is automatically converted to a color (pure
+black for ``false``, pure white for ``true``). Finally, connect the output of
+the ``ColorOp`` node to the output node.
+
+.. image:: img/vs_node_group_contents_example.webp
+
+Once you're done editing the group's contents, you can go back to the main view
+using the button at the right in the toolbar:
+
+.. image:: img/vs_node_group_contents_exit.webp
+
+You can rename a group by clicking on the VisualShaderGroup resource that is
+part of the Group node:
+
+.. image:: img/vs_node_group_rename.webp
+
+This will open the VisualShaderGroup node resource for editing in the inspector,
+where the group name can be changed:
+
+.. image:: img/vs_node_group_rename_inspector.webp
+
+As a convention, group names should follow the PascalCase naming convention to
+match the built-in nodes, although this is not strictly required.
+
+You can adjust the node parameters like any other visual shader note. For this
+example, we'll use a red color (``(1.0, 0.0, 0.0, 1.0)``) and set the ``invert``
+parameter to ``true``:
+
+.. image:: img/vs_node_group_edit_parameters.webp
+
+In this example, since we've connected the output of the group to the ``Albedo`` built-in,
+we'll get a cyan-colored box as the red color inverted is cyan:
+
+.. image:: img/vs_node_group_inverted_result.webp
+
+If we disable the ``invert`` parameter, the box will be red:
+
+.. image:: img/vs_node_group_not_inverted_result.webp
+
 Expression node
 ~~~~~~~~~~~~~~~
 
