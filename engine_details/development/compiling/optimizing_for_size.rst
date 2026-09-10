@@ -160,16 +160,39 @@ Disabling 3D
 - **Difficulty:** Easy
 - **Performed in official builds:** No
 
-For 2D games, having the whole 3D engine available usually makes no sense.
+For 2D games or :ref:`applications <doc_creating_applications>`,
+having the whole 3D engine available usually makes no sense.
 Because of this, there is a build flag to disable it:
 
 ::
 
     scons target=template_release disable_3d=yes
 
-Tools must be disabled in order to use this flag, as the editor is not designed
-to operate without 3D support. Without it, the binary size can be reduced
+This can only be used for export template builds, as the editor is not designed
+to operate without 3D support. With 3D disabled, the binary size can be reduced
 by about 15%.
+
+Disabling 2D
+------------
+
+- **Space savings:** Moderate
+- **Difficulty:** Easy
+- **Performed in official builds:** No
+
+Likewise, for 3D games or :ref:`applications <doc_creating_applications>`,
+having the whole 2D engine available usually makes no sense.
+Because of this, there is a build flag to disable it:
+
+::
+
+    scons target=template_release disable_2d=yes
+
+This disables all 2D nodes derived from :ref:`class_Node2D`.
+GUI nodes derived from :ref:`class_Control` are still available.
+
+This can only be used for export template builds, as the editor is not designed
+to operate without 2D support. With 2D disabled, the binary size can be reduced
+by about 10%.
 
 Disabling advanced GUI objects
 ------------------------------
