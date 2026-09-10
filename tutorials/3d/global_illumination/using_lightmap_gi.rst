@@ -372,8 +372,13 @@ Tweaks
 - **Directional:** If enabled, stores directional information for lightmaps.
   This improves normal mapped materials' appearance for baked surfaces,
   especially with fully baked lights (since they also have direct light baked).
+  This also allows specular lobes to be rendered from the lightmap's directional
+  information when **Specular Intensity** is greater than ``0.0``.
   The downside is that directional lightmaps are slightly more expensive to render.
   They also require more time to bake and result in larger file sizes.
+- **Specular Intensity:** The intensity of specular reflections from the lightmap.
+  This is only effective if **Directional** is enabled.
+  See :ref:`doc_using_lightmap_gi_directional_specular` for more information.
 - **Shadowmask Mode:** If set to a mode other than **None**, the first DirectionalLight3D
   in the scene with the **Dynamic** global illumination mode will have its static shadows
   baked to a separate texture called a *shadowmask*. This can be used to allow distant
@@ -412,6 +417,48 @@ Tweaks
   scene's environment sky.
 - **Gen Probes > Subdiv:** See :ref:`doc_using_lightmap_gi_dynamic_objects`.
 - **Data > Light Data:** See :ref:`doc_using_lightmap_gi_data`.
+
+.. _doc_using_lightmap_gi_directional_specular:
+
+Directional specular reflections
+--------------------------------
+
+By default, LightmapGI does not render specular reflections. This can result in
+scenes looking flat after baking lightmaps, especially with lights using the
+**Static** bake mode.
+
+If you've baked lightmaps with **Directional** enabled, you can enable specular
+reflections from the lightmap by setting **Specular Intensity** to a value
+greater than ``0.0``. This allows specular reflections to be rendered from the
+lightmap's directional information at a slight performance cost. A value of
+``1.0`` represents the standard specular strength, but you should experiment
+with various values to see what works best for your scene.
+
+Lightmap specular reflections provide the most noticeable visual effect when
+using emissive objects or lights with the **Static** bake mode, as both direct
+and indirect lighting is baked. For lights with the **Dynamic** bake mode, only
+indirect lighting is baked, so the effect of specular reflections from the
+lightmap will be less noticeable.
+
+.. figure:: img/lightmap_gi_specular_comparison.webp
+   :align: center
+   :alt: Comparison between LightmapGI specular intensity set to 0.0 and 1.0
+
+   Comparison between LightmapGI specular intensity set to 0.0 and 1.0
+
+The effect is an approximation, as it can only infer the specular direction from
+the lightmap's directional information. This information is averaged from all
+lights that affect a given lightmap texel. This may lead to specular lobes
+appearing to warp when several light sources affect a single texel. For best
+results, make sure **Denoiser** is enabled when baking lightmaps, and consider
+switching to the OIDN denoiser as described in the
+:ref:`doc_using_lightmap_gi_denoising` section.
+
+.. figure:: img/lightmap_gi_specular_vs_real_time.webp
+   :align: center
+   :alt: Comparison between real-time lighting and baked lighting with specular reflections from the lightmap
+
+   Comparison between real-time lighting and baked lighting with specular reflections from the lightmap
 
 .. _doc_using_lightmap_gi_shadowmask:
 
