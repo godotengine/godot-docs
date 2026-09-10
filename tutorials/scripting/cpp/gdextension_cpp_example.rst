@@ -39,21 +39,21 @@ and :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ from GitHub or let Git do the work for you.
-Note that this repository has different branches for different versions
-of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
-
-.. note::
-
-    Since Godot version 4.6 it is no longer necessary to match the godot-cpp version with the Godot
-    version you are using. Instead you will specify it in the scons build with the argument ``api_version=4.x``.
 
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
     minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
-    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
+    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.    
 
     There is one exception to this: extensions targeting Godot 4.0 will **not** work with
     Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
+
+    GDExtensions will not work in older versions of Godot (only Godot 4 and up).
+
+.. note::
+
+    Branches of specific GDExtension API versions are no longer provided individually. Instead, you will select the version of the
+    GDExtension API you wish to use in the scons build with the argument ``api_version=4.x``.    
 
 If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
@@ -92,26 +92,29 @@ following commands:
 
 This will initialize the repository in your project folder.
 
-You must now build the godot-cpp module to generate the necessary include headers
+You should now build the godot-cpp module to generate the necessary include headers
 you will be using for the plugin. Without it being built, the ``sprite2d.hpp``
 file, for example, will not be available.
 
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of godot you are building for, e.g., 4.7
+    scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of GDExtension you are building for, e.g., 4.7
 
-Now that godot-cpp is built, you may also need to create a ``compile_commands.json`` file
-in your gdextension_cpp_example directory if your IDE language server (e.g. clangd) requires it.
-Ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
-You will need the example SConstruct file. Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
-into the gdextension_cpp_example project root folder.
+.. note:: 
 
-In the project's root folder run the following command to generate the ``compile_commands.json``:
+    Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
+    ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
+    need this file to provide include path information and completion recommendations. To do this,
+    ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
+    You will also need to copy the example SConstruct file into the gdextension_cpp_example project root folder.. 
+    Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
+ 
+    In the project's root folder run the following command to generate the ``compile_commands.json``:
 
-.. code-block:: none
+    .. code-block:: none
     
-    scons compiledb=yes api_version=4.7 compile_commands.json
+        scons compiledb=yes api_version=4.7 compile_commands.json
 
 You should now be ready to move on to creating a simple plugin.
 
@@ -145,9 +148,6 @@ Your folder structure should now look like this:
     |
     +--src/                   # source code of the extension we are building
 
-.. warning::
-
-    The godot-cpp module must be compiled and built before proceeding.
 
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
