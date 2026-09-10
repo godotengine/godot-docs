@@ -18,7 +18,7 @@ enough. Compiling the Android APK manually is mostly useful for custom
 builds or custom packages for the deployer.
 
 Also, you still need to follow the steps mentioned in the
-:ref:`doc_exporting_for_android` tutorial before attempting to build
+:ref:`doc_exporting_for_android_manual_android_build_setup` tutorial before attempting to build
 a custom export template.
 
 Requirements
