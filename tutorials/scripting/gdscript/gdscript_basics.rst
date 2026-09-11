@@ -1513,12 +1513,14 @@ Lambda functions allow you to declare functions that do not belong to a class. I
 :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
 This can be useful to create callables to pass around without polluting the class scope.
 
+By default, a lambda function has no name. This is also referred to as an *anonymous function*:
+
 ::
 
     var lambda = func (x):
         print(x)
 
-To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method:
+To call the created lambda, you can use the :ref:`call() <class_Callable_method_call>` method:
 
 ::
 
