@@ -3,6 +3,16 @@
 3D Particle trails
 ------------------
 
+.. seealso::
+
+   Particle trails are separate from the
+   :ref:`Trail3D node <doc_using_trail_3d>`.
+
+   Compared to particle trails, the Trail3D node works with all renderers, but
+   it doesn't support displaying trails behind individual particles. Instead,
+   it's designed for standalone trail effects, such as sword slashes or tire
+   tracks.
+
 .. note::
 
      Particle trails are only supported in the Forward+ and Mobile renderers,
