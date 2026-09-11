@@ -82,33 +82,37 @@ Placeholder types
 One and only one of these must always appear as the last character in a format
 specifier. Apart from ``s``, these require certain types of parameters.
 
-+-------+---------------------------------------------------------------------+
-| ``s`` | **Simple** conversion to String by the same method as implicit      |
-|       | String conversion.                                                  |
-+-------+---------------------------------------------------------------------+
-| ``c`` | A single **Unicode character**. Accepts a Unicode code point        |
-|       | (integer) or a single-character string. Supports values beyond 255. |
-+-------+---------------------------------------------------------------------+
-| ``d`` | A **decimal integer**. Expects an integer or a real number          |
-|       | (will be floored).                                                  |
-+-------+---------------------------------------------------------------------+
-| ``o`` | An **octal integer**. Expects an integer or a real number           |
-|       | (will be floored).                                                  |
-+-------+---------------------------------------------------------------------+
-| ``x`` | A **hexadecimal integer** with **lower-case** letters.              |
-|       | Expects an integer or a real number (will be floored).              |
-+-------+---------------------------------------------------------------------+
-| ``X`` | A **hexadecimal integer** with **upper-case** letters.              |
-|       | Expects an integer or a real number (will be floored).              |
-+-------+---------------------------------------------------------------------+
-| ``f`` | A **decimal real** number. Expects an integer or a real number.     |
-+-------+---------------------------------------------------------------------+
-| ``v`` | A **vector**. Expects any float or int-based vector object (        |
-|       | ``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i`` or|
-|       | ``Vector4i``). Will display the vector coordinates in parentheses,  |
-|       | formatting each coordinate as if it was an ``%f``, and using the    |
-|       | same modifiers.                                                     |
-+-------+---------------------------------------------------------------------+
++-------+---------------------------------------------------------------------------+
+| ``s`` | **Simple** conversion to String by the same method as implicit            |
+|       | String conversion.                                                        |
++-------+---------------------------------------------------------------------------+
+| ``c`` | A single **Unicode character**. Accepts a Unicode code point              |
+|       | (integer) or a single-character string. Supports values beyond 255.       |
++-------+---------------------------------------------------------------------------+
+| ``d`` | A **decimal integer**. Expects an integer or a real number                |
+|       | (will be floored).                                                        |
++-------+---------------------------------------------------------------------------+
+| ``o`` | An **octal integer**. Expects an integer or a real number                 |
+|       | (will be floored).                                                        |
++-------+---------------------------------------------------------------------------+
+| ``x`` | A **hexadecimal integer** with **lower-case** letters.                    |
+|       | Expects an integer or a real number (will be floored).                    |
++-------+---------------------------------------------------------------------------+
+| ``X`` | A **hexadecimal integer** with **upper-case** letters.                    |
+|       | Expects an integer or a real number (will be floored).                    |
++-------+---------------------------------------------------------------------------+
+| ``f`` | A **decimal real** number. Expects an integer or a real number.           |
++-------+---------------------------------------------------------------------------+
+| ``v`` | A **vector**. Expects any float or int-based vector object (              |
+|       | ``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i``, or     |
+|       | ``Vector4i``). Will display the vector coordinates in parentheses,        |
+|       | formatting each coordinate as if it was an ``%f``, and using the          |
+|       | same modifiers.                                                           |
++-------+---------------------------------------------------------------------------+
+| ``l`` | A **language** code used to convert the next number from Western Arabic   |
+|       | to the numeral system used in the given ``language``, see                 |
+|       | :ref:`TextServer.format_number() <class_TextServer_method_format_number>` |
++-------+---------------------------------------------------------------------------+
 
 
 Placeholder modifiers
@@ -217,6 +221,23 @@ avoid reading it as a placeholder. This is done by doubling the character:
     var health = 56
     print("Remaining health: %d%%" % health)
     # Output: "Remaining health: 56%"
+
+
+Number localization
+-------------------
+
+To convert the next number from Western Arabic to the numeral system used in specific
+language, add ``%l`` to the format string, and add the language code to the list of arguments:
+
+::
+
+    var value = 56.0
+    print("Value: %d" % value)
+    # Output: "Value: 56"
+    print("Value: %l%d" % ["ar", value])
+    # Output: "Value: ٥٦"
+    print("Value: %l%d" % ["fa", value])
+    # Output: "Value: ۵۶"
 
 
 String format method
