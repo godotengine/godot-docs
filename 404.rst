@@ -49,14 +49,14 @@ Page not found
             continue;
           }
           const [from, to] = line.split(',').map(s => s.trim());
-          if (from && to) {
-            if (window.location.pathname.endsWith(from)) {
-              if (to.startsWith('https://')) {
-                window.location.replace(to);
-              } else {
-                const newUrl = window.location.href.replace(window.location.pathname, currentBasePath + to);
-                window.location.replace(newUrl);
-              }
+          if (from && to && window.location.pathname.endsWith(from)) {
+            const target = to.startsWith('https://')
+              ? to
+              : window.location.href.replace(window.location.pathname, currentBasePath + to);
+            // Skip redirects that resolve to the current URL, which would otherwise
+            // reload the page forever.
+            if (target !== window.location.href) {
+              window.location.replace(target);
               break;
             }
           }
