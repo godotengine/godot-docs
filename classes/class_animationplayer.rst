@@ -51,6 +51,8 @@ Properties
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`StringName<class_StringName>`              | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                                           | ``&""``   |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                          | :ref:`clear_cache_on_stop<class_AnimationPlayer_property_clear_cache_on_stop>`                                     | ``true``  |
+   +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`StringName<class_StringName>`              | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                                         | ``&""``   |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                        | :ref:`current_animation_length<class_AnimationPlayer_property_current_animation_length>`                           |           |
@@ -290,6 +292,23 @@ If playing, the current animation's key, otherwise, the animation last played. W
 - :ref:`StringName<class_StringName>` **get_autoplay**\ (\ )
 
 The key of the animation to play when the scene loads.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_property_clear_cache_on_stop:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **clear_cache_on_stop** = ``true`` :ref:`🔗<class_AnimationPlayer_property_clear_cache_on_stop>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_clear_cache_on_stop_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_clear_cache_on_stop_enabled**\ (\ )
+
+If ``true``, the animation track cache is cleared when the animation is stopped or the playback queue becomes empty. If ``false``, the track cache is preserved, which can improve performance when animations are frequently started and stopped.
 
 .. rst-class:: classref-item-separator
 

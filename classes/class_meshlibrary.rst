@@ -32,6 +32,36 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`item/{index}/category<class_MeshLibrary_property_item/{index}/category>`                                   | ``&""``                                             |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`                     | :ref:`item/{index}/mesh<class_MeshLibrary_property_item/{index}/mesh>`                                           |                                                     |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`item/{index}/mesh_cast_shadow<class_MeshLibrary_property_item/{index}/mesh_cast_shadow>`                   | ``1``                                               |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`       | :ref:`item/{index}/mesh_transform<class_MeshLibrary_property_item/{index}/mesh_transform>`                       | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`item/{index}/name<class_MeshLibrary_property_item/{index}/name>`                                           | ``""``                                              |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`item/{index}/navigation_layers<class_MeshLibrary_property_item/{index}/navigation_layers>`                 | ``1``                                               |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`item/{index}/navigation_mesh<class_MeshLibrary_property_item/{index}/navigation_mesh>`                     |                                                     |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`       | :ref:`item/{index}/navigation_mesh_transform<class_MeshLibrary_property_item/{index}/navigation_mesh_transform>` | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`           | :ref:`item/{index}/preview<class_MeshLibrary_property_item/{index}/preview>`                                     |                                                     |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Array<class_Array>`                   | :ref:`item/{index}/shapes<class_MeshLibrary_property_item/{index}/shapes>`                                       | ``[]``                                              |
+   +---------------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -44,6 +74,8 @@ Methods
    | |void|                                                                 | :ref:`create_item<class_MeshLibrary_method_create_item>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                                                              |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                  | :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                                                  |
+   +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                                    | :ref:`get_item_category<class_MeshLibrary_method_get_item_category>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                          |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                  | :ref:`get_item_count<class_MeshLibrary_method_get_item_count>`\ (\ ) |const|                                                                                                                                            |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,6 +103,8 @@ Methods
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`remove_item<class_MeshLibrary_method_remove_item>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                                                              |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`set_item_category<class_MeshLibrary_method_set_item_category>`\ (\ id\: :ref:`int<class_int>`, category\: :ref:`StringName<class_StringName>`\ )                                                                  |
+   +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`set_item_mesh<class_MeshLibrary_method_set_item_mesh>`\ (\ id\: :ref:`int<class_int>`, mesh\: :ref:`Mesh<class_Mesh>`\ )                                                                                          |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`set_item_mesh_cast_shadow<class_MeshLibrary_method_set_item_mesh_cast_shadow>`\ (\ id\: :ref:`int<class_int>`, shadow_casting_setting\: :ref:`ShadowCastingSetting<enum_RenderingServer_ShadowCastingSetting>`\ ) |
@@ -89,6 +123,131 @@ Methods
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                 | :ref:`set_item_shapes<class_MeshLibrary_method_set_item_shapes>`\ (\ id\: :ref:`int<class_int>`, shapes\: :ref:`Array<class_Array>`\ )                                                                                  |
    +------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_MeshLibrary_property_item/{index}/category:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **item/{index}/category** = ``&""`` :ref:`🔗<class_MeshLibrary_property_item/{index}/category>`
+
+The item's category. Used to organize meshes in the :ref:`GridMap<class_GridMap>` editor. A category can include ``/`` as a delimiter to create subcategories.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/mesh:
+
+.. rst-class:: classref-property
+
+:ref:`Mesh<class_Mesh>` **item/{index}/mesh** :ref:`🔗<class_MeshLibrary_property_item/{index}/mesh>`
+
+The item's mesh. Used by other parts of the engine (e.g. :ref:`GridMap<class_GridMap>`, which displays them in a 3D tile).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/mesh_cast_shadow:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **item/{index}/mesh_cast_shadow** = ``1`` :ref:`🔗<class_MeshLibrary_property_item/{index}/mesh_cast_shadow>`
+
+The shadow casting mode used by the item's mesh. See :ref:`ShadowCastingSetting<enum_RenderingServer_ShadowCastingSetting>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/mesh_transform:
+
+.. rst-class:: classref-property
+
+:ref:`Transform3D<class_Transform3D>` **item/{index}/mesh_transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_MeshLibrary_property_item/{index}/mesh_transform>`
+
+The transform to apply to the item's mesh.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **item/{index}/name** = ``""`` :ref:`🔗<class_MeshLibrary_property_item/{index}/name>`
+
+The item's name, shown in the editor. It can also be used to look up the item later using :ref:`find_item_by_name()<class_MeshLibrary_method_find_item_by_name>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/navigation_layers:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **item/{index}/navigation_layers** = ``1`` :ref:`🔗<class_MeshLibrary_property_item/{index}/navigation_layers>`
+
+The item's navigation layers bitmask.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/navigation_mesh:
+
+.. rst-class:: classref-property
+
+:ref:`NavigationMesh<class_NavigationMesh>` **item/{index}/navigation_mesh** :ref:`🔗<class_MeshLibrary_property_item/{index}/navigation_mesh>`
+
+The item's navigation mesh.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/navigation_mesh_transform:
+
+.. rst-class:: classref-property
+
+:ref:`Transform3D<class_Transform3D>` **item/{index}/navigation_mesh_transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_MeshLibrary_property_item/{index}/navigation_mesh_transform>`
+
+The transform to apply to the item's navigation mesh.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/preview:
+
+.. rst-class:: classref-property
+
+:ref:`Texture2D<class_Texture2D>` **item/{index}/preview** :ref:`🔗<class_MeshLibrary_property_item/{index}/preview>`
+
+The texture to use as the item's preview icon in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_property_item/{index}/shapes:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>` **item/{index}/shapes** = ``[]`` :ref:`🔗<class_MeshLibrary_property_item/{index}/shapes>`
+
+The item's collision shapes. The array should consist of :ref:`Shape3D<class_Shape3D>` objects, each followed by a :ref:`Transform3D<class_Transform3D>` that will be applied to it. For shapes that should not have a transform, use :ref:`Transform3D.IDENTITY<class_Transform3D_constant_IDENTITY>`.
 
 .. rst-class:: classref-section-separator
 
@@ -132,6 +291,18 @@ You can get an unused ID from :ref:`get_last_unused_item_id()<class_MeshLibrary_
 :ref:`int<class_int>` **find_item_by_name**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_find_item_by_name>`
 
 Returns the first item with the given name, or ``-1`` if no item is found.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_method_get_item_category:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_item_category**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MeshLibrary_method_get_item_category>`
+
+Returns the category for a specific item ``id``. See also :ref:`set_item_category()<class_MeshLibrary_method_set_item_category>`.
 
 .. rst-class:: classref-item-separator
 
@@ -290,6 +461,18 @@ Gets an unused ID for a new item.
 |void| **remove_item**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_MeshLibrary_method_remove_item>`
 
 Removes the item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MeshLibrary_method_set_item_category:
+
+.. rst-class:: classref-method
+
+|void| **set_item_category**\ (\ id\: :ref:`int<class_int>`, category\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_MeshLibrary_method_set_item_category>`
+
+Sets the ``category`` for a specific item ``id`` for organization in the :ref:`GridMap<class_GridMap>` editor. A category can include ``/`` as a delimiter to create subcategories.
 
 .. rst-class:: classref-item-separator
 

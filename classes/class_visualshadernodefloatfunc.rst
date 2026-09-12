@@ -19,7 +19,7 @@ A scalar floating-point function to be used within the visual shader graph.
 Description
 -----------
 
-Accept a floating-point scalar (``x``) to the input port and transform it according to :ref:`function<class_VisualShaderNodeFloatFunc_property_function>`.
+Accept a floating-point scalar (\ ``x``) to the input port and transform it according to :ref:`function<class_VisualShaderNodeFloatFunc_property_function>`.
 
 .. rst-class:: classref-reftable-group
 

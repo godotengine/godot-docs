@@ -224,7 +224,7 @@ If ``true``, the currently selected item can be selected again.
 - |void| **set_fit_to_longest_item**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_fit_to_longest_item**\ (\ )
 
-If ``true``, minimum size will be determined by the longest item's text, instead of the currently selected one's.
+If ``true``, minimum size will be determined by the longest item's width, instead of the currently selected one's. It will also take the popup's margins into account, making the button match its total width.
 
 \ **Note:** For performance reasons, the minimum size doesn't update immediately when adding, removing or modifying items.
 

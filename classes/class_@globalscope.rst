@@ -115,6 +115,8 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`TextServerManager<class_TextServerManager>`                 | :ref:`TextServerManager<class_@GlobalScope_property_TextServerManager>`                 |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`TextureStreaming<class_TextureStreaming>`                   | :ref:`TextureStreaming<class_@GlobalScope_property_TextureStreaming>`                   |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`ThemeDB<class_ThemeDB>`                                     | :ref:`ThemeDB<class_@GlobalScope_property_ThemeDB>`                                     |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
    | :ref:`Time<class_Time>`                                           | :ref:`Time<class_@GlobalScope_property_Time>`                                           |
@@ -1761,7 +1763,7 @@ Space key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_EXCLAM** = ``33``
 
-Exclamation mark (``!``) key.
+Exclamation mark (\ ``!``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUOTEDBL:
 
@@ -1769,7 +1771,7 @@ Exclamation mark (``!``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUOTEDBL** = ``34``
 
-Double quotation mark (``"``) key.
+Double quotation mark (\ ``"``) key.
 
 .. _class_@GlobalScope_constant_KEY_NUMBERSIGN:
 
@@ -1777,7 +1779,7 @@ Double quotation mark (``"``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_NUMBERSIGN** = ``35``
 
-Number sign or *hash* (``#``) key.
+Number sign or *hash* (\ ``#``) key.
 
 .. _class_@GlobalScope_constant_KEY_DOLLAR:
 
@@ -1785,7 +1787,7 @@ Number sign or *hash* (``#``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_DOLLAR** = ``36``
 
-Dollar sign (``$``) key.
+Dollar sign (\ ``$``) key.
 
 .. _class_@GlobalScope_constant_KEY_PERCENT:
 
@@ -1793,7 +1795,7 @@ Dollar sign (``$``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PERCENT** = ``37``
 
-Percent sign (``%``) key.
+Percent sign (\ ``%``) key.
 
 .. _class_@GlobalScope_constant_KEY_AMPERSAND:
 
@@ -1801,7 +1803,7 @@ Percent sign (``%``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_AMPERSAND** = ``38``
 
-Ampersand (``&``) key.
+Ampersand (\ ``&``) key.
 
 .. _class_@GlobalScope_constant_KEY_APOSTROPHE:
 
@@ -1809,7 +1811,7 @@ Ampersand (``&``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_APOSTROPHE** = ``39``
 
-Apostrophe (``'``) key.
+Apostrophe (\ ``'``) key.
 
 .. _class_@GlobalScope_constant_KEY_PARENLEFT:
 
@@ -1817,7 +1819,7 @@ Apostrophe (``'``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PARENLEFT** = ``40``
 
-Left parenthesis (``(``) key.
+Left parenthesis (\ ``(``) key.
 
 .. _class_@GlobalScope_constant_KEY_PARENRIGHT:
 
@@ -1825,7 +1827,7 @@ Left parenthesis (``(``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PARENRIGHT** = ``41``
 
-Right parenthesis (``)``) key.
+Right parenthesis (\ ``)``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASTERISK:
 
@@ -1833,7 +1835,7 @@ Right parenthesis (``)``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASTERISK** = ``42``
 
-Asterisk (``*``) key.
+Asterisk (\ ``*``) key.
 
 .. _class_@GlobalScope_constant_KEY_PLUS:
 
@@ -1841,7 +1843,7 @@ Asterisk (``*``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PLUS** = ``43``
 
-Plus (``+``) key.
+Plus (\ ``+``) key.
 
 .. _class_@GlobalScope_constant_KEY_COMMA:
 
@@ -1849,7 +1851,7 @@ Plus (``+``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_COMMA** = ``44``
 
-Comma (``,``) key.
+Comma (\ ``,``) key.
 
 .. _class_@GlobalScope_constant_KEY_MINUS:
 
@@ -1857,7 +1859,7 @@ Comma (``,``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_MINUS** = ``45``
 
-Minus (``-``) key.
+Minus (\ ``-``) key.
 
 .. _class_@GlobalScope_constant_KEY_PERIOD:
 
@@ -1865,7 +1867,7 @@ Minus (``-``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PERIOD** = ``46``
 
-Period (``.``) key.
+Period (\ ``.``) key.
 
 .. _class_@GlobalScope_constant_KEY_SLASH:
 
@@ -1873,7 +1875,7 @@ Period (``.``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SLASH** = ``47``
 
-Slash (``/``) key.
+Slash (\ ``/``) key.
 
 .. _class_@GlobalScope_constant_KEY_0:
 
@@ -1961,7 +1963,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_COLON** = ``58``
 
-Colon (``:``) key.
+Colon (\ ``:``) key.
 
 .. _class_@GlobalScope_constant_KEY_SEMICOLON:
 
@@ -1969,7 +1971,7 @@ Colon (``:``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SEMICOLON** = ``59``
 
-Semicolon (``;``) key.
+Semicolon (\ ``;``) key.
 
 .. _class_@GlobalScope_constant_KEY_LESS:
 
@@ -1977,7 +1979,7 @@ Semicolon (``;``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_LESS** = ``60``
 
-Less-than sign (``<``) key.
+Less-than sign (\ ``<``) key.
 
 .. _class_@GlobalScope_constant_KEY_EQUAL:
 
@@ -1985,7 +1987,7 @@ Less-than sign (``<``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_EQUAL** = ``61``
 
-Equal sign (``=``) key.
+Equal sign (\ ``=``) key.
 
 .. _class_@GlobalScope_constant_KEY_GREATER:
 
@@ -1993,7 +1995,7 @@ Equal sign (``=``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_GREATER** = ``62``
 
-Greater-than sign (``>``) key.
+Greater-than sign (\ ``>``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUESTION:
 
@@ -2001,7 +2003,7 @@ Greater-than sign (``>``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUESTION** = ``63``
 
-Question mark (``?``) key.
+Question mark (\ ``?``) key.
 
 .. _class_@GlobalScope_constant_KEY_AT:
 
@@ -2009,7 +2011,7 @@ Question mark (``?``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_AT** = ``64``
 
-At sign (``@``) key.
+At sign (\ ``@``) key.
 
 .. _class_@GlobalScope_constant_KEY_A:
 
@@ -2225,7 +2227,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACKETLEFT** = ``91``
 
-Left bracket (``[lb]``) key.
+Left bracket (\ ``[``) key.
 
 .. _class_@GlobalScope_constant_KEY_BACKSLASH:
 
@@ -2233,7 +2235,7 @@ Left bracket (``[lb]``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BACKSLASH** = ``92``
 
-Backslash (``\``) key.
+Backslash (\ ``\``) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACKETRIGHT:
 
@@ -2241,7 +2243,7 @@ Backslash (``\``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACKETRIGHT** = ``93``
 
-Right bracket (``[rb]``) key.
+Right bracket (\ ``]``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASCIICIRCUM:
 
@@ -2249,7 +2251,7 @@ Right bracket (``[rb]``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASCIICIRCUM** = ``94``
 
-Caret (``^``) key.
+Caret (\ ``^``) key.
 
 .. _class_@GlobalScope_constant_KEY_UNDERSCORE:
 
@@ -2257,7 +2259,7 @@ Caret (``^``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_UNDERSCORE** = ``95``
 
-Underscore (``_``) key.
+Underscore (\ ``_``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUOTELEFT:
 
@@ -2265,7 +2267,7 @@ Underscore (``_``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUOTELEFT** = ``96``
 
-Backtick (`````) key.
+Backtick (\ `````) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACELEFT:
 
@@ -2273,7 +2275,7 @@ Backtick (`````) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACELEFT** = ``123``
 
-Left brace (``{``) key.
+Left brace (\ ``{``) key.
 
 .. _class_@GlobalScope_constant_KEY_BAR:
 
@@ -2281,7 +2283,7 @@ Left brace (``{``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BAR** = ``124``
 
-Vertical bar or *pipe* (``|``) key.
+Vertical bar or *pipe* (\ ``|``) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACERIGHT:
 
@@ -2289,7 +2291,7 @@ Vertical bar or *pipe* (``|``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACERIGHT** = ``125``
 
-Right brace (``}``) key.
+Right brace (\ ``}``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASCIITILDE:
 
@@ -2297,7 +2299,7 @@ Right brace (``}``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASCIITILDE** = ``126``
 
-Tilde (``~``) key.
+Tilde (\ ``~``) key.
 
 .. _class_@GlobalScope_constant_KEY_YEN:
 
@@ -2305,7 +2307,7 @@ Tilde (``~``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_YEN** = ``165``
 
-Yen symbol (``¥``) key.
+Yen symbol (\ ``¥``) key.
 
 .. _class_@GlobalScope_constant_KEY_SECTION:
 
@@ -2313,7 +2315,7 @@ Yen symbol (``¥``) key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SECTION** = ``167``
 
-Section sign (``§``) key.
+Section sign (\ ``§``) key.
 
 .. rst-class:: classref-item-separator
 
@@ -3579,7 +3581,7 @@ Hints that a vector property should allow its components to be linked. For examp
 
 Hints that an :ref:`int<class_int>` property is a bitmask with named bit flags.
 
-The hint string is a comma separated list of names such as ``"Bit0,Bit1,Bit2,Bit3"``. Whitespace is **not** removed from either end of a name. The first name in the list has value 1, the next 2, then 4, 8, 16 and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"A:4,B:8,C:16"``. You can also combine several flags (``"A:4,B:8,AB:12,C:16"``).
+The hint string is a comma separated list of names such as ``"Bit0,Bit1,Bit2,Bit3"``. Whitespace is **not** removed from either end of a name. The first name in the list has value 1, the next 2, then 4, 8, 16 and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"A:4,B:8,C:16"``. You can also combine several flags (\ ``"A:4,B:8,AB:12,C:16"``).
 
 \ **Note:** A flag value must be at least ``1`` and at most ``2 ** 32 - 1``.
 
@@ -3975,11 +3977,19 @@ Hints that a :ref:`String<class_String>` or :ref:`StringName<class_StringName>` 
 
 Like :ref:`PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPERTY_HINT_FILE>`, but the property is stored as a raw path, not UID. That means the reference will be broken if you move the file. Consider using :ref:`PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPERTY_HINT_FILE>` when possible.
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_AUDIO_BUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_AUDIO_BUS** = ``45``
+
+Hints that a :ref:`String<class_String>` or :ref:`StringName<class_StringName>` property is the name of an audio bus. This allows the selection of predefined bus names registered with the audio server.
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``45``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``46``
 
 Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
@@ -4697,7 +4707,7 @@ enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_EQUAL** = ``0``
 
-Equality operator (``==``).
+Equality operator (\ ``==``).
 
 .. _class_@GlobalScope_constant_OP_NOT_EQUAL:
 
@@ -4705,7 +4715,7 @@ Equality operator (``==``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NOT_EQUAL** = ``1``
 
-Inequality operator (``!=``).
+Inequality operator (\ ``!=``).
 
 .. _class_@GlobalScope_constant_OP_LESS:
 
@@ -4713,7 +4723,7 @@ Inequality operator (``!=``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_LESS** = ``2``
 
-Less than operator (``<``).
+Less than operator (\ ``<``).
 
 .. _class_@GlobalScope_constant_OP_LESS_EQUAL:
 
@@ -4721,7 +4731,7 @@ Less than operator (``<``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_LESS_EQUAL** = ``3``
 
-Less than or equal operator (``<=``).
+Less than or equal operator (\ ``<=``).
 
 .. _class_@GlobalScope_constant_OP_GREATER:
 
@@ -4729,7 +4739,7 @@ Less than or equal operator (``<=``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_GREATER** = ``4``
 
-Greater than operator (``>``).
+Greater than operator (\ ``>``).
 
 .. _class_@GlobalScope_constant_OP_GREATER_EQUAL:
 
@@ -4737,7 +4747,7 @@ Greater than operator (``>``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_GREATER_EQUAL** = ``5``
 
-Greater than or equal operator (``>=``).
+Greater than or equal operator (\ ``>=``).
 
 .. _class_@GlobalScope_constant_OP_ADD:
 
@@ -4745,7 +4755,7 @@ Greater than or equal operator (``>=``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_ADD** = ``6``
 
-Addition operator (``+``).
+Addition operator (\ ``+``).
 
 .. _class_@GlobalScope_constant_OP_SUBTRACT:
 
@@ -4753,7 +4763,7 @@ Addition operator (``+``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SUBTRACT** = ``7``
 
-Subtraction operator (``-``).
+Subtraction operator (\ ``-``).
 
 .. _class_@GlobalScope_constant_OP_MULTIPLY:
 
@@ -4761,7 +4771,7 @@ Subtraction operator (``-``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_MULTIPLY** = ``8``
 
-Multiplication operator (``*``).
+Multiplication operator (\ ``*``).
 
 .. _class_@GlobalScope_constant_OP_DIVIDE:
 
@@ -4769,7 +4779,7 @@ Multiplication operator (``*``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_DIVIDE** = ``9``
 
-Division operator (``/``).
+Division operator (\ ``/``).
 
 .. _class_@GlobalScope_constant_OP_NEGATE:
 
@@ -4777,7 +4787,7 @@ Division operator (``/``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NEGATE** = ``10``
 
-Unary negation operator (``-``).
+Unary negation operator (\ ``-``).
 
 .. _class_@GlobalScope_constant_OP_POSITIVE:
 
@@ -4785,7 +4795,7 @@ Unary negation operator (``-``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_POSITIVE** = ``11``
 
-Unary plus operator (``+``).
+Unary plus operator (\ ``+``).
 
 .. _class_@GlobalScope_constant_OP_MODULE:
 
@@ -4793,7 +4803,7 @@ Unary plus operator (``+``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_MODULE** = ``12``
 
-Remainder/modulo operator (``%``).
+Remainder/modulo operator (\ ``%``).
 
 .. _class_@GlobalScope_constant_OP_POWER:
 
@@ -4801,7 +4811,7 @@ Remainder/modulo operator (``%``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_POWER** = ``13``
 
-Power operator (``**``).
+Power operator (\ ``**``).
 
 .. _class_@GlobalScope_constant_OP_SHIFT_LEFT:
 
@@ -4809,7 +4819,7 @@ Power operator (``**``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SHIFT_LEFT** = ``14``
 
-Left shift operator (``<<``).
+Left shift operator (\ ``<<``).
 
 .. _class_@GlobalScope_constant_OP_SHIFT_RIGHT:
 
@@ -4817,7 +4827,7 @@ Left shift operator (``<<``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SHIFT_RIGHT** = ``15``
 
-Right shift operator (``>>``).
+Right shift operator (\ ``>>``).
 
 .. _class_@GlobalScope_constant_OP_BIT_AND:
 
@@ -4825,7 +4835,7 @@ Right shift operator (``>>``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_AND** = ``16``
 
-Bitwise AND operator (``&``).
+Bitwise AND operator (\ ``&``).
 
 .. _class_@GlobalScope_constant_OP_BIT_OR:
 
@@ -4833,7 +4843,7 @@ Bitwise AND operator (``&``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_OR** = ``17``
 
-Bitwise OR operator (``|``).
+Bitwise OR operator (\ ``|``).
 
 .. _class_@GlobalScope_constant_OP_BIT_XOR:
 
@@ -4841,7 +4851,7 @@ Bitwise OR operator (``|``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_XOR** = ``18``
 
-Bitwise XOR operator (``^``).
+Bitwise XOR operator (\ ``^``).
 
 .. _class_@GlobalScope_constant_OP_BIT_NEGATE:
 
@@ -4849,7 +4859,7 @@ Bitwise XOR operator (``^``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_NEGATE** = ``19``
 
-Bitwise NOT operator (``~``).
+Bitwise NOT operator (\ ``~``).
 
 .. _class_@GlobalScope_constant_OP_AND:
 
@@ -4857,7 +4867,7 @@ Bitwise NOT operator (``~``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_AND** = ``20``
 
-Logical AND operator (``and`` or ``&&``).
+Logical AND operator (\ ``and`` or ``&&``).
 
 .. _class_@GlobalScope_constant_OP_OR:
 
@@ -4865,7 +4875,7 @@ Logical AND operator (``and`` or ``&&``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_OR** = ``21``
 
-Logical OR operator (``or`` or ``||``).
+Logical OR operator (\ ``or`` or ``||``).
 
 .. _class_@GlobalScope_constant_OP_XOR:
 
@@ -4881,7 +4891,7 @@ Logical XOR operator (not implemented in GDScript).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NOT** = ``23``
 
-Logical NOT operator (``not`` or ``!``).
+Logical NOT operator (\ ``not`` or ``!``).
 
 .. _class_@GlobalScope_constant_OP_IN:
 
@@ -4889,7 +4899,7 @@ Logical NOT operator (``not`` or ``!``).
 
 :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_IN** = ``24``
 
-Logical IN operator (``in``).
+Logical IN operator (\ ``in``).
 
 .. _class_@GlobalScope_constant_OP_MAX:
 
@@ -5442,6 +5452,18 @@ The :ref:`ResourceUID<class_ResourceUID>` singleton.
 :ref:`TextServerManager<class_TextServerManager>` **TextServerManager** :ref:`🔗<class_@GlobalScope_property_TextServerManager>`
 
 The :ref:`TextServerManager<class_TextServerManager>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_property_TextureStreaming:
+
+.. rst-class:: classref-property
+
+:ref:`TextureStreaming<class_TextureStreaming>` **TextureStreaming** :ref:`🔗<class_@GlobalScope_property_TextureStreaming>`
+
+The :ref:`TextureStreaming<class_TextureStreaming>` singleton.
 
 .. rst-class:: classref-item-separator
 
@@ -6624,7 +6646,7 @@ Returns the smallest integer power of 2 that is greater than or equal to ``value
     nearest_po2(0)  # Returns 0 (this may not be expected)
     nearest_po2(-1) # Returns 0 (this may not be expected)
 
-\ **Warning:** Due to its implementation, this method returns ``0`` rather than ``1`` for values less than or equal to ``0``, with an exception for ``value`` being the smallest negative 64-bit integer (``-9223372036854775808``) in which case the ``value`` is returned unchanged.
+\ **Warning:** Due to its implementation, this method returns ``0`` rather than ``1`` for values less than or equal to ``0``, with an exception for ``value`` being the smallest negative 64-bit integer (\ ``-9223372036854775808``) in which case the ``value`` is returned unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -6744,7 +6766,7 @@ Converts one or more arguments of any type to string in the best way possible an
 
 The following BBCode tags are supported: ``b``, ``i``, ``u``, ``s``, ``indent``, ``code``, ``url``, ``center``, ``right``, ``color``, ``bgcolor``, ``fgcolor``.
 
-URL tags only support URLs wrapped by a URL tag, not URLs with a different title.
+URL tags support both URLs wrapped by a URL tag and URLs with a different title (\ ``[url=address]text[/url]``). Support for URLs with a different title varies across terminal emulators. Most modern terminal emulators support them, but Terminal.app and conhost (the legacy Windows console) do not.
 
 When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, ``code`` is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.
 

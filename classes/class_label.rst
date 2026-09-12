@@ -62,9 +62,15 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                       | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`                                         | ``-1``                                                                       |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`maximum_font_size<class_Label_property_maximum_font_size>`                                         | ``60``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`minimum_font_size<class_Label_property_minimum_font_size>`                                         | ``10``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`paragraph_separator<class_Label_property_paragraph_separator>`                                     | ``"\\n"``                                                                    |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`resize_font_to_fit<class_Label_property_resize_font_to_fit>`                                       | ``false``                                                                    |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\]                      | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -105,6 +111,8 @@ Methods
    | :ref:`int<class_int>`     | :ref:`get_line_count<class_Label_method_get_line_count>`\ (\ ) |const|                                          |
    +---------------------------+-----------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`     | :ref:`get_line_height<class_Label_method_get_line_height>`\ (\ line\: :ref:`int<class_int>` = -1\ ) |const|     |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_rendered_font_size<class_Label_method_get_rendered_font_size>`\ (\ ) |const|                          |
    +---------------------------+-----------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`     | :ref:`get_total_character_count<class_Label_method_get_total_character_count>`\ (\ ) |const|                    |
    +---------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -328,6 +336,40 @@ Limits the lines of text the node shows on screen.
 
 ----
 
+.. _class_Label_property_maximum_font_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **maximum_font_size** = ``60`` :ref:`🔗<class_Label_property_maximum_font_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_maximum_font_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_maximum_font_size**\ (\ )
+
+The maximum font size used when :ref:`resize_font_to_fit<class_Label_property_resize_font_to_fit>` is enabled. If :ref:`minimum_font_size<class_Label_property_minimum_font_size>` is greater than :ref:`maximum_font_size<class_Label_property_maximum_font_size>`, the minimum font size takes precedence.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_minimum_font_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **minimum_font_size** = ``10`` :ref:`🔗<class_Label_property_minimum_font_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_minimum_font_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_minimum_font_size**\ (\ )
+
+The minimum font size used when :ref:`resize_font_to_fit<class_Label_property_resize_font_to_fit>` is enabled. Also determines the minimum vertical size of this **Label**, potentially used by a parent :ref:`Container<class_Container>`. If :ref:`minimum_font_size<class_Label_property_minimum_font_size>` is greater than :ref:`maximum_font_size<class_Label_property_maximum_font_size>`, the minimum font size takes precedence.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Label_property_paragraph_separator:
 
 .. rst-class:: classref-property
@@ -340,6 +382,23 @@ Limits the lines of text the node shows on screen.
 - :ref:`String<class_String>` **get_paragraph_separator**\ (\ )
 
 String used as a paragraph separator. Each paragraph is processed independently, in its own BiDi context.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_resize_font_to_fit:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **resize_font_to_fit** = ``false`` :ref:`🔗<class_Label_property_resize_font_to_fit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_resize_font_to_fit**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_resize_font_to_fit_enabled**\ (\ )
+
+If ``true``, the text size will automatically shrink or grow to fit within the node's bounding rectangle. It will pick the largest font size between :ref:`minimum_font_size<class_Label_property_minimum_font_size>` and :ref:`maximum_font_size<class_Label_property_maximum_font_size>` that doesn't cause the text to be truncated.
 
 .. rst-class:: classref-item-separator
 
@@ -392,7 +451,11 @@ Set additional options for BiDi override.
 
 Aligns text to the given tab-stops.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -580,6 +643,18 @@ Returns the height of the line ``line``.
 If ``line`` is set to ``-1``, returns the biggest line height.
 
 If there are no lines, returns font size in pixels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_method_get_rendered_font_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_rendered_font_size**\ (\ ) |const| :ref:`🔗<class_Label_method_get_rendered_font_size>`
+
+Returns the font size that is currently used for rendering. When :ref:`resize_font_to_fit<class_Label_property_resize_font_to_fit>` is enabled, this returns the automatically calculated font size. Otherwise, it returns the theme font size.
 
 .. rst-class:: classref-item-separator
 

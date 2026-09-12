@@ -90,6 +90,8 @@ Properties
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`bool<class_bool>`                             | :ref:`use_angle_limitation<class_LookAtModifier3D_property_use_angle_limitation>`                           | ``false``            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`use_rest_for_limitation<class_LookAtModifier3D_property_use_rest_for_limitation>`                     |                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`bool<class_bool>`                             | :ref:`use_secondary_rotation<class_LookAtModifier3D_property_use_secondary_rotation>`                       | ``true``             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
 
@@ -473,6 +475,8 @@ The limit angle of positive side of the primary rotation when :ref:`symmetry_lim
 
 The axis of the first rotation. This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` works by compositing the rotation by Euler angles to prevent to rotate the :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`.
 
+\ **Note:** Since **LookAtModifier3D** never modifies the twist when :ref:`use_secondary_rotation<class_LookAtModifier3D_property_use_secondary_rotation>` is ``false`` and :ref:`relative<class_LookAtModifier3D_property_relative>` is ``true``, the twist is not fixed even if :ref:`use_rest_for_limitation<class_LookAtModifier3D_property_use_rest_for_limitation>` is ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -489,8 +493,6 @@ The axis of the first rotation. This :ref:`SkeletonModifier3D<class_SkeletonModi
 - :ref:`bool<class_bool>` **is_relative**\ (\ )
 
 The relative option. If ``true``, the rotation is applied relative to the pose. If ``false``, the rotation is applied relative to the rest. It means to replace the current pose with the **LookAtModifier3D**'s result.
-
-\ **Note:** This option affects the base angle for :ref:`use_angle_limitation<class_LookAtModifier3D_property_use_angle_limitation>`. Since the **LookAtModifier3D** relies strongly on Euler rotation, the axis that determines the limitation and the actual rotation are strongly tied together.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +613,7 @@ The limit angle of positive side of the secondary rotation when :ref:`symmetry_l
 
 If ``true``, the limitations are spread from the bone symmetrically.
 
-If ``false``, the limitation can be specified separately for each side of the bone rest.
+If ``false``, the limitation can be specified separately for each side of the reference pose. In here, the reference pose is the bone pose immediately before processing this modifier.
 
 .. rst-class:: classref-item-separator
 
@@ -672,6 +674,27 @@ If ``true``, limits the amount of rotation. For example, this helps to prevent a
 
 ----
 
+.. _class_LookAtModifier3D_property_use_rest_for_limitation:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_rest_for_limitation** :ref:`🔗<class_LookAtModifier3D_property_use_rest_for_limitation>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_rest_for_limitation**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_rest_for_limitation**\ (\ )
+
+If ``true``, the angle limitation and the rotation axes are applied based on the :ref:`Skeleton3D.get_bone_rest()<class_Skeleton3D_method_get_bone_rest>`.
+
+If ``false``, the angle limitation is applied based on the reference pose. In here, the reference pose is the bone pose immediately before processing this modifier.
+
+\ **Note:** The limitation is applied to the rotation computed by this modifier. If the reference pose is rotated around the same axis, the limitation behaves as if it also limits the rotation of the reference pose. A rotation that this modifier does not change, such as the twist, is not limited.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LookAtModifier3D_property_use_secondary_rotation:
 
 .. rst-class:: classref-property
@@ -712,7 +735,7 @@ Returns the remaining seconds of the time-based interpolation.
 
 :ref:`bool<class_bool>` **is_interpolating**\ (\ ) |const| :ref:`🔗<class_LookAtModifier3D_method_is_interpolating>`
 
-Returns ``true`` if time-based interpolation is running. If ``true``, it is equivalent to :ref:`get_interpolation_remaining()<class_LookAtModifier3D_method_get_interpolation_remaining>` returning ``0.0``.
+Returns ``true`` if time-based interpolation is running. If ``false``, it is equivalent to :ref:`get_interpolation_remaining()<class_LookAtModifier3D_method_get_interpolation_remaining>` returning ``0.0``.
 
 This is useful to determine whether a **LookAtModifier3D** can be removed safely.
 

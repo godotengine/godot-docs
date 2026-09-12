@@ -194,7 +194,7 @@ Contains the raw Ogg data for this stream.
 
 Contains user-defined tags if found in the Ogg Vorbis data.
 
-Commonly used tags include ``title``, ``artist``, ``album``, ``tracknumber``, and ``date`` (``date`` does not have a standard date format).
+Commonly used tags include ``title``, ``artist``, ``album``, ``tracknumber``, and ``date`` (\ ``date`` does not have a standard date format).
 
 \ **Note:** No tag is *guaranteed* to be present in every file, so make sure to account for the keys not always existing.
 

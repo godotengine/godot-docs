@@ -23,6 +23,10 @@ CodeEdit is a specialized :ref:`TextEdit<class_TextEdit>` designed for editing p
 
 \ **Note:** Regardless of locale, **CodeEdit** will by default always use left-to-right text direction to correctly display source code.
 
+.. classref_note::
+
+    Being a subclass of :ref:`TextEdit<class_TextEdit>`, line and column numbers are *zero-based*, like elements of an array. For example, the first line of text can be retrieved by ``get_line(0)``, the second line by ``get_line(1)``, and so on.
+
 .. rst-class:: classref-reftable-group
 
 Properties

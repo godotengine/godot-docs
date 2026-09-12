@@ -244,7 +244,7 @@ Returns protocol used for remote debugging. Default implementation return ``tcp:
 
 :ref:`String<class_String>` **_get_device_architecture**\ (\ device\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_device_architecture>`
 
-Returns device architecture for one-click deploy.
+Returns device architecture for remote deploy.
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +334,7 @@ Returns export platform name.
 
 :ref:`Texture2D<class_Texture2D>` **_get_option_icon**\ (\ device\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_option_icon>`
 
-Returns the item icon for the specified ``device`` in the one-click deploy menu. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
+Returns the item icon for the specified ``device`` in the remote deploy menu. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
 
 .. rst-class:: classref-item-separator
 
@@ -346,7 +346,7 @@ Returns the item icon for the specified ``device`` in the one-click deploy menu.
 
 :ref:`String<class_String>` **_get_option_label**\ (\ device\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_option_label>`
 
-Returns one-click deploy menu item label for the specified ``device``.
+Returns remote deploy menu item label for the specified ``device``.
 
 .. rst-class:: classref-item-separator
 
@@ -358,7 +358,7 @@ Returns one-click deploy menu item label for the specified ``device``.
 
 :ref:`String<class_String>` **_get_option_tooltip**\ (\ device\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_option_tooltip>`
 
-Returns one-click deploy menu item tooltip for the specified ``device``.
+Returns remote deploy menu item tooltip for the specified ``device``.
 
 .. rst-class:: classref-item-separator
 
@@ -370,7 +370,7 @@ Returns one-click deploy menu item tooltip for the specified ``device``.
 
 :ref:`int<class_int>` **_get_options_count**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_options_count>`
 
-Returns the number of devices (or other options) available in the one-click deploy menu.
+Returns the number of devices (or other options) available in the remote deploy menu.
 
 .. rst-class:: classref-item-separator
 
@@ -382,7 +382,7 @@ Returns the number of devices (or other options) available in the one-click depl
 
 :ref:`String<class_String>` **_get_options_tooltip**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_options_tooltip>`
 
-Returns tooltip of the one-click deploy menu button.
+Returns tooltip of the remote deploy menu button.
 
 .. rst-class:: classref-item-separator
 
@@ -430,7 +430,7 @@ Returns array of platform specific features for the specified ``preset``.
 
 :ref:`Texture2D<class_Texture2D>` **_get_run_icon**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlatformExtension_private_method__get_run_icon>`
 
-Returns the icon of the one-click deploy menu button. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
+Returns the icon of the remote deploy menu button. The icon should be 16×16 pixels, adjusted for the current editor scale (see :ref:`EditorInterface.get_editor_scale()<class_EditorInterface_method_get_editor_scale>`).
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +490,7 @@ Returns ``true`` if specified file is a valid executable (native executable or s
 
 :ref:`bool<class_bool>` **_poll_export**\ (\ ) |virtual| :ref:`🔗<class_EditorExportPlatformExtension_private_method__poll_export>`
 
-Returns ``true`` if one-click deploy options are changed and editor interface should be updated.
+Returns ``true`` if remote deploy options are changed and editor interface should be updated.
 
 .. rst-class:: classref-item-separator
 
@@ -502,7 +502,7 @@ Returns ``true`` if one-click deploy options are changed and editor interface sh
 
 :ref:`Error<enum_@GlobalScope_Error>` **_run**\ (\ preset\: :ref:`EditorExportPreset<class_EditorExportPreset>`, device\: :ref:`int<class_int>`, debug_flags\: |bitfield|\[:ref:`DebugFlags<enum_EditorExportPlatform_DebugFlags>`\]\ ) |virtual| :ref:`🔗<class_EditorExportPlatformExtension_private_method__run>`
 
-This method is called when ``device`` one-click deploy menu option is selected.
+This method is called when ``device`` remote deploy menu option is selected.
 
 Implementation should export project to a temporary location, upload and run it on the specific ``device``, or perform another action associated with the menu item.
 

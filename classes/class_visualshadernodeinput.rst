@@ -89,7 +89,7 @@ Property Descriptions
 - |void| **set_input_name**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_input_name**\ (\ )
 
-One of the several input constants in lower-case style like: "vertex" (``VERTEX``) or "point_size" (``POINT_SIZE``).
+One of the several input constants in lower-case style like: "vertex" (\ ``VERTEX``) or "point_size" (\ ``POINT_SIZE``).
 
 .. rst-class:: classref-section-separator
 
