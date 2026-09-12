@@ -43,7 +43,7 @@ You can download the `godot-cpp repository <https://github.com/godotengine/godot
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
     minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
-    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.    
+    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
 
     There is one exception to this: extensions targeting Godot 4.0 will **not** work with
     Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
