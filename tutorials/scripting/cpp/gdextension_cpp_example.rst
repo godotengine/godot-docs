@@ -92,9 +92,8 @@ following commands:
 
 This will initialize the repository in your project folder.
 
-You should now build the godot-cpp module to generate the necessary include headers
-you will be using for the plugin. Without it being built, the ``sprite2d.hpp``
-file, for example, will not be available.
+You should now build the godot-cpp module to generate the static library as well
+as additional headers you will be using for your GDExtension.
 
 .. code-block:: none
 
@@ -103,6 +102,10 @@ file, for example, will not be available.
 
 .. note:: 
 
+    There are three include paths that contain the headers you will need to build your GDExtension:
+    ``/godot-cpp/gdextension``, ``/godot-cpp/include``, and ``/godot-cpp/gen/include``. The last
+    of which is creeated when you build the godot-cpp module.
+    
     Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
     ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
     need this file to provide include path information and completion recommendations. To do this,
