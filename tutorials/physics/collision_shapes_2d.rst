@@ -6,6 +6,7 @@ Collision shapes (2D)
 This guide explains:
 
 - The types of collision shapes available in 2D in Godot.
+- Debugging collision shapes.
 - Using an image converted to a polygon as a collision shape.
 - Performance considerations regarding 2D collisions.
 
@@ -87,6 +88,27 @@ You can configure the CollisionPolygon2D node's *build mode* in the inspector.
 If it is set to **Solids** (the default), collisions will include the polygon
 and its contained area. If it is set to **Segments**, collisions will only
 include the polygon edges.
+
+Debugging collision shapes
+--------------------------
+
+Use the :ref:`Debug Color <class_CollisionShape2D_property_debug_color>` property
+in the CollisionShape2D resource to distinguish a shape from others.
+Turn on the :menu:`Debug > Visible Collision Shapes` menu option to also see them
+in the running project.
+
+.. tip::
+
+    If the project setting
+    :ref:`Debug > Shapes > Collision > Draw 2D Outlines <class_ProjectSettings_property_debug/shapes/collision/draw_2d_outlines>`
+    is enabled (which is the default), a solid outline will be derived from the
+    debug color, even if the debug color has full transparency. You can use
+    this to have outline-only debug shapes. This is useful when multiple
+    collision shapes overlap in the same scene, such as a physics collider, a hitbox,
+    and an interaction shape. For example, use ``Color(1, 0, 0, 0)`` for a red outline.
+
+Generating collision shapes from images
+---------------------------------------
 
 You can generate a concave collision shape from the editor by selecting a Sprite2D
 and using the **Sprite2D** menu at the top of the 2D viewport. The Sprite2D menu
