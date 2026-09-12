@@ -92,10 +92,10 @@ include the polygon edges.
 Debugging collision shapes
 --------------------------
 
-Use the :ref:`debug color<class_CollisionShape2D_property_debug_color>` to
-distinguish a shape from others. Turn on the
-:menu:`Debug > Visible Collision Shapes` menu option to also see them in the
-running project.
+Use the :ref:`Debug Color <class_CollisionShape2D_property_debug_color>` property
+in the CollisionShape2D resource to distinguish a shape from others.
+Turn on the :menu:`Debug > Visible Collision Shapes` menu option to also see them
+in the running project.
 
 .. tip::
 
