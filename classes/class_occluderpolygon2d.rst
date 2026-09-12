@@ -132,7 +132,11 @@ The culling mode to use.
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

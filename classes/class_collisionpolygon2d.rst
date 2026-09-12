@@ -189,7 +189,11 @@ The polygon's list of vertices. Each point will be connected to the next, and th
 
 \ **Note:** The returned vertices are in the local coordinate space of the given **CollisionPolygon2D**.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

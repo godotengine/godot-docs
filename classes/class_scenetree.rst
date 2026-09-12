@@ -357,8 +357,6 @@ The root node of the currently loaded main scene, usually as a direct child of :
 
 If ``true``, collision shapes will be visible when running the game from the editor for debugging purposes.
 
-\ **Note:** This property is not designed to be changed at run-time. Changing the value of :ref:`debug_collisions_hint<class_SceneTree_property_debug_collisions_hint>` while the project is running will not have the desired effect.
-
 .. rst-class:: classref-item-separator
 
 ----

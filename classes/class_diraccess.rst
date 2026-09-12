@@ -334,7 +334,7 @@ Returns ``null`` if opening the directory failed. You can use :ref:`get_open_err
 
 :ref:`bool<class_bool>` **current_is_dir**\ (\ ) |const| :ref:`🔗<class_DirAccess_method_current_is_dir>`
 
-Returns whether the current item processed with the last :ref:`get_next()<class_DirAccess_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
+Returns whether the current item processed with the last :ref:`get_next()<class_DirAccess_method_get_next>` call is a directory (\ ``.`` and ``..`` are considered directories).
 
 .. rst-class:: classref-item-separator
 
@@ -716,7 +716,7 @@ Static version of :ref:`make_dir_recursive()<class_DirAccess_method_make_dir_rec
 
 :ref:`DirAccess<class_DirAccess>` **open**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_open>`
 
-Creates a new **DirAccess** object and opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
+Creates a new **DirAccess** object and opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (\ ``res://folder``), the user directory (\ ``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
 Returns ``null`` if opening the directory failed. You can use :ref:`get_open_error()<class_DirAccess_method_get_open_error>` to check the error that occurred.
 

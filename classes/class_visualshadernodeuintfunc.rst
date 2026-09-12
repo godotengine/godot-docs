@@ -19,7 +19,7 @@ An unsigned scalar integer function to be used within the visual shader graph.
 Description
 -----------
 
-Accept an unsigned integer scalar (``x``) to the input port and transform it according to :ref:`function<class_VisualShaderNodeUIntFunc_property_function>`.
+Accept an unsigned integer scalar (\ ``x``) to the input port and transform it according to :ref:`function<class_VisualShaderNodeUIntFunc_property_function>`.
 
 .. rst-class:: classref-reftable-group
 

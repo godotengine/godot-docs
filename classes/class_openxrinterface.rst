@@ -65,6 +65,8 @@ Methods
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                | :ref:`get_action_sets<class_OpenXRInterface_method_get_action_sets>`\ (\ ) |const|                                                                                                                                            |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>`         | :ref:`get_active_view_configuration<class_OpenXRInterface_method_get_active_view_configuration>`\ (\ ) |const|                                                                                                                |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                | :ref:`get_available_display_refresh_rates<class_OpenXRInterface_method_get_available_display_refresh_rates>`\ (\ ) |const|                                                                                                    |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                            | :ref:`get_hand_joint_angular_velocity<class_OpenXRInterface_method_get_hand_joint_angular_velocity>`\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| |
@@ -351,6 +353,56 @@ The session is about to be lost. :ref:`session_loss_pending<class_OpenXRInterfac
 :ref:`SessionState<enum_OpenXRInterface_SessionState>` **SESSION_STATE_EXITING** = ``8``
 
 The OpenXR instance is about to be destroyed and we're exiting. :ref:`instance_exiting<class_OpenXRInterface_signal_instance_exiting>` is emitted when we change to this state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRInterface_ViewConfiguration:
+
+.. rst-class:: classref-enumeration
+
+enum **ViewConfiguration**: :ref:`🔗<enum_OpenXRInterface_ViewConfiguration>`
+
+.. _class_OpenXRInterface_constant_VIEW_CONFIGURATION_MONO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **VIEW_CONFIGURATION_MONO** = ``0``
+
+Our XR output configuration is monoscopic.
+
+.. _class_OpenXRInterface_constant_VIEW_CONFIGURATION_STEREO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **VIEW_CONFIGURATION_STEREO** = ``1``
+
+Our XR output configuration is stereoscopic.
+
+.. _class_OpenXRInterface_constant_VIEW_CONFIGURATION_STEREO_WITH_INSET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **VIEW_CONFIGURATION_STEREO_WITH_INSET** = ``2``
+
+Our XR output configuration is stereoscopic with an additional foveated inset render.
+
+.. _class_OpenXRInterface_constant_VIEW_CONFIGURATION_UNSET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **VIEW_CONFIGURATION_UNSET** = ``254``
+
+Our XR output configuration has not yet been determined.
+
+.. _class_OpenXRInterface_constant_VIEW_CONFIGURATION_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **VIEW_CONFIGURATION_UNKNOWN** = ``255``
+
+Our XR output configuration is unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -1008,6 +1060,20 @@ Method Descriptions
 :ref:`Array<class_Array>` **get_action_sets**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_action_sets>`
 
 Returns a list of action sets registered with Godot (loaded from the action map at runtime).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_get_active_view_configuration:
+
+.. rst-class:: classref-method
+
+:ref:`ViewConfiguration<enum_OpenXRInterface_ViewConfiguration>` **get_active_view_configuration**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_active_view_configuration>`
+
+Gets the active view configuration.
+
+\ **Note:** This will only return a valid value after OpenXR is initialized.
 
 .. rst-class:: classref-item-separator
 

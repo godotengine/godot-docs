@@ -42,61 +42,67 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`                 | ``40.0``              |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                | :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`             | ``false``             |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`               | ``10.0``              |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`               | ``50.0``              |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                | :ref:`editor_only<class_Light3D_property_editor_only>`                                 | ``false``             |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>`           | ``0.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                         | ``2``                 |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`              | :ref:`light_color<class_Light3D_property_light_color>`                                 | ``Color(1, 1, 1, 1)`` |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                  | :ref:`light_cull_mask<class_Light3D_property_light_cull_mask>`                         | ``4294967295``        |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_energy<class_Light3D_property_light_energy>`                               | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_indirect_energy<class_Light3D_property_light_indirect_energy>`             | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_intensity_lumens<class_Light3D_property_light_intensity_lumens>`           |                       |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_intensity_lux<class_Light3D_property_light_intensity_lux>`                 |                       |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                | :ref:`light_negative<class_Light3D_property_light_negative>`                           | ``false``             |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Texture2D<class_Texture2D>`      | :ref:`light_projector<class_Light3D_property_light_projector>`                         |                       |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_size<class_Light3D_property_light_size>`                                   | ``0.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_temperature<class_Light3D_property_light_temperature>`                     |                       |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_volumetric_fog_energy<class_Light3D_property_light_volumetric_fog_energy>` | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_bias<class_Light3D_property_shadow_bias>`                                 | ``0.1``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                                 | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                  | :ref:`shadow_caster_mask<class_Light3D_property_shadow_caster_mask>`                   | ``4294967295``        |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                           | ``false``             |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_normal_bias<class_Light3D_property_shadow_normal_bias>`                   | ``2.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_opacity<class_Light3D_property_shadow_opacity>`                           | ``1.0``               |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                | :ref:`shadow_reverse_cull_face<class_Light3D_property_shadow_reverse_cull_face>`       | ``false``             |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_transmittance_bias<class_Light3D_property_shadow_transmittance_bias>`     | ``0.05``              |
-   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`distance_fade_begin<class_Light3D_property_distance_fade_begin>`                       | ``40.0``              |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`                   | ``false``             |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`distance_fade_length<class_Light3D_property_distance_fade_length>`                     | ``10.0``              |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`                     | ``50.0``              |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`editor_only<class_Light3D_property_editor_only>`                                       | ``false``             |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>`                 | ``0.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`BakeMode<enum_Light3D_BakeMode>` | :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`                               | ``2``                 |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`              | :ref:`light_color<class_Light3D_property_light_color>`                                       | ``Color(1, 1, 1, 1)`` |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                  | :ref:`light_cull_mask<class_Light3D_property_light_cull_mask>`                               | ``4294967295``        |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_energy<class_Light3D_property_light_energy>`                                     | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_indirect_energy<class_Light3D_property_light_indirect_energy>`                   | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_intensity_lumens<class_Light3D_property_light_intensity_lumens>`                 |                       |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_intensity_lux<class_Light3D_property_light_intensity_lux>`                       |                       |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`light_negative<class_Light3D_property_light_negative>`                                 | ``false``             |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>`      | :ref:`light_projector<class_Light3D_property_light_projector>`                               |                       |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_size<class_Light3D_property_light_size>`                                         | ``0.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                                 | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_temperature<class_Light3D_property_light_temperature>`                           |                       |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`light_volumetric_fog_energy<class_Light3D_property_light_volumetric_fog_energy>`       | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_bias<class_Light3D_property_shadow_bias>`                                       | ``0.1``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                                       | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                  | :ref:`shadow_caster_mask<class_Light3D_property_shadow_caster_mask>`                         | ``4294967295``        |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`shadow_contact_shadows_allow<class_Light3D_property_shadow_contact_shadows_allow>`     | ``true``              |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_contact_shadows_blur<class_Light3D_property_shadow_contact_shadows_blur>`       | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_contact_shadows_opacity<class_Light3D_property_shadow_contact_shadows_opacity>` | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                                 | ``false``             |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_normal_bias<class_Light3D_property_shadow_normal_bias>`                         | ``2.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_opacity<class_Light3D_property_shadow_opacity>`                                 | ``1.0``               |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                | :ref:`shadow_reverse_cull_face<class_Light3D_property_shadow_reverse_cull_face>`             | ``false``             |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`              | :ref:`shadow_transmittance_bias<class_Light3D_property_shadow_transmittance_bias>`           | ``0.05``              |
+   +----------------------------------------+----------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -297,11 +303,27 @@ Constant for accessing :ref:`shadow_transmittance_bias<class_Light3D_property_sh
 
 Constant for accessing :ref:`light_intensity_lumens<class_Light3D_property_light_intensity_lumens>` and :ref:`light_intensity_lux<class_Light3D_property_light_intensity_lux>`. Only used when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``.
 
+.. _class_Light3D_constant_PARAM_CONTACT_SHADOW_OPACITY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light3D_Param>` **PARAM_CONTACT_SHADOW_OPACITY** = ``21``
+
+Constant for accessing :ref:`shadow_contact_shadows_opacity<class_Light3D_property_shadow_contact_shadows_opacity>`.
+
+.. _class_Light3D_constant_PARAM_CONTACT_SHADOW_BLUR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light3D_Param>` **PARAM_CONTACT_SHADOW_BLUR** = ``22``
+
+Constant for accessing :ref:`shadow_contact_shadows_blur<class_Light3D_property_shadow_contact_shadows_blur>`.
+
 .. _class_Light3D_constant_PARAM_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Param<enum_Light3D_Param>` **PARAM_MAX** = ``21``
+:ref:`Param<enum_Light3D_Param>` **PARAM_MAX** = ``23``
 
 Represents the size of the :ref:`Param<enum_Light3D_Param>` enum.
 
@@ -331,9 +353,11 @@ Light is ignored when baking. This is the fastest mode, but the light will not b
 
 :ref:`BakeMode<enum_Light3D_BakeMode>` **BAKE_STATIC** = ``1``
 
-Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time. This is suitable for subtle changes (such as flickering torches), but generally not large changes such as toggling a light on and off.
+Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time.
 
 \ **Note:** The light is not baked in :ref:`LightmapGI<class_LightmapGI>` if :ref:`editor_only<class_Light3D_property_editor_only>` is ``true``.
+
+\ **Note:** When using :ref:`LightmapGI<class_LightmapGI>`, both the direct and indirect light are baked. Since direct light is baked, the light doesn't display a specular lobe on static lightmapped meshes. Shadows on static lightmapped meshes will also look less detailed, but the light still casts shadows that can be displayed on dynamic objects. Since real-time light computations are skipped on static lightmapped meshes, this bake mode improves runtime performance compared to :ref:`BAKE_DYNAMIC<class_Light3D_constant_BAKE_DYNAMIC>` and :ref:`BAKE_DISABLED<class_Light3D_constant_BAKE_DISABLED>`.
 
 .. _class_Light3D_constant_BAKE_DYNAMIC:
 
@@ -341,7 +365,9 @@ Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :re
 
 :ref:`BakeMode<enum_Light3D_BakeMode>` **BAKE_DYNAMIC** = ``2``
 
-Light is taken into account in dynamic baking (:ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) only). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. This has a greater performance cost compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. When using SDFGI, the update speed of dynamic lights is affected by :ref:`ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`.
+Light is taken into account in dynamic baking (:ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. This has a greater performance cost compared to :ref:`BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`. When using SDFGI, the update speed of dynamic lights is affected by :ref:`ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`.
+
+\ **Note:** When using :ref:`LightmapGI<class_LightmapGI>`, the light's indirect light is baked, but direct light and shadows remain real-time. This mode allows performing *subtle* changes to a light's color, energy, and position while still looking fairly correct. For example, you can use this to create flickering static torches that have their indirect light baked.
 
 .. rst-class:: classref-section-separator
 
@@ -757,6 +783,57 @@ Blurs the edges of the shadow. Can be used to hide pixel artifacts in low-resolu
 - :ref:`int<class_int>` **get_shadow_caster_mask**\ (\ )
 
 The light will only cast shadows using objects in the selected layers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Light3D_property_shadow_contact_shadows_allow:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **shadow_contact_shadows_allow** = ``true`` :ref:`🔗<class_Light3D_property_shadow_contact_shadows_allow>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_allow_contact_shadows**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_allow_contact_shadows**\ (\ )
+
+Enables screen-space contact shadows for this light. Only used when :ref:`ProjectSettings.rendering/lights_and_shadows/contact_shadow/enabled<class_ProjectSettings_property_rendering/lights_and_shadows/contact_shadow/enabled>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Light3D_property_shadow_contact_shadows_blur:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **shadow_contact_shadows_blur** = ``1.0`` :ref:`🔗<class_Light3D_property_shadow_contact_shadows_blur>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`\ ) |const|
+
+Blurs the edges of the contact shadow. ``0.0`` produces sharp shadows; higher values increase the noise magnitude. Only used when :ref:`shadow_contact_shadows_allow<class_Light3D_property_shadow_contact_shadows_allow>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Light3D_property_shadow_contact_shadows_opacity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **shadow_contact_shadows_opacity** = ``1.0`` :ref:`🔗<class_Light3D_property_shadow_contact_shadows_opacity>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`\ ) |const|
+
+Changes the opacity of this light's screen-space contact shadows. A value of ``1.0`` uses the same opacity as :ref:`shadow_opacity<class_Light3D_property_shadow_opacity>`, a value of ``0.5`` would be 50% of the opacity of :ref:`shadow_opacity<class_Light3D_property_shadow_opacity>`. Only used when :ref:`shadow_contact_shadows_allow<class_Light3D_property_shadow_contact_shadows_allow>` is enabled.
 
 .. rst-class:: classref-item-separator
 

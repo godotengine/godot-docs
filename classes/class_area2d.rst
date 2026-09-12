@@ -455,7 +455,7 @@ If gravity is a point (see :ref:`gravity_point<class_Area2D_property_gravity_poi
 - |void| **set_gravity_point_unit_distance**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_gravity_point_unit_distance**\ (\ )
 
-The distance at which the gravity strength is equal to :ref:`gravity<class_Area2D_property_gravity>`. For example, on a planet 100 pixels in radius with a surface gravity of 4.0 px/s², set the :ref:`gravity<class_Area2D_property_gravity>` to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 pixels from the center the gravity will be 1.0 px/s² (twice the distance, 1/4th the gravity), at 50 pixels it will be 16.0 px/s² (half the distance, 4x the gravity), and so on.
+The distance at which the gravity strength is equal to :ref:`gravity<class_Area2D_property_gravity>`. For example, on a planet 100 pixels in radius with a surface gravity of 4.0 px/s², set the :ref:`gravity<class_Area2D_property_gravity>` to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 pixels from the center the gravity will be 1.0 px/s² (twice the distance, 1/4th the gravity), at 50 pixels it will be 16.0 px/s² (half the distance, 4× the gravity), and so on.
 
 The above is true only when the unit distance is a positive number. When this is set to 0.0, the gravity will be constant regardless of distance.
 

@@ -443,7 +443,7 @@ Returns ``true`` if this **Callable** is a custom callable. Custom callables are
 
 - for representing methods of built-in :ref:`Variant<class_Variant>` types (see :ref:`create()<class_Callable_method_create>`);
 
-- for representing global, lambda, and RPC functions in GDScript;
+- for representing global and lambda functions in GDScript;
 
 - for other purposes in the core, GDExtension, and C#.
 

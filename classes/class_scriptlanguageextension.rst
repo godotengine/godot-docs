@@ -85,7 +85,7 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_public_functions<class_ScriptLanguageExtension_private_method__get_public_functions>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                        |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_recognized_extensions<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                              |
+   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_recognized_extensions<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_reserved_words<class_ScriptLanguageExtension_private_method__get_reserved_words>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                            |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -926,11 +926,9 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+**Deprecated:** This method is not called by the engine.
 
 .. rst-class:: classref-item-separator
 
@@ -1222,6 +1220,8 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 Reloads all ``scripts`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
 
+\ ``soft_reload`` is always ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1233,6 +1233,8 @@ Reloads all ``scripts`` from disk and the specifics of how that happens is **Scr
 |void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| |required| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_tool_script>`
 
 Reloads the given ``script`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
+
+\ ``soft_reload`` is always ``true``.
 
 .. rst-class:: classref-item-separator
 

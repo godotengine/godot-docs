@@ -232,7 +232,7 @@ For more information, see the `MIDI message status byte list chart <https://www.
 
 The pitch index number of this MIDI message. This value ranges from ``0`` to ``127``.
 
-On a piano, the **middle C** is ``60``, followed by a **C-sharp** (``61``), then a **D** (``62``), and so on. Each octave is split in offsets of 12. See the "MIDI note number" column of the `piano key frequency chart <https://en.wikipedia.org/wiki/Piano_key_frequencies>`__ a full list.
+On a piano, the **middle C** is ``60``, followed by a **C-sharp** (\ ``61``), then a **D** (\ ``62``), and so on. Each octave is split in offsets of 12. See the "MIDI note number" column of the `piano key frequency chart <https://en.wikipedia.org/wiki/Piano_key_frequencies>`__ a full list.
 
 .. rst-class:: classref-item-separator
 

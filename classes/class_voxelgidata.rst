@@ -21,7 +21,7 @@ Description
 
 **VoxelGIData** contains baked voxel global illumination for use in a :ref:`VoxelGI<class_VoxelGI>` node. **VoxelGIData** also offers several properties to adjust the final appearance of the global illumination. These properties can be adjusted at run-time without having to bake the :ref:`VoxelGI<class_VoxelGI>` node again.
 
-\ **Note:** To prevent text-based scene files (``.tscn``) from growing too much and becoming slow to load and save, always save **VoxelGIData** to an external binary resource file (``.res``) instead of embedding it within the scene. This can be done by clicking the dropdown arrow next to the **VoxelGIData** resource, choosing **Edit**, clicking the floppy disk icon at the top of the Inspector then choosing **Save As...**.
+\ **Note:** To prevent text-based scene files (\ ``.tscn``) from growing too much and becoming slow to load and save, always save **VoxelGIData** to an external binary resource file (\ ``.res``) instead of embedding it within the scene. This can be done by clicking the dropdown arrow next to the **VoxelGIData** resource, choosing **Edit**, clicking the floppy disk icon at the top of the Inspector then choosing **Save As...**.
 
 .. rst-class:: classref-introduction-group
 
@@ -115,7 +115,7 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 - |void| **set_dynamic_range**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_dynamic_range**\ (\ )
 
-The dynamic range to use (``1.0`` represents a low dynamic range scene brightness). Higher values can be used to provide brighter indirect lighting, at the cost of more visible color banding in dark areas (both in indirect lighting and reflections). To avoid color banding, it's recommended to use the lowest value that does not result in visible light clipping.
+The dynamic range to use (\ ``1.0`` represents a low dynamic range scene brightness). Higher values can be used to provide brighter indirect lighting, at the cost of more visible color banding in dark areas (both in indirect lighting and reflections). To avoid color banding, it's recommended to use the lowest value that does not result in visible light clipping.
 
 .. rst-class:: classref-item-separator
 

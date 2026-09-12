@@ -226,7 +226,7 @@ Returns the number of existing messages.
 
 Returns the keys of all messages, that is, the context and untranslated strings of each message.
 
-\ **Note:** If a message does not use a context, the corresponding element is the untranslated string. Otherwise, the corresponding element is the context and untranslated string separated by the EOT character (``U+0004``). This is done for compatibility purposes.
+\ **Note:** If a message does not use a context, the corresponding element is the untranslated string. Otherwise, the corresponding element is the context and untranslated string separated by the EOT character (\ ``U+0004``). This is done for compatibility purposes.
 
 ::
 

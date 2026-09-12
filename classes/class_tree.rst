@@ -271,6 +271,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`scroll_border<class_Tree_theme_constant_scroll_border>`                            | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`scroll_max_sticky_items<class_Tree_theme_constant_scroll_max_sticky_items>`        | ``0``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`scroll_speed<class_Tree_theme_constant_scroll_speed>`                              | ``12``                              |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`scrollbar_h_separation<class_Tree_theme_constant_scrollbar_h_separation>`          | ``4``                               |
@@ -1927,6 +1929,18 @@ The default width of the relationship lines.
 :ref:`int<class_int>` **scroll_border** = ``4`` :ref:`🔗<class_Tree_theme_constant_scroll_border>`
 
 The maximum distance between the mouse cursor and the control's border to trigger border scrolling when dragging.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_scroll_max_sticky_items:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **scroll_max_sticky_items** = ``0`` :ref:`🔗<class_Tree_theme_constant_scroll_max_sticky_items>`
+
+The maximum number of tree items allowed to stick to the top while its children are in view. A value of ``0`` disables sticking.
 
 .. rst-class:: classref-item-separator
 
