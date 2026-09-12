@@ -108,7 +108,7 @@ file, for example, will not be available.
     need this file to provide include path information and completion recommendations. To do this,
     ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
     You will also need to copy the example SConstruct file into the gdextension_cpp_example project root folder.. 
-    Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`
+    Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
  
     In the project's root folder run the following command to generate the ``compile_commands.json``:
 
