@@ -52,7 +52,7 @@ You can download the `godot-cpp repository <https://github.com/godotengine/godot
 
 .. note::
 
-    Branches of specific GDExtension API versions are no longer provided individually. Instead, you will select the version of the
+    Branches of specific GDExtension API versions are no longer provided individually. Instead, you should select the version of the
     GDExtension API you wish to use in the scons build with the argument ``api_version=4.x``.    
 
 If you are versioning your project using Git, it is recommended to add it as
