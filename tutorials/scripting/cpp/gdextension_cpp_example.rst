@@ -39,18 +39,6 @@ and :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ from GitHub or let Git do the work for you.
-Note that this repository has different branches for different versions
-of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
-
-.. note::
-    To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
-    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
-    are targeting.
-
-    The ``master`` branch is the development branch which is updated regularly
-    to work with Godot's ``master`` branch.
 
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
@@ -60,6 +48,13 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
     There is one exception to this: extensions targeting Godot 4.0 will **not** work with
     Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
+    GDExtensions will not work in older versions of Godot (only Godot 4 and up).
+
+.. note::
+
+    Branches of specific GDExtension API versions are no longer provided individually. Instead, you should select the version of the
+    GDExtension API you wish to use in the scons build with the argument ``api_version=4.x``.    
+
 If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
 
@@ -68,7 +63,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.x https://github.com/godotengine/godot-cpp
+    git submodule add https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -78,7 +73,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.x https://github.com/godotengine/godot-cpp
+    git clone https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -96,6 +91,35 @@ following commands:
     git submodule update --init
 
 This will initialize the repository in your project folder.
+
+You should now build the godot-cpp module to generate the static library as well
+as additional headers you will be using for your GDExtension.
+
+.. code-block:: none
+
+    cd godot-cpp
+    scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of GDExtension you are building for, e.g., 4.7
+
+.. note:: 
+
+    There are three include paths that contain the headers you will need to build your GDExtension:
+    ``/godot-cpp/gdextension``, ``/godot-cpp/include``, and ``/godot-cpp/gen/include``. The last
+    of which is creeated when you build the godot-cpp module.
+    
+    Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
+    ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
+    need this file to provide include path information and completion recommendations. To do this,
+    ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
+    You will also need to copy the example SConstruct file into the gdextension_cpp_example project root folder.
+    Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
+ 
+    In the project's root folder run the following command to generate the ``compile_commands.json``:
+
+    .. code-block:: none
+    
+        scons compiledb=yes api_version=4.7 compile_commands.json
+
+You should now be ready to move on to creating a simple plugin.
 
 Creating a simple plugin
 ------------------------
@@ -126,6 +150,7 @@ Your folder structure should now look like this:
     +--godot-cpp/             # C++ bindings
     |
     +--src/                   # source code of the extension we are building
+
 
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
