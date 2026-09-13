@@ -89,6 +89,22 @@ your custom signal names are listed under the nested ``SignalName`` class.
         EmitSignal(SignalName.MySignalWithArgument, "World");
     }
 
+Godot also generates a strongly-typed ``EmitSignal{SignalName}`` method for each signal. Its
+parameters match the signal's delegate, so the compiler checks the number and types of the
+arguments you pass.
+
+.. code-block:: csharp
+
+    public void MyMethodEmittingSignals()
+    {
+        EmitSignalMySignal();
+        EmitSignalMySignalWithArgument("World");
+    }
+
+These methods are ``protected``, so they can only be called from the class that declares the
+signal or from a derived class. Signals defined by the engine have them too: for example, a
+script that extends ``Button`` can call ``EmitSignalPressed()``.
+
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
 Signals support arguments of any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
