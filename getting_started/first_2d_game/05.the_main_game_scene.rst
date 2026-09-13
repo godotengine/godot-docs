@@ -158,9 +158,9 @@ dock, then double-click the ``timeout()`` signal in the list. This will open a n
 signal connection dialog. The default settings in this dialog should be fine, so
 select **Connect** to create a new signal connection.
 
-Once all three timers have this set up, you should be able to see each timer
-have a Signal connection for their respective ``timeout()`` signal, showing in
-green, within their respective Signals tabs:
+Once all three timers have this set up, you should be able to see that each
+timer has a Signal connection for its respective ``timeout()`` signal, showing
+in green, within its respective Signals tab:
 
 - (For MobTimer): ``_on_mob_timer_timeout()``
 - (For ScoreTimer): ``_on_score_timer_timeout()``
