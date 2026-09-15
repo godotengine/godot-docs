@@ -114,7 +114,7 @@ It should automatically select the project folder; so simply click **Open**. By 
 Code style configuration
 ------------------------
 
-Before editing any files, remember that all code needs to comply with the `code style guidelines <https://contributing.godotengine.org/en/latest/engine/guidelines/code_style.html>`__. One important difference with Godot is the use of tabs for indents. Therefore, the key default editor setting that needs to be changed in Code::Blocks is to enable tabs for indents. This setting can be found by selecting **Settings > Editor**.
+Before editing any files, remember that all code needs to comply with the `code style guidelines <https://contributing.godotengine.org/en/latest/development/engine/cpp_usage_guidelines.html>`__. One important difference with Godot is the use of tabs for indents. Therefore, the key default editor setting that needs to be changed in Code::Blocks is to enable tabs for indents. This setting can be found by selecting **Settings > Editor**.
 
 .. figure:: img/code_blocks_update_editor_settings.png
    :figclass: figure-w480

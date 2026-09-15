@@ -57,7 +57,7 @@ The format of the class reference XML files is the same as the one used by Godot
 :ref:`doc_class_reference_primer`.
 
 If you are looking for pointers to write high quality documentation, feel free to refer to Godot's
-`documentation guidelines <https://contributing.godotengine.org/en/latest/documentation/guidelines/index.html>`__.
+`documentation guidelines <https://contributing.godotengine.org/en/latest/development/documentation/index.html>`__.
 
 Publishing documentation online
 -------------------------------

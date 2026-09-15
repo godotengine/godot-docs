@@ -10,7 +10,7 @@ built-in node types.
 .. seealso::
 
     To learn to submit your changes to the Godot project using the Git version
-    control system, see `Class reference contribution documentation <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__.
+    control system, see `Class reference contribution documentation <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__.
 
 The reference for each class is contained in an XML file like the one below:
 
@@ -80,7 +80,7 @@ their documentation by completing or improving the text in these tags:
 - ``<constant>``
 
 Write in a clear and simple language. Always follow the `writing guidelines
-<https://contributing.godotengine.org/en/latest/documentation/guidelines/docs_writing_guidelines.html>`__
+<https://contributing.godotengine.org/en/latest/development/documentation/docs_writing_guidelines.html>`__
 to keep your descriptions short and easy to read.
 **Do not leave empty lines** in the descriptions: each line in the XML file will
 result in a new paragraph, even if it is empty.
