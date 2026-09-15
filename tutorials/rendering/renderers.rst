@@ -220,6 +220,8 @@ See :ref:`doc_lights_and_shadows` for more information.
 | Light projector         | ❌ Not supported.        | ✔️ Supported.            | ✔️ Supported.            |
 | textures                |                          |                          |                          |
 +-------------------------+--------------------------+--------------------------+--------------------------+
+| Contact shadows         | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
++-------------------------+--------------------------+--------------------------+--------------------------+
 
 Global Illumination
 ~~~~~~~~~~~~~~~~~~~
