@@ -256,6 +256,47 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         ClassDB::bind_method(D_METHOD("get_freq"), &AudioStreamPlaybackMyTone::get_freq);
     }
 
+Usage
+~~~~~
+
+The ``set_freq``and ``get_freq`` methods allow direct change of the frequency parameter.
+But one can also use the more generic way to handle parameters based on properties through ``get/set("parameters/Frequency")``.
+
+.. code-block:: gdscript
+    :caption: audiostream_player_mytone.gd
+
+    extends AudioStreamPlayer3D
+
+    var control:float = 0.0
+
+    func _input(event):
+        if event.is_action_pressed("play"):
+            if is_playing():
+                stop()
+            else:
+                play()
+                control = get_stream_playback().get_freq()
+                # Parameter equivalent:
+                # control = get("parameters/Frequency") as float
+                print(control)
+
+        if event.is_action_pressed("up"):
+            control *= 1.1
+            set_freq(control)
+            print(control)
+
+        if event.is_action_pressed("down"):
+            control *= 0.9
+            set_freq(control)
+            print(control)
+
+    func set_freq(value):
+        var stream_playback = get_stream_playback()
+        if stream_playback:
+            stream_playback.set_freq(control)
+        # Parameter equivalent:
+        #set("parameters/Frequency", control)
+
 Resampling
 ~~~~~~~~~~
 
