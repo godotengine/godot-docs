@@ -48,100 +48,53 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 .. code-block:: cpp
     :caption: audiostream_mytone.h
 
-    
-    #include "godot_cpp/classes/audio_stream.hpp"
-    #include "godot_cpp/classes/ref_counted.hpp"
-    #include "godot_cpp/classes/wrapped.hpp"
+    #pragma once
 
-    namespace godot {
-    struct AudioFrame;
-    }
-
-    using godot::AudioFrame;
-    using godot::AudioStream;
-    using godot::AudioStreamPlayback;
-    using godot::String;
+    #include "servers/audio/audio_stream.h"
 
     class AudioStreamMyTone : public AudioStream {
         GDCLASS(AudioStreamMyTone, AudioStream)
-        friend class AudioStreamPlaybackResampledMyTone;
 
     private:
-        uint64_t pos = 0;
-        float mix_rate = 44100.0F; // AudioDriverManager::DEFAULT_MIX_RATE
-        double hz = 639.0;
+        friend class AudioStreamPlaybackMyTone;
 
     public:
-        virtual godot::Ref<AudioStreamPlayback> _instantiate_playback() const override;
-        virtual String _get_stream_name() const override;
+        virtual Ref<AudioStreamPlayback> instantiate_playback() override;
+        virtual String get_stream_name() const override;
 
-        virtual double _get_length() const override { return 0.0; }
+        virtual double get_length() const override { return 0.0; }
 
-        void gen_tone(AudioFrame *pcm_buf, int size);
-        void reset();
-        void set_position(uint64_t p);
-
-        float get_mix_rate() const;
-        double get_freq() const;
-        bool set_freq(double freq_hz);
+        virtual void get_parameter_list(List<Parameter> *r_parameters) override;
 
     protected:
         static void _bind_methods();
     };
 
+
 .. code-block:: cpp
     :caption: audiostream_mytone.cpp
 
-    #include "audio_stream_mytone.h"
+    #include "audiostream_mytone.h"
 
-    #include <godot_cpp/core/math.hpp>
-    #include <godot_cpp/core/math_defs.hpp>
+    #include "audiostream_playback_mytone.h"
 
-    #include "audio_streamplaybackresampled_mytone.h"
-
-    using namespace godot;
-
-    Ref<AudioStreamPlayback> AudioStreamMyTone::_instantiate_playback() const {
-        Ref<AudioStreamPlaybackResampledMyTone> playback;
+    Ref<AudioStreamPlayback> AudioStreamMyTone::instantiate_playback() {
+        Ref<AudioStreamPlaybackMyTone> playback;
         playback.instantiate();
         playback->base = Ref<AudioStreamMyTone>(this);
+        playback->init();
         return playback;
     }
-    String AudioStreamMyTone::_get_stream_name() const {
+
+    String AudioStreamMyTone::get_stream_name() const {
         return "MyTone";
     }
-    void AudioStreamMyTone::gen_tone(AudioFrame *pcm_buf, int size) {
-        for (int i = 0; i < size; i++) {
-            const float value = Math::sin(2.0 * Math::PI * double(pos + i) / (double(mix_rate) / hz));
-            pcm_buf[i].left = value;
-            pcm_buf[i].right = value;
-        }
-        pos += size;
+
+    void AudioStreamMyTone::get_parameter_list(List<Parameter> *r_parameters) {
+        r_parameters->push_back(Parameter(PropertyInfo(Variant::FLOAT, "Frequency", PROPERTY_HINT_RANGE, "44.0F, 16000.0"), "220.0"));
     }
-    void AudioStreamMyTone::reset() {
-        set_position(0);
-    }
-    void AudioStreamMyTone::set_position(uint64_t p) {
-        pos = p;
-    }
-    float AudioStreamMyTone::get_mix_rate() const {
-        return mix_rate;
-    }
-    double AudioStreamMyTone::get_freq() const {
-        return hz;
-    }
-    bool AudioStreamMyTone::set_freq(double freq_hz) {
-        if (freq_hz > 0 && freq_hz < mix_rate / 2.0f) {
-            hz = freq_hz;
-            return true;
-        }
-        return false;
-    }
-    void AudioStreamMyTone::_bind_methods() {
-        ClassDB::bind_method(D_METHOD("reset"), &AudioStreamMyTone::reset);
-        ClassDB::bind_method(D_METHOD("get_freq"), &AudioStreamMyTone::get_freq);
-        ClassDB::bind_method(D_METHOD("set_freq"), &AudioStreamMyTone::set_freq);
-    }
+
+    void AudioStreamMyTone::_bind_methods() {}
 
 References:
 ~~~~~~~~~~~
@@ -157,17 +110,11 @@ AudioStreamPlayer uses ``mix`` callback to obtain PCM data. The callback must ma
 Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic memory allocation are forbidden.
 
 .. code-block:: cpp
-    :caption: audiostreamplayer_mytone.h
+    :caption: audiostream_playback_mytone.h
 
     #pragma once
 
-    #include "godot_cpp/classes/audio_frame.hpp"
-    #include "godot_cpp/classes/audio_stream_playback.hpp"
-    #include "godot_cpp/classes/ref_counted.hpp"
-    #include "godot_cpp/classes/wrapped.hpp"
-
-    using godot::AudioFrame;
-    using godot::AudioStreamPlayback;
+    #include "servers/audio/audio_stream.h"
 
     class AudioStreamMyTone;
 
@@ -176,76 +123,137 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         friend AudioStreamMyTone;
 
     private:
-        enum {
-            PCM_BUFFER_SIZE = 4096
-        };
-        enum {
-            MIX_FRAC_BITS = 13,
-            MIX_FRAC_LEN = (1 << MIX_FRAC_BITS),
-            MIX_FRAC_MASK = MIX_FRAC_LEN - 1,
-        };
-        godot::Ref<AudioStreamMyTone> base;
+        Ref<AudioStreamMyTone> base;
+        double pos = 0.0;
+        float freq_hz = 220.0F;
         bool active = false;
 
     public:
-        virtual void _start(double p_from_pos = 0.0) override;
-        virtual void _stop() override;
-        virtual bool _is_playing() const override;
+        virtual ~AudioStreamPlaybackMyTone() = default;
 
-        virtual int _get_loop_count() const override;
+        virtual void start(double p_from_pos = 0.0) override;
+        virtual void stop() override;
+        virtual bool is_playing() const override;
 
-        virtual double _get_playback_position() const override;
-        virtual void _seek(double p_time) override;
+        virtual int get_loop_count() const override;
 
-        virtual int _mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames) override;
+        virtual double get_playback_position() const override;
+        virtual void seek(double p_time) override;
+
+        virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames) override;
+
+        virtual void set_parameter(const StringName &p_name, const Variant &p_value) override;
+        virtual Variant get_parameter(const StringName &p_name) const override;
 
     protected:
+        void reset();
+        bool init();
+
+        void generate(AudioFrame *pcm_buf, int size);
+
+        void set_freq(float value);
+        float get_freq() const;
+
         static void _bind_methods();
     };
 
 .. code-block:: cpp
-    :caption: audiostreamplayer_mytone.cpp
+    :caption: audiostream_playback_mytone.cpp
 
-    #include "audio_streamplayback_mytone.h"
+    #include "audiostream_playback_mytone.h"
 
-    #include "audio_stream_mytone.h"
+    #include <core/math/math_funcs.h>
+    #include <core/object/class_db.h>
+    #include <servers/audio/audio_server.h>
 
-    using namespace godot;
-
-    void AudioStreamPlaybackMyTone::_start(double p_from_pos) {
-        seek(p_from_pos);
+    void AudioStreamPlaybackMyTone::start(double p_from_pos) {
         active = true;
     }
-    void AudioStreamPlaybackMyTone::_stop() {
+
+    void AudioStreamPlaybackMyTone::stop() {
         active = false;
-        base->reset();
     }
-    bool AudioStreamPlaybackMyTone::_is_playing() const {
+
+    bool AudioStreamPlaybackMyTone::is_playing() const {
         return active;
     }
-    int AudioStreamPlaybackMyTone::_get_loop_count() const {
+
+    int AudioStreamPlaybackMyTone::get_loop_count() const {
         return 0;
     }
-    double AudioStreamPlaybackMyTone::_get_playback_position() const {
+
+    double AudioStreamPlaybackMyTone::get_playback_position() const {
         return 0.0;
     }
-    void AudioStreamPlaybackMyTone::_seek(double p_time) {
+
+    void AudioStreamPlaybackMyTone::seek(double p_time) {
         if (p_time < 0) {
             p_time = 0;
         }
 
-        base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
+        const float mix_rate = AudioServer::get_singleton()->get_mix_rate();
+        pos = p_time * mix_rate;
     }
-    int AudioStreamPlaybackMyTone::_mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
-        ERR_FAIL_COND_V(!active, 0);
-        if (!active) {
+
+    int AudioStreamPlaybackMyTone::mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
+        ERR_FAIL_COND_V(!is_playing(), 0);
+        if (!is_playing()) {
             return 0;
         }
 
-        base->gen_tone(p_buffer, p_frames);
+        generate(p_buffer, p_frames);
         return p_frames;
     }
+
+    void AudioStreamPlaybackMyTone::set_parameter(const StringName &p_name, const Variant &p_value) {
+        if (p_name == SNAME("Frequency")) {
+            const float value = p_value;
+            set_freq(value);
+        }
+    }
+
+    Variant AudioStreamPlaybackMyTone::get_parameter(const StringName &p_name) const {
+        if (p_name == SNAME("Frequency")) {
+            return Variant(get_freq());
+        }
+        ERR_FAIL_COND_V(true, Variant());
+        return Variant{};
+    }
+
+    void AudioStreamPlaybackMyTone::reset() {
+        seek(0.0);
+    }
+
+    bool AudioStreamPlaybackMyTone::init() {
+        reset();
+        return true;
+    }
+
+    void AudioStreamPlaybackMyTone::generate(AudioFrame *pcm_buf, int size) {
+        if (!active) {
+            return;
+        }
+        const float mix_rate = AudioServer::get_singleton()->get_mix_rate();
+        for (int i = 0; i < size; i++) {
+            const float sample = 32767.0F * Math::sin(2.0F * Math::PI * float(pos + i) / (mix_rate / freq_hz));
+            pcm_buf[i].left = sample;
+            pcm_buf[i].right = sample;
+        }
+        pos += size;
+    }
+
+    void AudioStreamPlaybackMyTone::set_freq(float value) {
+        freq_hz = CLAMP(value, 44.0F, 16000.0F);
+    }
+
+    float AudioStreamPlaybackMyTone::get_freq() const {
+        return freq_hz;
+    }
+
     void AudioStreamPlaybackMyTone::_bind_methods() {
+        ClassDB::bind_method(D_METHOD("reset"), &AudioStreamPlaybackMyTone::reset);
+        ClassDB::bind_method(D_METHOD("set_freq", "value"), &AudioStreamPlaybackMyTone::set_freq);
+        ClassDB::bind_method(D_METHOD("get_freq"), &AudioStreamPlaybackMyTone::get_freq);
     }
 
 Resampling
