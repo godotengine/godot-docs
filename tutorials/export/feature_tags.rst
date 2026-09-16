@@ -158,12 +158,18 @@ field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.webp
 
+You can test custom feature tags without exporting the project using the
+:menu:`Debug > Customize Run Instances...` dialog. As long as
+:button:`Enable Multiple Instances` is checked in that dialog (even with the
+instance count set to 1), custom features defined there will be used when
+running the project from the editor. Multiple feature tags can be separated by commas:
+
+.. image:: img/feature_tags_test_custom_features_run_instances.webp
+
 .. note::
 
-    Custom feature tags are only used when running the exported project
-    (including with :ref:`doc_one-click_deploy`). They are **not used** when
-    running the project from the editor, even if the export preset marked as
-    **Runnable** for your current platform has custom feature tags defined.
+    Custom feature tags defined in an export preset marked as **Runnable** are
+    not used when running the project from the editor.
 
     Custom feature tags are also not used in :ref:`class_EditorExportPlugin`
     scripts. Instead, feature tags in :ref:`class_EditorExportPlugin`
