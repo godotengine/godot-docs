@@ -35,6 +35,14 @@ Once the build is done, run the tests with a ``--test`` command-line option:
 
     ./bin/<godot_binary> --test
 
+.. note::
+
+    The command must be run from the root of the Godot source repository.
+    Running it from the ``bin/`` folder also works, but the engine will
+    change the working directory automatically and print a warning.
+    Running it from anywhere else fails early with an error if the test
+    data cannot be found.
+
 The test run can be configured with the various doctest-specific command-line
 options. To retrieve the full list of supported options, run the ``--test``
 command with the ``--help`` option:
