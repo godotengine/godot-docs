@@ -113,7 +113,7 @@ as additional headers you will be using for your GDExtension.
     You will also need to copy the example SConstruct file into the gdextension_cpp_example project root folder.
     Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
  
-    In the project's root folder run the following command to generate the ``compile_commands.json``:
+    In the project's root folder, run the following command to generate ``compile_commands.json``:
 
     .. code-block:: none
     
