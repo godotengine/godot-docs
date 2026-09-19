@@ -465,7 +465,7 @@ Multi-threading
 Creating content
 ~~~~~~~~~~~~~~~~
 
-- Procedural geometry series:
+Procedural geometry series:
 
   - :ref:`Procedural geometry <toc-procedural_geometry>`
   - :ref:`doc_arraymesh`
