@@ -91,7 +91,7 @@ To learn more about command line arguments, refer to the
 Code style configuration
 ------------------------
 
-Developers must follow the project's `code style <https://contributing.godotengine.org/en/latest/engine/guidelines/code_style.html>`__
+Developers must follow the project's `code style <https://contributing.godotengine.org/en/latest/development/engine/cpp_usage_guidelines.html>`__
 and the IDE should help them follow it.
 
 - Open **Preferences > C++ > Code Style**.
