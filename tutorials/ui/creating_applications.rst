@@ -782,8 +782,8 @@ Optimizing distribution size
 ----------------------------
 
 Since non-game applications generally avoid using large parts of the engine,
-such as audio or 3D functionality, you can compile an optimized export template
-to reduce its file size. This will also improve startup times,
+such as audio, 2D, or 3D functionality, you can compile an optimized export
+template to reduce its file size. This will also improve startup times,
 especially on the web platform where binary size is directly linked to
 initialization speeds.
 
