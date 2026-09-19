@@ -79,9 +79,15 @@ Properties
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`language<class_RichTextLabel_property_language>`                                                           | ``""``                                                                    |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`maximum_font_size<class_RichTextLabel_property_maximum_font_size>`                                         | ``60``                                                                    |
+   +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>`                                             | ``true``                                                                  |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`minimum_font_size<class_RichTextLabel_property_minimum_font_size>`                                         | ``10``                                                                    |
+   +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                       | :ref:`progress_bar_delay<class_RichTextLabel_property_progress_bar_delay>`                                       | ``1000``                                                                  |
+   +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`resize_font_to_fit<class_RichTextLabel_property_resize_font_to_fit>`                                       | ``false``                                                                 |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`scroll_active<class_RichTextLabel_property_scroll_active>`                                                 | ``true``                                                                  |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -162,6 +168,8 @@ Methods
    | :ref:`float<class_float>`           | :ref:`get_paragraph_offset<class_RichTextLabel_method_get_paragraph_offset>`\ (\ paragraph\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`get_parsed_text<class_RichTextLabel_method_get_parsed_text>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_rendered_font_size<class_RichTextLabel_method_get_rendered_font_size>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`get_selected_text<class_RichTextLabel_method_get_selected_text>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -872,6 +880,23 @@ Language code used for line-breaking and text shaping algorithms. If left empty,
 
 ----
 
+.. _class_RichTextLabel_property_maximum_font_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **maximum_font_size** = ``60`` :ref:`🔗<class_RichTextLabel_property_maximum_font_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_maximum_font_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_maximum_font_size**\ (\ )
+
+The maximum font size used when :ref:`resize_font_to_fit<class_RichTextLabel_property_resize_font_to_fit>` is enabled. If :ref:`minimum_font_size<class_RichTextLabel_property_minimum_font_size>` is greater than :ref:`maximum_font_size<class_RichTextLabel_property_maximum_font_size>`, the minimum font size takes precedence.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_property_meta_underlined:
 
 .. rst-class:: classref-property
@@ -884,6 +909,23 @@ Language code used for line-breaking and text shaping algorithms. If left empty,
 - :ref:`bool<class_bool>` **is_meta_underlined**\ (\ )
 
 If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. These tags can call a function when clicked if :ref:`meta_clicked<class_RichTextLabel_signal_meta_clicked>` is connected to a function.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RichTextLabel_property_minimum_font_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **minimum_font_size** = ``10`` :ref:`🔗<class_RichTextLabel_property_minimum_font_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_minimum_font_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_minimum_font_size**\ (\ )
+
+The minimum font size used when :ref:`resize_font_to_fit<class_RichTextLabel_property_resize_font_to_fit>` is enabled. Also determines the minimum vertical size of this **RichTextLabel**, potentially used by a parent :ref:`Container<class_Container>`. If :ref:`minimum_font_size<class_RichTextLabel_property_minimum_font_size>` is greater than :ref:`maximum_font_size<class_RichTextLabel_property_maximum_font_size>`, the minimum font size takes precedence.
 
 .. rst-class:: classref-item-separator
 
@@ -903,6 +945,25 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. These
 The delay after which the loading progress bar is displayed, in milliseconds. Set to ``-1`` to disable progress bar entirely.
 
 \ **Note:** Progress bar is displayed only if :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RichTextLabel_property_resize_font_to_fit:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **resize_font_to_fit** = ``false`` :ref:`🔗<class_RichTextLabel_property_resize_font_to_fit>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_resize_font_to_fit**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_resize_font_to_fit_enabled**\ (\ )
+
+If ``true``, the text size will automatically shrink or grow to fit within the node's bounding rectangle. It will pick the largest font size between :ref:`minimum_font_size<class_RichTextLabel_property_minimum_font_size>` and :ref:`maximum_font_size<class_RichTextLabel_property_maximum_font_size>` that doesn't cause the text to be truncated.
+
+Font sizes that are overridden with the ``[font_size]`` tag are scaled relative to the theme font size. For example, if the theme font size is ``16`` and ``[font_size=24]`` is used with an automatic font size determined to be ``32``, text in the overridden block will be in size ``48``.
 
 .. rst-class:: classref-item-separator
 
@@ -1057,7 +1118,11 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 
 Aligns text to the given tab-stops.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -1516,6 +1581,18 @@ Returns the text without BBCode mark-up.
 
 ----
 
+.. _class_RichTextLabel_method_get_rendered_font_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_rendered_font_size**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_rendered_font_size>`
+
+Returns the font size that is currently used for rendering. When :ref:`resize_font_to_fit<class_RichTextLabel_property_resize_font_to_fit>` is enabled, this returns the automatically calculated font size. Otherwise, it returns the theme font size.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_method_get_selected_text:
 
 .. rst-class:: classref-method
@@ -1722,7 +1799,7 @@ Invalidates ``paragraph`` and all subsequent paragraphs cache.
 
 :ref:`bool<class_bool>` **is_finished**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_is_finished>`
 
-If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always return ``true``.
+If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -1748,7 +1825,7 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 
 **Deprecated:** Use :ref:`is_finished()<class_RichTextLabel_method_is_finished>` instead.
 
-If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always return ``true``.
+If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always returns ``true``.
 
 .. rst-class:: classref-item-separator
 

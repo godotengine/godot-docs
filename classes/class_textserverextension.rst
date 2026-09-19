@@ -314,6 +314,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_name<class_TextServerExtension_private_method__get_name>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                                                                                                          |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_get_short_name<class_TextServerExtension_private_method__get_short_name>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                    | :ref:`_get_support_data<class_TextServerExtension_private_method__get_support_data>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_support_data_filename<class_TextServerExtension_private_method__get_support_data_filename>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                   |
@@ -2238,6 +2240,18 @@ Returns the name of the server interface.
 
 ----
 
+.. _class_TextServerExtension_private_method__get_short_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_short_name**\ (\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__get_short_name>`
+
+Returns the short name of the server interface. By convention, this should return a lowercase string that follows the ``snake_case`` naming scheme.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__get_support_data:
 
 .. rst-class:: classref-method
@@ -2354,7 +2368,7 @@ Returns ``true`` if ``string`` is a valid identifier.
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 

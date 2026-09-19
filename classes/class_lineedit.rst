@@ -90,6 +90,10 @@ On macOS, some extra keyboard shortcuts are available:
 
 \ **Note:** Caret movement shortcuts listed above are not affected by :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`.
 
+.. classref_note::
+
+    Column numbers are *zero-based*, like elements of an array. For example, :ref:`caret_column<class_LineEdit_property_caret_column>` being ``0`` indicates the caret is on the first column (i.e., before the first character).
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -1882,7 +1886,7 @@ The caret's width in pixels. Greater values can be used to improve accessibility
 
 :ref:`int<class_int>` **minimum_character_width** = ``4`` :ref:`🔗<class_LineEdit_theme_constant_minimum_character_width>`
 
-Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'M' characters (i.e. this number of 'M' characters can be displayed without scrolling).
+Minimum horizontal space for the text (not counting the clear button and content margins). This value is measured in count of 'W' characters (i.e. this number of 'W' characters can be displayed without scrolling).
 
 .. rst-class:: classref-item-separator
 

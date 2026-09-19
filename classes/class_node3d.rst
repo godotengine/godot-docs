@@ -1083,7 +1083,7 @@ Adds the given translation ``offset`` to the node's position, in local space (re
 
 \ **Note:** Prefer using :ref:`translate_object_local()<class_Node3D_method_translate_object_local>`, instead, as this method may be changed in a future release.
 
-\ **Note:** Despite the naming convention, this operation is **not** calculated in parent space for compatibility reasons. To translate in parent space, add ``offset`` to the :ref:`position<class_Node3D_property_position>` (``node_3d.position += offset``).
+\ **Note:** Despite the naming convention, this operation is **not** calculated in parent space for compatibility reasons. To translate in parent space, add ``offset`` to the :ref:`position<class_Node3D_property_position>` (\ ``node_3d.position += offset``).
 
 .. rst-class:: classref-item-separator
 

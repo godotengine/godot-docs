@@ -370,7 +370,11 @@ The number of elements referenced by this accessor.
 
 Maximum value of each component in this accessor.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat64Array<class_PackedFloat64Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat64Array<class_PackedFloat64Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -389,7 +393,11 @@ Maximum value of each component in this accessor.
 
 Minimum value of each component in this accessor.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat64Array<class_PackedFloat64Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat64Array<class_PackedFloat64Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

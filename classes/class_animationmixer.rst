@@ -443,7 +443,7 @@ The process notification in which to update animations.
 - |void| **set_deterministic**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_deterministic**\ (\ )
 
-If ``true``, the blending uses the deterministic algorithm. The total weight is not normalized and the result is accumulated with an initial value (``0`` or a ``"RESET"`` animation if present).
+If ``true``, the blending uses the deterministic algorithm. The total weight is not normalized and the result is accumulated with an initial value (\ ``0`` or a ``"RESET"`` animation if present).
 
 This means that if the total amount of blending is ``0.0``, the result is equal to the ``"RESET"`` animation.
 
