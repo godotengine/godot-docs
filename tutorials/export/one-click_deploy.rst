@@ -6,7 +6,7 @@ One-click deploy
 What is one-click deploy?
 -------------------------
 
-One-click deploy is a feature that is available once a platform is properly
+One-click deploy, also referred to as Remote deploy, is a feature that is available once a platform is properly
 configured and a supported device is connected to the computer. Since things can
 go wrong at many levels (platform may not be configured correctly, SDK may be
 incorrectly installed, device may be improperly configured, etc.), it's good to
