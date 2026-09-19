@@ -50,7 +50,7 @@ UDP packet peer. Can be used to send and receive raw UDP packets as well as :ref
             var packet_string = array_bytes.get_string_from_ascii()
             print("Received message: ", packet_string)
 
-\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
+\ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using remote deploy. Otherwise, network communication of any kind will be blocked by Android.
 
 .. rst-class:: classref-reftable-group
 

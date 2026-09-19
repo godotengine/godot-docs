@@ -25,7 +25,7 @@ A WebRTC connection between the local computer and a remote peer. Provides an in
 
 Setting up a WebRTC connection between two peers may not seem a trivial task, but it can be broken down into 3 main steps:
 
-- The peer that wants to initiate the connection (``A`` from now on) creates an offer and sends it to the other peer (``B`` from now on).
+- The peer that wants to initiate the connection (\ ``A`` from now on) creates an offer and sends it to the other peer (\ ``B`` from now on).
 
 - ``B`` receives the offer, generates an answer, and sends it to ``A``.
 

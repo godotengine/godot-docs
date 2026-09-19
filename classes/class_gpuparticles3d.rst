@@ -500,7 +500,7 @@ The number of draw passes when rendering particles.
 
 .. container:: contribute
 
-	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -935,7 +935,9 @@ Sets this node's properties to match a given :ref:`CPUParticles3D<class_CPUParti
 
 Emits a single particle. Whether ``xform``, ``velocity``, ``color`` and ``custom`` are applied depends on the value of ``flags``. See :ref:`EmitFlags<enum_GPUParticles3D_EmitFlags>`.
 
-The default ParticleProcessMaterial will overwrite ``color`` and use the contents of ``custom`` as ``(rotation, age, animation, lifetime)``.
+The default ParticleProcessMaterial needs to have :ref:`ParticleProcessMaterial.particle_flag_preserve_color<class_ParticleProcessMaterial_property_particle_flag_preserve_color>` set to ``true`` to correctly use the color given from this function.
+
+Additionally, it will use the contents of ``custom`` as ``(rotation, lifetime, animation, lifetime randomness)``.
 
 \ **Note:** :ref:`emit_particle()<class_GPUParticles3D_method_emit_particle>` is only supported on the Forward+ and Mobile rendering methods, not Compatibility.
 

@@ -23,7 +23,7 @@ A 3D heightmap shape, intended for use in physics to provide a shape for a :ref:
 
 The heightmap is represented as a 2D grid of height values, which represent the position of grid points on the Y axis. Grid points are spaced 1 unit apart on the X and Z axes, and the grid is centered on the origin of the :ref:`CollisionShape3D<class_CollisionShape3D>` node. Internally, each grid square is divided into two triangles.
 
-Due to the nature of the heightmap, it cannot be used to model overhangs or caves, which would require multiple vertices at the same vertical location. Holes can be punched through the collision by assigning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` to the height of the desired vertices (this is supported in both GodotPhysics3D and Jolt Physics). You could then insert meshes with their own separate collision to provide overhangs, caves, and so on.
+Due to the nature of the heightmap, it cannot be used to model overhangs or caves, which would require multiple vertices at the same vertical location. Holes can be punched through the collision by assigning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` to the height of the desired vertices. You could then insert meshes with their own separate collision to provide overhangs, caves, and so on.
 
 \ **Performance:** **HeightMapShape3D** is faster to check collisions against than :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is significantly slower than primitive shapes like :ref:`BoxShape3D<class_BoxShape3D>`.
 
@@ -101,7 +101,11 @@ Property Descriptions
 
 Heightmap data. The array's size must be equal to :ref:`map_width<class_HeightMapShape3D_property_map_width>` multiplied by :ref:`map_depth<class_HeightMapShape3D_property_map_depth>`.
 
-**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
+
+
+.. classref_note::
+
+    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

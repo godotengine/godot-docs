@@ -137,7 +137,7 @@ Gets the next ``frames`` samples from the internal ring buffer.
 
 Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` containing exactly ``frames`` samples if available, or an empty :ref:`PackedVector2Array<class_PackedVector2Array>` if insufficient data was available.
 
-The samples are signed floating-point PCM between ``-1`` and ``1``. You will have to scale them if you want to use them as 8 or 16-bit integer samples. (``v = 0x7fff * samples[0].x``)
+The samples are signed floating-point PCM between ``-1`` and ``1``. You will have to scale them if you want to use them as 8 or 16-bit integer samples. (\ ``v = 0x7fff * samples[0].x``)
 
 .. rst-class:: classref-item-separator
 
