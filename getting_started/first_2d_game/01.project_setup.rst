@@ -30,10 +30,6 @@ When creating the new project, you only need to choose a valid *Project Path*. Y
     You need the latest stable .NET SDK, and an editor such as VS Code.
     See :ref:`doc_c_sharp_setup`.
 
- .. tab:: C++
-
-    The C++ part of this tutorial wasn't rewritten for the new GDExtension system yet.
-
 Your project folder should look like this.
 
 .. image:: img/folder-content.webp

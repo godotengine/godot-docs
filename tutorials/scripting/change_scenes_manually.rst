@@ -3,6 +3,12 @@
 Change scenes manually
 ======================
 
+.. seealso::
+
+    This page describes various strategies to optimize scene changes.
+    For a simpler description of how to switch between scenes, see the
+    :ref:`Using SceneTree documentation <doc_scene_tree_changing_current_scene>`.
+
 Sometimes it helps to have more control over how you swap scenes around.
 A :ref:`Viewport <class_Viewport>`'s child nodes will render to the image
 it generates. This holds true even for nodes outside of the "current"

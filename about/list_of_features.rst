@@ -149,7 +149,7 @@ Godot 4 includes three renderers:
    - High-level tools to draw lines and polygons such as
      :ref:`class_Polygon2D` and :ref:`class_Line2D`, with support for texturing.
 
-- AnimatedSprite2D as a helper for creating animated sprites.
+- :ref:`class_AnimatedSprite2D` as a helper for creating animated sprites.
 - Parallax layers.
 
    - Pseudo-3D support including preview in the editor.
@@ -897,7 +897,7 @@ Miscellaneous
 
 - Licensed under the permissive MIT license.
 
-   - Open development process with `contributions welcome <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__.
+   - Open development process with `contributions welcome <https://contributing.godotengine.org/en/latest/index.html>`__.
 
 .. seealso::
 

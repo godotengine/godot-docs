@@ -83,6 +83,8 @@ Properties
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` | :ref:`shadowmask_mode<class_LightmapGI_property_shadowmask_mode>`                     | ``0``                 |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                 | :ref:`specular_intensity<class_LightmapGI_property_specular_intensity>`               | ``0.0``               |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`supersampling<class_LightmapGI_property_supersampling>`                         | ``false``             |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                 | :ref:`supersampling_factor<class_LightmapGI_property_supersampling_factor>`           | ``2.0``               |
@@ -652,6 +654,25 @@ The shadowmasking policy to use for directional shadows on static objects that a
 Shadowmasking allows :ref:`DirectionalLight3D<class_DirectionalLight3D>` nodes to cast shadows even outside the range defined by their :ref:`DirectionalLight3D.directional_shadow_max_distance<class_DirectionalLight3D_property_directional_shadow_max_distance>` property. This is done by baking a texture that contains a shadowmap for the directional light, then using this texture according to the current shadowmask mode.
 
 \ **Note:** The shadowmask texture is only created if :ref:`shadowmask_mode<class_LightmapGI_property_shadowmask_mode>` is not :ref:`LightmapGIData.SHADOWMASK_MODE_NONE<class_LightmapGIData_constant_SHADOWMASK_MODE_NONE>`. To see a difference, you need to bake lightmaps again after switching from :ref:`LightmapGIData.SHADOWMASK_MODE_NONE<class_LightmapGIData_constant_SHADOWMASK_MODE_NONE>` to any other mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_specular_intensity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **specular_intensity** = ``0.0`` :ref:`🔗<class_LightmapGI_property_specular_intensity>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_specular_intensity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_specular_intensity**\ (\ )
+
+The strength of the lightmap's approximated specular lobe. This helps make lightmapped scenes look closer to real-time lighting, which is particularly noticeable for lights that use the :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>` bake mode. Only effective if :ref:`directional<class_LightmapGI_property_directional>` is ``true``.
+
+\ **Note:** The lightmap is only able to represent one light direction per texel, which means that the specular direction may appear to be incorrect in certain cases. This can manifest as specular lobes appearing to warp around as the camera moves.
 
 .. rst-class:: classref-item-separator
 

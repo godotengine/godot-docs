@@ -12,7 +12,7 @@ ResourceImporterBMFont
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a bitmap font in the BMFont (``.fnt``) format.
+Imports a bitmap font in the BMFont (\ ``.fnt``) format.
 
 .. rst-class:: classref-introduction-group
 

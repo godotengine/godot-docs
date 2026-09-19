@@ -52,7 +52,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **get_persistent_state**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRSpatialComponentPersistenceList_method_get_persistent_state>`
 
-Returns the persistent state (``XrSpatialPersistenceStateEXT``) for the entity at this ``index``.
+Returns the persistent state (\ ``XrSpatialPersistenceStateEXT``) for the entity at this ``index``.
 
 .. rst-class:: classref-item-separator
 

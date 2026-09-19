@@ -41,9 +41,7 @@ We recommend the following sampling profilers:
 - :ref:`VerySleepy <doc_profiler_very_sleepy>` (Windows only)
 - :ref:`Hotspot <doc_profiler_hotspot>` (Linux only)
 - :ref:`Instruments <doc_profiler_instruments>` (Apple only)
-
-These profilers may not be the most powerful or flexible options, but their
-standalone operation and limited feature set tends to make them easier to use.
+- :ref:`Superluminal <doc_profiler_superluminal>` (Windows, Linux, Xbox, and PlayStation, requires paid license)
 
 Setting up Godot
 ~~~~~~~~~~~~~~~~
@@ -111,6 +109,7 @@ All recommended profilers
    hotspot
    instruments
    perfetto
+   superluminal
    tracy
    very_sleepy
 

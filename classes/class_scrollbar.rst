@@ -47,29 +47,31 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_ScrollBar_theme_icon_decrement>`                     |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_ScrollBar_theme_icon_decrement_highlight>` |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_pressed<class_ScrollBar_theme_icon_decrement_pressed>`     |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_ScrollBar_theme_icon_increment>`                     |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_ScrollBar_theme_icon_increment_highlight>` |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_pressed<class_ScrollBar_theme_icon_increment_pressed>`     |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber<class_ScrollBar_theme_style_grabber>`                        |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_highlight<class_ScrollBar_theme_style_grabber_highlight>`    |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_ScrollBar_theme_style_grabber_pressed>`        |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll<class_ScrollBar_theme_style_scroll>`                          |
-   +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll_focus<class_ScrollBar_theme_style_scroll_focus>`              |
-   +-----------------------------------+----------------------------------------------------------------------------+
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`icon_max_size<class_ScrollBar_theme_constant_icon_max_size>`         | ``0`` |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_ScrollBar_theme_icon_decrement>`                     |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_ScrollBar_theme_icon_decrement_highlight>` |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_pressed<class_ScrollBar_theme_icon_decrement_pressed>`     |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_ScrollBar_theme_icon_increment>`                     |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_ScrollBar_theme_icon_increment_highlight>` |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_pressed<class_ScrollBar_theme_icon_increment_pressed>`     |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber<class_ScrollBar_theme_style_grabber>`                        |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_highlight<class_ScrollBar_theme_style_grabber_highlight>`    |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_ScrollBar_theme_style_grabber_pressed>`        |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll<class_ScrollBar_theme_style_scroll>`                          |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll_focus<class_ScrollBar_theme_style_scroll_focus>`              |       |
+   +-----------------------------------+----------------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-section-separator
 
@@ -118,6 +120,18 @@ Overrides the step used when clicking increment and decrement buttons or when us
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_ScrollBar_theme_constant_icon_max_size:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_size** = ``0`` :ref:`🔗<class_ScrollBar_theme_constant_icon_max_size>`
+
+The maximum allowed size of the **ScrollBar**'s increment and decrement icons. The texture is scaled down so its widest axis is :ref:`icon_max_size<class_ScrollBar_theme_constant_icon_max_size>` and the other axis is scaled keeping the original ratio.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ScrollBar_theme_icon_decrement:
 

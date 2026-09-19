@@ -81,8 +81,8 @@ certain tick rates may be more advantageous than others.
 Lock the tick rate, but use interpolation to smooth frames in between physics ticks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This has become one of the most popular approaches to deal with the problem,
-although it is optional and disabled by default.
+This has become one of the most popular approaches to deal with the problem.
+For this, Godot provides a system referred to as **physics interpolation**.
 
 We have established that the most desirable physics/game logic arrangement for
 consistency and predictability is a physics tick rate that is fixed at design-time.
@@ -181,7 +181,7 @@ tick.
 But wait, you may have noticed something. If we are interpolating between the
 current and previous ticks, we are not estimating the position of the object *now*,
 we are estimating the position of the object in the past. To be exact, we are
-estimating the position of the object *between 1 and 2 ticks* into the past.
+estimating the position of the object *1 tick* into the past.
 
 In the past
 ~~~~~~~~~~~
@@ -195,7 +195,9 @@ In practice, most people won't notice this delay, or rather, it is typically not
 don't typically notice them. The most significant effect is there can be a slight
 delay to input, which can be a factor in fast twitch games. In some of these fast
 input situations, you may wish to turn off physics interpolation and use a
-different scheme, or use a high tick rate, which mitigates these delays.
+different scheme, particularly for :ref:`class_Camera3D` (see
+:ref:`doc_advanced_physics_interpolation`), or use a high tick rate, which
+mitigates these delays.
 
 Why look into the past? Why not predict the future?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -219,10 +221,14 @@ Fixed timestep interpolation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Godot this whole system is referred to as physics interpolation, but you may
-also hear it referred to as **"fixed timestep interpolation"**, as it is
+also hear it referred to as **"fixed timestep interpolation"**, as it involves
 interpolating between objects moved with a fixed timestep (physics ticks per
-second). In some ways the second term is more accurate, because it can also be used
-to interpolate objects that are not driven by physics.
+second). In many ways the second term is more accurate, because the system can
+also be used to interpolate objects that are not driven by physics.
+
+.. note::
+
+         Physics interpolation is optional, and disabled by default.
 
 .. tip:: Although physics interpolation is usually a good choice, there are
          exceptions where you may choose not to use Godot's built-in physics
