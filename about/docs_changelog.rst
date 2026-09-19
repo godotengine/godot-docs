@@ -436,7 +436,7 @@ Internationalization
 Shading
 ~~~~~~~
 
-- Your First Shader Series:
+Your First Shader Series:
 
   - :ref:`doc_introduction_to_shaders`
   - :ref:`doc_your_first_canvasitem_shader`
