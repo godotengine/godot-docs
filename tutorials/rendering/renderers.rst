@@ -226,28 +226,28 @@ Global Illumination
 
 See :ref:`doc_introduction_to_global_illumination` for more information.
 
-+-------------------------+--------------------------+--------------------------+--------------------------+
-| Feature                 | Compatibility            | Mobile                   | Forward+                 |
-+=========================+==========================+==========================+==========================+
-| ReflectionProbe         | ✔️ Supported, 2 per      | ✔️ Supported, 8 per      | ✔️ Supported, unlimited. |
-|                         | mesh.                    | mesh.                    |                          |
-+-------------------------+--------------------------+--------------------------+--------------------------+
-| LightmapGI              | ⚠️ Rendering of baked    | ✔️ Supported.            | ✔️ Supported.            |
-|                         | lightmaps is supported.  |                          |                          |
-|                         | Baking requires hardware |                          |                          |
-|                         | with RenderingDevice     |                          |                          |
-|                         | support.                 |                          |                          |
-+-------------------------+--------------------------+--------------------------+--------------------------+
-| VoxelGI                 | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
-|                         |                          |                          |                          |
-+-------------------------+--------------------------+--------------------------+--------------------------+
-| Screen-Space            | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
-| Indirect Lighting (SSIL)|                          |                          |                          |
-+-------------------------+--------------------------+--------------------------+--------------------------+
-| Signed Distance Field   | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.            |
-| Global Illumination     |                          |                          |                          |
-| (SDFGI)                 |                          |                          |                          |
-+-------------------------+--------------------------+--------------------------+--------------------------+
++-------------------------+--------------------------+--------------------------+-----------------------------+
+| Feature                 | Compatibility            | Mobile                   | Forward+                    |
++=========================+==========================+==========================+=============================+
+| ReflectionProbe         | ✔️ Supported, 2 per      | ✔️ Supported, 8 per      | ✔️ Supported, up to 256     |
+|                         | mesh.                    | mesh.                    | in scene (64 by default).   |
++-------------------------+--------------------------+--------------------------+-----------------------------+
+| LightmapGI              | ⚠️ Rendering of baked    | ✔️ Supported.            | ✔️ Supported.               |
+|                         | lightmaps is supported.  |                          |                             |
+|                         | Baking requires hardware |                          |                             |
+|                         | with RenderingDevice     |                          |                             |
+|                         | support.                 |                          |                             |
++-------------------------+--------------------------+--------------------------+-----------------------------+
+| VoxelGI                 | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.               |
+|                         |                          |                          |                             |
++-------------------------+--------------------------+--------------------------+-----------------------------+
+| Screen-Space            | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.               |
+| Indirect Lighting (SSIL)|                          |                          |                             |
++-------------------------+--------------------------+--------------------------+-----------------------------+
+| Signed Distance Field   | ❌ Not supported.        | ❌ Not supported.        | ✔️ Supported.               |
+| Global Illumination     |                          |                          |                             |
+| (SDFGI)                 |                          |                          |                             |
++-------------------------+--------------------------+--------------------------+-----------------------------+
 
 Environment and post-processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
