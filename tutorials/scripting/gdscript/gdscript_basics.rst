@@ -727,7 +727,7 @@ It is stored as a 64-bit value, equivalent to ``int64_t`` in C++.
 
 Stores real numbers, including decimals, using floating-point values.
 It is stored as a 64-bit value, equivalent to ``double`` in C++.
-Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
+Note: Currently, data structures such as ``Vector2``, ``Vector3``, ``Vector4``, and
 ``PackedFloat32Array`` store 32-bit single-precision ``float`` values.
 
 :ref:`String <class_String>`
@@ -781,6 +781,18 @@ be accessed as an array.
 
 Same as Vector3 but the components are integers. Can be use for indexing items
 in a 3D grid.
+
+:ref:`Vector4 <class_Vector4>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+4D vector type containing ``x``, ``y``, ``z`` and ``w`` fields. This can also
+be accessed as an array.
+
+:ref:`Vector4i <class_Vector4i>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Same as Vector4 but the components are integers. Can be used to represent
+integer coordinates, indices, or other discrete 4D data.
 
 :ref:`Transform2D <class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
