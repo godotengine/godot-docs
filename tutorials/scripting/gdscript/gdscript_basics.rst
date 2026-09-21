@@ -779,7 +779,7 @@ be accessed as an array.
 :ref:`Vector3i <class_Vector3i>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Same as Vector3 but the components are integers. Can be use for indexing items
+Same as Vector3 but the components are integers. Can be used for indexing items
 in a 3D grid.
 
 :ref:`Vector4 <class_Vector4>`
