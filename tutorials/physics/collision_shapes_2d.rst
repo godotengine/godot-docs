@@ -89,7 +89,7 @@ If it is set to **Solids** (the default), collisions will include the polygon
 and its contained area. If it is set to **Segments**, collisions will only
 include the polygon edges.
 
-Debugging collision shapes
+Visualizing collision shapes in-game
 --------------------------
 
 Use the :ref:`Debug Color <class_CollisionShape2D_property_debug_color>` property
