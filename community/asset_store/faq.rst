@@ -84,3 +84,10 @@ something created manually, that still counts and you must disclose it. For exam
 if you AI generate an image, and then tweak it manually afterwards. Or if you AI
 generate an image and put it inside a human created image, for example an AI
 painting in a drawing of a room.
+
+Can I upload a free version of a plugin on the Asset Store and a paid version elsewhere?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, you're allowed to upload a free version of a plugin to the Asset Store, and upload
+a paid version to another website, such as itch. However, the free version **must not**
+include pop-up ads for the paid version.
