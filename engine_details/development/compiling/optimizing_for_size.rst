@@ -160,39 +160,16 @@ Disabling 3D
 - **Difficulty:** Easy
 - **Performed in official builds:** No
 
-For 2D games or :ref:`applications <doc_creating_applications>`,
-having the whole 3D engine available usually makes no sense.
+For 2D games, having the whole 3D engine available usually makes no sense.
 Because of this, there is a build flag to disable it:
 
 ::
 
     scons target=template_release disable_3d=yes
 
-This can only be used for export template builds, as the editor is not designed
-to operate without 3D support. With 3D disabled, the binary size can be reduced
+Tools must be disabled in order to use this flag, as the editor is not designed
+to operate without 3D support. Without it, the binary size can be reduced
 by about 15%.
-
-Disabling 2D
-------------
-
-- **Space savings:** Moderate
-- **Difficulty:** Easy
-- **Performed in official builds:** No
-
-Likewise, for 3D games or :ref:`applications <doc_creating_applications>`,
-having the whole 2D engine available usually makes no sense.
-Because of this, there is a build flag to disable it:
-
-::
-
-    scons target=template_release disable_2d=yes
-
-This disables all 2D nodes derived from :ref:`class_Node2D`.
-GUI nodes derived from :ref:`class_Control` are still available.
-
-This can only be used for export template builds, as the editor is not designed
-to operate without 2D support. With 2D disabled, the binary size can be reduced
-by about 10%.
 
 Disabling advanced GUI objects
 ------------------------------
@@ -293,11 +270,11 @@ a lot of them:
 
 ::
 
-    scons target=template_release module_astcenc_enabled=no module_basis_universal_enabled=no module_bcdec_enabled=no module_bmp_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etcpak_enabled=no module_fbx_enabled=no module_gltf_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_interactive_music_enabled=no module_jsonrpc_enabled=no module_ktx_enabled=no module_mbedtls_enabled=no module_meshoptimizer_enabled=no module_mp3_enabled=no module_mobile_vr_enabled=no module_msdfgen_enabled=no module_multiplayer_enabled=no module_noise_enabled=no module_navigation_2d_enabled=no module_navigation_3d_enabled=no module_ogg_enabled=no module_openxr_enabled=no module_raycast_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tilemap_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_webxr_enabled=no module_zip_enabled=no
+    scons target=template_release module_astcenc_enabled=no module_basis_universal_enabled=no module_bcdec_enabled=no module_bmp_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etcpak_enabled=no module_fbx_enabled=no module_gltf_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_interactive_music_enabled=no module_jsonrpc_enabled=no module_ktx_enabled=no module_mbedtls_enabled=no module_meshoptimizer_enabled=no module_mp3_enabled=no module_mobile_vr_enabled=no module_msdfgen_enabled=no module_multiplayer_enabled=no module_noise_enabled=no module_navigation_2d_enabled=no module_navigation_3d_enabled=no module_ogg_enabled=no module_openxr_enabled=no module_raycast_enabled=no module_regex_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_webxr_enabled=no module_zip_enabled=no
 
 If this proves not to work for your use case, you should review the list of
 modules and see which ones you actually still need for your game (e.g. you might
-want to keep networking-related modules, tilemaps for 2D levels,
+want to keep networking-related modules, regex support,
 ``mp3``/``ogg``/``vorbis`` to play music, or ``theora`` to play videos).
 
 Alternatively, you can supply a list of disabled modules by creating
@@ -335,10 +312,10 @@ following:
     module_ogg_enabled = "no"
     module_openxr_enabled = "no"
     module_raycast_enabled = "no"
+    module_regex_enabled = "no"
     module_svg_enabled = "no"
     module_tga_enabled = "no"
     module_theora_enabled = "no"
-    module_tilemap_enabled = "no"
     module_tinyexr_enabled = "no"
     module_upnp_enabled = "no"
     module_vhacd_enabled = "no"

@@ -14,7 +14,7 @@ ScriptLanguageExtension
 
 .. container:: contribute
 
-	There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-reftable-group
 
@@ -85,7 +85,7 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_public_functions<class_ScriptLanguageExtension_private_method__get_public_functions>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                        |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_recognized_extensions<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                         |
+   | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_recognized_extensions<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                              |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`_get_reserved_words<class_ScriptLanguageExtension_private_method__get_reserved_words>`\ (\ ) |virtual| |required| |const|                                                                                                                                                                                                                                            |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -169,7 +169,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -181,7 +181,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -193,7 +193,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -205,7 +205,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -217,7 +217,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -229,7 +229,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -241,7 +241,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -263,7 +263,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -275,7 +275,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -287,7 +287,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -299,7 +299,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -363,7 +363,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -375,7 +375,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -387,7 +387,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -399,7 +399,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -411,7 +411,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -423,7 +423,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -435,7 +435,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -447,7 +447,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -459,7 +459,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -471,7 +471,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -483,7 +483,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -495,7 +495,7 @@ enum **CodeCompletionKind**: :ref:`🔗<enum_ScriptLanguageExtension_CodeComplet
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -516,7 +516,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +530,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -544,7 +544,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -558,7 +558,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -572,7 +572,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +586,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -612,7 +612,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -626,7 +626,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -640,7 +640,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +654,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -668,7 +668,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -682,7 +682,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -696,7 +696,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -710,7 +710,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -724,7 +724,7 @@ Method Descriptions
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -750,7 +750,7 @@ Returns the source associated with a given debug stack position.
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -776,7 +776,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -790,7 +790,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -804,7 +804,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -818,7 +818,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -832,7 +832,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -846,7 +846,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -860,7 +860,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -874,7 +874,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -888,7 +888,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -902,7 +902,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -916,7 +916,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -926,9 +926,11 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |required| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__get_recognized_extensions>`
 
-**Deprecated:** This method is not called by the engine.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -942,7 +944,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -956,7 +958,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -970,7 +972,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -984,7 +986,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1010,7 +1012,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1024,7 +1026,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1038,7 +1040,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1052,7 +1054,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1066,7 +1068,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1080,7 +1082,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1094,7 +1096,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1108,7 +1110,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1122,7 +1124,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1136,7 +1138,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1150,7 +1152,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1164,7 +1166,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1178,7 +1180,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1192,7 +1194,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1206,7 +1208,7 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1220,8 +1222,6 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 
 Reloads all ``scripts`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
 
-\ ``soft_reload`` is always ``true``.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -1233,8 +1233,6 @@ Reloads all ``scripts`` from disk and the specifics of how that happens is **Scr
 |void| **_reload_tool_script**\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| |required| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_tool_script>`
 
 Reloads the given ``script`` from disk and the specifics of how that happens is **ScriptLanguageExtension** specific.
-
-\ ``soft_reload`` is always ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -1248,7 +1246,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1262,7 +1260,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1276,7 +1274,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1290,7 +1288,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1304,7 +1302,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1318,7 +1316,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -1332,7 +1330,7 @@ Reloads the given ``script`` from disk and the specifics of how that happens is 
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

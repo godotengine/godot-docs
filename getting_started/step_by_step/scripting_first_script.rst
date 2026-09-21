@@ -26,12 +26,7 @@ foundations.
 This tutorial is written for GDScript, and the equivalent C# code is included in
 another tab of each codeblock for convenience.
 
-.. video:: video/scripting_first_script_rotating_godot.webm
-   :alt: Godot icon rotating in circles
-   :autoplay:
-   :loop:
-   :muted:
-   :align: default
+.. image:: img/scripting_first_script_rotating_godot.gif
 
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
              the :ref:`doc_gdscript` section. To learn more about C#,
@@ -261,12 +256,7 @@ of our node and works with radians.
 
 Run the scene to see the Godot icon turn in-place.
 
-.. video:: video/scripting_first_script_godot_turning_in_place.webm
-   :alt: Godot icon turning in place
-   :autoplay:
-   :loop:
-   :muted:
-   :align: default
+.. image:: img/scripting_first_script_godot_turning_in_place.gif
 
 .. note:: In C#, notice how the ``delta`` argument taken by ``_Process()`` is a
           ``double``. We therefore need to convert it to ``float`` when we apply
@@ -309,12 +299,7 @@ representing a 2D vector.
 
 Run the scene to see the Godot head run in circles.
 
-.. video:: video/scripting_first_script_rotating_godot.webm
-   :alt: Godot icon rotating in circles
-   :autoplay:
-   :loop:
-   :muted:
-   :align: default
+.. image:: img/scripting_first_script_rotating_godot.gif
 
 .. note:: Moving a node like that does not take into account colliding with
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn

@@ -12,14 +12,9 @@ Skin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A list of inverse bind poses and corresponding bones.
+.. container:: contribute
 
-.. rst-class:: classref-introduction-group
-
-Description
------------
-
-**Skin** contains a list of bind pose matrices and a list of either bone names if bones are named, or bone indices if bones are not named. The bind pose matrix, also called offset matrix or inverse bind matrix, is a :ref:`Transform3D<class_Transform3D>` offset that is multiplied with a bone's transform to get from vertex space to bone space.
+	There is currently no description for this class. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-reftable-group
 
@@ -68,7 +63,9 @@ Method Descriptions
 
 |void| **add_bind**\ (\ bone\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skin_method_add_bind>`
 
-Adds a bind pose matrix of ``pose`` and associated bone index ``bone`` to the bind pose list and increases the bind count by 1.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -80,7 +77,9 @@ Adds a bind pose matrix of ``pose`` and associated bone index ``bone`` to the bi
 
 |void| **add_named_bind**\ (\ name\: :ref:`String<class_String>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skin_method_add_named_bind>`
 
-Like :ref:`add_bind()<class_Skin_method_add_bind>` but adds a bone ``name`` instead of a bone index.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -92,7 +91,9 @@ Like :ref:`add_bind()<class_Skin_method_add_bind>` but adds a bone ``name`` inst
 
 |void| **clear_binds**\ (\ ) :ref:`🔗<class_Skin_method_clear_binds>`
 
-Clears the bind pose list.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -104,7 +105,9 @@ Clears the bind pose list.
 
 :ref:`int<class_int>` **get_bind_bone**\ (\ bind_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skin_method_get_bind_bone>`
 
-Returns the bone index associated with bind pose ``bind_index``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -116,7 +119,9 @@ Returns the bone index associated with bind pose ``bind_index``.
 
 :ref:`int<class_int>` **get_bind_count**\ (\ ) |const| :ref:`🔗<class_Skin_method_get_bind_count>`
 
-Returns the length of the bind pose list.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -128,7 +133,9 @@ Returns the length of the bind pose list.
 
 :ref:`StringName<class_StringName>` **get_bind_name**\ (\ bind_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skin_method_get_bind_name>`
 
-Returns the bone name associated with bind pose ``bind_index``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -140,7 +147,9 @@ Returns the bone name associated with bind pose ``bind_index``.
 
 :ref:`Transform3D<class_Transform3D>` **get_bind_pose**\ (\ bind_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skin_method_get_bind_pose>`
 
-Returns the bind pose matrix at ``bind_index``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -152,7 +161,9 @@ Returns the bind pose matrix at ``bind_index``.
 
 |void| **set_bind_bone**\ (\ bind_index\: :ref:`int<class_int>`, bone\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skin_method_set_bind_bone>`
 
-Sets the bone index of bind pose ``bind_index`` to the given index ``bone``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -164,7 +175,9 @@ Sets the bone index of bind pose ``bind_index`` to the given index ``bone``.
 
 |void| **set_bind_count**\ (\ bind_count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skin_method_set_bind_count>`
 
-Resizes the bind pose list to a length of ``bind_count``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -176,7 +189,9 @@ Resizes the bind pose list to a length of ``bind_count``.
 
 |void| **set_bind_name**\ (\ bind_index\: :ref:`int<class_int>`, name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Skin_method_set_bind_name>`
 
-Sets the name of the bone in bind pose ``bind_index`` to ``name``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 
@@ -188,7 +203,9 @@ Sets the name of the bone in bind pose ``bind_index`` to ``name``.
 
 |void| **set_bind_pose**\ (\ bind_index\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skin_method_set_bind_pose>`
 
-Sets the bind pose ``bind_index`` with the given offset matrix ``pose``.
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

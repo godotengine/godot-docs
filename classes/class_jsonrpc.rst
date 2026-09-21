@@ -203,7 +203,7 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 .. container:: contribute
 
-	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this method. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 .. rst-class:: classref-item-separator
 

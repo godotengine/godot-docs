@@ -38,10 +38,6 @@ While entering text, it is possible to insert special characters using Unicode, 
 
 \ **Note:** When holding down :kbd:`Alt`, the vertical scroll wheel will scroll 5 times as fast as it would normally do. This also works in the Godot script editor.
 
-.. classref_note::
-
-    Line and column numbers are *zero-based*, like elements of an array. For example, the first line of text can be retrieved by ``get_line(0)``, the second line by ``get_line(1)``, and so on.
-
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -124,8 +120,6 @@ Properties
    | :ref:`float<class_float>`                                         | :ref:`scroll_vertical<class_TextEdit_property_scroll_vertical>`                                                             | ``0.0``                                                                             |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>`                                                         | ``true``                                                                            |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`selection_handle_enabled<class_TextEdit_property_selection_handle_enabled>`                                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`shortcut_keys_enabled<class_TextEdit_property_shortcut_keys_enabled>`                                                 | ``true``                                                                            |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -1728,23 +1722,6 @@ If ``false``, text can not be selected by the user or by the :ref:`select()<clas
 
 ----
 
-.. _class_TextEdit_property_selection_handle_enabled:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **selection_handle_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_selection_handle_enabled>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_selection_handle_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **is_selection_handle_enabled**\ (\ )
-
-If ``true``, enables the handles used for text selection. These handles are only visible on touchscreen and can be dragged to adjust the selected text range.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_TextEdit_property_shortcut_keys_enabled:
 
 .. rst-class:: classref-property
@@ -2193,7 +2170,7 @@ Centers the viewport on the line the editing caret is at. This also resets the :
 
 |void| **clear**\ (\ ) :ref:`🔗<class_TextEdit_method_clear>`
 
-Clears all text and related state. This clears the text content, selections, carets, and gutter line data. If :ref:`editable<class_TextEdit_property_editable>` is ``false``, clears the undo history, otherwise preserves it. Does **not** reset other values (such as :ref:`placeholder_text<class_TextEdit_property_placeholder_text>`, font, colors) to their defaults.
+Performs a full reset of **TextEdit**, including undo history.
 
 .. rst-class:: classref-item-separator
 
@@ -2247,7 +2224,7 @@ Copies the current text selection. Can be overridden with :ref:`_copy()<class_Te
 
 |void| **cut**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_cut>`
 
-Cuts the current selection. Can be overridden with :ref:`_cut()<class_TextEdit_private_method__cut>`.
+Cut's the current selection. Can be overridden with :ref:`_cut()<class_TextEdit_private_method__cut>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3064,7 +3041,7 @@ If ``include_ignored_carets`` is ``false``, carets from :ref:`multicaret_edit_ig
 
 :ref:`int<class_int>` **get_tab_size**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_tab_size>`
 
-Returns the **TextEdit**'s tab size.
+Returns the **TextEdit**'s' tab size.
 
 .. rst-class:: classref-item-separator
 

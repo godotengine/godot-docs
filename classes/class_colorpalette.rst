@@ -55,11 +55,7 @@ Property Descriptions
 
 A :ref:`PackedColorArray<class_PackedColorArray>` containing the colors in the palette.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

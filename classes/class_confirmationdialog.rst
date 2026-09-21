@@ -23,8 +23,6 @@ Description
 
 A dialog used for confirmation of actions. This window is similar to :ref:`AcceptDialog<class_AcceptDialog>`, but pressing its Cancel button can have a different outcome from pressing the OK button. The order of the two buttons varies depending on the host OS.
 
-\ **Note:** The dialog controls the size of its buttons, any manual size changes will be overridden. Use the :ref:`AcceptDialog.buttons_min_width<class_AcceptDialog_theme_constant_buttons_min_width>` and :ref:`AcceptDialog.buttons_min_height<class_AcceptDialog_theme_constant_buttons_min_height>` theme constants instead.
-
 To get cancel action, you can use:
 
 

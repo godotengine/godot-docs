@@ -62,8 +62,6 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/min_sdk<class_EditorExportPlatformAndroid_property_gradle_build/min_sdk>`                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`gradle_build/minification<class_EditorExportPlatformAndroid_property_gradle_build/minification>`                                           |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/target_sdk<class_EditorExportPlatformAndroid_property_gradle_build/target_sdk>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>`                                   |
@@ -644,22 +642,6 @@ Minimum Android API level required for the application to run (used during Gradl
 
 ----
 
-.. _class_EditorExportPlatformAndroid_property_gradle_build/minification:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **gradle_build/minification** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/minification>`
-
-If ``true``, enables R8 code minification and obfuscation for release Gradle builds.
-
-This reduces application size, removes unused bytecode, and complies with Google Play Console optimization guidelines.
-
-\ **Note:** Only applies to release builds (**Export With Debug** unchecked) and requires :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorExportPlatformAndroid_property_gradle_build/target_sdk:
 
 .. rst-class:: classref-property
@@ -938,7 +920,7 @@ If ``true``, package signing is enabled.
 
 :ref:`String<class_String>` **package/unique_name** :ref:`🔗<class_EditorExportPlatformAndroid_property_package/unique_name>`
 
-Unique application identifier in a reverse-DNS format. The reverse DNS format should preferably match a domain name you control, but this is not strictly required. For instance, if you own ``example.com``, your package unique name should preferably be of the form ``com.example.mygame``. This identifier can only contain lowercase alphanumeric characters (\ ``a-z``, and ``0-9``), underscores (\ ``_``), and periods (\ ``.``). Each component of the reverse DNS format must start with a letter: for instance, ``com.example.8game`` is not valid.
+Unique application identifier in a reverse-DNS format. The reverse DNS format should preferably match a domain name you control, but this is not strictly required. For instance, if you own ``example.com``, your package unique name should preferably be of the form ``com.example.mygame``. This identifier can only contain lowercase alphanumeric characters (``a-z``, and ``0-9``), underscores (``_``), and periods (``.``). Each component of the reverse DNS format must start with a letter: for instance, ``com.example.8game`` is not valid.
 
 If ``$genname`` is present in the value, it will be replaced by the project name converted to lowercase. If there are invalid characters in the project name, they will be stripped. If all characters in the project name are stripped, ``$genname`` is replaced by ``noname``.
 
@@ -1510,11 +1492,7 @@ Allows enabling/disabling location update notifications from the radio. See `CON
 
 Array of custom permission strings.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

@@ -174,9 +174,7 @@ Return the controllable parameters of this stream. This array contains dictionar
 
 :ref:`String<class_String>` **_get_stream_name**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__get_stream_name>`
 
-**Deprecated:** This method is not used by the engine.
-
-Override this method to customize the name assigned to this audio stream.
+Override this method to customize the name assigned to this audio stream. Unused by the engine.
 
 .. rst-class:: classref-item-separator
 

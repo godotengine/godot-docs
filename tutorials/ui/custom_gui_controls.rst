@@ -152,14 +152,14 @@ To use it, override it in your control. No processing needs to be set.
         }
     }
 
-For more information about events themselves, see the :ref:`doc_inputevent`
+For more information about events themselves, check the :ref:`doc_inputevent`
 tutorial.
 
 Notifications
 ~~~~~~~~~~~~~
 
-Controls also receive many useful notifications for which no dedicated virtual method
-exists, but which can be checked within the ``_notification`` virtual method:
+Controls also have many useful notifications for which no dedicated callback
+exists, but which can be checked with the _notification callback:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -181,7 +181,11 @@ exists, but which can be checked within the ``_notification`` virtual method:
                 pass # Control became visible/invisible;
                 # check new status with is_visible().
             NOTIFICATION_RESIZED:
-                pass # Control changed size; check new size with get_size().
+                pass # Control changed size; check new size
+                # with get_size().
+            NOTIFICATION_MODAL_CLOSE:
+                pass # For modal pop-ups, notification
+                # that the pop-up was closed.
 
  .. code-tab:: csharp
 
@@ -217,6 +221,10 @@ exists, but which can be checked within the ``_notification`` virtual method:
 
             case NotificationResized:
                 // Control changed size; check new size with get_size().
+                break;
+
+            case NotificationModalClose:
+                // For modal pop-ups, notification that the pop-up was closed.
                 break;
         }
     }

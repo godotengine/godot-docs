@@ -119,7 +119,7 @@ Script Panel
 Below the menus, on the left panel, you will see a list of opened files and documentation
 pages. Depending on the file type, this list will have an icon next
 to the file name. For example, the |script| icon means that it is a GDScript.
-The |scriptcsharp| means it is a C# script. The |documentation| means that this is a
+the |scriptcsharp| means it is a C# script. The |documentation| means that this is a
 built-in class reference. Finally, the |toolscript| means it is a currently running
 script (See :ref:`tool annotation <doc_running_code_in_the_editor>` for more on this).
 Hovering a file will show a tooltip with its relative location in the project folder.
@@ -144,10 +144,10 @@ An asterisk (*) next to a file name indicates that the file has unsaved changes.
 
 You can drag a file to change the ordering. Middle-clicking on a file closes it.
 Right-clicking on a file provides several options to save or close files, or to
-copy the relative path of the file.
+copy the relative path of the file. On this menu:
 
-On this menu, you can also use **Move Up** and **Move Down** to change the order of the file,
-or use **Sort** to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
+You can also use **Move Up** and **Move Down** to change the order of the file, or use **Sort**
+to sort all files alphabetically. **Toggle Files Panel** hides the panel, which
 can be displayed again using the right arrow on the status bar.
 **Close Docs** closes all opened in-class reference documents leaving only
 script files open. **Show in FileSystem** finds and highlights the file in the
@@ -208,13 +208,13 @@ The **File** menu provides the following options:
   opened. This is useful when you have multiple scripts open and want to quickly navigate
   back to the last script you were editing. If you also changed the caret position more than
   10 lines, you will first move it to its previous location in the same file.
-- **History Next**: After using **History Previous** to go back to an earlier script,
+- **History Next**: After using `History Previous` to go back to an earlier script,
   this feature allows you to move forward through the script history, switching to
   scripts that were previously accessed. Similar to above, if you also changed the
   caret position more than 10 lines, you will first move it to its next location in
   the same file.
 - **Theme**: Provides options to import an existing theme, save, or reload it. Changing
-  theme settings is performed via :ui:`Editor Settings`.
+  theme settings is performed via `Editor Settings`.
 - **Close**: Closes the active script.
 - **Close All**: Closes all open scripts and prompts to save if there are unsaved changes.
 - **Close Other Tabs**: Closes all open scripts except the selected one.
@@ -225,7 +225,7 @@ The **File** menu provides the following options:
   See :ref:`doc_running_code_in_the_editor_editorscript` for more.
 - **Toggle Files Panel**: Shows or hides the script panel located on the left side
   of the text editor, allowing you to expand the available coding area. More on the
-  :ui:`Scripts Panel` is explained :ref:`above <doc_script_editor_script_panel>`.
+  `Scripts Panel` is explained :ref:`above <doc_script_editor_script_panel>`.
 
 The **Edit** menu provides several options for line operations:
 
@@ -286,7 +286,7 @@ The **Edit** menu provides several options for line operations:
   - **Auto Indent**: Converts the indentation of the selected lines (or the entire file) following the
     indentation setting.
 
-- **Convert Case**: Changes the case of the selected text to :ui:`Upper Case`, :ui:`Lower Case`, or
+- **Convert Case**: Changes the case of the selected text to `Upper Case*`, `Lower Case*`, or
   capitalizes each initial letter of the words.
 - **Syntax Highlighter**: Allows you to choose the syntax highlighter.
 

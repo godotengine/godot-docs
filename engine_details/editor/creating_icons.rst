@@ -77,7 +77,7 @@ Icon optimization
 
 Because the editor renders SVGs once at load time, they need to be small
 in size so they can be efficiently parsed. When the
-`pre-commit hook <https://contributing.godotengine.org/en/latest/development/engine/introduction.html#setting-up-a-dev-environment>`__ runs, it automatically optimizes
+`pre-commit hook <https://contributing.godotengine.org/en/latest/engine/guidelines/code_style.html#pre-commit-hook>`__ runs, it automatically optimizes
 the SVG using `svgo <https://github.com/svg/svgo>`_.
 
 .. note::

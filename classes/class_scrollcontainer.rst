@@ -99,14 +99,6 @@ Theme Properties
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`             | :ref:`scrollbar_h_separation<class_ScrollContainer_theme_constant_scrollbar_h_separation>`          | ``0``                 |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`             | :ref:`scrollbar_margin_bottom<class_ScrollContainer_theme_constant_scrollbar_margin_bottom>`        | ``-1``                |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`             | :ref:`scrollbar_margin_left<class_ScrollContainer_theme_constant_scrollbar_margin_left>`            | ``-1``                |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`             | :ref:`scrollbar_margin_right<class_ScrollContainer_theme_constant_scrollbar_margin_right>`          | ``-1``                |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`             | :ref:`scrollbar_margin_top<class_ScrollContainer_theme_constant_scrollbar_margin_top>`              | ``-1``                |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`             | :ref:`scrollbar_v_separation<class_ScrollContainer_theme_constant_scrollbar_v_separation>`          | ``0``                 |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`scroll_hint_horizontal<class_ScrollContainer_theme_icon_scroll_hint_horizontal>`              |                       |
@@ -256,54 +248,6 @@ Scroll hints will be shown at the top (if vertical), or the left (if horizontal)
 
 Scroll hints will be shown at the bottom (if horizontal), or the right (if horizontal).
 
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_TOP_AND_BOTTOM:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_TOP_AND_BOTTOM** = ``4``
-
-Scroll hints will be shown at the top and bottom.
-
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_LEFT_AND_RIGHT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_LEFT_AND_RIGHT** = ``5``
-
-Scroll hints will be shown on the left and right.
-
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_TOP:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_TOP** = ``6``
-
-Scroll hint will be shown at the top.
-
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_BOTTOM:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_BOTTOM** = ``7``
-
-Scroll hint will be shown at the bottom.
-
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_LEFT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_LEFT** = ``8``
-
-Scroll hint will be shown on the left.
-
-.. _class_ScrollContainer_constant_SCROLL_HINT_MODE_RIGHT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`ScrollHintMode<enum_ScrollContainer_ScrollHintMode>` **SCROLL_HINT_MODE_RIGHT** = ``9``
-
-Scroll hint will be shown on the right.
-
 .. rst-class:: classref-section-separator
 
 ----
@@ -394,7 +338,7 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
 The way which scroll hints (indicators that show that the content can still be scrolled in a certain direction) will be shown.
 
-\ **Note:** Modes with perpendicular hints won't be shown if the content can be scrolled both vertically and horizontally.
+\ **Note:** Hints won't be shown if the content can be scrolled both vertically and horizontally.
 
 .. rst-class:: classref-item-separator
 
@@ -624,54 +568,6 @@ Theme Property Descriptions
 :ref:`int<class_int>` **scrollbar_h_separation** = ``0`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_h_separation>`
 
 The space between the ScrollContainer's vertical scroll bar and its content, in pixels. No space will be added when the content's minimum size is larger than the ScrollContainer's size.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScrollContainer_theme_constant_scrollbar_margin_bottom:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **scrollbar_margin_bottom** = ``-1`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_margin_bottom>`
-
-The bottom margin of the horizontal scrollbar. When negative, uses :ref:`panel<class_ScrollContainer_theme_style_panel>`'s bottom margin.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScrollContainer_theme_constant_scrollbar_margin_left:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **scrollbar_margin_left** = ``-1`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_margin_left>`
-
-The left margin of the horizontal scrollbar. When negative, uses :ref:`panel<class_ScrollContainer_theme_style_panel>`'s left margin.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScrollContainer_theme_constant_scrollbar_margin_right:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **scrollbar_margin_right** = ``-1`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_margin_right>`
-
-The right margin of the horizontal scrollbar. When negative, uses :ref:`panel<class_ScrollContainer_theme_style_panel>`'s right margin.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScrollContainer_theme_constant_scrollbar_margin_top:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **scrollbar_margin_top** = ``-1`` :ref:`🔗<class_ScrollContainer_theme_constant_scrollbar_margin_top>`
-
-The top margin of the horizontal scrollbar. When negative, uses :ref:`panel<class_ScrollContainer_theme_style_panel>`'s top margin.
 
 .. rst-class:: classref-item-separator
 

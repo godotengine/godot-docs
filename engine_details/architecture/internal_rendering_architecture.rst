@@ -7,7 +7,7 @@ This page is a high-level overview of Godot 4's internal renderer design.
 It does not apply to previous Godot versions.
 
 The goal of this page is to document design decisions taken to best suit
-`Godot's design philosophy <https://contributing.godotengine.org/en/latest/development/engine/best_practices.html>`__,
+`Godot's design philosophy <https://contributing.godotengine.org/en/latest/engine/guidelines/best_practices.html>`__,
 while providing a starting point for new rendering contributors.
 
 If you have questions about rendering internals not answered here, feel free to
