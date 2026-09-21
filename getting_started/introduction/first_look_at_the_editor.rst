@@ -145,18 +145,17 @@ work, any changes made here are not saved when the game stops running.
 .. image:: img/editor_intro_workspace_game.webp
 
 The **Script screen** is a complete code editor with a debugger, rich
-auto-completion, and built-in class reference.
+auto-completion, and built-in code reference.
 
 .. image:: img/editor_intro_workspace_script.webp
 
-Finally, the **Asset Store** is a repository of user-submitted addons, scripts,
-tools, and other resources to use in your projects.
+Finally, the **Asset Library** is a library of free and open source add-ons, scripts,
+and assets to use in your projects.
 
-.. image:: img/editor_intro_workspace_assetstore.webp
+.. image:: img/editor_intro_workspace_assetlib.webp
 
-.. seealso::
-
-    You can learn more about the Asset Store in :ref:`doc_what_is_asset_store`.
+.. seealso:: You can learn more about the asset library in
+             :ref:`doc_what_is_assetlib`.
 
 .. _doc_intro_to_the_editor_interface_integrated_class_reference:
 

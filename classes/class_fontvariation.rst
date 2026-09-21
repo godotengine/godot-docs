@@ -174,11 +174,7 @@ A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.
 
 An array of colors to override predefined palette. Use ``Color(0, 0, 0, 0)``, to keep predefined palette color at specific position.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

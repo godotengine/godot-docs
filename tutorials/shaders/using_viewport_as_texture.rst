@@ -34,7 +34,7 @@ Create a new scene and add the following nodes exactly as shown below.
 
 .. image:: img/viewport_texture_node_tree.webp
 
-Go into the :ref:`MeshInstance3D <class_MeshInstance3D>` and make the mesh a :ref:`SphereMesh <class_SphereMesh>`.
+Go into the the MeshInstance3D and make the mesh a SphereMesh
 
 Setting up the SubViewport
 --------------------------
@@ -186,9 +186,7 @@ to make the planet. We will be using this noise function directly from a `Shader
                          dot(hash(i + vec3(1.0, 1.0, 1.0)), f - vec3(1.0, 1.0, 1.0)), u.x), u.y), u.z );
     }
 
-.. note::
-
-    All credit goes to the author, Inigo Quilez. It is published under the ``MIT`` license.
+.. note:: All credit goes to the author, Inigo Quilez. It is published under the ``MIT`` licence.
 
 Now to use ``noise``, add the following to the    ``fragment`` function:
 

@@ -166,11 +166,7 @@ You can load a file without having to import it beforehand using the code snippe
 
 
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

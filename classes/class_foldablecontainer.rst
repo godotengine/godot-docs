@@ -66,19 +66,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`add_title_bar_control<class_FoldableContainer_method_add_title_bar_control>`\ (\ control\: :ref:`Control<class_Control>`\ )       |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`expand<class_FoldableContainer_method_expand>`\ (\ )                                                                              |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`fold<class_FoldableContainer_method_fold>`\ (\ )                                                                                  |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>` | :ref:`get_title_bar_control<class_FoldableContainer_method_get_title_bar_control>`\ (\ index\: :ref:`int<class_int>`\ ) |const|         |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_title_bar_control_count<class_FoldableContainer_method_get_title_bar_control_count>`\ (\ ) |const|                            |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                        | :ref:`remove_title_bar_control<class_FoldableContainer_method_remove_title_bar_control>`\ (\ control\: :ref:`Control<class_Control>`\ ) |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`add_title_bar_control<class_FoldableContainer_method_add_title_bar_control>`\ (\ control\: :ref:`Control<class_Control>`\ )       |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`expand<class_FoldableContainer_method_expand>`\ (\ )                                                                              |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`fold<class_FoldableContainer_method_fold>`\ (\ )                                                                                  |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`remove_title_bar_control<class_FoldableContainer_method_remove_title_bar_control>`\ (\ control\: :ref:`Control<class_Control>`\ ) |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -98,8 +94,6 @@ Theme Properties
    | :ref:`Color<class_Color>`         | :ref:`hover_font_color<class_FoldableContainer_theme_color_hover_font_color>`                       | ``Color(0.95, 0.95, 0.95, 1)``    |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_FoldableContainer_theme_constant_h_separation>`                            | ``2``                             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_FoldableContainer_theme_constant_icon_max_width>`                        | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_FoldableContainer_theme_constant_outline_size>`                            | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
@@ -364,32 +358,6 @@ Folds the container and emits :ref:`folding_changed<class_FoldableContainer_sign
 
 ----
 
-.. _class_FoldableContainer_method_get_title_bar_control:
-
-.. rst-class:: classref-method
-
-:ref:`Control<class_Control>` **get_title_bar_control**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FoldableContainer_method_get_title_bar_control>`
-
-Returns the title bar :ref:`Control<class_Control>` at the given ``index``, or ``null`` if the index is out of bounds.
-
-Use :ref:`get_title_bar_control_count()<class_FoldableContainer_method_get_title_bar_control_count>` to get the total number of title bar controls.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_FoldableContainer_method_get_title_bar_control_count:
-
-.. rst-class:: classref-method
-
-:ref:`int<class_int>` **get_title_bar_control_count**\ (\ ) |const| :ref:`🔗<class_FoldableContainer_method_get_title_bar_control_count>`
-
-Returns the number of controls added to the title bar via :ref:`add_title_bar_control()<class_FoldableContainer_method_add_title_bar_control>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_FoldableContainer_method_remove_title_bar_control:
 
 .. rst-class:: classref-method
@@ -462,18 +430,6 @@ The title's font hover color.
 :ref:`int<class_int>` **h_separation** = ``2`` :ref:`🔗<class_FoldableContainer_theme_constant_h_separation>`
 
 The horizontal separation between the title's icon and text, and between title bar controls.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_FoldableContainer_theme_constant_icon_max_width:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **icon_max_width** = ``0`` :ref:`🔗<class_FoldableContainer_theme_constant_icon_max_width>`
-
-The maximum allowed width of the **FoldableContainer**'s icon. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

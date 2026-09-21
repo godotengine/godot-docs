@@ -62,17 +62,15 @@ For compiling under Windows, the following is required:
               scoop install python mingw
 
           Scons will still need to be installed via pip
-.. note::
+.. note:: If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
+          install MinGW and other dependencies using the following command:
 
-    If you have `MSYS2 <https://www.msys2.org/>`_ installed, you can easily
-    install MinGW and other dependencies using the following command:
+          ::
 
-    ::
+              pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
 
-        pacman -S mingw-w64-x86_64-gcc mingw-w64-i686-gcc make python-pip
-
-    For each MSYS2 MinGW subsystem, you should then run
-    ``pip3 install scons`` in its shell.
+          For each MSYS2 MinGW subsystem, you should then run
+          `pip3 install scons` in its shell.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -89,15 +87,11 @@ To install SCons, open the command prompt and run the following command:
 
     python -m pip install scons
 
-.. codespell:ignore-begin writeable
-
 If you are prompted with the message
 ``Defaulting to user installation because normal site-packages is not
 writeable``, you may have to run that command again using elevated
 permissions. Open a new command prompt as an Administrator then run the command
 again to ensure that SCons is available from the ``PATH``.
-
-.. codespell:ignore-end
 
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into a command prompt
@@ -351,6 +345,39 @@ in the Godot source repository. After running this script, compile Godot as usua
           ::
 
               scons platform=windows accesskit_sdk_path=<...>
+
+Compiling with WinRT support
+----------------------------
+
+WinRT provides support for OneCore TTS (accessing Windows 10+ voices), HDR color information monitoring, and emoji picker.
+
+If you are building with MinGW, compiling with WinRT requires additional dependencies to be installed.
+If you wish to skip this step, you can use the ``winrt=no`` SCons option.
+
+You can install the required dependencies by running
+``python misc/scripts/install_winrt.py``
+in the Godot source repository. After running this script, compile Godot as usual.
+
+.. note:: You can optionally build the WinRT headers yourself with
+          the following steps:
+
+          1. Clone the `winrt-mingw <https://github.com/godotengine/winrt-mingw>`_
+             directory and navigate to it.
+          2. Run the following command:
+
+          ::
+
+              cmake -Bbuild -DCMAKE_BUILD_TYPE=Release -DCPPWINRT_BUILD_VERSION=2.0.250303.1 -DBUILD_TESTING=OFF cppwinrt/
+              echo "" > build/app.manifest.rc
+              cmake --build build
+              ./build/cppwinrt.exe -input windows-rs/crates/libs/bindgen/default/ -output include/
+
+          To compile Godot with a custom build of WinRT, add ``winrt_path={path}`` to
+          tell SCons where to look for the AccessKit headers:
+
+          ::
+
+              scons platform=windows winrt_path=<...>
 
 Compiling with ANGLE support
 ----------------------------

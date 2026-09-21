@@ -154,8 +154,6 @@ Properties
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_inherit_emitter_scale<class_ParticleProcessMaterial_property_particle_flag_inherit_emitter_scale>` | ``false``               |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
-   | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_preserve_color<class_ParticleProcessMaterial_property_particle_flag_preserve_color>`               | ``false``               |
-   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                            | :ref:`particle_flag_rotate_y<class_ParticleProcessMaterial_property_particle_flag_rotate_y>`                           | ``false``               |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                  | :ref:`radial_accel_curve<class_ParticleProcessMaterial_property_radial_accel_curve>`                                   |                         |
@@ -503,7 +501,11 @@ Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_part
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_DAMPING_AS_FRICTION** = ``3``
 
-Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_damping_as_friction<class_ParticleProcessMaterial_property_particle_flag_damping_as_friction>`.
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
+
+
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_INHERIT_EMITTER_SCALE:
 
@@ -511,21 +513,17 @@ Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_part
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_INHERIT_EMITTER_SCALE** = ``4``
 
-Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_inherit_emitter_scale<class_ParticleProcessMaterial_property_particle_flag_inherit_emitter_scale>`.
+.. container:: contribute
 
-.. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_PRESERVE_COLOR:
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
-.. rst-class:: classref-enumeration-constant
 
-:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_PRESERVE_COLOR** = ``5``
-
-Use with :ref:`set_particle_flag()<class_ParticleProcessMaterial_method_set_particle_flag>` to set :ref:`particle_flag_preserve_color<class_ParticleProcessMaterial_property_particle_flag_preserve_color>`.
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_MAX** = ``6``
+:ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_MAX** = ``5``
 
 Represents the size of the :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` enum.
 
@@ -1803,23 +1801,6 @@ If ``true``, particles will not move on the z axis.
 If ``true``, particles will inherit the scale of the emitter.
 
 \ **Note:** This has no effect when :ref:`GPUParticles3D.local_coords<class_GPUParticles3D_property_local_coords>` is ``true``, since particles in local space are already affected by the emitter's scale.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ParticleProcessMaterial_property_particle_flag_preserve_color:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **particle_flag_preserve_color** = ``false`` :ref:`🔗<class_ParticleProcessMaterial_property_particle_flag_preserve_color>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>`\ ) |const|
-
-If ``true``, preserves the color given by manual emission. To use when using :ref:`GPUParticles3D.emit_particle()<class_GPUParticles3D_method_emit_particle>` or when working with subemitters.
 
 .. rst-class:: classref-item-separator
 

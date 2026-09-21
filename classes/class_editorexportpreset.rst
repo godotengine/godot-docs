@@ -80,8 +80,6 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_runnable<class_EditorExportPreset_method_is_runnable>`\ (\ ) |const|                                                                                                                                    |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`                     | :ref:`resolve_encryption_key<class_EditorExportPreset_method_resolve_encryption_key>`\ (\ )                                                                                                                      |
-   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -106,7 +104,7 @@ enum **ExportFilter**: :ref:`🔗<enum_EditorExportPreset_ExportFilter>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -118,7 +116,7 @@ enum **ExportFilter**: :ref:`🔗<enum_EditorExportPreset_ExportFilter>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -130,7 +128,7 @@ enum **ExportFilter**: :ref:`🔗<enum_EditorExportPreset_ExportFilter>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -142,7 +140,7 @@ enum **ExportFilter**: :ref:`🔗<enum_EditorExportPreset_ExportFilter>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -154,7 +152,7 @@ enum **ExportFilter**: :ref:`🔗<enum_EditorExportPreset_ExportFilter>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -176,7 +174,7 @@ enum **FileExportMode**: :ref:`🔗<enum_EditorExportPreset_FileExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -188,7 +186,7 @@ enum **FileExportMode**: :ref:`🔗<enum_EditorExportPreset_FileExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -200,7 +198,7 @@ enum **FileExportMode**: :ref:`🔗<enum_EditorExportPreset_FileExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -212,7 +210,7 @@ enum **FileExportMode**: :ref:`🔗<enum_EditorExportPreset_FileExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -234,7 +232,7 @@ enum **ScriptExportMode**: :ref:`🔗<enum_EditorExportPreset_ScriptExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -246,7 +244,7 @@ enum **ScriptExportMode**: :ref:`🔗<enum_EditorExportPreset_ScriptExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -258,7 +256,7 @@ enum **ScriptExportMode**: :ref:`🔗<enum_EditorExportPreset_ScriptExportMode>`
 
 .. container:: contribute
 
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__!
 
 
 
@@ -373,7 +371,7 @@ Returns file filters to include during PCK encryption.
 
 :ref:`String<class_String>` **get_encryption_key**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_get_encryption_key>`
 
-Returns PCK encryption key. This will only return the value set in the export preset and not the value of the ``GODOT_SCRIPT_ENCRYPTION_KEY`` environment variable. See also :ref:`resolve_encryption_key()<class_EditorExportPreset_method_resolve_encryption_key>`.
+Returns PCK encryption key.
 
 .. rst-class:: classref-item-separator
 
@@ -568,18 +566,6 @@ Returns ``true`` if the dedicated server export mode is selected in the export d
 :ref:`bool<class_bool>` **is_runnable**\ (\ ) |const| :ref:`🔗<class_EditorExportPreset_method_is_runnable>`
 
 Returns ``true`` if the "Runnable" toggle is enabled in the export dialog.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPreset_method_resolve_encryption_key:
-
-.. rst-class:: classref-method
-
-:ref:`PackedByteArray<class_PackedByteArray>` **resolve_encryption_key**\ (\ ) :ref:`🔗<class_EditorExportPreset_method_resolve_encryption_key>`
-
-Returns PCK encryption key as a :ref:`PackedByteArray<class_PackedByteArray>`. If the ``GODOT_SCRIPT_ENCRYPTION_KEY`` environment variable is set, this will return that key instead of the key set in the export preset. See also :ref:`get_encryption_key()<class_EditorExportPreset_method_get_encryption_key>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

@@ -113,11 +113,7 @@ Property Descriptions
 
 The SPIR-V bytecode for the any hit shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -136,11 +132,7 @@ The SPIR-V bytecode for the any hit shader stage.
 
 The SPIR-V bytecode for the closest hit shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -159,11 +151,7 @@ The SPIR-V bytecode for the closest hit shader stage.
 
 The SPIR-V bytecode for the compute shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -182,11 +170,7 @@ The SPIR-V bytecode for the compute shader stage.
 
 The SPIR-V bytecode for the fragment shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -205,11 +189,7 @@ The SPIR-V bytecode for the fragment shader stage.
 
 The SPIR-V bytecode for the intersection shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -228,11 +208,7 @@ The SPIR-V bytecode for the intersection shader stage.
 
 The SPIR-V bytecode for the miss shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -251,11 +227,7 @@ The SPIR-V bytecode for the miss shader stage.
 
 The SPIR-V bytecode for the ray generation shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -274,11 +246,7 @@ The SPIR-V bytecode for the ray generation shader stage.
 
 The SPIR-V bytecode for the tessellation control shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -297,11 +265,7 @@ The SPIR-V bytecode for the tessellation control shader stage.
 
 The SPIR-V bytecode for the tessellation evaluation shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -320,11 +284,7 @@ The SPIR-V bytecode for the tessellation evaluation shader stage.
 
 The SPIR-V bytecode for the vertex shader stage.
 
-
-
-.. classref_note::
-
-    The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

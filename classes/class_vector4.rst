@@ -450,9 +450,7 @@ It can perform smoother interpolation than :ref:`cubic_interpolate()<class_Vecto
 
 :ref:`Vector4<class_Vector4>` **direction_to**\ (\ to\: :ref:`Vector4<class_Vector4>`\ ) |const| :ref:`🔗<class_Vector4_method_direction_to>`
 
-Returns the normalized vector pointing from this vector to ``to``.
-
-\ ``a.direction_to(b)`` is equivalent to ``(b - a).normalized()``. See also :ref:`normalized()<class_Vector4_method_normalized>`.
+Returns the normalized vector pointing from this vector to ``to``. This is equivalent to using ``(b - a).normalized()``.
 
 .. rst-class:: classref-item-separator
 

@@ -55,9 +55,8 @@ Desktop or laptop PC - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (up to 1.5 GB after installation, depending on the target platforms chosen).            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 10, macOS 11 (Intel Macs, Compatibility), macOS 12 (Intel  |
-|                      |   Macs, Forward+/Mobile), macOS 13 (Apple Silicon Macs), Linux distribution released    |
-|                      |   after 2018                                                                            |
+| **Operating system** | - **Native editor:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon Macs),  |
+|                      |   Linux distribution released after 2018                                                |
 |                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -143,7 +142,7 @@ Desktop or laptop PC - Recommended
 +----------------------+---------------------------------------------------------------------------------------------+
 | **Storage**          | 2 GB (used for the executable, project files, all export templates, and cache)              |
 +----------------------+---------------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 11, macOS 14, Linux distribution released after 2020           |
+| **Operating system** | - **Native editor:** Windows 11, macOS 13, Linux distribution released after 2020           |
 |                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera                    |
 +----------------------+---------------------------------------------------------------------------------------------+
 
@@ -242,10 +241,9 @@ Desktop or laptop PC - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files, and cache)                              |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 10, macOS 11 (Intel Macs, Compatibility), macOS 12    |
-|                      |   (Intel Macs, Forward+/Mobile), macOS 13 (Apple Silicon Macs), Linux distribution      |
-|                      |   released after 2018                                                                   |
-|                      | - **For web exports:** Recent versions of mainstream browsers: Firefox and derivatives  |
+| **Operating system** | - **For native exports:** Windows 10, macOS 11 (Intel Macs), macOS 13 (Apple Silicon    |
+|                      |   Macs), Linux distribution released after 2018                                         |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
@@ -257,9 +255,9 @@ Mobile device (smartphone/tablet) - Minimum
 |                      |                                                                                         |
 |                      |   - *Example: Qualcomm Snapdragon 430, Samsung Exynos 5 Octa 5430*                      |
 |                      |                                                                                         |
-|                      | - **iOS:** SoC with 64-bit ARM CPU                                                      |
+|                      | - **iOS:** SoC with any 64-bit ARM CPU                                                  |
 |                      |                                                                                         |
-|                      |   - *Example: Apple A9 (iPhone 6S)*                                                     |
+|                      |   - *Example: Apple A7 (iPhone 5S)*                                                     |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ renderer:** SoC featuring GPU with full Vulkan 1.0 support, or             |
 |                      |   Metal 3 support (iOS/iPadOS)                                                          |
@@ -275,7 +273,7 @@ Mobile device (smartphone/tablet) - Minimum
 |                      |                                                                                         |
 |                      | - **Compatibility renderer:** SoC featuring GPU with full OpenGL ES 3.0 support         |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 306, Mali-T628 MP6, Apple A9 (iPhone 6S)*                 |
+|                      |   - *Example: Qualcomm Adreno 306, Mali-T628 MP6, Apple A7 (iPhone 5S)*                 |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **RAM**              | - **For native exports:** 1 GB                                                          |
 |                      | - **For web exports:** 2 GB                                                             |
@@ -284,7 +282,7 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 7.0 (Compatibility), Android 9.0 (Forward+/Mobile),   |
 |                      |   iOS 15.0 (Forward+/Mobile with Vulkan), iOS 16.0 (Forward+/Mobile with Metal)         |
-|                      | - **For web exports:** Recent versions of mainstream browsers: Firefox and derivatives  |
+|                      | - **Web editor:** Recent versions of mainstream browsers: Firefox and derivatives       |
 |                      |   (including ESR), Chrome and Chromium derivatives, Safari and WebKit derivatives.      |
 +----------------------+-----------------------------------------------------------------------------------------+
 
@@ -327,7 +325,7 @@ Desktop or laptop PC - Recommended
 +----------------------+----------------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files, and cache)                                   |
 +----------------------+----------------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 11, macOS 14, Linux distribution released after 2020       |
+| **Operating system** | - **For native exports:** Windows 11, macOS 13, Linux distribution released after 2020       |
 |                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera                |
 +----------------------+----------------------------------------------------------------------------------------------+
 

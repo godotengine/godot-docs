@@ -148,7 +148,7 @@ A custom node
 -------------
 
 Sometimes you want a certain behavior in many nodes, such as a custom scene
-or control that can be reused. Instantiation is helpful in a lot of cases, but
+or control that can be reused. Instancing is helpful in a lot of cases, but
 sometimes it can be cumbersome, especially if you're using it in many
 projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.
@@ -211,8 +211,8 @@ clicked. For that, we'll need a script that extends from
 That's it for our basic button. You can save this as ``my_button.gd`` inside the
 plugin folder. You may have a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
-``addons/my_custom_node`` folder as ``icon.svg``, or use the default Godot logo
-(``@icon("res://icon.svg")``).
+`addons/my_custom_node` folder as `icon.svg`, or use the default Godot logo
+(`@icon("res://icon.svg")`).
 
 .. tip::
 
@@ -390,10 +390,10 @@ The script could look like this:
             _dock.Title = "My Dock";
 
             // Note that LeftUl means the left of the editor, upper-left dock.
-            _dock.DefaultSlot = EditorDock.DockSlot.LeftUl;
+            _dock.DefaultSlot = DockSlot.LeftUl;
 
             // Allow the dock to be on the left or right of the editor, and to be made floating.
-            _dock.AvailableLayouts = EditorDock.DockLayout.Horizontal | EditorDock.DockLayout.Floating;
+            _dock.AvailableLayouts = DockLayout.Horizontal | DockLayout.Floating;
 
             AddDock(_dock);
         }

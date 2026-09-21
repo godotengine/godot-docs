@@ -51,7 +51,6 @@ Nodes
     class_bone2d
     class_boneattachment3d
     class_boneconstraint3d
-    class_bonespaceadjuster3d
     class_bonetwistdisperser3d
     class_boxcontainer
     class_button
@@ -163,7 +162,6 @@ Nodes
     class_lightoccluder2d
     class_limitangularvelocitymodifier3d
     class_line2d
-    class_line3d
     class_lineedit
     class_linkbutton
     class_lookatmodifier3d
@@ -198,7 +196,6 @@ Nodes
     class_openxrcompositionlayercylinder
     class_openxrcompositionlayerequirect
     class_openxrcompositionlayerquad
-    class_openxrfoveatedinsetviewport
     class_openxrhand
     class_openxrinteractionprofileeditor
     class_openxrinteractionprofileeditorbase
@@ -241,7 +238,6 @@ Nodes
     class_rigidbody2d
     class_rigidbody3d
     class_rootmotionview
-    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase
@@ -286,7 +282,6 @@ Nodes
     class_tilemaplayer
     class_timer
     class_touchscreenbutton
-    class_trail3d
     class_tree
     class_twoboneik3d
     class_vboxcontainer
@@ -338,10 +333,6 @@ Resources
     class_animationnodeblendspace2d
     class_animationnodeblendtree
     class_animationnodeextension
-    class_animationnodeobserver
-    class_animationnodeobserverblendspace
-    class_animationnodeobserveroneshot
-    class_animationnodeobservertransition
     class_animationnodeoneshot
     class_animationnodeoutput
     class_animationnodestatemachine
@@ -596,7 +587,6 @@ Resources
     class_sphereshape3d
     class_spriteframes
     class_standardmaterial3d
-    class_streamedtexture2d
     class_stylebox
     class_styleboxempty
     class_styleboxflat
@@ -630,7 +620,6 @@ Resources
     class_videostreamtheora
     class_viewporttexture
     class_visualshader
-    class_visualshadergroup
     class_visualshadernode
     class_visualshadernodebillboard
     class_visualshadernodebooleanconstant
@@ -661,10 +650,7 @@ Resources
     class_visualshadernodeframe
     class_visualshadernodefresnel
     class_visualshadernodeglobalexpression
-    class_visualshadernodegroup
     class_visualshadernodegroupbase
-    class_visualshadernodegroupinput
-    class_visualshadernodegroupoutput
     class_visualshadernodeif
     class_visualshadernodeinput
     class_visualshadernodeintconstant
@@ -838,8 +824,6 @@ Other objects
     class_expression
     class_fileaccess
     class_framebuffercacherd
-    class_fuzzysearch
-    class_fuzzysearchmatch
     class_gdextensionmanager
     class_gdscriptlanguageprotocol
     class_gdscripttextdocument
@@ -928,9 +912,6 @@ Other objects
     class_openxrspatialcomponentplanealignmentlist
     class_openxrspatialcomponentplanesemanticlabellist
     class_openxrspatialcomponentpolygon2dlist
-    class_openxrspatialcontainerextension
-    class_openxrspatialcontainerselfrenderingextension
-    class_openxrspatialcontainerstate
     class_openxrspatialcontextpersistenceconfig
     class_openxrspatialentityextension
     class_openxrspatialentitytracker
@@ -1024,7 +1005,6 @@ Other objects
     class_resourceimporteroggvorbis
     class_resourceimporterscene
     class_resourceimportershaderfile
-    class_resourceimporterstreamedtexture
     class_resourceimportersvg
     class_resourceimportertexture
     class_resourceimportertextureatlas
@@ -1062,7 +1042,6 @@ Other objects
     class_textserverextension
     class_textserverfallback
     class_textservermanager
-    class_texturestreaming
     class_themedb
     class_thread
     class_tiledata
@@ -1080,7 +1059,6 @@ Other objects
     class_uniformsetcacherd
     class_upnp
     class_upnpdevice
-    class_visionosxrinterface
     class_weakref
     class_webrtcdatachannel
     class_webrtcdatachannelextension
@@ -1188,12 +1166,10 @@ Editor-only
     class_resourceimporteroggvorbis
     class_resourceimporterscene
     class_resourceimportershaderfile
-    class_resourceimporterstreamedtexture
     class_resourceimportersvg
     class_resourceimportertexture
     class_resourceimportertextureatlas
     class_resourceimporterwav
-    class_scenepaint2deditor
     class_scriptcreatedialog
     class_scripteditor
     class_scripteditorbase

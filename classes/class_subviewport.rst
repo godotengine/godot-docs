@@ -12,8 +12,6 @@ SubViewport
 
 **Inherits:** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`OpenXRFoveatedInsetViewport<class_OpenXRFoveatedInsetViewport>`
-
 An interface to a game world that doesn't create a window or draw to the screen directly.
 
 .. rst-class:: classref-introduction-group
