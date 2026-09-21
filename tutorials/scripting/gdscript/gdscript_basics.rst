@@ -785,7 +785,7 @@ in a 3D grid.
 :ref:`Vector4 <class_Vector4>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4D vector type containing ``x``, ``y``, ``z`` and ``w`` fields. This can also
+4D vector type containing ``x``, ``y``, ``z``, and ``w`` fields. This can also
 be accessed as an array.
 
 :ref:`Vector4i <class_Vector4i>`
