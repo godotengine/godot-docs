@@ -57,6 +57,11 @@ and then disable itself. It "runs" only once. This property is unchecked by defa
 keep emitting particles until it is disabled or destroyed manually. One-shot particles are a good fit for
 effects that react to a single event, like item pickups or splinters that burst away when a bullet hits a wall.
 
+.. warning::
+
+    When using the ``One Shot`` property, make sure that the ``Amount Ratio`` property is set to ``1.0`` so that
+    particles are always emitted.
+
 The ``Preprocess`` property is a way to fast-forward to a point in the middle of the
 particle system's lifetime and start rendering from there. It is measured in seconds. A value of
 ``1`` means that when the particle system starts, it will look as if it has been
