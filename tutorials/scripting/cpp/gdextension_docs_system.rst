@@ -57,7 +57,7 @@ The format of the class reference XML files is the same as the one used by Godot
 :ref:`doc_class_reference_primer`.
 
 If you are looking for pointers to write high quality documentation, feel free to refer to Godot's
-`documentation guidelines <https://contributing.godotengine.org/en/latest/documentation/guidelines/index.html>`__.
+`documentation guidelines <https://contributing.godotengine.org/en/latest/development/documentation/index.html>`__.
 
 Publishing documentation online
 -------------------------------
@@ -87,4 +87,4 @@ you will need a bit of personal insight to make it work.
 3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``godot-docs`` subfolder, as well as strings to reflect it's your project rather than Godot you're building the docs for.
 4. Create an account on `readthedocs.org <http://readthedocs.org>`_. Import your project, and modify its base ``.readthedocs.yaml`` file path to ``/docs/.readthedocs.yaml``.
 
-Once you have completed all these steps, your documentation should be available at ``<repo-name>.readthedocs.io``.
+Once you have completed all these steps, your documentation should be available at ``<repository-name>.readthedocs.io``.

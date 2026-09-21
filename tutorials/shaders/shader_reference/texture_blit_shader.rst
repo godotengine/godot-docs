@@ -46,7 +46,7 @@ value, and can optionally be written to. Samplers cannot be written to so they a
 Global built-ins
 ----------------
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 +-------------------+------------------------------------------------------------------------------------------+
 | Built-in          | Description                                                                              |

@@ -10,7 +10,7 @@ built-in node types.
 .. seealso::
 
     To learn to submit your changes to the Godot project using the Git version
-    control system, see `Class reference contribution documentation <https://contributing.godotengine.org/en/latest/documentation/class_reference.html>`__.
+    control system, see `Class reference contribution documentation <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__.
 
 The reference for each class is contained in an XML file like the one below:
 
@@ -70,17 +70,17 @@ member variables, constants, and signals in separate XML nodes.
 For each, you want to learn how they work in Godot's source code. Then, fill
 their documentation by completing or improving the text in these tags:
 
-- `<brief_description>`
-- `<description>`
-- `<constant>`
-- `<method>` (in its `<description>` tag; return types and arguments don't take separate
+- ``<brief_description>``
+- ``<description>``
+- ``<constant>``
+- ``<method>`` (in its ``<description>`` tag; return types and arguments don't take separate
   documentation strings)
-- `<member>`
-- `<signal>` (in its `<description>` tag; arguments don't take separate documentation strings)
-- `<constant>`
+- ``<member>``
+- ``<signal>`` (in its ``<description>`` tag; arguments don't take separate documentation strings)
+- ``<constant>``
 
 Write in a clear and simple language. Always follow the `writing guidelines
-<https://contributing.godotengine.org/en/latest/documentation/guidelines/docs_writing_guidelines.html>`__
+<https://contributing.godotengine.org/en/latest/development/documentation/docs_writing_guidelines.html>`__
 to keep your descriptions short and easy to read.
 **Do not leave empty lines** in the descriptions: each line in the XML file will
 result in a new paragraph, even if it is empty.
@@ -107,7 +107,7 @@ This will convert the XML files to the online documentation's format and output
 errors if anything's wrong.
 
 Alternatively, you can build Godot and open the modified page in the built-in
-code reference. To learn how to compile the engine, read the :ref:`compilation
+class reference. To learn how to compile the engine, read the :ref:`compilation
 guide <toc-devel-compiling>`.
 
 We recommend using a code editor that supports XML files like Vim, Atom, Visual Studio Code,

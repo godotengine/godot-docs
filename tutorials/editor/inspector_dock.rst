@@ -116,9 +116,11 @@ various view and edit options.
   Clicking this option makes each sub-resource used in this node unique, separated from
   other nodes.
 
-.. tip:: If a node has exported variables in its attached script, you will also see these
-  in the inspector. The first image in this section has one for the Player node:
-  `Action Suffix`. See :ref:`doc_gdscript_exports` for more on this topic.
+.. tip::
+
+  If a node has exported variables in its attached script, you will also see these
+  in the Inspector. The first image in this section has one for the Player node:
+  :ui:`Action Suffix`. See :ref:`doc_gdscript_exports` for more on this topic.
 
 .. seealso:: Refer to :ref:`doc_customizing_editor` for dock customization options.
 

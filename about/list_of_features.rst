@@ -149,7 +149,7 @@ Godot 4 includes three renderers:
    - High-level tools to draw lines and polygons such as
      :ref:`class_Polygon2D` and :ref:`class_Line2D`, with support for texturing.
 
-- AnimatedSprite2D as a helper for creating animated sprites.
+- :ref:`class_AnimatedSprite2D` as a helper for creating animated sprites.
 - Parallax layers.
 
    - Pseudo-3D support including preview in the editor.
@@ -246,7 +246,7 @@ Godot 4 includes three renderers:
 - Normal mapping.
 - Parallax/relief mapping with automatic level of detail based on distance.
 - Detail mapping for the albedo and normal maps.
-- Sub-surface scattering and transmittance.
+- Subsurface scattering and transmittance.
 - Screen-space refraction with support for material roughness (resulting in blurry refraction).
 - Proximity fade (soft particles) and distance fade.
 - Distance fade can use alpha blending or dithering to avoid going through
@@ -706,11 +706,7 @@ Windowing and OS integration
 - Create transparent windows to use as overlays, with polygon-based
   mouse passthrough support.
 - Request attention (will cause the title bar to blink on most platforms).
-- Fullscreen mode.
-
-   - Uses borderless fullscreen by default on Windows for fast alt-tabbing,
-     but can optionally use exclusive fullscreen to reduce input lag.
-
+- Fullscreen mode (borderless and exclusive).
 - Borderless windows (fullscreen or non-fullscreen).
 - Keep a window always on top.
 - Make a window ignore focus (useful for overlays).
@@ -901,7 +897,7 @@ Miscellaneous
 
 - Licensed under the permissive MIT license.
 
-   - Open development process with `contributions welcome <https://contributing.godotengine.org/en/latest/organization/how_to_contribute.html>`__.
+   - Open development process with `contributions welcome <https://contributing.godotengine.org/en/latest/index.html>`__.
 
 .. seealso::
 

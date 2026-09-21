@@ -277,11 +277,13 @@ Creates a full project at ``path`` for the specified ``preset``. If ``notify`` i
 
 Exports project files for the specified preset. This method can be used to implement custom export format, other than PCK and ZIP. One of the callbacks is called for each exported file.
 
-\ ``save_cb`` is called for all exported files and have the following arguments: ``file_path: String``, ``file_data: PackedByteArray``, ``file_index: int``, ``file_count: int``, ``encryption_include_filters: PackedStringArray``, ``encryption_exclude_filters: PackedStringArray``, ``encryption_key: PackedByteArray``.
+\ ``save_cb`` is called for all exported files and have the following arguments: ``info: Dictionary``, ``file_data: PackedByteArray``. The ``info`` dictionary contains the following values: ``path: String``, ``source_path: String``, ``file_index: int``, ``file_count: int``.
 
 \ ``shared_cb`` is called for exported native shared/static libraries and have the following arguments: ``file_path: String``, ``tags: PackedStringArray``, ``target_folder: String``.
 
 \ **Note:** ``file_index`` and ``file_count`` are intended for progress tracking only and aren't necessarily unique and precise.
+
+\ **Note:** The signature of ``save_cb`` changed in Godot 4.8. There is compatibility code to automatically handle the `previous signature <https://docs.godotengine.org/en/4.7/classes/class_editorexportplatform.html#class-editorexportplatform-method-export-project-files>`__ if the passed callable has 7 arguments.
 
 .. rst-class:: classref-item-separator
 

@@ -158,7 +158,7 @@ Determines if the **NavigationRegion3D** is enabled or disabled.
 - |void| **set_enter_cost**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_enter_cost**\ (\ )
 
-When pathfinding enters this region's navigation mesh from another regions navigation mesh the :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>` value is added to the path distance for determining the shortest path.
+When pathfinding enters this region's navigation mesh from another region's navigation mesh, this property's value is added to the path distance used to determine the shortest path.
 
 .. rst-class:: classref-item-separator
 

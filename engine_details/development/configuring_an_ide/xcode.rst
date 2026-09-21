@@ -52,7 +52,7 @@ Importing the project
 
 - For this target open the **Build Settings** tab and look for **Header Search Paths**.
 - Set **Header Search Paths** to the absolute path to the Godot root folder. You need to
-  include subdirectories as well. To achieve that, add two two asterisks (``**``) to the
+  include subdirectories as well. To achieve that, add two asterisks (``**``) to the
   end of the path, e.g. ``/Users/me/repos/godot-source/**``.
 
 - Add the Godot source to the project by dragging and dropping it into the project file browser.

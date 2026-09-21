@@ -53,7 +53,7 @@ Same-scene limitation
 
 A scene unique node can only be retrieved by a node inside the same scene. To
 demonstrate this limitation, consider this example **Player** scene that
-instances a **Sword** scene:
+instantiates a **Sword** scene:
 
 .. image:: img/unique_name_scene_instance_example.webp
 

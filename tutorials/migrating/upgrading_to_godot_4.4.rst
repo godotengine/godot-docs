@@ -69,7 +69,7 @@ Method ``standardize_locale`` adds a new ``add_defaults`` optional parameter    
     ``res://`` paths, especially if they were partially edited in the Inspector.
 
     In 4.4, the only way to retain the ``res://`` format is to **manually edit** the
-    `.tscn` or `.tres` files in a text editor. Starting in Godot 4.5, a new annotation
+    ``.tscn`` or ``.tres`` files in a text editor. Starting in Godot 4.5, a new annotation
     ``@export_file_path`` can be used to explicitly retain the old behavior and export
     raw ``res://`` paths.
 

@@ -157,7 +157,7 @@ The distance the link will search is controlled by :ref:`NavigationServer2D.map_
 - |void| **set_enter_cost**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_enter_cost**\ (\ )
 
-When pathfinding enters this link from another regions navigation mesh the :ref:`enter_cost<class_NavigationLink2D_property_enter_cost>` value is added to the path distance for determining the shortest path.
+When pathfinding enters this link from another region's navigation mesh the :ref:`enter_cost<class_NavigationLink2D_property_enter_cost>` value is added to the path distance for determining the shortest path.
 
 .. rst-class:: classref-item-separator
 

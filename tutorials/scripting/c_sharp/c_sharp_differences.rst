@@ -308,8 +308,8 @@ See also: :ref:`doc_c_sharp_exports`.
 ------------------
 
 Use the ``[Signal]`` attribute to declare a signal instead of the GDScript ``signal`` keyword.
-This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
-The `delegate` must have the ``EventHandler`` suffix, an `event` will be generated in the class with the same name but without the suffix, use that event's name with ``EmitSignal``.
+This attribute should be used on a ``delegate``, whose name signature will be used to define the signal.
+The ``delegate`` must have the ``EventHandler`` suffix, an ``event`` will be generated in the class with the same name but without the suffix, use that event's name with ``EmitSignal``.
 
 .. code-block:: csharp
 
@@ -318,11 +318,11 @@ The `delegate` must have the ``EventHandler`` suffix, an `event` will be generat
 
 See also: :ref:`doc_c_sharp_signals`.
 
-`@onready` annotation
----------------------
+``@onready`` annotation
+-----------------------
 
 GDScript has the ability to defer the initialization of a member variable until the ready function
-is called with `@onready` (cf. :ref:`doc_gdscript_onready_annotation`).
+is called with :ref:`@onready <doc_gdscript_onready_annotation>`.
 For example:
 
 .. code-block:: gdscript

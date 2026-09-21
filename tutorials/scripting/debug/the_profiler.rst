@@ -56,10 +56,11 @@ The main measurements are frame time, physics frame, idle time, and physics time
   default, which corresponds to 60FPS. It's a frame of reference you can use for
   everything else around it.
 - **Idle time** is the time Godot took to update logic other than physics, such
-  as code that lives in `_process` or timers and cameras set to update on
-  **Idle**.
+  as code that lives in :ref:`_process() <class_node_private_method__process>`
+  or timers and cameras set to update on **Idle**.
 - **Physics time** is the time Godot took to update physics tasks, like
-  `_physics_process` and built-in nodes set to **Physics** update.
+  :ref:`_physics_process() <class_node_private_method__physics_process>`
+  and built-in nodes set to update on **Physics**.
 
 .. note:: **Frame Time** includes rendering time. Say you find a mysterious
           spike of lag in your game, but your physics and scripts are
@@ -95,7 +96,7 @@ function took **with** any nested function calls. For example:
 
 .. image:: img/split_curve.png
 
-`get_neighbors`, `find_nearest_neighbor` and `move_subject` all took a lot of
+``get_neighbors``, ``find_nearest_neighbor``, and ``move_subject`` all took a lot of
 time. You could be fooled into thinking that this is because all three of them
 are slow.
 
@@ -104,10 +105,10 @@ without considering function calls it made itself.
 
 .. image:: img/self_curve.png
 
-You can see that `get_neighbors` and `move_subject` have lost a lot of their
-importance. In effect, that means that `get_neighbors` and `move_subject` have
+You can see that ``get_neighbors`` and ``move_subject`` have lost a lot of their
+importance. In effect, that means that ``get_neighbors`` and ``move_subject`` have
 spent more time waiting for some other function call to finish than not, and
-`find_nearest_neighbor` is **actually** slow.
+``find_nearest_neighbor`` is **actually** slow.
 
 Debugging slow code with the profiler
 -------------------------------------
@@ -126,11 +127,12 @@ Measuring manually in microseconds
 
 If your function is complex, it could be challenging to figure out which part
 needs optimization. Is it your math or the way you access other pieces of data
-to do the math with? Is it the `for` loop? The `if` statements?
+to do the math with? Is it the ``for`` loop? The ``if`` statements?
 
 You can narrow down the measurement by manually counting ticks as the code runs
-with some temporary functions. The two functions are part of the `Time` class
-object. They are `get_ticks_msec` and `get_ticks_usec`. The first measures in
+with some temporary functions. The two functions are part of the ``Time`` class
+object. They are :ref:`get_ticks_msec() <class_time_method_get_ticks_msec>` and
+:ref:`get_ticks_usec() <class_time_method_get_ticks_usec>`. The first measures in
 milliseconds (1,000 per second), and the second measures in microseconds
 (1,000,000 per second).
 

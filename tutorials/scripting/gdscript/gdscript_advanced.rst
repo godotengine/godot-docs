@@ -114,7 +114,7 @@ In C# or Java, everything not a built-in type (int, float, sometimes
 String) is always a pointer or a reference. References are also
 garbage-collected automatically, which means they are erased when no
 longer used. Dynamically typed languages tend to use this memory model,
-too. Some Examples:
+too. Some examples:
 
 -  C++:
 
@@ -289,7 +289,7 @@ easily with dictionaries. Here's a battleship game example:
         missile(Vector2(2, 3))
 
 Dictionaries can also be used as data markup or quick structures. While
-GDScript's dictionaries resemble python dictionaries, it also supports Lua
+GDScript's dictionaries resemble Python dictionaries, it also supports Lua
 style syntax and indexing, which makes it useful for writing initial
 states and quick structs:
 
@@ -363,8 +363,8 @@ The ``range()`` function can take 3 arguments:
 ::
 
     range(n) # Will count from 0 to n in steps of 1. The parameter n is exclusive.
-    range(b, n) # Will count from b to n in steps of 1. The parameters b is inclusive. The parameter n is exclusive.
-    range(b, n, s) # Will count from b to n, in steps of s. The parameters b is inclusive. The parameter n is exclusive.
+    range(b, n) # Will count from b to n in steps of 1. The parameter b is inclusive. The parameter n is exclusive.
+    range(b, n, s) # Will count from b to n, in steps of s. The parameter b is inclusive. The parameter n is exclusive.
 
 Some examples involving C-style for loops:
 
@@ -462,7 +462,7 @@ It is possible but discouraged to store the state in a member variable.
 Multiple states are necessary in cases such as nested loops where the same
 iterator instance is used simultaneously. The ``iter`` parameter in
 ``_iter_init()`` and ``_iter_next()`` is a single-element array so that updates
-can persist. Whereas in ``_iter_get()``, the state is is not wrapped because it
+can persist. Whereas in ``_iter_get()``, the state is not wrapped because it
 is supposed to be read-only.
 
 Returning ``true`` from ``_iter_init()`` and ``_iter_next()`` indicates that the

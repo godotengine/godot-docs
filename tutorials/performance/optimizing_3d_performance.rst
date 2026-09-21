@@ -175,9 +175,9 @@ Large worlds may need to be built in tiles that can be loaded on demand as you
 move around the world. This can prevent memory use from getting out of hand, and
 also limit the processing needed to the local area.
 
-There may also be rendering and physics glitches due to floating point error in
+There may also be rendering and physics bugs due to floating-point errors in
 large worlds. This can be resolved using :ref:`doc_large_world_coordinates`.
-If using large world coordinates is not an option, you may be able to use techniques
-such as orienting the world around the player (rather than the other way
-around), or shifting the origin periodically to keep things centred around
+If using large world coordinates is not an option, other common techniques include
+orienting the world around the player (rather than the other way
+around), or shifting the origin periodically to keep things centered around
 ``Vector3(0, 0, 0)``.

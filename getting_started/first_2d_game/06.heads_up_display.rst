@@ -211,7 +211,7 @@ signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to th
 Connecting HUD to Main
 ----------------------
 
-Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
+Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instantiate
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
 should look like this, so make sure you didn't miss anything:
 

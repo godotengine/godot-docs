@@ -198,6 +198,8 @@ Returns the script's base type.
 
 Returns the default value of the specified property.
 
+\ **Note:** In GDScript and C#, this method returns ``null`` outside of editor builds.
+
 .. rst-class:: classref-item-separator
 
 ----

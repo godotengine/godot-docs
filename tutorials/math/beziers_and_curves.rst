@@ -185,15 +185,16 @@ this might look familiar:
 
 .. image:: img/bezier_cubic_handles.png
 
-This is how graphics software presents Bezier curves to the users, and how they
+This is how graphics software present Bezier curves to the users, and how they
 work and look in Godot.
 
-Curve2D, Curve3D, Path and Path2D
----------------------------------
+Curve2D, Curve3D, Path2D, and Path3D
+------------------------------------
 
-There are two objects that contain curves: :ref:`Curve3D <class_Curve3D>` and :ref:`Curve2D <class_Curve2D>` (for 3D and 2D respectively).
+In Godot, there are two resources types to efficiently store curves of any length:
+:ref:`Curve2D <class_Curve2D>` and :ref:`Curve3D <class_Curve3D>` (for 2D and 3D respectively).
 
-They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path3D <class_Path3D>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
+They are often associated with their respective nodes: :ref:`Path2D <class_Path2D>` and :ref:`Path3D <class_Path3D>`.
 
 .. image:: img/bezier_path_2d.png
 

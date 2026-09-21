@@ -178,10 +178,14 @@ Limitations
 -----------
 
 When using the Forward+ renderer, Godot uses a *clustering* approach for
-reflection probe rendering. As many reflection probes as desired can be added (as long as
-performance allows). However, there's still a default limit of 512 *clustered
-elements* that can be present in the current camera view. A clustered element is
-an omni light, a spot light, an area light, a :ref:`decal <doc_using_decals>`, or a
+reflection probe rendering. By default, up to 64 reflection probes can be present
+in the scene tree and visible at a time. This limit can be changed up to 256 by adjusting
+:ref:`Reflection Count <class_ProjectSettings_property_rendering/reflections/reflection_atlas/reflection_count>`
+in **Project Settings > Rendering > Reflections > Reflection Atlas**.
+
+However, there's still a default limit of 512 *clustered elements* that can be present
+in the current camera view. A clustered element is an omni light, a spot light,
+an area light, a :ref:`decal <doc_using_decals>` or a
 :ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
 :ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
 in **Project Settings > Rendering > Limits > Cluster Builder**.

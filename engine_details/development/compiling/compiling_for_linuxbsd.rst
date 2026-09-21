@@ -657,8 +657,8 @@ After installing all required packages, use the following command to build Godot
 
     scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_sdl=no builtin_zlib=no builtin_zstd=no
 
-On Debian stable, you will need to remove `builtin_embree=no` as the system-provided
-Embree version is too old to work with Godot's latest `master` branch
+On Debian stable, you will need to remove ``builtin_embree=no`` as the system-provided
+Embree version is too old to work with Godot's latest ``master`` branch
 (which requires Embree 4).
 
 You can view a list of all built-in libraries that have system alternatives by

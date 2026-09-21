@@ -165,8 +165,8 @@ the changes are applied.
   a time to perform precompilation.
 - **Reflection Probes**: Enabled when a ReflectionProbe node is placed on the
   scene.
-- **Separate Specular**: Enabled when using effects like sub-surface scattering
-  or a compositor effect that relies on sampling the specularity directly off
+- **Separate Specular**: Enabled when using effects like subsurface scattering
+  or a compositor effect that relies on sampling the specularity directly from
   the screen.
 - **Motion Vectors**: Enabled when using effects such as TAA, FSR2 or a
   compositor effect that requires motion vectors (such as motion blur).

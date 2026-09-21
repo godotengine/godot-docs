@@ -1788,8 +1788,8 @@ property. This is what will give the pattern effect. The ``math.h`` header is
 needed for the ``sin()`` and ``cos()`` functions used here.
 
 Then it sets up an array of arguments to construct a ``Vector2``, followed by
-calling the constructor. It sets up another array of arguments and use it to
-call the ``set_position()`` method via the bind we acquired previously.
+calling the constructor. It sets up another array of arguments and uses it to
+call the ``set_position()`` method via the bind we obtained previously.
 
 Since nothing here allocates any memory, there's not a need to cleanup.
 

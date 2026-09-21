@@ -133,7 +133,7 @@ example, for the release template:
     scons platform=android target=template_release arch=x86_32
     scons platform=android target=template_release arch=x86_64 generate_android_binaries=yes
 
-This will create template binaries that works on all platforms.
+This will create template binaries that work on all platforms.
 The final binary size of exported projects will depend on the platforms you choose
 to support when exporting; in other words, unused platforms will be removed from
 the binary.

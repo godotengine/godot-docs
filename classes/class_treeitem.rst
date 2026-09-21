@@ -1532,7 +1532,7 @@ The method named ``callback`` should accept two arguments: the **TreeItem** that
 
 |void| **set_custom_draw_callback**\ (\ column\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_TreeItem_method_set_custom_draw_callback>`
 
-Sets the given column's custom draw callback. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback. The cell has to be in :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` to use this feature.
+Sets the given column's custom draw callback. Use an empty :ref:`Callable<class_Callable>` (\ ``Callable()``) to clear the custom callback. The cell has to be in :ref:`CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` to use this feature.
 
 The ``callback`` should accept two arguments: the **TreeItem** that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
 

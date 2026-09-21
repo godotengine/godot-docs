@@ -234,11 +234,11 @@ Setting up the scene
 
 Before anything is done, a **LightmapGI** node needs to be added to a scene.
 This will enable light baking on all nodes (and sub-nodes) in that scene, even
-on instanced scenes.
+on instantiated scenes.
 
 .. image:: img/lightmap_gi_scene.webp
 
-A sub-scene can be instanced several times, as this is supported by the baker.
+A sub-scene can be instantiated several times, as this is supported by the baker.
 Each instance will be assigned a lightmap of its own. To avoid issues with
 inconsistent lightmap texel scaling, make sure to respect the rule about mesh
 scaling mentioned before.

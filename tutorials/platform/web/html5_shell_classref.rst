@@ -96,7 +96,7 @@ Instance Methods
          Base path of the engine to load.
 
       :return:
-         A ``Promise`` that resolves once the engine is loaded and initialized.
+         A Promise that resolves once the engine is loaded and initialized.
 
       :rtype: Promise
 
@@ -136,7 +136,7 @@ Instance Methods
          An optional configuration override.
 
       :return:
-         Promise that resolves once the engine started.
+         A Promise that resolves once the engine started.
 
       :rtype: Promise
 
@@ -155,7 +155,7 @@ Instance Methods
          An optional configuration override.
 
       :return:
-         Promise that resolves once the game started.
+         A Promise that resolves once the game started.
 
       :rtype: Promise
 

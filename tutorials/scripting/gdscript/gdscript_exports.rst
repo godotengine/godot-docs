@@ -83,6 +83,18 @@ to create subgroups within a group.
     @export var string = ""
     @export var flag = false
 
+Both groups and subgroups can optionally specify a property prefix, which will hide it from the property names. This is useful to shorten long property names:
+
+::
+
+    @export_group("Group", "group_")
+    # Will appear as "Example Number" in the inspector instead of "Group Example Number".
+    @export var group_example_number = 3
+
+    @export_subgroup("Subgroup", "group_subgroup_")
+    # Will appear as "Example String" in the inspector instead of "Group Subgroup Example String".
+    @export var group_subgroup_example_string = ""
+
 You can also change the name of your main category, or create additional
 categories in the property list with the :ref:`@export_category <class_@GDScript_annotation_@export_category>`
 annotation.
@@ -96,11 +108,46 @@ annotation.
     @export_category("Extra Category")
     @export var flag = false
 
+If you have a boolean property that toggles a behavior, you can move its
+checkbox from the list of properties to the group heading as follows:
+
+::
+
+    @export_group("Group", "group_")
+    @export_custom(PROPERTY_HINT_GROUP_ENABLE, "") var group_enabled = false
+    @export var group_example_string = ""
+
+When the group is enabled, its properties are shown:
+
+.. figure:: img/gdscript_exports_group_enable.webp
+   :alt: Group enabled (with checkbox in the group heading).
+
+   Group enabled (with checkbox in the group heading).
+
+Properties are automatically hidden when the group is disabled. Their value is
+still saved and can be modified from code, but they won't be visible in the
+inspector until the group is enabled again.
+
 .. note::
 
     The list of properties is organized based on the class inheritance and
     new categories break that expectation. Use them carefully, especially
     when creating projects for public use.
+
+    The engine applies several conventions to its own property names.
+    While not strictly required, consider following this style for consistency:
+
+    - Properties that are part of groups all start with the same prefix (``group_*``).
+    - Properties that are part of subgroups all start with the same prefix,
+      which is an extension of the parent group prefix (``group_subgroup_*``).
+    - Properties that toggle a group are booleans whose name ends with ``_enabled``.
+
+    For example, :ref:`class_BaseMaterial3D` has ``refraction_enabled``,
+    ``refraction_scale``, and ``refraction_texture`` properties, all part of the
+    ``Refraction`` group (using ``refraction_`` as a prefix). The
+    ``refraction_enabled`` boolean property makes use of the
+    ``PROPERTY_HINT_GROUP_ENABLE`` hint to move its checkbox to the group
+    heading.
 
 Strings as paths
 ----------------
@@ -248,7 +295,7 @@ inspector. For example, to define a value that is meant to be configured as
     @export_range(0, 100, 1, "suffix:m") var m: int
 
 For angles that are stored in radians but displayed as degrees to the user, use
-the `"radians_as_degrees"` hint:
+the ``"radians_as_degrees"`` hint:
 
 ::
 
@@ -256,9 +303,9 @@ the `"radians_as_degrees"` hint:
 
 This performs automatic conversion when the value is displayed or modified in
 the inspector and also displays a degree (``°``) suffix. This approach is used
-by Godot's own `rotation` properties throughout the editor.
+by Godot's own ``rotation`` properties throughout the editor.
 
-If the angle is stored in degrees instead, use the `"degrees"` hint to display
+If the angle is stored in degrees instead, use the ``"degrees"`` hint to display
 the degree symbol while disabling the automatic degrees-to-radians conversion
 when the value is modified from the inspector.
 

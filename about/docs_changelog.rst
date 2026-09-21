@@ -436,11 +436,13 @@ Internationalization
 Shading
 ~~~~~~~
 
-- Your First Shader Series:
-    - :ref:`doc_introduction_to_shaders`
-    - :ref:`doc_your_first_canvasitem_shader`
-    - :ref:`doc_your_first_spatial_shader`
-    - :ref:`doc_your_second_spatial_shader`
+Your First Shader Series:
+
+  - :ref:`doc_introduction_to_shaders`
+  - :ref:`doc_your_first_canvasitem_shader`
+  - :ref:`doc_your_first_spatial_shader`
+  - :ref:`doc_your_second_spatial_shader`
+
 - :ref:`doc_visual_shaders`
 
 Networking
@@ -464,6 +466,7 @@ Creating content
 ~~~~~~~~~~~~~~~~
 
 Procedural geometry series:
+
   - :ref:`Procedural geometry <toc-procedural_geometry>`
   - :ref:`doc_arraymesh`
   - :ref:`doc_surfacetool`

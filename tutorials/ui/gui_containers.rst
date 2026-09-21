@@ -170,8 +170,8 @@ AspectRatioContainer
 A container type that arranges its child controls in a way that preserves their proportions
 automatically when the container is resized.
 (via :ref:`AspectRatioContainer <class_AspectRatioContainer>`).
-It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container:
-"fill," "width control height," "height control width," and "cover."
+It has multiple stretch modes, providing options for adjusting the child controls' sizes relative to the container:
+**Width Controls Height**, **Height Controls Width**, **Fit**, and **Cover**.
 
    .. image:: img/containers_aspectratio.webp
 

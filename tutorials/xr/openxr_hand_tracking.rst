@@ -102,7 +102,7 @@ within our tracking space.
 This information has been separated out for the following use cases:
 
  *  Tracking happens in the local space of the :ref:`XROrigin3D <class_xrorigin3d>` node.
-    This node must be a child of the `XROrigin3D` node in order to be correctly placed.
+    This node must be a child of the ``XROrigin3D`` node in order to be correctly placed.
  *  This node can be used as an IK target when an upper body mesh with arms is used instead
     of separate hand meshes.
  *  Actual placement of the hands may be loosely bound to the tracking in scenarios such as
@@ -190,7 +190,7 @@ This example logs the state for the left hand.
 If in this example no hand tracker is returned by ``get_tracker``,
 this means the hand tracking API is not supported on the XR runtime at all.
 
-If there is a tracker but `has_tracking_data` is false, the user's hand is currently not being tracked.
+If there is a tracker but ``has_tracking_data`` is false, the user's hand is currently not being tracked.
 This is likely caused by one of the following reasons:
 
  *  The player's hand is not visible by any of the tracking cameras on the headset
