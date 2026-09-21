@@ -205,7 +205,7 @@ the ``ColorOp`` node to the output node.
 .. image:: img/vs_node_group_contents_example.webp
 
 Once you're done editing the group's contents, you can go back to the main view
-using the button at the right in the toolbar:
+using the button on the right in the toolbar:
 
 .. image:: img/vs_node_group_contents_exit.webp
 
@@ -222,7 +222,7 @@ where the group name can be changed:
 As a convention, group names should follow the PascalCase naming convention to
 match the built-in nodes, although this is not strictly required.
 
-You can adjust the node parameters like any other visual shader note. For this
+You can adjust the node parameters like any other visual shader node. For this
 example, we'll use a red color (``(1.0, 0.0, 0.0, 1.0)``) and set the ``invert``
 parameter to ``true``:
 
