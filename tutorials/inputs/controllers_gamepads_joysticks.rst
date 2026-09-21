@@ -222,7 +222,12 @@ with the help of a :ref:`class_Timer` node.
 Window focus
 ~~~~~~~~~~~~
 
-Unlike keyboard input, controller inputs can by default be seen by **all** windows on the
+.. note::
+
+   Projects created on Godot 4.8 or later have **Ignore Joypad on Unfocused Application**
+   set to ``true`` by default.
+
+Unlike keyboard input, controller inputs can be seen by **all** windows on the
 operating system, including unfocused windows.
 
 While this is useful for
