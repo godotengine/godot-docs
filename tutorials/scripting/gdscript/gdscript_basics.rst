@@ -178,7 +178,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | in         | Tests whether a value is within a string, array, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing. |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| as         | Cast the value to a given type if possible.                                                                                                       |
+| as         | Casts the value to a given type if possible.                                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance. See `self`_.                                                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,7 +186,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | signal     | Defines a signal. See `Signals`_.                                                                                                                 |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| func       | Defines a function.  See `Functions`_.                                                                                                            |
+| func       | Defines a function. See `Functions`_.                                                                                                             |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | static     | Defines a static function or a static member variable.                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,9 +213,9 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | TAU        | TAU constant.                                                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| INF        | Infinity constant. Used for comparisons and as result of calculations.                                                                            |
+| INF        | Infinity constant. Used for comparisons and as a result from calculations.                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| NAN        | NAN (not a number) constant. Used as impossible result from calculations.                                                                         |
+| NAN        | NaN (Not a Number) constant. Used as an impossible result from calculations.                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
@@ -1741,7 +1741,7 @@ provided using :ref:`_set() <class_Object_private_method__set>` and/or
     considered a bad practice, because this blurs the area of responsibility of
     any given piece of code, making the overall relationship between parts of
     your game harder to reason about. Besides that, one can simply forget that
-    the parent class had some expectations about it's descendants.
+    the parent class had some expectations about its descendants.
 
 if/else/elif
 ~~~~~~~~~~~~
@@ -2121,7 +2121,7 @@ class will then appear with its new icon in the editor:
 .. tip::
 
     SVG images that are used as custom node icons should have the
-    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    **Editor > Scale With Editor Scale** and **Editor > Convert Colors With Editor Theme**
     :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
     icons to follow the editor's scale and theming settings if the icons are designed with
     the same color palette as Godot's own icons.
@@ -2432,7 +2432,7 @@ Inner classes
 ~~~~~~~~~~~~~
 
 A class file can contain inner classes. Inner classes are defined using the
-``class`` keyword. They are instanced using the ``ClassName.new()``
+``class`` keyword. They are instantiated using the ``ClassName.new()``
 function.
 
 ::
@@ -2460,7 +2460,7 @@ Classes as resources
 
 Classes stored as files are treated as :ref:`GDScripts <class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
-either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
+either the ``load`` or ``preload`` functions (see below). Instantiation of a loaded
 class resource is done by calling the ``new`` function on the class object:
 
 ::
@@ -2687,7 +2687,7 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_character_health_depleted`` is called:
+signal, the ``Game`` node's ``_on_character_health_depleted`` is called:
 
 ::
 
@@ -2844,7 +2844,7 @@ In this case, the ``wait_confirmation`` becomes a coroutine, which means that th
         if confirmed:
             print("User confirmed")
         else:
-            print("User cancelled")
+            print("User canceled")
 
 Note that requesting a coroutine's return value without ``await`` will trigger an error:
 

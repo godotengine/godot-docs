@@ -721,10 +721,6 @@ Here are some project settings you can use to reduce CPU, GPU, and memory utiliz
   This may increase power usage and cause screen tearing, so it's recommended
   to provide an option for the user to toggle V-Sync as needed.
 
-Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
-`Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
-open source applications made with Godot.
-
 Mobile
 ^^^^^^
 
@@ -786,8 +782,8 @@ Optimizing distribution size
 ----------------------------
 
 Since non-game applications generally avoid using large parts of the engine,
-such as audio or 3D functionality, you can compile an optimized export template
-to reduce its file size. This will also improve startup times,
+such as audio, 2D, or 3D functionality, you can compile an optimized export
+template to reduce its file size. This will also improve startup times,
 especially on the web platform where binary size is directly linked to
 initialization speeds.
 

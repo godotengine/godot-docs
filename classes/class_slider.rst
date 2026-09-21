@@ -58,7 +58,11 @@ Theme Properties
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`             | :ref:`center_grabber<class_Slider_theme_constant_center_grabber>`              | ``0`` |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`grabber_max_size<class_Slider_theme_constant_grabber_max_size>`          | ``0`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`             | :ref:`grabber_offset<class_Slider_theme_constant_grabber_offset>`              | ``0`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`tick_max_size<class_Slider_theme_constant_tick_max_size>`                | ``0`` |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`             | :ref:`tick_offset<class_Slider_theme_constant_tick_offset>`                    | ``0`` |
    +-----------------------------------+--------------------------------------------------------------------------------+-------+
@@ -264,6 +268,18 @@ Boolean constant. If ``1``, the grabber texture size will be ignored and it will
 
 ----
 
+.. _class_Slider_theme_constant_grabber_max_size:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **grabber_max_size** = ``0`` :ref:`🔗<class_Slider_theme_constant_grabber_max_size>`
+
+The maximum allowed size of the **Slider**'s grabber icon. The grabber texture is scaled down so its widest axis is :ref:`grabber_max_size<class_Slider_theme_constant_grabber_max_size>` and the other axis is scaled keeping the original ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Slider_theme_constant_grabber_offset:
 
 .. rst-class:: classref-themeproperty
@@ -271,6 +287,18 @@ Boolean constant. If ``1``, the grabber texture size will be ignored and it will
 :ref:`int<class_int>` **grabber_offset** = ``0`` :ref:`🔗<class_Slider_theme_constant_grabber_offset>`
 
 Vertical or horizontal offset of the grabber.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_constant_tick_max_size:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **tick_max_size** = ``0`` :ref:`🔗<class_Slider_theme_constant_tick_max_size>`
+
+The maximum allowed size of the **Slider**'s tick icons. The tick texture is scaled down so its widest axis is :ref:`tick_max_size<class_Slider_theme_constant_tick_max_size>` and the other axis is scaled keeping the original ratio.
 
 .. rst-class:: classref-item-separator
 

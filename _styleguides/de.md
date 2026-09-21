@@ -8,7 +8,7 @@ Lesbarkeit, Klarheit und Benutzbarkeit besonders im Vordergrund stehen.
 
 Für die Übersetzung selbst ist das Tool
 [Weblate](https://hosted.weblate.org/projects/godot-engine/) im Einsatz, das in der
-[offiziellen Dokumentation](https://contributing.godotengine.org/en/latest/documentation/translation/index.html) näher
+[offiziellen Dokumentation](https://contributing.godotengine.org/en/latest/development/translations.html) näher
 erläutert wird. Die Bedienung von Weblate ist nicht Bestandteil dieses
 Dokuments.
 
@@ -357,7 +357,7 @@ mit übersetzt werden sollten.
 
 Für Übersetzungen des Editors und der Properties ist es ratsam, diese
 auch selbst zu testen, indem
-man [die aktuelle Übersetzung herunterlädt](https://contributing.godotengine.org/en/latest/documentation/translation/index.html#offline-translation-and-testing)
+man [die aktuelle Übersetzung herunterlädt](https://contributing.godotengine.org/en/latest/development/translations.html#offline-translation-and-testing)
 und Godot mit den Änderungen [selbst kompiliert](https://docs.godotengine.org/de/4.x/engine_details/development/compiling/compiling_for_windows.html).
 
 Gerade bei der Anleitung kommt es oft auf den Kontext zwischen benachbarten

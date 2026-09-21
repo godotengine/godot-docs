@@ -83,7 +83,7 @@ object is instantiated and registered with the :ref:`XRServer<class_XRServer>`.
 Each type of spatial entity will implement its own subclass and we can thus react differently to
 each type of entity.
 
-Generally speaking we will instance different subscenes for each type of entity.
+Generally speaking we will instantiate different subscenes for each type of entity.
 As the tracker objects can be used with :ref:`XRAnchor3D<class_XRAnchor3D>` nodes, these subscenes
 should have such a node as their root node.
 
@@ -212,7 +212,7 @@ Below is the basis of the script that implements our manager logic:
     # A tracked managed by XRServer was changed.
     func _on_tracker_updated(_tracker_name: StringName, _type: int):
         # For now we ignore this, there aren't any changes here we need to react
-        # to and the instanced scene can react to this itself if needed.
+        # to and the instantiated scene can react to this itself if needed.
         pass
 
 
@@ -611,7 +611,7 @@ Spatial entity core
 The core spatial entity functionality is exposed through the
 :ref:`OpenXRSpatialEntityExtension<class_OpenXRSpatialEntityExtension>` singleton.
 
-Specific logic is exposed through capabilities that introduce specialised component types,
+Specific logic is exposed through capabilities that introduce specialized component types,
 and give access to specific types of entities, however they all use the same mechanisms
 for accessing the entity data managed by the spatial entity system.
 
@@ -973,8 +973,8 @@ In the core of OpenXR two types of persistence scopes are supported:
        entities across spatial contexts and device reboots.
    * - PERSISTENCE_SCOPE_LOCAL_ANCHORS
      - Persistence operations and data access is limited to spatial anchors, on the same device,
-       for the same user and app (using `persist_anchor` and
-       `unpersist_anchor` functions)
+       for the same user and app (using :ref:`persist_anchor() <class_openxrspatialanchorcapability_method_persist_anchor>` and
+       :ref:`unpersist_anchor() <class_openxrspatialanchorcapability_method_persist_anchor>` functions)
 
 We'll start with a new script that handles our spatial anchors. It will be similar to the
 script presented earlier but with a few differences.

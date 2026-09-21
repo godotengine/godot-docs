@@ -23,6 +23,11 @@ Custom drawing in a 2D node is *really* useful. Here are some use cases:
    but when you have unusual needs, you will likely need a custom
    control.
 
+.. seealso::
+
+    You can find an example of these methods in action in the
+    `Custom Drawing in 2D demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/custom_drawing>`__.
+
 Drawing
 -------
 
@@ -515,16 +520,16 @@ its radius, and the third is its color:
     func _draw():
         var white : Color = Color.WHITE
         var godot_blue : Color = Color("478cbf")
-        var grey : Color = Color("414042")
+        var gray : Color = Color("414042")
 
         draw_polygon(head, [ godot_blue ])
         draw_polyline(mouth, white, _mouth_width)
 
-        # Four circles for the 2 eyes: 2 white, 2 grey.
+        # Four circles for the 2 eyes: 2 white, 2 gray.
         draw_circle(Vector2(42.479, 65.4825), 9.3905, white)
         draw_circle(Vector2(85.524, 65.4825), 9.3905, white)
-        draw_circle(Vector2(43.423, 65.92), 6.246, grey)
-        draw_circle(Vector2(84.626, 66.008), 6.246, grey)
+        draw_circle(Vector2(43.423, 65.92), 6.246, gray)
+        draw_circle(Vector2(84.626, 66.008), 6.246, gray)
 
  .. code-tab:: csharp
 
@@ -533,16 +538,16 @@ its radius, and the third is its color:
     {
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
-        Color grey = new Color("414042");
+        Color gray = new Color("414042");
 
         DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
 
-        // Four circles for the 2 eyes: 2 white, 2 grey.
+        // Four circles for the 2 eyes: 2 white, 2 gray.
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
-        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, grey);
-        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, grey);
+        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, gray);
+        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, gray);
     }
 
 When executing it, you should have something like this:
@@ -569,14 +574,14 @@ like this:
     func _draw():
         var white : Color = Color.WHITE
         var godot_blue : Color = Color("478cbf")
-        var grey : Color = Color("414042")
+        var gray : Color = Color("414042")
 
         draw_polygon(head, [ godot_blue ])
         draw_polyline(mouth, white, _mouth_width)
         draw_circle(Vector2(42.479, 65.4825), 9.3905, white)
         draw_circle(Vector2(85.524, 65.4825), 9.3905, white)
-        draw_circle(Vector2(43.423, 65.92), 6.246, grey)
-        draw_circle(Vector2(84.626, 66.008), 6.246, grey)
+        draw_circle(Vector2(43.423, 65.92), 6.246, gray)
+        draw_circle(Vector2(84.626, 66.008), 6.246, gray)
 
         # Draw a short but thick white vertical line for the nose.
         draw_line(Vector2(64.273, 60.564), Vector2(64.273, 74.349), white, 5.8)
@@ -587,14 +592,14 @@ like this:
     {
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
-        Color grey = new Color("414042");
+        Color gray = new Color("414042");
 
         DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
-        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, grey);
-        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, grey);
+        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, gray);
+        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, gray);
 
         // Draw a short but thick white vertical line for the nose.
         DrawLine(new Vector2(64.273f, 60.564f), new Vector2(64.273f, 74.349f),
@@ -613,7 +618,7 @@ Drawing text
 ~~~~~~~~~~~~
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
-text to your application, the low-level `_draw` function includes functionality
+text to your application, the low-level ``_draw`` function includes functionality
 to add text to your custom Node drawing. We will use it to add the name "GODOT"
 under the robot head.
 
@@ -628,14 +633,14 @@ to do it, like this:
     func _draw():
         var white : Color = Color.WHITE
         var godot_blue : Color = Color("478cbf")
-        var grey : Color = Color("414042")
+        var gray : Color = Color("414042")
 
         draw_polygon(head, [ godot_blue ])
         draw_polyline(mouth, white, _mouth_width)
         draw_circle(Vector2(42.479, 65.4825), 9.3905, white)
         draw_circle(Vector2(85.524, 65.4825), 9.3905, white)
-        draw_circle(Vector2(43.423, 65.92), 6.246, grey)
-        draw_circle(Vector2(84.626, 66.008), 6.246, grey)
+        draw_circle(Vector2(43.423, 65.92), 6.246, gray)
+        draw_circle(Vector2(84.626, 66.008), 6.246, gray)
         draw_line(Vector2(64.273, 60.564), Vector2(64.273, 74.349), white, 5.8)
 
         # Draw GODOT text below the logo with the default font, size 22.
@@ -650,14 +655,14 @@ to do it, like this:
     {
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
-        Color grey = new Color("414042");
+        Color gray = new Color("414042");
 
         DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
-        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, grey);
-        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, grey);
+        DrawCircle(new Vector2(43.423f, 65.92f), 6.246f, gray);
+        DrawCircle(new Vector2(84.626f, 66.008f), 6.246f, gray);
         DrawLine(new Vector2(64.273f, 60.564f), new Vector2(64.273f, 74.349f),
                  white, 5.8f);
 

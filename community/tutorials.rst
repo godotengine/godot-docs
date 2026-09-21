@@ -28,7 +28,6 @@ There are many great channels covering a wide array of subjects.
 Text tutorials
 --------------
 
-- `FinePointCGI website by Mitch <https://finepointcgi.io/>`__
 - `Catlike Coding by Jasper Flick <https://catlikecoding.com/godot/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__

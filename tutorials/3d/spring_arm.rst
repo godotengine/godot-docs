@@ -63,11 +63,11 @@ Let's add a spring arm camera setup to the platformer demo.
 
 In general, for a third-person camera setup, you will have three nodes as children of the node that you're following:
 
-- `Node3D` (the "pivot point" for the camera)
+- ``Node3D`` (the "pivot point" for the camera)
 
-    - `SpringArm3D`
+    - ``SpringArm3D``
 
-        - `Camera3D`
+        - ``Camera3D``
 
 Open the ``player/player.tscn`` scene. Set these up as children of our player and give them unique names so we can find them in our script. **Make sure to delete the existing camera node!**
 

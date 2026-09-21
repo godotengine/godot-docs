@@ -102,6 +102,12 @@ are the notable differences:
     will set this variable if it isn't already set. So, include it before other
     dependencies to have the value propagate across the projects.
 
+Additionally, the :ref:`hook system <doc_godot_cpp_modifying_generated_files>` works a
+bit differently with CMake:
+
+* Your subclass has to be named ``CustomBindingGeneratorHooks``.
+* Pass the filepath of the python file containing your subclass with the ``GODOTCPP_BINDING_HOOK_FILE`` option to CMake.
+
 Basic Walk-Through
 ------------------
 
@@ -179,7 +185,9 @@ See setting-build-variables_ and build-configurations_ for more information.
 A non-exhaustive list of options:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: text
+
+.. marked as glsl to highlight comments
+.. code-block:: glsl
 
     // Path to a custom GDExtension API JSON file.
     // (takes precedence over GODOTCPP_GDEXTENSION_DIR)
@@ -198,6 +206,10 @@ A non-exhaustive list of options:
 
     // Enable the extra accounting required to support hot reload. (ON|OFF)
     GODOTCPP_USE_HOT_RELOAD:BOOL=
+
+    // Use the binding generator's hook system to modify generated files.
+    // ( /path/to/custom_generator_file.py)
+    GODOTCPP_BINDING_HOOK_FILE:FILEPATH=
 
 Compiling
 ~~~~~~~~~

@@ -89,7 +89,7 @@ to always stay the same:
     func sum(a: float = 0.0, b: float = 0.0) -> float:
         return a + b
 
-Godot will try to infer types if you write a colon, but you omit the type:
+Godot will try to infer the type when you write a colon, but omit the type:
 
 ::
 

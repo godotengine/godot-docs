@@ -171,7 +171,7 @@ Actions can be used for both input and output and each action has a type that de
 its behavior.
 
 * The ``Bool`` type is used for discrete input like buttons.
-* The ``Float`` type is used for analogue input like triggers.
+* The ``Float`` type is used for analog input like triggers.
 
 These two are special as they are the only ones that are interchangeable.
 OpenXR will handle conversions between ``Bool`` and ``Float`` inputs and actions.
@@ -180,7 +180,8 @@ your :ref:`XRController3D <class_xrcontroller3d>` node.
 It emits the ``input_float_changed`` signal when changed.
 
 .. note::
-  Where analogue inputs are queried as buttons a threshold is applied.
+
+  Where analog inputs are queried as buttons a threshold is applied.
   This threshold is currently managed exclusively by the XR runtime.
   There are plans to extend Godot to provide some level of control over these thresholds
   in the future.
@@ -282,13 +283,13 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
 
 .. warning::
   For both grab and shoot we've used the ``Bool`` type.
-  As mentioned before, OpenXR does automatic conversions from an analogue controls
+  As mentioned before, OpenXR does automatic conversions from an analog control
   however not all XR Runtimes currently apply sensible thresholds.
 
   We recommend as a workaround to use the ``Float`` type when interacting with triggers
   and grip buttons and apply your own threshold.
 
-  For buttons like A/B/X/Y and similar where there is no analogue option, the ``Bool``
+  For buttons like A/B/X/Y and similar where there is no analog option, the ``Bool``
   type works fine.
 
 .. note::
@@ -383,7 +384,7 @@ If all else fails, it will check the generic :ref:`"Simple controller" <doc_xr_a
 .. warning::
   Finally, and this trips up a lot of people, the bindings aren't set in stone.
   It is fully allowed, and even expected, that an XR runtime allows a user
-  to customise the bindings.
+  to customize the bindings.
 
   At the moment none of the XR runtimes offer this functionality though SteamVR has
   an existing UI from OpenVRs action map system that is still accessible.

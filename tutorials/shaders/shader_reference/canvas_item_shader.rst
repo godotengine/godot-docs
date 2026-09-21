@@ -52,7 +52,7 @@ The same applies for accessing fragment built-ins from the ``light()`` function.
 Global built-ins
 ----------------
 
-Global built-ins are available everywhere, including custom functions.
+Global built-ins are available everywhere, including in custom functions.
 
 +-------------------+-------------------------------------------------------------------------------------------------+
 | Built-in          | Description                                                                                     |
@@ -326,7 +326,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 | in vec2 **POINT_COORD**          | UV for Point Sprite.                                                         |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec4 **LIGHT_COLOR**          | :ref:`Color<class_Light2D_property_color>` of the :ref:`class_Light2D`.      |
-|                                  | If the light is a :ref:`class_PointLight2D`, multiplied by the light's       |
+|                                  | If the light is a :ref:`class_PointLight2D`, it's multiplied by the light's  |
 |                                  | :ref:`texture<class_PointLight2D_property_texture>`.                         |
 +----------------------------------+------------------------------------------------------------------------------+
 | in float **LIGHT_ENERGY**        | :ref:`Energy multiplier<class_Light2D_property_energy>` of the               |

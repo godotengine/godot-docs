@@ -116,10 +116,10 @@ Use the three-dot menu for this:
   is located at ``x: 1, y: 1``, then, enabling this option will temporarily shift the grids by
   ``x: 1, y: 1``.
 - **Use Pixel Snap**: Toggles the use of subpixels for snapping. If enabled, the position values
-  will be integers, disabling will enable subpixel movement as decimal values. For the runtime
-  property, consider checking `Project Settings > Rendering > 2D > Snapping` property for
-  Node2D nodes, and `Project Settings > GUI > General > Snap Controls to Pixels` for
-  Control nodes.
+  will be integers, disabling will enable subpixel movement as decimal values.
+  For the project at runtime, consider going to the :menu:`Project Settings` and enabling
+  :menu:`Rendering > 2D > Snapping` for Node2D nodes,
+  or :menu:`GUI > General > Snap Controls to Pixels` for Control nodes.
 - **Smart Snapping**: Provides a set of options to snap to specific positions if they are enabled:
 
   - Snap to Parent: Snaps to parent's edges. For example, scaling a child control node while
@@ -189,7 +189,7 @@ In Godot, going right and down are positive directions.
 Where these two lines intersect is the origin: ``x: 0, y: 0``.
 
 A root node will have its origin at this position once added.
-Switching to the `move` or `scale` modes after selecting a node will display the gizmos at the
+Switching to the :ui:`move` or :ui:`scale` modes after selecting a node will display the gizmos at the
 node's offset position.
 The gizmos will point to the positive directions of the x and y axes.
 In the move mode, you can drag the green line to move only in the ``y`` axis.
@@ -212,8 +212,8 @@ interfaces visually:
 Middle-clicking and dragging the mouse will pan the view.
 The scrollbars on the right or bottom of the viewport also move the view.
 Alternatively, the :kbd:`G` or :kbd:`Space` keys can be used.
-If you enable `Editor Settings > Editors > Panning > Simple Panning`, you can activate
-panning directly with :kbd:`Space` only, without requiring dragging.
+If you enable :menu:`Editor Settings > Editors > Panning > Simple Panning`,
+you can activate panning directly with :kbd:`Space` only, without requiring dragging.
 
 The viewport has buttons on the top-left.
 **Center View** centers the selected node(s) in the screen. Useful if you have a large scene
@@ -226,7 +226,7 @@ The black bars at the viewport's left and top edges are the **rulers**. You can 
 orient yourself in the viewport.
 By default, the rulers will display the pixel coordinates of the viewport, numbered at
 100 pixel steps. Changing the zoom factor will change the shown values.
-Enabling `Grid Snap` or changing the snapping options will update the ruler's scaling and
+Enabling :button:`Grid Snap` or changing the snapping options will update the ruler's scaling and
 the shown values.
 
 You can also create multiple custom guides to help you make measurements or align
@@ -241,15 +241,17 @@ simultaneously by dragging from the gray square at the rulers' intersection. Gui
 repositioned by dragging them back to their respective rulers, and they can be removed by
 dragging them all the way back to the ruler.
 
-You can also enable snapping to the created guides using the `Smart Snap` menu.
+You can also enable snapping to the created guides using the :ui:`Smart Snap` menu.
 
-.. note:: If you cannot create a line, or do not see previously created guides, make sure that
-          they are visible by checking the `View` menu of the viewport. :kbd:`Y` toggles their visibility,
-          by default. Also, make sure you have at least one node in the scene.
+.. note::
+
+    If you cannot create a line, or do not see previously created guides, make sure that
+    they are visible by checking the :menu:`View` menu of the viewport. :kbd:`Y` toggles their visibility,
+    by default. Also, make sure you have at least one node in the scene.
 
 Depending on the tool chosen in the toolbar, left-clicking will have a primary action in the
 viewport.
-For example, the `Select Mode` will select the left-clicked node in the viewport.
+For example, the :ui:`Select Mode` will select the left-clicked node in the viewport.
 Sometimes, left-clicking can be combined with a modifier (e.g., :kbd:`Ctrl`, or :kbd:`Shift`) to
 perform secondary actions.
 For example, keeping :kbd:`Shift` pressed while dragging a node in the Select or Move modes will
@@ -267,7 +269,7 @@ Viewport has a **View** menu which provides several options to change the look o
   can also toggle them with the provided option.
 - **Show Helpers**: Toggles the temporary display of an outline of the node, with the previous
   transform properties (position, scaling, or rotation) if a transform operation has been
-  initiated. For `Control` nodes, it also shows the sizing parameters. Useful to see the deltas.
+  initiated. For Control nodes, it also shows the sizing parameters. Useful to see the deltas.
 - **Show Rulers**: Toggles the visibility of horizontal and vertical rulers. See
   :ref:`doc_introduction_to_2d_the_viewport` more on rulers.
 - **Show Guides**: Toggles the visibility of created guides. See
@@ -275,14 +277,14 @@ Viewport has a **View** menu which provides several options to change the look o
 - **Show Origin**: Toggles the display of the green and red origin lines drawn at ``x: 0, y: 0``.
 - **Show Viewport**: Toggles the visibility of the game's default
   viewport, indicated by an indigo-colored rectangle. It is also the default window size on desktop
-  platforms, which can be changed by going to `Project Settings > Display > Window > Size` and
-  setting `Viewport Width` and `Viewport Height`.
-- **Gizmos**: Toggles the visibility of `Position` (shown with cross icon), `Lock`
-  (shown with padlock), `Groups` (shown with two squares), and `Transformation` (shown with
+  platforms, which can be changed by going to :menu:`Project Settings > Display > Window > Size` and
+  setting :ui:`Viewport Width` and :ui:`Viewport Height`.
+- **Gizmos**: Toggles the visibility of :ui:`Position` (shown with cross icon), :ui:`Lock`
+  (shown with padlock), :ui:`Groups` (shown with two squares), and :ui:`Transformation` (shown with
   green and red lines) indicators.
 - **Center Selection**: The same as the **Center View** button inside the viewport. Centers the selected
   node(s) in the view. :kbd:`F` is the default shortcut.
-- **Frame to Selection**: Similar to `Center Selection`, but also changes the zoom factor to fit the
+- **Frame to Selection**: Similar to :ui:`Center Selection`, but also changes the zoom factor to fit the
   contents in the screen. :kbd:`Shift + F` is the default shortcut.
 - **Clear Guides**: Deletes all guides from the screen. You will need to recreate them if
   you plan to use them later.

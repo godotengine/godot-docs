@@ -26,7 +26,7 @@ If you are starting from the scratch, please follow :ref:`instructions<doc_compi
 
 Provide scons with additional arguments to request a solution file generation:
 
-- Add `vsproj=yes dev_build=yes` to the scons command
+- Add ``vsproj=yes dev_build=yes`` to the scons command
 
 The ``vsproj`` parameter signals that you want Visual Studio solution generated.
 The ``dev_build`` parameter ensures the debug symbols are included, allowing to e.g. step through code using breakpoints.

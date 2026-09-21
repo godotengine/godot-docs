@@ -203,7 +203,7 @@ Base placeholders
 +==========================+====================================================+
 | ``_BINDINGS_NAMESPACE_`` | The name of the Godot namespace (used in C# only). |
 +--------------------------+----------------------------------------------------+
-| ``_CLASS_``              | The name of the new class.                         |
+| ``_CLASS_``              | The name of the new class as ``PascalCase``.       |
 +--------------------------+----------------------------------------------------+
 | ``_CLASS_SNAKE_CASE_``   | The name of the new class as ``snake_case``        |
 |                          | (used in GDScript only).                           |

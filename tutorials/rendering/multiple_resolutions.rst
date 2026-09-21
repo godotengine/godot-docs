@@ -110,7 +110,7 @@ in turn have different pixel density and resolutions. Handling all of
 them can be a lot of work, so Godot tries to make the developer's life a
 little easier. The :ref:`Viewport <class_Viewport>`
 node has several functions to handle resizing, and the root node of the
-scene tree is always a viewport (scenes loaded are instanced as a child
+scene tree is always a viewport (scenes loaded are instantiated as a child
 of it, and it can always be accessed by calling
 ``get_tree().root`` or ``get_node("/root")``).
 

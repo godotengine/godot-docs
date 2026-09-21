@@ -328,7 +328,7 @@ With the projector texture below, the following result is obtained:
 
 .. tip::
 
-    If you've acquired omni projectors in the form of cubemap images, you can use
+    If you have omni projectors in the form of cubemap images, you can use
     `this web-based conversion tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__
     to convert them to a single panorama image.
 

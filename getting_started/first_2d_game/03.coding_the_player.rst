@@ -15,8 +15,10 @@ Script" button:
 In the script settings window, you can leave the default settings alone. Just
 click "Create":
 
-.. note:: If you're creating a C# script or other languages, select the language
-          from the `language` drop down menu before hitting create.
+.. note::
+
+    If you're creating a C# script or other languages, select the language
+    from the :menu:`Language` drop down menu before hitting create.
 
 .. image:: img/attach_node_window.webp
 
@@ -242,10 +244,12 @@ the ``_process`` function (make sure it's not indented under the `else`):
             y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
-.. tip:: The `delta` parameter in the `_process()` function refers to the *frame
-        length* - the amount of time that the previous frame took to complete.
-        Using this value ensures that your movement will remain consistent even
-        if the frame rate changes.
+.. tip::
+
+    The ``delta`` parameter in the ``_process()`` function refers to the *frame
+    length*, which is the amount of time that the previous frame took to complete.
+    Using this value ensures that your movement will remain consistent even
+    if the frame rate changes.
 
 Click "Run Current Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move
 the player around the screen in all directions.
@@ -371,10 +375,10 @@ Inspector tab to see the list of signals the player can emit:
 
 Notice our custom "hit" signal is there as well! Since our enemies are going to
 be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. This
-signal will be emitted when a body contacts the player. Click "Connect.." and
-the "Connect a Signal" window appears.
+signal will be emitted when a body touches the player. Click :button:`Connect...` and
+the :ui:`Connect a Signal` window appears.
 
-Godot will create a function with that exact name directly in script
+Godot will create a function with that exact name directly in the script
 for you. You don't need to change the default settings right now.
 
 .. warning::

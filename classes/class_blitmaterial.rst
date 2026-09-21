@@ -88,6 +88,14 @@ Multiplicative blending mode.
 
 No blending mode, direct color copy.
 
+.. _class_BlitMaterial_constant_BLEND_MODE_PREMULTIPLIED_ALPHA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_BlitMaterial_BlendMode>` **BLEND_MODE_PREMULTIPLIED_ALPHA** = ``5``
+
+Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+
 .. rst-class:: classref-section-separator
 
 ----

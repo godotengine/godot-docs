@@ -54,8 +54,8 @@ nodes as a scene, it then shows as a single node, with its internal structure
 hidden in the editor.
 
 Godot provides an extensive library of base node types you can combine and
-extend to build more powerful ones. 2D, 3D, or user interface, you will do most
-things with these nodes.
+extend to build more powerful ones. You'll use these nodes for most things you
+build, whether that's 2D, 3D, or UI.
 
 .. image:: img/key_concepts_node_menu.webp
 

@@ -22,7 +22,7 @@ You will learn to:
 - Use kinematic bodies to move 3D characters and detect when and how they
   collide.
 - Use physics layers and a group to detect interactions with specific entities.
-- Code basic procedural gameplay by instancing monsters at regular time
+- Code basic procedural gameplay by instantiating monsters at regular time
   intervals.
 - Design a movement animation and change its speed at runtime.
 - Draw a user interface on a 3D game.

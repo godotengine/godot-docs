@@ -35,7 +35,7 @@ General guidelines
 ~~~~~~~~~~~~~~~~~~
 
 * Use line feed (**LF**) characters to break lines, not CRLF or CR.
-* Use one line feed character at the end of each file, except for `csproj` files.
+* Use one line feed character at the end of each file, except for ``.csproj`` files.
 * Use **UTF-8** encoding without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_.
 * Use **4 spaces** instead of tabs for indentation (which is referred to as "soft tabs").
 * Consider breaking a line into several if it's longer than 100 characters.

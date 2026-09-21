@@ -153,7 +153,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "name": "Launch Project",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/godot.macos.editor.x86_64",
+      "program": "${workspaceFolder}/bin/godot.macos.editor.dev.x86_64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": ["--editor", "--path", "path-to-your-godot-project-folder"],
@@ -167,7 +167,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "name": "Launch Project",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/godot.macos.editor.arm64",
+      "program": "${workspaceFolder}/bin/godot.macos.editor.dev.arm64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": ["--editor", "--path", "path-to-your-godot-project-folder"],
@@ -186,7 +186,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 
     Due to sporadic performance issues, it is recommended to use LLDB over GDB on Unix-based systems.
     Make sure that the `CodeLLDB extension <https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb>`_
-    is installed for configurations using `lldb`.
+    is installed for configurations using ``lldb``.
 
     If you encounter issues with lldb, you may consider using gdb (see the LinuxBSD_gdb configuration).
 

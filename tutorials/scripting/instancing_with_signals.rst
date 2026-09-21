@@ -3,14 +3,14 @@
 
 .. _doc_instancing_with_signals:
 
-Instancing with signals
-=======================
+Instantiation with signals
+==========================
 
 Signals provide a way to decouple game objects, allowing you to avoid forcing a
 fixed arrangement of nodes. One sign that a signal might be called for is when
 you find yourself using ``get_parent()``. Referring directly to a node's parent
 means that you can't easily move that node to another location in the scene tree.
-This can be especially problematic when you are instancing objects at runtime
+This can be especially problematic when you are instantiating objects at runtime
 and may want to place them in an arbitrary location in the running scene tree.
 
 Below we'll consider an example of such a situation: firing bullets.
