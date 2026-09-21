@@ -165,8 +165,6 @@ See below for a complete example of such a file for this PR:
 .. code-block:: text
     :caption: misc/extension_api_validation/4.2-stable/GH-88047.txt
 
-    GH-88047
-    --------
     Validate extension JSON: Error: Field 'classes/AStar2D/methods/get_id_path/arguments': size changed value in new API, from 2 to 3.
     Validate extension JSON: Error: Field 'classes/AStar2D/methods/get_point_path/arguments': size changed value in new API, from 2 to 3.
     Validate extension JSON: Error: Field 'classes/AStar3D/methods/get_id_path/arguments': size changed value in new API, from 2 to 3.
