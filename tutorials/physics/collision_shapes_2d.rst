@@ -6,7 +6,7 @@ Collision shapes (2D)
 This guide explains:
 
 - The types of collision shapes available in 2D in Godot.
-- Visualizing collision shapes in-game
+- Visualizing collision shapes in-game.
 - Using an image converted to a polygon as a collision shape.
 - Performance considerations regarding 2D collisions.
 
