@@ -91,7 +91,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     }
 
     void AudioStreamMyTone::get_parameter_list(List<Parameter> *r_parameters) {
-        r_parameters->push_back(Parameter(PropertyInfo(Variant::FLOAT, "Frequency", PROPERTY_HINT_RANGE, "44.0F, 16000.0"), "220.0"));
+        r_parameters->push_back(Parameter(PropertyInfo(Variant::FLOAT, "Frequency", PROPERTY_HINT_RANGE, "44.0, 16000.0"), "220.0"));
     }
 
     void AudioStreamMyTone::_bind_methods() {}
@@ -125,7 +125,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     private:
         Ref<AudioStreamMyTone> base;
         double pos = 0.0;
-        float freq_hz = 220.0F;
+        float freq_hz = 220.0f;
         bool active = false;
 
     public:
@@ -235,7 +235,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         }
         const float mix_rate = AudioServer::get_singleton()->get_mix_rate();
         for (int i = 0; i < size; i++) {
-            const float sample = 32767.0F * Math::sin(2.0F * Math::PI * float(pos + i) / (mix_rate / freq_hz));
+            const float sample = 32767.0f * Math::sin(2.0f * Math::PI * float(pos + i) / (mix_rate / freq_hz));
             pcm_buf[i].left = sample;
             pcm_buf[i].right = sample;
         }
@@ -243,7 +243,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     }
 
     void AudioStreamPlaybackMyTone::set_freq(float value) {
-        freq_hz = CLAMP(value, 44.0F, 16000.0F);
+        freq_hz = CLAMP(value, 44.0f, 16000.0f);
     }
 
     float AudioStreamPlaybackMyTone::get_freq() const {
@@ -259,7 +259,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 Usage
 ~~~~~
 
-The ``set_freq``and ``get_freq`` methods allow direct change of the frequency parameter.
+The ``set_freq`` and ``get_freq`` methods allow direct change of the frequency parameter.
 But one can also use the more generic way to handle parameters based on properties through ``get/set("parameters/Frequency")``.
 
 .. code-block:: gdscript
@@ -268,6 +268,7 @@ But one can also use the more generic way to handle parameters based on properti
     extends AudioStreamPlayer3D
 
     var control:float = 0.0
+
 
     func _input(event):
         if event.is_action_pressed("play"):
@@ -289,6 +290,7 @@ But one can also use the more generic way to handle parameters based on properti
             control *= 0.9
             set_freq(control)
             print(control)
+
 
     func set_freq(value):
         var stream_playback = get_stream_playback()
