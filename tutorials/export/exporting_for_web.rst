@@ -14,6 +14,13 @@ This requires support for `WebAssembly
 <https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
 in the user's browser.
 
+.. note::
+
+    iOS 16 or later is required to run web exports on iOS devices. Web export
+    templates use WebAssembly SIMD, which is not supported on iOS 15 and
+    earlier. On those versions, the project will fail to load with a
+    WebAssembly ``CompileError``.
+
 .. attention::
 
     Projects written in C# using Godot 4 currently cannot be exported to the
