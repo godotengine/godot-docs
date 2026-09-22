@@ -330,6 +330,7 @@ You should now be able to find the compiled library in ``project/bin/``.
     them using the ``target=template_release`` option.
 
 .. note::
+
     Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
     ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
     need this file to provide include path information and completion recommendations. To do this,
