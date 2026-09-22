@@ -262,9 +262,16 @@ an effect on roughness map rendering itself, its impact is limited there.
 
 The screen-space roughness limiter is enabled by default; it doesn't require
 any manual setup. It has a small performance impact, so consider disabling it
-if your project isn't affected by specular aliasing much. You can disable it
-with the **Rendering > Quality > Screen Space Filters > Screen Space Roughness Limiter**
-project setting.
+if your project isn't much affected by specular aliasing.
+You can disable it in the Project Settings by turning off
+:ref:`Rendering > Anti Aliasing > Screen Space Roughness Limiter > Enabled <class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled>`.
+
+If desired, the ``amount`` and ``limit`` can be configured
+in the Project Settings by changing the values of the
+:ref:`Rendering > Anti Aliasing > Screen Space Roughness Limiter > Amount <class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/amount>`
+and
+:ref:`Rendering > Anti Aliasing > Screen Space Roughness Limiter > Limit <class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/limit>`
+settings respectively.
 
 Texture roughness limiter on import
 -----------------------------------

@@ -727,7 +727,7 @@ It is stored as a 64-bit value, equivalent to ``int64_t`` in C++.
 
 Stores real numbers, including decimals, using floating-point values.
 It is stored as a 64-bit value, equivalent to ``double`` in C++.
-Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
+Note: Currently, data structures such as ``Vector2``, ``Vector3``, ``Vector4``, and
 ``PackedFloat32Array`` store 32-bit single-precision ``float`` values.
 
 :ref:`String <class_String>`
@@ -779,8 +779,20 @@ be accessed as an array.
 :ref:`Vector3i <class_Vector3i>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Same as Vector3 but the components are integers. Can be use for indexing items
+Same as Vector3 but the components are integers. Can be used for indexing items
 in a 3D grid.
+
+:ref:`Vector4 <class_Vector4>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+4D vector type containing ``x``, ``y``, ``z``, and ``w`` fields. This can also
+be accessed as an array.
+
+:ref:`Vector4i <class_Vector4i>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Same as Vector4 but the components are integers. Can be used to represent
+integer coordinates, indices, or other discrete 4D data.
 
 :ref:`Transform2D <class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1513,12 +1525,14 @@ Lambda functions allow you to declare functions that do not belong to a class. I
 :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
 This can be useful to create callables to pass around without polluting the class scope.
 
+By default, a lambda function has no name. This is also referred to as an *anonymous function*:
+
 ::
 
     var lambda = func (x):
         print(x)
 
-To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method:
+To call the created lambda, you can use the :ref:`call() <class_Callable_method_call>` method:
 
 ::
 

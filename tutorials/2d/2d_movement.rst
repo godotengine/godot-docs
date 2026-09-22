@@ -10,7 +10,7 @@ Every beginner has been there: "How do I move my character?" Depending on the
 style of game you're making, you may have special requirements, but in general
 the movement in most 2D games is based on a small number of designs.
 
-We'll use :ref:`CharacterBody2D <class_CharacterBody2D>` for these examples,
+We'll use :ref:`class_CharacterBody2D` for these examples,
 but the principles will apply to other node types (Area2D, RigidBody2D) as well.
 
 .. _doc_2d_movement_setup:
@@ -22,7 +22,7 @@ Each example below uses the same scene setup. Start with a ``CharacterBody2D`` w
 children: ``Sprite2D`` and ``CollisionShape2D``. You can use the Godot icon (``icon.svg``)
 for the Sprite2D's texture or use any other 2D image you have.
 
-Open ``Project -> Project Settings`` and select the "Input Map" tab. Add the following
+Open :menu:`Project > Project Settings` and select the :button:`Input Map` tab. Add the following
 input actions (see :ref:`InputEvent <doc_inputevent>` for details):
 
 .. image:: img/movement_inputs.webp
@@ -82,8 +82,8 @@ Attach a script to the character body and add the following code:
         }
     }
 
-In the ``get_input()`` function, we use :ref:`Input <class_Input>` ``get_vector()`` to check for the
-four key events and sum return a direction vector.
+In the ``get_input()`` function, we use :ref:`Input.get_vector() <class_Input_method_get_vector>`
+to check for the four key events and sum return a direction vector.
 
 We can then set our velocity by multiplying this direction vector, which has a
 length of ``1``, by our desired speed.
@@ -217,9 +217,9 @@ is set by the mouse position instead of the keyboard. The character will always
         }
     }
 
-Here we're using the :ref:`Node2D <class_Node2D>` ``look_at()`` method to
-point the player towards the mouse's position. Without this function, you
-could get the same effect by setting the angle like this:
+Here we're using the :ref:`Node2D.look_at() <class_Node2D_method_look_at>` method to
+point the player towards the mouse's position. Without this function, you could get
+the same effect by setting the angle like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
