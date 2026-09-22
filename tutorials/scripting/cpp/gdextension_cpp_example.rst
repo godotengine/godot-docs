@@ -319,7 +319,7 @@ You can omit the ``platform`` option if you are compiling for the platform you
 are currently using. The list of available ``platform`` options depends on which
 platform dependencies are set up (use ``platform=list`` to see all available platforms).
 See :ref:`doc_introduction_to_the_buildsystem` for details. However, you must select
-which api_version you are targetting (e.g., 4.7).
+which api_version you are targeting (e.g., 4.7).
 
 You should now be able to find the compiled library in ``project/bin/``.
 
