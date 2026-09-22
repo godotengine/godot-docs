@@ -176,9 +176,10 @@ The second is our ``_process`` function, which will work exactly the same
 as the ``_process`` function you're used to in GDScript.
 
 .. note::
-Your IDE may report issues with including ``sprite2d.hpp`` until the godot-cpp
-module is first compiled at a later step. During that step a number of header 
-files are generated.
+    
+    Your IDE may report issues with including ``sprite2d.hpp`` until the godot-cpp
+    module is first compiled at a later step. During that step a number of header 
+    files are generated.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
