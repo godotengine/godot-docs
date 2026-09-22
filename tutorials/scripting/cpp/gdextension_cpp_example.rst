@@ -48,8 +48,6 @@ You can download the `godot-cpp repository <https://github.com/godotengine/godot
     There is one exception to this: extensions targeting Godot 4.0 will **not** work with
     Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
-    GDExtensions will not work in older versions of Godot (only Godot 4 and up).
-
 .. note::
 
     Branches of specific GDExtension API versions are no longer provided individually. Instead, you should select the version of the
@@ -91,33 +89,6 @@ following commands:
     git submodule update --init
 
 This will initialize the repository in your project folder.
-
-You should now build the godot-cpp module to generate the static library as well
-as additional headers you will be using for your GDExtension.
-
-.. code-block:: none
-
-    cd godot-cpp
-    scons platform=<platform> api_version=4.X # Replace <platform> with the target platform e.g., linux, windows, macos, etc. Replace the 4.X with the version of GDExtension you are building for, e.g., 4.7
-
-.. note:: 
-
-    There are three include paths that contain the headers you will need to build your GDExtension:
-    ``/godot-cpp/gdextension``, ``/godot-cpp/include``, and ``/godot-cpp/gen/include``. The last
-    of which is creeated when you build the godot-cpp module.
-    
-    Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
-    ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
-    need this file to provide include path information and completion recommendations. To do this,
-    ensure your current directory is ``gdextension_cpp_example`` and no longer ``/godot-cpp``.
-    You will also need to copy the example SConstruct file into the ``gdextension_cpp_example`` project root folder.
-    Download :download:`the SConstruct file we prepared <files/cpp_example/SConstruct>`.
- 
-    In the project's root folder, run the following command to generate ``compile_commands.json``:
-
-    .. code-block:: none
-    
-        scons compiledb=yes api_version=4.7 compile_commands.json
 
 You should now be ready to move on to creating a simple plugin.
 
@@ -203,6 +174,11 @@ The first is ``_bind_methods``, which is a static function that Godot will
 call to find out which methods can be called and which properties it exposes.
 The second is our ``_process`` function, which will work exactly the same
 as the ``_process`` function you're used to in GDScript.
+
+.. note::
+Your IDE may report issues with including ``sprite2d.hpp`` until the godot-cpp
+module is first compiled at a later step. During that step a number of header 
+files are generated.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
@@ -337,12 +313,13 @@ structure alongside ``godot-cpp``, ``src``, and ``project``, then run:
 
 .. code-block:: bash
 
-    scons platform=<platform>
+    scons platform=<platform> api_version=4.x
 
 You can omit the ``platform`` option if you are compiling for the platform you
 are currently using. The list of available ``platform`` options depends on which
 platform dependencies are set up (use ``platform=list`` to see all available platforms).
-See :ref:`doc_introduction_to_the_buildsystem` for details.
+See :ref:`doc_introduction_to_the_buildsystem` for details. However, you must select
+which api_version you are targetting (e.g., 4.7)
 
 You should now be able to find the compiled library in ``project/bin/``.
 
@@ -351,6 +328,18 @@ You should now be able to find the compiled library in ``project/bin/``.
     Here, we've compiled both godot-cpp and our gdexample library as debug
     builds, which is the default. For optimized builds, you should compile
     them using the ``target=template_release`` option.
+
+.. note::
+    Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
+    ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
+    need this file to provide include path information and completion recommendations. To do this,
+    ensure your current directory is ``gdextension_cpp_example``.
+ 
+    Run the following command to generate ``compile_commands.json``:
+
+    .. code-block:: none
+    
+        scons compiledb=yes api_version=4.x compile_commands.json
 
 Using the GDExtension module
 ----------------------------
