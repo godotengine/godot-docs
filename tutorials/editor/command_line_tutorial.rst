@@ -496,6 +496,17 @@ conversion of assets or custom import/export.
 
 The script must inherit from ``SceneTree`` or ``MainLoop``.
 
+.. note::
+
+    Autoloads are not available when running a script this way. The script takes
+    the place of the main loop, so autoloaded scenes and scripts are never added
+    to the scene tree, and looking one up by name returns ``null``. If your code
+    depends on an autoload, run a scene instead of a script:
+
+    ::
+
+        godot --headless --path /path/to/project res://tools/my_tool.tscn
+
 Here is an example ``sayhello.gd``, showing how it works:
 
 .. code-block:: python
