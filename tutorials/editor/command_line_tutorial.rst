@@ -498,14 +498,28 @@ The script must inherit from ``SceneTree`` or ``MainLoop``.
 
 .. note::
 
-    Autoloads are not available when running a script this way. The script takes
-    the place of the main loop, so autoloaded scenes and scripts are never added
-    to the scene tree, and looking one up by name returns ``null``. If your code
-    depends on an autoload, run a scene instead of a script:
+    Autoloads are registered after the script's main loop object is created, which
+    has two consequences for a script that needs them. The script cannot refer to an
+    autoload by its global name, because that name does not exist yet when the script
+    is parsed, and the autoloads are not in the tree yet while ``_init()`` runs.
+
+    A script extending ``SceneTree`` can reach them by path once a frame has been
+    processed:
 
     ::
 
-        godot --headless --path /path/to/project res://tools/my_tool.tscn
+        extends SceneTree
+
+        func _init() -> void:
+            process_frame.connect(_start, CONNECT_ONE_SHOT)
+
+        func _start() -> void:
+            var settings := root.get_node("Settings")
+            print(settings.some_value)
+            quit()
+
+    A script extending ``MainLoop`` has no scene tree of its own, so autoloads are
+    not available to it at all.
 
 Here is an example ``sayhello.gd``, showing how it works:
 
