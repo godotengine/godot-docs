@@ -4,9 +4,12 @@
 
 import gc
 import sphinx
+import sphinx.application
 import sphinx_rtd_theme
+import subprocess
 import sys
 import os
+from pathlib import Path
 
 # Run the cyclic GC less often to save on CPU time.
 # Theoretically costs peak RAM but no actual cost was measured.
@@ -328,3 +331,44 @@ rst_epilog = """
 
 # Needed so the table of contents is created for EPUB
 epub_tocscope = 'includehidden'
+
+# -- Class generation --------------------------------------------------------
+
+
+def _generate_classes(app: sphinx.application.Sphinx, config: sphinx.application.Config) -> None:
+    # Exit early if no repo is provided.
+    if not config.repo:
+        print("WARNING: No repo provided; skipping class generation!", file=sys.stderr)
+        return
+
+    # Validate repo exists.
+    repo_path = Path(config.repo).resolve()
+    if not repo_path.exists():
+        raise sphinx.application.ApplicationError(f'Provided repo "{config.repo}" must exist!')
+    make_rst_path = repo_path / "doc" / "tools" / "make_rst.py"
+    if not make_rst_path.exists():
+        raise sphinx.application.ApplicationError(f'Provided repo "{config.repo}" must be a valid Godot repository!')
+
+    # Generate class documentation.
+    class_path = Path("classes").resolve()
+    subprocess.run(
+        [
+            sys.executable,
+            "doc/tools/make_rst.py",
+            "doc/classes",
+            "modules",
+            "platform",
+            "--color",
+            "--lang",
+            language,
+            "--output",
+            class_path.as_posix(),
+        ],
+        check=True,
+        cwd=repo_path,
+    )
+
+
+def setup(app: sphinx.application.Sphinx) -> None:
+    app.add_config_value("repo", "", "env", description="A local repository to pull class documentation from")
+    app.connect("config-inited", _generate_classes)
