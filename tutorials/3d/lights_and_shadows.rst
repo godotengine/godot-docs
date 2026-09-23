@@ -296,7 +296,8 @@ small-scale shadows to be rendered, which has several benefits.
  - Objects that are opaque or use alpha scissor/hash transparency write to depth
    by default. Objects with the **Depth Pre-Pass** transparency mode also write
    to the depth buffer and can cast contact shadows, but they will not *receive*
-   contact shadows.
+   contact shadows. Objects with the **Alpha** transparency mode do not write
+   to the depth buffer, and won't cast or receive contact shadows.
 
 DirectionalLight3D offers several properties to control contact shadows:
 
