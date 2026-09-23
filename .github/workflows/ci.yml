@@ -16,8 +16,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Style checks via pre-commit
-        uses: pre-commit/action@v3.0.1
+      - name: Style checks via prek
+        uses: j178/prek-action@v3.0.0
 
       - name: Custom RST checks (check-rst.sh)
         run: |
