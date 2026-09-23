@@ -267,7 +267,7 @@ But one can also use the more generic way to handle parameters based on properti
 
     extends AudioStreamPlayer3D
 
-    var control:float = 0.0
+    var control: float = 0.0
 
 
     func _input(event):
