@@ -120,8 +120,18 @@ Bus rearrangement
 Stream Players use bus names to identify a bus, which allows adding, removing
 and moving buses around while the reference to them is kept. However, if a bus
 is renamed, the reference will be lost and the Stream Player will output
-to Master. This system was chosen because rearranging buses is a more common
+to ``Master``. This system was chosen because rearranging buses is a more common
 process than renaming them.
+
+GUI theme sounds
+----------------
+
+Sounds played using :ref:`Control theme items <doc_gui_skinning_theme_items>`
+go through the ``Master`` audio bus by default.
+This can be changed using the **Audio > Buses > GUI Theme Bus** project setting.
+Switching to a dedicated audio bus for theme sounds can be useful to let the
+player adjust their volume separately from the rest of the game, or to add
+various effects.
 
 Default bus layout
 ------------------
