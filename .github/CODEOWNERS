@@ -13,13 +13,6 @@
 
 /about/                                                     @godotengine/documentation
 
-# ---------------- Classes -------------------------
-
-## Note: Using "buildsystem" as well as the doc team for global ownerships as
-## it's generally incorrect to modify this except by automated generation.
-
-/classes/                                                   @godotengine/documentation
-
 # ---------------- Community -----------------------
 
 /community/                                                 @godotengine/documentation @godotengine/communication
