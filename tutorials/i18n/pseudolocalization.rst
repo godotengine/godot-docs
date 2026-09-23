@@ -32,6 +32,18 @@ after enabling the :button:`Advanced` toggle in the project settings dialog:
 
 Pseudolocalization can also be :ref:`toggled at runtime from a script <doc_pseudolocalization_runtime>`.
 
+Previewing pseudolocalization in the editor
+-------------------------------------------
+
+You can preview pseudolocalization without running the project by enabling the
+:button:`Preview Translation > Pseudolocalization` checkbox in the 2D editor's
+:menu:`View` menu:
+
+.. image:: img/pseudolocalization_editor_preview.webp
+
+This is useful to quickly determine which strings in a scene aren't available
+for localization, as they won't be replaced by pseudolocalized variants.
+
 Pseudolocalization configurations
 ---------------------------------
 
@@ -39,28 +51,30 @@ Pseudolocalization in Godot can be set up according to the specific use case of 
 project. Here are the pseudolocalization properties that can be configured through
 project settings:
 
-- ``replace_with_accents``: Replaces all characters in the string with their accented
-  variants. *"The quick brown fox jumped over the lazy dog"* will be converted to
-  *"Ŧh̀é q́üíćḱ ḅŕôŵή f́ôx́ ǰüm̀ṕéd́ ôṽéŕ ŧh̀é łáźý d́ôǵ"* when this setting is enabled.
-  This can be used to spot untranslated strings that won't have accents,
-  but is also useful to check for missing glyphs in the font(s) used by the project.
-- ``double_vowels``: Doubles all the vowels in the string. It is a good approximation
-  to simulate expansion of text during localization.
-  This can be used to check for text that would overflow its container
-  (such as buttons).
-- ``fake_bidi``: Fake bidirectional text (simulates right-to-left text). This is useful to
-  simulate right-to-left writing systems to check for potential layout issues that would occur in languages using right-to-left scripts.
-- ``override``: Replaces all the characters in the string with an asterisk (``*``). This is useful for
-  quickly finding text that isn't being localized.
-- ``expansion_ratio``: Can be used in cases where doubling the vowels isn't a sufficient
-  approximation. This setting pads the string with underscores (``_``) and expands it by the given ratio.
-  An expansion ratio of ``0.3`` is sufficient for most practical cases; it will increase
-  the length of the string by 30%.
-- ``prefix`` and ``suffix``: These properties can be used to specify a prefix and suffix to wrap
-  the text in.
-- ``skip_placeholders``: Skips placeholders for string formatting like ``%s`` and ``%f``.
-  This is useful to identify places where more arguments are required for the formatted
-  string to display correctly.
+- ``replace_with_accents``: Replaces all characters in the string with their
+  accented variants. *"The quick brown fox jumped over the lazy dog"* will be
+  converted to *"Ŧh̀é q́üíćḱ ḅŕôŵή f́ôx́ ǰüm̀ṕéd́ ôṽéŕ ŧh̀é łáźý d́ôǵ"* when
+  this setting is enabled. This can be used to spot untranslated strings that
+  won't have accents, but is also useful to check for missing glyphs in the
+  font(s) used by the project.
+- ``double_vowels``: Doubles all the vowels in the string. It is a good
+  approximation to simulate expansion of text during localization. This can be
+  used to check for text that would overflow its container (such as buttons).
+- ``fake_bidi``: Fake bidirectional text (simulates right-to-left text). This is
+  useful to simulate right-to-left writing systems to check for potential layout
+  issues that would occur in languages using right-to-left scripts.
+- ``override``: Replaces all the characters in the string with an asterisk
+  (``*``). This is useful for quickly finding text that isn't being localized.
+- ``expansion_ratio``: Can be used in cases where doubling the vowels isn't a
+  sufficient approximation. This setting pads the string with underscores
+  (``_``) and expands it by the given ratio. An expansion ratio of ``0.3`` is
+  sufficient for most practical cases; it will increase the length of the string
+  by 30%.
+- ``prefix`` and ``suffix``: These properties can be used to specify a prefix
+  and suffix to wrap the text in.
+- ``skip_placeholders``: Skips placeholders for string formatting like ``%s``
+  and ``%f``. This is useful to identify places where more arguments are
+  required for the formatted string to display correctly.
 
 All of these properties can be toggled as needed according to the project's use case.
 
@@ -70,10 +84,9 @@ Configuring pseudolocalization at runtime
 -----------------------------------------
 
 Pseudolocalization can be toggled at runtime using the
-:ref:`pseudolocalization_enabled<class_TranslationServer_property_pseudolocalization_enabled>` property
-in TranslationServer.
-However, if runtime configuration of pseudolocalization properties is required,
-they can be directly configured using
+:ref:`pseudolocalization_enabled<class_TranslationServer_property_pseudolocalization_enabled>`
+property in TranslationServer. However, if runtime configuration of pseudolocalization properties
+is required, they can be directly configured using
 :ref:`ProjectSettings.set_setting(property, value) <class_ProjectSettings_method_set_setting>`
 and then calling
 :ref:`TranslationServer.reload_pseudolocalization() <class_TranslationServer_method_reload_pseudolocalization>`
