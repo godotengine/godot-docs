@@ -3237,7 +3237,7 @@ Texture used to set the strength of the rim lighting effect per-pixel. Multiplie
 - |void| **set_rim_tint**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_rim_tint**\ (\ )
 
-The amount of to blend light and albedo color when rendering rim effect. If ``0`` the light color is used, while ``1`` means albedo color is used. An intermediate value generally works best.
+The amount to blend light and albedo color when rendering rim effect. If ``0`` the light color is used, while ``1`` means albedo color is used. An intermediate value generally works best.
 
 .. rst-class:: classref-item-separator
 
