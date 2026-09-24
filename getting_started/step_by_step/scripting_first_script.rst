@@ -148,7 +148,7 @@ Add the following code to your script:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _init():
+    func _init() -> void:
         print("Hello, world!")
 
  .. code-tab:: csharp C#
@@ -162,7 +162,7 @@ Add the following code to your script:
 Let's break it down. The ``func`` keyword defines a new function named
 ``_init``. This is a special name for our class's constructor. The engine calls
 ``_init()`` on every object or node upon creating it in memory, if you define
-this function.
+this function. The ``-> void`` tells us that there is no return value for this function.
 
 .. note:: GDScript is an indent-based language. The tab at the start of the line
           that says ``print()`` is necessary for the code to work. If you omit
@@ -188,8 +188,8 @@ angular speed in radians per second. Add the following after the ``extends Sprit
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var speed = 400
-    var angular_speed = PI
+    var speed: int = 400
+    var angular_speed: float = PI
 
  .. code-tab:: csharp C#
 
@@ -201,9 +201,16 @@ but before functions. Every node
 instance with this script attached to it will have its own copy of the ``speed``
 and ``angular_speed`` properties.
 
-.. note:: Angles in Godot work in radians by default,
-          but you have built-in functions and properties available if you prefer
-          to calculate angles in degrees instead.
+.. note::
+
+    Angles in Godot are in radians by default,
+    but you have built-in functions and properties available if you prefer
+    to calculate angles in degrees instead.
+
+    Here, ``: int`` and ``: float`` are static type castings where we explicitly 
+    mention the type of the variable and what it allows. This is very helpful
+    when calling built-in functions which only take certain types and behave
+    differently for other types.
 
 To move our icon, we need to update its position and rotation every frame in the
 game loop. We can use the ``_process()`` virtual function of the ``Node`` class.
@@ -229,7 +236,7 @@ At the bottom of the script, define the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _process(delta):
+    func _process(delta: float) -> void:
         rotation += angular_speed * delta
 
  .. code-tab:: csharp C#
@@ -282,7 +289,7 @@ them.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var velocity = Vector2.UP.rotated(rotation) * speed
+    var velocity: Vector2 = Vector2.UP.rotated(rotation) * speed
 
     position += velocity * delta
 
@@ -333,14 +340,14 @@ Here is the complete ``sprite_2d.gd`` file for reference.
 
     extends Sprite2D
 
-    var speed = 400
-    var angular_speed = PI
+    var speed: int = 400
+    var angular_speed: float = PI
 
 
-    func _process(delta):
+    func _process(delta: float) -> void:
         rotation += angular_speed * delta
 
-        var velocity = Vector2.UP.rotated(rotation) * speed
+        var velocity: Vector2 = Vector2.UP.rotated(rotation) * speed
 
         position += velocity * delta
 
