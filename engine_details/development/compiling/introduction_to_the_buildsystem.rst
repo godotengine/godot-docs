@@ -173,7 +173,7 @@ Godot provides two aliases for this purpose:
   tests=yes``. This enables warnings-as-errors behavior (similar to Godot's
   continuous integration setup) and also builds :ref:`unit tests
   <doc_unit_testing>` so you can run them locally.
-- ``production=yes`` is an alias for ``use_static_cpp=yes debug_symbols=no
+- ``production=yes`` is an alias for ``static_cpp=yes debug_symbols=no
   lto=auto``. Statically linking libstdc++ allows for better binary portability
   when compiling for Linux. This alias also enables link-time optimization when
   compiling for Linux, Web and Windows with MinGW, but keeps LTO disabled when
@@ -350,7 +350,7 @@ source to initialize any SCons build options passed via the command line:
 
     optimize = "size"
     module_mono_enabled = "yes"
-    use_llvm = "yes"
+    llvm = "yes"
     extra_suffix = "game_title"
 
 You can also disable some of the built-in modules before compiling, saving some
