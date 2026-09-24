@@ -39,18 +39,6 @@ and :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
 You can download the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ from GitHub or let Git do the work for you.
-Note that this repository has different branches for different versions
-of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
-
-.. note::
-    To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
-    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
-    are targeting.
-
-    The ``master`` branch is the development branch which is updated regularly
-    to work with Godot's ``master`` branch.
 
 .. warning::
     GDExtensions targeting an earlier version of Godot should work in later
@@ -60,6 +48,11 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
     There is one exception to this: extensions targeting Godot 4.0 will **not** work with
     Godot 4.1 and later (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
+.. note::
+
+    Branches of specific GDExtension API versions are no longer provided individually. Instead, you should select the version of the
+    GDExtension API you wish to use in the scons build with the argument ``api_version=4.x``.    
+
 If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
 
@@ -68,7 +61,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.x https://github.com/godotengine/godot-cpp
+    git submodule add https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -78,7 +71,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.x https://github.com/godotengine/godot-cpp
+    git clone https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -96,6 +89,8 @@ following commands:
     git submodule update --init
 
 This will initialize the repository in your project folder.
+
+You should now be ready to move on to creating a simple plugin.
 
 Creating a simple plugin
 ------------------------
@@ -126,6 +121,7 @@ Your folder structure should now look like this:
     +--godot-cpp/             # C++ bindings
     |
     +--src/                   # source code of the extension we are building
+
 
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
@@ -178,6 +174,12 @@ The first is ``_bind_methods``, which is a static function that Godot will
 call to find out which methods can be called and which properties it exposes.
 The second is our ``_process`` function, which will work exactly the same
 as the ``_process`` function you're used to in GDScript.
+
+.. note::
+    
+    Your IDE may report issues with including ``sprite2d.hpp`` until the godot-cpp
+    module is first compiled at a later step. During that step a number of header 
+    files are generated.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
@@ -312,12 +314,13 @@ structure alongside ``godot-cpp``, ``src``, and ``project``, then run:
 
 .. code-block:: bash
 
-    scons platform=<platform>
+    scons platform=<platform> api_version=4.x
 
 You can omit the ``platform`` option if you are compiling for the platform you
 are currently using. The list of available ``platform`` options depends on which
 platform dependencies are set up (use ``platform=list`` to see all available platforms).
-See :ref:`doc_introduction_to_the_buildsystem` for details.
+See :ref:`doc_introduction_to_the_buildsystem` for details. However, you must select
+which api_version you are targeting (e.g., 4.7).
 
 You should now be able to find the compiled library in ``project/bin/``.
 
@@ -326,6 +329,19 @@ You should now be able to find the compiled library in ``project/bin/``.
     Here, we've compiled both godot-cpp and our gdexample library as debug
     builds, which is the default. For optimized builds, you should compile
     them using the ``target=template_release`` option.
+
+.. note::
+
+    Depending on your IDE or Language Server (e.g., clangd), you may also want to create a
+    ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
+    need this file to provide include path information and completion recommendations. To do this,
+    ensure your current directory is ``gdextension_cpp_example``.
+ 
+    Run the following command to generate ``compile_commands.json``:
+
+    .. code-block:: none
+    
+        scons compiledb=yes api_version=4.x compile_commands.json
 
 Using the GDExtension module
 ----------------------------
