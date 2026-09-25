@@ -175,7 +175,7 @@ Responding to connections or disconnections is possible by connecting to ``Multi
 
 - ``peer_connected(id: int)`` This signal is emitted on all existing peers with ``id`` corresponding to the ID of the newly connected peer.
   It is also emitted on the new peer once for each existing peer, each time with ``id`` corresponding to that peer's ID. 
-- ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects, with `id` corresponding to the ID
+- ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects, with ``id`` corresponding to the ID
   of the disconnected peer.
 
 The rest are only emitted on clients:
