@@ -72,7 +72,7 @@ Hosting considerations
 When hosting a server, clients on your :abbr:`LAN (Local Area Network)` can
 connect using the internal IP address which is usually of the form
 ``192.168.*.*``. This internal IP address is **not** reachable by
-non-LAN/Internet clients.
+clients outside the LAN, such as ones that need to connect via the Internet.
 
 On Windows, you can find your internal IP address by opening a command prompt
 and entering ``ipconfig``. On macOS, open a Terminal and enter ``ifconfig``. On
@@ -173,8 +173,10 @@ Every peer is assigned a unique ID. The server's ID is always 1, and clients are
 
 Responding to connections or disconnections is possible by connecting to ``MultiplayerAPI``'s signals:
 
-- ``peer_connected(id: int)`` This signal is emitted with the newly connected peer's ID on each other peer, and on the new peer multiple times, once with each other peer's ID.
-- ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects.
+- ``peer_connected(id: int)`` This signal is emitted on all existing peers with `id` corresponding to the ID of the newly connected peer.
+  It is also emitted on the new peer once for every existing peer, each time with `id` corresponding to that existing peer's ID. 
+- ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects, with `id` corresponding to the ID
+  of the disconnected peer.
 
 The rest are only emitted on clients:
 
