@@ -375,6 +375,8 @@ To compile a *server* build which is optimized to run dedicated game servers, us
 Building export templates
 -------------------------
 
+.. TODO: Add details about debugsymbols here.
+
 .. warning:: Linux binaries usually won't run on distributions that are
              older than the distribution they were built on. If you wish to
              distribute binaries that work on most distributions,
