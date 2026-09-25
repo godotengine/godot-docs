@@ -174,7 +174,7 @@ Every peer is assigned a unique ID. The server's ID is always 1, and clients are
 Responding to connections or disconnections is possible by connecting to ``MultiplayerAPI``'s signals:
 
 - ``peer_connected(id: int)`` This signal is emitted on all existing peers with ``id`` corresponding to the ID of the newly connected peer.
-  It is also emitted on the new peer once for every existing peer, each time with `id` corresponding to that existing peer's ID. 
+  It is also emitted on the new peer once for each existing peer, each time with ``id`` corresponding to that peer's ID. 
 - ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects, with `id` corresponding to the ID
   of the disconnected peer.
 
