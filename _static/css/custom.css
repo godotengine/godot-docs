@@ -1336,26 +1336,35 @@ code,
 .rst-content .classref-admonition {
     padding: 0px;
     padding-left: 12px;
-    margin-bottom: 12px;
+    position: relative;
     background-color: transparent;
-    border-left: 0.2rem solid;
+}
+.rst-content .classref-admonition::before {
+    content: "";
+    position: absolute;
+    left: 0em;
+    top: 0em;
+    height: 100%;
+    width: 0.2rem;
     filter: saturate(var(--classref-admonition-saturation));
 }
-
-.rst-content .classref-admonition.note {
-    border-left-color: var(--classref-admonition-note-color);
+.rst-content .classref-admonition .admonition-title {
+    filter: saturate(var(--classref-admonition-saturation));
 }
-
-.rst-content .classref-admonition.warning {
-    border-left-color: var(--classref-admonition-warning-color);
+.rst-content .classref-admonition p {
+    margin-bottom: 12px;
 }
-
-.rst-content .classref-admonition.tip {
-    border-left-color: var(--classref-admonition-tip-color);
+.rst-content .classref-admonition.note::before {
+    background-color: var(--classref-admonition-note-color);
 }
-
-.rst-content .classref-admonition.important {
-    border-left-color: var(--classref-admonition-important-color);
+.rst-content .classref-admonition.warning::before {
+    background-color: var(--classref-admonition-warning-color);
+}
+.rst-content .classref-admonition.tip::before {
+    background-color: var(--classref-admonition-tip-color);
+}
+.rst-content .classref-admonition.important::before {
+    background-color: var(--classref-admonition-important-color);
 }
 
 .article-status strong {
