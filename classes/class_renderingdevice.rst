@@ -6366,7 +6366,7 @@ Returns the timestamp in CPU time for the rendering step specified by ``index`` 
 
 :ref:`int<class_int>` **get_captured_timestamp_gpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_gpu_time>`
 
-Returns the timestamp in GPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time()<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp()<class_RenderingDevice_method_capture_timestamp>`.
+Returns the timestamp in GPU time for the rendering step specified by ``index`` (in nanoseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time()<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp()<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 

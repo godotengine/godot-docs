@@ -7300,6 +7300,8 @@ Sets the ``callback`` that should be called when files are dropped from the oper
 
 \ **Note:** This method is implemented on Windows, macOS, Linux (X11/Wayland), and Web.
 
+\ **Note:** On the web platform, the files are dropped to a temporary folder and will be removed automatically after the callback.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -614,7 +614,7 @@ For example, the key ``android:windowSwipeToDismiss`` with the value ``false`` i
 
 :ref:`int<class_int>` **gradle_build/export_format** :ref:`🔗<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`
 
-Application export format (\*.apk or \*.aab).
+Application export format (\ ``*.apk``, ``*.aab``, or ``*.aar``).
 
 .. rst-class:: classref-item-separator
 
