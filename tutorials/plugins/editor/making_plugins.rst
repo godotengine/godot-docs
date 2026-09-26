@@ -33,7 +33,7 @@ the project folder. Godot provides a dialog for generating those files and
 placing them where they need to be.
 
 In the main toolbar, click the ``Project`` dropdown. Then click
-``Project Settings...``. Go to the ``Plugins`` tab and then click
+``Project Settings...``. Go to the ``Addons`` tab and then click
 on the :button:`Create New Plugin` button in the top-right.
 
 You will see the dialog appear, like so:
