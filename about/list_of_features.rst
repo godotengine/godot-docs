@@ -525,9 +525,9 @@ Scripting
 :ref:`C#: <doc_c_sharp>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
-- Supports .NET 8 and higher.
+- Supports .NET 10 and higher.
 
-   - Full support for the C# 12.0 syntax and features.
+   - Full support for the C# 14.0 syntax and features.
 
 - Supports Windows, Linux, and macOS. Since Godot 4.2, experimental support for
   Android and iOS is also available.
