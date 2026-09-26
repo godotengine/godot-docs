@@ -88,45 +88,51 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`collapsed_font_color<class_FoldableContainer_theme_color_collapsed_font_color>`               | ``Color(1, 1, 1, 1)``             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_color<class_FoldableContainer_theme_color_font_color>`                                   | ``Color(0.875, 0.875, 0.875, 1)`` |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_FoldableContainer_theme_color_font_outline_color>`                   | ``Color(1, 1, 1, 1)``             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`hover_font_color<class_FoldableContainer_theme_color_hover_font_color>`                       | ``Color(0.95, 0.95, 0.95, 1)``    |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`h_separation<class_FoldableContainer_theme_constant_h_separation>`                            | ``2``                             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_FoldableContainer_theme_constant_icon_max_width>`                        | ``0``                             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`outline_size<class_FoldableContainer_theme_constant_outline_size>`                            | ``0``                             |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Font<class_Font>`           | :ref:`font<class_FoldableContainer_theme_font_font>`                                                |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`font_size<class_FoldableContainer_theme_font_size_font_size>`                                 |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_FoldableContainer_theme_icon_expanded_arrow>`                            |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow_mirrored<class_FoldableContainer_theme_icon_expanded_arrow_mirrored>`          |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow<class_FoldableContainer_theme_icon_folded_arrow>`                                |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow_mirrored<class_FoldableContainer_theme_icon_folded_arrow_mirrored>`              |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_FoldableContainer_theme_style_focus>`                                             |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_FoldableContainer_theme_style_panel>`                                             |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`title_collapsed_hover_panel<class_FoldableContainer_theme_style_title_collapsed_hover_panel>` |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`title_collapsed_panel<class_FoldableContainer_theme_style_title_collapsed_panel>`             |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`title_hover_panel<class_FoldableContainer_theme_style_title_hover_panel>`                     |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`title_panel<class_FoldableContainer_theme_style_title_panel>`                                 |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`collapsed_font_color<class_FoldableContainer_theme_color_collapsed_font_color>`               | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_color<class_FoldableContainer_theme_color_font_color>`                                   | ``Color(0.875, 0.875, 0.875, 1)`` |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_outline_color<class_FoldableContainer_theme_color_font_outline_color>`                   | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`hover_font_color<class_FoldableContainer_theme_color_hover_font_color>`                       | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`h_separation<class_FoldableContainer_theme_constant_h_separation>`                            | ``2``                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`icon_max_width<class_FoldableContainer_theme_constant_icon_max_width>`                        | ``0``                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`outline_size<class_FoldableContainer_theme_constant_outline_size>`                            | ``0``                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`               | :ref:`font<class_FoldableContainer_theme_font_font>`                                                |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`font_size<class_FoldableContainer_theme_font_size_font_size>`                                 |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`expanded_arrow<class_FoldableContainer_theme_icon_expanded_arrow>`                            |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`expanded_arrow_mirrored<class_FoldableContainer_theme_icon_expanded_arrow_mirrored>`          |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`folded_arrow<class_FoldableContainer_theme_icon_folded_arrow>`                                |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`folded_arrow_mirrored<class_FoldableContainer_theme_icon_folded_arrow_mirrored>`              |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`expanded_sound<class_FoldableContainer_theme_sound_expanded_sound>`                           |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`focus_sound<class_FoldableContainer_theme_sound_focus_sound>`                                 |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`folded_sound<class_FoldableContainer_theme_sound_folded_sound>`                               |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`focus<class_FoldableContainer_theme_style_focus>`                                             |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`panel<class_FoldableContainer_theme_style_panel>`                                             |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`title_collapsed_hover_panel<class_FoldableContainer_theme_style_title_collapsed_hover_panel>` |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`title_collapsed_panel<class_FoldableContainer_theme_style_title_collapsed_panel>`             |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`title_hover_panel<class_FoldableContainer_theme_style_title_hover_panel>`                     |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`title_panel<class_FoldableContainer_theme_style_title_panel>`                                 |                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -558,6 +564,44 @@ The title's icon used when folded (for left-to-right layouts).
 :ref:`Texture2D<class_Texture2D>` **folded_arrow_mirrored** :ref:`🔗<class_FoldableContainer_theme_icon_folded_arrow_mirrored>`
 
 The title's icon used when collapsed (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FoldableContainer_theme_sound_expanded_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **expanded_sound** :ref:`🔗<class_FoldableContainer_theme_sound_expanded_sound>`
+
+Played when the container is expanded with any input method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FoldableContainer_theme_sound_focus_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **focus_sound** :ref:`🔗<class_FoldableContainer_theme_sound_focus_sound>`
+
+Played when this **FoldableContainer** receives keyboard or gamepad-induced focus. Mouse or touch-induced focus does not play a focus sound.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FoldableContainer_theme_sound_folded_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **folded_sound** :ref:`🔗<class_FoldableContainer_theme_sound_folded_sound>`
+
+Played when the container is folded with any input method.
+
+\ **Note:** This does not play if the container is folded as a result of being part of a :ref:`FoldableGroup<class_FoldableGroup>` and another container in the same group was expanded.
 
 .. rst-class:: classref-item-separator
 

@@ -153,67 +153,79 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`drop_mark_color<class_TabBar_theme_color_drop_mark_color>`                  | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_TabBar_theme_color_font_disabled_color>`          | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_hovered_color<class_TabBar_theme_color_font_hovered_color>`            | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_TabBar_theme_color_font_outline_color>`            | ``Color(0, 0, 0, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_TabBar_theme_color_font_selected_color>`          | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabBar_theme_color_font_unselected_color>`      | ``Color(0.7, 0.7, 0.7, 1)``         |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`icon_disabled_color<class_TabBar_theme_color_icon_disabled_color>`          | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`icon_hovered_color<class_TabBar_theme_color_icon_hovered_color>`            | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`icon_selected_color<class_TabBar_theme_color_icon_selected_color>`          | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`icon_unselected_color<class_TabBar_theme_color_icon_unselected_color>`      | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`h_separation<class_TabBar_theme_constant_h_separation>`                     | ``4``                               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`hover_switch_wait_msec<class_TabBar_theme_constant_hover_switch_wait_msec>` | ``500``                             |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_TabBar_theme_constant_icon_max_width>`                 | ``0``                               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`outline_size<class_TabBar_theme_constant_outline_size>`                     | ``0``                               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`tab_separation<class_TabBar_theme_constant_tab_separation>`                 | ``0``                               |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Font<class_Font>`           | :ref:`font<class_TabBar_theme_font_font>`                                         |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`font_size<class_TabBar_theme_font_size_font_size>`                          |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`close<class_TabBar_theme_icon_close>`                                       |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement<class_TabBar_theme_icon_decrement>`                               |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`decrement_highlight<class_TabBar_theme_icon_decrement_highlight>`           |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`drop_mark<class_TabBar_theme_icon_drop_mark>`                               |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment<class_TabBar_theme_icon_increment>`                               |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`increment_highlight<class_TabBar_theme_icon_increment_highlight>`           |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_highlight<class_TabBar_theme_style_button_highlight>`                |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_pressed<class_TabBar_theme_style_button_pressed>`                    |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_TabBar_theme_style_tab_disabled>`                        |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_focus<class_TabBar_theme_style_tab_focus>`                              |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_hovered<class_TabBar_theme_style_tab_hovered>`                          |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_selected<class_TabBar_theme_style_tab_selected>`                        |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_unselected<class_TabBar_theme_style_tab_unselected>`                    |                                     |
-   +-----------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`drop_mark_color<class_TabBar_theme_color_drop_mark_color>`                  | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_disabled_color<class_TabBar_theme_color_font_disabled_color>`          | ``Color(0.875, 0.875, 0.875, 0.5)`` |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_hovered_color<class_TabBar_theme_color_font_hovered_color>`            | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_outline_color<class_TabBar_theme_color_font_outline_color>`            | ``Color(0, 0, 0, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_selected_color<class_TabBar_theme_color_font_selected_color>`          | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_unselected_color<class_TabBar_theme_color_font_unselected_color>`      | ``Color(0.7, 0.7, 0.7, 1)``         |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`icon_disabled_color<class_TabBar_theme_color_icon_disabled_color>`          | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`icon_hovered_color<class_TabBar_theme_color_icon_hovered_color>`            | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`icon_selected_color<class_TabBar_theme_color_icon_selected_color>`          | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`icon_unselected_color<class_TabBar_theme_color_icon_unselected_color>`      | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`h_separation<class_TabBar_theme_constant_h_separation>`                     | ``4``                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`hover_switch_wait_msec<class_TabBar_theme_constant_hover_switch_wait_msec>` | ``500``                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`icon_max_width<class_TabBar_theme_constant_icon_max_width>`                 | ``0``                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`outline_size<class_TabBar_theme_constant_outline_size>`                     | ``0``                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`tab_separation<class_TabBar_theme_constant_tab_separation>`                 | ``0``                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Font<class_Font>`               | :ref:`font<class_TabBar_theme_font_font>`                                         |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`font_size<class_TabBar_theme_font_size_font_size>`                          |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`close<class_TabBar_theme_icon_close>`                                       |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`decrement<class_TabBar_theme_icon_decrement>`                               |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`decrement_highlight<class_TabBar_theme_icon_decrement_highlight>`           |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`drop_mark<class_TabBar_theme_icon_drop_mark>`                               |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`increment<class_TabBar_theme_icon_increment>`                               |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`increment_highlight<class_TabBar_theme_icon_increment_highlight>`           |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`drag_ended_sound<class_TabBar_theme_sound_drag_ended_sound>`                |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`drag_started_sound<class_TabBar_theme_sound_drag_started_sound>`            |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`focus_sound<class_TabBar_theme_sound_focus_sound>`                          |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`hover_sound<class_TabBar_theme_sound_hover_sound>`                          |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`pressed_disabled_sound<class_TabBar_theme_sound_pressed_disabled_sound>`    |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`pressed_sound<class_TabBar_theme_sound_pressed_sound>`                      |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`button_highlight<class_TabBar_theme_style_button_highlight>`                |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`button_pressed<class_TabBar_theme_style_button_pressed>`                    |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`tab_disabled<class_TabBar_theme_style_tab_disabled>`                        |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`tab_focus<class_TabBar_theme_style_tab_focus>`                              |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`tab_hovered<class_TabBar_theme_style_tab_hovered>`                          |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`tab_selected<class_TabBar_theme_style_tab_selected>`                        |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`tab_unselected<class_TabBar_theme_style_tab_unselected>`                    |                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -1461,6 +1473,78 @@ Icon for the right arrow button that appears when there are too many tabs to fit
 :ref:`Texture2D<class_Texture2D>` **increment_highlight** :ref:`🔗<class_TabBar_theme_icon_increment_highlight>`
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_drag_ended_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **drag_ended_sound** :ref:`🔗<class_TabBar_theme_sound_drag_ended_sound>`
+
+Played when a tab is done being dragged to rearrange it. Can only be heard if :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_drag_started_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **drag_started_sound** :ref:`🔗<class_TabBar_theme_sound_drag_started_sound>`
+
+Played when a tab is beginning to be dragged to rearrange it. Can only be heard if :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_focus_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **focus_sound** :ref:`🔗<class_TabBar_theme_sound_focus_sound>`
+
+Played when this **TabBar** receives keyboard or gamepad-induced focus. Mouse or touch-induced focus does not play a focus sound.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_hover_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **hover_sound** :ref:`🔗<class_TabBar_theme_sound_hover_sound>`
+
+Played when a tab is hovered with the mouse.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_pressed_disabled_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **pressed_disabled_sound** :ref:`🔗<class_TabBar_theme_sound_pressed_disabled_sound>`
+
+Played when the tab close button is pressed while the tab is disabled, or when pressing the previous/next tab navigation buttons when already at the beginning/end of the list.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_sound_pressed_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **pressed_sound** :ref:`🔗<class_TabBar_theme_sound_pressed_sound>`
+
+Played when the tab close or previous/next tab navigation buttons are pressed.
 
 .. rst-class:: classref-item-separator
 
