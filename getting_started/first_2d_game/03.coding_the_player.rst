@@ -227,7 +227,13 @@ We also check whether the player is moving so we can call ``play()`` or
 
 Now that we have a movement direction, we can update the player's position. We
 can also use ``clamp()`` to prevent it from leaving the screen. *Clamping* a
-value means restricting it to a given range. Add the following to the bottom of
+value means restricting it to a given range.
+
+``position`` is a built-in property inherited from :ref:`Node2D <class_Node2D>`
+(see :ref:`position <class_Node2D_property_position>`); you do not need to
+declare it yourself.
+
+Add the following to the bottom of
 the ``_process`` function (make sure it's not indented under the `else`):
 
 .. tabs::
