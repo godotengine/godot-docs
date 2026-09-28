@@ -245,12 +245,42 @@ never compiled in the MO file in the first place.
 
 .. _doc_localization_using_gettext_gdscript:
 
-Extracting localizable strings from GDScript files
---------------------------------------------------
+Extracting localizable strings from project files
+-------------------------------------------------
 
-The built-in `editor plugin <https://github.com/godotengine/godot/blob/master/modules/gdscript/editor/gdscript_translation_parser_plugin.h>`_
-recognizes a variety of patterns in source code to extract localizable strings
-from GDScript files, including but not limited to the following:
+The built-in editor plugins for
+`PackedScene <https://github.com/godotengine/godot/blob/master/editor/translations/packed_scene_translation_parser_plugin.cpp>`_
+and `GDScript <https://github.com/godotengine/godot/blob/master/modules/gdscript/editor/gdscript_translation_parser_plugin.h>`_
+recognize a variety of patterns to extract localizable strings.
+
+Scene files
+~~~~~~~~~~~
+
+In ``.tscn`` or ``.scn`` scene files, these property names are recognized (``*``
+is a wildcard):
+
+- ``text`` (except in LineEdit, TextEdit, and CodeEdit nodes);
+- ``*_text`` (e.g., ``placeholder_text``);
+- ``popup/*/text``;
+- ``title``;
+- ``filters``;
+- ``script``;
+- ``item_*/text``;
+- ``accessibility_name``;
+- ``accessibility_description``.
+
+This behavior follows Node's :ref:`Auto Translate <class_Node_property_auto_translate_mode>`
+and Control's :ref:`Tooltip Auto Translate <class_Control_property_tooltip_auto_translate_mode>`
+properties. If automatic translation is disabled on a node, then no strings will
+be extracted for that node.
+
+Control's :ref:`Translation Context <class_Control_property_translation_context>`
+property is also followed when extracting translations from scene files.
+
+GDScript files
+~~~~~~~~~~~~~~
+
+In GDScript files, these patterns are recognized:
 
 - ``tr()``, ``tr_n()``, ``atr()``, and ``atr_n()`` calls;
 - assigning properties ``text``, ``placeholder_text``, and ``tooltip_text``;
