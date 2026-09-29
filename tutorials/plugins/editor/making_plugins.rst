@@ -316,7 +316,9 @@ the dock. This is nothing more than a standard Godot scene: just create
 a new scene in the editor then edit it.
 
 For an editor dock, the root node **must** be a :ref:`Control <class_Control>`
-or one of its child classes. For this tutorial, you can create a single button.
+or one of its child classes. When creating the new scene, select **User
+Interface** in the Create Root Node dialog, as this creates a ``Control``
+node for the scene root. For this tutorial, you can create a single button.
 Don't forget to add some text to your button.
 
 .. image:: img/making_plugins-my_custom_dock_scene.webp
@@ -519,6 +521,31 @@ Instead the main plugin script should enable and disable sub-plugins like this:
     func _disable_plugin():
         EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/node", false)
         EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/panel", false)
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+
+    [Tool]
+    public partial class MyPlugin : EditorPlugin
+    {
+        // The main plugin is located at res://addons/my_plugin/
+        private const string PluginName = "my_plugin";
+
+        public override void _EnablePlugin()
+        {
+            EditorInterface.Singleton.SetPluginEnabled(PluginName + "/node", true);
+            EditorInterface.Singleton.SetPluginEnabled(PluginName + "/panel", true);
+        }
+
+        public override void _DisablePlugin()
+        {
+            EditorInterface.Singleton.SetPluginEnabled(PluginName + "/node", false);
+            EditorInterface.Singleton.SetPluginEnabled(PluginName + "/panel", false);
+        }
+    }
+    #endif
 
 Going beyond
 ------------
