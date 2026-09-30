@@ -12,6 +12,10 @@ builds, including in exported projects.
     Enabling validation layers has a performance impact, so only enable them
     when you actually need the output to debug the application.
 
+.. seealso::
+
+    See :ref:`doc_using_graphics_debuggers` more advanced graphics debugging.
+
 Windows
 -------
 

@@ -10,8 +10,10 @@ engine code trying to find an underlying issue or an optimization possibility.
    :maxdepth: 1
    :name: toc-devel-cpp-debug-profiling
 
-   using_sanitizers
    macos_debug
+   using_sanitizers
+   using_graphics_debuggers
+   using_graphics_profilers
    vulkan/index
 
 Debugging the editor
