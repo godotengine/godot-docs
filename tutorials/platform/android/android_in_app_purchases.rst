@@ -35,9 +35,13 @@ Getting started
 ***************
 
 If not already done, make sure you have enabled and successfully set up :ref:`Android Custom Builds <doc_android_custom_build>`.
-Grab the``GodotGooglePlayBilling`` plugin binary and config from the `releases page <https://github.com/godotengine/godot-google-play-billing/releases>`__
-and put both into `res://android/plugins`.
+Grab the ``GodotGooglePlayBilling`` plugin binary and config from the `releases page <https://github.com/godot-sdk-integrations/godot-google-play-billing/releases>`__
+and put both into ``res://android/plugins``.
+Use a 1.x release: releases 2.0.0 and later are for Godot 4.
 The plugin should now show up in the Android export settings, where you can enable it.
+``GodotGooglePlayBilling`` 1.4.0 and later require a **Min SDK** of 23 or higher.
+Set it in the **Custom Build** section of the Android export preset (``custom_build/min_sdk``).
+Releases before 1.4.0 do not have this requirement.
 
 
 Getting started
