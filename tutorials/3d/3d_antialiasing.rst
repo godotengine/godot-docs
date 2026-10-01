@@ -33,6 +33,8 @@ and thin lines on top of the box have almost disappeared:
 To combat this, various antialiasing techniques can be used in Godot. These are
 detailed below.
 
+Antialiasing can be configured from the :ref:`Project Settings <doc_project_settings>` window or changed from code using the runtime properties on the :ref:`Viewport <class_Viewport>` class, such as :ref:`msaa_3d <class_Viewport_property_msaa_3d>`, :ref:`screen_space_aa <class_Viewport_property_screen_space_aa>`, and :ref:`use_taa <class_Viewport_property_use_taa>`. The available values for these properties are defined in the :ref:`MSAA <enum_Viewport_MSAA>` and :ref:`ScreenSpaceAA <enum_Viewport_ScreenSpaceAA>` enums.
+
 .. seealso::
 
     You can compare antialiasing algorithms in action using the
