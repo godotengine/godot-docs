@@ -9,6 +9,7 @@ Android
 
    android_library
    android_plugin
+   embedding_in_android_projects
    android_in_app_purchases
    javaclasswrapper_and_androidruntimeplugin
    resolving_crashes_on_android
