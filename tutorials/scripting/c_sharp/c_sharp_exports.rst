@@ -139,8 +139,7 @@ alongside ``[Export]``:
 
 The description can contain line breaks and Godot documentation BBCode. Rebuild
 the C# project after changing it to update the tooltip in the editor. C# XML
-documentation comments are separate from Inspector descriptions; in GDScript,
-``##`` documentation comments provide the corresponding property tooltips.
+documentation comments are separate from Inspector descriptions.
 
 Grouping exports
 ----------------
