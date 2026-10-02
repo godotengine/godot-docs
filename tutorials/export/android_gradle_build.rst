@@ -4,31 +4,32 @@ Gradle builds for Android
 =========================
 
 Godot provides the option to build using the `Gradle <https://gradle.org/>`__ build system.
-Instead of using the already pre-built template that ships with Godot, an Android
-Java project gets installed into your project folder. Godot will then build it
-and use it as an export template every time you export the project.
+Instead of using the pre-built template, an Android template project gets installed into your project folder.
+Godot will then build it and use it as an export template every time you export the project.
 
 There are some reasons why you may want to do this:
 
-- Export an AAB file for Google Play.
-- Modify the project before it's built.
-- Add external SDKs that build with your project.
+- Export an AAB binary for Google Play.
+- Export an AAR binary that can be :ref:`embedded within an Android application <doc_embedding_in_android_projects>`.
+- Modify and customize the Android template project used to export the project.
+- Add Android / Java / Kotlin SDKs and libraries that build with your project.
 
-The native portion of the template (the ``.so`` library included in the APK)
+The native portion of the template (the ``.so`` library included in the exported binary)
 remains precompiled. This means that unlike
 :ref:`compiling a custom Android export template <doc_compiling_for_android>`,
 you don't need to install a C++ toolchain or clone the Godot source code.
 
 Configuring the Gradle build is a fairly straightforward process. But first,
 you need to follow the steps in :ref:`exporting for android <doc_exporting_for_android>`
-up to **Setting it up in Godot**. After doing that, follow the steps below.
+up to :ref:`Setting it up in Godot <doc_exporting_for_android_setting_it_up_in_godot>`.
+After doing that, follow the steps below.
 
 Set up the Gradle build environment
 -----------------------------------
 
-Go to the Project menu, and install the *Gradle Build* template:
+Go to the Project menu, and select :menu:`Setup Android Build...`:
 
-.. image:: img/gradle_build_install_template.webp
+.. image:: img/setup_android_build_screenshot.webp
 
 Make sure export templates are downloaded. If not, this menu will help you
 download them.
@@ -42,7 +43,7 @@ Performing Gradle builds from the Android editor
 Since Godot 4.6, it is possible to perform Gradle builds from the Android editor.
 This requires installing the
 `Godot Android Build Environment (GABE) <https://godotengine.org/download/android/#gabe>`__
-application on the same device the editor is running on.
+application on the same device the Android editor is running on.
 
 .. note::
 
@@ -50,7 +51,7 @@ application on the same device the editor is running on.
     pre-built APK templates, or when exporting to other platforms.
 
 This application lets you install everything required to build Android projects with Gradle.
-It is called by the editor to perform Gradle builds when exporting to Android.
+It is called by the Android editor to perform Gradle builds when exporting to Android.
 
 To set up the build environment, open the app and follow these instructions:
 
@@ -59,7 +60,7 @@ To set up the build environment, open the app and follow these instructions:
 - Click :button:`Install Rootfs`.
 
 After the installation completes, you can export projects using Gradle builds
-from the Godot editor.
+from the Godot Android editor.
 
 Enabling the Gradle build and exporting
 ---------------------------------------
