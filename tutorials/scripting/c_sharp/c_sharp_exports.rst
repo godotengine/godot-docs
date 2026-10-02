@@ -124,6 +124,24 @@ a user-friendly assignment dialog for these types. This can be used instead of
     [Export]
     public RigidBody2D RigidBody2D { get; set; }
 
+Documenting exports
+-------------------
+
+Use ``[Description]`` to add a tooltip to an exported field or property
+in the Inspector. The attribute does not export the member by itself, so use it
+alongside ``[Export]``:
+
+.. code-block:: csharp
+
+    [Export]
+    [Description("Maximum number of instances this node can create.")]
+    public int MaxInstances { get; set; } = 10;
+
+The description can contain line breaks and Godot documentation BBCode. Rebuild
+the C# project after changing it to update the tooltip in the editor. C# XML
+documentation comments are separate from Inspector descriptions; in GDScript,
+``##`` documentation comments provide the corresponding property tooltips.
+
 Grouping exports
 ----------------
 
