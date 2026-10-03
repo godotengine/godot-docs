@@ -44,6 +44,8 @@ to display itself. This is important to remember when implementing
    of the default one. In principle, this works exactly like it would in your game
    as explained :ref:`below <doc_gui_theme_in_project>`.
 
+.. _doc_gui_skinning_theme_items:
+
 Theme items
 ~~~~~~~~~~~
 
@@ -91,6 +93,13 @@ a unique name and must be one of the following data types:
    ``normal`` or ``pressed``) to allow the base stylebox to remain visible.
    This means the focus stylebox should be designed as an outline or translucent
    box, so that its background can remain visible.
+
+- **Sound**
+
+  An :ref:`AudioStream <class_AudioStream>` resource which is played when a
+  specific action occurs, such as a button being hovered or pressed. By default,
+  sounds played by this system go through the ``Master`` :ref:`audio bus <doc_audio_buses>`.
+  This can be changed using the **Audio > Buses > GUI Theme Bus** project setting.
 
 Theme types
 ~~~~~~~~~~~

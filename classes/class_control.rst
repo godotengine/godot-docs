@@ -245,6 +245,8 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`add_theme_icon_override<class_Control_method_add_theme_icon_override>`\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )                                                                                             |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`add_theme_sound_override<class_Control_method_add_theme_sound_override>`\ (\ name\: :ref:`StringName<class_StringName>`, audio\: :ref:`AudioStream<class_AudioStream>`\ )                                                                                         |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`add_theme_stylebox_override<class_Control_method_add_theme_stylebox_override>`\ (\ name\: :ref:`StringName<class_StringName>`, stylebox\: :ref:`StyleBox<class_StyleBox>`\ )                                                                                      |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`begin_bulk_theme_override<class_Control_method_begin_bulk_theme_override>`\ (\ )                                                                                                                                                                                  |
@@ -313,6 +315,8 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                            | :ref:`get_theme_icon<class_Control_method_get_theme_icon>`\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                            |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>`                        | :ref:`get_theme_sound<class_Control_method_get_theme_sound>`\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                          |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`                              | :ref:`get_theme_stylebox<class_Control_method_get_theme_stylebox>`\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                    |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                  | :ref:`get_tooltip<class_Control_method_get_tooltip>`\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|                                                                                                                                         |
@@ -343,6 +347,10 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`has_theme_icon_override<class_Control_method_has_theme_icon_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                  |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`has_theme_sound<class_Control_method_has_theme_sound>`\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                          |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`has_theme_sound_override<class_Control_method_has_theme_sound_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`has_theme_stylebox<class_Control_method_has_theme_stylebox>`\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                    |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`has_theme_stylebox_override<class_Control_method_has_theme_stylebox_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                          |
@@ -362,6 +370,8 @@ Methods
    | |void|                                                       | :ref:`remove_theme_font_size_override<class_Control_method_remove_theme_font_size_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`remove_theme_icon_override<class_Control_method_remove_theme_icon_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                    |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`remove_theme_sound_override<class_Control_method_remove_theme_sound_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                  |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`remove_theme_stylebox_override<class_Control_method_remove_theme_stylebox_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                            |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3041,6 +3051,20 @@ See also :ref:`get_theme_icon()<class_Control_method_get_theme_icon>`.
 
 ----
 
+.. _class_Control_method_add_theme_sound_override:
+
+.. rst-class:: classref-method
+
+|void| **add_theme_sound_override**\ (\ name\: :ref:`StringName<class_StringName>`, audio\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_Control_method_add_theme_sound_override>`
+
+Creates a local override for a theme sound with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_sound_override()<class_Control_method_remove_theme_sound_override>`.
+
+See also :ref:`get_theme_sound()<class_Control_method_get_theme_sound>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method_add_theme_stylebox_override:
 
 .. rst-class:: classref-method
@@ -3555,6 +3579,20 @@ See :ref:`get_theme_color()<class_Control_method_get_theme_color>` for details.
 
 ----
 
+.. _class_Control_method_get_theme_sound:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStream<class_AudioStream>` **get_theme_sound**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_sound>`
+
+Returns a sound from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a sound item with the specified ``name`` and ``theme_type``.
+
+See :ref:`get_theme_color()<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method_get_theme_stylebox:
 
 .. rst-class:: classref-method
@@ -3784,6 +3822,34 @@ See :ref:`add_theme_icon_override()<class_Control_method_add_theme_icon_override
 
 ----
 
+.. _class_Control_method_has_theme_sound:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_sound**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_sound>`
+
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a sound item with the specified ``name`` and ``theme_type``.
+
+See :ref:`get_theme_color()<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_method_has_theme_sound_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_sound_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_sound_override>`
+
+Returns ``true`` if there is a local override for a theme sound with the specified ``name`` in this **Control** node.
+
+See :ref:`add_theme_sound_override()<class_Control_method_add_theme_sound_override>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method_has_theme_stylebox:
 
 .. rst-class:: classref-method
@@ -3905,6 +3971,18 @@ Removes a local override for a theme font size with the specified ``name`` previ
 |void| **remove_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_icon_override>`
 
 Removes a local override for a theme icon with the specified ``name`` previously added by :ref:`add_theme_icon_override()<class_Control_method_add_theme_icon_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_method_remove_theme_sound_override:
+
+.. rst-class:: classref-method
+
+|void| **remove_theme_sound_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_sound_override>`
+
+Removes a local override for a theme sound with the specified ``name`` previously added by :ref:`add_theme_sound_override()<class_Control_method_add_theme_sound_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 

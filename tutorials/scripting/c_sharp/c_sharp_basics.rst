@@ -43,7 +43,7 @@ version of Godot.
 
 Download and install the latest stable version of the SDK from the
 `.NET download page <https://dotnet.microsoft.com/download>`__.
-Godot 4.5 requires .NET 8 or later, but exporting to Android requires .NET 9 or later.
+Godot 4.8 requires .NET 10 or later.
 
 .. important::
 
@@ -68,7 +68,7 @@ click on **Editor → Editor Settings** and scroll down to
 external editor of choice. Godot currently supports the following
 external editors:
 
-- Visual Studio 2022
+- Visual Studio 2026
 - Visual Studio Code
 - MonoDevelop
 - Visual Studio for Mac

@@ -21,7 +21,7 @@ A dialog for selecting files or directories in the filesystem.
 Description
 -----------
 
-**FileDialog** is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. **FileDialog** automatically sets its window title according to the :ref:`file_mode<class_FileDialog_property_file_mode>`. If you want to use a custom title, disable this by setting :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` to ``false``.
+**FileDialog** is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. **FileDialog** automatically sets its window title according to the :ref:`file_mode<class_FileDialog_property_file_mode>`, if :ref:`Window.title<class_Window_property_title>` is empty.
 
 \ **Note:** **FileDialog** is invisible by default. To make it visible, call one of the ``popup_*`` methods from :ref:`Window<class_Window>` on the node, such as :ref:`Window.popup_centered_clamped()<class_Window_method_popup_centered_clamped>`.
 
@@ -91,8 +91,6 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`                     | ``false``                                                                                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                   | size                                                                                      | ``Vector2i(640, 360)`` (overrides :ref:`Window<class_Window_property_size>`)             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | title                                                                                     | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>`                     | ``false``                                                                                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
@@ -840,7 +838,9 @@ If ``true``, shows the layout switch buttons (list/thumbnails).
 - |void| **set_mode_overrides_title**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_mode_overriding_title**\ (\ )
 
-If ``true``, changing the :ref:`file_mode<class_FileDialog_property_file_mode>` property will set the window title accordingly (e.g. setting :ref:`file_mode<class_FileDialog_property_file_mode>` to :ref:`FILE_MODE_OPEN_FILE<class_FileDialog_constant_FILE_MODE_OPEN_FILE>` will change the window title to "Open a File").
+**Deprecated:** The title is automatically overridden when :ref:`Window.title<class_Window_property_title>` is empty.
+
+Has no effect and always equals to ``true``.
 
 .. rst-class:: classref-item-separator
 

@@ -248,43 +248,55 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`caret_color<class_LineEdit_theme_color_caret_color>`                               | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`clear_button_color<class_LineEdit_theme_color_clear_button_color>`                 | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`clear_button_color_pressed<class_LineEdit_theme_color_clear_button_color_pressed>` | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_color<class_LineEdit_theme_color_font_color>`                                 | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_LineEdit_theme_color_font_outline_color>`                 | ``Color(0, 0, 0, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_placeholder_color<class_LineEdit_theme_color_font_placeholder_color>`         | ``Color(0.875, 0.875, 0.875, 0.6)`` |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_LineEdit_theme_color_font_selected_color>`               | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_uneditable_color<class_LineEdit_theme_color_font_uneditable_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`selection_color<class_LineEdit_theme_color_selection_color>`                       | ``Color(0.5, 0.5, 0.5, 1)``         |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`caret_width<class_LineEdit_theme_constant_caret_width>`                            | ``1``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`minimum_character_width<class_LineEdit_theme_constant_minimum_character_width>`    | ``4``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`outline_size<class_LineEdit_theme_constant_outline_size>`                          | ``0``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Font<class_Font>`           | :ref:`font<class_LineEdit_theme_font_font>`                                              |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`font_size<class_LineEdit_theme_font_size_font_size>`                               |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`clear<class_LineEdit_theme_icon_clear>`                                            |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_LineEdit_theme_style_focus>`                                           |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_LineEdit_theme_style_normal>`                                         |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`read_only<class_LineEdit_theme_style_read_only>`                                   |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`caret_color<class_LineEdit_theme_color_caret_color>`                               | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`clear_button_color<class_LineEdit_theme_color_clear_button_color>`                 | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`clear_button_color_pressed<class_LineEdit_theme_color_clear_button_color_pressed>` | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_color<class_LineEdit_theme_color_font_color>`                                 | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_outline_color<class_LineEdit_theme_color_font_outline_color>`                 | ``Color(0, 0, 0, 1)``               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_placeholder_color<class_LineEdit_theme_color_font_placeholder_color>`         | ``Color(0.875, 0.875, 0.875, 0.6)`` |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_selected_color<class_LineEdit_theme_color_font_selected_color>`               | ``Color(1, 1, 1, 1)``               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`font_uneditable_color<class_LineEdit_theme_color_font_uneditable_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`selection_color<class_LineEdit_theme_color_selection_color>`                       | ``Color(0.5, 0.5, 0.5, 1)``         |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`caret_width<class_LineEdit_theme_constant_caret_width>`                            | ``1``                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`minimum_character_width<class_LineEdit_theme_constant_minimum_character_width>`    | ``4``                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`outline_size<class_LineEdit_theme_constant_outline_size>`                          | ``0``                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Font<class_Font>`               | :ref:`font<class_LineEdit_theme_font_font>`                                              |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`font_size<class_LineEdit_theme_font_size_font_size>`                               |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`     | :ref:`clear<class_LineEdit_theme_icon_clear>`                                            |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`caret_move_rejected_sound<class_LineEdit_theme_sound_caret_move_rejected_sound>`   |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`caret_moved_sound<class_LineEdit_theme_sound_caret_moved_sound>`                   |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`focus_sound<class_LineEdit_theme_sound_focus_sound>`                               |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`text_change_rejected_sound<class_LineEdit_theme_sound_text_change_rejected_sound>` |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`text_changed_sound<class_LineEdit_theme_sound_text_changed_sound>`                 |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`text_submitted_sound<class_LineEdit_theme_sound_text_submitted_sound>`             |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`focus<class_LineEdit_theme_style_focus>`                                           |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`normal<class_LineEdit_theme_style_normal>`                                         |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`       | :ref:`read_only<class_LineEdit_theme_style_read_only>`                                   |                                     |
+   +---------------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -1937,6 +1949,78 @@ Font size of the **LineEdit**'s text.
 :ref:`Texture2D<class_Texture2D>` **clear** :ref:`🔗<class_LineEdit_theme_icon_clear>`
 
 Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_caret_move_rejected_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **caret_move_rejected_sound** :ref:`🔗<class_LineEdit_theme_sound_caret_move_rejected_sound>`
+
+Played when the caret is attempted to be moved using the arrow keys, :kbd:`Home`, :kbd:`End`, :kbd:`Page Up`, or :kbd:`Page Down`, but the caret doesn't actually move since it's already at the beginning/end of the text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_caret_moved_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **caret_moved_sound** :ref:`🔗<class_LineEdit_theme_sound_caret_moved_sound>`
+
+Played when the caret is moved using the arrow keys, :kbd:`Home`, :kbd:`End`, :kbd:`Page Up`, :kbd:`Page Down`, or mouse clicks.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_focus_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **focus_sound** :ref:`🔗<class_LineEdit_theme_sound_focus_sound>`
+
+Played when this **LineEdit** receives keyboard or gamepad-induced focus. Mouse or touch-induced focus does not play a focus sound.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_text_change_rejected_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **text_change_rejected_sound** :ref:`🔗<class_LineEdit_theme_sound_text_change_rejected_sound>`
+
+Played when a text change is rejected (for instance, when pressing Backspace while there is no text or when :ref:`max_length<class_LineEdit_property_max_length>` is exceeded).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_text_changed_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **text_changed_sound** :ref:`🔗<class_LineEdit_theme_sound_text_changed_sound>`
+
+Played when text is successfully changed through keyboard input (physical or virtual).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_theme_sound_text_submitted_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **text_submitted_sound** :ref:`🔗<class_LineEdit_theme_sound_text_submitted_sound>`
+
+Played when text is submitted using the ``ui_text_submit`` action.
 
 .. rst-class:: classref-item-separator
 

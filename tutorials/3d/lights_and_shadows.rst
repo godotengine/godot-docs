@@ -262,6 +262,82 @@ shadows when using large objects with unsubdivided meshes. Only change this
 value if you notice missing shadows that are not related to shadow biasing
 issues.
 
+Directional contact shadows
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Contact shadows are only available in the Forward+ renderer.
+
+    By default, contact shadows are *allowed* in each DirectionalLight3D, but they
+    are not rendered unless **Rendering > Lights and Shadows > Contact Shadow > Enabled**
+    is checked in the Project Settings.
+
+DirectionalLight3D also supports *contact shadows*, which are screen-space
+shadows that are rendered in a separate pass. This allows for detailed
+small-scale shadows to be rendered, which has several benefits.
+
+- Objects get better contact hardening, which means objects look more grounded
+  in the scene by having shadows become progressively sharper the closer the
+  surface is to the caster:
+
+.. image:: img/lights_and_shadows_contact_shadows_hardening_comparison.webp
+
+- Objects that are too small to be rendered in the shadow map will still cast
+  contact shadows. This is useful for small objects like foliage, debris, and
+  other small details that would otherwise not cast shadows:
+
+.. image:: img/lights_and_shadows_contact_foliage_comparison.webp
+
+- Objects with **Geometry > Cast Shadow** set to **Off** (typically for
+  performance reasons) will still cast contact shadows, as long as they write to
+  the depth buffer.
+
+ - Objects that are opaque or use alpha scissor/hash transparency write to depth
+   by default. Objects with the **Depth Pre-Pass** transparency mode also write
+   to the depth buffer and can cast contact shadows, but they will not *receive*
+   contact shadows.
+
+DirectionalLight3D offers several properties to control contact shadows:
+
+- **Allowed:** This is the checkbox in the contact shadows section of the
+  inspector. If unchecked, the light won't cast contact shadows even if the
+  project setting is enabled.
+- **Opacity:** This controls how dark the contact shadows are. A value of
+  ``1.0`` results in opaque contact shadows, while lower values result in less
+  visible contact shadows.
+- **Blur:** This controls how blurry the contact shadows are. A value of ``0.0``
+  means contact shadows are as sharp as possible, while higher values result in
+  softer contact shadows. When using contact shadows primarily for foliage, you
+  may want to increase this value to make the shadows appear softer and more
+  natural.
+
+.. image:: img/lights_and_shadows_contact_blur_comparison.webp
+
+Enabling contact shadows has a moderate GPU performance cost, but it is
+generally cheaper than increasing the shadow map resolution. Since contact
+shadows make it more viable to disable shadow casting on small objects, they can
+indirectly *improve* performance, especially with a large number of small objects
+(such as grass).
+
+The maximum length of contact shadows is determined by the
+**Rendering > Lights and Shadows > Contact Shadow > Shadow Length**
+project setting. Higher values provide better coverage (especially at higher
+viewport resolutions and at more grazing light angles), but are more demanding
+on the GPU.
+
+Lastly, you can also adjust the
+**Rendering > Lights and Shadows > Contact Shadow > Surface Thickness**
+project setting. Higher values widen the depth interval in which an occluder is
+considered to block light, which can fill in gaps in thin geometry but may also
+cause shadows to bleed through surfaces if set too high.
+
+.. note::
+
+    Since contact shadows are rendered in screen space, they are limited to what's
+    visible on screen. Off-screen objects will not cast contact shadows, and objects
+    occluded by other objects won't cast contact shadows either.
+
 .. _doc_lights_and_shadows_omni_light:
 
 Omni light

@@ -947,6 +947,10 @@ Other objects
     class_packetpeerudp
     class_pckpacker
     class_performance
+    class_physicscastmotionresult2d
+    class_physicscastmotionresult3d
+    class_physicscollideshaperesult2d
+    class_physicscollideshaperesult3d
     class_physicsdirectbodystate2d
     class_physicsdirectbodystate2dextension
     class_physicsdirectbodystate3d
@@ -955,6 +959,14 @@ Other objects
     class_physicsdirectspacestate2dextension
     class_physicsdirectspacestate3d
     class_physicsdirectspacestate3dextension
+    class_physicsgetrestinforesult2d
+    class_physicsgetrestinforesult3d
+    class_physicsintersectpointresult2d
+    class_physicsintersectpointresult3d
+    class_physicsintersectrayresult2d
+    class_physicsintersectrayresult3d
+    class_physicsintersectshaperesult2d
+    class_physicsintersectshaperesult3d
     class_physicspointqueryparameters2d
     class_physicspointqueryparameters3d
     class_physicsrayqueryparameters2d

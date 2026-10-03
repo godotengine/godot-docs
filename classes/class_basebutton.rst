@@ -85,9 +85,17 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------+-------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`click_margin<class_BaseButton_theme_constant_click_margin>` | ``0`` |
-   +-----------------------+-------------------------------------------------------------------+-------+
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                 | :ref:`click_margin<class_BaseButton_theme_constant_click_margin>`                  | ``0`` |
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`focus_sound<class_BaseButton_theme_sound_focus_sound>`                       |       |
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`hover_sound<class_BaseButton_theme_sound_hover_sound>`                       |       |
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`pressed_disabled_sound<class_BaseButton_theme_sound_pressed_disabled_sound>` |       |
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`pressed_sound<class_BaseButton_theme_sound_pressed_sound>`                   |       |
+   +---------------------------------------+------------------------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-section-separator
 
@@ -509,6 +517,54 @@ Theme Property Descriptions
 :ref:`int<class_int>` **click_margin** = ``0`` :ref:`🔗<class_BaseButton_theme_constant_click_margin>`
 
 Defines the margin around the button's area that still counts as a valid click. This is useful to make it easier to click small buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseButton_theme_sound_focus_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **focus_sound** :ref:`🔗<class_BaseButton_theme_sound_focus_sound>`
+
+Played when this **BaseButton** receives keyboard or gamepad-induced focus. Mouse or touch-induced focus does not play a focus sound.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseButton_theme_sound_hover_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **hover_sound** :ref:`🔗<class_BaseButton_theme_sound_hover_sound>`
+
+Played when the button is hovered with the mouse.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseButton_theme_sound_pressed_disabled_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **pressed_disabled_sound** :ref:`🔗<class_BaseButton_theme_sound_pressed_disabled_sound>`
+
+Played when the button is pressed with any input method, but has :ref:`disabled<class_BaseButton_property_disabled>` set to ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseButton_theme_sound_pressed_sound:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`AudioStream<class_AudioStream>` **pressed_sound** :ref:`🔗<class_BaseButton_theme_sound_pressed_sound>`
+
+Played when the button is pressed with any input method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

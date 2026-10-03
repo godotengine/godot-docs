@@ -139,6 +139,8 @@ Properties
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`audio/buses/default_bus_layout<class_ProjectSettings_property_audio/buses/default_bus_layout>`                                                                                                       | ``"res://default_bus_layout.tres"``                                                              |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`audio/buses/gui_theme_bus<class_ProjectSettings_property_audio/buses/gui_theme_bus>`                                                                                                                 | ``&"Master"``                                                                                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`audio/driver/driver<class_ProjectSettings_property_audio/driver/driver>`                                                                                                                             |                                                                                                  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>`                                                                                                                 | ``false``                                                                                        |
@@ -2685,6 +2687,20 @@ Audio buses will disable automatically when sound goes below a given dB threshol
 :ref:`String<class_String>` **audio/buses/default_bus_layout** = ``"res://default_bus_layout.tres"`` :ref:`🔗<class_ProjectSettings_property_audio/buses/default_bus_layout>`
 
 Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the project, unless overridden by the scene.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_audio/buses/gui_theme_bus:
+
+.. rst-class:: classref-property
+
+:ref:`StringName<class_StringName>` **audio/buses/gui_theme_bus** = ``&"Master"`` :ref:`🔗<class_ProjectSettings_property_audio/buses/gui_theme_bus>`
+
+The name of the audio bus to play GUI theme audio in (case-sensitive). All sounds played using :ref:`Control<class_Control>` theme items will go through the bus specified in :ref:`audio/buses/gui_theme_bus<class_ProjectSettings_property_audio/buses/gui_theme_bus>`. This can be used to put UI sounds in a dedicated audio bus, which allows for adjusting UI volume independently from other sounds in the project.
+
+If the specified audio bus doesn't exist, audio will play on the ``Master`` bus instead.
 
 .. rst-class:: classref-item-separator
 
