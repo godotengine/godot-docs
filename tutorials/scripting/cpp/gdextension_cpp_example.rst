@@ -176,7 +176,7 @@ The second is our ``_process`` function, which will work exactly the same
 as the ``_process`` function you're used to in GDScript.
 
 .. note::
-    
+
     Your IDE may report issues with including ``sprite2d.hpp`` until the godot-cpp
     module is first compiled at a later step. During that step a number of header
     files are generated.
@@ -336,11 +336,11 @@ You should now be able to find the compiled library in ``project/bin/``.
     ``compile_commands.json`` file in your gdextension_cpp_example directory. Some language servers
     need this file to provide include path information and completion recommendations. To do this,
     ensure your current directory is ``gdextension_cpp_example``.
- 
+
     Run the following command to generate ``compile_commands.json``:
 
     .. code-block:: none
-    
+
         scons compiledb=yes api_version=4.x compile_commands.json
 
 Using the GDExtension module
