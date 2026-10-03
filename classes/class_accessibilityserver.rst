@@ -14,6 +14,15 @@ AccessibilityServer
 
 A server interface for screen reader support.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**AccessibilityServer** handles screen reader support.
+
+\ **Note:** **AccessibilityServer** is implemented on Android, Linux, macOS, and Windows.
+
 .. rst-class:: classref-reftable-group
 
 Methods

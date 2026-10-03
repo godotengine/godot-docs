@@ -384,6 +384,24 @@ Cubic interpolation with shortest path rotation.
 
 \ **Note:** The result value is always normalized and may not match the key value.
 
+.. _class_Animation_constant_INTERPOLATION_MAKIMA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolationType<enum_Animation_InterpolationType>` **INTERPOLATION_MAKIMA** = ``5``
+
+Modified Akima interpolation. Like :ref:`INTERPOLATION_CUBIC<class_Animation_constant_INTERPOLATION_CUBIC>`, this produces a smooth curve through the keys, but it overshoots less and stays flat where three or more adjacent keys have the same value. It uses two keys on each side of the current segment, so it is slightly more expensive than cubic interpolation.
+
+.. _class_Animation_constant_INTERPOLATION_MAKIMA_ANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolationType<enum_Animation_InterpolationType>` **INTERPOLATION_MAKIMA_ANGLE** = ``6``
+
+Modified Akima interpolation with shortest path rotation.
+
+\ **Note:** The result value is always normalized and may not match the key value.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -895,6 +913,8 @@ Inserts a key in a given blend shape track. Returns the key index.
 
 Returns the interpolated blend shape value at the given time (in seconds). The ``track_idx`` must be the index of a blend shape track.
 
+\ **Note:** If ``backward`` is ``true``, the keys are retrieved on the reversed timeline. See also :ref:`value_track_interpolate()<class_Animation_method_value_track_interpolate>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1101,6 +1121,8 @@ Inserts a key in a given 3D position track. Returns the key index.
 
 Returns the interpolated position value at the given time (in seconds). The ``track_idx`` must be the index of a 3D position track.
 
+\ **Note:** If ``backward`` is ``true``, the keys are retrieved on the reversed timeline. See also :ref:`value_track_interpolate()<class_Animation_method_value_track_interpolate>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1149,6 +1171,8 @@ Inserts a key in a given 3D rotation track. Returns the key index.
 
 Returns the interpolated rotation value at the given time (in seconds). The ``track_idx`` must be the index of a 3D rotation track.
 
+\ **Note:** If ``backward`` is ``true``, the keys are retrieved on the reversed timeline. See also :ref:`value_track_interpolate()<class_Animation_method_value_track_interpolate>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1172,6 +1196,8 @@ Inserts a key in a given 3D scale track. Returns the key index.
 :ref:`Vector3<class_Vector3>` **scale_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_scale_track_interpolate>`
 
 Returns the interpolated scale value at the given time (in seconds). The ``track_idx`` must be the index of a 3D scale track.
+
+\ **Note:** If ``backward`` is ``true``, the keys are retrieved on the reversed timeline. See also :ref:`value_track_interpolate()<class_Animation_method_value_track_interpolate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1541,7 +1567,9 @@ Returns the update mode of a value track.
 
 Returns the interpolated value at the given time (in seconds). The ``track_idx`` must be the index of a value track.
 
-A ``backward`` mainly affects the direction of key retrieval of the track with :ref:`UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` converted by :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS>` to match the result with :ref:`track_find_key()<class_Animation_method_track_find_key>`.
+If ``backward`` is ``true``, the keys are retrieved on the reversed timeline, so the base key is the key after ``time_sec``. This changes the result only for :ref:`UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` and :ref:`INTERPOLATION_NEAREST<class_Animation_constant_INTERPOLATION_NEAREST>`; the other interpolation types give the same result as forward.
+
+\ **Note:** :ref:`AnimationMixer<class_AnimationMixer>` always passes ``false`` for continuous tracks with playback API.
 
 .. rst-class:: classref-item-separator
 
