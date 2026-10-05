@@ -270,7 +270,9 @@ Makes the mouse cursor hidden if it is visible.
 
 Captures the mouse. The mouse will be hidden and its position locked at the center of the window manager's window.
 
-\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
+\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>` or :ref:`InputEventMouseMotion.screen_relative<class_InputEventMouseMotion_property_screen_relative>`.
+
+\ **Note:** Even when captured, the mouse cursor is still able to press buttons if they overlap with the center of the window.
 
 .. _class_Input_constant_MOUSE_MODE_CONFINED:
 

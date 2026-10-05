@@ -88,7 +88,7 @@ OpenGL texture format RGBA with four components, each with a bitdepth of 8.
 
 OpenGL texture format RGBA with four components, each with a bitdepth of 8.
 
-When drawn to, an sRGB to linear color space conversion is performed.
+When drawn to, a linear to sRGB color encoding conversion is performed.
 
 .. _class_DrawableTexture2D_constant_DRAWABLE_FORMAT_RGBAH:
 

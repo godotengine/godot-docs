@@ -885,6 +885,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/help/show_help_index<class_EditorSettings_property_text_editor/help/show_help_index>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/help/show_property_setters_and_getters<class_EditorSettings_property_text_editor/help/show_property_setters_and_getters>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/help/sort_functions_alphabetically<class_EditorSettings_property_text_editor/help/sort_functions_alphabetically>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/script_list/group_help_pages<class_EditorSettings_property_text_editor/script_list/group_help_pages>`                                                                                           |
@@ -6416,6 +6418,18 @@ The font size to use for headings in the editor help (built-in class reference).
 :ref:`bool<class_bool>` **text_editor/help/show_help_index** :ref:`🔗<class_EditorSettings_property_text_editor/help/show_help_index>`
 
 If ``true``, displays a table of contents at the left of the editor help (at the location where the members overview would appear when editing a script).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/help/show_property_setters_and_getters:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/help/show_property_setters_and_getters** :ref:`🔗<class_EditorSettings_property_text_editor/help/show_property_setters_and_getters>`
+
+If ``true``, shows property setters and getters from the editor help.
 
 .. rst-class:: classref-item-separator
 

@@ -159,7 +159,7 @@ enum **GenerateProbes**: :ref:`🔗<enum_LightmapGI_GenerateProbes>`
 
 :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **GENERATE_PROBES_DISABLED** = ``0``
 
-Don't generate lightmap probes for lighting dynamic objects.
+Don't generate additional lightmap probes for lighting dynamic objects. Probes will still be generated on each corner of the LightmapGI's bounds (8 probes total), so that interpolation works correctly when using additional :ref:`LightmapProbe<class_LightmapProbe>` nodes.
 
 .. _class_LightmapGI_constant_GENERATE_PROBES_SUBDIV_4:
 

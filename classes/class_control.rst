@@ -359,6 +359,8 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_layout_rtl<class_Control_method_is_layout_rtl>`\ (\ ) |const|                                                                                                                                                                                                  |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`play_theme_sound<class_Control_method_play_theme_sound>`\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ )                                                                                                                                                    |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`release_focus<class_Control_method_release_focus>`\ (\ )                                                                                                                                                                                                          |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`remove_theme_color_override<class_Control_method_remove_theme_color_override>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                  |
@@ -3899,6 +3901,20 @@ Best used with :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION
 :ref:`bool<class_bool>` **is_layout_rtl**\ (\ ) |const| :ref:`🔗<class_Control_method_is_layout_rtl>`
 
 Returns ``true`` if the layout is right-to-left. See also :ref:`layout_direction<class_Control_property_layout_direction>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_method_play_theme_sound:
+
+.. rst-class:: classref-method
+
+|void| **play_theme_sound**\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_Control_method_play_theme_sound>`
+
+Plays the sound from the ``stream`` resource non-positionally in the bus specified by the :ref:`ProjectSettings.audio/buses/gui_theme_bus<class_ProjectSettings_property_audio/buses/gui_theme_bus>` project setting. Typically, the ``stream`` resource is obtained using :ref:`get_theme_sound()<class_Control_method_get_theme_sound>`.
+
+\ **Note:** This method should only be used to play UI-related sounds. It should not be used to play general game sounds, as it offers very limited control. Use the :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, and :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` nodes for general game audio instead.
 
 .. rst-class:: classref-item-separator
 

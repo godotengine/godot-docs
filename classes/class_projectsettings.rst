@@ -2804,7 +2804,7 @@ Safer override for :ref:`audio/driver/output_latency<class_ProjectSettings_prope
 
 The base strength of the panning effect for all :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer2D.panning_strength<class_AudioStreamPlayer2D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
 
-The default value of ``0.5`` is tuned for headphones. When using speakers, you may find lower values to sound better as speakers have a lower stereo separation compared to headphones.
+The default value of ``0.5`` is tuned for headphones which means that the opposite side channel goes no lower than 50% of the volume of the nearside channel. You may find that you can set this value higher for speakers to have the same effect since both ears can hear from each speaker.
 
 .. rst-class:: classref-item-separator
 

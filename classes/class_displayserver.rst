@@ -937,6 +937,14 @@ Display server supports HDR output. **Linux (Wayland), macOS, iOS, visionOS, Win
 
 Display server supports putting the application in picture-in-picture mode. **Android**
 
+.. _class_DisplayServer_constant_FEATURE_EMBEDDED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_EMBEDDED** = ``37``
+
+Display server is embedding windows to another process. **macOS**
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2011,7 +2019,9 @@ Makes the mouse cursor hidden if it is visible.
 
 Captures the mouse. The mouse will be hidden and its position locked at the center of the window manager's window.
 
-\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>`.
+\ **Note:** If you want to process the mouse's movement in this mode, you need to use :ref:`InputEventMouseMotion.relative<class_InputEventMouseMotion_property_relative>` or :ref:`InputEventMouseMotion.screen_relative<class_InputEventMouseMotion_property_screen_relative>`.
+
+\ **Note:** Even when captured, the mouse cursor is still able to press buttons if they overlap with the center of the window.
 
 .. _class_DisplayServer_constant_MOUSE_MODE_CONFINED:
 
@@ -3349,7 +3359,7 @@ Returns ``true`` if ``id`` is a valid accessibility element.
 
 Returns ``1`` if a screen reader, Braille display or other assistive app is active, ``0`` otherwise. Returns ``-1`` if status is unknown.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
 
 \ **Note:** Accessibility debugging tools, such as Accessibility Insights for Windows, Accessibility Inspector (macOS), or AT-SPI Browser (Linux/BSD), do not count as assistive apps and will not affect this value. To test your project with these tools, set :ref:`ProjectSettings.accessibility/general/accessibility_support<class_ProjectSettings_property_accessibility/general/accessibility_support>` to ``1``.
 
@@ -3401,7 +3411,7 @@ Sets window outer (with decorations) and inner (without decorations) bounds for 
 
 Returns ``1`` if a high-contrast user interface theme should be used, ``0`` otherwise. Returns ``-1`` if status is unknown.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland, GNOME), macOS, and Windows.
+\ **Note:** This method is implemented on Android, Linux (X11/Wayland, GNOME), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -3415,7 +3425,7 @@ Returns ``1`` if a high-contrast user interface theme should be used, ``0`` othe
 
 Returns ``1`` if flashing, blinking, and other moving content that can cause seizures in users with photosensitive epilepsy should be disabled, ``0`` otherwise. Returns ``-1`` if status is unknown.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on Android, macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 

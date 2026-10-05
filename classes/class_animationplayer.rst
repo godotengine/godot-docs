@@ -722,6 +722,8 @@ Plays the animation with key ``name`` in reverse.
 
 This method is a shorthand for :ref:`play()<class_AnimationPlayer_method_play>` with ``custom_speed = -1.0`` and ``from_end = true``, so see its description for more information.
 
+\ **Note:** Continuous tracks, including value tracks with :ref:`Animation.UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>`, are simply interpolated on the reversed timeline, while value tracks with :ref:`Animation.UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` apply a key only in the frame it is passed, so the value held between two keys can differ from forward playback.
+
 .. rst-class:: classref-item-separator
 
 ----
