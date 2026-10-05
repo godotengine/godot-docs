@@ -401,11 +401,10 @@ Using emoji
 
 Godot has limited support for emoji fonts:
 
-- CBDT/CBLC (embedded PNGs) and SVG emoji fonts are supported.
-- COLR/CPAL emoji fonts (custom vector format) are **not** supported.
+- CBDT/CBLC (embedded PNGs), COLR/CPAL (custom vector format), and SVG emoji fonts are supported.
 - EMJC bitmap image compression (used by iOS' system emoji font) is **not** supported.
   This means that to support emoji on iOS, you must use a custom font that
-  uses SVG or PNG bitmap compression instead.
+  uses SVG, COLR/CPAL, or PNG bitmap compression instead.
 
 For Godot to be able to display emoji, the font used (or one of its
 :ref:`fallbacks <doc_using_fonts_font_fallbacks>`) needs to include them.
