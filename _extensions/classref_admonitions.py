@@ -84,12 +84,11 @@ class ClassrefImportantDirective(BaseClassrefDirective):
 
 def visit_inline_html(self, node):
     classes = " ".join(node["classes"])
-    self.body.append(f'<p class="{classes}">')
-    self.body.append(f'<span class="admonition-title">{node["title"]}:</span> ')
+    self.body.append(f'<div class="{classes}">')
 
 
 def depart_inline_html(self, node):
-    self.body.append("</p>")
+    self.body.append("</div>")
 
 
 def setup(app):
@@ -114,11 +113,7 @@ def setup(app):
 
 class ClassrefAdmonitionHTMLTranslator(HTML5Translator):
     def visit_paragraph(self, node):
-        if isinstance(node.parent, classref_admonition):
-            return
         super().visit_paragraph(node)
-
-    def depart_paragraph(self, node):
-        if isinstance(node.parent, classref_admonition):
-            return
-        super().depart_paragraph(node)
+        if isinstance(node.parent, classref_admonition) and node.parent.children[0] is node:
+            title = node.parent["title"]
+            self.body.append(f'<span class="admonition-title">{title}:</span> ')
