@@ -78,6 +78,8 @@ Download and install the Android SDK using `the Android CLI <https://developer.a
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
+.. _doc_exporting_for_android_setting_it_up_in_godot:
+
 Setting it up in Godot
 ^^^^^^^^^^^^^^^^^^^^^^
 
