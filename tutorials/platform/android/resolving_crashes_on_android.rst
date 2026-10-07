@@ -12,13 +12,13 @@ Godot now provides downloadable native debug symbols for each official export te
 Getting Native Debug symbols for official templates
 ---------------------------------------------------
 
-Native debug symbol files are provided for every stable Godot release
-and can be downloaded from the `GitHub release page <https://github.com/godotengine/godot/releases/>`_.
+Native debug symbol files are provided for every official Godot release
+and can be downloaded from the `godot-builds releases <https://github.com/godotengine/godot-builds/releases/>`_.
 
-For example, to get the native debug symbols for version ``4.5.1.stable``:
+For example, to get the native debug symbols for version ``4.8-beta1``:
 
-- Go to the `4.5.1.stable release page <https://github.com/godotengine/godot/releases/>`_
-- Download the release artifact ``Godot_native_debug_symbols.4.5.1.stable.template_release.android.zip``
+- Go to the `4.8-beta1 release page <https://github.com/godotengine/godot-builds/releases/tag/4.8-beta1>`_
+- Download the release artifact ``Godot_v4.8-beta1_debugsymbols_android_release.zip``
 
 Getting Native Debug symbols for custom builds
 ----------------------------------------------
