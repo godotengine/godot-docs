@@ -33,6 +33,7 @@ Text tutorials
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `GameDev Academy by Zenva <https://gamedevacademy.org/category/godot-tutorials/godot-4/>`__
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
+- `Godot Tutorials by Glusoft <https://glusoft.com/godot-tutorials/>`__
 
 Resources
 ---------
