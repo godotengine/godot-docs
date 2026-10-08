@@ -40,15 +40,15 @@ Introduction to CSG nodes
 Like other features of Godot, CSG is supported in the form of nodes. These are
 the CSG nodes:
 
-- :ref:`CSGBox3D <class_CSGBox3D>`
-- :ref:`CSGCylinder3D <class_CSGCylinder3D>` (also supports cone)
-- :ref:`CSGSphere3D <class_CSGSphere3D>`
-- :ref:`CSGTorus3D <class_CSGTorus3D>`
-- :ref:`CSGPolygon3D <class_CSGPolygon3D>`
-- :ref:`CSGMesh3D <class_CSGMesh3D>`
-- :ref:`CSGCombiner3D <class_CSGCombiner3D>`
+- :ref:`class_CSGBox3D`
+- :ref:`class_CSGCylinder3D` (also supports cone)
+- :ref:`class_CSGSphere3D`
+- :ref:`class_CSGTorus3D`
+- :ref:`class_CSGPolygon3D`
+- :ref:`class_CSGMesh3D`
+- :ref:`class_CSGCombiner3D`
 
-.. image:: img/csg_nodes.png
+.. image:: img/csg_nodes.webp
 
 .. image:: img/csg_mesh.png
 
@@ -63,26 +63,26 @@ Every CSG node supports 3 kinds of boolean operations:
 - **Subtraction:** The second shape is subtracted from the first, leaving a dent
   with its shape.
 
-.. image:: img/csg_operation_menu.png
+.. image:: img/csg_operation_menu.webp
 
 .. image:: img/csg_operation.png
 
 CSGPolygon
 ~~~~~~~~~~
 
-The :ref:`CSGPolygon3D <class_CSGPolygon3D>` node extrude along a Polygon drawn in
-2D (in X, Y coordinates) in the following ways:
+The :ref:`class_CSGPolygon3D` node extrudes a polygon drawn in 2D into a 3D shape
+in the following ways:
 
 - **Depth:** Extruded back a given amount.
 - **Spin:** Extruded while spinning around its origin.
 - **Path:** Extruded along a Path node. This operation is commonly called
   lofting.
 
-.. image:: img/csg_poly_mode.png
+.. image:: img/csg_poly_mode.webp
 
 .. image:: img/csg_poly.png
 
-.. note:: The **Path** mode must be provided with a :ref:`Path3D <class_Path3D>`
+.. note:: The **Path** mode must be provided with a :ref:`class_Path3D`
           node to work. In the Path node, draw the path and the polygon in
           CSGPolygon3D will extrude along the given path.
 
@@ -90,7 +90,7 @@ The :ref:`CSGPolygon3D <class_CSGPolygon3D>` node extrude along a Polygon drawn 
 Custom meshes
 ~~~~~~~~~~~~~
 
-Custom meshes can be used for :ref:`CSGMesh3D <class_CSGMesh3D>` as long as the
+Custom meshes can be used for :ref:`class_CSGMesh3D` as long as the
 mesh is *manifold*. The mesh can be modeled in other software and imported into
 Godot. Multiple materials are supported.
 
@@ -144,7 +144,7 @@ The mesh should now be manifold, and can be used as a custom mesh.
 CSGCombiner3D
 ~~~~~~~~~~~~~
 
-The :ref:`CSGCombiner3D <class_CSGCombiner3D>` node is an empty shape used for
+The :ref:`class_CSGCombiner3D` node is an empty shape used for
 organization. It will only combine children nodes.
 
 Processing order
@@ -181,17 +181,17 @@ Create a scene with a Node3D node as root node.
 
 .. tip:: The default lighting of the environment doesn't provide clear shading
          at some angles. Change the display mode using **Display Overdraw** in
-         the 3D viewport menu, or add a DirectionalLight node to help you see
-         clearly.
+         the 3D viewport menu, or add a :ref:`class_DirectionalLight3D` node to
+         help you see clearly.
 
 .. image:: img/csg_overdraw.png
 
-Create a CSGBox3D and name it ``room``, enable **Invert Faces** and change the
+Create a CSGBox3D and name it ``room``, enable **Flip Faces**, and change the
 dimensions of your room.
 
 .. image:: img/csg_room.png
 
-.. image:: img/csg_room_invert.png
+.. image:: img/csg_room_invert.webp
 
 Next, create a CSGCombiner3D and name it ``desk``.
 
@@ -221,12 +221,12 @@ dimension for the mattress.
 We will create another CSGCombiner3D named ``pillow`` as the child of  ``bed``.
 The scene tree should look like this:
 
-.. image:: img/csg_bed_tree.png
+.. image:: img/csg_bed_tree.webp
 
 We will combine 3 CSGSphere3D nodes in **Union** mode to form a pillow. Scale the
 Y axis of the spheres and enable **Smooth Faces**.
 
-.. image:: img/csg_pillow_smooth.png
+.. image:: img/csg_pillow_smooth.webp
 
 Select the ``pillow`` node and switch the mode to **Subtraction**; the combined
 spheres will cut a hole into the mattress.
@@ -259,9 +259,9 @@ CSGPolygon3D and draw a `trapezoid <https://en.wikipedia.org/wiki/Trapezoid>`_
 while in **Front View** (numeric keypad 1); this shape will extrude around the
 origin and form the lampshade.
 
-.. image:: img/csg_lamp_spin.png
+.. image:: img/csg_lamp_spin.webp
 
-.. image:: img/csg_lamp_polygon.png
+.. image:: img/csg_lamp_polygon.webp
 
 .. image:: img/csg_lamp_extrude.png
 
@@ -281,7 +281,7 @@ to **Subtraction**.
 
 .. image:: img/csg_shelf_subtract.png
 
-.. image:: img/csg_shelf_subtract_menu.png
+.. image:: img/csg_shelf_subtract_menu.webp
 
 You've almost built a shelf. Create one more CSGBox3D for dividing the shelf into
 two levels.
@@ -340,7 +340,7 @@ in the **Scale** property will cause the texture to repeat more often.
 Converting to MeshInstance3D
 ----------------------------
 
-Since Godot 4.4, you can convert a CSG node and its children to a :ref:`class_MeshInstance3D` node.
+You can convert a CSG node and its children to a :ref:`class_MeshInstance3D` node.
 
 This has several benefits:
 
