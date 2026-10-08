@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Style checks via prek
-        uses: j178/prek-action@v3.0.0
+        uses: j178/prek-action@v3.0.1
 
       - name: Custom RST checks (check-rst.sh)
         run: |
