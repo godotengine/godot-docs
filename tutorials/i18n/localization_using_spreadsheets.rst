@@ -132,11 +132,6 @@ CSV importer
 Godot will treat CSV files as translations by default. It will import them
 and generate one or more compressed translation resource files next to it.
 
-Importing will also add the translation to the list of
-translations to load when the game runs, specified in project.godot (or the
-project settings). Godot allows loading and removing translations at
-runtime as well.
-
 Select the ``.csv`` file and access the :ui:`Import` dock to define import
 options. You can toggle the compression of the imported translations, and
 select the delimiter to use when parsing the CSV file.
@@ -152,3 +147,4 @@ Once a CSV file is imported, it is **not** automatically registered as a transla
 source for the project. Remember to follow the steps described in
 :ref:`doc_internationalizing_games_configuring_imported_translation` so that the
 translation is actually used when running the project.
+Godot allows loading and removing translations at runtime as well.
