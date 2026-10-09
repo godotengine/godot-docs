@@ -15,7 +15,7 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
-- `Emscripten 6.0.1+ <https://emscripten.org>`__.
+- `Emscripten 6.0.12+ <https://emscripten.org>`__.
 - `Python 3.10+ <https://www.python.org/>`__.
 - `SCons 4.4+ <https://scons.org/pages/download.html>`__ build system.
 
