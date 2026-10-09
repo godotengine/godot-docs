@@ -23,6 +23,10 @@ jobs:
         run: |
           bash ./_tools/check-rst.sh
 
+      - name: Custom RST checks (check_rst_headings.py)
+        run: |
+          python3 _tools/check_rst_headings.py
+
       - name: Get Python version
         id: pythonv
         run: |
