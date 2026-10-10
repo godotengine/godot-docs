@@ -1,9 +1,7 @@
-:article_outdated: True
-
 .. _doc_html5_shell_classref:
 
-HTML5 shell class reference
-===========================
+Web export JavaScript reference
+===============================
 
 Projects exported for the Web expose the :js:class:`Engine` class to the JavaScript environment, that allows
 fine control over the engine's start-up process.
@@ -21,13 +19,25 @@ see :ref:`Custom HTML page for Web export <doc_customizing_html5_shell>`.
 Static Methods
 ~~~~~~~~~~~~~~
 
-+---------+-----------------------------------------------------------------------------------------------+
-| Promise | :js:attr:`load <Engine.load>` **(** string basePath **)**                                     |
-+---------+-----------------------------------------------------------------------------------------------+
-| void    | :js:attr:`unload <Engine.unload>` **(** **)**                                                 |
-+---------+-----------------------------------------------------------------------------------------------+
-| boolean | :js:attr:`isWebGLAvailable <Engine.isWebGLAvailable>` **(** *[ number majorVersion=1 ]* **)** |
-+---------+-----------------------------------------------------------------------------------------------+
++----------------+------------------------------------------------------------------------------------------------+
+| Promise        | :js:attr:`load <Engine.load>` **(** string basePath *[, number size=0 ]* **)**                 |
++----------------+------------------------------------------------------------------------------------------------+
+| void           | :js:attr:`unload <Engine.unload>` **(** **)**                                                  |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isWebGLAvailable <Engine.isWebGLAvailable>` **(** *[ number majorVersion=1 ]* **)**  |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isFetchAvailable <Engine.isFetchAvailable>` **(** **)**                              |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isSecureContext <Engine.isSecureContext>` **(** **)**                                |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isCrossOriginIsolated <Engine.isCrossOriginIsolated>` **(** **)**                    |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isSharedArrayBufferAvailable <Engine.isSharedArrayBufferAvailable>` **(** **)**      |
++----------------+------------------------------------------------------------------------------------------------+
+| boolean        | :js:attr:`isAudioWorkletAvailable <Engine.isAudioWorkletAvailable>` **(** **)**                |
++----------------+------------------------------------------------------------------------------------------------+
+| Array.<string> | :js:attr:`getMissingFeatures <Engine.getMissingFeatures>` **(** Object supportedFeatures **)** |
++----------------+------------------------------------------------------------------------------------------------+
 
 Instance Methods
 ~~~~~~~~~~~~~~~~
@@ -45,6 +55,12 @@ Instance Methods
 +---------+---------------------------------------------------------------------------------------------------------------+
 | void    | :js:attr:`requestQuit <Engine.prototype.requestQuit>` **(** **)**                                             |
 +---------+---------------------------------------------------------------------------------------------------------------+
+| void    | :js:attr:`forceQuit <Engine.prototype.forceQuit>` **(** **)**                                                 |
++---------+---------------------------------------------------------------------------------------------------------------+
+| void    | :js:attr:`addDebuggerSession <Engine.prototype.addDebuggerSession>` **(** MessagePort port **)**              |
++---------+---------------------------------------------------------------------------------------------------------------+
+| Promise | :js:attr:`installServiceWorker <Engine.prototype.installServiceWorker>` **(** **)**                           |
++---------+---------------------------------------------------------------------------------------------------------------+
 
 .. js:class:: Engine( initConfig )
 
@@ -55,12 +71,15 @@ Instance Methods
 
    **Static Methods**
 
-   .. js:function:: load( basePath )
+   .. js:function:: load( basePath [, size=0 ] )
 
       Load the engine from the specified base path.
 
       :param string basePath:
          Base path of the engine to load.
+
+      :param number size:
+         The file size if known.
 
       :return:
          A Promise that resolves once the engine is loaded.
@@ -84,6 +103,67 @@ Instance Methods
          If the given major version of WebGL is available.
 
       :rtype: boolean
+
+   .. js:function:: isFetchAvailable( )
+
+      Check whether the Fetch API available and supports streaming responses.
+
+      :return:
+         If the Fetch API is available and supports streaming responses.
+
+      :rtype: boolean
+
+   .. js:function:: isSecureContext( )
+
+      Check whether the engine is running in a Secure Context.
+
+      :return:
+         If the engine is running in a Secure Context.
+
+      :rtype: boolean
+
+   .. js:function:: isCrossOriginIsolated( )
+
+      Check whether the engine is cross origin isolated.
+      This value is dependent on Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy headers sent by the server.
+
+      :return:
+         If the engine is running in a Secure Context.
+
+      :rtype: boolean
+
+   .. js:function:: isSharedArrayBufferAvailable( )
+
+      Check whether SharedBufferArray is available.
+
+      Most browsers require the page to be running in a secure context, and the
+      the server to provide specific CORS headers for SharedArrayBuffer to be available.
+
+      :return:
+         If SharedArrayBuffer is available.
+
+      :rtype: boolean
+
+   .. js:function:: isAudioWorkletAvailable( )
+
+      Check whether the AudioContext supports AudioWorkletNodes.
+
+      :return:
+         If AudioWorkletNode is available.
+
+      :rtype: boolean
+
+   .. js:function:: getMissingFeatures( supportedFeatures )
+
+      Return an array of missing required features (as string).
+
+      :param Object supportedFeatures:
+
+
+      :return:
+         A list of human-readable missing features.
+
+      :rtype: Array.<string>
 
    **Instance Methods**
 
@@ -176,6 +256,31 @@ Instance Methods
       This is akin the user pressing the close button in the window manager, and will
       have no effect if the engine has crashed, or is stuck in a loop.
 
+   .. js:function:: prototype.forceQuit( )
+
+      Forcibly exit the current instance.
+
+      This is akin to terminating the process on a regular OS, and *may* be able to terminate
+      the engine and free resources even if the engine has crashed, or is stuck in a loop.
+
+   .. js:function:: prototype.addDebuggerSession( port )
+
+      Editor-Only.
+
+      Adds a new EditorDebuggerSession connected via the given port.
+
+      :param MessagePort port:
+         The port used for the debugger session.
+
+   .. js:function:: prototype.installServiceWorker( )
+
+      Install the progressive-web app service worker.
+
+      :return:
+         The service worker registration promise.
+
+      :rtype: Promise
+
 Engine configuration
 --------------------
 
@@ -202,7 +307,19 @@ Properties
 +-------------------+-------------------------------+
 | Array.<string>    | :js:attr:`args`               |
 +-------------------+-------------------------------+
+| boolean           | :js:attr:`focusCanvas`        |
++-------------------+-------------------------------+
+| boolean           | :js:attr:`experimentalVK`     |
++-------------------+-------------------------------+
+| string            | :js:attr:`serviceWorker`      |
++-------------------+-------------------------------+
+| MessagePort       | :js:attr:`debugPort`          |
++-------------------+-------------------------------+
+| number            | :js:attr:`pid`                |
++-------------------+-------------------------------+
 | function          | :js:attr:`onExecute`          |
++-------------------+-------------------------------+
+| function          | :js:attr:`onTerminatePID`     |
 +-------------------+-------------------------------+
 | function          | :js:attr:`onExit`             |
 +-------------------+-------------------------------+
@@ -223,7 +340,7 @@ Properties
 
    .. js:attribute:: unloadAfterInit
 
-      Whether the unload the engine automatically after the instance is initialized.
+      Whether to unload the engine automatically after the instance is initialized.
 
       :type: boolean
 
@@ -293,6 +410,46 @@ Properties
 
       :value: ``[]``
 
+   .. js:attribute:: focusCanvas
+
+      When enabled, the game canvas will automatically grab the focus when the engine starts.
+
+      :type: boolean
+
+      :value: ``true``
+
+   .. js:attribute:: experimentalVK
+
+      When enabled, this will turn on experimental virtual keyboard support on mobile.
+
+      :type: boolean
+
+      :value: ``false``
+
+   .. js:attribute:: serviceWorker
+
+      The progressive web app service worker to install.
+
+      :type: string
+
+      :value: ``""``
+
+   .. js:attribute:: debugPort
+
+      A MessagePort used to send debug messages when using protocol messageport://
+
+      :type: MessagePort
+
+      :value: ``null``
+
+   .. js:attribute:: pid
+
+      The Process ID assigned to this instance (useful for debugging).
+
+      :type: number
+
+      :value: ``0``
+
    .. js:function:: onExecute( path, args )
 
       A callback function for handling Godot's ``OS.execute`` calls.
@@ -304,6 +461,15 @@ Properties
 
       :param Array.<string> args:
          The arguments of the "command" to execute.
+
+   .. js:function:: onTerminatePID( pid )
+
+      A callback function for handling Godot's ``OS.kill`` calls.
+
+      This is for example used in the Web Editor template to forcefully terminate a running game instance.
+
+      :param number pid:
+         The Process ID to terminate.
 
    .. js:function:: onExit( status_code )
 
