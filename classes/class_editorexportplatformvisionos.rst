@@ -78,10 +78,6 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`capabilities/additional<class_EditorExportPlatformVisionOS_property_capabilities/additional>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_a12<class_EditorExportPlatformVisionOS_property_capabilities/performance_a12>`                                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_gaming_tier<class_EditorExportPlatformVisionOS_property_capabilities/performance_gaming_tier>`                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/debug<class_EditorExportPlatformVisionOS_property_custom_template/debug>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/release<class_EditorExportPlatformVisionOS_property_custom_template/release>`                                                                                       |
@@ -734,34 +730,6 @@ Additional data added to the ``UIRequiredDeviceCapabilities`` array of the ``Inf
 .. classref_note::
 
     The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformVisionOS_property_capabilities/performance_a12:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **capabilities/performance_a12** :ref:`🔗<class_EditorExportPlatformVisionOS_property_capabilities/performance_a12>`
-
-Requires the graphics performance and features of the A12 Bionic and later chips (devices supporting all Vulkan renderer features).
-
-Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen), and newer.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformVisionOS_property_capabilities/performance_gaming_tier:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **capabilities/performance_gaming_tier** :ref:`🔗<class_EditorExportPlatformVisionOS_property_capabilities/performance_gaming_tier>`
-
-Requires the graphics performance and features of the A17 Pro and later chips.
-
-Enabling this option limits supported devices to: iPhone 15 Pro and newer.
 
 .. rst-class:: classref-item-separator
 

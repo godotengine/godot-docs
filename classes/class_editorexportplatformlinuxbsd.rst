@@ -40,6 +40,8 @@ Properties
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`       | :ref:`debug/export_console_wrapper<class_EditorExportPlatformLinuxBSD_property_debug/export_console_wrapper>`         |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`debug/export_debug_symbols<class_EditorExportPlatformLinuxBSD_property_debug/export_debug_symbols>`             |
+   +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`shader_baker/enabled<class_EditorExportPlatformLinuxBSD_property_shader_baker/enabled>`                         |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`ssh_remote_deploy/cleanup_script<class_EditorExportPlatformLinuxBSD_property_ssh_remote_deploy/cleanup_script>` |
@@ -129,6 +131,22 @@ Path to the custom export template. If left empty, default template is used.
 :ref:`int<class_int>` **debug/export_console_wrapper** :ref:`🔗<class_EditorExportPlatformLinuxBSD_property_debug/export_console_wrapper>`
 
 If ``true``, a console wrapper is exported alongside the main executable, which allows running the project with enabled console output.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformLinuxBSD_property_debug/export_debug_symbols:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/export_debug_symbols** :ref:`🔗<class_EditorExportPlatformLinuxBSD_property_debug/export_debug_symbols>`
+
+If ``true``, a debug symbol file (\ ``.debugsymbols``) is exported alongside the main executable.
+
+\ **Note:** This requires a separate debug symbols file. This file must have the same name as the export template binary and an additional ``.debugsymbols`` extension, and must be present in the same directory as the export template binary, or in a ZIP archive with a ``.debugsymbols.zip`` extension.
+
+\ **Note:** If debug symbols are embedded in the export template binary, they will remain embedded in the exported project binary regardless of this option, so it should be disabled in that case.
 
 .. rst-class:: classref-item-separator
 
