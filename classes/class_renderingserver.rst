@@ -2320,19 +2320,11 @@ Blurs the edges of the shadow. Can be used to hide pixel artifacts in low resolu
 
 Constant representing the intensity of the light, measured in Lumens when dealing with a :ref:`SpotLight3D<class_SpotLight3D>` or :ref:`OmniLight3D<class_OmniLight3D>`, or measured in Lux with a :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Only used when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``.
 
-.. _class_RenderingServer_constant_LIGHT_PARAM_CONTACT_SHADOW_OPACITY:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_CONTACT_SHADOW_OPACITY** = ``21``
-
-Changes the opacity of the lights screen-space contact shadows. A value of ``1.0`` uses the same opacity as :ref:`LIGHT_PARAM_SHADOW_OPACITY<class_RenderingServer_constant_LIGHT_PARAM_SHADOW_OPACITY>`, a value of ``0.5`` would be 50% of the opacity of :ref:`LIGHT_PARAM_SHADOW_OPACITY<class_RenderingServer_constant_LIGHT_PARAM_SHADOW_OPACITY>`.
-
 .. _class_RenderingServer_constant_LIGHT_PARAM_CONTACT_SHADOW_BLUR:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_CONTACT_SHADOW_BLUR** = ``22``
+:ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_CONTACT_SHADOW_BLUR** = ``21``
 
 Blurs the edges of the contact shadow. ``0.0`` produces sharp shadows; higher values increase the noise magnitude.
 
@@ -2340,7 +2332,7 @@ Blurs the edges of the contact shadow. ``0.0`` produces sharp shadows; higher va
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_MAX** = ``23``
+:ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_MAX** = ``22``
 
 Represents the size of the :ref:`LightParam<enum_RenderingServer_LightParam>` enum.
 
