@@ -97,6 +97,8 @@ It will not be able to detect used features in the following scenarios:
   allows for defining used classes and the extension makes use of the functionality.
   See `GH-104129 <https://github.com/godotengine/godot/pull/104129>`__ for details.
 - Features that are used in :ref:`external PCKs loaded at runtime <doc_exporting_pcks>`.
+- Features that are used in built-in scripts.
+- Features that are used in C# scripts.
 - Certain edge cases may exist. If unsure, please
   `open an issue on GitHub <https://github.com/godotengine/godot/issues>`__
   with a minimal reproduction project attached.
