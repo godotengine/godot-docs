@@ -141,7 +141,7 @@ way to pull the data out of the file as well.
     # Go through everything in the persist category and ask them to return a
     # dict of relevant variables.
     func save_game():
-        var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+        using var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
             # Check the node is an instantiated scene so it can be instantiated again during load.
