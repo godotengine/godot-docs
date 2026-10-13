@@ -178,8 +178,8 @@ Most XR runtimes only support fixed foveation, but some will take eye tracking i
 The higher the level, the better the performance gains, but also the more reduction in quality there is in the user's peripheral vision.
 
 .. Note::
-  **Compatibility renderer only**,
-  for Mobile and Forward+ renderer, set the ``vrs_mode`` property on :ref:`Viewport <class_viewport>` to ``VRS_XR``.
+  When using the Mobile and Forward+ renderer, the ``vrs_mode`` property on :ref:`class_viewport` must be set
+  to ``VRS_XR`` for foveation to take effect.
 
 .. Warning::
   This feature is disabled if post effects are used such as glow, bloom, or DOF.
@@ -190,9 +190,6 @@ Foveation Dynamic
 When enabled the foveation level will be adjusted automatically depending on current GPU load.
 It will be adjusted between low and the select foveation level in the previous setting.
 It is therefore best to combine this setting with foveation level set to high.
-
-.. Note::
-  **Compatibility renderer only**
 
 Submit Depth Buffer
 ~~~~~~~~~~~~~~~~~~~
