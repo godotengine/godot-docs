@@ -9,7 +9,7 @@ supports loading translation files written in the GNU gettext format
 (text-based ``.po`` and compiled ``.mo``).
 
 .. note:: For an introduction to gettext, check out
-          `A Quick Gettext Tutorial <https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html>`_.
+          `A Quick Gettext Tutorial <https://web.archive.org/web/20260325002553/https://www.labri.fr/perso/fleury/posts/programming/a-quick-gettext-tutorial.html>`_.
           It's written with C projects in mind, but much of the advice
           also applies to Godot (with the exception of ``xgettext``).
 
