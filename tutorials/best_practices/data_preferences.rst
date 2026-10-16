@@ -286,24 +286,24 @@ unlike most other languages, it allows one to use either integers or strings for
 the enum values (the latter only when using the ``@export_enum`` annotation in GDScript).
 The question then arises, "which should one use?"
 
-The short answer is, "whichever you are more comfortable with." This
+The short answer is, "whichever you are more comfortable with". This
 is a feature specific to GDScript and not Godot scripting in general;
-The languages prioritizes usability over performance.
+The language prioritizes usability over performance.
 
 On a technical level, integer comparisons (constant-time) will happen
 faster than string comparisons (linear-time). If one wants to keep
-up other languages' conventions though, then one should use integers.
+up other languages' conventions, then one should use integers.
 
 The primary issue with using integers comes up when one wants to *print*
-an enum value. As integers, attempting to print ``MY_ENUM`` will print
-``5`` or what-have-you, rather than something like ``"MyEnum"``. To
-print an integer enum, one would have to write a Dictionary that maps the
-corresponding string value for each enum.
+an enum value. As integers, attempting to print ``MY_ENUM`` directly will print
+``5`` or what-have-you, rather than something like ``"MY_ENUM"``. To
+print an integer enum's name, one would have to use
+:ref:`Dictionary.keys() <class_dictionary_method_keys>` with a named enum,
+and use the enum value as an index: ``my_enum_values.keys()[MY_ENUM]``.
 
 If the primary purpose of using an enum is for printing values and one wishes
 to group them together as related concepts, then it makes sense to use them as
-strings. That way, a separate data structure to execute on the printing is
-unnecessary.
+strings. That way, using a named enum and accessing its keys is unnecessary.
 
 AnimatedTexture vs. AnimatedSprite2D vs. AnimationPlayer vs. AnimationTree
 --------------------------------------------------------------------------
