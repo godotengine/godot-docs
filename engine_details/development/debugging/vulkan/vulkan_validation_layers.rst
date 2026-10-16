@@ -36,7 +36,7 @@ macOS
     instead.
 
     In practice, this means that using validation layers on macOS **requires**
-    you to use a Godot build compiled with the ``use_volk=yes`` SCons option.
+    you to use a Godot build compiled with the ``volk=yes`` SCons option.
     :ref:`doc_compiling_for_macos`. If testing validation layers on an exported
     project, you must recompile the export template and specify it as a custom
     export template in your project's macOS export preset.
@@ -48,7 +48,7 @@ don't need to reboot after installing the SDK, but you may need to close and
 reopen your current terminal.
 
 After installing the Vulkan SDK, run a Godot binary that was compiled with
-``use_volk=yes`` SCons option. Specify the ``--gpu-validation``
+``volk=yes`` SCons option. Specify the ``--gpu-validation``
 :ref:`command line argument <doc_command_line_tutorial>`.
 You can also specify ``--gpu-abort`` which will make Godot quit as soon
 as a validation error happens. This can prevent your system from freezing
