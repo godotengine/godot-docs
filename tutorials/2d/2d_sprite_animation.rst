@@ -46,13 +46,7 @@ with the following nodes:
           :ref:`Physics Introduction <doc_physics_introduction>` for more
           information.
 
-Now select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
-"New SpriteFrames".
-
-.. image:: img/2d_animation_new_spriteframes.webp
-
-Click on the new SpriteFrames resource and you'll see a new panel appear at the
-bottom of the editor window:
+Now select the ``AnimatedSprite2D``, then look for the SpriteFrames panel at the bottom of the editor:
 
 .. image:: img/2d_animation_spriteframes.webp
 
