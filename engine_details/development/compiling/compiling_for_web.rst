@@ -17,6 +17,10 @@ To compile export templates for the Web, the following is required:
 
 - `Emscripten 6.0.12+ <https://emscripten.org>`__.
 - `Python 3.10+ <https://www.python.org/>`__.
+
+  - If using Python 3.9 to 3.13, also run ``pip install --user zstandard`` to install Zstandard support for Python.
+    This is not required on Python 3.14 and above, which include Zstandard support by default.
+
 - `SCons 4.4+ <https://scons.org/pages/download.html>`__ build system.
 
 .. seealso:: To get the Godot source code for compiling, see

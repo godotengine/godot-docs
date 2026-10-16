@@ -48,6 +48,10 @@ For compiling under Windows, the following is required:
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
 - `Python 3.9+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
+
+  - If using Python 3.9 to 3.13, also run ``pip install --user zstandard`` to install Zstandard support for Python.
+    This is not required on Python 3.14 and above, which include Zstandard support by default.
+
 - `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
