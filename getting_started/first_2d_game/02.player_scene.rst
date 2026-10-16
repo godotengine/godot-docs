@@ -73,15 +73,12 @@ Sprite animation
 Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
 :kbd:`Cmd + A` on macOS) a child node :ref:`AnimatedSprite2D
 <class_AnimatedSprite2D>`. The ``AnimatedSprite2D`` will handle the
-appearance and animations for our player. Notice that there is a warning symbol
-next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
-<class_SpriteFrames>` resource, which is a list of the animations it can
-display. Make sure ``AnimatedSprite2D`` is selected and then find the ``Sprite Frames`` property under
-the ``Animation`` section in the Inspector and click "[empty]" -> "New SpriteFrames":
-
-.. image:: img/new_spriteframes.webp
-
-Click on the ``SpriteFrames`` you just created to open the "SpriteFrames" panel:
+appearance and animations for our player. An ``AnimatedSprite2D`` uses a
+:ref:`SpriteFrames <class_SpriteFrames>` resource, which is a list of the animations
+it can display. For convenience, this resource is automatically created and assigned to the
+``AnimatedSprite2D`` when adding a new node in the editor.
+Make sure ``AnimatedSprite2D`` is selected, then find the ``SpriteFrames`` panel
+at the bottom of the editor.
 
 .. image:: img/spriteframes_panel.webp
 
