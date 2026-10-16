@@ -91,11 +91,15 @@ happen later) and do it manually with the following code:
     render_mode skip_vertex_transform;
 
     void vertex() {
-
         VERTEX = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
     }
 
 Other built-ins, such as ``UV`` and ``COLOR``, are also passed through to the ``fragment()`` function if not modified.
+
+The default canvas to clip space transform can be skipped using the ``POSITION`` built-in. If ``POSITION`` is written
+to anywhere in the shader, the value of ``VERTEX`` is ignored and not used in the vertex stage. However, ``VERTEX`` 
+can still be written a value that is transformed to canvas space, interpolated based on the **w** component of 
+``POSITION`` and passed to the fragment shader.
 
 For instancing, the ``INSTANCE_CUSTOM`` variable contains the instance custom data. When using particles, this information
 is usually:
@@ -133,6 +137,9 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in int **VERTEX_ID**           | The index of the current vertex in the vertex                  |
 |                                | buffer.                                                        |
++--------------------------------+----------------------------------------------------------------+
+| out vec4 **POSITION**          | If written to, overrides the final vertex position             |
+|                                | in clip space.                                                 |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **UV**              | Normalized texture coordinates. Range from ``0.0``             |
 |                                | to ``1.0``.                                                    |
