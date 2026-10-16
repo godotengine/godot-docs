@@ -14,6 +14,10 @@ Requirements
 ------------
 
 - `Python 3.9+ <https://www.python.org/downloads/macos/>`_.
+
+  - If using Python 3.9 to 3.13, also run ``pip install --user zstandard`` to install Zstandard support for Python.
+    This is not required on Python 3.14 and above, which include Zstandard support by default.
+
 - `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
     - Launch Xcode once and install iOS support. If you have already launched
