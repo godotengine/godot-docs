@@ -142,7 +142,7 @@ It uses the NavigationServer3D and a NavigationAgent3D for path movement.
         set_movement_target(movement_target_position)
 
     func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
