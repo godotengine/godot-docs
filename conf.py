@@ -49,6 +49,19 @@ ogp_site_name = "Godot Engine documentation"
 ogp_social_cards = {
     "enable": False
 }
+# Default social preview image (1200x630) for every page. Relative to the
+# site root; the extension emits og:image for it.
+ogp_image = "_static/og-image.png"
+ogp_image_alt = "Godot Engine documentation"
+
+# Twitter renders og: tags by default, but an explicit summary_large_image
+# card makes the preview show as a large banner on X/Twitter. No explicit
+# twitter:image: Twitter falls back to the (version-aware) og:image.
+ogp_custom_meta_tags = [
+    '<meta name="twitter:card" content="summary_large_image" />',
+    '<meta name="twitter:title" content="Godot Engine documentation" />',
+    '<meta name="twitter:description" content="Free and open source 2D and 3D game engine, with official documentation and tutorials." />',
+]
 
 if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
     extensions.append("godot_descriptions")
