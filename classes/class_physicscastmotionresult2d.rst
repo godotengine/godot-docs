@@ -21,6 +21,8 @@ Description
 
 This class contains the safe and unsafe fractions computed by :ref:`PhysicsDirectSpaceState2D.cast_motion_into()<class_PhysicsDirectSpaceState2D_method_cast_motion_into>`.
 
+\ **Note:** For optimal performance results, it is recommended to create this object in advance, store it, and reuse it for every subsequent query.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -23,6 +23,8 @@ This class contains the intersection information produced by :ref:`PhysicsDirect
 
 It stores up to a user-defined number of overlapping shapes.
 
+\ **Note:** For optimal performance results, it is recommended to create this object in advance, store it, and reuse it for every subsequent query.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -269,7 +269,7 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`reparent<class_Node_method_reparent>`\ (\ new_parent\: :ref:`Node<class_Node>`, keep_global_transform\: :ref:`bool<class_bool>` = true\ )                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`replace_by<class_Node_method_replace_by>`\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false\ )                                                                                                    |
+   | |void|                                                           | :ref:`replace_by<class_Node_method_replace_by>`\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false, keep_owned_children\: :ref:`bool<class_bool>` = true\ )                                              |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`request_ready<class_Node_method_request_ready>`\ (\ )                                                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2918,11 +2918,13 @@ If ``keep_global_transform`` is ``true``, the node's global transform will be pr
 
 .. rst-class:: classref-method
 
-|void| **replace_by**\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node_method_replace_by>`
+|void| **replace_by**\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false, keep_owned_children\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_Node_method_replace_by>`
 
 Replaces this node by the given ``node``. All children of this node are moved to ``node``.
 
 If ``keep_groups`` is ``true``, the ``node`` is added to the same groups that the replaced node is in (see :ref:`add_to_group()<class_Node_method_add_to_group>`).
+
+If ``keep_owned_children`` is ``true``, children owned by this node are also transferred to ``node``. If ``false``, non-owned children of owned nodes are placed at the root of ``node``.
 
 \ **Warning:** The replaced node is removed from the tree, but it is **not** deleted. To prevent memory leaks, store a reference to the node in a variable, or use :ref:`Object.free()<class_Object_method_free>`.
 

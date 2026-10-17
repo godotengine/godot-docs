@@ -23,6 +23,8 @@ This class contains the contact points computed by :ref:`PhysicsDirectSpaceState
 
 Each collision is represented as a pair of points: one on the query shape and one on the colliding shape.
 
+\ **Note:** For optimal performance results, it is recommended to create this object in advance, store it, and reuse it for every subsequent query.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -23,6 +23,8 @@ This class contains the collision data computed by :ref:`PhysicsDirectSpaceState
 
 If the shape collides with multiple objects, only the nearest collision is stored.
 
+\ **Note:** For optimal performance results, it is recommended to create this object in advance, store it, and reuse it for every subsequent query.
+
 .. rst-class:: classref-reftable-group
 
 Properties

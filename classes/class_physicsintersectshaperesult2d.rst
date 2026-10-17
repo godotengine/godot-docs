@@ -23,6 +23,8 @@ This class contains the intersection information produced by :ref:`PhysicsDirect
 
 It can store multiple intersections, up to a user-defined maximum.
 
+\ **Note:** For optimal performance results, it is recommended to create this object in advance, store it, and reuse it for every subsequent query.
+
 .. rst-class:: classref-reftable-group
 
 Properties

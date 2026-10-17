@@ -572,6 +572,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_set_ime_rect<class_DisplayServer_method_window_set_ime_rect>`\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_input_event_callback<class_DisplayServer_method_window_set_input_event_callback>`\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_input_text_callback<class_DisplayServer_method_window_set_input_text_callback>`\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -2653,7 +2655,7 @@ Use :ref:`window_get_safe_title_margins()<class_DisplayServer_method_window_get_
 
 All mouse events are passed to the underlying window of the same application.
 
-\ **Note:** This flag is implemented on Linux (X11), macOS, and Windows.
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_SHARP_CORNERS:
 
@@ -5976,7 +5978,7 @@ Returns active keyboard layout index.
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -5990,7 +5992,7 @@ Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout
 
 Converts a physical (US QWERTY) ``keycode`` to localized label printed on the key in the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -6004,7 +6006,7 @@ Converts a physical (US QWERTY) ``keycode`` to localized label printed on the ke
 
 Returns the number of keyboard layouts.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -6018,7 +6020,7 @@ Returns the number of keyboard layouts.
 
 Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -6032,7 +6034,7 @@ Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``in
 
 Returns the localized name of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -6046,7 +6048,7 @@ Returns the localized name of the keyboard layout at position ``index``.
 
 Sets the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -7420,6 +7422,20 @@ Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Inp
 
 ----
 
+.. _class_DisplayServer_method_window_set_ime_rect:
+
+.. rst-class:: classref-method
+
+|void| **window_set_ime_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_ime_rect>`
+
+Sets a rectangle which should not be obstructed by the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup for the specified ``window_id``. Only effective if :ref:`window_set_ime_active()<class_DisplayServer_method_window_set_ime_active>` was set to ``true`` for the specified ``window_id``.
+
+\ **Note:** This method is implemented only on Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_window_set_input_event_callback:
 
 .. rst-class:: classref-method
@@ -7537,7 +7553,7 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 \ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux (X11) and macOS it is.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 

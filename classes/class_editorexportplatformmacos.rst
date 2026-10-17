@@ -134,6 +134,8 @@ Properties
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/export_console_wrapper<class_EditorExportPlatformMacOS_property_debug/export_console_wrapper>`                                                                             |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/export_debug_symbols<class_EditorExportPlatformMacOS_property_debug/export_debug_symbols>`                                                                                 |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/high_res<class_EditorExportPlatformMacOS_property_display/high_res>`                                                                                                     |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`export/distribution_type<class_EditorExportPlatformMacOS_property_export/distribution_type>`                                                                                     |
@@ -1159,6 +1161,22 @@ Path to the custom export template. If left empty, default template is used.
 :ref:`int<class_int>` **debug/export_console_wrapper** :ref:`🔗<class_EditorExportPlatformMacOS_property_debug/export_console_wrapper>`
 
 If enabled, a wrapper that can be used to run the application with console output is created alongside the exported application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformMacOS_property_debug/export_debug_symbols:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/export_debug_symbols** :ref:`🔗<class_EditorExportPlatformMacOS_property_debug/export_debug_symbols>`
+
+If ``true``, a debug symbol bundle (\ ``.dSYM``) is exported alongside the main executable.
+
+\ **Note:** This requires a separate debug symbols bundle. This bundle must have the same name as the export template archive and an additional ``.dSYM`` extension, and must be present in the same directory as the export template binary, or in a ZIP archive with a ``.dSYM.zip`` extension.
+
+\ **Note:** If debug symbols are embedded in the export template binary, they will remain embedded in the exported project binary regardless of this option, so it should be disabled in that case.
 
 .. rst-class:: classref-item-separator
 
