@@ -287,6 +287,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_ime_position<class_Window_method_set_ime_position>`\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_ime_rect<class_Window_method_set_ime_rect>`\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ )                                                                                                                                                         |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_layout_direction<class_Window_method_set_layout_direction>`\ (\ direction\: :ref:`LayoutDirection<enum_Window_LayoutDirection>`\ )                                                                                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_taskbar_progress_state<class_Window_method_set_taskbar_progress_state>`\ (\ state\: :ref:`ProgressState<enum_DisplayServer_ProgressState>`\ )                                                                                                 |
@@ -726,7 +728,7 @@ All mouse events are passed to the underlying window of the same application.
 
 \ **Note:** This flag has no effect in embedded windows.
 
-\ **Note:** This flag is implemented on Linux (X11), macOS, Windows.
+\ **Note:** This flag is implemented on Linux (X11/Wayland), macOS, Windows.
 
 .. _class_Window_constant_FLAG_SHARP_CORNERS:
 
@@ -1583,7 +1585,7 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 \ **Note:** On Windows, the portion of a window that lies outside the region is not drawn, while on Linux (X11) and macOS it is.
 
-\ **Note:** This property is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This property is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 
 
@@ -2910,6 +2912,20 @@ If ``active`` is ``true``, enables system's native IME (Input Method Editor).
 |void| **set_ime_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_Window_method_set_ime_position>`
 
 Moves IME to the given position.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_set_ime_rect:
+
+.. rst-class:: classref-method
+
+|void| **set_ime_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_Window_method_set_ime_rect>`
+
+Sets a rectangle which should not be obstructed by the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup.
+
+\ **Note:** This method is implemented only on Windows.
 
 .. rst-class:: classref-item-separator
 

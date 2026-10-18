@@ -69,19 +69,19 @@ Represents the size of the :ref:`MeshAlignment<enum_Line3D_MeshAlignment>` enum.
 
 enum **TilingMode**: :ref:`🔗<enum_Line3D_TilingMode>`
 
-.. _class_Line3D_constant_TILING_MODE_UNIT:
+.. _class_Line3D_constant_TILING_MODE_STRETCH:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`TilingMode<enum_Line3D_TilingMode>` **TILING_MODE_UNIT** = ``0``
+:ref:`TilingMode<enum_Line3D_TilingMode>` **TILING_MODE_STRETCH** = ``0``
 
 Assign UVs from ``0`` to ``1`` across the length of the line.
 
-.. _class_Line3D_constant_TILING_MODE_LENGTH:
+.. _class_Line3D_constant_TILING_MODE_TILE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`TilingMode<enum_Line3D_TilingMode>` **TILING_MODE_LENGTH** = ``1``
+:ref:`TilingMode<enum_Line3D_TilingMode>` **TILING_MODE_TILE** = ``1``
 
 Assign UVs from ``0`` to current length, across the length of the line.
 
