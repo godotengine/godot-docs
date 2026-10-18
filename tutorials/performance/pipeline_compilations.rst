@@ -105,7 +105,7 @@ yourself without deleting your driver cache or testing on a weaker system.
    Pipeline compilations of one of the demo projects.
 
 .. note:: We can see the pipelines compiled during gameplay and
-          verify which steps could possibly cause stuttters. Note
+          verify which steps could possibly cause stutters. Note
           that these values will only increase and never go down,
           as deleted pipelines are not tracked by these monitors
           and pipelines may be erased and recreated during gameplay.
