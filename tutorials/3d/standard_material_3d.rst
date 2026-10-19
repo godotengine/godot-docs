@@ -132,6 +132,9 @@ Comparison between alpha blending (left) and alpha scissor (right) transparency:
 Alpha Antialiasing
 ~~~~~~~~~~~~~~~~~~
 
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
+
 .. note::
 
     This property is only visible when the transparency mode is

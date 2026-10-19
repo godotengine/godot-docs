@@ -59,7 +59,7 @@ shaders are still run for each pixel only once. Therefore, MSAA does not reduce
 transparency aliasing for materials using the **Alpha Scissor** transparency
 mode (1-bit transparency). MSAA is also ineffective on specular aliasing.
 
-To mitigate aliasing on alpha scissor materials,
+To mitigate aliasing on alpha scissor materials in the Forward+ and Mobile renderers,
 :ref:`alpha antialiasing <doc_standard_material_3d_alpha_antialiasing>`
 (also called *alpha to coverage*) can be enabled on specific materials in the
 StandardMaterial3D or ORMMaterial3D properties. Alpha to coverage has a
