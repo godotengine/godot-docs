@@ -3,10 +3,9 @@
 Using NavigationAgents
 ======================
 
-NavigationsAgents are helper nodes that combine functionality
-for pathfinding, path following and agent avoidance for a Node2D/3D inheriting parent node.
-They facilitate common calls to the NavigationServer API on
-behalf of the parent actor node in a more convenient manner for beginners.
+NavigationAgents are nodes that help a Node2D/3D parent find and follow paths and avoid other agents.
+They provide a simpler way to interact with the NavigationServer API than alternatives like
+:ref:`doc_navigation_using_navigationpathqueryobjects`.
 
 2D and 3D version of NavigationAgents are available as
 :ref:`NavigationAgent2D<class_NavigationAgent2D>` and
@@ -14,12 +13,8 @@ behalf of the parent actor node in a more convenient manner for beginners.
 
 New NavigationAgent nodes will automatically join the default navigation map on the :ref:`World2D<class_World2D>`/:ref:`World3D<class_World3D>`.
 
-NavigationsAgent nodes are optional and not a hard requirement to use the navigation system.
-Their entire functionality can be replaced with scripts and direct calls to the NavigationServer API.
-
-.. tip::
-
-    For more advanced uses consider :ref:`doc_navigation_using_navigationpathqueryobjects` over NavigationAgent nodes.
+NavigationAgents provide a simplified way to make common calls to the NavigationServer.
+They are an optional part of the navigation system, since their functionality can be replicated with direct calls to the NavigationServer API.
 
 NavigationAgent Pathfinding
 ---------------------------
@@ -95,18 +90,15 @@ NavigationAgent Avoidance
 
 This section explains how to use the navigation avoidance specific to NavigationAgents.
 
-In order for NavigationAgents to use the avoidance feature the ``avoidance_enabled`` property must be set to ``true``.
+In order for NavigationAgents to avoid collisions, the ``avoidance_enabled`` property must be set to ``true``. This will allow the NavigationAgent to avoid other agents on the same map and to be avoided by them in turn.
 
 .. image:: img/agent_avoidance_enabled.png
 
-The ``velocity_computed`` signal of the NavigationAgent node must be connected to receive the safe velocity calculation result.
+Set the ``velocity`` of the NavigationAgent node as part of ``_physics_process()`` to inform the agent of the intended current velocity of the agent's parent node.
+
+Once per physics frame (if avoidance is enabled on an agent), the agent's ``velocity_computed`` signal will be triggered, outputting the calculated safe speed and direction in which the agent's parent node should move in order to avoid collisions with other avoidance-enabled agents or avoidance obstacles. This signal should be connected to a method that sets the parent's velocity to this output value.
 
 .. image:: img/agent_safevelocity_signal.png
-
-Set the ``velocity`` of the NavigationAgent node in ``_physics_process()`` to update the agent with the current velocity of the agent's parent node.
-
-While avoidance is enabled on the agent the ``safe_velocity`` vector will be received with the velocity_computed signal every physics frame.
-This velocity vector should be used to move the NavigationAgent's parent node in order to avoidance collision with other avoidance using agents or avoidance obstacles.
 
 .. note::
 
@@ -114,8 +106,8 @@ This velocity vector should be used to move the NavigationAgent's parent node in
 
 .. note::
 
-    The NavigationAgent **must** be supplied with a ``target_position`` attribute,
-    even if you are only using the agent for avoidance. Otherwise, the ``safe_velocity``
+    The NavigationAgent **must** also be supplied with a ``target_position`` attribute,
+    even if you are only using the agent for collision avoidance. Otherwise, the ``safe_velocity``
     received from the ``velocity_computed`` signal will always be the zero vector.
 
 The following NavigationAgent properties are relevant for avoidance:
@@ -144,8 +136,8 @@ NavigationObstacles can be used to add some environment constrains to the avoida
 
 .. note::
 
-    RVO avoidance makes implicit assumptions about natural agent behavior. E.g. that agents move on reasonable passing sides that can be assigned when they encounter each other.
-    This means that very clinical avoidance test scenarios will commonly fail. E.g. agents moved directly against each other with perfect opposite velocities will fail because the agents can not get their passing sides assigned.
+    Reciprocal Velocity Obstacles (RVO) avoidance relies on some assumptions about natural agent behavior that may mean that simplified test scenarios will fail.
+    For example, agents moving directly towards each other with exactly opposite velocities will not be able to "deflect" to one side or another.
 
 Using the NavigationAgent ``avoidance_enabled`` property is the preferred option
 to toggle avoidance. The following code snippets can be used to
