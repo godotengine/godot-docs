@@ -18,4 +18,5 @@ Rendering
    jitter_stutter
    compositor
    drawable_textures
+   texture_streaming
    hdr_output
