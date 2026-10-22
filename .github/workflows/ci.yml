@@ -16,6 +16,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Checkout the engine repository
+        uses: actions/checkout@v7
+        with:
+          repository: godotengine/godot
+          path: ./.engine-src
+          ref: master
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            doc/class.xsd
+            doc/classes/*.xml
+            doc/tools/make_rst.py
+            misc/utility/color.py
+            modules/*/doc_classes/*.xml
+            platform/*/doc_classes/*.xml
+            version.py
+
       - name: Style checks via prek
         uses: j178/prek-action@v3.0.1
 
@@ -52,4 +68,4 @@ jobs:
       - name: Sphinx build
         run: |
           source .venv/bin/activate
-          make SPHINXOPTS='--color -j 4 -W' dummy
+          make SPHINXOPTS='--color -j 4 -W -D repo=./.engine-src' dummy
