@@ -54,8 +54,8 @@ Splitting the script or shader editor to its own window
 
 Since Godot 4.1, you can split the script or shader editor to its own window.
 
-To split the script editor to its own window, click the corresponding button in
-the top-right corner of the script editor:
+To split the script editor to its own window, right-click the :ui:`Script` tab in
+the top-center of the editor and then click :button:`Make Floating` in the popup menu:
 
 .. figure:: img/editor_ui_split_script_editor.webp
    :align: center
@@ -63,8 +63,8 @@ the top-right corner of the script editor:
 
    Splitting the script editor to its own window
 
-To split the shader editor to its own window, click the corresponding button in
-the top-right corner of the script editor:
+To split the shader editor to its own window, right-click the :ui:`Shader Editor`
+tab and then click :button:`Make Floating` in the popup menu:
 
 .. figure:: img/editor_ui_split_shader_editor.webp
    :align: center
