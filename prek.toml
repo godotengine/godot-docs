@@ -1,0 +1,30 @@
+# Configuration file for `prek`, a git hook framework written in Rust.
+# See https://prek.j178.dev for more information.
+#:schema https://www.schemastore.org/prek.json
+
+exclude.glob = "classes/**"
+
+[[repos]]
+repo = "builtin"
+hooks = [
+	{ id = "check-case-conflict" },
+	{ id = "check-executables-have-shebangs" },
+	{ id = "check-illegal-windows-names" },
+	{ id = "check-merge-conflict" },
+	{
+		id = "check-shebang-scripts-are-executable",
+		exclude.glob = "**/{SConstruct,SCsub}",  # SCons files use shebangs for syntax highlighting only.
+	},
+	{ id = "check-toml" },
+	{ id = "check-yaml" },
+	{ id = "end-of-file-fixer" },
+	{ id = "file-contents-sorter", args = ["--unique"], files.glob = ["_tools/codespell-dict.txt"] },
+	{ id = "fix-byte-order-marker" },
+	{ id = "mixed-line-ending", args = ["--fix=lf"] },
+	{ id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "https://github.com/codespell-project/codespell"
+rev = "v2.4.3"
+hooks = [{ id = "codespell", additional_dependencies = ["tomli; python_version < '3.11'"] }]

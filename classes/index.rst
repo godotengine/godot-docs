@@ -1256,4 +1256,3 @@ Variant types
     class_vector3i
     class_vector4
     class_vector4i
-

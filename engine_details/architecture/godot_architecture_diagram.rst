@@ -51,4 +51,3 @@ Main
 The Main component is responsible for initializing and managing the engine lifecycle, including startup, shutdown, and the main loop. See :ref:`class_MainLoop` for more details.
 
 Corresponding source code: `/main/* <https://github.com/godotengine/godot/tree/master/main>`__
-
