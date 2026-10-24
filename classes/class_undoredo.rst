@@ -475,7 +475,7 @@ Returns how many elements are in the history.
 
 Gets the version. Every time a new action is committed, the **UndoRedo**'s version number is increased automatically.
 
-This is useful mostly to check if something changed from a saved version.
+This is useful mostly to check if something changed from a saved version. The initial version is ``1``.
 
 .. rst-class:: classref-item-separator
 

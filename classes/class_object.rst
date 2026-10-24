@@ -1013,9 +1013,9 @@ If this method is called during :ref:`NOTIFICATION_PREDELETE<class_Object_consta
 
 :ref:`Error<enum_@GlobalScope_Error>` **connect**\ (\ signal\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Object_method_connect>`
 
-Connects a ``signal`` by name to a ``callable``. Optional ``flags`` can be also added to configure the connection's behavior (see :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants).
+Connects a ``signal`` by name to a ``callable``. Optional ``flags`` can be also added to configure the connection's behavior (see :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants). Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the signal was successfully connected, or :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if the :ref:`Callable<class_Callable>` is null, invalid, or if the signal doesn't exist on the object.
 
-A signal can only be connected once to the same :ref:`Callable<class_Callable>`. If the signal is already connected, this method returns :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` and generates an error, unless the signal is connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To prevent this, use :ref:`is_connected()<class_Object_method_is_connected>` first to check for existing connections.
+A signal can only be connected once to the same :ref:`Callable<class_Callable>`. If the signal is already connected, this method returns :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` and prints an error, unless the signal is connected with :ref:`CONNECT_REFERENCE_COUNTED<class_Object_constant_CONNECT_REFERENCE_COUNTED>`. To prevent this, use :ref:`is_connected()<class_Object_method_is_connected>` first to check for existing connections.
 
 \ **Note:** If the ``callable``'s object is freed, the connection will be lost.
 
@@ -1033,7 +1033,7 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
 |void| **disconnect**\ (\ signal\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_Object_method_disconnect>`
 
-Disconnects a ``signal`` by name from a given ``callable``. If the connection does not exist, generates an error. Use :ref:`is_connected()<class_Object_method_is_connected>` to make sure that the connection exists.
+Disconnects a ``signal`` by name from a given ``callable``. If the connection does not exist, prints an error. Use :ref:`is_connected()<class_Object_method_is_connected>` to make sure that the connection exists.
 
 .. rst-class:: classref-item-separator
 
