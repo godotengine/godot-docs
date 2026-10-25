@@ -54,9 +54,9 @@ is because the node needs a ParticleProcessMaterial to function.
 ParticleProcessMaterial
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To add a process material to your particles node, go to ``Process Material`` in
-your inspector panel. Click on the box next to ``Material``, and from the dropdown
-menu select ``New ParticleProcessMaterial``.
+To add a process material to your particles node, go to **Process Material** in
+your inspector panel. Click on the box next to **Material**, and from the dropdown
+menu select **New ParticleProcessMaterial**.
 
 .. image:: img/particles_material.webp
 
@@ -238,7 +238,7 @@ simulated every rendered frame.
 Fract Delta
 ~~~~~~~~~~~
 
-Setting Fract Delta to ``true`` results in fractional delta calculation,
+Setting **Fract Delta** to ``true`` results in fractional delta calculation,
 which has a smoother particles display effect.
 This increased smoothness stems from higher accuracy.
 The difference is more noticeable in systems with high randomness or fast-moving particles.
@@ -258,13 +258,13 @@ Visibility Rect
 
 The visibility rectangle controls the visibility of the particles on screen. If this rectangle is outside of the viewport, the engine will not render the particles on screen.
 
-The rectangle's ``W`` and ``H`` properties respectively control its Width and its Height.
-The ``X`` and ``Y`` properties control the position of the upper-left
+The rectangle's **W** and **H** properties respectively control its Width and its Height.
+The **X** and **Y** properties control the position of the upper-left
 corner of the rectangle, relative to the particle emitter.
 
-You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the GPUParticles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the GPUParticles2D node and Click :menu:`Particles > Generate Visibility Rect`. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
 
-You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
+You can control the emit duration with the **Generation Time (sec)** option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the **Preprocess** duration on the Particles2D node.
 
 Local Coords
 ~~~~~~~~~~~~
@@ -283,9 +283,9 @@ node is moved, already emitted particles are also affected:
 Draw Order
 ~~~~~~~~~~
 
-This controls the order in which individual particles are drawn. ``Index``
+This controls the order in which individual particles are drawn. **Index**
 means particles are drawn according to their emission order (default).
-``Lifetime`` means they are drawn in order of remaining lifetime.
+**Lifetime** means they are drawn in order of remaining lifetime.
 
 Particle Process Material Settings
 ----------------------------------

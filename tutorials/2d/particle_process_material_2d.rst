@@ -13,10 +13,10 @@ Process material properties
    Min, max, and curve properties
 
 The properties in this material control how particles behave and change over their lifetime.
-A lot of them have ``Min``, ``Max``, and ``Curve`` values that allow you to fine-tune
+A lot of them have **Min**, **Max**, and **Curve** values that allow you to fine-tune
 their behavior. The relationship between these values is this: When a particle is spawned,
-the property is set with a random value between ``Min`` and ``Max``. If ``Min`` and ``Max`` are
-the same, the value will always be the same for every particle. If the ``Curve`` is also set,
+the property is set with a random value between **Min** and **Max**. If **Min** and **Max** are
+the same, the value will always be the same for every particle. If the **Curve** is also set,
 the value of the property will be multiplied by the value of the curve at the current point
 in a particle's lifetime. Use the curve to change a property over the particle lifetime. Very
 complex behavior can be expressed this way.
@@ -28,10 +28,10 @@ complex behavior can be expressed this way.
 Lifetime Randomness
 ~~~~~~~~~~~~~~~~~~~
 
-The ``Lifetime Randomness`` property controls how much randomness to apply to each particle's
+The **Lifetime Randomness** property controls how much randomness to apply to each particle's
 lifetime. A value of ``0`` means there is no randomness at all and all particles live for
 the same amount of time, set by the :ref:`Lifetime <doc_3d_particles_properties_time>` property. A value of ``1`` means
-that a particle's lifetime is completely random within the range of [0.0, ``Lifetime``].
+that a particle's lifetime is completely random within the range of [0.0, **Lifetime**].
 
 Particle Flags
 --------------
@@ -69,8 +69,8 @@ Spread
 ^^^^^^
 
 This parameter is the angle in degrees which will be randomly added in
-either direction to the base ``Direction``. A spread of ``180`` will emit
-in all directions (+/- 180). For spread to do anything the "Initial Velocity"
+either direction to the base **Direction**. A spread of ``180`` will emit
+in all directions (+/- 180). For spread to do anything the **Initial Velocity**
 parameter must be greater than 0.
 
 .. image:: img/paranim3.gif
@@ -168,9 +168,9 @@ Used to change the color of the particles being emitted.
 Hue Variation
 ~~~~~~~~~~~~~
 
-The ``Variation`` value sets the initial hue variation applied to each
-particle. The ``Variation Random`` value controls the hue variation
-randomness ratio.
+The **Variation** value sets the range of the initial hue variation applied to each
+particle. The **Variation Curve** controls the hue variation randomness
+over the particle's lifetime.
 
 .. _doc_particle_systems_2d_animation:
 
@@ -183,9 +183,10 @@ Animation
     on the GPUParticles2D or CPUParticles2D node has been
     :ref:`configured accordingly <doc_particle_systems_2d_using_flipbook>`.
 
-To set up the particle flipbook for linear playback, set the **Speed Min** and **Speed Max** values to 1:
+To set up the particle flipbook for linear playback, set the **Speed** property's
+minimum and maximum to 1:
 
-.. figure:: img/particles_flipbook_configure_animation_speed.webp
+.. figure:: img/particles_flipbook_configure_animation.webp
    :align: center
    :alt: Setting up particle animation for playback during the particle's lifetime
 
@@ -211,14 +212,8 @@ this:
       Animation\ FPS = \frac{Number\ of\ images}{Lifetime}
 
 If you wish the particle flipbook to be used as a source of random particle
-textures for every particle, keep the speed values at 0 and set **Offset Max**
-to 1 instead:
-
-.. figure:: img/particles_flipbook_configure_animation_offset.webp
-   :align: center
-   :alt: Setting up particle animation for random offset on emission
-
-   Setting up particle animation for random offset on emission
+textures for every particle, keep **Speed** at 0 and set the maximum of the
+**Offset** property to 1 instead (see the screenshot above):
 
 Note that the GPUParticles2D node's **Fixed FPS** also affects animation
 playback. For smooth animation playback, it's recommended to set it to 0 so that
@@ -234,56 +229,70 @@ the area and direction in which particles are emitted.
 These can be generated from textures in your project.
 
 Ensure that a ParticleProcessMaterial is set, and the GPUParticles2D node is selected.
-A "Particles" menu should appear in the Toolbar:
+A **Particles** menu should appear in the Toolbar:
 
 .. image:: img/emission_shapes1.webp
 
-Open it and select "Load Emission Mask":
+Open it and select **Load Emission Mask**:
 
 .. image:: img/emission_shapes2.webp
 
-Then select which texture you want to use as your mask:
+Then select which texture you want to use as your mask.
+A dialog box with several settings will appear:
 
-.. image:: img/emission_shapes3.webp
-
-A dialog box with several settings will appear.
+.. image:: img/emission_mask_dialog.webp
 
 Emission Mask
 ~~~~~~~~~~~~~
 
-Three types of emission masks can be generated from a texture:
+Two types of emission masks can be generated from a texture (**Mask Mode**):
 
--  Solid Pixels: Particles will spawn from any area of the texture,
+- **Solid Pixels**: Particles will spawn from any area of the texture,
    excluding transparent areas.
 
 .. image:: img/emission_mask_solid.gif
 
--  Border Pixels: Particles will spawn from the outer edges of the texture.
+- **Border Pixels**: Particles will spawn from the outer edges of the texture.
 
 .. image:: img/emission_mask_border.gif
 
--  Directed Border Pixels: Similar to Border Pixels, but adds extra
-   information to the mask to give particles the ability to emit away
-   from the borders. Note that an ``Initial Velocity`` will need to
-   be set in order to utilize this.
+Direction Mode
+~~~~~~~~~~~~~~
+
+The **Direction Mode** option determines whether particles are given an emission
+direction when they spawn from the mask:
+
+- **None**: Particles are not given any emission direction (default).
+
+- **Generate**: The emission direction is generated from the mask, making
+   particles emit away from the borders. This option is only available when
+   **Mask Mode** is **Border Pixels**. Note that an **Initial Velocity** will
+   need to be set in order to utilize this.
 
 .. image:: img/emission_mask_directed_border.gif
+
+- **Texture**: The emission direction is taken from a separate **Direction
+   Texture** whose pixels define the direction particles will emit towards when
+   spawning from the corresponding mask pixel. The direction texture must have
+   the same size as the mask texture.
 
 Emission Colors
 ~~~~~~~~~~~~~~~
 
-``Capture from Pixel`` will cause the particles to inherit the color of the mask at their spawn points.
+The **Copy Color from Mask Texture** option will cause the particles to inherit
+the color of the mask at their spawn points.
 
-Once you click "OK", the mask will be generated and set to the
-ParticleProcessMaterial, under ``Spawn`` and  then ``Position``
+Once you click **OK**, the mask will be generated and set to the
+ParticleProcessMaterial, under **Spawn** and then **Position**:
 
 .. image:: img/emission_shapes4.webp
 
 All of the values within this section have been automatically generated by the
-"Load Emission Mask" menu, so they should generally be left alone.
+**Load Emission Mask** dialog, so they should generally be left alone.
 
-.. note:: An image should not be added to ``Point Texture`` or ``Color Texture`` directly.
-          The "Load Emission Mask" menu should always be used instead.
+.. note:: An image should not be added to **Emission Point Texture** or
+          **Emission Color Texture** directly.
+          The **Load Emission Mask** dialog should always be used instead.
 
 Customizing the process material
 --------------------------------
