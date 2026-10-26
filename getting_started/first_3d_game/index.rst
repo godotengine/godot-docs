@@ -48,6 +48,10 @@ We prepared some game assets so we can jump straight to the code. You can
 download them here: `Squash the Creeps assets
 <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/3d_squash_the_creeps_starter.zip>`__.
 
+.. note::
+
+   You will need to have a `Blender <https://blender.com>`_ executable available to process the ```.blend``` files.
+
 We will first work on a basic prototype for the player's movement. We will then
 add the monsters that we'll spawn randomly around the screen. After that, we'll
 implement the jump and squashing mechanic before refining the game with some
