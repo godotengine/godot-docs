@@ -42,7 +42,7 @@ Here is a complete class example based on these guidelines:
 	    EXIT,
     }
 
-    const DEFAULT_VALUE: Int = 0
+    const DEFAULT_VALUE: int = 0
 
     @export var initial_state: Node
     var is_active = true:
