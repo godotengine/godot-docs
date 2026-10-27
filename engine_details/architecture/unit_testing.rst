@@ -31,6 +31,11 @@ tests are not compiled as part of the engine by default:
 
 Once the build is done, run the tests with a ``--test`` command-line option:
 
+.. note::
+    
+    Run the following commands from the root of the Godot source repository. 
+    Tests may rely on on files located in the source tree, Older Godot versions may fail when launched from ad different working directory.
+
 .. code-block:: shell
 
     ./bin/<godot_binary> --test
