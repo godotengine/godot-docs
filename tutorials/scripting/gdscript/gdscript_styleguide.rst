@@ -37,6 +37,13 @@ Here is a complete class example based on these guidelines:
 
     signal state_changed(previous, new)
 
+    enum Transition {
+        ENTER,
+        EXIT,
+    }
+
+    const DEFAULT_VALUE = 0
+
     @export var initial_state: Node
     var is_active = true:
         set = set_is_active
@@ -98,7 +105,7 @@ Here is a complete class example based on these guidelines:
 
 
     class State:
-        var foo = 0
+        var foo = DEFAULT_VALUE
 
         func _init():
             print("Hello!")
