@@ -271,5 +271,3 @@ below:
      - Returns the transform for this animatable node.
        This is a local transform that can be directly
        applied.
-
-

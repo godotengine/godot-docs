@@ -318,4 +318,3 @@ smaller strokes.
     {
         _mySize = (int)value;
     }
-

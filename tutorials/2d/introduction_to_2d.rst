@@ -308,5 +308,3 @@ Displaying 3D nodes in 2D
 It is possible to display 3D nodes in a 2D scene by using a :ref:`SubViewport<class_SubViewport>`. You can see this in the demo `3D in 2D Viewport <https://godotengine.org/asset-library/asset/2804>`__.
 
 .. image:: img/3d_in_2d_demo_editor.webp
-
-
