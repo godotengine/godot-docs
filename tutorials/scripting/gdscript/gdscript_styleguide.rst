@@ -38,8 +38,8 @@ Here is a complete class example based on these guidelines:
     signal state_changed(previous, new)
 
     enum Transition {
-	    ENTER,
-	    EXIT,
+        ENTER,
+        EXIT,
     }
 
     const DEFAULT_VALUE = 0
