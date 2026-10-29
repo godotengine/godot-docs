@@ -146,13 +146,17 @@ This will just look up the text in the translations and convert it if found:
 .. tabs::
  .. code-tab:: gdscript
 
+    # Using a static key
     level.text = tr("LEVEL_5_NAME")
+    # Using a dynamic key
     status.text = tr("GAME_STATUS_%d" % status_index)
 
  .. code-tab:: csharp
 
+    // Using a static key
     level.Text = Tr("LEVEL_5_NAME");
-    status.Text = string.format(Tr("GAME_STATUS_{0}"), statusIndex);
+    // Using a dynamic key
+    status.Text = Tr($"GAME_STATUS_{statusIndex}";
 
 .. note::
 
