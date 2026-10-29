@@ -195,8 +195,8 @@ allow translators to choose the *order* in which placeholders appear:
     // The placeholder's locations and order can be changed.
     message.Text = string.Format(Tr("{0} picked up the {1}"), "Ogre", "Sword");
     
-    // Placeholders must be ASCII numbers
-    // The number determines the index of the replacement that string.Format() will use for that placeholder
+    // Placeholders must be ASCII numbers.
+    // The number determines the index of the replacement that string.Format() will use for that placeholder.
     message.Text = string.Format(Tr("{1} was picked up by the {0}"), "Ogre", "Sword");
 
 .. _doc_internationalizing_games_translation_contexts:
