@@ -86,7 +86,7 @@ GDExtension
 
 The default export templates do not include GDExtension support for
 performance and compatibility reasons. See the
-:ref:`export page <doc_javascript_export_options>` for more info.
+:ref:`web export options <doc_javascript_export_options>` for more info.
 
 You can build the export templates using the option ``dlink_enabled=yes``
 to enable GDExtension support:
@@ -97,7 +97,7 @@ to enable GDExtension support:
     scons platform=web dlink_enabled=yes target=template_debug
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
-Its name will have ``_dlink`` added.
+Its name will have ``.dlink`` added.
 
 Finally, rename the zip archives to ``web_dlink_release.zip`` and
 ``web_dlink_release.zip`` for the release template:
@@ -122,7 +122,7 @@ Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will be ``godot.web.editor.wasm32.zip``. You can upload the
 zip content to your web server and visit it with your browser to use the editor.
 
-Refer to the :ref:`export page <doc_javascript_export_options>` for the web
+Refer to the :ref:`web export options <doc_javascript_export_options>` for the web
 server requirements.
 
 .. tip::
