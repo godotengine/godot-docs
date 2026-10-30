@@ -81,7 +81,7 @@ Obstacles are not involved in the source geometry parsing so adding them just be
 
  .. code-tab:: csharp 2D C#
 
-    Vector2[] obstacleOutline
+    Vector2[] obstacleOutline =
     [
         new Vector2(-50, -50),
         new Vector2(50, -50),
