@@ -216,6 +216,8 @@ binary name.
 Debugging symbols
 -----------------
 
+.. TODO: Update this.
+
 By default, ``debug_symbols=no`` is used, which means **no** debugging symbols
 are included in compiled binaries. Use ``debug_symbols=yes`` to include debug
 symbols within compiled binaries, which allows debuggers and profilers to work
@@ -227,16 +229,18 @@ than the binaries themselves). As a result, official binaries currently do not
 include debugging symbols. This means you need to compile Godot yourself to have
 access to debugging symbols.
 
-When using ``debug_symbols=yes``, you can also use
-``separate_debug_symbols=yes`` to put debug information in a separate file with
-a ``.debug`` suffix. This allows distributing both files independently. Note
-that on Windows, when compiling with MSVC, debugging information is *always*
+When using ``debug_symbols=yes``, you can also use ``separate_debug_symbols=yes``
+to put debug information in a separate file with a ``.debugsymbols`` suffix.
+This allows distributing both files independently. Note that on Windows,
+when compiling with MSVC, debugging information is *always*
 written to a separate ``.pdb`` file regardless of ``separate_debug_symbols``.
 
 .. tip::
 
     Use the ``strip <path/to/binary>`` command to remove debugging symbols from
-    a binary you've already compiled.
+    a binary you've already compiled. This is not needed if using ``separate_debug_symbols``.
+
+.. TODO: Add details here about crash handler lookup.
 
 Optimization level
 ------------------
