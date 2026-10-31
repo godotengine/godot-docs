@@ -153,7 +153,7 @@ This will just look up the text in the translations and convert it if found:
 
  .. code-tab:: csharp
 
-    // Using a static key
+    // Using a static key.
     level.Text = Tr("LEVEL_5_NAME");
     // Using a dynamic key.
     status.Text = Tr($"GAME_STATUS_{statusIndex}");
