@@ -81,6 +81,20 @@ various reasons (e.g. translation quality or player preference).
     else:
        TranslationServer.set_locale(language)
 
+ .. code-tab:: csharp
+
+    string language = "automatic";
+    // Load here language from the user settings file
+    if (language == "automatic")
+    {
+        string preferredLanguage = OS.GetLocaleLanguage();
+        TranslationServer.SetLocale(preferredLanguage);
+    }
+    else
+    {
+        TranslationServer.SetLocale(language);    
+    }
+
 Locale vs. language
 -------------------
 
@@ -132,12 +146,16 @@ This will just look up the text in the translations and convert it if found:
 .. tabs::
  .. code-tab:: gdscript
 
+    # Using a static key.
     level.text = tr("LEVEL_5_NAME")
+    # Using a dynamic key.
     status.text = tr("GAME_STATUS_%d" % status_index)
 
  .. code-tab:: csharp
 
+    // Using a static key.
     level.Text = Tr("LEVEL_5_NAME");
+    // Using a dynamic key.
     status.Text = Tr($"GAME_STATUS_{statusIndex}");
 
 .. note::
@@ -159,7 +177,7 @@ Placeholders
 ~~~~~~~~~~~~
 
 To feature placeholders in your translated strings, use
-:ref:`doc_gdscript_printf` or the equivalent feature in C#. This lets
+:ref:`doc_gdscript_printf` or ``string.Format()`` in C#. This lets
 translators move the location of the placeholder in the string freely, which
 allows translations to sound more natural. Named placeholders with the
 ``String.format()`` function should be used whenever possible, as they also
@@ -175,6 +193,15 @@ allow translators to choose the *order* in which placeholders appear:
     # The placeholder's locations and order can be changed.
     # Additionally, this form gives more context for translators to work with.
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
+
+ .. code-tabs:: csharp
+
+    // The placeholder's locations and order can be changed.
+    message.Text = string.Format(Tr("{0} picked up the {1}"), "Ogre", "Sword");
+    
+    // Placeholders must be ASCII numbers.
+    // The number determines the index of the replacement that string.Format() will use for that placeholder.
+    message.Text = string.Format(Tr("{1} was picked up by the {0}"), "Ogre", "Sword");
 
 .. _doc_internationalizing_games_translation_contexts:
 
