@@ -322,7 +322,7 @@ Emitted when this **GraphEdit** captures a ``ui_cut`` action (:kbd:`Ctrl + X` by
 
 **delete_nodes_request**\ (\ nodes\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\]\ ) :ref:`🔗<class_GraphEdit_signal_delete_nodes_request>`
 
-Emitted when this **GraphEdit** captures a ``ui_graph_delete`` action (:kbd:`Delete` by default).
+Emitted when this **GraphEdit** captures a ``ui_graph_delete`` action (:kbd:`Delete` by default, or :kbd:`Backspace`/:kbd:`Delete` on macOS).
 
 \ ``nodes`` is an array of node names that should be removed. These usually include all selected nodes.
 

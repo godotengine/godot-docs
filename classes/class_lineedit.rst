@@ -1028,7 +1028,7 @@ If ``true``, the **LineEdit** doesn't display decoration.
 - |void| **set_icon_expand_mode**\ (\ value\: :ref:`ExpandMode<enum_LineEdit_ExpandMode>`\ )
 - :ref:`ExpandMode<enum_LineEdit_ExpandMode>` **get_icon_expand_mode**\ (\ )
 
-Define the scaling behavior of the :ref:`right_icon<class_LineEdit_property_right_icon>`.
+Define the scaling behavior of the :ref:`right_icon<class_LineEdit_property_right_icon>` and the :ref:`clear<class_LineEdit_theme_icon_clear>` button.
 
 .. rst-class:: classref-item-separator
 

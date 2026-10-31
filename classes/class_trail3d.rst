@@ -10,7 +10,7 @@
 Trail3D
 =======
 
-**Inherits:** :ref:`Line3D<class_Line3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`LineBase3D<class_LineBase3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node to draw lines behind moving objects.
 
@@ -31,37 +31,37 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                       | :ref:`color<class_Trail3D_property_color>`                           | ``Color(1, 1, 1, 1)`` |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Gradient<class_Gradient>`                 | :ref:`color_gradient<class_Trail3D_property_color_gradient>`         |                       |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`emitting<class_Trail3D_property_emitting>`                     | ``true``              |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`lifetime<class_Trail3D_property_lifetime>`                     | ``0.2``               |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`LimitMode<enum_Trail3D_LimitMode>`        | :ref:`limit_mode<class_Trail3D_property_limit_mode>`                 | ``0``                 |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`ShaderMaterial<class_ShaderMaterial>`     | :ref:`material<class_Trail3D_property_material>`                     |                       |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`MaterialMode<enum_Line3D_MaterialMode>`   | :ref:`material_mode<class_Trail3D_property_material_mode>`           | ``0``                 |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`max_length<class_Trail3D_property_max_length>`                 |                       |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`MeshAlignment<enum_Line3D_MeshAlignment>` | :ref:`mesh_alignment<class_Trail3D_property_mesh_alignment>`         | ``1``                 |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`min_section_length<class_Trail3D_property_min_section_length>` | ``0.2``               |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`pin_uv<class_Trail3D_property_pin_uv>`                         | ``false``             |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`TilingMode<enum_Line3D_TilingMode>`       | :ref:`tiling_mode<class_Trail3D_property_tiling_mode>`               | ``1``                 |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`tiling_multiplier<class_Trail3D_property_tiling_multiplier>`   | ``1.0``               |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`width<class_Trail3D_property_width>`                           | ``0.3``               |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Curve<class_Curve>`                       | :ref:`width_curve<class_Trail3D_property_width_curve>`               |                       |
-   +-------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                           | :ref:`color<class_Trail3D_property_color>`                           | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`Gradient<class_Gradient>`                     | :ref:`color_gradient<class_Trail3D_property_color_gradient>`         |                       |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`emitting<class_Trail3D_property_emitting>`                     | ``true``              |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                           | :ref:`lifetime<class_Trail3D_property_lifetime>`                     | ``0.2``               |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`LimitMode<enum_Trail3D_LimitMode>`            | :ref:`limit_mode<class_Trail3D_property_limit_mode>`                 | ``0``                 |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`ShaderMaterial<class_ShaderMaterial>`         | :ref:`material<class_Trail3D_property_material>`                     |                       |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`MaterialMode<enum_LineBase3D_MaterialMode>`   | :ref:`material_mode<class_Trail3D_property_material_mode>`           | ``0``                 |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                           | :ref:`max_length<class_Trail3D_property_max_length>`                 |                       |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`MeshAlignment<enum_LineBase3D_MeshAlignment>` | :ref:`mesh_alignment<class_Trail3D_property_mesh_alignment>`         | ``1``                 |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                           | :ref:`min_section_length<class_Trail3D_property_min_section_length>` | ``0.2``               |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`pin_uv<class_Trail3D_property_pin_uv>`                         | ``false``             |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`TilingMode<enum_LineBase3D_TilingMode>`       | :ref:`tiling_mode<class_Trail3D_property_tiling_mode>`               | ``1``                 |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                           | :ref:`tiling_multiplier<class_Trail3D_property_tiling_multiplier>`   | ``1.0``               |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                           | :ref:`width<class_Trail3D_property_width>`                           | ``0.3``               |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
+   | :ref:`Curve<class_Curve>`                           | :ref:`width_curve<class_Trail3D_property_width_curve>`               |                       |
+   +-----------------------------------------------------+----------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -231,7 +231,7 @@ Whether to limit the trail by lifetime or length.
 - |void| **set_material**\ (\ value\: :ref:`ShaderMaterial<class_ShaderMaterial>`\ )
 - :ref:`ShaderMaterial<class_ShaderMaterial>` **get_material**\ (\ )
 
-The material to assign to the trail mesh when :ref:`material_mode<class_Trail3D_property_material_mode>` is :ref:`Line3D.MATERIAL_MODE_CUSTOM<class_Line3D_constant_MATERIAL_MODE_CUSTOM>`.
+The material to assign to the trail mesh when :ref:`material_mode<class_Trail3D_property_material_mode>` is :ref:`LineBase3D.MATERIAL_MODE_CUSTOM<class_LineBase3D_constant_MATERIAL_MODE_CUSTOM>`.
 
 \ **Tip:** To preserve billboarding, use the following shader as a base:
 
@@ -270,12 +270,12 @@ The material to assign to the trail mesh when :ref:`material_mode<class_Trail3D_
 
 .. rst-class:: classref-property
 
-:ref:`MaterialMode<enum_Line3D_MaterialMode>` **material_mode** = ``0`` :ref:`🔗<class_Trail3D_property_material_mode>`
+:ref:`MaterialMode<enum_LineBase3D_MaterialMode>` **material_mode** = ``0`` :ref:`🔗<class_Trail3D_property_material_mode>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_material_mode**\ (\ value\: :ref:`MaterialMode<enum_Line3D_MaterialMode>`\ )
-- :ref:`MaterialMode<enum_Line3D_MaterialMode>` **get_material_mode**\ (\ )
+- |void| **set_material_mode**\ (\ value\: :ref:`MaterialMode<enum_LineBase3D_MaterialMode>`\ )
+- :ref:`MaterialMode<enum_LineBase3D_MaterialMode>` **get_material_mode**\ (\ )
 
 The material mode for the trail.
 
@@ -304,14 +304,14 @@ The maximum length of the trail when :ref:`limit_mode<class_Trail3D_property_lim
 
 .. rst-class:: classref-property
 
-:ref:`MeshAlignment<enum_Line3D_MeshAlignment>` **mesh_alignment** = ``1`` :ref:`🔗<class_Trail3D_property_mesh_alignment>`
+:ref:`MeshAlignment<enum_LineBase3D_MeshAlignment>` **mesh_alignment** = ``1`` :ref:`🔗<class_Trail3D_property_mesh_alignment>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_mesh_alignment**\ (\ value\: :ref:`MeshAlignment<enum_Line3D_MeshAlignment>`\ )
-- :ref:`MeshAlignment<enum_Line3D_MeshAlignment>` **get_mesh_alignment**\ (\ )
+- |void| **set_mesh_alignment**\ (\ value\: :ref:`MeshAlignment<enum_LineBase3D_MeshAlignment>`\ )
+- :ref:`MeshAlignment<enum_LineBase3D_MeshAlignment>` **get_mesh_alignment**\ (\ )
 
-Alignment of the trail. Possible options are :ref:`Line3D.MESH_ALIGNMENT_LOCAL<class_Line3D_constant_MESH_ALIGNMENT_LOCAL>` for a 3D line, and :ref:`Line3D.MESH_ALIGNMENT_BILLBOARD<class_Line3D_constant_MESH_ALIGNMENT_BILLBOARD>` for a billboarded line.
+Alignment of the trail. Possible options are :ref:`LineBase3D.MESH_ALIGNMENT_LOCAL<class_LineBase3D_constant_MESH_ALIGNMENT_LOCAL>` for a 3D line, and :ref:`LineBase3D.MESH_ALIGNMENT_BILLBOARD<class_LineBase3D_constant_MESH_ALIGNMENT_BILLBOARD>` for a billboarded line.
 
 .. rst-class:: classref-item-separator
 
@@ -355,12 +355,12 @@ If ``true``, pins the UVs to their positions in space.
 
 .. rst-class:: classref-property
 
-:ref:`TilingMode<enum_Line3D_TilingMode>` **tiling_mode** = ``1`` :ref:`🔗<class_Trail3D_property_tiling_mode>`
+:ref:`TilingMode<enum_LineBase3D_TilingMode>` **tiling_mode** = ``1`` :ref:`🔗<class_Trail3D_property_tiling_mode>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_tiling_mode**\ (\ value\: :ref:`TilingMode<enum_Line3D_TilingMode>`\ )
-- :ref:`TilingMode<enum_Line3D_TilingMode>` **get_tiling_mode**\ (\ )
+- |void| **set_tiling_mode**\ (\ value\: :ref:`TilingMode<enum_LineBase3D_TilingMode>`\ )
+- :ref:`TilingMode<enum_LineBase3D_TilingMode>` **get_tiling_mode**\ (\ )
 
 How to tile the UVs across the length of the trail.
 

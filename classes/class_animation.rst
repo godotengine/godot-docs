@@ -364,6 +364,8 @@ Linear interpolation.
 
 Cubic interpolation. This looks smoother than linear interpolation, but is more expensive to interpolate. Stick to :ref:`INTERPOLATION_LINEAR<class_Animation_constant_INTERPOLATION_LINEAR>` for complex 3D animations imported from external software, even if it requires using a higher animation framerate in return.
 
+\ **Note:** If the last and first keys have different values and are close to the ends of the track, a huge overshoot in interpolation may occur if :ref:`track_set_interpolation_loop_wrap()<class_Animation_method_track_set_interpolation_loop_wrap>` is set to ``true``.
+
 .. _class_Animation_constant_INTERPOLATION_LINEAR_ANGLE:
 
 .. rst-class:: classref-enumeration-constant
@@ -1468,6 +1470,8 @@ Sets the given track as imported or not.
 |void| **track_set_interpolation_loop_wrap**\ (\ track_idx\: :ref:`int<class_int>`, interpolation\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Animation_method_track_set_interpolation_loop_wrap>`
 
 If ``true``, the track at ``track_idx`` wraps the interpolation loop.
+
+\ **Note:** If ``interpolation`` is ``true``, the animation interpolates between the last and first key of the track. If the last key is placed exactly at the end of the animation, it is ignored as being placed outside the looped animation range.
 
 .. rst-class:: classref-item-separator
 
