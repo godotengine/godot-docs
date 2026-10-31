@@ -56,6 +56,15 @@ Building & debugging the editor module
 
    - Select **Run > Run 'editor'** from the top menu or `click the Run icon <https://developer.android.com/studio/run/rundebugconfig#running>`_.
 
+.. note::
+
+  Build with the terminal using the following command:
+
+  .. code-block::
+
+   cd platform/android/java
+   ./gradlew :editor:assembleAndroidDebug
+
 - To debug the ``editor`` module:
 
    - Open the **Build Variants** window using **View > Tools Windows > Build Variants** from the top menu.
@@ -78,10 +87,20 @@ Building & debugging the editor module
 Building & debugging the app module
 -----------------------------------
 
-The ``app`` module requires the presence of a Godot project in its ``assets`` directory (``<Godot root directory>/platform/android/java/app/src/main/assets``) to run.
-This is usually handled by the Godot Editor during the export process.
-While developing in Android Studio, it's necessary to manually add a Godot project under that directory to replicate the export process.
-Once that's done, you can follow the instructions below to run/debug the ``app`` module:
+The ``app`` module is an empty shell which is filled by the Godot Editor during the export process.
+As such for development, the ``app`` module requires the presence of a manually exported Godot project to run.
+
+Follow these steps to configure and manually export a Godot project to use with the ``app`` module:
+
+- Within the Godot Editor export window, create a new Android export preset
+- Enable :ui:`Gradle Build > Use Gradle Build` in the Android export preset
+- Set the :ui:`Gradle Build > Export Format` to :ui:`Export AAR`
+- Set the :ui:`Export Path` for the generated ``AAR`` to ``<Godot root directory>/platform/android/java/app/libs/exportedProjectAAR/``
+- Make sure :ui:`Package > Show in App Library` is enabled
+- Configure any other export options that makes sense for the project
+- Click on :button:`Export Project...`, and export the project to the specified ``Export Path``
+
+Now that's done, you can follow the instructions below to run/debug the ``app`` module:
 
 - To build the ``app`` module:
 
@@ -92,6 +111,15 @@ Once that's done, you can follow the instructions below to run/debug the ``app``
       :align: center
 
    - Select **Run > Run 'app'** from the top menu or `click the Run icon <https://developer.android.com/studio/run/rundebugconfig#running>`_.
+
+.. note::
+
+  Build with the terminal using the following command:
+
+  .. code-block::
+
+   cd platform/android/java
+   ./gradlew :app:assembleStandardDebug
 
 - To debug the ``app`` module:
 
