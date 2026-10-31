@@ -199,10 +199,12 @@ helpful when you need to keep track of a direction.
 Normalization
 -------------
 
-**Normalizing** a vector means reducing its length to ``1`` while preserving its
-direction. This is done by dividing each of its components by its magnitude.
-Because this is such a common operation, Godot provides a dedicated
-:ref:`normalized() <class_Vector2_method_normalized>` method for this:
+
+**Normalizing** a nonzero vector means scaling its length to ``1`` while
+preserving its direction. This is done by dividing each of its components
+by its magnitude. Because this is such a common operation, Godot provides
+a dedicated :ref:`normalized() <class_Vector2_method_normalized>` method
+for this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -213,11 +215,28 @@ Because this is such a common operation, Godot provides a dedicated
 
     a = a.Normalized();
 
-.. warning:: Because normalization involves dividing by the vector's length, you
-             cannot normalize a vector of length ``0``. Attempting to do so
-             would normally result in an error. In GDScript though, trying to
-             call the ``normalized()`` method on a vector of length 0 leaves the
-             value untouched and avoids the error for you.
+.. warning::
+
+   A zero-length vector cannot be normalized mathematically because
+   this would require division by zero. Godot's ``normalized()`` method
+   handles this case by returning the zero vector unchanged.
+
+.. note::
+
+   Normalization preserves direction but discards the original magnitude.
+   This matters when the magnitude represents meaningful information,
+   such as the degree of deflection of an analog joystick.
+
+   For example, normalizing a joystick input with a magnitude of ``0.5``
+   increases its magnitude to ``1.0``. If used to calculate movement
+   velocity, this results in full-speed movement even when the joystick
+   is only partially deflected.
+
+   To preserve proportional movement speed, avoid normalizing the
+   input vector. To limit a vector's magnitude without increasing
+   smaller magnitudes, use
+   :ref:`limit_length() <class_Vector2_method_limit_length>` instead.
+
 
 Reflection
 ----------
