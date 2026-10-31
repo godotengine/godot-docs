@@ -6359,6 +6359,10 @@ The path to the text editor executable used to edit text files if :ref:`text_edi
 
 If ``true``, uses an external editor instead of the built-in Script Editor. See also :ref:`text_editor/external/exec_path<class_EditorSettings_property_text_editor/external/exec_path>` and :ref:`text_editor/external/exec_flags<class_EditorSettings_property_text_editor/external/exec_flags>`.
 
+.. classref_note::
+
+    Even with this option disabled, it is possible to open specific files with the external editor configured in the above settings by right-clicking a file in the FileSystem dock and selecting **Open in External Program**.
+
 .. rst-class:: classref-item-separator
 
 ----

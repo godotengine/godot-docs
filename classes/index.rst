@@ -163,7 +163,7 @@ Nodes
     class_lightoccluder2d
     class_limitangularvelocitymodifier3d
     class_line2d
-    class_line3d
+    class_linebase3d
     class_lineedit
     class_linkbutton
     class_lookatmodifier3d
@@ -1256,3 +1256,4 @@ Variant types
     class_vector3i
     class_vector4
     class_vector4i
+

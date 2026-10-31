@@ -25,7 +25,7 @@ When naming a Project Settings property, use the full path to the setting includ
 
 \ **Feature tags:** Project settings can be overridden for specific platforms and configurations (debug, release, ...) using :doc:`feature tags <../tutorials/export/feature_tags>`.
 
-\ **Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This file is in the same format as ``project.godot``, and can also be written using :ref:`ConfigFile<class_ConfigFile>`. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' :doc:`feature tags <../tutorials/export/feature_tags>` in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations.
+\ **Overriding:** Any project setting can be overridden by creating a file named ``override.cfg`` in the project's root directory. This file is in the same format as ``project.godot``, and can also be written using :ref:`ConfigFile<class_ConfigFile>`. This can also be used in exported projects by placing this file in the same directory as the project binary. Overriding will still take the base project settings' :doc:`feature tags <../tutorials/export/feature_tags>` in account. Therefore, make sure to *also* override the setting with the desired feature tags if you want them to override base project settings on all platforms and configurations. Note that this file is only read during runtime, such as in exported builds or when running in the editor. As such, it cannot be used to enable/disable editor-only plugins.
 
 .. rst-class:: classref-introduction-group
 
@@ -694,6 +694,8 @@ Properties
    | :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_focus_prev<class_ProjectSettings_property_input/ui_focus_prev>`                                                                                                                             |                                                                                                  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_graph_delete<class_ProjectSettings_property_input/ui_graph_delete>`                                                                                                                         |                                                                                                  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_graph_delete.macos<class_ProjectSettings_property_input/ui_graph_delete.macos>`                                                                                                             |                                                                                                  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`input/ui_graph_duplicate<class_ProjectSettings_property_input/ui_graph_duplicate>`                                                                                                                   |                                                                                                  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -6299,6 +6301,18 @@ Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :r
 Default :ref:`InputEventAction<class_InputEventAction>` to delete a :ref:`GraphNode<class_GraphNode>` in a :ref:`GraphEdit<class_GraphEdit>`.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input/ui_graph_delete.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_graph_delete.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_graph_delete.macos>`
+
+macOS specific override for the shortcut to delete a :ref:`GraphNode<class_GraphNode>` in a :ref:`GraphEdit<class_GraphEdit>`.
 
 .. rst-class:: classref-item-separator
 
