@@ -12,6 +12,10 @@ Locale code has the following format: ``language_Script_COUNTRY_VARIANT``, where
 - ``COUNTRY`` - optional, 2-letter country code, in upper case.
 - ``VARIANT`` - optional, language variant, region and, sort order. A variant can have any number of underscored keywords.
 
+.. seealso::
+
+    See :ref:`doc_plural_rules` for a list of built-in plural rules.
+
 List of supported language codes
 --------------------------------
 
