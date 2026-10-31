@@ -7,9 +7,8 @@ This page aims to list all features currently supported by Godot.
 
 .. note::
 
-    This page lists features supported by the current stable version of
-    Godot (3.5). `More features <https://docs.godotengine.org/en/latest/about/list_of_features.html>`__
-    are available in the latest development version (4.0).
+    This page lists features supported by Godot 3. `More features <https://docs.godotengine.org/en/stable/about/list_of_features.html>`__
+    are available in Godot 4.
 
 Features
 --------
