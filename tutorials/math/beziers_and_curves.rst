@@ -175,7 +175,7 @@ control the shape of our curve freely. Instead of having ``p0``, ``p1``, ``p2``
 and ``p3``, we will store them as:
 
 * ``point0 = p0``: Is the first point, the source
-* ``control0 = p1 - p0``: Is a vector relative to the first point 
+* ``control0 = p1 - p0``: Is a vector relative to the first point
 * ``control1 = p2 - p3``: Is a vector relative to the second point
 * ``point1 = p3``: Is the second point, the destination
 
