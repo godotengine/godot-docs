@@ -194,7 +194,7 @@ allow translators to choose the *order* in which placeholders appear:
     # Additionally, this form gives more context for translators to work with.
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
 
- .. code-tabs:: csharp
+ .. code-tab:: csharp
 
     // The placeholder's locations and order can be changed.
     message.Text = string.Format(Tr("{0} picked up the {1}"), "Ogre", "Sword");
