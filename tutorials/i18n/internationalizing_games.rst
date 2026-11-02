@@ -92,7 +92,7 @@ various reasons (e.g. translation quality or player preference).
     }
     else
     {
-        TranslationServer.SetLocale(language);    
+        TranslationServer.SetLocale(language);
     }
 
 Locale vs. language
