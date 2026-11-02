@@ -14,3 +14,4 @@ Input handling
    controllers_gamepads_joysticks
    controller_features
    handling_quit_requests
+   mobile_sensors
