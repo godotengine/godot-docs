@@ -960,7 +960,7 @@ Albedo and color textures should typically have a ``source_color`` hint. Normal,
 roughness, metallic, and height textures typically do not need a ``source_color``
 hint.
 
-Using ``color_conversion_disabled``, which must be preceeded by ``source_color``, allows you to
+Using ``color_conversion_disabled``, which must be preceded by ``source_color``, allows you to
 maintain color inputs in sRGB color space when passed to the shader.
 
 Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
