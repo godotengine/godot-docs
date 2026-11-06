@@ -2,10 +2,17 @@
 #
 # Godot Engine documentation build configuration file
 
+import gc
 import sphinx
 import sphinx_rtd_theme
 import sys
 import os
+
+# Run the cyclic GC less often to save on CPU time.
+# Theoretically costs peak RAM but no actual cost was measured.
+# Can be removed once https://github.com/sphinx-doc/sphinx/pull/14816 is pulled.
+if gc.get_threshold()[0] < 10_000:
+    gc.set_threshold(10_000, *gc.get_threshold()[1:])
 
 # -- General configuration ------------------------------------------------
 
