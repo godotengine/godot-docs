@@ -23,7 +23,7 @@ and flexibility. Some practical examples of this are:
    material to reduce the costs. At the same time, sorting has a cost.
 
 -  In 3D physics, a similar situation happens. The best algorithms to
-   handle large amounts of physics objects (such as SAP) are slow at
+   handle large amounts of physics objects, such as `Sweep And Prune <https://en.wikipedia.org/wiki/Sweep_and_prune>`_ (SAP), are slow at
    insertion/removal of objects and raycasting. Algorithms that allow faster
    insertion and removal, as well as raycasting, will not be able to handle as
    many active objects.
