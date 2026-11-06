@@ -107,8 +107,8 @@ can bind keys to these actions.
 .. image:: img/02.player_input/input_map_tab.webp
 
 Godot projects come with some predefined actions designed for user interface
-design (see above screenshot). These will become visible if you enable the
-**Show Built-in Actions** toggle. We could use these here, but instead we're
+design. These will become visible if you enable the **Show Built-in Actions**
+toggle. We could use these here, but instead we're
 defining our own to support gamepads. Leave **Show Built-in Actions** disabled.
 
 We're going to name our actions ``move_left``, ``move_right``, ``move_forward``,
