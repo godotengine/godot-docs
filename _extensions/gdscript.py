@@ -49,11 +49,13 @@ class GDScriptLexer(RegexLexer):
                 "[hlL]?[E-GXc-giorsux%]",
                 String.Interpol,
             ),
+            # the String.format() style '{name}' placeholders
+            (r"\{[^}\\'\"\n]*\}", String.Interpol),
             # backslashes, quotes, and formatting signs must be parsed one at a time
-            (r'[^\\\'"%\n]+', ttype),
+            (r'[^\\\'"%{\n]+', ttype),
             (r'[\'"\\]', ttype),
             # unhandled string formatting sign
-            (r"%", ttype),
+            (r"[%{]", ttype),
             # newlines are an error (use "nl" state)
         ]
 
@@ -1495,6 +1497,7 @@ class GDScriptLexer(RegexLexer):
         ],
         "function_name": [(r"[a-zA-Z_]\w*", Name.Function.Declaration, "#pop")],
         "enum_name": [(r"[a-zA-Z_]\w*", Name, "#pop")],
+        "signal_name": [(r"[a-zA-Z_]\w*", Name.Variable.Instance, "#pop")],
         "function": [
             (r"\b([a-zA-Z_]\w*)\s*(?=\()", Name.Function),
             (
@@ -1562,6 +1565,7 @@ class GDScriptLexer(RegexLexer):
             # Lookahead to not match the start of function_name to dodge errors on nameless lambdas
             (r"(func)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "function_name"),
             (r"(enum)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "enum_name"),
+            (r"(signal)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "signal_name"),
             include("keyword"),
             include("function"),
             # NOTE:
