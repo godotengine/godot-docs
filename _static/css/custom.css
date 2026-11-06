@@ -143,6 +143,7 @@
     --highlight-global-function-color: #5c2eb8;
     --highlight-operator-color: #00009c;
     --highlight-string-color: #996b00;
+    --highlight-string-placeholder-color: #ed9954;
     --highlight-get-node-shorthand-color: #2e8c00;
     --highlight-node-path-color: #008000;
     --highlight-string-name-color: #cc8f73;
@@ -295,6 +296,7 @@
         --highlight-global-function-color: #a3a3f5;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+        --highlight-string-placeholder-color: #ffbf66;
         --highlight-get-node-shorthand-color: #63c259;
         --highlight-node-path-color: #b8c47d;
         --highlight-string-name-color: #ffc2a6;
@@ -1111,7 +1113,6 @@ code,
 
 .highlight .o  /* Operator */,
 .highlight .p  /* Punctuation */,
-.highlight .si /* Literal.String.Interpol */,
 .highlight .sx /* Literal.String.Other */,
 .highlight .sr /* Literal.String.Regex */,
 .highlight .ss /* Literal.String.Symbol */ {
@@ -1130,6 +1131,12 @@ code,
 .highlight .sd /* Literal.String.Doc */,
 .highlight .sh /* Literal.String.Heredoc */ {
     color: var(--highlight-string-color);
+}
+
+.highlight .si /* Literal.String.Interpol */ {
+    color: var(--highlight-string-placeholder-color);
+    /* Match the Godot editor style (no italic). */
+    font-style: normal;
 }
 
 .highlight .nf.nf-Declaration /* Name.Function.Declaration */ {
