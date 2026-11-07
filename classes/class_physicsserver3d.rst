@@ -2465,7 +2465,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 |void| **body_attach_object_instance_id**\ (\ body\: :ref:`RID<class_RID>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PhysicsServer3D_method_body_attach_object_instance_id>`
 
-Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
+Assigns the body to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
 
 .. rst-class:: classref-item-separator
 

@@ -5548,7 +5548,7 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 :ref:`int<class_int>` **editor/naming/scene_name_casing** = ``2`` :ref:`🔗<class_ProjectSettings_property_editor/naming/scene_name_casing>`
 
-When generating scene file names from scene root node, set the type of casing to use in this project. This is mostly an editor setting.
+When generating scene file names from scene root node, set the type of casing to use in this project. This is mostly an editor setting. Uses the same options as :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5560,7 +5560,7 @@ When generating scene file names from scene root node, set the type of casing to
 
 :ref:`int<class_int>` **editor/naming/script_name_casing** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/naming/script_name_casing>`
 
-When generating script file names from the selected node, set the type of casing to use in this project. This is mostly an editor setting.
+When generating script file names from the selected node, set the type of casing to use in this project. This is mostly an editor setting. See :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` for possible values.
 
 .. rst-class:: classref-item-separator
 

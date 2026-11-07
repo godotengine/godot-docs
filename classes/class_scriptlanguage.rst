@@ -39,11 +39,7 @@ enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_AUTO** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
-
-
+Used by :ref:`ProjectSettings.editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>` to set the default script name casing to the script language's preferred casing.
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_PASCAL_CASE:
 
@@ -51,11 +47,7 @@ enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_PASCAL_CASE** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
-
-
+Used by :ref:`ProjectSettings.editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>` to set the default script name casing to ``PascalCase``.
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_SNAKE_CASE:
 
@@ -63,11 +55,7 @@ enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_SNAKE_CASE** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
-
-
+Used by :ref:`ProjectSettings.editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>` to set the default script name casing to ``snake_case``.
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_KEBAB_CASE:
 
@@ -75,11 +63,7 @@ enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_KEBAB_CASE** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
-
-
+Used by :ref:`ProjectSettings.editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>` to set the default script name casing to ``kebab-case``.
 
 .. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_CAMEL_CASE:
 
@@ -87,11 +71,7 @@ enum **ScriptNameCasing**: :ref:`🔗<enum_ScriptLanguage_ScriptNameCasing>`
 
 :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_CAMEL_CASE** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
-
-
+Used by :ref:`ProjectSettings.editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>` to set the default script name casing to ``camelCase``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
