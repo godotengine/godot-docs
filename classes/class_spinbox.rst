@@ -277,7 +277,7 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 - |void| **set_format**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_format**\ (\ )
 
-The formatting of the displayed numeric value, using the same rules as :ref:`String<class_String>`'s ``%`` operator (see :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>`). If empty, the value is displayed with no special formatting. If the format string is invalid, the **SpinBox** will display ``"ERROR"``, with the error message available as a configuration warning.
+The formatting of the displayed numeric value, using the same rules as :ref:`String<class_String>`'s ``%`` operator (see :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>`). If empty, the value is displayed with no special formatting. If the format string is invalid, the **SpinBox** will display ``"<Invalid>"``, with the error message available as a configuration warning.
 
 The following format strings can be used as examples:
 

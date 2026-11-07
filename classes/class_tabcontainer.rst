@@ -410,6 +410,8 @@ The current tab index. When set, this index's :ref:`Control<class_Control>` node
 
 A value of ``-1`` means that no tab is selected.
 
+\ **Note:** Setting this property before the **TabContainer** is in the scene tree will not switch the current tab, even if the index is within bounds (but the property will still be assigned). The actual switch will happen when the container enters the tree.
+
 .. rst-class:: classref-item-separator
 
 ----
