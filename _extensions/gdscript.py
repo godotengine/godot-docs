@@ -1493,6 +1493,7 @@ class GDScriptLexer(RegexLexer):
             (r"'", String.NodePath, "#pop"),
             include("string_nodepath"),
         ],
+        "signal_name": [(r"[a-zA-Z_]\w*", Name.Variable.Instance, "#pop")],
         "function_name": [(r"[a-zA-Z_]\w*", Name.Function.Declaration, "#pop")],
         "enum_name": [(r"[a-zA-Z_]\w*", Name, "#pop")],
         "function": [
@@ -1560,6 +1561,7 @@ class GDScriptLexer(RegexLexer):
             (r"(?<!\.)(\.)([a-zA-Z_]\w*)\b(?!\s*\()", bygroups(Operator, Name.Variable.Instance)),
             include("operator"),
             # Lookahead to not match the start of function_name to dodge errors on nameless lambdas
+            (r"(signal)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "signal_name"),
             (r"(func)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "function_name"),
             (r"(enum)(\s+)(?=[a-zA-Z_])", bygroups(Keyword, Whitespace), "enum_name"),
             include("keyword"),
