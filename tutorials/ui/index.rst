@@ -80,7 +80,7 @@ Godot can also be used to create applications (rather than games).
    creating_applications
 
 Reference table - UI Components
----------------------
+-------------------------------
 
 If you are coming from mobile development (iOS/Android), this guide maps Godot's UI system (Control nodes) to the paradigms you already know.
 
