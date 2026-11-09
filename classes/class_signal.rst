@@ -142,7 +142,7 @@ While all options have the same outcome (\ ``button``'s :ref:`BaseButton.button_
 
 \ **Binding and passing parameters:**\ 
 
-The syntax to bind parameters is through :ref:`Callable.bind()<class_Callable_method_bind>`, which returns a copy of the :ref:`Callable<class_Callable>` with its parameters bound.
+The syntax to bind parameters is through :ref:`Callable.bind()<class_Callable_method_bind>`.
 
 When calling :ref:`emit()<class_Signal_method_emit>` or :ref:`Object.emit_signal()<class_Object_method_emit_signal>`, the signal parameters can be also passed. The examples below show the relationship between these signal parameters and bound parameters.
 
@@ -340,6 +340,13 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 |void| **disconnect**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_Signal_method_disconnect>`
 
 Disconnects this signal from the specified :ref:`Callable<class_Callable>`. If the connection does not exist, prints an error. Use :ref:`is_connected()<class_Signal_method_is_connected>` to make sure that the connection exists.
+
+Callables are compared by their target object and target method name. Additional bindings are ignored for the purposes of this comparison. Two lambdas only compare equal if they are the same object by object identity.
+
+::
+
+    my_signal.connect(my_callable.bind(0))
+    my_signal.disconnect(my_callable) # Disconnects even though it lacks the bound argument
 
 .. rst-class:: classref-item-separator
 

@@ -17,7 +17,7 @@ A built-in type representing a method or a standalone function.
 Description
 -----------
 
-**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom()<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
+**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom()<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for :ref:`signal<class_Signal>` callbacks.
 
 
 .. tabs::
@@ -232,6 +232,20 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 \ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 
+\ **Note:** While bind does return a copy, this does not matter for :ref:`connecting<class_Signal_method_connect>` and :ref:`disconnecting<class_Signal_method_disconnect>` to signals because callables are matched by their *object and method name*, but not their bound arguments. Thus you can still disconnect using the callable's original reference.
+
+
+::
+
+    signal my_signal
+    func _ready() -> void:
+      var callable = func(my_callable, my_signal):
+        my_signal.disconnect(my_callable)
+
+      my_signal.connect(callable.bind(callable, my_signal))
+      my_signal.emit()
+      print(my_signal.get_connections()) # empty
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -242,9 +256,7 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 :ref:`Callable<class_Callable>` **bindv**\ (\ arguments\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_Callable_method_bindv>`
 
-Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call()<class_Callable_method_call>`. See also :ref:`unbind()<class_Callable_method_unbind>`.
-
-\ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
+Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. For more see :ref:`bind()<class_Callable_method_bind>`.
 
 .. rst-class:: classref-item-separator
 
