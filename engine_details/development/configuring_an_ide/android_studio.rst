@@ -92,13 +92,13 @@ As such for development, the ``app`` module requires the presence of a manually 
 
 Follow these steps to configure and manually export a Godot project to use with the ``app`` module:
 
-- Within the Godot Editor export window, create a new Android export preset
-- Enable :ui:`Gradle Build > Use Gradle Build` in the Android export preset
-- Set the :ui:`Gradle Build > Export Format` to :ui:`Export AAR`
-- Set the :ui:`Export Path` for the generated ``AAR`` to ``<Godot root directory>/platform/android/java/app/libs/exportedProjectAAR/``
-- Make sure :ui:`Package > Show in App Library` is enabled
-- Configure any other export options that makes sense for the project
-- Click on :button:`Export Project...`, and export the project to the specified ``Export Path``
+- Within the Godot Editor export window, create a new Android export preset.
+- Enable :ui:`Gradle Build > Use Gradle Build` in the Android export preset.
+- Set the :ui:`Gradle Build > Export Format` to :ui:`Export AAR`.
+- Set the :ui:`Export Path` for the generated ``AAR`` to ``<Godot root directory>/platform/android/java/app/libs/exportedProjectAAR/``.
+- Make sure :ui:`Package > Show in App Library` is enabled.
+- Configure any other export options that makes sense for the project.
+- Click on :button:`Export Project...`, and export the project to the specified ``Export Path``.
 
 Now that's done, you can follow the instructions below to run/debug the ``app`` module:
 
