@@ -4,7 +4,8 @@
 Cross-Framework UI Component Mapping
 ============================================
 
-This table maps common UI components, containers, layout systems, event mechanisms, and styling paradigms across iOS (UIKit & SwiftUI), Android (Android Views & Jetpack Compose), and Godot Engine (Control Nodes).
+This table maps common UI components, containers, layout systems, event mechanisms, and styling paradigms
+across iOS (UIKit & SwiftUI), Android (Android Views & Jetpack Compose), and Godot Engine (Control Nodes).
 
 .. list-table:: UI Component Comparison Matrix
    :widths: 15 20 18 18 18 18 18 25
