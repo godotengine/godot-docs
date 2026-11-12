@@ -1111,11 +1111,15 @@ code,
 
 .highlight .o  /* Operator */,
 .highlight .p  /* Punctuation */,
-.highlight .si /* Literal.String.Interpol */,
 .highlight .sx /* Literal.String.Other */,
 .highlight .sr /* Literal.String.Regex */,
 .highlight .ss /* Literal.String.Symbol */ {
     color: var(--highlight-operator-color);
+}
+
+.highlight .si /* Literal.String.Interpol */ {
+    color: var(--highlight-string-name-color);
+    font-style: normal;
 }
 
 .highlight .cpf/* Comment.PreprocFile */,
