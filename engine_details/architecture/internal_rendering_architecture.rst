@@ -477,10 +477,6 @@ allows instances to be culled individually.
 Light, decal and reflection probe rendering
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-  Decal rendering is currently not available in the Compatibility renderer.
-
 The Forward+ renderer uses clustered lighting. This
 allows using as many lights as you want; performance largely depends on screen
 coverage. Shadow-less lights can be almost free if they don't occupy much space
@@ -515,7 +511,9 @@ separate static shadow rendering from dynamic shadow rendering, but this is
 planned in a future release.
 
 Clustering is also used for reflection probes and decal rendering in the
-Forward+ renderer.
+Forward+ renderer. In the Mobile and Compatibility renderers, a single-pass
+approach is used to render reflection probes and decals, which limits the
+maximum number of visible reflection probes and decals.
 
 Area lights make use of the
 `Linearly Transformed Cosines <https://eheitzresearch.wordpress.com/757-2/>`__
