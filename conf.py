@@ -28,6 +28,7 @@ extensions = [
     "sphinxcontrib.video",
     "gdscript",
     "classref_admonitions",
+    "classref_links",
     "bbcode",
 ]
 
