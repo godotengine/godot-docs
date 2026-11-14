@@ -881,6 +881,8 @@ Full list of uniform hints below:
 +======================+==================================================+====================================================================================+
 | **vec3, vec4**       | source_color                                     | Used as color.                                                                     |
 +----------------------+--------------------------------------------------+------------------------------------------------------------------------------------+
+| **vec3, vec4**       | color_conversion_disabled                        | Disable non-linear to linear conversion.                                           |
++----------------------+--------------------------------------------------+------------------------------------------------------------------------------------+
 | **int**              | hint_enum("String1", "String2")                  | Displays int input as a dropdown widget in the editor.                             |
 +----------------------+--------------------------------------------------+------------------------------------------------------------------------------------+
 | **int, float**       | hint_range(min, max[, step])                     | Restricted to values in a range (with min/max/step).                               |
@@ -957,6 +959,9 @@ used, the texture will appear washed out.
 Albedo and color textures should typically have a ``source_color`` hint. Normal,
 roughness, metallic, and height textures typically do not need a ``source_color``
 hint.
+
+Using ``color_conversion_disabled``, which must be preceded by ``source_color``, allows you to
+maintain color inputs in sRGB color space when passed to the shader.
 
 Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
 and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
