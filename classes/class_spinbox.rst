@@ -319,7 +319,7 @@ Auto-translation mode for the :ref:`format<class_SpinBox_property_format>`. Usef
 - |void| **set_plural_format**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_plural_format**\ (\ )
 
-Plural version of :ref:`format<class_SpinBox_property_format>`. Used only if :ref:`format<class_SpinBox_property_format>` is not empty and :ref:`format_auto_translate_mode<class_SpinBox_property_format_auto_translate_mode>` is not disabled. See also :ref:`Object.tr_n()<class_Object_method_tr_n>`.
+Plural version of :ref:`format<class_SpinBox_property_format>`. Used only if :ref:`format<class_SpinBox_property_format>` is not empty and :ref:`format_auto_translate_mode<class_SpinBox_property_format_auto_translate_mode>` is not disabled. If either :ref:`format<class_SpinBox_property_format>` or this contain ``%s`` the other must also use it. See also :ref:`Object.tr_n()<class_Object_method_tr_n>`.
 
 .. rst-class:: classref-item-separator
 

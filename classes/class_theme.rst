@@ -1286,8 +1286,6 @@ This adds ``theme_type`` as a suggested option for :ref:`Control.theme_type_vari
 
 Variations can also be nested, i.e. ``base_type`` can be another variation. If a chain of variations ends with a ``base_type`` matching the class of the :ref:`Control<class_Control>`, the whole chain is going to be suggested as options.
 
-\ **Note:** Suggestions only show up if this theme resource is set as the project default theme. See :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>`.
-
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
