@@ -44,7 +44,7 @@ The following operators are available:
 +------------------------+-------------------------------------------------------------------------------------+
 | Multiplication (``*``) |                                                                                     |
 +------------------------+-------------------------------------------------------------------------------------+
-| Division (``/``)       | Performs and integer division if both operands are integers.                        |
+| Division (``/``)       | Performs an integer division if both operands are integers.                         |
 |                        | If at least one of them is a floating-point number, returns a floating-point value. |
 +------------------------+-------------------------------------------------------------------------------------+
 | Remainder (``%``)      | Returns the remainder of an integer division (modulo).                              |
