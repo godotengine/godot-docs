@@ -304,6 +304,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_font_supported_variation_list<class_TextServerExtension_private_method__font_supported_variation_list>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_font_validate<class_TextServerExtension_private_method__font_validate>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_format_number<class_TextServerExtension_private_method__format_number>`\ (\ number\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_free_rid<class_TextServerExtension_private_method__free_rid>`\ (\ rid\: :ref:`RID<class_RID>`\ ) |virtual| |required|                                                                                                                                                                                                                                                                                                     |
@@ -2171,6 +2173,18 @@ Returns the dictionary of the supported OpenType features.
 :ref:`Dictionary<class_Dictionary>` **_font_supported_variation_list**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_supported_variation_list>`
 
 Returns the dictionary of the supported OpenType variation coordinates.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_validate:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_font_validate**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_validate>`
+
+Returns ``true`` if the font data is valid.
 
 .. rst-class:: classref-item-separator
 
