@@ -27,6 +27,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinxcontrib.video",
     "gdscript",
+    "gdshader",
     "classref_admonitions",
     "bbcode",
 ]
