@@ -665,7 +665,7 @@ and sets up our entity discovery.
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -736,7 +736,7 @@ Note in the example code shown above, we're already connecting to this signal an
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [ \
@@ -1093,7 +1093,7 @@ With our persistence scope created, we can now create our spatial context.
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1142,7 +1142,7 @@ The anchor system gives us access to two components:
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [ \
@@ -1330,7 +1330,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1372,7 +1372,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, \
@@ -1557,7 +1557,7 @@ As an example we'll create a spatial context that will find QR codes and Aruco m
             configurations.push_back(qrcode_config)
 
         # Add our Aruco marker configuration.
-        if OpenXRSpatialMarkerTrackingCapability.is_aruco_supported():
+        if not OpenXRSpatialMarkerTrackingCapability.is_aruco_supported():
             aruco_config = OpenXRSpatialCapabilityConfigurationAruco.new()
             aruco_config.aruco_dict = OpenXRSpatialCapabilityConfigurationAruco.ARUCO_DICT_7X7_1000
             configurations.push_back(aruco_config)
@@ -1572,7 +1572,7 @@ As an example we'll create a spatial context that will find QR codes and Aruco m
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1638,7 +1638,7 @@ We add our discovery implementation:
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [\
