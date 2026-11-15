@@ -1552,12 +1552,12 @@ As an example we'll create a spatial context that will find QR codes and Aruco m
         var configurations : Array
 
         # Add our QR code configuration.
-        if not OpenXRSpatialMarkerTrackingCapability.is_qrcode_supported():
+        if OpenXRSpatialMarkerTrackingCapability.is_qrcode_supported():
             qrcode_config = OpenXRSpatialCapabilityConfigurationQrCode.new()
             configurations.push_back(qrcode_config)
 
         # Add our Aruco marker configuration.
-        if not OpenXRSpatialMarkerTrackingCapability.is_aruco_supported():
+        if OpenXRSpatialMarkerTrackingCapability.is_aruco_supported():
             aruco_config = OpenXRSpatialCapabilityConfigurationAruco.new()
             aruco_config.aruco_dict = OpenXRSpatialCapabilityConfigurationAruco.ARUCO_DICT_7X7_1000
             configurations.push_back(aruco_config)
