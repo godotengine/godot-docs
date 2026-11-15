@@ -755,6 +755,8 @@ Note in the example code shown above, we're already connecting to this signal an
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot):
         # See further down.
@@ -1161,6 +1163,9 @@ The anchor system gives us access to two components:
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
+
 
     func _process(_delta):
         if not spatial_context:
@@ -1389,6 +1394,8 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot):
         var result_data : Array
@@ -1657,6 +1664,8 @@ We add our discovery implementation:
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot, bool p_is_discovery):
         var result_data : Array
