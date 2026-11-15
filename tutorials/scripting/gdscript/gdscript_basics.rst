@@ -2868,6 +2868,34 @@ make the current function a coroutine:
         wait_confirmation()
         print("This will be printed immediately, before the user press the button.")
 
+.. warning::
+
+    A coroutine that is waiting doesn't keep its object alive. If the object is freed
+    before the coroutine resumes, the coroutine is stopped and the rest of the function
+    never runs. No error is shown.
+
+    This can happen with a :ref:`RefCounted <class_RefCounted>` object that nothing else
+    references. Here, the object is freed right after ``send()`` returns control
+    to the caller:
+
+    ::
+
+        class Messenger:
+            signal ready_to_send
+
+            func send():
+                ready_to_send.emit.call_deferred()
+                await ready_to_send
+                print("Sent") # Only printed if the object is still alive.
+
+        func _ready():
+            await Messenger.new().send() # Prints "Sent".
+            Messenger.new().send() # Prints nothing: the object is freed right away.
+
+    The same applies to nodes: if a node is freed while one of its coroutines is waiting,
+    that coroutine never resumes. To avoid this, ``await`` the call, or keep a reference
+    to the object (for example, in a member variable) until the coroutine finishes.
+
 If you use ``await`` with an expression that isn't a signal nor a coroutine, the value will be returned immediately and the
 function won't give the control back to the caller:
 
