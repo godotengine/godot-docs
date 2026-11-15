@@ -847,7 +847,7 @@ Completing our discovery logic we add the following:
         var alignment_list : OpenXRSpatialComponentPlaneAlignmentList = OpenXRSpatialComponentPlaneAlignmentList.new()
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, [ query_result_data, bounded2d_list, alignment_list]):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1220,7 +1220,7 @@ as our tracker class as this already has all the support for anchors built in.
             result_data.push_back(persistent_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1434,7 +1434,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
             result_data.push_back(label_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1693,7 +1693,7 @@ We add our discovery implementation:
         result_data.push_back(bounded2d_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
