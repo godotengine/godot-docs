@@ -122,7 +122,7 @@ games.
   with the windowing methods implemented. DisplayServer also covers features such
   as mouse support, touchscreen support and tablet driver (for pen input).
   See the
-  `DisplayServer singleton header <https://github.com/godotengine/godot/blob/master/servers/display_server.h>`__
+  `DisplayServer singleton header <https://github.com/godotengine/godot/blob/master/servers/display/display_server.h>`__
   for reference.
 
   - For platforms not featuring full windowing support (or if it's not relevant
@@ -136,12 +136,12 @@ games.
   `Direct3D 12 <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_context_driver_d3d12.cpp>`__
   `OpenGL 3.3 or OpenGL ES 3.0 <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/gl_manager_x11.cpp>`__.
 - Input handlers for `keyboard <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/key_mapping_x11.cpp>`__
-  and `controller <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/joypad_linux.cpp>`__.
+  and `controller <https://github.com/godotengine/godot/blob/master/drivers/sdl/joypad_sdl.cpp>`__.
 - One or more `audio drivers <https://github.com/godotengine/godot/blob/master/drivers/pulseaudio/audio_driver_pulseaudio.cpp>`__.
   The audio driver can be located in the ``platform/`` folder (this is done for
   the Android and Web platforms), or in the ``drivers/`` folder if multiple
   platforms may be using this audio driver. See the
-  `AudioServer singleton header <https://github.com/godotengine/godot/blob/master/servers/audio_server.h>`__
+  `AudioServer singleton header <https://github.com/godotengine/godot/blob/master/servers/audio/audio_server.h>`__
   for reference.
 - `Crash handler <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/crash_handler_linuxbsd.cpp>`__,
   for printing crash backtraces when the game crashes. This allows for easier
