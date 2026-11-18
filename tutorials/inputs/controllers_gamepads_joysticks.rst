@@ -208,16 +208,28 @@ average deadzone value from all of the actions in the vector.
 "Echo" events
 ~~~~~~~~~~~~~
 
-Unlike keyboard input, holding down a controller button such as a D-pad
-direction will **not** generate repeated input events at fixed intervals (also
-known as "echo" events). This is because the operating system never sends "echo"
-events for controller input in the first place.
+Unlike keyboard input, holding down a controller button such as a D-pad direction or
+moving a controller axis over a specified deadzone will **not** by default
+generate repeated input events at fixed intervals (also known as "echo" events).
+This is because the operating system never sends "echo" events for controller input
+in the first place, and in Godot controller echo events are sent by the engine code.
 
-If you want controller buttons to send echo events, you will have to generate
-:ref:`class_InputEvent` objects by code and parse them using
-:ref:`Input.parse_input_event() <class_Input_method_parse_input_event>`
-at regular intervals. This can be accomplished
-with the help of a :ref:`class_Timer` node.
+If you want controller buttons to send echo events, set
+:ref:`ProjectSettings.input_devices/joypads/joypad_echo_events/send<class_ProjectSettings_property_input_devices/joypads/joypad_echo_events/send>` to ``true``.
+If you want controller axes to send echo events, make sure
+:ref:`ProjectSettings.input_devices/joypads/joypad_echo_events/axis_echo_events/send<class_ProjectSettings_property_input_devices/joypads/joypad_echo_events/axis_echo_events/send>`
+is set to ``true``.
+
+To control the amount of time of pressing the joypad buttons or keeping the joypad axes over the deadzone
+required for the engine to start sending echo events, modify
+:ref:`ProjectSettings.input_devices/joypads/joypad_echo_events/wait_time<class_ProjectSettings_property_input_devices/joypads/joypad_echo_events/wait_time>`.
+
+To control the number of times per second joypad echo events should be sent by the engine after the user
+has pressed the buttons or kept the axes over the deadzone for long enough, modify
+:ref:`ProjectSettings.input_devices/joypads/joypad_echo_events/count_per_second<class_ProjectSettings_property_input_devices/joypads/joypad_echo_events/count_per_second>`.
+
+To control the deadzone that is used by the engine to determine if joypad axis echo events should be sent,
+modify :ref:`ProjectSettings.input_devices/joypads/joypad_echo_events/axis_echo_events/deadzone<class_ProjectSettings_property_input_devices/joypads/joypad_echo_events/axis_echo_events/deadzone>`.
 
 Window focus
 ~~~~~~~~~~~~
