@@ -350,40 +350,67 @@ long operation is completed.
     screen, clicking the rightmost icon in the bar at the top and unchecking
     :menu:`Embed Game on Next Play`.
 
-Sending desktop notifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sending desktop notifications (toasts)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Godot currently does not have native support for sending desktop notifications.
+*This is only supported on Windows and macOS. A workaround for Linux is available.*
 
-However, on macOS and Linux, you can use the ``osascript`` and ``notify-send``
-command line utilities respectively to send desktop notifications:
+Godot can manage toast notifications on Windows and macOS using
+:ref:`DisplayServer.send_toast_notification() <class_DisplayServer_method_send_toast_notification>`
+and :ref:`DisplayServer.hide_toast_notification() <class_DisplayServer_method_hide_toast_notification>`:
+
+.. figure:: img/creating_applications_toast_notification.webp
+    :align: center
+    :alt: Toast notification on Windows
+
+    Toast notification on Windows
+
+The example below creates a toast with the project icon as the notification
+icon, and a callback method that prints a message when the notification is
+pressed, dismissed, or fails to be created. The notification is then hidden 5
+seconds after being created.
+
+.. note::
+
+    A toast notification may fail to be created under certain circumstances,
+    such as when notifications are disabled by the user for the application or
+    when notifications are sent too frequently.
 
 ::
 
-    func send_notification(title, message):
-        var app_name = ProjectSettings.get_setting("application/config/name")
-        if app_name.is_empty():
-            app_name = "Unnamed Project"
+    func _ready():
+        # The returned value is the toast ID, which we can use to hide the notification later.
+        var toast_id: int = DisplayServer.send_toast_notification(
+                "Example toast title",
+                "Example toast message.",
+                preload("res://icon.svg"),
+                func(id: int, status: DisplayServer.NotificationStatus):
+                    print("Notification #%d pressed: %s" % [id, ["Activated", "Dismissed", "Failed"][status]])
+        )
 
-        if OS.has_feature("macos") and not OS.is_sandboxed():
-            # Note that this will not work if the project is exported in sandbox mode
-            # (e.g. for the Mac App Store).
-            OS.execute("osascript", [
-                    "-e",
-                    'display notification \\"%s\\" with title \\"%s\\" subtitle \\"%s\\"' % [
-                        message,
-                        app_name,
-                        title,
-                    ]
-                ])
-        elif OS.has_feature("linuxbsd"):
-            OS.execute("notify-send", ["--app-name", app_name, title, message])
+        await get_tree().create_timer(5.0)
+        DisplayServer.hide_toast_notification(toast_id)
+
+On Linux, you can use the ``notify-send`` command line utility to send desktop notifications:
+
+::
+
+    func send_notification(title, text):
+        if not OS.has_feature("linuxbsd"):
+            # Use the official method for Windows and macOS.
+            DisplayServer.send_toast_notification(title, text, null, Callable())
+        else:
+            var app_name = ProjectSettings.get_setting("application/config/name")
+            if app_name.is_empty():
+                app_name = "Unnamed Project"
+            OS.execute("notify-send", ["--app-name", app_name, title, text])
+
 
     func _ready():
         send_notification("Success", "Operation completed successfully.")
 
-Unfortunately, there is no equivalent that's available out of the box on
-Windows.
+This workaround does not support custom icons, or callbacks when the
+notification is pressed or dismissed.
 
 Remembering window position and size across sessions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
