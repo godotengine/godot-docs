@@ -32,6 +32,11 @@ In this guide, you will learn:
 - **How controllers can behave differently from keyboard/mouse input.**
 - **Troubleshooting issues with controllers in Godot.**
 
+.. seealso::
+
+    You can test your controller in the
+    `Joypads demo project <https://github.com/godotengine/godot-demo-projects/tree/master/misc/joypads>`__.
+
 Supporting universal input
 --------------------------
 
