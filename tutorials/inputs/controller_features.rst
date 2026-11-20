@@ -272,4 +272,46 @@ you can tweak the ``THRESHOLD`` constant or you can replace it by using a differ
             # So we need to ignore these reported values for a short amount of time.
             detect_accelerometer = false
             await get_tree().create_timer(0.5, false).timeout
-            detect_accelerometer = true
+
+Touchpad
+--------
+
+Games can use the touchpad on certain controllers to provide an additional way
+to interact with the game. This is mainly used for navigating menus, controlling
+in-game cursors, or interacting with maps.
+
+Touchpads can support multitouch input, with the maximum number of simultaneous
+touch points varying depending on the controller. The DualShock 4, DualSense and
+DualSense Edge all support reporting 2 simultaneous touch points, which allows
+for two-finger pan/pinch gestures to be implemented.
+
+Pressing the touchpad sends a standard button press event, which is recognized
+as :ref:`JOY_BUTTON_TOUCHPAD <class_@GlobalScope_constant_JOY_BUTTON_TOUCHPAD>`.
+In games, pressing the touchpad is generally used to open/close a map menu.
+
+Use the method :ref:`Input.get_joy_num_touchpads() <class_Input_method_get_joy_num_touchpads>`
+to detect whether touchpad input is supported by the controller. If supported,
+the reported number will be greater than ``0``. Some controllers may feature
+multiple touchpads.
+
+To get the position of touchpad presses, use
+:ref:`get_joy_touchpad_fingers<class_Input_method_get_joy_touchpad_fingers>`.
+The coordinates are given in normalized space, with ``(0, 0)`` representing the
+top-left corner and ``(1, 1)`` representing the bottom-right corner of the
+touchpad. Keep in mind the touchpad generally does not have a square aspect
+ratio, so make sure to account for this when interpreting touchpad coordinates.
+
+Some touchpads can also return the pressure applied with each finger using
+:ref:`get_joy_touchpad_finger_pressure<class_Input_method_get_joy_touchpad_finger_pressure>`.
+
+.. note::
+
+    On some operating systems, using the touchpad will also automatically move
+    the system mouse cursor, and pressing the touchpad will send a left mouse
+    button click.
+
+    This behavior cannot be controlled by Godot, and may lead to the mouse cursor leaving
+    the game window when playing in windowed mode. This can be countered by setting the
+    mouse mode to :ref:`Input.MOUSE_MODE_CAPTURED <class_Input_constant_MOUSE_MODE_CAPTURED>`
+    or :ref:`Input.MOUSE_MODE_CONFINED <class_Input_constant_MOUSE_MODE_CONFINED>`,
+    so that touchpad presses can't accidentally cause the game window to lose focus.
