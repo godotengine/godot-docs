@@ -75,6 +75,7 @@ Editor
 
    - Supports debugging in threads.
 
+- GDScript symbol renaming (refactoring).
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
 - Performance monitoring tools, including
@@ -232,6 +233,7 @@ Godot 4 includes three renderers:
 - Optional debanding to reduce banding artifacts in gradients.
 - :ref:`HDR output <doc_hdr_output>` on supported platforms and renderers.
 - Perspective, orthographic and frustum-offset cameras.
+- Experimental support for custom camera projections (designed for XR usage).
 - When using the Forward+ renderer, a depth prepass is used to improve
   performance in complex scenes by reducing the cost of overdraw.
 - :ref:`doc_variable_rate_shading` on supported GPUs in Forward+ and Mobile.
@@ -286,6 +288,7 @@ Godot 4 includes three renderers:
   light size and distance from the surface the shadow is cast on. Supported for
   all light types.
 - Adjustable shadow blur on a per-light basis.
+- Optional screen-space contact shadows for additional shadow detail (directional lights only).
 
 **Global illumination with indirect lighting:**
 
@@ -295,7 +298,8 @@ Godot 4 includes three renderers:
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
      baking setups.
    - Supports lighting dynamic objects using automatic and manually placed probes.
-   - Optionally supports directional lighting based on spherical harmonics.
+   - Optionally supports directional lighting based on spherical harmonics,
+     as well as specular light approximation based on directional lighting.
    - Optionally supports baking a shadowmask for distant static directional shadows.
    - Optional supersampling at bake-time to improve quality and reduce light leaking
      at the cost of increased bake times and memory usage during baking.
@@ -352,8 +356,8 @@ Godot 4 includes three renderers:
 - When using the Forward+ renderer (default on desktop), decals are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of decals that can be used on a mesh.
-- When using the Mobile renderer, up to 8 decals can be displayed per mesh
-  resource.
+- When using the Mobile and Compatibility renderers, up to 8 decals can be
+  displayed per mesh resource.
 
 **Sky:**
 
@@ -397,13 +401,15 @@ Godot 4 includes three renderers:
   - Support for custom particle shaders with manual emission.
 
 - CPU-based particles.
+- :ref:`Trails <doc_using_trail_3d>` for VFX.
 
 **Post-processing:**
 
 - Tonemapping (Linear, Reinhard, Filmic, ACES, AgX).
 - Automatic exposure adjustments based on viewport brightness (and manual exposure override).
 - Near and far depth of field with adjustable bokeh simulation (box, hexagon, circle).
-- Screen-space ambient occlusion (SSAO) at half or full resolution.
+- Screen-space ambient occlusion (SSAO) at half or full resolution,
+  with support for multi-bounce ambient occlusion approximation.
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
 - Glow can have a colored dirt map texture, acting as a lens dirt effect.
@@ -416,6 +422,9 @@ Godot 4 includes three renderers:
 
 - Nearest, bilinear, trilinear or anisotropic filtering.
 - Filtering options are defined on a per-use basis, not a per-texture basis.
+- Transparent texture mipmaps can optionally
+  :ref:`preserve alpha test coverage on import <doc_importing_images_mipmaps_preserve_alpha_test_coverage>`,
+  which prevents objects from becoming more transparent than intended at a distance.
 
 **Texture VRAM compression:**
 
@@ -424,6 +433,7 @@ Godot 4 includes three renderers:
 - ETC2 (for fast compression targeting mobile platforms).
 - S3TC (for fast compression targeting desktop platforms).
 - Basis Universal (slow, but only requires one encoding for all platforms).
+- Support for texture streaming.
 
 **Antialiasing:**
 
@@ -501,6 +511,8 @@ Shaders
 - Visual shader editor.
 
    - Support for :ref:`visual shader plugins <doc_visual_shader_plugins>`.
+   - Visual shaders can make use of node groups (also known as subgraphs or functions)
+     to organize and reuse parts of the shader.
 
 Scripting
 ---------
@@ -511,6 +523,13 @@ Scripting
 - Signals and groups for communicating between scripts.
 - Support for :ref:`cross-language scripting <doc_cross_language_scripting>`.
 - Many 2D, 3D and 4D linear algebra data types such as vectors and transforms.
+- :ref:`Expression language <doc_evaluating_expressions>` to evaluate simple
+  expressions within the engine, independently of a scripting language.
+- Regular expressions with :ref:`class_RegEx`.
+- Fuzzy search with :ref:`class_FuzzySearch`.
+- Over 100 common math helper methods in :ref:`class_@GlobalScope`, tailored for
+  game development.
+- :ref:`Random number generation <doc_random_number_generation>`.
 
 :ref:`GDScript: <doc_gdscript>`
 
@@ -546,10 +565,9 @@ Scripting
    - For scripting game logic, GDScript or C# are recommended if their
      performance is suitable.
 
-- Official GDExtension bindings for `C <https://github.com/godotengine/godot-headers>`__
-  and `C++ <https://github.com/godotengine/godot-cpp>`__.
+- Official GDExtension bindings for `C++ <https://github.com/godotengine/godot-cpp>`__.
 
-   - Use any build system and language features you wish.
+   - Official bindings support SCons and CMake as build systems.
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
   `Swift <https://github.com/migueldeicaza/SwiftGodot>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
@@ -571,8 +589,9 @@ Audio
   node).
 - Support for random volume and pitch.
 - Support for real-time pitch scaling.
-- Support for sequential/random sample selection, including repetition prevention
-  when using random sample selection.
+- Support for sequential/random sample selection with
+  :ref:`class_AudioStreamRandomizer`, including repetition prevention when using
+  random sample selection.
 - :ref:`class_AudioListener2D` and :ref:`class_AudioListener3D` nodes to listen from a position
   different from the camera.
 - Support for :ref:`procedural audio generation <class_AudioStreamGenerator>`.
@@ -642,6 +661,7 @@ Input
     on supported controllers.
   - Support for :ref:`reading motion sensors <doc_controller_features_motion_sensors>`
     on supported controllers (used to implement gyro aiming).
+  - Support for reading touchpad input on supported controllers.
 
 - Pen/tablet input with pressure and tilt support.
 
@@ -713,14 +733,16 @@ Windowing and OS integration
 - Declare a window as a popup (hidden from task switcher)
   or exclusive (prevents interacting with other windows from the same process).
 - Native file dialog support on Windows, macOS, Linux, and Android.
+- Desktop notification (toast) support on Windows and macOS.
 - Tray icon support on Windows and macOS.
+- Taskbar/Dock progress reporting on Windows and macOS.
 - Global menu integration on macOS.
 - Client-side decorations on macOS.
 - Execute commands in a blocking or non-blocking manner (including running
   multiple instances of the same project).
 - Open file paths and URLs using default or custom protocol handlers (if registered on the system).
 - Parse custom command line arguments.
-- Support for screen readers on Windows, macOS, and Linux.
+- Support for screen readers on Windows, macOS, and Linux with :ref:`class_AccessibilityServer`.
 - Any Godot binary (editor or exported project) can be
   :ref:`used as a headless server <doc_exporting_for_dedicated_servers>`
   by starting it with the ``--headless`` command line argument.
@@ -761,6 +783,8 @@ XR support (AR and VR)
    - HTC Vive Focus Vision
    - Android XR headsets
 
+- Support for the XREAL Aura optical see-through glasses on Android XR.
+
 - Support for the Linux-based standalone Steam Frame using OpenXR.
 
 - Limited support for visionOS Apple headsets.
@@ -794,6 +818,7 @@ The editor UI can easily be extended in many ways using add-ons.
 - Color picker with RGB, HSV, and OKHSL modes, as well as custom color palettes.
 - Controls can be rotated and scaled.
 - Drag-and-drop support.
+- Touchscreen support in many control nodes, with intuitive actions.
 
 **Sizing:**
 
@@ -811,6 +836,8 @@ The editor UI can easily be extended in many ways using add-ons.
 - Scale to :ref:`multiple resolutions <doc_multiple_resolutions>` using the
   ``canvas_items`` or ``viewport`` stretch modes.
 - Support any aspect ratio using anchors and the ``expand`` stretch aspect.
+- Label and RichTextLabel options to automatically adjust their size based on
+  content.
 
 **Theming:**
 
@@ -823,6 +850,7 @@ The editor UI can easily be extended in many ways using add-ons.
    - Supports rounded/beveled corners, drop shadows, per-border widths and antialiasing.
 
 - Texture-based theming using :ref:`class_StyleBoxTexture`.
+- Sound theme items to play audio on common events (such as pressing buttons).
 
 Godot's small distribution size can make it a suitable alternative to frameworks
 like Electron or Qt.
@@ -831,7 +859,8 @@ Animation
 ---------
 
 - Direct kinematics and inverse kinematics.
-- Support for animating any property with customizable interpolation.
+- Support for animating any property with customizable easing.
+- Support for nearest, linear, cubic, and Makima interpolation.
 - Support for calling methods in animation tracks.
 - Support for playing sounds in animation tracks.
 - Support for Bézier curves in animation.
@@ -894,6 +923,9 @@ Miscellaneous
    - Friendly towards packagers. In most cases, system libraries can be used
      instead of the ones provided by Godot. The build system doesn't download anything.
      Builds can be fully reproducible.
+
+- The engine can be :ref:`used as a library <doc_faq_use_godot_as_library>` on
+  desktop platforms (experimental).
 
 - Licensed under the permissive MIT license.
 
