@@ -498,9 +498,9 @@ The number of draw passes when rendering particles.
 - |void| **set_skin**\ (\ value\: :ref:`Skin<class_Skin>`\ )
 - :ref:`Skin<class_Skin>` **get_skin**\ (\ )
 
-.. container:: contribute
+Defines a skin to use with particle trails when :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>` is enabled. It will apply this skin to a skinned mesh assigned as a draw pass. This should be left empty if using :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or :ref:`TubeTrailMesh<class_TubeTrailMesh>`.
 
-	There is currently no description for this property. Please help us by `contributing one <https://contributing.godotengine.org/en/latest/development/documentation/class_reference.html>`__!
+\ **Note:** Bones will be positioned in the trail in order based on the ID of the bone, no matter their position in the skeleton. Bone ``0``, followed by Bone ``1``, followed by Bone ``2``, etc. When making a skinned mesh for this purpose, care should be taken that the bones are evenly spaced and facing away from the following bone, or the result will look incorrect. This means that if each parent bone points toward its child, that is 180 degrees off from what it should be, and could result in a trail that looks "inside-out."
 
 .. rst-class:: classref-item-separator
 
@@ -782,11 +782,11 @@ Path to another **GPUParticles3D** node that will be used as a subemitter (see :
 - |void| **set_trail_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_trail_enabled**\ (\ )
 
-If ``true``, enables particle trails using a mesh skinning system. Designed to work with :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` and :ref:`TubeTrailMesh<class_TubeTrailMesh>`.
+If ``true``, enables particle trails using a mesh skinning system. Designed to work with :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` and :ref:`TubeTrailMesh<class_TubeTrailMesh>` or with a custom skinned mesh if :ref:`draw_skin<class_GPUParticles3D_property_draw_skin>` is set.
 
 \ **Note:** :ref:`BaseMaterial3D.use_particle_trails<class_BaseMaterial3D_property_use_particle_trails>` must also be enabled on the particle mesh's material. Otherwise, setting :ref:`trail_enabled<class_GPUParticles3D_property_trail_enabled>` to ``true`` will have no effect.
 
-\ **Note:** Unlike :ref:`GPUParticles2D<class_GPUParticles2D>`, the number of trail sections and subdivisions is set in the :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or the :ref:`TubeTrailMesh<class_TubeTrailMesh>`'s properties.
+\ **Note:** Unlike :ref:`GPUParticles2D<class_GPUParticles2D>`, the number of trail sections and subdivisions is set in the :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or the :ref:`TubeTrailMesh<class_TubeTrailMesh>`'s properties. If :ref:`draw_skin<class_GPUParticles3D_property_draw_skin>` is set, the number of trail sections will be based on the number of bones in the skin.
 
 .. rst-class:: classref-item-separator
 

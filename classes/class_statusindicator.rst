@@ -15,7 +15,14 @@ StatusIndicator
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Application status indicator (aka notification area icon).
+Application status indicator (also known as notification area icon, or tray icon).
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Displays an icon in the system tray when visible. The icon and tooltip can be customized, and the indicator also supports custom menu.
 
 \ **Note:** Status indicator is implemented on macOS and Windows.
 

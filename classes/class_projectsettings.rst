@@ -131,8 +131,6 @@ Properties
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`application/run/print_header<class_ProjectSettings_property_application/run/print_header>`                                                                                                           | ``true``                                                                                         |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`application/run/use_game_mode<class_ProjectSettings_property_application/run/use_game_mode>`                                                                                                         | ``true``                                                                                         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`           | :ref:`audio/buses/channel_disable_threshold_db<class_ProjectSettings_property_audio/buses/channel_disable_threshold_db>`                                                                                   | ``-60.0``                                                                                        |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`           | :ref:`audio/buses/channel_disable_time<class_ProjectSettings_property_audio/buses/channel_disable_time>`                                                                                                   | ``2.0``                                                                                          |
@@ -844,6 +842,8 @@ Properties
    | :ref:`bool<class_bool>`             | :ref:`input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`                                                                           | ``false``                                                                                        |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`input_devices/compatibility/legacy_just_pressed_behavior<class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior>`                                                   | ``false``                                                                                        |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`input_devices/compatibility/windows/disable_raw_event_bulk_processing<class_ProjectSettings_property_input_devices/compatibility/windows/disable_raw_event_bulk_processing>`                         | ``false``                                                                                        |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`input_devices/joypads/ignore_joypad_on_unfocused_application<class_ProjectSettings_property_input_devices/joypads/ignore_joypad_on_unfocused_application>`                                           | ``false``                                                                                        |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2637,22 +2637,6 @@ This setting can be overridden using the ``--max-fps <fps>`` command line argume
 :ref:`bool<class_bool>` **application/run/print_header** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/run/print_header>`
 
 If ``true``, the engine header is printed in the console on startup. This header describes the current version of the engine, as well as the renderer being used. This behavior can also be disabled on the command line with the ``--no-header`` option.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_application/run/use_game_mode:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **application/run/use_game_mode** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/run/use_game_mode>`
-
-If ``true``, the engine will request `GameMode <https://github.com/FeralInteractive/gamemode>`__ to be activated. This allows optimizing system performance during gameplay, e.g. by using a specific CPU governor or forcing a high GPU power state. The GameMode daemon needs to be installed and running on the system to work (typically available as ``gamemode`` in Linux distribution repositories).
-
-\ **Note:** This setting does not affect the editor itself, although it affects projects being run from the editor.
-
-\ **Note:** This setting is available only on Linux.
 
 .. rst-class:: classref-item-separator
 
@@ -7325,6 +7309,20 @@ If ``true``, :ref:`Input.is_action_just_pressed()<class_Input_method_is_action_j
 If ``false``, no input will be lost.
 
 \ **Note:** You should in nearly all cases prefer the ``false`` setting. The legacy behavior is to enable supporting old projects that rely on the old logic, without changes to script.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/compatibility/windows/disable_raw_event_bulk_processing:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/compatibility/windows/disable_raw_event_bulk_processing** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/compatibility/windows/disable_raw_event_bulk_processing>`
+
+If ``true``, disables bulk processing of raw input, enable it if you want to process ``WM_INPUT`` messages directly. Enabling this setting will significantly decrease performance with high polling rate devices.
+
+\ **Note:** This property is implemented only on Windows.
 
 .. rst-class:: classref-item-separator
 

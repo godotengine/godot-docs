@@ -21,6 +21,8 @@ Description
 
 A control that displays a texture, for example an icon inside a GUI. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
+By default, the minimum size of **TextureRect** is equal to the assigned :ref:`texture<class_TextureRect_property_texture>`'s size. If you want it to be smaller, set :ref:`expand_mode<class_TextureRect_property_expand_mode>` to :ref:`EXPAND_IGNORE_SIZE<class_TextureRect_constant_EXPAND_IGNORE_SIZE>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
