@@ -39,29 +39,16 @@ not to.
 
 You can convert a CPUParticles2D node into a GPUParticles2D node by clicking on
 the node in the scene tree, selecting the 2D workspace, and selecting
-**CPUParticles2D > Convert to GPUParticles2D** in the toolbar.
+:menu:`CPUParticles2D > Convert to GPUParticles2D` in the toolbar.
 
 .. image:: img/particles_convert.webp
 
 It is also possible to convert a GPUParticles2D node to a CPUParticles2D node,
 however there may be issues if you use GPU-only features.
 
-The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
-node to your scene. After creating that node you will notice that only a white dot was created,
-and that there is a warning icon next to your GPUParticles2D node in the scene dock. This
-is because the node needs a ParticleProcessMaterial to function.
-
-ParticleProcessMaterial
-~~~~~~~~~~~~~~~~~~~~~~~
-
-To add a process material to your particles node, go to ``Process Material`` in
-your inspector panel. Click on the box next to ``Material``, and from the dropdown
-menu select ``New ParticleProcessMaterial``.
-
-.. image:: img/particles_material.webp
-
-Your GPUParticles2D node should now be emitting
-white points downward.
+The rest of this tutorial is going to use the GPUParticles2D node. First, add a
+GPUParticles2D node to your scene. After creating that node you will notice
+that it's emitting white points downward.
 
 .. image:: img/particles1.png
 
@@ -73,7 +60,7 @@ flipbook is a texture that contains several frames of animation that can be
 played back, or chosen at random during emission. This is equivalent to a
 spritesheet for particles.
 
-The texture is set via the **Texture** property:
+The texture is set via the :inspector:`Texture` property:
 
 .. image:: img/particles2.webp
 
@@ -96,7 +83,7 @@ flipbook images online, or pre-render them using external tools such as `Blender
 
 Using an animation flipbook requires additional configuration compared to a
 single texture. For demonstration purposes, we'll use this texture with 5
-columns and 7 rows (right-click and choose **Save as…**):
+columns and 7 rows (right-click and choose :button:`Save as…`):
 
 .. figure:: img/particles_flipbook_example.webp
    :align: center
@@ -115,8 +102,9 @@ Material section of the GPUParticles2D (or CPUParticles2D) node:
 
    Creating a CanvasItemMaterial at the bottom of the particles node inspector
 
-In this CanvasItemMaterial, enable **Particle Animation** and set **H Frames** and **V Frames**
-to the number of columns and rows present in your flipbook texture:
+In this CanvasItemMaterial, enable :inspector:`Particle Animation` and set
+:inspector:`H Frames` and :inspector:`V Frames` to the number of columns and
+rows present in your flipbook texture:
 
 .. figure:: img/particles_flipbook_configure_canvasitemmaterial.webp
    :align: center
@@ -134,7 +122,7 @@ will be effective.
     background, you will also need to set the blend mode to **Add** instead of
     **Mix** for correct display. Alternatively, you can modify the texture to
     have a transparent background in an image editor. In `GIMP <https://gimp.org>`__,
-    this can be done using the **Color > Color to Alpha** menu.
+    this can be done using the :menu:`Color > Color to Alpha` menu.
 
 Time parameters
 ---------------
@@ -238,8 +226,8 @@ simulated every rendered frame.
 Fract Delta
 ~~~~~~~~~~~
 
-Setting Fract Delta to ``true`` results in fractional delta calculation,
-which has a smoother particles display effect.
+Setting Fract Delta to :inspector:`true` results in fractional delta
+calculation, which has a smoother particle display effect.
 This increased smoothness stems from higher accuracy.
 The difference is more noticeable in systems with high randomness or fast-moving particles.
 It helps maintain the visual consistency of the particle system,
@@ -258,13 +246,16 @@ Visibility Rect
 
 The visibility rectangle controls the visibility of the particles on screen. If this rectangle is outside of the viewport, the engine will not render the particles on screen.
 
-The rectangle's ``W`` and ``H`` properties respectively control its Width and its Height.
-The ``X`` and ``Y`` properties control the position of the upper-left
-corner of the rectangle, relative to the particle emitter.
+The rectangle's :Inspector:`X` and :inspector:`Y` properties control the
+position of the upper-left corner of the rectangle, relative to the particle
+emitter. The :inspector:`W` and :inspector:`H` properties control its Width and
+Height respectively.
 
-You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the GPUParticles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
-
-You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
+You can have Godot generate a Visibility Rect automatically using the toolbar
+above the 2D view. To do so, select the GPUParticles2D node and click
+:menu:`Particles > Generate Visibility Rect`. Godot will simulate the
+Particles2D node emitting particles for a few seconds and set the rectangle to
+fit the surface the particles cover.
 
 Local Coords
 ~~~~~~~~~~~~
@@ -283,9 +274,15 @@ node is moved, already emitted particles are also affected:
 Draw Order
 ~~~~~~~~~~
 
-This controls the order in which individual particles are drawn. ``Index``
-means particles are drawn according to their emission order (default).
-``Lifetime`` means they are drawn in order of remaining lifetime.
+This controls the order in which individual particles are drawn:
+
+- :inspector:`Index`: particles are drawn according to their emission order
+  (default).
+- :inspector:`Lifetime`: particles are drawn in order of remaining lifetime. In
+  other words, the particle with the highest lifetime is drawn at the front.
+- :inspector:`Reverse Lifetime`: particles are drawn in reverse order of
+  remaining lifetime. In other words, the particle with the lowest lifetime is
+  drawn at the front.
 
 Particle Process Material Settings
 ----------------------------------
