@@ -115,7 +115,7 @@ The height of the shape, in meters. This is only used when the shape type is ``"
 - |void| **set_importer_mesh**\ (\ value\: :ref:`ImporterMesh<class_ImporterMesh>`\ )
 - :ref:`ImporterMesh<class_ImporterMesh>` **get_importer_mesh**\ (\ )
 
-The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only used when the shape type is ``"hull"`` (convex hull) or ``"trimesh"`` (concave trimesh).
+The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only used when the shape type is ``"convex"`` (convex hull) or ``"trimesh"`` (concave trimesh).
 
 .. rst-class:: classref-item-separator
 
@@ -151,7 +151,7 @@ This is the only variable not used in the :ref:`to_node()<class_GLTFPhysicsShape
 - |void| **set_mesh_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_mesh_index**\ (\ )
 
-The index of the shape's mesh in the glTF file. This is only used when the shape type is ``"hull"`` (convex hull) or ``"trimesh"`` (concave trimesh).
+The index of the shape's mesh in the glTF file. This is only used when the shape type is ``"convex"`` (convex hull) or ``"trimesh"`` (concave trimesh).
 
 .. rst-class:: classref-item-separator
 
@@ -185,7 +185,7 @@ The radius of the shape, in meters. This is only used when the shape type is ``"
 - |void| **set_shape_type**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_shape_type**\ (\ )
 
-The type of shape this shape represents. Valid values are ``"box"``, ``"capsule"``, ``"cylinder"``, ``"sphere"``, ``"hull"``, and ``"trimesh"``.
+The type of shape this shape represents. Valid values are ``"box"``, ``"capsule"``, ``"cylinder"``, ``"sphere"``, ``"convex"``, and ``"trimesh"``.
 
 .. rst-class:: classref-item-separator
 
