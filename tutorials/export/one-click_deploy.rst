@@ -72,6 +72,8 @@ Using one-click deploy
         - Click :button:`Pair device with pairing code` (can be accessed via long press on wireless debugging) to display IP, port, and pairing code.
         - On your PC, enter the command ``adb pair <ip address>:<port>`` and provide the pairing code when prompted.
           If ``adb`` is not recognized, you may need to add the android-sdk's platform-tools folder to your ``PATH`` or execute this command from there.
+        - Enter the command ``adb connect <ip address>:<port>`` to connect to the device.
+          Use the port number displayed on the device's wireless debugging UI, not the pairing code UI which uses a different port.
         - You can verify the ADB device is successfully connected by entering ``adb devices`` in the terminal.
 
 - **iOS:**
