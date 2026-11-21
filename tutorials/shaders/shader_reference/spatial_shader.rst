@@ -531,6 +531,11 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | out vec4 **IRRADIANCE**                | If written to on any branch, blends environment map irradiance with ``IRRADIANCE.rgb`` based on  |
 |                                        | ``IRRADIANCE.a``.                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec2 **STREAMING_UV**              | The texture coordinates used to sample streamed textures, for                                    |
+|                                        | :ref:`texture streaming <doc_texture_streaming>` feedback. Only needs to be written to if the    |
+|                                        | shader samples streamed textures with coordinates other than ``UV``, such as a triplanar or      |
+|                                        | world-space projection. Defaults to ``UV``.                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
 
 .. note::
 
