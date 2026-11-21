@@ -13,20 +13,7 @@ Godot supports optionally running the game in the editor itself. This is enabled
 Configuring game embedding
 --------------------------
 
-Game embedding can be in one of 3 states:
-
-- **Floating window** *(default)*: The game runs in a separate window, with a
-  Game bar at the top that allows you to adjust settings and select nodes in the
-  embedded game. Clicking the :button:`Game` main screen button focuses the
-  floating window.
-- **Main window:** The game runs in the editor, with a Game bar at the top that
-  allows you to adjust settings and select nodes in the embedded game. Clicking
-  the :button:`Game` main screen button switches to the tab with the running
-  project.
-- **Disabled:** The game runs in a separate window, as if it was an exported project.
-  The Game bar at the top is not present; selecting nodes in the embedded game is not possible.
-
-To configure this functionality, click the Game main screen at the top of the editor:
+To configure game embedding modes, click the :button:`Game` main screen button at the top of the editor:
 
 .. figure:: img/game_embedding_main_screen.webp
    :align: center
@@ -34,27 +21,38 @@ To configure this functionality, click the Game main screen at the top of the ed
 
    Accessing the Game embedding main screen
 
-Once on the Game main screen, click the dropdown menu in the top-right corner of the Game bar:
+Once on the Game main screen, configure the embedding mode using the options on the right of the Game bar.
 
-.. figure:: img/game_embedding_mode_dropdown.webp
+.. figure:: img/game_embedding_modes.webp
    :align: center
-   :alt: Game embedding mode dropdown
+   :alt: Game embedding modes
 
-   Game embedding mode dropdown
+   Game embedding modes
 
-Two options are available to configure the game embedding mode:
+Game embedding can be in one of three states:
 
-- **Embed Game on Next Play:** If enabled, game embedding is enabled and the
-  Game bar is available for use on the running game.
-- **Make Window Floating on Next Play:** If enabled, the game runs in a floating window.
-  If disabled, the game runs in the main editor window.
+- **Main window** *(default)*: The game runs embedded in the editor, with a Game bar at
+  the top that allows you to adjust settings and select nodes in the embedded game. Clicking
+  the :button:`Game` main screen button switches to the tab with the running project.
+- **Floating window:** The game runs in a separate window, with a
+  Game bar at the top that allows you to adjust settings and select nodes in the
+  embedded game. Clicking the :button:`Game` main screen button focuses the
+  floating window.
+- **Disabled:** The game runs in a separate window, as if it was an exported project.
+  The Game bar at the top is not present and selecting nodes in the embedded game is not possible.
 
 Embedded window sizing
 ^^^^^^^^^^^^^^^^^^^^^^
 
-As seen in the dropdown menu on the right of the Game bar, there are several
-choices available to configure the embedded window size behavior. This affects
-both the floating and main window embedding modes:
+The size of the embedded window can be configured using the dropdown menu on the right of the Game bar.
+
+.. figure:: img/game_embedding_modes_dropdown.webp
+   :align: center
+   :alt: Game embedding modes dropdown
+
+   Game embedding modes dropdown
+
+These three options affect both the floating and main window embedding modes, and do nothing when game embedding is disabled:
 
 - **Fixed Size** *(default)*: Set the viewport size to a fixed resolution, as configured in the Project Settings.
   If both :ref:`display/window/size/window_width_override<class_ProjectSettings_property_display/window/size/window_width_override>`
@@ -63,12 +61,10 @@ both the floating and main window embedding modes:
 - **Keep Aspect Ratio:** The viewport size stretches to match the game window size,
   but always follows the aspect ratio defined by the ``width / height`` as configured
   in the Project Settings.
-- **Stretch to Fit**: The viewport size stretches to match the game window size,
+- **Stretch to Fit:** The viewport size stretches to match the game window size,
   and may use an aspect ratio different than the one defined by the ``width / height``
   as configured in the Project Settings. This matches the behavior when game
   embedding is disabled.
-
-These options have no effect when game embedding is disabled.
 
 Features
 --------
@@ -113,10 +109,9 @@ be multiplied by the value set here.
 
    Game speed dropdown on the left of the Game bar
 
-This can be used to view interactions in slow motion, or speed up the game
+The current setting is indicated with a small diamond icon next to the selected speed, which is 1.0× by default.
+Game speed can be used to view interactions in slow motion, or speed up the game
 significantly to test mechanics that normally take a long time to occur.
-
-The reset button to the right of the dropdown resets the game speed to normal (1.0×).
 
 .. tip::
 
@@ -161,52 +156,41 @@ inspect and modify properties of nodes in the running game.
     is running instead. Make sure :menu:`Debug > Synchronize Scene Changes` is enabled
     when doing this.
 
-Select mode
-^^^^^^^^^^^
+Node selection mode
+^^^^^^^^^^^^^^^^^^^^
 
-*Only effective if the interaction mode is 2D or 3D, not Input.*
+This controls how nodes are selected while the game is running.
 
-When enabling this option, the "show list of selectable nodes at position
-clicked" mode is disabled. However, you can still perform this action in select
-mode by using :kbd:`Ctrl + Alt + Right mouse button` at the desired location.
+- **Select mode** *(default)*: Nodes are selected exactly the same as in the editor.
+  When enabling this option, the "show list of selectable nodes at position
+  clicked" mode is disabled. However, you can still perform this action in select
+  mode by using :kbd:`Ctrl + Alt + Right mouse button` at the desired location.
+- **Show list of selectable nodes at position clicked:** Like in the editor, this
+  shows a list of selectable nodes at the position clicked. This is useful when
+  multiple nodes are overlapping and you want to select a specific one. When enabling
+  this option, select mode is disabled.
 
-Show list of selectable nodes at position clicked
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Both node selection modes require the interaction mode to be set to 2D or 3D - they do not work with Input.*
 
-*Only effective if the interaction mode is 2D or 3D, not Input.*
+Node selection mode advanced options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Like in the editor, this shows a list of selectable nodes at the position
-clicked. This is useful when multiple nodes are overlapping and you want to
-select a specific one. When enabling this option, select mode is disabled.
+Three advanced options are available in the dropdown menu next to the node selection mode icons:
 
-Toggle selection visibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: img/game_embedding_selection_options.webp
+   :align: center
+   :alt: Dropdown menu for advanced node selection options
 
-*Only effective if the interaction mode is 2D or 3D, not Input.*
+   Dropdown menu for advanced node selection options
 
-By default, the selected node in 2D or 3D interaction mode is highlighted with
-an orange rectangle or box (like in the editor).
-
-When this option is enabled, it appears as a closed eye icon. Future selections
-will not be highlighted in the game view, but are still selected for inspection
-in the inspector. This is useful to avoid visual clutter.
-
-Selection advanced options
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Two advanced options are available in the dropdown menu next to the select mode icons:
-
+- **Show Selection Visibility:** By default, the selected node in 2D or 3D interaction
+  mode is highlighted with an orange rectangle or box (like in the editor). When disabled,
+  selections will not be highlighted in the game view, but are still selected for inspection
+  in the inspector. This is useful to avoid visual clutter.
 - **Don't Select Locked Nodes:** When enabled, nodes that are locked in the
-  editor cannot be selected. This mimics editor behavior.
+  editor cannot be selected. This mimics editor behavior. This is disabled by default.
 - **Select Group over Children:** When enabled, grouped nodes are selected
-  instead of their individual children. This mimics editor behavior.
-
-Mute game audio
-^^^^^^^^^^^^^^^
-
-This mutes game audio when enabled, without affecting the editor or other
-applications. This is particularly useful on macOS and Android, which do not
-come with a per-application volume slider out of the box.
+  instead of their individual children. This mimics editor behavior. This is disabled by default.
 
 Camera override
 ^^^^^^^^^^^^^^^
@@ -248,6 +232,14 @@ camera and the overridden camera.
 Camera override options
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+There is a dropdown with advanced camera options next to the camera override button:
+
+.. figure:: img/game_embedding_camera_override_options.webp
+   :align: center
+   :alt: Dropdown menu for camera override options
+
+   Dropdown menu for camera override options
+
 - **Reset 2D/3D Camera:** Resets the 2D/3D camera to the position and rotation
   defined by the game. Note that the camera will still be frozen in place until
   you disable camera override.
@@ -265,6 +257,13 @@ Camera override options
     **Manipulate From Editors** camera override mode, as a result of using
     local network communication between the editor and the game to
     update the camera position.
+
+Mute game audio
+^^^^^^^^^^^^^^^
+
+This mutes game audio when enabled, without affecting the editor or other
+applications. This is particularly useful on macOS and Android, which do not
+come with a per-application volume slider out of the box.
 
 Limitations
 -----------
