@@ -64,3 +64,6 @@ tmp-unused-images-history
 
 # Lychee URL checking cache
 .lycheecache
+
+# Generated classes.
+/classes/

@@ -30,7 +30,6 @@ jobs:
             --max-cache-age 1d
             --exclude-path _build/
             --exclude-path _templates/
-            --exclude-path classes/
             "**/*.md" "**/*.rst"
 
       - name: Fail if there were link errors
