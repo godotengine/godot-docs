@@ -665,7 +665,7 @@ and sets up our entity discovery.
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -736,7 +736,7 @@ Note in the example code shown above, we're already connecting to this signal an
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [ \
@@ -755,6 +755,8 @@ Note in the example code shown above, we're already connecting to this signal an
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot):
         # See further down.
@@ -845,7 +847,7 @@ Completing our discovery logic we add the following:
         var alignment_list : OpenXRSpatialComponentPlaneAlignmentList = OpenXRSpatialComponentPlaneAlignmentList.new()
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, [ query_result_data, bounded2d_list, alignment_list]):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1093,7 +1095,7 @@ With our persistence scope created, we can now create our spatial context.
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1142,7 +1144,7 @@ The anchor system gives us access to two components:
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [ \
@@ -1160,6 +1162,9 @@ The anchor system gives us access to two components:
 
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
+
+        # clean up our discovery result.
+	    discovery_result = null
 
 
     func _process(_delta):
@@ -1215,7 +1220,7 @@ as our tracker class as this already has all the support for anchors built in.
             result_data.push_back(persistent_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1330,7 +1335,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1372,7 +1377,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, \
@@ -1389,6 +1394,8 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot):
         var result_data : Array
@@ -1427,7 +1434,7 @@ We can use our :ref:`OpenXRPlaneTracker<class_OpenXRPlaneTracker>` tracker objec
             result_data.push_back(label_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
@@ -1552,7 +1559,7 @@ As an example we'll create a spatial context that will find QR codes and Aruco m
         var configurations : Array
 
         # Add our QR code configuration.
-        if not OpenXRSpatialMarkerTrackingCapability.is_qrcode_supported():
+        if OpenXRSpatialMarkerTrackingCapability.is_qrcode_supported():
             qrcode_config = OpenXRSpatialCapabilityConfigurationQrCode.new()
             configurations.push_back(qrcode_config)
 
@@ -1572,7 +1579,7 @@ As an example we'll create a spatial context that will find QR codes and Aruco m
         await future_result.completed
 
         # Obtain our result.
-        spatial_context = future_result.get_spatial_context()
+        spatial_context = future_result.get_result_value()
         if spatial_context:
             # Connect to our discovery signal.
             OpenXRSpatialEntityExtension.spatial_discovery_recommended.connect(_on_perform_discovery)
@@ -1638,7 +1645,7 @@ We add our discovery implementation:
 
         # If we currently have an ongoing discovery result, cancel it.
         if discovery_result:
-            discovery_result.cancel_discovery()
+            discovery_result.cancel_future()
 
         # Perform our discovery.
         discovery_result = OpenXRSpatialEntityExtension.discover_spatial_entities(spatial_context, [\
@@ -1657,6 +1664,8 @@ We add our discovery implementation:
             # And clean up our snapshot.
             OpenXRSpatialEntityExtension.free_spatial_snapshot(snapshot)
 
+        # clean up our discovery result.
+	    discovery_result = null
 
     func _process_snapshot(p_snapshot, bool p_is_discovery):
         var result_data : Array
@@ -1684,7 +1693,7 @@ We add our discovery implementation:
         result_data.push_back(bounded2d_list)
 
         if OpenXRSpatialEntityExtension.query_snapshot(p_snapshot, result_data):
-            for i in query_result_data.get_entity_id_size():
+            for i in query_result_data.get_get_capacity():
                 var entity_id = query_result_data.get_entity_id(i)
                 var entity_state = query_result_data.get_entity_state(i)
 
