@@ -82,7 +82,7 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--quit``                               | |release| Quit after the first iteration.                                                                                                                    |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--quit-after``                         | |release| Quit after the given number of iterations. Set to 0 to disable.                                                                                    |
+| ``--quit-after <int>``                   | |release| Quit after the given number of iterations. Set to 0 to disable.                                                                                    |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-l``, ``--language <locale>``          | |release| Use a specific locale. ``<locale>`` follows the format ``language_Script_COUNTRY_VARIANT`` where language is a 2 or 3-letter language code in      |
 |                                          | lowercase and the rest is optional. See :ref:`doc_locales` for more details.                                                                                 |
@@ -96,9 +96,9 @@ given build type.
 | ``--render-thread <mode>``               | |release| Render thread mode ("unsafe", "safe", "separate"). See :ref:`Thread Model <class_ProjectSettings_property_rendering/driver/threads/thread_model>`  |
 |                                          | for more details.                                                                                                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--remote-fs <address>``                | |release| Remote filesystem (``<host/IP>[:<port>]`` address).                                                                                                |
+| ``--remote-fs <address>``                | |debug| Remote filesystem (``<host/IP>[:<port>]`` address).                                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--remote-fs-password <password>``      | |release| Password for remote filesystem.                                                                                                                    |
+| ``--remote-fs-password <password>``      | |debug| Password for remote filesystem.                                                                                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--audio-driver <driver>``              | |release| Audio driver. Use ``--help`` first to display the list of available drivers.                                                                       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,13 +113,13 @@ given build type.
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--gpu-index <device_index>``           | |release| Use a specific GPU (only available on the Forward+/Mobile renderers; run with ``--verbose`` to get available device list).                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--text-driver <driver>``               | |release| Text driver (Fonts, BiDi, shaping).                                                                                                                |
+| ``--text-driver <driver>``               | |release| Text driver (font rendering, bidirectional support, and shaping).                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--tablet-driver <driver>``             | |release| Pen tablet input driver.                                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--headless``                           | |release| Enable headless mode (``--display-driver headless --audio-driver Dummy``). Useful for servers and with ``--script``.                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--log-file``                           | |release| Write output/error log to the specified path instead of the default location defined by the project. ``<file>`` path should be absolute or         |
+| ``--log-file <file>``                    | |release| Write output/error log to the specified path instead of the default location defined by the project. ``<file>`` path should be absolute or         |
 |                                          | relative to the project directory.                                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--write-movie <file>``                 | |release| Run the engine in a way that a movie is written (usually with .avi or .png extension).                                                             |
@@ -156,19 +156,23 @@ given build type.
 | ``--accessibility <mode>``         | |release| Select accessibility mode ["auto" (when screen reader is running,|
 |                                    | default), "always", "disabled"].                                           |
 +------------------------------------+----------------------------------------------------------------------------+
+| ``--accessibility-driver <driver>``| |release| Select accessibility driver ["accesskit", "dummy"].              |
++------------------------------------+----------------------------------------------------------------------------+
 
 **Debug options**
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | Command                        | Description                                                                                                     |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``-d``, ``--debug``            | |release| Debug (local stdout debugger).                                                                        |
+| ``-d``, ``--debug``            | |debug| Debug (local stdout debugger).                                                                          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``-b``, ``--breakpoints``      | |release| Breakpoint list as source::line comma-separated pairs, no spaces (use ``%20`` instead).               |
+| ``-b``, ``--breakpoints``      | |debug| Breakpoint list as source::line comma-separated pairs, no spaces (use ``%20`` instead).                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--ignore-error-breaks``      | |release| If debugger is connected, prevents sending error breakpoints.                                         |
+| ``--skip-breakpoints``         | |debug| If debugger is connected, skips all breakpoints.                                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--profiling``                | |release| Enable profiling in the script debugger.                                                              |
+| ``--ignore-error-breaks``      | |debug| If debugger is connected, prevents sending error breakpoints.                                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--profiling``                | |debug| Enable profiling in the script debugger.                                                                |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--gpu-profile``              | |release| Show a GPU profile of the tasks that took the most time during frame rendering.                       |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -176,7 +180,10 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--gpu-abort``                | |debug| Abort on GPU errors (usually validation layer errors), may help see the problem if your system freezes. |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--generate-spirv-debug-info``| |debug| Generate SPIR-V debug information. This allows source-level shader debugging with RenderDoc.            |
+| ``--generate-spirv-debug-info``| |release| Generate SPIR-V debug information (Vulkan only). This allows source-level shader debugging with       |
+|                                | RenderDoc.                                                                                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--clear-shader-cache``       | |release| Clear the shader_cache directory at launch, so it's re-generated.                                     |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--extra-gpu-memory-tracking``| |debug| Enables additional memory tracking (see :ref:`RenderingDevice.get_driver_and_device_memory_report()     |
 |                                | <class_RenderingDevice_method_get_driver_and_device_memory_report>` and linked methods).                        |
@@ -187,9 +194,7 @@ given build type.
 | ``--accurate-breadcrumbs``     | |debug| Force barriers between breadcrumbs. Useful for narrowing down a command causing GPU resets. Currently   |
 |                                | only implemented for Vulkan.                                                                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--remote-debug <uri>``       | |release| Remote debug (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``).                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| ``--single-threaded-scene``    | |release| Scene tree runs in single-threaded mode. Sub-thread groups are disabled and run on the main thread.   |
+| ``--remote-debug <uri>``       | |debug| Remote debug (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``).                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--debug-collisions``         | |debug| Show collision shapes when running the scene.                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -203,6 +208,8 @@ given build type.
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--debug-canvas-item-redraw`` | |debug| Display a rectangle each time a canvas item requests a redraw (useful to troubleshoot low processor     |
 |                                | mode).                                                                                                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--debug-mute-audio``         | |debug| Mute all audio output when running the scene.                                                           |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--max-fps <fps>``            | |release| Set a maximum number of frames per second rendered (can be used to limit power usage). A value of 0   |
 |                                | results in unlimited framerate.                                                                                 |
@@ -224,6 +231,8 @@ given build type.
 | ``--delta-smoothing <enable>`` | |release| Enable or disable frame delta smoothing ("enable", "disable").                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--print-fps``                | |release| Print the frames per second to the stdout.                                                            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| ``--single-threaded-scene``    | |editor| Scene tree runs in single-threaded mode. Sub-thread groups are disabled and run on the main thread.    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | ``--editor-pseudolocalization``| |editor| Enable pseudolocalization for the editor and the project manager.                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -280,10 +289,10 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--dump-extension-api``                                         | |editor| Generate JSON dump of the Godot API for GDExtension bindings named "extension_api.json" in the current folder.                                 |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--dump-extension-api-with-docs``                               | |editor| Generate JSON dump of the Godot API like the previous option, but including documentation.                                                     |
+| ``--dump-extension-api-with-docs``                               | |editor| Generate JSON dump of the Godot API like ``--dump-extension-api``, but including documentation.                                                |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``--validate-extension-api <path>``                              | |editor| Validate an extension API file dumped (with the option above) from a previous version of the engine to ensure API compatibility.               |
-|                                                                  | If incompatibilities or errors are detected, the return code will be non-zero.                                                                          |
+| ``--validate-extension-api <path>``                              | |editor| Validate an extension API file dumped (with ``--dump-extension-api`` or ``--dump-extension-api-with-docs``) from a previous version of the     |
+|                                                                  | engine to ensure API compatibility. If incompatibilities or errors are detected, the return code will be non-zero.                                      |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--benchmark``                                                  | |editor| Benchmark the runtime and print it to console.                                                                                                 |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
