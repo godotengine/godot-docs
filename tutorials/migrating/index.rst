@@ -1,5 +1,7 @@
 :allow_comments: False
 
+.. _doc_migrating_to_a_new_version:
+
 Migrating to a new version
 ==========================
 
