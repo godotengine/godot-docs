@@ -74,8 +74,6 @@ As for new ``major`` releases:
   for anyone considering the upgrade, since a lot of changes came with no
   easy compatibility path.
 
-.. _doc_release_support_timeline:
-
 Can I use deprecated features?
 ------------------------------
 
@@ -92,7 +90,7 @@ deprecation notes carefully and consider using the recommended alternatives.
 Deprecated features will receive some support in the form of bug fixes and
 improvements, but generally less than the recommended alternatives.
 
-.. _doc_release_policy_when_is_next_release_out:
+.. _doc_release_support_timeline:
 
 Release support timeline
 ------------------------
@@ -173,6 +171,8 @@ provided for testing purposes only.
 
     See :ref:`doc_upgrading_to_godot_4` for instructions on migrating a project
     from Godot 3.x to 4.x.
+
+.. _doc_release_policy_when_is_next_release_out:
 
 When is the next release out?
 -----------------------------
