@@ -46,10 +46,10 @@ For compiling under Windows, the following is required:
       an alternative to Visual Studio and MinGW-w64.
       **Important:** When using MinGW to compile the ``master`` branch, you need clang 14 or later.
       Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `Python 3.9+ <https://www.python.org/downloads/windows/>`_.
+- `Python 3.10+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
 
-  - If using Python 3.9 to 3.13, also run ``pip install --user zstandard`` to install Zstandard support for Python.
+  - If using Python 3.10 to 3.13, also run ``pip install --user zstandard`` to install Zstandard support for Python.
     This is not required on Python 3.14 and above, which include Zstandard support by default.
 
 - `SCons 4.4+ <https://scons.org/pages/download.html>`_ build system. Using the
