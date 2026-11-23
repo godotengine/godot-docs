@@ -56,7 +56,7 @@ work for you, making it easier to write complex shaders.
 
 In Godot, shaders are made up of main functions called "processor functions".
 Processor functions are the entry point for your shader into the program. There
-are seven different processor functions.
+are eight different processor functions.
 
 1. The ``vertex()`` function runs over all the vertices in the mesh and sets
    their positions and some other per-vertex variables. Used in
@@ -87,6 +87,10 @@ are seven different processor functions.
 7. The ``fog()`` function runs for every froxel in the volumetric fog froxel
    buffer that intersects with the :ref:`FogVolume <class_FogVolume>`. Used by
    :ref:`fog shaders <doc_fog_shader>`.
+
+8. The ``blit()`` function runs for every pixel of the source texture inside
+   the rect given to ``blit_rect()``. Used in
+   :ref:`texture_blit shaders <doc_texture_blit_shader>`.
 
 .. warning::
 
