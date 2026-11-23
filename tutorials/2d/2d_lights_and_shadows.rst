@@ -254,7 +254,7 @@ The following properties can be adjusted on 2D lights that have shadows enabled:
     ``LIGHT_VERTEX`` and ``SHADOW_VERTEX`` to snap light sampling to a pixel grid.
     The following shader snaps lighting to a grid using the ``floor()`` function:
 
-    .. code-block:: glsl
+    .. code-block:: gdshader
 
         shader_type canvas_item;
 

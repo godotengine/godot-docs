@@ -290,7 +290,7 @@ To implement the chroma key effect, follow these steps:
 
 2. In the "ChromaKeyShader.gdshader" file, write the custom shader code as shown below:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
    shader_type canvas_item;
 

@@ -60,7 +60,7 @@ If the *concatenation* symbol (``##``) is present in the replacement code then
 it will be removed upon macro insertion, together with any space surrounding
 it, and join the surrounding words and arguments into a new token.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform sampler2D material0;
 
@@ -76,7 +76,7 @@ anywhere within the shader (including in uniform hints).
 ``#define`` can also be used to insert arbitrary shader code at any location,
 while constants can't do that.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -116,7 +116,7 @@ error. To prevent this, use ``#undef <identifier>``.
 
 The ``#undef`` directive may be used to cancel a previously defined ``#define`` directive:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define MY_COLOR vec3(1, 0, 0)
 
@@ -150,7 +150,7 @@ floating-point, integer or boolean result. There may be multiple condition
 blocks connected by ``&&`` (AND) or ``||`` (OR) operators. It may be continued
 by an ``#else`` block, but **must** be ended with the ``#endif`` directive.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define VAR 3
     #define USE_LIGHT 0 // Evaluates to `false`.
@@ -168,7 +168,7 @@ continued by an ``#else`` block, but must be ended with the ``#endif`` directive
 The ``defined()`` function's result can be negated by using the ``!`` (boolean NOT)
 symbol in front of it. This can be used to check whether a define is *not* set.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define USE_LIGHT
     #define USE_COLOR
@@ -180,7 +180,7 @@ symbol in front of it. This can be used to check whether a define is *not* set.
 
 Be careful, as ``defined()`` must only wrap a single identifier within parentheses, never more:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // Incorrect syntax (parentheses are not placed where they should be):
     #if defined(USE_LIGHT || USE_COLOR || !USE_REFRACTION)
@@ -197,7 +197,7 @@ Be careful, as ``defined()`` must only wrap a single identifier within parenthes
 
 The :ref:`shading language <doc_shading_language>` supports runtime ``if`` statements:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform bool USE_LIGHT = true;
 
@@ -210,7 +210,7 @@ The :ref:`shading language <doc_shading_language>` supports runtime ``if`` state
 If the uniform is never changed, this behaves identical to the following usage
 of the ``#if`` preprocessor statement:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define USE_LIGHT
 
@@ -238,7 +238,7 @@ The ``#elif`` directive stands for "else if" and checks the condition passed if
 the above ``#if`` evaluated to ``false``. ``#elif`` can only be used within an
 ``#if`` block. It is possible to use several ``#elif`` statements after an ``#if`` statement.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define VAR 2
 
@@ -254,7 +254,7 @@ the above ``#if`` evaluated to ``false``. ``#elif`` can only be used within an
 
 Like with ``#if``, the ``defined()`` preprocessor function can be used:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define SHADOW_QUALITY_MEDIUM
 
@@ -276,7 +276,7 @@ identifier is defined by ``#define`` placed above that directive. This is useful
 for creating multiple shader versions in the same file. It may be continued by an
 ``#else`` block, but must be ended with the ``#endif`` directive.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define USE_LIGHT
 
@@ -288,7 +288,7 @@ The processor does *not* support ``#elifdef`` as a shortcut for ``#elif defined(
 Instead, use the following series of ``#ifdef`` and ``#else`` when you need more
 than two branches:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define SHADOW_QUALITY_MEDIUM
 
@@ -314,7 +314,7 @@ directive.
 This is the exact opposite of ``#ifdef``; it will always match in situations
 where ``#ifdef`` would never match, and vice versa.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define USE_LIGHT
 
@@ -334,7 +334,7 @@ where ``#ifdef`` would never match, and vice versa.
 Defines the optional block which is included when the previously defined ``#if``,
 ``#elif``, ``#ifdef`` or ``#ifndef`` directive evaluates to false.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -364,7 +364,7 @@ The ``#error`` directive forces the preprocessor to emit an error with optional 
 For example, it's useful when used within ``#if`` block to provide a strict limitation of the
 defined value.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define MAX_LOD 3
     #define LOD 4
@@ -414,7 +414,7 @@ collisions, as redefining functions or macros is not allowed.
 
 Example shader include file:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // fancy_color.gdshaderinc
 
@@ -426,7 +426,7 @@ Example shader include file:
 
 Example base shader (using the include file we created above):
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // material.gdshader
 
@@ -450,7 +450,7 @@ Currently, it may have only one value: ``disable_preprocessor``. If you don't ne
 the preprocessor, use that directive to speed up shader compilation by excluding
 the preprocessor step.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #pragma disable_preprocessor
 
@@ -477,7 +477,7 @@ and ``RENDERER_FORWARD_PLUS``:
 
 As an example, this shader sets ``ALBEDO`` to a different color in each renderer:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 

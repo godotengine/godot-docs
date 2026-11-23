@@ -163,7 +163,7 @@ There are several examples of custom trail shaders in the
     - If using the **Local** mode, remove the billboarding code below from the ``vertex()`` function.
     - If using the **Billboard** mode, ensure that the billboarding code is present in the ``vertex()`` function:
 
-    .. code-block:: glsl
+    .. code-block:: gdshader
 
         void vertex() {
             // Billboarding code for trails.

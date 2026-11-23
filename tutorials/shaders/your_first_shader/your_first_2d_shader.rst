@@ -71,7 +71,7 @@ Your first CanvasItem shader
 In Godot, all shaders start with a line specifying what type of shader they are.
 It uses the following format:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type canvas_item;
 
@@ -104,7 +104,7 @@ shorthand for constructing a vector with 4 numbers. For more information about
 vectors see the :ref:`Vector math tutorial <doc_vector_math>`. ``COLOR`` is both
 an input variable to the fragment function and the final output from it.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment(){
     COLOR = vec4(0.4, 0.6, 0.9, 1.0);
@@ -129,7 +129,7 @@ other functions or to assign values to ``COLOR`` directly.
 
 .. image:: img/iconuv.png
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     COLOR = vec4(UV, 0.5, 1.0);
@@ -145,7 +145,7 @@ The default fragment function reads from the set Sprite2D texture and displays i
 When you want to adjust a color in a Sprite2D you can adjust the color
 from the texture manually like in the code below.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment(){
     // This shader will result in a blue-tinted icon
@@ -157,7 +157,7 @@ in the shader using ``TEXTURE``. If you want to use the Sprite2D texture to comb
 with other colors, you can use the ``UV`` with the ``texture`` function to access
 this variable. Use them to redraw the Sprite2D with the texture.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment(){
     COLOR = texture(TEXTURE, UV); // Read from texture again.
@@ -174,7 +174,7 @@ the entire shader.
 
 You can use uniforms by defining them at the top of your shader like so:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform float size;
 
@@ -183,7 +183,7 @@ For more information about usage see the :ref:`Shading Language doc
 
 Add a uniform to change the amount of blue in our Sprite2D.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform float blue = 1.0; // you can assign a default value to uniforms
 
@@ -236,7 +236,7 @@ viewport, or parent nodes).
 
 You can offset the vertices by directly adding to ``VERTEX``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     VERTEX += vec2(10.0, 0.0);
@@ -245,7 +245,7 @@ You can offset the vertices by directly adding to ``VERTEX``.
 Combined with the ``TIME`` built-in variable, this can be used for basic
 animation.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     // Animate Sprite2D moving in big circle around its location

@@ -54,7 +54,7 @@ world orientation.
 
 In order to control the speed of the animation, we will start by defining our own time variable using ``TIME``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //time_scale is a uniform float
   float time = TIME * time_scale;
@@ -63,7 +63,7 @@ The first motion we will implement is the side to side motion. It can be made by
 ``cos`` of ``TIME``. Each time the mesh is rendered, all the vertices will move to the side by the amount
 of ``cos(time)``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //side_to_side is a uniform float
   VERTEX.x += cos(time) * side_to_side;
@@ -77,7 +77,7 @@ rotation matrix for it to rotate around the center of the fish.
 
 We construct a rotation matrix like so:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //angle is scaled by 0.1 so that the fish only pivots and doesn't rotate all the way around
   //pivot is a uniform float
@@ -86,7 +86,7 @@ We construct a rotation matrix like so:
 
 And then we apply it in the ``x`` and ``z`` axes by multiplying it by ``VERTEX.xz``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   VERTEX.xz = rotation_matrix * VERTEX.xz;
 
@@ -97,7 +97,7 @@ With only the pivot applied you should see something like this:
 The next two motions need to pan down the spine of the fish. For that, we need a new variable, ``body``.
 ``body`` is a float that is ``0`` at the tail of the fish and ``1`` at its head.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float body = (VERTEX.z + 1.0) / 2.0; //for a fish centered at (0, 0) with a length of 2
 
@@ -105,7 +105,7 @@ The next motion is a cosine wave that moves down the length of the fish. To make
 it move along the spine of the fish, we offset the input to ``cos`` by the position
 along the spine, which is the variable we defined above, ``body``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //wave is a uniform float
   VERTEX.x += cos(time + body) * wave;
@@ -119,7 +119,7 @@ the wave making it look like a wave is moving along the fish.
 The last motion is the twist, which is a panning roll along the spine. Similarly to the pivot,
 we first construct a rotation matrix.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //twist is a uniform float
   float twist_angle = cos(time + body) * 0.3 * twist;
@@ -128,7 +128,7 @@ we first construct a rotation matrix.
 We apply the rotation in the ``xy`` axes so that the fish appears to roll around its spine. For
 this to work, the fish's spine needs to be centered on the ``z`` axis.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   VERTEX.xy = twist_matrix * VERTEX.xy;
 
@@ -146,7 +146,7 @@ panning motions to the back half of the fish. To do this, we create a new variab
 ``mask`` is a float that goes from ``0`` at the front of the fish to ``1`` at the end using
 ``smoothstep`` to control the point at which the transition from ``0`` to ``1`` happens.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //mask_black and mask_white are uniforms
   float mask = smoothstep(mask_black, mask_white, 1.0 - body);
@@ -157,7 +157,7 @@ Below is an image of the fish with ``mask`` used as ``COLOR``:
 
 For the wave, we multiply the motion by ``mask`` which will limit it to the back half.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //wave motion with mask
   VERTEX.x += cos(time + body) * mask * wave;
@@ -168,7 +168,7 @@ use ``mix`` instead of multiplying ``mask`` by the rotated ``VERTEX`` because we
 adding the motion to the ``VERTEX`` we are replacing the ``VERTEX`` with the rotated
 version. If we multiplied that by ``mask``, we would shrink the fish.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //twist motion with mask
   VERTEX.xy = mix(VERTEX.xy, twist_matrix * VERTEX.xy, mask);
@@ -244,7 +244,7 @@ swim cycle, we only need to offset ``time``.
 
 We do that by adding the per-instance custom value ``INSTANCE_CUSTOM`` to ``time``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float time = (TIME * time_scale) + (6.28318 * INSTANCE_CUSTOM.x);
 
@@ -260,7 +260,7 @@ Now the fish all have unique positions in the swim cycle. You can give them a li
 individuality by using ``INSTANCE_CUSTOM`` to make them swim faster or slower by multiplying
 by ``TIME``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   //set speed from 50% - 150% of regular speed
   float time = (TIME * (0.5 + INSTANCE_CUSTOM.y) * time_scale) + (6.28318 * INSTANCE_CUSTOM.x);

@@ -19,13 +19,13 @@ First create a Particles node. Then, under "Draw Passes" set the Particle's "Dra
 
 Set the ``shader_type`` to ``particles``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type particles
 
 Then add the following two functions:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float rand_from_seed(in uint seed) {
     int k;
@@ -65,7 +65,7 @@ offset of the swim cycle.
 
 First, generate 4 seeds inside the ``start()`` function using the ``hash()`` function provided above:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uint alt_seed1 = hash(NUMBER + uint(1) + RANDOM_SEED);
   uint alt_seed2 = hash(NUMBER + uint(27) + RANDOM_SEED);
@@ -74,7 +74,7 @@ First, generate 4 seeds inside the ``start()`` function using the ``hash()`` fun
 
 Then, use those seeds to generate random numbers using ``rand_from_seed``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   CUSTOM.x = rand_from_seed(alt_seed1);
   vec3 position = vec3(rand_from_seed(alt_seed2) * 2.0 - 1.0,
@@ -84,7 +84,7 @@ Then, use those seeds to generate random numbers using ``rand_from_seed``:
 Finally, assign ``position`` to ``TRANSFORM[3].xyz``, which is the part of the transform that holds
 the position information.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   TRANSFORM[3].xyz = position * 20.0;
 
@@ -97,7 +97,7 @@ or by writing to ``VELOCITY``.
 
 Let's transform the fish by setting their ``VELOCITY`` in the ``start()`` function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   VELOCITY.z = 10.0;
 
@@ -106,7 +106,7 @@ This is the most basic way to set ``VELOCITY`` every particle (or fish) will hav
 Just by setting ``VELOCITY`` you can make the fish swim however you want. For example, try the code
 below.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   VELOCITY.z = cos(TIME + CUSTOM.x * 6.28) * 4.0 + 6.0;
 
@@ -118,7 +118,7 @@ function.
 If you used ``CUSTOM.y`` in the last tutorial, you can also set the speed of the swim animation based
 on the ``VELOCITY``. Just use ``CUSTOM.y``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   CUSTOM.y = VELOCITY.z * 0.1;
 

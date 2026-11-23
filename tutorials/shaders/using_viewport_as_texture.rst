@@ -63,7 +63,7 @@ Click the dropdown menu button for the shader material and click / Edit. From he
 give it a name and click "Create". click the shader in the inspector to open the shader editor. Delete the default code
 and add the following:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -119,7 +119,7 @@ the sphere in a nice way? One solution is to use a function that repeats on the 
 ``sin`` and ``cos`` are two such functions. Let's apply them to the texture and see what happens. Replace the
 existing color code in the shader with the following:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0.5);
 
@@ -143,7 +143,7 @@ surface of the sphere, you never hit an edge, and hence you never create a seam 
 a pinch point on the pole. The following code converts the ``UVs`` into Cartesian
 coordinates.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float theta = UV.y * 3.14159;
     float phi = UV.x * 3.14159 * 2.0;
@@ -161,7 +161,7 @@ And if we use ``unit`` as an output ``COLOR`` value, we get:
 Now that we can calculate the 3D position of the surface of the sphere, we can use 3D noise
 to make the planet. We will be using this noise function directly from a `Shadertoy <https://www.shadertoy.com/view/Xsl3Dl>`_:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec3 hash(vec3 p) {
         p = vec3(dot(p, vec3(127.1, 311.7, 74.7)),
@@ -192,7 +192,7 @@ to make the planet. We will be using this noise function directly from a `Shader
 
 Now to use ``noise``, add the following to the    ``fragment`` function:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float n = noise(unit * 5.0);
     COLOR.xyz = vec3(n * 0.5 + 0.5);
@@ -216,7 +216,7 @@ it *mixes* the two values together. In other APIs, this function is often called
 However, ``lerp`` is typically reserved for mixing two floats together; ``mix`` can take any
 values whether it be floats or vector types.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), n * 0.5 + 0.5);
 
@@ -231,7 +231,7 @@ That is a little more blurry than we want. Planets typically have a relatively c
 land and sea. In order to do that, we will change the last term to ``smoothstep(-0.1, 0.0, n)``.
 And thus the whole line becomes:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.xyz = mix(vec3(0.05, 0.3, 0.5), vec3(0.9, 0.4, 0.1), smoothstep(-0.1, 0.0, n));
 
@@ -249,7 +249,7 @@ overall blobby structure of the continents. Then another layer breaks up the edg
 another, and so on. What we will do is calculate ``n`` with four lines of shader code
 instead of just one. ``n`` becomes:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float n = noise(unit * 5.0) * 0.5;
     n += noise(unit * 10.0) * 0.25;
@@ -267,7 +267,7 @@ One final thing to make this look more like a planet. The ocean and the land ref
 So we want the ocean to shine a little more than the land. We can do this by passing a fourth value
 into the ``alpha`` channel of our output ``COLOR`` and using it as a Roughness map.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.a = 0.3 + 0.7 * smoothstep(-0.1, 0.0, n);
 
@@ -294,7 +294,7 @@ drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere
 go into the :ref:`SubViewport <class_SubViewport>` and enable the "Transparent Bg" property. Since we are now
 rendering one transparent object on top of another, we want to enable ``blend_premul_alpha``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     render_mode blend_premul_alpha;
 

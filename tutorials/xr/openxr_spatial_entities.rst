@@ -485,7 +485,7 @@ We configure this material as the ``material_override`` material on our MeshInst
 For our "hole punch" material, create a :ref:`ShaderMaterial<class_ShaderMaterial>`
 and use the following code as the shader code:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
     render_mode unshaded, shadow_to_opacity;

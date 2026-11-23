@@ -306,7 +306,7 @@ instance, a triplanar or world-space projection), write the coordinates the
 textures are actually sampled with to the ``STREAMING_UV`` built-in in
 ``fragment()``, and the streaming system will use those instead:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 

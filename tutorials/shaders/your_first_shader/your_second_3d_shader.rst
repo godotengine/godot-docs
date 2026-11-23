@@ -33,7 +33,7 @@ functionality you want the built-in aspects of the shader to have.
 For example, if you do not want to have lights affect an object, set the render
 mode to ``unshaded``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   render_mode unshaded;
 
@@ -41,7 +41,7 @@ You can also stack multiple render modes together. For example, if you want to
 use toon shading instead of more-realistic PBR shading, set the diffuse mode and
 specular mode to toon:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   render_mode diffuse_toon, specular_toon;
 
@@ -60,7 +60,7 @@ First let's set the color of the water. We do that by setting ``ALBEDO``.
 
 Let's set it to a nice shade of blue.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     ALBEDO = vec3(0.1, 0.3, 0.5);
@@ -96,7 +96,7 @@ Water is not a metal, so we will set its ``METALLIC`` property to ``0.0``. Water
 is also highly reflective, so we will set its ``ROUGHNESS`` property to be quite
 low as well.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     METALLIC = 0.0;
@@ -119,7 +119,7 @@ In order to increase the specular reflections, we will do two things. First, we
 will change the render mode for specular to toon because the toon render mode
 has larger specular highlights.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   render_mode specular_toon;
 
@@ -130,7 +130,7 @@ glancing angles. Usually it is used to emulate the way light passes through
 fabric on the edges of an object, but we will use it here to help achieve a nice
 watery effect.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     RIM = 0.2;
@@ -149,7 +149,7 @@ mesh's surface, while the ``VIEW`` vector is the direction between your eye and
 that point on the surface. The dot product between them is a handy way to tell
 when you are looking at the surface head-on or at a glancing angle.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
 
@@ -159,7 +159,7 @@ these properties with a texture, or to a flat number. But with shaders we can
 set them based on any mathematical function that we can dream up.
 
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
@@ -192,7 +192,7 @@ In the last tutorial we calculated height by reading from a heightmap. For this
 tutorial, we will do the same. Put the heightmap code in a function called
 ``height()``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position) {
     return texture(noise, position / 10.0).x; // Scaling factor is based on mesh size (this PlaneMesh is 10×10).
@@ -200,14 +200,14 @@ tutorial, we will do the same. Put the heightmap code in a function called
 
 In order to use ``TIME`` in the ``height()`` function, we need to pass it in.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position, float time) {
   }
 
 And make sure to correctly pass it in inside the vertex function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     vec2 pos = VERTEX.xz;
@@ -218,7 +218,7 @@ And make sure to correctly pass it in inside the vertex function.
 Instead of using a normalmap to calculate normals. We are going to compute them
 manually in the ``vertex()`` function. To do so use the following line of code.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   NORMAL = normalize(vec3(k - height(pos + vec2(0.1, 0.0), TIME), 0.1, k - height(pos + vec2(0.0, 0.1), TIME)));
 
@@ -228,7 +228,7 @@ using math to create complex-looking waves.
 Now, we are going to make the ``height()`` function a little more complicated by
 offsetting ``position`` by the cosine of ``TIME``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position, float time) {
     vec2 offset = 0.01 * cos(position + time);
@@ -253,7 +253,7 @@ modifying the ``height()`` function and by introducing a new function called
 We are going to call ``wave()`` multiple times in ``height()`` in order to fake
 the way waves look.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float wave(vec2 position){
     position += texture(noise, position / 10.0).x * 2.0 - 1.0;
@@ -263,14 +263,14 @@ the way waves look.
 
 At first this looks complicated. So let's go through it line-by-line.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     position += texture(noise, position / 10.0).x * 2.0 - 1.0;
 
 Offset the position by the ``noise`` texture. This will make the waves curve, so
 they won't be straight lines completely aligned with the grid.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec2 wv = 1.0 - abs(sin(position));
 
@@ -279,7 +279,7 @@ waves are very round. We use ``abs()`` to absolute to give them a sharp ridge
 and constrain them to the 0-1 range. And then we subtract it from ``1.0`` to put
 the peak on top.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     return pow(1.0 - pow(wv.x * wv.y, 0.65), 4.0);
 
@@ -289,7 +289,7 @@ become peaks and raise that to a power to sharpen the ridges.
 
 We can now replace the contents of our ``height()`` function with ``wave()``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position, float time) {
     float h = wave(position);
@@ -303,7 +303,7 @@ Using this, you get:
 The shape of the sin wave is too obvious. So let's spread the waves out a bit.
 We do this by scaling ``position``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position, float time) {
     float h = wave(position * 0.4);
@@ -323,7 +323,7 @@ going to multiply the output of the wave to make them shorter or taller
 Here is an example for how you could layer the four waves to achieve nicer
 looking waves.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float height(vec2 position, float time) {
     float d = wave((position + time) * 0.4) * 0.3;

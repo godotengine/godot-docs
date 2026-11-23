@@ -24,7 +24,7 @@ not all subpasses will be used. You can change the behavior of the shader
 based on where it is called by checking the ``AT_*_PASS`` booleans. For
 example:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type sky;
 
@@ -77,7 +77,7 @@ needs to be rendered only once.
 The following code renders the full sky into the radiance cubemap and reads
 from that cubemap for displaying the visible sky:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type sky;
 
@@ -108,7 +108,7 @@ Subpasses allow you to do more expensive calculations at a lower resolution
 to speed up your shaders. For example the following code renders clouds at
 a lower resolution than the rest of the sky:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type sky;
     render_mode use_half_res_pass;

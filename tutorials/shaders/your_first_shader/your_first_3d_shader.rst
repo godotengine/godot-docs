@@ -117,7 +117,7 @@ The new shader is already generated with a ``shader_type`` variable, the
 shaders need is a declaration of what type of shader they are. In this case the
 ``shader_type`` is set to ``spatial`` because this is a spatial shader.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type spatial;
 
@@ -128,7 +128,7 @@ and make our flat plane appear like a little terrain.
 With nothing in the ``vertex()`` function, Godot will use its default vertex
 shader. We can start to make changes by adding a single line:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     VERTEX.y += cos(VERTEX.x) * sin(VERTEX.z);
@@ -147,7 +147,7 @@ What we want to achieve is the look of little hills; after all. ``cos()`` and
 ``sin()`` already look kind of like hills. We do so by scaling the inputs to the
 ``cos()`` and ``sin()`` functions.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     VERTEX.y += cos(VERTEX.x * 4.0) * sin(VERTEX.z * 4.0);
@@ -171,7 +171,7 @@ generating a noise texture that can be accessed from a shader.
 To access a texture in a shader add the following code near the top of your
 shader, outside the ``vertex()`` function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform sampler2D noise;
 
@@ -190,7 +190,7 @@ Once you set it up and should look like this.
 
 Now, access the noise texture using the ``texture()`` function:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void vertex() {
     float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
@@ -238,7 +238,7 @@ that can be used in the shader. To use a uniform, you declare it in your
 
 Let's make a uniform that changes the height of the terrain.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform float height_scale = 0.5;
 
@@ -266,7 +266,7 @@ of the uniform variable in the shader. You can use the
 uniform variable anywhere inside your shader. Here, we will
 use it to set the height value instead of arbitrarily multiplying by ``0.5``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   VERTEX.y += height * height_scale;
 
@@ -313,7 +313,7 @@ tutorial, for now we will read normals from a texture.
 Instead we will rely on the NoiseTexture again to calculate normals for us. We
 do that by passing in a second noise texture.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform sampler2D normalmap;
 
@@ -335,7 +335,7 @@ that using a :ref:`varying <doc_shading_language_varyings>`.
 Above the ``vertex()`` define a ``varying vec2`` called ``tex_position``. And
 inside the ``vertex()`` function assign ``VERTEX.xz`` to ``tex_position``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   varying vec2 tex_position;
 
@@ -347,7 +347,7 @@ inside the ``vertex()`` function assign ``VERTEX.xz`` to ``tex_position``.
 
 And now we can access ``tex_position`` from the ``fragment()`` function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     NORMAL_MAP = texture(normalmap, tex_position).xyz;
@@ -368,7 +368,7 @@ Full code
 Here is the full code for this tutorial. You can see it is not very long as
 Godot handles most of the difficult stuff for you.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type spatial;
 

@@ -236,14 +236,14 @@ some limitations when it comes to 3D rendering precision:
 - In double-precision builds, world space coordinates in a shader ``fragment()``
   function can't be reconstructed from view space, for example:
 
-  .. code-block:: glsl
+  .. code-block:: gdshader
 
     vec3 world = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 
   Instead, calculate the world space coordinates in the ``vertex()`` function and
   pass them using a :ref:`varying<doc_shading_language_varyings>`, for example:
 
-  .. code-block:: glsl
+  .. code-block:: gdshader
 
     varying vec3 world;
     void vertex() {

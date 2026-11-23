@@ -25,7 +25,7 @@ more important than following this guide to a tee.
 
 Here is a complete shader example based on these guidelines:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
     // Screen-space shader to adjust a 2D scene's brightness, contrast
@@ -65,7 +65,7 @@ Each indent level should be one tab greater than the block containing it.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         COLOR = vec3(1.0, 1.0, 1.0);
@@ -73,7 +73,7 @@ Each indent level should be one tab greater than the block containing it.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
             COLOR = vec3(1.0, 1.0, 1.0);
@@ -84,7 +84,7 @@ regular code blocks.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec2 st = vec2(
             atan(NORMAL.x, NORMAL.z),
@@ -92,7 +92,7 @@ regular code blocks.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec2 st = vec2(
         atan(NORMAL.x, NORMAL.z),
@@ -111,7 +111,7 @@ an ``if`` statement or similar.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         if (true) {
@@ -121,7 +121,7 @@ an ``if`` statement or similar.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment()
     {
@@ -134,7 +134,7 @@ Blank lines
 
 Surround function definitions with one (and only one) blank line:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void do_something() {
         // ...
@@ -162,7 +162,7 @@ Never combine multiple statements on a single line.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         ALBEDO = vec3(1.0);
@@ -171,7 +171,7 @@ Never combine multiple statements on a single line.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         ALBEDO = vec3(1.0); EMISSION = vec3(1.0);
@@ -179,7 +179,7 @@ Never combine multiple statements on a single line.
 
 The only exception to that rule is the ternary operator:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
    void fragment() {
         bool should_be_white = true;
@@ -194,21 +194,21 @@ This helps differentiate text comments from disabled code.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // This is a comment.
     //return;
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     //This is a comment.
     // return;
 
 Don't use multiline comment syntax if your comment can fit on a single line:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     /* This is another comment. */
 
@@ -224,7 +224,7 @@ Documentation comments
 Use the following format for documentation comments above uniforms, with **two**
 leading asterisks (``/**``) and follow-up asterisks on every line:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     /**
      * This is a documentation comment.
@@ -246,7 +246,7 @@ in function calls.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.r = 5.0;
     COLOR.r = COLOR.g + 0.1;
@@ -254,7 +254,7 @@ in function calls.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.r=5.0;
     COLOR.r = COLOR.g+0.1;
@@ -262,7 +262,7 @@ in function calls.
 
 Don't use spaces to align expressions vertically:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     ALBEDO.r   = 1.0;
     EMISSION.r = 1.0;
@@ -276,7 +276,7 @@ distinguishing numbers greater than 1 from those lower than 1.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         ALBEDO.rgb = vec3(5.0, 0.1, 0.2);
@@ -284,7 +284,7 @@ distinguishing numbers greater than 1 from those lower than 1.
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         ALBEDO.rgb = vec3(5., .1, .2);
@@ -300,13 +300,13 @@ understand what the underlying data represents.
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.rgb = vec3(5.0, 0.1, 0.2);
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     COLOR.xyz = vec3(5.0, 0.1, 0.2);
 
@@ -322,7 +322,7 @@ Functions and variables
 
 Use snake\_case to name functions and variables:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
    void some_function() {
         float some_variable = 0.5;
@@ -334,7 +334,7 @@ Constants
 Write constants with CONSTANT\_CASE, that is to say in all caps with an
 underscore (\_) to separate words:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     const float GOLDEN_RATIO = 1.618;
 
@@ -351,7 +351,7 @@ the console, extra indentation should **not** be added within ``#if``,
 
 **Good**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define HEIGHTMAP_ENABLED
 
@@ -365,7 +365,7 @@ the console, extra indentation should **not** be added within ``#if``,
 
 **Bad**:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     #define heightmap_enabled
 
@@ -420,7 +420,7 @@ Code order
 
 We suggest to organize shader code this way:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     01. shader type declaration
     02. render mode declaration

@@ -52,7 +52,7 @@ The drawing process for ``blit_rect()`` and DrawableTextures is controlled by a
 :ref:`texture blit shader <doc_texture_blit_shader>`. Even when the user does
 not supply one, the engine has a default texture blit shader it uses.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // Default texture blit shader.
 

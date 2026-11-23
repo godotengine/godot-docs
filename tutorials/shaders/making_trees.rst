@@ -36,14 +36,14 @@ Write a custom shader for the leaves
 
 This is an example of a shader for leaves:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
     render_mode depth_prepass_alpha, cull_disabled, world_vertex_coords;
 
 This is a spatial shader. There is no front/back culling (so leaves can be seen from both sides), and alpha prepass is used, so there are less depth artifacts that result from using transparency (and leaves cast shadow). Finally, for the sway effect, world coordinates are recommended, so the tree can be duplicated, moved, etc. and it will still work together with other trees.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform sampler2D texture_albedo : source_color;
     uniform vec4 transmission : source_color;
@@ -51,7 +51,7 @@ This is a spatial shader. There is no front/back culling (so leaves can be seen 
 Here, the texture is read, as well as a transmission color, which is used to add some back-lighting to the leaves, simulating subsurface scattering.
 
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform float sway_speed = 1.0;
     uniform float sway_strength = 0.05;
@@ -69,7 +69,7 @@ This is the code to create the sway of the leaves. It's basic (just uses a sinew
 
 Finally, all that's left is the fragment shader:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         vec4 albedo_tex = texture(texture_albedo, UV);

@@ -85,7 +85,7 @@ If not written to, these values will not be modified and be passed through as th
 The user can disable the built-in model to world transform (world to screen and projection will still
 happen later) and do it manually with the following code:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
     render_mode skip_vertex_transform;
@@ -174,7 +174,7 @@ this texture.
 
 To read only the contents of the default texture, ignoring the vertex ``COLOR``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     COLOR = texture(TEXTURE, UV);
@@ -182,7 +182,7 @@ To read only the contents of the default texture, ignoring the vertex ``COLOR``:
 
 To read the contents of the default texture multiplied by vertex ``COLOR``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     // Equivalent to an empty fragment() function, since COLOR is also the output variable.
@@ -192,7 +192,7 @@ To read the contents of the default texture multiplied by vertex ``COLOR``:
 To read only the vertex ``COLOR`` in ``fragment()``, ignoring the main texture,
 you must pass ``COLOR`` as a varying, then read it in ``fragment()``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   varying vec4 vertex_color;
   void vertex() {
@@ -210,7 +210,7 @@ it by default and assigns its value to the built-in ``NORMAL`` variable. If you 
 map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
 it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   NORMAL_MAP = texture(NORMAL_TEXTURE, UV).rgb;
 
@@ -294,7 +294,7 @@ even if your light function is empty.
 
 Below is an example of a light shader that takes a CanvasItem's normal map into account:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void light() {
     float cNdotL = max(0.0, dot(NORMAL, LIGHT_DIRECTION));
