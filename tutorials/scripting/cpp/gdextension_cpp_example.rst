@@ -167,7 +167,8 @@ container class. We'll see a few side effects of this later on. The
 After that, we declare a single member variable called ``time_passed``.
 
 In the next block we're defining our methods, we have our constructor
-and destructor defined, but there is one other function that will likely look familiar to some, and one new method.
+and destructor defined, but there is one other function that will likely
+look familiar to some, and one new method.
 
 The first is ``_bind_methods``, which is a static function that Godot will
 call to find out which methods can be called and which properties it exposes.
