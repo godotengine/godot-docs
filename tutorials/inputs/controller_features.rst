@@ -9,7 +9,7 @@ and how you can get started with them in Godot.
 
 .. warning::
 
-    These controller features are currently only supported on Windows, macOS, iOS, and Linux.
+    These controller features are currently only supported on Windows, Linux, macOS, iOS, and Android.
 
 .. warning::
 
@@ -283,6 +283,12 @@ you can tweak the ``THRESHOLD`` constant or you can replace it by using a differ
 
 Touchpad
 --------
+
+.. warning::
+
+    This controller feature is currently not supported on Android due to the OS
+    automatically converting controller touchpad input into a mouse cursor,
+    so there's currently no way to get raw touch information.
 
 Games can use the touchpad on certain controllers to provide an additional way
 to interact with the game. This is mainly used for navigating menus, controlling

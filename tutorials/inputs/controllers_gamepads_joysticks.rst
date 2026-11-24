@@ -365,16 +365,6 @@ Controllers can still work without udev support, but it is less reliable as
 regular polling must be used to check for controllers being connected or
 disconnected during gameplay (hotplugging).
 
-Android
-^^^^^^^
-
-As described at the top of the page, controller support on mobile platforms relies
-on a custom implementation instead of using SDL for input. This means controller
-support may be less reliable than on desktop platforms.
-
-Support for SDL-based controller input on mobile platforms is
-planned in a future release.
-
 Web
 ^^^
 
@@ -383,5 +373,5 @@ The quality of controller support tends to vary wildly across browsers. As a
 result, you may have to instruct your players to use a different browser if they
 can't get their controller to work.
 
-Like for mobile platforms, support for SDL-based controller input on the web platform
-is planned in a future release.
+Support for SDL-based controller input on the web platform is
+planned in a future release.
