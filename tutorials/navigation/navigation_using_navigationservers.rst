@@ -1,45 +1,46 @@
 .. _doc_navigation_using_navigationservers:
 
-Using NavigationServer
-======================
+Using NavigationServers
+=======================
 
-2D and 3D version of the NavigationServer are available as
+2D and 3D versions of the NavigationServer are available as
 :ref:`NavigationServer2D<class_NavigationServer2D>` and
 :ref:`NavigationServer3D<class_NavigationServer3D>` respectively.
+
 
 Communicating with the NavigationServer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To work with the NavigationServer means to prepare parameters for a **query** that can be sent to the NavigationServer for updates or requesting data.
+The NavigationServer provides an API that can be **queried** to request data or provide updates.
 
-To reference the internal NavigationServer objects like maps, regions and agents RIDs are used as identification numbers.
-Every navigation related node in the scene tree has a function that returns the RID for this node.
+Inside the NavigationServer, all objects (maps, regions, agents, etc.) are referred to by **RIDs**.
+Every navigation-related node in the scene tree has a function that returns its RID.
 
 Threading and Synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The NavigationServer does not update every change immediately but waits until
+The NavigationServer does not update its internal model immediately after changes in the world but waits until
 the end of the **physics frame** to synchronize all the changes together.
 
-Waiting for synchronization is required to apply changes to all maps, regions and agents.
-Synchronization is done because some updates like a recalculation of the entire navigation map are very expensive and require updated data from all other objects.
+This is done because some updates (like a recalculation of the entire navigation map) are computationally expensive and require updated data from all other objects.
 Also the NavigationServer uses a **threadpool** by default for some functionality like avoidance calculation between agents.
 
-Waiting is not required for most ``get()`` functions that only request data from the NavigationServer without making changes.
-Note that not all data will account for changes made in the same frame.
-E.g. if an avoidance agent changed the navigation map this frame the ``agent_get_map()`` function will still return the old map before the synchronization.
+The NavigationServer is **thread-safe** as it places all API calls that want to make changes in a queue to be executed in the synchronization phase.
+Synchronization for the NavigationServer happens in the middle of the physics frame after scene input from scripts and nodes are all complete.
+
+Waiting for synchronization is required to apply changes to all maps, regions and agents.
+All setters and delete functions require synchronization before their changes will be reflected in the NavigationServer.
+
+Waiting for synchronization is *not* required for most ``get()`` functions that only request data from the NavigationServer without making changes,
+but the data received may not account for changes made in the current frame.
+For example, if an avoidance agent changed the navigation map in the current frame, calling the ``agent_get_map()`` function before the synchronization phase has finished will still return the old map.
+
 The exception to this are nodes that store their values internally before sending the update to the NavigationServer.
 When a getter on a node is used for a value that was updated in the same frame it will return the already updated value stored on the node.
 
-The NavigationServer is **thread-safe** as it places all API calls that want to make changes in a queue to be executed in the synchronization phase.
-Synchronization for the NavigationServer happens in the middle of the physics frame after scene input from scripts and nodes are all done.
-
 .. note::
     The important takeaway is that most NavigationServer changes take effect after the next physics frame and not immediately.
-    This includes all changes made by navigation related nodes in the scene tree or through scripts.
-
-.. note::
-    All setters and delete functions require synchronization.
+    This includes all changes made by navigation-related nodes in the scene tree or through scripts.
 
 2D and 3D NavigationServer differences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,19 +52,18 @@ dimension, e.g. baking a 2D navigation mesh with the 3D NavigationMesh when usin
 flat 3D source geometry or creating 3D flat navigation meshes with the
 polygon outline draw tools of NavigationRegion2D and NavigationPolygons.
 
-Waiting for synchronization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Waiting for initial synchronization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the start of the game, a new scene or procedural navigation changes any path query to a NavigationServer will return empty or wrong.
+At the start of the game, after loading a new scene, or after procedural navigation changes, any path query to a NavigationServer will return empty or a wrong value,
+as the navigation map is not updated until after the first physics frame.
 
-The navigation map is still empty or not updated at this point.
-All nodes from the scene tree need to first upload their navigation related data to the NavigationServer.
-Each added or changed map, region or agent need to be registered with the NavigationServer.
-Afterward the NavigationServer requires a **physics frame** for synchronization to update the maps, regions and agents.
+All nodes from the scene tree need to first upload their navigation-related data to the NavigationServer,
+as each added or changed map, region or agent need to be registered with the NavigationServer.
+Finally, the NavigationServer requires a **physics frame** for synchronization to update the maps, regions and agents.
 
-One workaround is to make a deferred call to a custom setup function (so all nodes are ready).
-The setup function makes all the navigation changes, e.g. adding procedural stuff.
-Afterwards the function waits for the next physics frame before continuing with path queries.
+One way to address this is to create a custom setup function that is deferred with `call_deferred()` inside `_ready()`
+The setup function first makes all the navigation changes, then awaits the next physics frame before continuing with path queries.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -172,24 +172,23 @@ Afterwards the function waits for the next physics frame before continuing with 
 
 Server Avoidance Callbacks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If RVO avoidance agents are registered for avoidance callbacks the NavigationServer dispatches
+If RVO avoidance agents are registered for avoidance callbacks, the NavigationServer dispatches
 their ``velocity_computed`` signals just before the PhysicsServer synchronization.
 
-To learn more about NavigationAgents see :ref:`doc_navigation_using_navigationagents`.
+To learn more about NavigationAgents, see :ref:`doc_navigation_using_navigationagents`.
 
 The simplified order of execution for NavigationAgents that use avoidance:
 
-- physics frame starts.
-- ``_physics_process(delta)``.
-- ``velocity`` property is set on NavigationAgent Node.
-- Agent sends velocity and position to NavigationServer.
-- NavigationServer waits for synchronization.
+- The physics frame starts.
+- ``_physics_process(delta)`` is called.
+- The intended velocity is calculated and the ``velocity`` property is set on NavigationAgent Node.
+- The NavigationAgent sends velocity and position to the NavigationServer.
+- NavigationServer waits for the synchronization phase to begin.
 - NavigationServer synchronizes and computes avoidance velocities for all registered avoidance agents.
-- NavigationServer sends safe velocity vector with signals for each registered avoidance agents.
-- Agents receive the signal and move their parent e.g. with ``move_and_slide`` or ``linear_velocity``.
+- NavigationServer returns a safe velocity vector to each registered avoidance agent through a signal.
+- The NavigationAgent receives the signal and the parent node responds accordingly (e.g., with ``move_and_slide`` or ``linear_velocity``).
 - PhysicsServer synchronizes.
-- physics frame ends.
+- The physics frame ends.
 
-Therefore moving a physicsbody actor in the callback function with the safe velocity is perfectly thread- and physics-safe
-as all happens inside the same physics frame before the PhysicsServer commits to changes and does its own calculations.
+This means that moving a PhysicsBody actor in a callback function with the safe velocity is perfectly thread- and physics-safe,
+as everything happens inside the same physics frame and before the PhysicsServer commits to changes and does its own calculations.
