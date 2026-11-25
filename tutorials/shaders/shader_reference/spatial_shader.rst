@@ -621,6 +621,14 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+------------------------------------------------------------------------+
 | in bool **LIGHT_IS_DIRECTIONAL**  | ``true`` if this pass is a :ref:`class_DirectionalLight3D`.            |
 +-----------------------------------+------------------------------------------------------------------------+
+| in bool **LIGHT_IS_AREA**         | ``true`` if this pass is an :ref:`class_AreaLight3D`.                  |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3                           | Diffuse multiplier for :ref:`class_AreaLight3D`. Use it to scale the   |
+| **LIGHT_AREA_DIFFUSE_MULTIPLIER** | light's diffuse contribution.                                          |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3                           | Specular multiplier for :ref:`class_AreaLight3D`. Use it to scale the  |
+| **LIGHT_AREA_SPECULAR_MULTIPLIER**| light's specular contribution.                                         |
++-----------------------------------+------------------------------------------------------------------------+
 | in float **ATTENUATION**          | Attenuation based on distance or shadow.                               |
 +-----------------------------------+------------------------------------------------------------------------+
 | in vec3 **ALBEDO**                | Base albedo.                                                           |
