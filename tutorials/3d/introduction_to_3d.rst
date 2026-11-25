@@ -83,7 +83,7 @@ left to right:
   subtle ray disc highlight) will rotate the node like a physical trackball.
 - **Preserve Children Transform** (:kbd:`P`): When enabled, transforming a node will preserve the
   global transform of its children.
-- **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also
+- **Use Snap** (:kbd:`Y`): If enabled, movement and rotation snap to grid. Snapping can also
   temporarily be activated using :kbd:`Ctrl` while performing the action.
   The settings for changing snap options are explained below.
 - **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview
