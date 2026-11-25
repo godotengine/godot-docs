@@ -11,7 +11,6 @@ and how you can get started with them in Godot.
 
     These controller features are currently only supported on Windows, macOS, iOS, and Linux.
 
-
 .. warning::
 
     Unless you specifically advertise your game as requiring specific controllers,
@@ -22,7 +21,13 @@ and how you can get started with them in Godot.
     for players whose controllers support them, without detracting from those who
     don't have controllers.
 
+.. seealso::
+
+    You can test your controller's advanced features in the
+    `Joypads demo project <https://github.com/godotengine/godot-demo-projects/tree/master/misc/joypads>`__.
+
 .. _doc_controller_features_led_color:
+
 
 LED color
 ---------
@@ -273,3 +278,92 @@ you can tweak the ``THRESHOLD`` constant or you can replace it by using a differ
             detect_accelerometer = false
             await get_tree().create_timer(0.5, false).timeout
             detect_accelerometer = true
+
+.. _doc_controller_features_touchpad:
+
+Touchpad
+--------
+
+Games can use the touchpad on certain controllers to provide an additional way
+to interact with the game. This is mainly used for navigating menus, controlling
+in-game cursors, or interacting with maps.
+
+Here are some notable examples of touchpad use in games:
+
+- In *Deep Rock Galactic*, the touchpad can be swiped in different directions to
+  change weapons/equipment. You can use it to rotate the 3D map as well.
+- In *Final Fantasy XIV*, the touchpad can be used as a mouse pad.
+
+Touchpads can support multitouch input, with the maximum number of simultaneous
+touch points varying depending on the controller. Some controllers may also
+feature multiple touchpads altogether. For example, the DualShock 4, DualSense,
+and DualSense Edge all support reporting 2 simultaneous touch points, which
+allows for two-finger pan/pinch gestures to be implemented. The Steam Controller (2026)
+features two touchpads, but only one finger is reported per touchpad (additional
+fingers will average out the touch position).
+
+Pressing the touchpad sends a standard button press event, which is recognized
+as :ref:`JOY_BUTTON_TOUCHPAD <class_@GlobalScope_constant_JOY_BUTTON_TOUCHPAD>`.
+In games, pressing the touchpad is generally used to open/close a map menu.
+
+Use the method :ref:`Input.get_joy_num_touchpads() <class_Input_method_get_joy_num_touchpads>`
+to detect whether touchpad input is supported by the controller. If supported,
+the reported number will be greater than ``0``.
+
+To get the position of touchpad presses, use
+:ref:`Input.get_joy_touchpad_finger_position() <class_Input_method_get_joy_touchpad_finger_position>`
+with the finger IDs returned by
+:ref:`Input.get_joy_touchpad_fingers() <class_Input_method_get_joy_touchpad_fingers>`.
+The coordinates are given in normalized space, with ``(0, 0)`` representing the
+top-left corner and ``(1, 1)`` representing the bottom-right corner of the
+touchpad. If an invalid touchpad or finger ID is used, the method returns ``(-1, -1)``.
+Keep in mind the touchpad generally does not have a square aspect
+ratio, so make sure to account for this when interpreting touchpad coordinates.
+
+Some touchpads can also return the pressure applied with each finger using
+:ref:`Input.get_joy_touchpad_finger_pressure() <class_Input_method_get_joy_touchpad_finger_pressure>`.
+The Steam Controller (2026) supports reporting touchpad pressure, but the
+DualShock 4, DualSense, and DualSense Edge do not support reporting
+touchpad pressure (it will always be reported as ``1.0``).
+
+This example code resizes a sprite according to a two-finger pinching gesture
+performed on the touchpad:
+
+.. code-block::
+
+    @onready var sprite = $Sprite
+
+    var last_distance = 0.0
+
+    func _process(delta):
+        # We only use joypad 0 in this example and it needs to have at least one touchpad.
+        if 0 not in Input.get_connected_joypads() or Input.get_joy_num_touchpads(0) == 0:
+            return
+
+        # Get the current fingers on the touchpad.
+        var fingers = Input.get_joy_touchpad_fingers(0)
+
+        # If both fingers are on the touchpad, calculate the size difference since the last frame.
+        if 0 in fingers and 1 in fingers:
+            var pos1 = Input.get_joy_touchpad_finger_position(0, 0)
+            var pos2 = Input.get_joy_touchpad_finger_position(0, 1)
+            var distance = pos1.distance_to(pos2)
+            if last_distance != 0.0:
+                var size_multiplier = distance / last_distance
+                sprite.scale *= size_multiplier
+            last_distance = distance
+        else:
+            # Otherwise, don't check the distance, since we can't calculate it from no fingers or just one finger.
+            last_distance = 0.0
+
+.. note::
+
+    On some operating systems, using the touchpad will also automatically move
+    the system mouse cursor, and pressing the touchpad will send a left mouse
+    button click.
+
+    This behavior cannot be controlled by Godot, and may lead to the mouse cursor leaving
+    the game window when playing in windowed mode. This can be countered by setting the
+    mouse mode to :ref:`Input.MOUSE_MODE_CAPTURED <class_Input_constant_MOUSE_MODE_CAPTURED>`
+    or :ref:`Input.MOUSE_MODE_CONFINED_HIDDEN <class_Input_constant_MOUSE_MODE_CONFINED_HIDDEN>`,
+    so that touchpad presses can't accidentally cause the game window to lose focus.
