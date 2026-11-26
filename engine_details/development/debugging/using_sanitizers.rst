@@ -60,7 +60,7 @@ It is also possible to detect use-after-return situations by specifying the
 *running* Godot (not when compiling it). This increases the address sanitizer's
 runtime overhead, so only enable this feature when you actually need it.
 
-To enable the address sanitizer in a Godot build, pass the ``use_asan=yes``
+To enable the address sanitizer in a Godot build, pass the ``asan=yes``
 SCons option when compiling. Enabling ASAN generally makes the resulting binary
 about 2× slower.
 
@@ -85,7 +85,7 @@ enough. Since Godot may run on
 :ref:`dedicated servers <doc_exporting_for_dedicated_servers>` for months or
 even years without a restart, it's important to fix memory leaks when they occur.
 
-To enable the leak sanitizer in a Godot build, pass the ``use_lsan=yes`` SCons
+To enable the leak sanitizer in a Godot build, pass the ``lsan=yes`` SCons
 option when compiling. Enabling LSAN only has a small performance overhead, but
 the program will be much slower to exit as leak detection occurs when the
 program exits.
@@ -103,7 +103,7 @@ The memory sanitizer complements the
 :ref:`doc_using_sanitizers_address_sanitizer`. Unlike the address sanitizer,
 the memory sanitizer can detect uninitialized memory reads.
 
-To enable the memory sanitizer in a Godot build, pass the ``use_msan=yes``
+To enable the memory sanitizer in a Godot build, pass the ``msan=yes``
 SCons option when compiling. Enabling MSAN generally makes the resulting binary
 about 3× slower.
 
@@ -129,7 +129,7 @@ occasionally (and can be difficult to track as a result). To prevent a race
 condition, you need to add a lock to ensure only one thread can access the
 shared data at a given time.
 
-To enable the thread sanitizer in a Godot build, pass the ``use_tsan=yes`` SCons
+To enable the thread sanitizer in a Godot build, pass the ``tsan=yes`` SCons
 option when compiling. Enabling TSAN generally makes the resulting binary 10×
 slower, while also multiplying memory usage by an approximately 8× factor.
 
@@ -188,7 +188,7 @@ different set of optimizations can also change the observed results of undefined
 behavior.
 
 To enable the undefined behavior sanitizer in a Godot build, pass the
-``use_ubsan=yes`` SCons option when compiling. Enabling UBSAN only has a small
+``ubsan=yes`` SCons option when compiling. Enabling UBSAN only has a small
 performance overhead.
 
 .. _doc_using_sanitizers_platform_specific_sanitizers:
@@ -202,9 +202,9 @@ Web
 When :ref:`compiling for the Web <doc_compiling_for_web>`,
 there are 2 additional sanitizer SCons options available:
 
-- ``use_assertions=yes`` enables runtime Emscripten assertions, which can catch
+- ``assertions=yes`` enables runtime Emscripten assertions, which can catch
   various issues.
-- ``use_safe_heap=yes`` enables `Emscripten's SAFE_HEAP sanitizer <https://emscripten.org/docs/debugging/Sanitizers.html>`__.
+- ``safe_heap=yes`` enables `Emscripten's SAFE_HEAP sanitizer <https://emscripten.org/docs/debugging/Sanitizers.html>`__.
   It provides similar functionality to ASAN, but it focuses on issues that
   are specific to WebAssembly. ``SAFE_HEAP`` is not guaranteed to be compatible
   with ASAN and UBSAN in the same binary, so you may have to build it separately.
