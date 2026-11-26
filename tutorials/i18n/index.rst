@@ -12,3 +12,4 @@ Internationalization
    localization_using_gettext
    locales
    pseudolocalization
+   plural_rules
