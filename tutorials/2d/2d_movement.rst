@@ -224,11 +224,11 @@ the same effect by setting the angle like this:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    rotation = get_global_mouse_position().angle_to_point(position)
+    rotation = position.angle_to_point(get_global_mouse_position())
 
  .. code-tab:: csharp
 
-    var rotation = GetGlobalMousePosition().AngleToPoint(Position);
+    var rotation = Position.AngleToPoint(GetGlobalMousePosition());
 
 
 Click-and-move

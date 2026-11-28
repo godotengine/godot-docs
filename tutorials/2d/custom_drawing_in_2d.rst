@@ -1017,7 +1017,7 @@ Calculating this arc will be more complex than in the case of the line:
         var radius : float = point1.distance_to(_point2) / 2
         var start_angle : float = (_point2 - point1).angle()
         var end_angle : float = (point1 - _point2).angle()
-        if end_angle < 0:  # end_angle is likely negative, normalize it.
+        if end_angle <= 0:  # end_angle is likely negative, normalize it.
             end_angle += TAU
 
         # Finally, draw the arc.
@@ -1035,7 +1035,7 @@ Calculating this arc will be more complex than in the case of the line:
         float radius = Point1.DistanceTo(_point2) / 2.0f;
         float startAngle = (_point2 - Point1).Angle();
         float endAngle = (Point1 - _point2).Angle();
-        if (endAngle < 0.0f)  // endAngle is likely negative, normalize it.
+        if (endAngle <= 0.0f)  // endAngle is likely negative, normalize it.
         {
             endAngle += Mathf.Tau;
         }
