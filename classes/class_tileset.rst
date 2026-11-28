@@ -38,17 +38,17 @@ Tutorials
 
 - :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
+- `2D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-2d-demo/>`__
 
-- `2D Isometric Demo <https://godotengine.org/asset-library/asset/2718>`__
+- `2D Isometric Demo <https://store.godotengine.org/asset/godot-foundation/isometric-game-demo/>`__
 
-- `2D Hexagonal Demo <https://godotengine.org/asset-library/asset/2717>`__
+- `2D Hexagonal Demo <https://store.godotengine.org/asset/godot-foundation/hexagonal-game-demo/>`__
 
-- `2D Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+- `2D Grid-based Navigation with AStarGrid2D Demo <https://store.godotengine.org/asset/godot-foundation/grid-based-navigation-with-astargrid2d-demo/>`__
 
-- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
+- `2D Role Playing Game (RPG) Demo <https://store.godotengine.org/asset/godot-foundation/role-playing-game-demo/>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
+- `2D Kinematic Character Demo <https://store.godotengine.org/asset/godot-foundation/kinematic-character-2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

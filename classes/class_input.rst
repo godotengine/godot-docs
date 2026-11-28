@@ -30,9 +30,9 @@ Tutorials
 
 - :doc:`Inputs documentation index <../tutorials/inputs/index>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

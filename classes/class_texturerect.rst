@@ -28,7 +28,7 @@ By default, the minimum size of **TextureRect** is equal to the assigned :ref:`t
 Tutorials
 ---------
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

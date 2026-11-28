@@ -65,9 +65,9 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

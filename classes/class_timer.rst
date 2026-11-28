@@ -39,7 +39,7 @@ Without requiring much code, a timer node can be added and configured in the edi
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -42,9 +42,9 @@ Tutorials
 
 - :doc:`Troubleshooting physics issues <../tutorials/physics/troubleshooting_physics_issues>`
 
-- `2D Physics Platformer Demo <https://godotengine.org/asset-library/asset/2725>`__
+- `2D Physics Platformer Demo <https://store.godotengine.org/asset/godot-foundation/physics-platformer-2d-demo/>`__
 
-- `Instancing Demo <https://godotengine.org/asset-library/asset/2716>`__
+- `Instancing Demo <https://store.godotengine.org/asset/godot-foundation/instancing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

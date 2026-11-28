@@ -28,7 +28,7 @@ This texture class allows you to use a 3D texture created directly on the :ref:`
 Tutorials
 ---------
 
-- `Compute Texture demo <https://godotengine.org/asset-library/asset/2764>`__
+- `Compute Texture demo <https://store.godotengine.org/asset/godot-foundation/compute-texture-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

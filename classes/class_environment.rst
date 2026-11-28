@@ -40,9 +40,9 @@ Tutorials
 
 - :doc:`High dynamic range lighting <../tutorials/3d/high_dynamic_range>`
 
-- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/2742>`__
+- `3D Material Testers Demo <https://store.godotengine.org/asset/godot-foundation/material-testers-demo/>`__
 
-- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
+- `Third Person Shooter (TPS) Demo <https://store.godotengine.org/asset/godot-foundation/third-person-shooter-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

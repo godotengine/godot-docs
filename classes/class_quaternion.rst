@@ -44,7 +44,7 @@ Tutorials
 
 - `Using 3D transforms <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`__
 
-- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
+- `Third Person Shooter (TPS) Demo <https://store.godotengine.org/asset/godot-foundation/third-person-shooter-demo/>`__
 
 - `Advanced Quaternion Visualization <https://iwatake2222.github.io/rotation_master/rotation_master.html>`__
 

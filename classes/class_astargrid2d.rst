@@ -53,7 +53,7 @@ To remove a point from the pathfinding grid, it must be set as "solid" with :ref
 Tutorials
 ---------
 
-- `Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+- `Grid-based Navigation with AStarGrid2D Demo <https://store.godotengine.org/asset/godot-foundation/grid-based-navigation-with-astargrid2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

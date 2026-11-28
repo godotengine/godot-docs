@@ -40,9 +40,9 @@ Tutorials
 
 - :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
+- `Matrix Transform Demo <https://store.godotengine.org/asset/godot-foundation/matrix-transform-demo/>`__
 
-- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
+- `2.5D Game Demo <https://store.godotengine.org/asset/godot-foundation/project-with-gdscript-2-5d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

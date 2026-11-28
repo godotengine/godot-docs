@@ -36,13 +36,13 @@ To get a **ViewportTexture** in code, use the :ref:`Viewport.get_texture()<class
 Tutorials
 ---------
 
-- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
+- `GUI in 3D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/gui-in-3d-demo/>`__
 
-- `3D in 2D Viewport Demo <https://godotengine.org/asset-library/asset/2804>`__
+- `3D in 2D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/viewport-3d-in-2d-demo/>`__
 
-- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
+- `2D in 3D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/viewport-2d-in-3d-demo/>`__
 
-- `3D Resolution Scaling Demo <https://godotengine.org/asset-library/asset/2805>`__
+- `3D Resolution Scaling Demo <https://store.godotengine.org/asset/godot-foundation/viewport-3d-resolution-scaling-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

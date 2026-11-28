@@ -40,11 +40,11 @@ All physical simulation, such as lighting calculations, and colorimetry transfor
 Tutorials
 ---------
 
-- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/2768>`__
+- `2D GD Paint Demo <https://store.godotengine.org/asset/godot-foundation/gd-paint-demo/>`__
 
-- `Tween Interpolation Demo <https://godotengine.org/asset-library/asset/2733>`__
+- `Tween Interpolation Demo <https://store.godotengine.org/asset/godot-foundation/tween-interpolation-demo/>`__
 
-- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/2767>`__
+- `GUI Drag And Drop Demo <https://store.godotengine.org/asset/godot-foundation/drag-and-drop-gui-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -38,7 +38,7 @@ Tutorials
 
 - :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

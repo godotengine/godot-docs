@@ -28,7 +28,7 @@ Can play, loop, pause a scroll through audio. See :ref:`AudioStream<class_AudioS
 Tutorials
 ---------
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
+- `Audio Generator Demo <https://store.godotengine.org/asset/godot-foundation/audio-generator-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

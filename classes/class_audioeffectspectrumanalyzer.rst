@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Audio effects <../tutorials/audio/audio_effects>`
 
-- `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
+- `Audio Spectrum Visualizer Demo <https://store.godotengine.org/asset/godot-foundation/audio-spectrum-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -42,7 +42,7 @@ If you want to join the strings in the array, use :ref:`String.join()<class_Stri
 Tutorials
 ---------
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

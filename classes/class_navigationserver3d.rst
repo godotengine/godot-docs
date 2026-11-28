@@ -44,7 +44,7 @@ Tutorials
 
 - :doc:`Using NavigationServer <../tutorials/navigation/navigation_using_navigationservers>`
 
-- `3D Navigation Demo <https://godotengine.org/asset-library/asset/2743>`__
+- `3D Navigation Demo <https://store.godotengine.org/asset/godot-foundation/navigation-3d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

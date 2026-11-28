@@ -36,9 +36,9 @@ Tutorials
 
 - :doc:`Using CharacterBody2D <../tutorials/physics/using_character_body_2d>`
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
+- `2D Kinematic Character Demo <https://store.godotengine.org/asset/godot-foundation/kinematic-character-2d-demo/>`__
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
+- `2D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

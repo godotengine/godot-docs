@@ -34,7 +34,7 @@ Being just a collection of interconnected triangles, **ConcavePolygonShape3D** i
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
+- `3D Physics Tests Demo <https://store.godotengine.org/asset/godot-foundation/physics-tests-3d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 
