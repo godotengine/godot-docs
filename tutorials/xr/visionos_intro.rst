@@ -110,7 +110,7 @@ Fix this by doing one of the following:
 To write depth to the sky, add a :ref:`class_MeshInstance3D` with the
 following shader:
 
-.. code-block:: glsl
+.. code-block:: gdshader
     :caption: depth.gdshader
 
     shader_type spatial;

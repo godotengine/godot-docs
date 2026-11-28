@@ -34,7 +34,7 @@ GDScript, your code would use ``for`` loops:
 Your code is already part of a loop in a shader, so the corresponding code would
 look like this.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -110,7 +110,7 @@ processing functions.
 
 In Godot, all shaders need to specify their type in the first line, like so:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -129,7 +129,7 @@ Render modes
 Shaders have optional render modes you can specify on the second line, after the
 shader type, like so:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
     render_mode unshaded, cull_disabled;

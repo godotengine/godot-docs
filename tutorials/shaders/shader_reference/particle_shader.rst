@@ -181,7 +181,7 @@ properties that match the ``flags`` parameter. For example, the
 following code will emit a particle with a specified position, velocity, and
 color, but unspecified rotation, scale, and custom value:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     mat4 custom_transform = mat4(1.0);
     custom_transform[3].xyz = vec3(10.5, 0.0, 4.0);

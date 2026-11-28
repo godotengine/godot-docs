@@ -1670,7 +1670,7 @@ vec3 **cross**\ (\ vec3 a, vec3 b) :ref:`🔗<shader_func_cross>`
 
     Returns the cross product of two vectors, i.e.:
 
-    .. code-block:: glsl
+    .. code-block:: gdshader
 
         vec3( a.y * b.z - b.y * a.z,
               a.z * b.x - b.z * a.x,
@@ -1754,7 +1754,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta) :ref:`🔗<shader_func_refract>`
 
     ``R`` is calculated as:
 
-    .. code-block:: glsl
+    .. code-block:: gdshader
 
         k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));
         if (k < 0.0)

@@ -43,7 +43,7 @@ so we need to nullify the effects of Godot's transformations. We do this by sett
 ``POSITION`` built-in to our desired position. ``POSITION`` bypasses the built-in transformations
 and sets the vertex position in clip space directly.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type spatial;
   // Prevent the quad from being affected by lighting and fog. This also improves performance.
@@ -79,13 +79,13 @@ Depth texture
 To read from the depth texture, we first need to create a texture uniform set to the depth buffer
 by using ``hint_depth_texture``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   uniform sampler2D depth_texture : hint_depth_texture;
 
 Once defined, the depth texture can be read with the ``texture()`` function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   float depth = texture(depth_texture, SCREEN_UV).x;
 
@@ -109,7 +109,7 @@ Reconstruct the NDC using ``SCREEN_UV`` for the ``x`` and ``y`` axis, and
 the depth value for ``z``.
 
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     float depth = texture(depth_texture, SCREEN_UV).x;
@@ -123,14 +123,14 @@ the depth value for ``z``.
   renderer uses OpenGL NDCs with a Z-range of ``[-1.0, 1.0]``. For the Compatibility
   renderer, replace the NDC calculation with this instead:
 
-  .. code-block:: glsl
+  .. code-block:: gdshader
 
     vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
 
   You can also use the ``CURRENT_RENDERER`` and ``RENDERER_COMPATIBILITY``
   built-in defines for a shader that will work in all renderers:
 
-  .. code-block:: glsl
+  .. code-block:: gdshader
 
     #if CURRENT_RENDERER == RENDERER_COMPATIBILITY
     vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
@@ -142,7 +142,7 @@ Convert NDC to view space by multiplying the NDC by ``INV_PROJECTION_MATRIX``.
 Recall that view space gives positions relative to the camera, so the ``z`` value will give us
 the distance to the point.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     ...
@@ -157,7 +157,7 @@ In order to get a usable depth value, we have to negate ``view.z``.
 The world position can be constructed from the depth buffer using the following code, using the
 ``INV_VIEW_MATRIX`` to transform the position from view space into world space.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   void fragment() {
     ...
@@ -172,7 +172,7 @@ Once we add a line to output to ``ALBEDO``, we have a complete shader that looks
 This shader lets you visualize the linear depth or world space coordinates, depending on which
 line is commented out.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type spatial;
   // Prevent the quad from being affected by lighting and fog. This also improves performance.

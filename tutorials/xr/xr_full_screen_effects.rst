@@ -37,7 +37,7 @@ to the inner vertices. Let's increase the subdivide width and depth of the quad.
 Then, in the vertex function of our shader, we apply an offset from the projection matrix to
 the inner vertices. Here's an example of how you might do this with the above simple vignette shader:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
   shader_type spatial;
   render_mode depth_test_disabled, skip_vertex_transform, unshaded, cull_disabled;

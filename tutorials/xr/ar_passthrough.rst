@@ -179,7 +179,7 @@ This enabled the following use cases:
 
 The following shader code is a good base for this functionality:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
     render_mode blend_mix, depth_draw_opaque, cull_back, shadow_to_opacity;

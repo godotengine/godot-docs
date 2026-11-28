@@ -212,7 +212,7 @@ They can optionally be presented in world space by using the ``world_vertex_coor
 Users can disable the built-in modelview transform (projection will still happen later) and do
 it manually with the following code:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
     render_mode skip_vertex_transform;
@@ -555,7 +555,7 @@ The ``light()`` function is called for every light in every pixel. It is called 
 
 Below is an example of a custom ``light()`` function using a Lambertian lighting model:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void light() {
         if (LIGHT_IS_AREA) {

@@ -62,7 +62,7 @@ uniforms.
 Copy the following code to your shader. The code below is a hex pixelization
 shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -118,7 +118,7 @@ which you apply the shaders depends on the position of the ``CanvasLayer`` in
 the scene tree, higher means sooner. For this blur shader, the order does not
 matter.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -138,7 +138,7 @@ matter.
         COLOR.xyz = col;
     }
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 

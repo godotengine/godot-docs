@@ -27,7 +27,7 @@ a ``sampler2D`` uniform: ``hint_screen_texture``. A special built-in varying
 fragment. As a result, this canvas_item fragment shader results in an invisible
 object, because it only shows what lies behind:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -58,7 +58,7 @@ special demo for *Screen Space Shaders*, that you can download to see
 and learn. One example is a simple shader to adjust brightness, contrast
 and saturation:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -156,7 +156,7 @@ converted using the inverse projection matrix.
 
 The following code retrieves the 3D position below the pixel being drawn:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform sampler2D depth_texture : hint_depth_texture, repeat_disable, filter_nearest;
 
@@ -179,7 +179,7 @@ roughness of objects rendered in the depth prepass. The normal is stored in the
 ``.xyz`` channels (mapped to the 0-1 range) while the roughness is stored in the
 ``.w`` channel.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disable, filter_nearest;
 
@@ -200,7 +200,7 @@ The following example shows a shader that reads the screen space normal with
 linear filtering, but reads the screen space roughness using nearest neighbor
 filtering.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disable, filter_nearest;
     uniform sampler2D normal_roughness_texture2 : hint_normal_roughness_texture, repeat_enable, filter_linear;

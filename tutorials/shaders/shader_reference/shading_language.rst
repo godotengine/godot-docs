@@ -109,7 +109,7 @@ Comments
 The shading language supports the same comment syntax as used in C# and C++,
 using ``//`` for single-line comments and ``/* */`` for multi-line comments:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // Single-line comment.
     int a = 2;  // Another single-line comment.
@@ -128,7 +128,7 @@ documentation comments only support the **multiline** comment syntax
 (even if used on a single line) and must use **two** leading asterisks
 (``/**``) instead of just one (``/*``):
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     /**
      * This is a documentation comment.
@@ -154,7 +154,7 @@ also not allowed. Conversion must be done explicitly via constructors.
 
 Example:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float a = 2; // invalid
     float a = 2.0; // valid
@@ -163,7 +163,7 @@ Example:
 Default integer constants are signed, so casting is always needed to convert to
 unsigned:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     int a = 2; // valid
     uint a = 2; // invalid
@@ -185,7 +185,7 @@ Constructing
 
 Construction of vector types must always pass:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // The required amount of scalars
     vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
@@ -199,7 +199,7 @@ Construction of matrix types requires vectors of the same dimension as the
 matrix, interpreted as columns. You can also build a diagonal matrix using ``matx(float)`` syntax.
 Accordingly, ``mat4(1.0)`` is an identity matrix.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     mat2 m2 = mat2(vec2(1.0, 0.0), vec2(0.0, 1.0));
     mat3 m3 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
@@ -213,7 +213,7 @@ and columns are set to the values they would have in an identity matrix.
 1. If a smaller matrix is constructed from a larger matrix, the top, left
 submatrix of the larger matrix is used.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     mat3 basis = mat3(MODEL_MATRIX);
     mat4 m4 = mat4(basis);
@@ -226,7 +226,7 @@ It is possible to obtain any combination of components in any order, as long as
 the result is another vector type (or scalar). This is easier shown than
 explained:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
     vec3 b = a.rgb; // Creates a vec3 with vec4 components.
@@ -245,7 +245,7 @@ Precision
 It is possible to add precision modifiers to datatypes; use them for uniforms,
 variables, arguments and varyings:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
     mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
@@ -277,7 +277,7 @@ Local arrays are declared in functions. They can use all of the allowed
 datatypes, except samplers. The array declaration follows a C-style syntax:
 ``[const] + [precision] + typename + identifier + [array size]``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment() {
         float arr[3];
@@ -285,7 +285,7 @@ datatypes, except samplers. The array declaration follows a C-style syntax:
 
 They can be initialized at the beginning like:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float float_arr[3] = float[3] (1.0, 0.5, 0.0); // first constructor
 
@@ -297,7 +297,7 @@ They can be initialized at the beginning like:
 
 You can declare multiple arrays (even with different sizes) in one expression:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float a[3] = float[3] (1.0, 0.5, 0.0),
     b[2] = { 1.0, 0.5 },
@@ -307,7 +307,7 @@ You can declare multiple arrays (even with different sizes) in one expression:
 
 To access an array element, use the indexing syntax:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float arr[3];
 
@@ -319,7 +319,7 @@ Arrays also have a built-in function ``.length()`` (not to be confused with the
 built-in ``length()`` function). It doesn't accept any parameters and will
 return the array's size.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float arr[] = { 0.0, 1.0, 0.5, -1.0 };
     for (int i = 0; i < arr.length(); i++) {
@@ -340,7 +340,7 @@ Global arrays
 
 You can declare arrays in global scope as either ``const`` or ``uniform``:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -366,7 +366,7 @@ samplers can be declared as constants. Accessing and using a constant value is
 slightly faster than using a uniform. Constants must be initialized at their
 declaration.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     const vec2 a = vec2(0.0, 1.0);
     vec2 b;
@@ -377,13 +377,13 @@ declaration.
 Constants cannot be modified and additionally cannot have hints, but multiple of
 them (if they have the same type) can be declared in a single expression.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     const vec2 V1 = vec2(1, 1), V2 = vec2(2, 2);
 
 Similar to variables, arrays can also be declared with ``const``.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     const float arr[] = { 1.0, 0.5, 0.0 };
 
@@ -397,7 +397,7 @@ a value throughout your shader that does not need to be modified. Like uniforms,
 global constants are shared between all shader stages, but they are not
 accessible outside of the shader.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -407,7 +407,7 @@ Constants of the ``float`` type must be initialized using ``.`` notation after t
 decimal part or by using the scientific notation. The optional ``f`` post-suffix is
 also supported.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float a = 1.0;
     float b = 1.0f; // same, using suffix for clarity
@@ -416,7 +416,7 @@ also supported.
 Constants of the ``uint`` (unsigned int) type must have a ``u`` suffix to differentiate them from signed integers.
 Alternatively, this can be done by using the ``uint(x)`` built-in conversion function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     uint a = 1u;
     uint b = uint(1);
@@ -429,7 +429,7 @@ Structs
 Structs are compound types which can be used for better abstraction of shader
 code. You can declare them at the global scope like:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     struct PointLight {
         vec3 position;
@@ -439,7 +439,7 @@ code. You can declare them at the global scope like:
 
 After declaration, you can instantiate and initialize them like:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void fragment()
     {
@@ -451,14 +451,14 @@ After declaration, you can instantiate and initialize them like:
 
 Or use struct constructor for same purpose:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     PointLight light = PointLight(vec3(0.0), vec3(1.0, 0.0, 0.0), 0.5);
 
 Structs may contain other struct or array, you can also instantiate them as global
 constant:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -477,7 +477,7 @@ constant:
 
 You can also pass them to functions:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -561,7 +561,7 @@ Flow control
 
 Godot Shading language supports the most common types of flow control:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     // `if`, `else if` and `else`.
     if (cond) {
@@ -623,7 +623,7 @@ behave differently depending on the hardware.
 
 **Don't** do this.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     float value = 0.1 + 0.2;
 
@@ -636,7 +636,7 @@ Instead, always perform a range comparison with an epsilon value. The larger the
 floating-point number (and the less precise the floating-point number), the
 larger the epsilon value should be.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     const float EPSILON = 0.0001;
     if (value >= 0.3 - EPSILON && value <= 0.3 + EPSILON) {
@@ -664,7 +664,7 @@ Functions
 It is possible to define functions in a Godot shader. They use the following
 syntax:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     ret_type func_name(args) {
         return ret_type; // if returning a value
@@ -691,7 +691,7 @@ Function arguments can have special qualifiers:
 
 Example below:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     void sum2(int a, int b, inout int result) {
         result = a + b;
@@ -701,7 +701,7 @@ Function overloading is supported. You can define multiple functions with the sa
 name, but different arguments. Note that `implicit casting <Casting_>`_ in overloaded
 function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0``).
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     vec3 get_color(int t) {
         return vec3(1, 0, 0); // Red color.
@@ -723,7 +723,7 @@ To send data from the vertex to the fragment (or light) processor function, *var
 used. They are set for every primitive vertex in the *vertex processor*, and the
 value is interpolated for every pixel in the *fragment processor*.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -743,7 +743,7 @@ value is interpolated for every pixel in the *fragment processor*.
 
 Varying can also be an array:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -760,7 +760,7 @@ Varying can also be an array:
 
 It's also possible to send data from *fragment* to *light* processors using *varying* keyword. To do so you can assign it in the *fragment* and later use it in the *light* function.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -776,7 +776,7 @@ It's also possible to send data from *fragment* to *light* processors using *var
 
 Note that varying may not be assigned in custom functions or a *light processor* function like:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -802,7 +802,7 @@ Interpolation qualifiers
 Certain values are interpolated during the shading pipeline. You can modify how
 these interpolations are done by using *interpolation qualifiers*.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -837,7 +837,7 @@ assigned to a material, the uniforms will appear as editable parameters in the
 material's inspector. Uniforms can't be written from within the shader. Any
 :ref:`data type <doc_shading_language_data_types>` except for ``void`` can be a uniform.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -854,7 +854,7 @@ Uniform hints
 Godot provides optional uniform hints to make the compiler understand what the
 uniform is used for, and how the editor should allow users to modify it.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -865,7 +865,7 @@ uniform is used for, and how the editor should allow users to modify it.
 
 Uniforms can also be assigned default values:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -976,20 +976,20 @@ Uniform groups
 To group multiple uniforms in a section in the inspector, you can use a
 ``group_uniform`` keyword like this:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     group_uniforms MyGroup;
     uniform sampler2D test;
 
 You can close the group by using:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     group_uniforms;
 
 The syntax also supports subgroups (it's not mandatory to declare the base group before this):
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     group_uniforms MyGroup.MySubgroup;
 
@@ -1029,7 +1029,7 @@ uniforms:
 
 After creating a global uniform, you can use it in a shader as follows:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type canvas_item;
 
@@ -1103,7 +1103,7 @@ Per-instance uniforms are set on each GeometryInstance3D, rather than on each
 Material instance. Take this into account when working with meshes that have
 multiple materials assigned to them, or MultiMesh setups.
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     shader_type spatial;
 
@@ -1147,7 +1147,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
 
     If you are affected, use the ``switch`` statement to select the texture:
 
-   .. code-block:: glsl
+   .. code-block:: gdshader
 
       uniform sampler2D texture_array[2];
       instance uniform int texture_index;
@@ -1174,7 +1174,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
   specifying the index (0-15) of the instance uniform by using the
   ``instance_index`` hint:
 
-.. code-block:: glsl
+.. code-block:: gdshader
 
     instance uniform vec4 my_color : source_color, instance_index(5);
 
