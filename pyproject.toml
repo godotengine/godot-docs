@@ -11,7 +11,6 @@ builtin = ["clear", "rare", "en-GB_to_en-US"]
 skip = [
     "_static/css/*",
     "_styleguides/*",
-    "classes/*",
     "tutorials/i18n/locales.rst",
     "AUTHORS.md",
     "LICENSE.txt",
