@@ -143,16 +143,76 @@ Here are some notable examples of gyroscope use in games:
   `This video by *Daven On The Moon* <https://www.youtube.com/watch?v=Vlfg9yku2hY>`_ demonstrates and discusses gyro aiming in more detail.
 - In *Death Stranding*, BB can be soothed by rotating the controller softly.
 
-The following example rotates an object using a controller's gyroscope sensor.
-You can also access this example by taking a look at the
-:ref:`Input.start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>` documentation.
+Note that before using the gyroscope's data, we must first *calibrate* it.
+This is like how a weighing scale can need calibration to tell it what "zero" is.
+Like a weighing scale, only a correctly calibrated gyroscope will give an accurate reading.
+During calibration, the user sets the controller down on a flat surface.
+The controller then determines what values its gyroscope reports when it is actually not moving at all (its "bias"),
+and uses this information to make its rotation data more accurate.
+
+Godot supports two approaches to gyroscope calibration:
+
+**Automatic sensor calibration**
+
+In Godot 4.8 and later, automatic sensor calibration is available and enabled by
+default. This removes the need for a manual calibration step, where the user
+would have to lay the controller on a flat surface for manual calibration.
+
+Automatic calibration is convenient, but it can be less precise than manual
+calibration, especially with slow or subtle movements. Therefore, disabling
+automatic calibration is still desirable in some cases. To get the best of
+both worlds, you can do this:
+
+- Enable automatic calibration when menus are open.
+- Disable automatic calibration at all other times, including during regular
+  gameplay, so that it never messes with the player's aim while they're aiming.
+
+Automatic calibration can be toggled using
+:ref:`Input.set_joy_motion_sensors_auto_calibration_enabled() <class_Input_method_set_joy_motion_sensors_auto_calibration_enabled>`,
+and you can check whether it's enabled using
+:ref:`Input.is_joy_motion_sensors_auto_calibration_enabled() <class_Input_method_is_joy_motion_sensors_auto_calibration_enabled>`.
+
+The following example rotates an object using a controller's gyroscope sensor,
+relying on the default automatic calibration.
 
 .. code-block::
 
     const GYRO_SENSITIVITY = 10.0
 
     func _ready():
-        # In this example we only use the first connected joypad (id 0).
+        # In this example, we only use the first connected joypad (ID 0).
+        if 0 not in Input.get_connected_joypads():
+            return
+
+        if not Input.has_joy_motion_sensors(0):
+            return
+
+        # We must enable the motion sensors before using them.
+        Input.set_joy_motion_sensors_enabled(0, true)
+
+    func _process(delta):
+        move_object(delta)
+
+    func move_object(delta):
+        var node: Node3D = ... # Put your object here.
+
+        var gyro := Input.get_joy_gyroscope(0)
+        node.rotation.x -= -gyro.y * GYRO_SENSITIVITY * delta  # Use rotation around the Y axis (yaw) here.
+        node.rotation.y += -gyro.x * GYRO_SENSITIVITY * delta  # Use rotation around the X axis (pitch) here.
+
+**Manual sensor calibration**
+
+The following example rotates an object using a controller's gyroscope sensor,
+with support for manual calibration.
+You can also access this example by taking a look at the
+:ref:`Input.start_joy_motion_sensors_calibration() <class_Input_method_start_joy_motion_sensors_calibration>` documentation.
+
+.. code-block::
+
+    const GYRO_SENSITIVITY = 10.0
+
+    func _ready():
+        # In this example, we only use the first connected joypad (ID 0).
         if 0 not in Input.get_connected_joypads():
             return
 
@@ -188,13 +248,9 @@ You can also access this example by taking a look at the
         node.rotation.x -= -gyro.y * GYRO_SENSITIVITY * delta  # Use rotation around the Y axis (yaw) here.
         node.rotation.y += -gyro.x * GYRO_SENSITIVITY * delta  # Use rotation around the X axis (pitch) here.
 
-Note that before using the gyroscope's data, we must first calibrate it by calling :ref:`Input.start_joy_motion_sensors_calibration()<class_Input_method_start_joy_motion_sensors_calibration>`
-and :ref:`Input.stop_joy_motion_sensors_calibration()<class_Input_method_stop_joy_motion_sensors_calibration>`.
-That's because modern gyroscopes often need calibration. This is like how a weighing scale can need calibration to tell it what "zero" is.
-Like a weighing scale, only a correctly calibrated gyroscope will give an accurate reading.
-During calibration, the user sets the controller down on a flat surface.
-The controller then determines what values its gyroscope reports when it is actually not moving at all (its "bias"),
-and uses this information to make its rotation data more accurate.
+Before using the gyroscope's data, we first calibrate it by calling
+:ref:`Input.start_joy_motion_sensors_calibration() <class_Input_method_start_joy_motion_sensors_calibration>`
+and :ref:`Input.stop_joy_motion_sensors_calibration() <class_Input_method_stop_joy_motion_sensors_calibration>`.
 
 See `the article on GyroWiki <http://gyrowiki.jibbsmart.com/blog:good-gyro-controls-part-1:the-gyro-is-a-mouse>`__
 for information on how to use gyroscope input as a mouse.
