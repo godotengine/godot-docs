@@ -28,7 +28,7 @@ This texture class allows you to use a cubemap array texture created directly on
 Tutorials
 ---------
 
-- `Compute Texture demo <https://godotengine.org/asset-library/asset/2764>`__
+- `Compute Texture demo <https://store.godotengine.org/asset/godot-foundation/compute-texture-demo/>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

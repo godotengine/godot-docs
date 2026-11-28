@@ -28,7 +28,7 @@ The **OS** class wraps the most common functionalities for communicating with th
 Tutorials
 ---------
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

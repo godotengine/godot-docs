@@ -35,15 +35,15 @@ Tutorials
 
 - :doc:`Audio streams <../tutorials/audio/audio_streams>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
-- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/2758>`__
+- `Audio Device Changer Demo <https://store.godotengine.org/asset/godot-foundation/audio-device-changer-demo/>`__
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
+- `Audio Generator Demo <https://store.godotengine.org/asset/godot-foundation/audio-generator-demo/>`__
 
-- `Audio Microphone Record Demo <https://godotengine.org/asset-library/asset/2760>`__
+- `Audio Microphone Record Demo <https://store.godotengine.org/asset/godot-foundation/audio-mic-record-demo/>`__
 
-- `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
+- `Audio Spectrum Visualizer Demo <https://store.godotengine.org/asset/godot-foundation/audio-spectrum-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

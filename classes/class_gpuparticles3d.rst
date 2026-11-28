@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
-- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
+- `Third Person Shooter (TPS) Demo <https://store.godotengine.org/asset/godot-foundation/third-person-shooter-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

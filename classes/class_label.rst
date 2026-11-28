@@ -31,7 +31,7 @@ A control for displaying plain text. It gives you control over the horizontal an
 Tutorials
 ---------
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -38,9 +38,9 @@ Tutorials
 
 - :doc:`BBCode in RichTextLabel <../tutorials/ui/bbcode_in_richtextlabel>`
 
-- `Rich Text Label with BBCode Demo <https://godotengine.org/asset-library/asset/2774>`__
+- `Rich Text Label with BBCode Demo <https://store.godotengine.org/asset/godot-foundation/rich-text-label-with-bbcode-demo/>`__
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -56,13 +56,13 @@ Tutorials
 
 - :doc:`Using 3D transforms <../tutorials/3d/using_transforms>`
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
+- `Matrix Transform Demo <https://store.godotengine.org/asset/godot-foundation/matrix-transform-demo/>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
+- `3D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-3d-demo/>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
-- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
+- `2.5D Game Demo <https://store.godotengine.org/asset/godot-foundation/project-with-gdscript-2-5d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

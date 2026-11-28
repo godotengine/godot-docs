@@ -241,9 +241,9 @@ Tutorials
 
 - `GDScript basics: Dictionary <../tutorials/scripting/gdscript/gdscript_basics.html#dictionary>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

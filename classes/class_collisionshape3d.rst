@@ -30,11 +30,11 @@ Tutorials
 
 - :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
+- `3D Kinematic Character Demo <https://store.godotengine.org/asset/godot-foundation/kinematic-character-3d-demo/>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
+- `3D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-3d-demo/>`__
 
-- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
+- `Third Person Shooter (TPS) Demo <https://store.godotengine.org/asset/godot-foundation/third-person-shooter-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

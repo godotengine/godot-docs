@@ -68,7 +68,7 @@ See also :ref:`StringName<class_StringName>`, which is a similar type designed f
 Tutorials
 ---------
 
-- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
+- `2D Role Playing Game (RPG) Demo <https://store.godotengine.org/asset/godot-foundation/role-playing-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

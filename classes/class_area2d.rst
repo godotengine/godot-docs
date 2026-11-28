@@ -35,11 +35,11 @@ Tutorials
 
 - :doc:`Using Area2D <../tutorials/physics/using_area_2d>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
+- `2D Dodge The Creeps Demo <https://store.godotengine.org/asset/godot-foundation/dodge-the-creeps-demo/>`__
 
-- `2D Pong Demo <https://godotengine.org/asset-library/asset/2728>`__
+- `2D Pong Demo <https://store.godotengine.org/asset/godot-foundation/pong-with-gdscript-demo/>`__
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
+- `2D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

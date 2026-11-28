@@ -38,7 +38,7 @@ Tutorials
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
+- `Matrix Transform Demo <https://store.godotengine.org/asset/godot-foundation/matrix-transform-demo/>`__
 
 - `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
 

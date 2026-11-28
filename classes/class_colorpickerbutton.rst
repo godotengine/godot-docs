@@ -30,9 +30,9 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 Tutorials
 ---------
 
-- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/2768>`__
+- `2D GD Paint Demo <https://store.godotengine.org/asset/godot-foundation/gd-paint-demo/>`__
 
-- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/2767>`__
+- `GUI Drag And Drop Demo <https://store.godotengine.org/asset/godot-foundation/drag-and-drop-gui-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

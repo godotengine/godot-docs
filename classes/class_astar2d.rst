@@ -28,7 +28,7 @@ See :ref:`AStar3D<class_AStar3D>` for a more thorough explanation on how to use 
 Tutorials
 ---------
 
-- `Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+- `Grid-based Navigation with AStarGrid2D Demo <https://store.godotengine.org/asset/godot-foundation/grid-based-navigation-with-astargrid2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

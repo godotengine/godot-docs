@@ -30,7 +30,7 @@ Base class for :ref:`Texture2DArrayRD<class_Texture2DArrayRD>`, :ref:`TextureCub
 Tutorials
 ---------
 
-- `Compute Texture demo <https://godotengine.org/asset-library/asset/2764>`__
+- `Compute Texture demo <https://store.godotengine.org/asset/godot-foundation/compute-texture-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -30,9 +30,9 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
+- `3D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-3d-demo/>`__
 
-- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
+- `Third Person Shooter (TPS) Demo <https://store.godotengine.org/asset/godot-foundation/third-person-shooter-demo/>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |required| replace:: :abbr:`required (This method is required to be overridden when extending its base class.)`

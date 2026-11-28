@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

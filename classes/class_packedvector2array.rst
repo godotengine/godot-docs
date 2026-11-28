@@ -34,7 +34,7 @@ An array specifically designed to hold :ref:`Vector2<class_Vector2>`. Packs data
 Tutorials
 ---------
 
-- `Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+- `Grid-based Navigation with AStarGrid2D Demo <https://store.godotengine.org/asset/godot-foundation/grid-based-navigation-with-astargrid2d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

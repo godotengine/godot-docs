@@ -32,7 +32,7 @@ A 3D convex polyhedron shape, intended for use in physics. Usually used to provi
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
+- `3D Physics Tests Demo <https://store.godotengine.org/asset/godot-foundation/physics-tests-3d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

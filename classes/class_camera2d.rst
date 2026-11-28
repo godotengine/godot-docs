@@ -32,9 +32,9 @@ Note that the **Camera2D** node's :ref:`Node2D.global_position<class_Node2D_prop
 Tutorials
 ---------
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
+- `2D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-2d-demo/>`__
 
-- `2D Isometric Demo <https://godotengine.org/asset-library/asset/2718>`__
+- `2D Isometric Demo <https://store.godotengine.org/asset/godot-foundation/isometric-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

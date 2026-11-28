@@ -37,9 +37,9 @@ Tutorials
 
 - :doc:`Using Area2D <../tutorials/physics/using_area_2d>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
+- `3D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-3d-demo/>`__
 
-- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
+- `GUI in 3D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/gui-in-3d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

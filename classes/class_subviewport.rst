@@ -36,17 +36,17 @@ Tutorials
 
 - :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
+- `GUI in 3D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/gui-in-3d-demo/>`__
 
-- `3D in 2D Viewport Demo <https://godotengine.org/asset-library/asset/2804>`__
+- `3D in 2D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/viewport-3d-in-2d-demo/>`__
 
-- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
+- `2D in 3D Viewport Demo <https://store.godotengine.org/asset/godot-foundation/viewport-2d-in-3d-demo/>`__
 
-- `Screen Capture Demo <https://godotengine.org/asset-library/asset/2808>`__
+- `Screen Capture Demo <https://store.godotengine.org/asset/godot-foundation/screen-capture-demo/>`__
 
-- `Dynamic Split Screen Demo <https://godotengine.org/asset-library/asset/2806>`__
+- `Dynamic Split Screen Demo <https://store.godotengine.org/asset/godot-foundation/dynamic-split-screen-demo/>`__
 
-- `3D Resolution Scaling Demo <https://godotengine.org/asset-library/asset/2805>`__
+- `3D Resolution Scaling Demo <https://store.godotengine.org/asset/godot-foundation/viewport-3d-resolution-scaling-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

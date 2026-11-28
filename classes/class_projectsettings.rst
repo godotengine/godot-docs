@@ -34,11 +34,11 @@ Tutorials
 
 - :doc:`Project Settings <../tutorials/editor/project_settings>`
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
+- `3D Physics Tests Demo <https://store.godotengine.org/asset/godot-foundation/physics-tests-3d-demo/>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
+- `3D Platformer Demo <https://store.godotengine.org/asset/godot-foundation/platformer-3d-demo/>`__
 
-- `Operating System Testing Demo <https://godotengine.org/asset-library/asset/2789>`__
+- `Operating System Testing Demo <https://store.godotengine.org/asset/godot-foundation/operating-system-testing-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

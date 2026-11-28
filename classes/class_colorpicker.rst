@@ -28,7 +28,7 @@ A widget that provides an interface for selecting or modifying a color. It can o
 Tutorials
 ---------
 
-- `Tween Interpolation Demo <https://godotengine.org/asset-library/asset/2733>`__
+- `Tween Interpolation Demo <https://store.godotengine.org/asset/godot-foundation/tween-interpolation-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

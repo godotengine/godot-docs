@@ -44,7 +44,7 @@ Tutorials
 
 - `3D Truck Town Demo <https://store.godotengine.org/asset/godot-foundation/truck-town-demo/>`__
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
+- `3D Physics Tests Demo <https://store.godotengine.org/asset/godot-foundation/physics-tests-3d-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

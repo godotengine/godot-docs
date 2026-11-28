@@ -26,9 +26,9 @@ Description
 Tutorials
 ---------
 
-- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
+- `2D Role Playing Game (RPG) Demo <https://store.godotengine.org/asset/godot-foundation/role-playing-game-demo/>`__
 
-- `Hierarchical Finite State Machine Demo <https://godotengine.org/asset-library/asset/2714>`__
+- `Hierarchical Finite State Machine Demo <https://store.godotengine.org/asset/godot-foundation/hierarchical-finite-state-machine-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

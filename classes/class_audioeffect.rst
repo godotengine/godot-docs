@@ -34,7 +34,7 @@ Tutorials
 
 - :doc:`Audio effects <../tutorials/audio/audio_effects>`
 
-- `Audio Microphone Record Demo <https://godotengine.org/asset-library/asset/2760>`__
+- `Audio Microphone Record Demo <https://store.godotengine.org/asset/godot-foundation/audio-mic-record-demo/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -59,7 +59,7 @@ Tutorials
 
 - :doc:`Using the SurfaceTool <../tutorials/3d/procedural_geometry/surfacetool>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
+- `Voxel Game Demo <https://store.godotengine.org/asset/godot-foundation/voxel-game-demo/>`__
 
 .. rst-class:: classref-reftable-group
 
